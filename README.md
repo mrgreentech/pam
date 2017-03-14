@@ -35,6 +35,11 @@ $ grunt
 ```
 
 
+## Issues
+
+Found a bug or have a feature request? First search [reported and closed issues](https://github.com/mrgreentech/pam/issues). If that does not ring a bell feel free to [create a new issue](https://github.com/mrgreentech/pam/issues/new).
+
+
 ## Documentation
 
 Head over to the PAM [style guide](https://mrgreentech.github.io/pam/) for documentation and examples.
