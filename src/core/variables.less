@@ -1,3 +1,9 @@
+// ==================================================================
+// Variables
+// Global variables to use with components and configuration.
+// ==================================================================
+
+
 // Skin
 // ==================================================================
 
@@ -9,52 +15,86 @@
 // feature - used to represent color of feature flow
 // text - used to represent colors of text and icons
 
-@skin-primary:          #AAAAAA;
-@skin-primary-light:    #F5F5F5;
-@skin-primary-dark:     #616161;
-@skin-accent:           #006CB0;
-@skin-text:             #FFFFFF;
-@skin-text-primary:     #444444;
-@skin-text-secondary:   #9F9F9F;
-@skin-feature:          #607D8B;
-@skin-warn:             #961924;
-@skin-success:          #8AE43E;
-@skin-divider:          #DDDDDD;
+@skin-primary:        #008ed5;
+@skin-primary-light:  lighten(@skin-primary, 15%);
+@skin-primary-dark:   darken(@skin-primary, 15%);
+@skin-accent:         spin(@skin-primary, 180);
+@skin-feature:        #607d8b;
+@skin-divider:        #ddd;
+
+// Info colors
+@skin-info:           #50b2ce;
+@skin-success:        #4caf50;
+@skin-warn:           #e9ac5e;
+@skin-danger:         #f44336;
+
+// Base greyscales
+@skin-darker:         #212121;
+@skin-dark:           #757575;
+@skin-hint:           #bdbdbd;
+@skin-light:          #e0e0e0;
+@skin-lighter:        #f5f5f5;
+
+// Base values for text and icons
+@skin-text:           #fff;
+@skin-text-primary:   #444;
+@skin-text-secondary: #9f9f9f;
+@skin-text-darker:    @skin-darker;
+@skin-text-dark:      @skin-dark;
+@skin-text-hint:      @skin-hint;
+@skin-text-light:     @skin-light;
+@skin-text-lighter:   @skin-lighter;
 
 
 // Layout spacing
 // ==================================================================
 
-@space-base:    4px;
-@space-8:       @space-base * 2;
-@space-16:      @space-base * 4;
-@space-24:      @space-base * 6;
-@space-48:      @space-base * 12;
-@space-56:      @space-base * 14;
-@space-72:      @space-base * 18;
-@space-80:      @space-base * 20;
+@space-base: 4px;
+@space-8:    @space-base * 2;
+@space-12:   @space-base * 3;
+@space-16:   @space-base * 4;
+@space-20:   @space-base * 5;
+@space-24:   @space-base * 6;
+@space-28:   @space-base * 7;
+@space-32:   @space-base * 8;
+@space-36:   @space-base * 9;
+@space-40:   @space-base * 10;
+@space-44:   @space-base * 11;
+@space-48:   @space-base * 12;
+@space-52:   @space-base * 13;
+@space-56:   @space-base * 14;
+@space-60:   @space-base * 15;
+@space-64:   @space-base * 16;
+@space-68:   @space-base * 17;
+@space-72:   @space-base * 18;
+@space-76:   @space-base * 19;
+@space-80:   @space-base * 20;
+@space-84:   @space-base * 21;
+@space-88:   @space-base * 22;
+@space-92:   @space-base * 23;
+@space-96:   @space-base * 24;
+@space-100:  @space-base * 25;
 
 
 // Z-index topography
 // ==================================================================
-// Warning: Avoid customizing these values. Use .application-layer
-// mixin to set which layer and optional what offset you want to use.
+// Add element names to appropriate z-index list and use the .zindex mixin
+// to retrive the z-index value for that element in the given context. If more
+// z-index contexts are needed add another @z-index-* list for that context.
+//
+// Example
+// @z-index-global: 'overlay', 'dialog', 'notification';
+// .zindex('notification', @z-index-global);
+// output: z-index: 3;
 
-@zindex-tropospehre:    0;
-@zindex-stratosphere:   1000;
-@zindex-mesosphere:     2000;
-@zindex-thermosphere:   3000;
-@zindex-exosphere:      9000;
-
-// .application-layer (@base-index: @z-index-troposphere, @offset: 0) {
-//  z-index: @base-index + @offset;
-// }
+@z-index-global: '';
 
 
 // Typography
 // ==================================================================
 
-@font-family: 'Roboto', sans-serif;
+@font-url:              'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700';
+@font-family:           'Roboto', sans-serif;
 
 @font-size-base:        16px;
 @font-size-xxsmall:     0.6875rem; // 11px
@@ -88,4 +128,7 @@
 // Components
 // ==================================================================
 
-@border-radius-base: 0;
+@border-radius-base: 2px;
+@border-color:       #e3e3e3;
+
+@opacity-base:       0.6;

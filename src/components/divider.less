@@ -1,42 +1,34 @@
-// Name:            Divider
-// Description:     Divider style definitions
+// Divider
 //
-// Component:       pam-Divider
+// A component to divide / separate between elements
+// like sections, menu items etc.
 //
-// Modifiers:       pam-Divder~"inset"
-//                  pam-Divider~"transparent"
+// Markup:
+// <h1 pam-typography="headline">Title</h1>
+//     <div pam-Divider></div>
+// <h2 pam-typography="subheader">Subtitle</h2>
 //
-// ==========================================================================
+// Weight: 10
+//
+// Style guide: divider
 
 
 //  Imports
-// ==========================================================================
+// ==================================================================
 
 @import "../core/variables";
-@import "../mixins/lesshat-prefixed";
 
 
 //  Variables
-// ==========================================================================
+// ==================================================================
 
 @divider-color: @skin-divider;
 @divider-opacity: 20;
 
 
-/***
- * Divider:
- */
-
-
-/**
- * Default divider:
- * `pam-Divider` Creates a horizontal divider. This is used to separate content.
- *
- *     @example
- *     <h1 pam-typography="headline">Title</h1>
- *     <div pam-Divider></div>
- *     <h2 pam-typography="subheader">Subtitle</h2>
- */
+// ==================================================================
+//  Divider
+// ==================================================================
 
 [pam-Divider] {
     display: block;
@@ -48,24 +40,28 @@
 }
 
 
-/**
- * Inset divider:
- * `pam-Divider="inset"` Creates a horizontal divider with a inset value to be
- *  used with list items etc.
- *
- *     @example
- *     <div pam-List>
- *     		<div pam-Item="content">
- *     			<div pam-tile="left">
- *     				<div sg-mock-icon></div>
- *     			</div>
- *	     		<div pam-tile="content">
- *	     			<h3 pam-typography="subheader">Item content</h3>
- *	     		</div>
- *     		</div>
- *     		<div pam-Divider="inset">
- *		</div>
- */
+//  Modifier: inset
+// ==================================================================
+
+// Inset
+//
+// `pam-Divider="inset"` Creates a horizontal divider with a inset value to be
+//  used with list items etc.
+//
+// Markup:
+// <div pam-List>
+//     <div pam-Item>
+//         <div pam-tile="left">
+//             <div sg-mock-icon></div>
+//         </div>
+//         <div pam-tile="content">
+//             <h3 pam-typography="subheader">Item content</h3>
+//         </div>
+//     </div>
+//     <div pam-Divider="inset">
+// </div>
+//
+// Style guide: divider.inset
 
 [pam-Divider~="inset"] {
     margin-left: @space-72;
@@ -73,13 +69,17 @@
 }
 
 
-/**
- * Transparent divider:
- * `pam-Divider="transparent"` Creates a horizontal divider with a transparent color.
- *
- *     @example
- *     <div pam-Divider="transparent">
- */
+//  Modifier: transparent
+// ==================================================================
+
+// Transparent
+//
+// `pam-Divider="transparent"` Creates a horizontal divider with a transparent color.
+//
+// Markup:
+// <div pam-Divider="transparent">
+//
+// Style guide: divider.transparent
 
 [pam-Divider~="transparent"] {
 	border-top-color: fade(@divider-color, @divider-opacity);
@@ -88,15 +88,20 @@
 
 
 //  Hooks
-// ==========================================================================
+// ==================================================================
 
-/**
- * Hooks:
- * `.hook-divider`
- * `.hook-divider-inset`
- * `.hook-divider-transparent`
- */
+// Hooks
+//
+// `.hook-divider`
+// `.hook-divider-inset`
+// `.hook-divider-transparent`
+//
+// Weight: 10
+//
+// Style guide: divider.hooks
 
+/* stylelint-disable block-no-empty */
 .hook-divider() {}
 .hook-divider-inset() {}
 .hook-divider-transparent() {}
+/* stylelint-enable */

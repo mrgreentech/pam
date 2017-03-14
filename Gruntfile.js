@@ -51,21 +51,21 @@ module.exports = function (grunt) {
     			expand : true
     		},
 
-            lesshat: {
-                src: ['bower_components/lesshat/build/lesshat-prefixed.less'],
-                dest: 'build/less/mixins',
-                flatten: true,
-                expand : true
-            },
-
             styleguide: {
                 files: [
                     { expand: true, flatten: true, src: [
-                        'build/pam-responsive.css',
-                        'src/styleguide/favicon.png',
-                        'bower_components/styledown-skins/dist/Default/styleguide.css',
-                        'bower_components/styledown-skins/dist/Default/styleguide.js'
-                    ], dest: 'build/styleguide' }
+                        'build/pam.css',
+                        'src/styleguide/*.css',
+                        'src/styleguide/*.js',
+                        'src/styleguide/*.png',
+                        'src/styleguide/logo.svg',
+                    ], dest: 'build/styleguide' },
+                    {
+                        expand: true,
+                        cwd: 'src/styleguide',
+                        src: 'sg-assets/*.svg',
+                        dest: 'build/styleguide',
+                    }
                 ]
             }
     	},
@@ -110,26 +110,12 @@ module.exports = function (grunt) {
 
     	less: {
     		development: {
-    			src: 'build/**/*.less',
+    			src: 'build/less/*.less',
     			dest: 'build/',
     			expand : true,
     			flatten: true,
     			ext: '.css'
     		}
-    	},
-
-
-    	// LESSLint
-        // ===================================================================
-
-    	lesslint: {
-    		options: {
-    			csslint: {
-    				csslintrc: '.csslintrc'
-    			}
-    		},
-    		core: ['build/less/core/*.less'],
-    		components: ['build/less/components/*.less']
     	},
 
 
@@ -147,6 +133,29 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: 'build/*.css'
+            },
+            lint: {
+                options: {
+                    map: false,
+                    processors: [
+                        require('stylelint')(),
+                        require("postcss-reporter")({ clearMessages: true })
+                    ],
+                    syntax: require('postcss-less')
+                },
+                src: 'src/core/buttons.less'
+            },
+            test: {
+                options: {
+                    map: false,
+                    processors: [
+                        require('autoprefixer')({
+                            browsers: ['> 2%', 'last 2 versions']
+                        })
+                    ],
+                    syntax: require('postcss-less')
+                },
+                src: 'src/core/buttons.less'
             }
         },
 
@@ -222,7 +231,7 @@ module.exports = function (grunt) {
     				banner: [
     					'/*!',
     					'Pam v<%= bower.version %>',
-    					'Copyright 2014 Mr Green! Inc. All rights reserved.',
+    					'Copyright 2016 Mr Green! Inc. All rights reserved.',
     					'Licensed under the BSD License.',
     					'https://[url]/LICENSE.md',
     					'*/\n'
@@ -233,56 +242,7 @@ module.exports = function (grunt) {
     			cwd: 'build/less',
     			src: ['core/base*.less', 'core/<%= pkg.name %>*.less']
     		}
-    	},
-
-
-    	// Watch/Observe
-        // ===================================================================
-
-    	observe: {
-    		src: {
-    			files: 'src/**/*.less',
-    			tasks: ['build_bs'],
-
-    			options: {
-    				interrupt: true
-    			}
-    		}
-    	},
-
-
-    	// BrowserSync
-        // ===================================================================
-
-    	browserSync: {
-    		bsFiles: {
-    			src: ['build/*.css', 'src/components/*.html', 'src/core/*.html']
-    		},
-    		options: {
-    			server: {
-    				baseDir: "./",
-    				index: 'src/index.html'
-    			},
-    			//tunnel: "manualtests",
-    			watchTask: true
-    		}
-    	},
-
-
-        // Styledown
-        // ===================================================================
-
-        styledown: {
-            build: {
-                files: {
-                    'build/styleguide/index.html': ['src/core/*.less', 'src/components/*.less']
-                },
-                options: {
-                    title: 'PAM',
-                    config: 'src/styleguide/config.md'
-                }
-            },
-        }
+    	}
     });
 
     // ===================================================================
@@ -293,19 +253,13 @@ module.exports = function (grunt) {
     // Npm Tasks
     // ===================================================================
 
-    grunt.loadNpmTasks('grunt-browser-sync');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-lesslint');
     grunt.loadNpmTasks('grunt-postcss');
-    grunt.loadNpmTasks('grunt-stripmq');
-    grunt.loadNpmTasks('grunt-styledown');
 
 
     // Local tasks
@@ -319,45 +273,33 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', ['import', 'build']);
     grunt.registerTask('import', ['bower_install']);
-    grunt.registerTask('test', ['lesslint']);
     grunt.registerTask('build', [
     	'clean:build',
     	'copy:build',
-        'copy:lesshat',
-        'lesslint',
         'concat:build',
     	'license',
     	'concat:base',
     	'less',
         'postcss:dist',
     	'cssmin',
-        'copy:styleguide',
-        'styledown'
+        'copy:styleguide'
     ]);
 
     grunt.registerTask('build_bs', [
         'clean:build_files',
         'copy:build',
-        'copy:lesshat',
         'concat:build',
         'license',
         'concat:base',
         'less',
         'postcss:dist',
         'cssmin',
-        'copy:styleguide',
-        'styledown'
+        'copy:styleguide'
     ]);
 
     grunt.registerTask('build_styleguide', [
-        'copy:styleguide',
-        'styledown'
+        'copy:styleguide'
     ]);
-
-    // Makes the `watch` task run a build first.
-    grunt.renameTask('watch', 'observe');
-    grunt.registerTask('watch', ['build_bs', 'observe']);
-    grunt.registerTask('tests', ["browserSync", "watch"]);
 
     grunt.registerTask('release', [
     	'default',

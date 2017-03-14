@@ -1,9 +1,12 @@
-.DS_Store
-artifacts/
 bower_components/
 build/
 coverage/
 node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
 
 *.sublime-project
 *.sublime-workspace

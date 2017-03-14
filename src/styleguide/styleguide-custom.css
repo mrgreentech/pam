@@ -1,0 +1,174 @@
+body.sg {
+    padding: 24px;
+}
+
+/* Styleguide custom */
+
+.kss-style,
+.kss-style h1,
+.kss-style h2,
+.kss-style h3,
+.kss-style h4,
+.kss-style h5,
+.kss-style h6,
+.kss-style pre,
+.kss-style code,
+.kss-style kbd,
+.kss-style samp {
+    font-family: 'Roboto', sans-serif;
+}
+
+.kss-overview img {
+    max-width: 400px;
+}
+
+.kss-description code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+}
+
+[sg-mock-icon] {
+    width: 24px;
+    height: 24px;
+    background-color: #616161;
+}
+
+[sg-mock-icon~="padded"] {
+    margin: 12px;
+}
+
+section.sg-block.sg-section-variables code {
+    color: #F44336;
+}
+
+section.sg-block.sg-section-hooks code {
+    color: #50B2CE;
+}
+
+.sg.pure {
+    color: #8156A7 !important;
+}
+
+.sg.amcss {
+    color: #008ED5 !important;
+}
+
+.sg.material {
+    color: #E04F4A !important;
+}
+
+
+/* PAM styleguide helpers */
+
+[sg-Stack] > div {
+    margin-bottom: 4px;
+}
+
+[sg-Stack] > div:last-child {
+    margin: 0;
+}
+
+[pam-Unit-Test] {
+    background-color: #008ED5;
+    color: #FFF;
+    text-align: center;
+    padding: 16px;
+    margin: 5px;
+}
+
+[pam-Unit-Test] [pam-Unit-Test] {
+    background-color: #22b5ff;
+}
+
+
+[pam-Menu-Scrollable-Test] {
+    width: 200px;
+    height: 150px;
+    border: 1px solid #666;
+}
+
+[pam-Theme-Test] {
+    padding: 16px;
+    text-align: center;
+}
+
+[pam-Theme-Test~="text"] {
+    background-color: #f9f9f9;
+}
+
+[pam-Theme-Test~="text:light"] {
+    background-color: #444;
+}
+
+
+[pam-Tile] h3 {
+    margin: 0;
+}
+
+[pam-Tile] h4 {
+    margin: 0;
+}
+
+[pam-Typography-Text] {
+    margin: 12px 0;
+}
+
+#kssref-buttons-hooks .kss-style code,
+#kssref-forms-hooks .kss-style code,
+#kssref-tables-hooks .kss-style code,
+#kssref-menus-hooks .kss-style code,
+#kssref-typography-hooks .kss-style code,
+#kssref-lists-hooks .kss-style code,
+#kssref-alert-hooks .kss-style code,
+#kssref-divider-hooks .kss-style code,
+#kssref-tags-hooks .kss-style code {
+    background-color: #e0e0e0;
+    border-radius: .25em;
+    color: #555;
+    display: inline;
+    font-family: 'Roboto', sans-serif;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    padding: .2em .6em .3em;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+/* Deprecated badge styles */
+
+#icon-input {
+    font-style: italic;
+}
+
+#icon-input:after {
+    content: "deprecated";
+    background-color: #F44336;
+    color: #FFF;
+    font-size: 12px;
+    display: inline-block;
+    padding: 2px 4px;
+    margin-left: 8px;
+    border-radius: 4px;
+    position: relative;
+    bottom: 3px;
+}
+
+/* Experimental badge styles */
+
+#floating-label:after {
+    content: "experimental";
+    background-color: #4caf50;
+    color: #FFF;
+    font-size: 12px;
+    display: inline-block;
+    padding: 2px 4px;
+    margin-left: 8px;
+    border-radius: 4px;
+    position: relative;
+    bottom: 3px;
+}

@@ -1,149 +1,199 @@
-/*csslint outline-none:false*/
-
-// Name:            Theme
-// Description:     Theme color trait selectors
+// Theme
 //
-// Component:       pam-theme
+// Set of colors that is used as base for all colors in PAM. They all have their specific contextual intention.
 //
-// Modifiers:       pam-theme~"primary"
-//                  pam-theme~"primary:light"
-//                  pam-theme~"primary:dark"
-//                  pam-theme~"text"
-//                  pam-theme~"text:primary"
-//                  pam-theme~"text:secondary"
-//                  pam-theme~"warn"
-//                  pam-theme~"success"
-//                  pam-theme~"accent"
-//                  pam-theme~"feature"
-//                  pam-theme~"divider"
+// Weight: 4
 //
-// ==========================================================================
+// Style guide: theme
 
 
 //  Imports
-// ==========================================================================
+// ==================================================================
 
 @import "variables";
-@import "../mixins/lesshat-prefixed";
 
+// ==================================================================
+//  Theme
+// ==================================================================
 
-/***
- * Theming:
- */
+// Primary
+//
+//  Colors used to represent primary interface elements for a user.
+//
+// Markup:
+// <div pam-Theme-Test pam-theme="primary:light">@skin-primary-light</div>
+// <div pam-Theme-Test pam-theme="primary">@skin-primary</div>
+// <div pam-Theme-Test pam-theme="primary:dark">@skin-primary-dark</div>
+//
+// Weight: 1
+//
+// Style guide: theme.primary
 
-
-/**
- * Primary:
- * `pam-theme="primary"`, `pam-theme="primary:light"`, `pam-theme="primary:dark"`
- *
- *     @example
- *     <div pam-Grid>
- *          <div pam-Unit="1-3">
- *              <div pam-Theme-Test pam-theme="primary">primary</div>
- *          </div>
- *          <div pam-Unit="1-3">
- *              <div pam-Theme-Test pam-theme="primary:light">primary-light</div>
- *          </div>
- *          <div pam-Unit="1-3">
- *              <div pam-Theme-Test pam-theme="primary:dark">primary-dark</div>
- *          </div>
- *     </div>
- */
-
-[pam-theme~="primary"] {
+[pam-Theme~="primary"] {
     background-color: @skin-primary;
 }
 
-[pam-theme~="primary:light"] {
+[pam-Theme~="primary:light"] {
     background-color: @skin-primary-light;
 }
 
-[pam-theme~="primary:dark"] {
+[pam-Theme~="primary:dark"] {
     background-color: @skin-primary-dark;
 }
 
 
-/**
- * Text:
- * `pam-theme="text"` `pam-theme="text:primary"`, `pam-theme="text:secondary"`
- *
- *     @example
- *     <div pam-Grid>
- *          <div pam-Unit="1-3">
- *              <div pam-Theme-Test="text" pam-theme="text">text</div>
- *          </div>
- *          <div pam-Unit="1-3">
- *              <div pam-Theme-Test="text" pam-theme="text:primary">text-primary</div>
- *          </div>
- *          <div pam-Unit="1-3">
- *              <div pam-Theme-Test="text" pam-theme="text:secondary">text-secondary</div>
- *          </div>
- *     </div>
- */
+//  Complementary
+// ==================================================================
 
-[pam-theme~="text"] {
-    color: @skin-text;
-}
+// Complementary
+//
+// Colors used to represent complementary interface elements
+//
+// Markup:
+// <div pam-Theme-Test pam-theme="accent">@skin-accent</div>
+// <div pam-Theme-Test pam-theme="feature">@skin-feature</div>
+// <div pam-Theme-Test pam-theme="divider">@skin-divider</div>
+//
+// Weight: 2
+//
+// Style guide: theme.complementary
 
-[pam-theme~="text:primary"] {
-    color: @skin-text-primary;
-}
-
-[pam-theme~="text:secondary"] {
-    color: @skin-text-secondary;
-}
-
-
-/**
- * Information:
- * `pam-theme="warn"`, `pam-theme="success"`
- *
- *     @example
- *     <div pam-Grid>
- *          <div pam-Unit="1-2">
- *              <div pam-Theme-Test pam-theme="warn">warn</div>
- *          </div>
- *          <div pam-Unit="1-2">
- *              <div pam-Theme-Test pam-theme="success">success</div>
- *          </div>
- *     </div>
- */
-
-[pam-theme~="warn"] {
-    background-color: @skin-warn;
-}
-
-[pam-theme~="success"] {
-    background-color: @skin-success;
-}
-
-
-/**
- * Misc:
- * `pam-theme="accent"` `pam-theme="feature"`, `pam-theme="divider"`
- *
- *     @example
- *     <div pam-Grid>
- *          <div pam-Unit="1-3">
- *              <div pam-Theme-Test pam-theme="accent">accent</div>
- *          </div>
- *          <div pam-Unit="1-3">
- *              <div pam-Theme-Test pam-theme="feature">feature</div>
- *          </div>
- *          <div pam-Unit="1-3">
- *              <div pam-Theme-Test pam-theme="divider">divider</div>
- *          </div>
- *     </div>
- */
-
-[pam-theme~="accent"] {
+[pam-Theme~="accent"] {
     background-color: @skin-accent;
 }
 
-[pam-theme~="feature"] {
+[pam-Theme~="feature"] {
     background-color: @skin-feature;
 }
 
-[pam-theme~="divider"] {
+[pam-Theme~="divider"] {
     background-color: @skin-divider;
+}
+
+
+//  Information
+// ==================================================================
+
+// Information
+//
+// Colors used to represent information interface elements.
+//
+// Markup:
+// <div pam-Theme-Test pam-theme="info">@skin-info</div>
+// <div pam-Theme-Test pam-theme="success">@skin-success</div>
+// <div pam-Theme-Test pam-theme="warn">@skin-warn</div>
+// <div pam-Theme-Test pam-theme="danger">@skin-danger</div>
+//
+// Weight: 3
+//
+// Style guide: theme.information
+
+[pam-Theme~="info"] {
+    background-color: @skin-info;
+}
+
+[pam-Theme~="success"] {
+    background-color: @skin-success;
+}
+
+[pam-Theme~="warn"] {
+    background-color: @skin-warn;
+}
+
+[pam-Theme~="danger"] {
+    background-color: @skin-danger;
+}
+
+
+//  Greyscales
+// ==================================================================
+
+// Greyscales
+//
+// Base greyscales colors.
+//
+// Markup:
+// <div pam-Theme-Test pam-theme="lighter">@skin-lighter</div>
+// <div pam-Theme-Test pam-theme="light">@skin-light</div>
+// <div pam-Theme-Test pam-theme="hint">@skin-hint</div>
+// <div pam-Theme-Test pam-theme="dark">@skin-dark</div>
+// <div pam-Theme-Test pam-theme="darker text">@skin-darker</div>
+//
+// Weight: 4
+//
+// Style guide: theme.greyscales
+
+[pam-Theme~="light"] {
+    background-color: @skin-light;
+}
+
+[pam-Theme~="lighter"] {
+    background-color: @skin-lighter;
+}
+
+[pam-Theme~="hint"] {
+    background-color: @skin-hint;
+}
+
+[pam-Theme~="dark"] {
+    background-color: @skin-dark;
+}
+
+[pam-Theme~="darker"] {
+    background-color: @skin-darker;
+}
+
+
+//  Text
+// ==================================================================
+
+// Text
+//
+// Colors used to represent text interface elements
+//
+// Markup:
+// <div pam-Theme-Test="text:light" pam-theme="text">@skin-text</div>
+// <div pam-Theme-Test="text:light" pam-theme="text text:hint">@skin-text-hint</div>
+// <div pam-Theme-Test="text:light" pam-theme="text text:light">@skin-text-light</div>
+// <div pam-Theme-Test="text:light" pam-theme="text text:lighter">@skin-text-lighter</div>
+// <div pam-Theme-Test="text" pam-theme="text text:primary">@skin-text-primary</div>
+// <div pam-Theme-Test="text" pam-theme="text text:secondary">@skin-text-secondary</div>
+// <div pam-Theme-Test="text" pam-theme="text text:darker">@skin-text-darker</div>
+// <div pam-Theme-Test="text" pam-theme="text text:dark">@skin-text-dark</div>
+//
+// Weight: 5
+//
+// Style guide: theme.text
+
+[pam-Theme~="text"] {
+    color: @skin-text;
+    margin-bottom: @space-base;
+}
+
+[pam-Theme~="text:primary"] {
+    color: @skin-text-primary;
+}
+
+[pam-Theme~="text:secondary"] {
+    color: @skin-text-secondary;
+}
+
+[pam-Theme~="text:darker"] {
+    color: @skin-text-darker;
+}
+
+[pam-Theme~="text:dark"] {
+    color: @skin-text-dark;
+}
+
+[pam-Theme~="text:hint"] {
+    color: @skin-text-hint;
+}
+
+[pam-Theme~="text:light"] {
+    color: @skin-text-light;
+}
+
+[pam-Theme~="text:lighter"] {
+    color: @skin-text-lighter;
 }

@@ -1,7 +1,7 @@
 {
   "name": "pam",
   "description": "PAM is a light and modular CSS library",
-  "version": "0.12.0",
+  "version": "1.0.0",
   "main": "release/less/pam.less",
   "authors": [
     "Olle Harju <olle.harju@mrgreen.com>"

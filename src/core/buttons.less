@@ -1,158 +1,166 @@
-/*csslint outline-none:false*/
+// Buttons
+//
+// Buttons communicate the action that will occur when
+// the user clicks or touches them. They can be used on `button`, `a` or `input elements`.
+//
+// Markup:
+// <button pam-Button>Button</button>
+// <a href="#" pam-Button>Link</a>
+// <input type="button" value="Input" pam-Button>
+//
+// Weight: 6
+//
+// Style guide: buttons
 
-// Name:            Buttons
-// Description:     Buttons style definitions
-//
-// Component:       pam-Button
-//
-// Modifiers:       pam-Button~"hover"
-//                  pam-Button~"active"
-//                  pam-Button~"disabled"
-//                  pam-Button~"hidden"
-//                  pam-Button~"selected"
-//                  pam-Button~"primary"
-//                  pam-Button~"secondary"
-//                  pam-Button~"fluid"
-//                  pam-Button~"dark"
-//                  pam-Button~"bright"
-//
-// States:          pam-Button~"active"
-//
-// ==========================================================================
+// TODO: Add active / disabled and hidden modifier.
+// TODO: Add button group borderless.
 
 
 //  Imports
-// ==========================================================================
+// ==================================================================
 
 @import "variables";
-@import "../mixins/lesshat-prefixed";
 
 
 //  Variables
-// ==========================================================================
+// ==================================================================
 
-@button-background:     @skin-primary;
-@button-border-radius:  @border-radius-base;
-@button-color:          @skin-text;
-@button-font-size:      @font-size-medium;
-@button-lighten:        7%;
-@button-line-height:    @space-24;
-@button-padding:        @space-16;
+@button-background:                 @skin-light;
+@button-border-radius:              @border-radius-base;
+@button-border:                     none;
+@button-color:                      @skin-text-primary;
+@button-darken:                     5%;
+@button-decoration:                 none;
+@button-disabled-opacity:           0.4;
+@button-font-family:                inherit;
+@button-font-size:                  @font-size-medium;
+@button-font-weight:                @font-weight-medium;
+@button-hover-background:           lighten(@button-background, @button-lighten);
+@button-lighten:                    7%;
+@button-line-height:                1rem;
+@button-padding-horizontal:         @space-20;
+@button-padding-vertical:           @space-16;
+@button-padding:                    @button-padding-vertical @button-padding-horizontal;
+@button-transition-duration:        0.3s;
+@button-transition-property:        background-color;
+@button-transition-timing:          ease;
 
-@button-primary-background: @skin-feature;
+@button-primary-background:         @skin-primary;
+@button-primary-color:              @skin-text;
+@button-primary-hover-background:   lighten(@button-primary-background, @button-lighten);
 
-@button-secondary-font-size: @font-size-small;
-@button-secondary-line-height: @space-16;
-@button-secondary-color: @skin-text-primary;
+@button-secondary-background:       @skin-accent;
+@button-secondary-color:            @skin-text;
+@button-secondary-hover-background: lighten(@button-secondary-background, @button-lighten);
 
-@button-tertiary-font-size: @font-size-small;
-@button-tertiary-line-height: @space-16;
-@button-tertiary-color: @skin-primary;
+@button-tertiary-background:        transparent;
+@button-tertiary-border-width:      2px;
+@button-tertiary-border:            @skin-primary-light;
+@button-tertiary-color:             @skin-primary-light;
+@button-tertiary-hover-border:      lighten(@button-tertiary-border, 15%);
+@button-tertiary-hover-color:       lighten(@button-tertiary-color, 15%);
+@button-tertiary-padding:           @button-padding-vertical - @button-tertiary-border-width @button-padding-horizontal - @button-tertiary-border-width;
+@button-tertiary-transition:        color, border-color;
+
+@button-info-background:            @skin-info;
+@button-info-color:                 @skin-text;
+@button-info-hover-background:      lighten(@button-info-background, @button-lighten);
+
+@button-success-background:         @skin-success;
+@button-success-color:              @skin-text;
+@button-success-hover-background:   lighten(@button-success-background, @button-lighten);
+
+@button-warning-background:         @skin-warn;
+@button-warning-color:              @skin-text;
+@button-warning-hover-background:   lighten(@button-warning-background, @button-lighten);
+
+@button-danger-background:          @skin-danger;
+@button-danger-color:               @skin-text;
+@button-danger-hover-background:    lighten(@button-danger-background, @button-lighten);
+
+@button-large-font-size:            @font-size-large;
+@button-large-min-height:           @space-56;
+@button-large-padding:              @space-20 @space-32;
+
+@button-small-font-size:            @font-size-medium;
+@button-small-line-height:          @line-height-base;
+@button-small-min-height:           @space-40;
+@button-small-padding:              13px @space-16;
+
+@button-mini-font-size:             @font-size-xsmall;
+@button-mini-line-height:           @line-height-base;
+@button-mini-min-height:            @space-32;
+@button-mini-padding:               10px @space-12;
+
+@button-link-background:            transparent;
+@button-link-border:                none;
+@button-link-color:                 @skin-primary-light;
+@button-link-decoration:            @button-decoration;
+@button-link-hover-color:           darken(@button-link-color, @button-darken);
+@button-link-hover-decoration:      underline;
+@button-link-line-height:           @line-height-normal;
+@button-link-transition:            color;
+
+@button-fluid-margin-bottom:        @space-base;
+@button-fluid-width:                100%;
+
+@button-circle-border-radius:       50%;
+@button-circle-line-height:         @line-height-normal;
+@button-circle-size:                @space-48;
+@button-circle-padding:             0;
+@button-circle-large-size:          @space-56;
+@button-circle-small-size:          @space-40;
+@button-circle-mini-size:           @space-32;
+
+@button-raised-box-shadow:          0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+@button-raised-active-box-shadow:   0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
 
-/***
- * Buttons:
- */
-
-
-//  Default Button
-// ==========================================================================
-
-/**
- * Default Button:
- * `pam-Button` Creates a default button. Works with `button` and `a` elements.
- *
- *     @example
- *     <button pam-Button>
- *          A Default Button
- *     </button>
- *     <a href="#" pam-Button>
- *          An Default Anchor Button
- *     </a>
- */
-
-[pam-Button] {
-    /* Structure */
-    cursor: pointer;
-    display: inline-block;
-    line-height: @button-line-height;
-    text-align: center;
-    vertical-align: baseline;
-    white-space: nowrap;
-    zoom: 1;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
+// ==================================================================
+//  Button
+// ==================================================================
 
 [pam-Button] {
     background-color: @button-background;
     border-radius: @button-border-radius;
-    border: none;
+    border: @button-border;
+    box-sizing: border-box;
     color: @button-color;
-    font-family: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font-family: @button-font-family;
     font-size: @button-font-size;
+    font-weight: @button-font-weight;
+    line-height: @button-line-height;
     padding: @button-padding;
-    text-decoration: none;
-    transition: all 0.3s ease 0s;
+    text-align: center;
+    text-decoration: @button-decoration;
+    transition: @button-transition-property @button-transition-duration @button-transition-timing;
+    user-select: none;
+    vertical-align: baseline;
+    white-space: nowrap;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    .lh-box-sizing(border-box);
+    -webkit-user-drag: none;
+
     .hook-button;
 }
 
-[pam-Button~="hover"],
 [pam-Button]:hover,
 [pam-Button]:focus {
-    background-color: lighten(@button-background, @button-lighten);
-    .hook-button-hover;
-}
+    background-color: @button-hover-background;
 
-[pam-Button]:focus {
-    outline: 0;
+    .hook-button-hover;
 }
 
 [pam-Button~="active"],
 [pam-Button]:active {
-    // TODO: Add feedback animation on active.
+    background-color: darken(@button-background, @button-darken);
+
     .hook-button-active;
 }
 
-
-//  Modifier: disabled
-// ==========================================================================
-
-/**
- * Disabled Button:
- * `pam-Button="disabled"` marks a button as disabled, alternative approch is to add the `disabled` attribute togheter with
- * `pam-Button`.
- *
- *     @example
- *     <button pam-Button="disabled">
- *          A Disabled Button
- *     </button>
- *     <a href="#" pam-Button="disabled">
- *          An Disabled Anchor Button
- *     </a>
- */
-
-[pam-Button][disabled],
-[pam-Button~="disabled"],
-[pam-Button~="disabled"]:hover,
-[pam-Button~="disabled"]:focus,
-[pam-Button~="disabled"]:active {
-    background-image: none;
-    border: none;
-    box-shadow: none;
-    cursor: not-allowed;
-    .lh-opacity(0.4);
-    .hook-button-disabled;
-}
-
-[pam-Button~="hidden"] {
-    display: none;
-    .hook-button-hidden;
+[pam-Button]:focus {
+    outline: 0;
 }
 
 /* Firefox: Get rid of the inner focus border */
@@ -162,120 +170,674 @@
 }
 
 
-//  Modifier: primary / selected
-// ==========================================================================
+// Modifiers: States
+// ==================================================================
 
-/**
- * Primary Button:
- * `pam-Button="primary"` Indicates that a button represents a primary action.
- *
- *     @example
- *     <button pam-Button="primary">
- *          A Primary Button
- *     </button>
- *     <a href="#" pam-Button="primary">
- *          An Primary Anchor Button
- *     </a>
- */
+// States
+//
+// There are three states that can be set programatically `active`,
+// `disabled` and `hidden`.
+//
+// Markup:
+// <button pam-Button="active">Active</button>
+// <button pam-Button="disabled">Disabled</button>
+// <button pam-Button="hidden">Hidden</button>
+//
+// Weight: 0
+//
+// Style guide: buttons.states
+
+// disabled
+
+[pam-Button][disabled],
+[pam-Button~="disabled"],
+[pam-Button~="disabled"]:hover,
+[pam-Button~="disabled"]:focus,
+[pam-Button~="disabled"]:active {
+    background-image: none;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: @button-disabled-opacity;
+
+    .hook-button-disabled;
+}
+
+//  hidden
+
+[pam-Button~="hidden"] {
+    display: none;
+
+    .hook-button-hidden;
+}
+
+
+//  Variations
+// ==================================================================
+
+// Variations
+//
+// To differentiate what type of action a button has in a
+// set of buttons use `primary`, `secondary` or `tertiary` modifiers.
+//
+// Markup:
+// <button pam-Button="">Default</button>
+// <button pam-Button="primary">Primary</button>
+// <button pam-Button="secondary">Secondary</button>
+// <button pam-Button="tertiary">Tertiary</button>
+//
+// Weight: 1
+//
+// Style guide: buttons.variations
+
+//  primary
 
 [pam-Button~="primary"],
-[pam-Button~="selected"],
-a[pam-Button~="primary"],
-a[pam-Button~="selected"] {
+a[pam-Button~="primary"] {
     background-color: @button-primary-background;
-    color: @button-color;
+    color: @button-primary-color;
 
     &:hover,
     &:focus {
-        background-color: lighten(@button-primary-background, @button-lighten);
+        background-color: @button-primary-hover-background;
+    }
+
+    &:active {
+        background-color: darken(@button-primary-background, @button-darken);
     }
 
     .hook-button-primary;
 }
 
-
-// Modifier: secondary
-// ========================================================================
-
-/**
- * Secondary Button:
- * `pam-Button="secondary"` Indicates that a button represents a secondary action.
- *
- *     @example
- *     <button pam-Button="secondary text:primary">
- *          A Secondary Button
- *     </button>
- *     <a href="#" pam-Button="secondary text:primary">
- *          An Secondary Anchor Button
- *     </a>
- */
+//  secondary
 
 [pam-Button~="secondary"],
 a[pam-Button~="secondary"] {
-    background-color: transparent;
+    background-color: @button-secondary-background;
     color: @button-secondary-color;
-    font-size: @button-secondary-font-size;
-    line-height: @button-secondary-line-height;
 
     &:hover,
     &:focus {
-        color: lighten(@button-secondary-color, @button-lighten);
-        background: initial;
+        background-color: @button-secondary-hover-background;
+    }
+
+    &:active {
+        background-color: darken(@button-secondary-background, @button-darken);
     }
 
     .hook-button-secondary;
 }
 
-
-// Modifier: tertiary
-// ========================================================================
-
-/**
- * Tertiary Button:
- * `pam-Button="tertiary"` Indicates that a button represents a tertiary action.
- *
- *     @example
- *     <button pam-Button="tertiary">
- *          A Secondary Button
- *     </button>
- *     <a href="#" pam-Button="tertiary">
- *          An Secondary Anchor Button
- *     </a>
- */
+//  tertiary
 
 [pam-Button~="tertiary"],
 a[pam-Button~="tertiary"] {
-    background: transparent;
-    border: 2px solid @button-tertiary-color;
+    background: @button-tertiary-background;
+    border: @button-tertiary-border-width solid @button-tertiary-border;
     color: @button-tertiary-color;
-    font-size: @button-tertiary-font-size;
-    line-height: @button-tertiary-line-height;
+    padding: @button-tertiary-padding;
+    transition-property: @button-tertiary-transition;
 
     &:hover,
     &:focus {
-        color: lighten(@button-tertiary-color, @button-lighten);
         background: initial;
+        border-color: @button-tertiary-hover-border;
+        color: @button-tertiary-hover-color;
+    }
+
+    &:active {
+        background: initial;
+        border-color: darken(@button-tertiary-border, @button-darken);
+        color: darken(@button-tertiary-color, @button-darken);
     }
 
     .hook-button-tertiary;
 }
 
 
-// Modifier: round
-// ========================================================================
+// Color modifiers
+// ==================================================================
 
-/**
- * Round Button:
- * `pam-Button="round"` makes a round button to use with `icons`.
- *
- *     @example
- *     <button pam-Button="round">
- *          <i class="fa fa-plus"></i>
- *     </button>
- *     <button href="#" pam-Button="round">
- *          <i class="fa fa-minus"></i>
- *     </button>
- */
+// Colors
+//
+// Use one of the colors modifiers to emphasizes the contextual meaning
+// of it's action.
+//
+// Markup:
+// <button pam-Button="info">Info</button>
+// <button pam-Button="success">Success</button>
+// <button pam-Button="warning">Warning</button>
+// <button pam-Button="danger">Danger</button>
+// <button pam-Button="link">Link</button>
+//
+// Weight: 2
+//
+// Style guide: buttons.colors
+
+// info
+
+[pam-Button~="info"],
+a[pam-Button~="info"] {
+    background-color: @button-info-background;
+    color: @button-info-color;
+
+    &:hover,
+    &:focus {
+        background-color: @button-info-hover-background;
+    }
+
+    &:active {
+        background-color: darken(@button-info-background, @button-darken);
+    }
+
+    .hook-button-info;
+}
+
+// success
+
+[pam-Button~="success"],
+a[pam-Button~="success"] {
+    background-color: @button-success-background;
+    color: @button-success-color;
+
+    &:hover,
+    &:focus {
+        background-color: @button-success-hover-background;
+    }
+
+    &:active {
+        background-color: darken(@button-success-background, @button-darken);
+    }
+
+    .hook-button-success;
+}
+
+// warning
+
+[pam-Button~="warning"],
+a[pam-Button~="warning"] {
+    background-color: @button-warning-background;
+    color: @button-warning-color;
+
+    &:hover,
+    &:focus {
+        background-color: @button-warning-hover-background;
+    }
+
+    &:active {
+        background-color: darken(@button-warning-background, @button-darken);
+    }
+
+    .hook-button-warning;
+}
+
+// danger
+
+[pam-Button~="danger"],
+a[pam-Button~="danger"] {
+    background-color: @button-danger-background;
+    color: @button-danger-color;
+
+    &:hover,
+    &:focus {
+        background-color: @button-danger-hover-background;
+    }
+
+    &:active {
+        background-color: darken(@button-danger-background, @button-darken);
+    }
+
+    .hook-button-danger;
+}
+
+
+// Modifier: link
+// ==================================================================
+
+[pam-Button~="link"],
+a[pam-Button~="link"] {
+    background-color: @button-link-background;
+    border: @button-link-border;
+    color: @button-link-color;
+    line-height: @button-link-line-height;
+    text-decoration: @button-link-decoration;
+    transition-property: @button-link-transition;
+
+    &:hover,
+    &:focus {
+        background-color: initial;
+        color: @button-link-hover-color;
+        text-decoration: @button-link-hover-decoration;
+    }
+
+    .hook-button-link;
+}
+
+
+// Size modifiers
+// ==================================================================
+
+// Size
+//
+// Sometimes size matters. Use the `mini`, `small` or `large`
+// modifier to make the button smaller or larger.
+//
+// Markup:
+// <div sg-Stack>
+//     <div>
+//         <button pam-Button="large">Large</button>
+//         <button pam-Button="large flat">Large</button>
+//         <button pam-Button="circle large">
+//             <img pam-Icon src="sg-assets/plus.svg" />
+//         </button>
+//     </div>
+//     <div>
+//         <button pam-Button>Default</button>
+//         <button pam-Button="flat">Default</button>
+//         <button pam-Button="circle">
+//             <img pam-Icon src="sg-assets/plus.svg" />
+//         </button>
+//     </div>
+//     <div>
+//         <button pam-Button="small">Small</button>
+//         <button pam-Button="flat small">Small</button>
+//         <button pam-Button="circle small">
+//             <img pam-Icon src="sg-assets/plus.svg" />
+//         </button>
+//     </div>
+//     <div>
+//         <button pam-Button="mini">Mini</button>
+//         <button pam-Button="flat mini">Mini</button>
+//         <button pam-Button="circle mini">
+//             <img pam-Icon src="sg-assets/plus.svg" />
+//         </button>
+//     </div>
+// </div>
+//
+// Weight: 4
+//
+// Style guide: buttons.size
+
+// large
+
+[pam-Button-Group~="large"] > [pam-Button],
+[pam-Button-Group~="large"] > a[pam-Button],
+[pam-Button~="large"],
+a[pam-Button~="large"] {
+    font-size: @button-large-font-size;
+    min-height: @button-large-min-height;
+    padding: @button-large-padding;
+
+    .hook-button-large;
+}
+
+// small
+
+[pam-Button-Group~="small"] > [pam-Button],
+[pam-Button-Group~="small"] > a[pam-Button],
+[pam-Button~="small"],
+a[pam-Button~="small"] {
+    font-size: @button-small-font-size;
+    line-height: @button-small-line-height;
+    min-height: @button-small-min-height;
+    padding: @button-small-padding;
+
+    .hook-button-small;
+}
+
+// mini
+
+[pam-Button-Group~="mini"] > [pam-Button],
+[pam-Button-Group~="mini"] > [pam-Button],
+[pam-Button~="mini"],
+a[pam-Button~="mini"] {
+    font-size: @button-mini-font-size;
+    line-height: @button-mini-line-height;
+    min-height: @button-mini-min-height;
+    padding: @button-mini-padding;
+
+    .hook-button-mini;
+}
+
+
+//  Modifier: raised
+// ==================================================================
+
+// Raised
+//
+// Raised buttons add dimension to mostly flat layouts.
+// They emphasize functions on busy or wide spaces.
+//
+// Markup:
+// <button pam-Button="raised">Default</button>
+// <button pam-Button="raised primary">Primary</button>
+//
+// Weight: 5
+//
+// Style guide: buttons.raised
+
+[pam-Button~="raised"] {
+    box-shadow: @button-raised-box-shadow;
+
+    &:active {
+        box-shadow: @button-raised-active-box-shadow;
+    }
+
+    .hook-button-raised;
+}
+
+
+//  Modifier: flat
+// ==================================================================
+
+// Flat
+//
+// Flat buttons do not lift and can be used in tooolbars and dialogs.
+//
+// Markup:
+// <button pam-Button="flat">Default</button>
+// <button pam-Button="flat primary">Primary</button>
+//
+// Weight: 6
+//
+// Style guide: buttons.flat
+
+[pam-Button~="flat"],
+[pam-Button~="flat"][pam-Button~="primary"],
+[pam-Button~="flat"][pam-Button~="secondary"],
+[pam-Button~="flat"][pam-Button~="info"],
+[pam-Button~="flat"][pam-Button~="success"],
+[pam-Button~="flat"][pam-Button~="warning"],
+[pam-Button~="flat"][pam-Button~="danger"] {
+    background-color: transparent;
+    color: @skin-text-primary;
+
+    &:hover,
+    &:focus {
+        background-color: @button-hover-background;
+    }
+
+    &:active {
+        background-color: @button-background;
+    }
+
+    .hook-button-flat;
+}
+
+[pam-Button~="flat"][pam-Button~="primary"] {
+    color: @button-primary-background;
+}
+
+[pam-Button~="flat"][pam-Button~="secondary"] {
+    color: @button-secondary-background;
+}
+
+[pam-Button~="flat"][pam-Button~="info"] {
+    color: @button-info-background;
+}
+
+[pam-Button~="flat"][pam-Button~="success"] {
+    color: @button-success-background;
+}
+
+[pam-Button~="flat"][pam-Button~="warning"] {
+    color: @button-warning-background;
+}
+
+[pam-Button~="flat"][pam-Button~="danger"] {
+    color: @button-danger-background;
+}
+
+// Modifier: fluid
+// ==================================================================
+
+// Fluid
+//
+// Fluid block level buttons span the full width of a parent.
+//
+// Markup:
+// <button pam-Button="fluid">Button</button>
+// <button pam-Button="primary fluid">Button</button>
+//
+// Weight: 7
+//
+// Style guide: buttons.fluid
+
+[pam-Button~="fluid"],
+a[pam-Button~="fluid"] {
+    display: block;
+    margin-bottom: @button-fluid-margin-bottom;
+    width: @button-fluid-width;
+
+    &:last-child {
+        margin: 0;
+    }
+
+    .hook-button-fluid;
+}
+
+
+// Modifier: fab
+// ==================================================================
+
+// Fab
+//
+// A floating action button is used for contextual action
+// floating above other elements.
+//
+// Markup:
+// <button pam-Button="circle">
+//    <img pam-Icon src="sg-assets/plus.svg" />
+// </button>
+// <button pam-Button="circle raised">
+//    <img pam-Icon src="sg-assets/plus.svg" />
+// </button>
+// <button pam-Button="circle flat">
+//    <img pam-Icon src="sg-assets/plus.svg" />
+// </button>
+//
+// Weight: 8
+//
+// Style guide: buttons.fab
+
+[pam-Button~="circle"],
+a[pam-Button~="circle"],
+[pam-Button~="circle"][pam-Button~="large"],
+a[pam-Button~="circle"][pam-Button~="large"],
+[pam-Button~="circle"][pam-Button~="small"],
+a[pam-Button~="circle"][pam-Button~="small"],
+[pam-Button~="circle"][pam-Button~="mini"],
+a[pam-Button~="circle"][pam-Button~="mini"] {
+    border-radius: @button-circle-border-radius;
+    height: @button-circle-size;
+    line-height: @button-circle-line-height;
+    margin: auto;
+    min-width: @button-circle-size;
+    overflow: hidden;
+    padding: @button-circle-padding;
+    position: relative;
+    width: @button-circle-size;
+    vertical-align: middle;
+
+    .hook-button-circle;
+}
+
+// Size modifier: FAB
+// ==================================================================
+
+// large
+
+[pam-Button~="circle"][pam-Button~="large"],
+a[pam-Button~="circle"][pam-Button~="large"] {
+    height: @button-circle-large-size;
+    min-width: @button-circle-large-size;
+    padding: @button-circle-padding;
+    width: @button-circle-large-size;
+}
+
+// small
+
+[pam-Button~="circle"][pam-Button~="small"],
+a[pam-Button~="circle"][pam-Button~="small"] {
+    height: @button-circle-small-size;
+    min-width: @button-circle-small-size;
+    padding: @button-circle-padding;
+    width: @button-circle-small-size;
+}
+
+// mini
+
+[pam-Button~="circle"][pam-Button~="mini"],
+a[pam-Button~="circle"][pam-Button~="mini"] {
+    height: @button-circle-mini-size;
+    min-width: @button-circle-mini-size;
+    padding: @button-circle-padding;
+    width: @button-circle-mini-size;
+}
+
+
+// ==================================================================
+// Icon - TODO: move to icon file
+// ==================================================================
+
+[pam-Icon] {
+    margin: auto;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    height: @space-24;
+    width: @space-24;
+    min-height: @space-24;
+    min-width: @space-24;
+
+    svg path {
+        fill: @skin-text;
+    }
+}
+
+
+// Object: button-group
+// ==================================================================
+
+// Button group
+//
+// Group two or more buttons together on a single line or column.
+//
+// Markup:
+// <div pam-Button-Group>
+//     <button pam-Button="">Button</button>
+//     <button pam-Button="">Button</button>
+//     <button pam-Button="">Button</button>
+// </div>
+//
+// Weight: 8
+//
+// Style guide: buttons.group
+
+[pam-Button-Group] {
+    display: flex;
+
+    & > [pam-Button] {
+        display: block;
+        border-radius: 0;
+        border-left: 1px solid fade(#000, 10%);
+
+        &:first-child {
+            border-radius: @button-border-radius 0 0 @button-border-radius;
+            border-left: none;
+        }
+
+        &:last-child {
+            border-radius: 0 @button-border-radius @button-border-radius 0;
+        }
+    }
+
+    .hook-button-group;
+}
+
+
+// Object modifier: borderless
+// ==================================================================
+
+// Borderless
+//
+// Remove the borders from button groups with the `borderless` modifier.
+//
+// Markup:
+// <div pam-Button-Group="borderless">
+//     <button pam-Button="">Default</button>
+//     <button pam-Button="primary">Primary</button>
+//     <button pam-Button="secondary">Secondary</button>
+// </div>
+//
+// Style guide: buttons.group.borderless
+
+[pam-Button-Group="borderless"] {
+    & > [pam-Button] {
+        border-left: none;
+    }
+}
+
+
+// Size
+//
+// Button groups support same sizes as buttons  `large`, `default`, `small` or `mini`.
+//
+// Markup:
+// <div sg-Stack>
+//     <div pam-Button-Group="large">
+//         <button pam-Button>Large</button>
+//         <button pam-Button>Large</button>
+//         <button pam-Button>Large</button>
+//     </div>
+//     <div pam-Button-Group>
+//         <button pam-Button>Default</button>
+//         <button pam-Button>Default</button>
+//         <button pam-Button>Default</button>
+//     </div>
+//     <div pam-Button-Group="small">
+//         <button pam-Button>Small</button>
+//         <button pam-Button>Small</button>
+//         <button pam-Button>Small</button>
+//     </div>
+//     <div pam-Button-Group="mini">
+//         <button pam-Button>Mini</button>
+//         <button pam-Button>Mini</button>
+//         <button pam-Button>Mini</button>
+//     </div>
+// </div>
+//
+// Style guide: buttons.group.size
+
+
+// Deprecated
+// ==================================================================
+
+// Deprecated
+//
+// Following button rulez will be deprecated in version 1.1.0.
+//
+// Weight: 9
+//
+// Style guide: buttons.deprecated
+
+
+// Round (Deprecated)
+// ==================================================================
+
+// Round
+//
+// Round button to be used with icons and a direct contextual action.
+//
+// <div pam-Alert="warning">
+//    Deprecated: Styling for legacy round button. Support will be dropped
+//    after PAM version 1.1.x. Use the <strong>fab buttons</strong> instead.
+// </div>
+//
+// Markup:
+// <button pam-Button="round">
+//    <img pam-Icon src="sg-assets/plus.svg" />
+// </button>
+//
+// Style guide: buttons.deprecated.round
 
 [pam-Button~="round"],
 a[pam-Button~="round"] {
@@ -286,94 +848,112 @@ a[pam-Button~="round"] {
     position: relative;
     width: @space-56;
     z-index: 0;
+
     .hook-button-round;
 }
 
 
-// Size Modifier: fluid
-// ========================================================================
+// Text (Deprecated)
+// ==================================================================
 
-/**
- * Fluid Button:
- * `pam-Button="fluid"` Creates a fluid button.
- *
- *     @example
- *     <button pam-Button="fluid">
- *          A Fluid Button
- *     </button>
- */
-
-[pam-Button~="fluid"],
-a[pam-Button~="fluid"] {
-    width: 100%;
-    .hook-button-fluid;
-}
-
-
-/**
- * Button text colors:
- * `pam-Button="text:[primary|secondary]"` Changes button font color.
- *
- *     @example
- *     <button pam-Button="text">
- *          Text color
- *     </button>
- *     <button pam-Button="text:primary">
- *          Primary text color
- *     </button>
- *     <button pam-Button="secondary text:secondary">
- *          Secondary text color
- *     </button>
- */
+// Text
+//
+// The text button trait `[pam-Button="text"]` can be used to adjust
+// the color of a button text.
+//
+// <div pam-Alert="warning">
+//    Deprecated: Styling for legacy text trait buttons. Support will be dropped
+//    after PAM version 1.1.x. Use the <strong>pam-theme="text"</strong> trait instead.
+// </div>
+//
+// Markup:
+// <button pam-Button="text">Button element</button>
+// <button pam-Button="text:primary">Button element</button>
+// <button pam-Button="text:secondary">Button element</button>
+//
+// Style guide: buttons.deprecated.text
 
 [pam-Button~="text"],
 a[pam-Button~="text"] {
     color: @skin-text;
+
     .hook-button-text;
 }
 
 [pam-Button~="text:primary"],
 a[pam-Button~="text:primary"] {
     color: @skin-text-primary;
+
     .hook-button-text-primary;
 }
 
 [pam-Button~="text:secondary"],
 a[pam-Button~="text:secondary"] {
     color: @skin-text-secondary;
+
     .hook-button-text-secondary;
 }
 
 
-//  Hooks
-// ==========================================================================
+// Hooks
+// ==================================================================
 
-/**
- * Hooks:
- * `.hook-button`
- * `.hook-button-hover`
- * `.hook-button-active`
- * `.hook-button-disabled`
- * `.hook-button-hidden`
- * `.hook-button-primary`
- * `.hook-button-secondary`
- * `.hook-button-tertiary`
- * `.hook-button-fluid`
- * `.hook-button-text`
- * `.hook-button-text-primary`
- * `.hook-button-text-secondary`
- */
+// Hooks
+//
+// `.hook-button`
+// `.hook-button-active`
+// `.hook-button-circle`
+// `.hook-button-danger`
+// `.hook-button-disabled`
+// `.hook-button-flat`
+// `.hook-button-fluid`
+// `.hook-button-group`
+// `.hook-button-hidden`
+// `.hook-button-hover`
+// `.hook-button-info`
+// `.hook-button-large`
+// `.hook-button-link`
+// `.hook-button-mini`
+// `.hook-button-primary`
+// `.hook-button-raised`
+// `.hook-button-round`
+// `.hook-button-secondary`
+// `.hook-button-small`
+// `.hook-button-success`
+// `.hook-button-tertiary`
+// `.hook-button-text`
+// `.hook-button-text-primary`
+// `.hook-button-text-secondary`
+// `.hook-button-warning`
+//
+// Weight: 10
+//
+// Style guide: buttons.hooks
 
+/* stylelint-disable block-no-empty */
 .hook-button() {}
-.hook-button-hover() {}
 .hook-button-active() {}
+.hook-button-circle() {}
+.hook-button-danger() {}
 .hook-button-disabled() {}
-.hook-button-hidden() {}
-.hook-button-primary() {}
-.hook-button-secondary() {}
-.hook-button-tertiary() {}
-.hook-button-round() {}
+.hook-button-flat() {}
 .hook-button-fluid() {}
+.hook-button-group() {}
+.hook-button-hidden() {}
+.hook-button-hover() {}
+.hook-button-info() {}
+.hook-button-large() {}
+.hook-button-link() {}
+.hook-button-mini() {}
+.hook-button-primary() {}
+.hook-button-raised() {}
+.hook-button-round() {}
+.hook-button-secondary() {}
+.hook-button-small() {}
+.hook-button-success() {}
+.hook-button-tertiary() {}
 .hook-button-text() {}
 .hook-button-text-primary() {}
 .hook-button-text-secondary() {}
+.hook-button-warning() {}
+/* stylelint-enable */

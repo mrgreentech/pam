@@ -1,19 +1,57 @@
 PAM Change History
 ===================
 
+1.0.0 (2016-XX-XX)
+------------------
+
+* Migrated from grunt to npm scripts and gulp.
+* Migrated from styledown to KSS styleguide documentation.
+* Updated pam-Form design and added new variables.
+* Updated select focus styling.
+* Updated the default button to no indicate primary behaviour.
+* Updated grid documentation and examples.
+* Updated `pam-Theme` with new colors and styleguide documentation.
+* Updated buttons with a lot of new variables and type of buttons.
+* Added git precommit hooks.
+* Added skin color variables `skin-danger and skin-warn`.
+* Added validation states for `pam-Input`.
+* Added skin color variable names in styleguide.
+* Added form variables to styleguide.
+* Added button color modifiers.
+* Added spacing vars for the base multiplier times 25. `@space-[8...100]`
+* Added `pam-Input-Group`.
+* Added `pam-Input-Group="lego"`.
+* Added `pam-Link`.
+* Added `pam-Button="link"`.
+* Added `pam-Tag`.
+* Added `pam-Menu` justified modifier.
+* Added `pam-Alert` component.
+* Added favicon of the super fresh logo.
+* Deprecated `pam-Input-Icon`.
+* Deprecated `pam-Button="round"`.
+* Deprecated `pam-Button="text"`.
+* Deprecated styledown.
+* Deprecated pam-responsive package.
+
+
 0.12.0 (2016-05-26)
 -------------------
 * Updated grid component wit the -webkit-flex property value to support iOS 8.1-8.4.
 * Removed all star hacks and grid styling support for <ie8.
 * Updated autoprefixer to support 3 latest browser versions instead of 2.
 
+
 0.11.2 (2016-05-05)
 -------------------
+
 * Added `flex-flow` property to grid component to fix Firefox wrapping issues for flexbox elements.
+
 
 0.11.1 (2016-02-24)
 -------------------
+
 * Added git repo url to bower.json.
+
 
 0.11.0 (2015-11-09)
 -------------------

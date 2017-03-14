@@ -1,0 +1,146 @@
+// Tags
+//
+// Apply tags to contextual highlight content.
+//
+// Markup:
+// <h1 pam-typography="display">Example <span pam-Tag="{{modifier_class}}">Updated</span></h1>
+// <h2 pam-typography="headline">Example <span pam-Tag="{{modifier_class}}">Updated</span></h2>
+// <h3 pam-typography="subheading">Example <span pam-Tag="{{modifier_class}}">Updated</span></h3>
+// <p pam-typography="body">Example <span pam-Tag="{{modifier_class}}">Updated</span></p>
+//
+// Weight: 13
+//
+// Style guide: tags
+
+
+//  Imports
+// ==================================================================
+
+@import "../core/variables";
+
+
+//  Variables
+// ==================================================================
+
+@tag-background: #969696;
+@tag-border-radius: @border-radius-base;
+@tag-color: @skin-text;
+@tag-font-size: 65%;
+@tag-font-weight: @font-weight-normal;
+@tag-line-height: @line-height-normal;
+@tag-padding-horizontal: 6px;
+@tag-padding-vertical: 3px;
+@tag-text-transform: none;
+
+@tag-rounded-border-radius: 500px;
+@tag-rounded-font-size: 65%;
+@tag-rounded-line-height: @line-height-normal;
+@tag-rounded-min-width: @space-16;
+
+@tag-primary-background: @skin-primary;
+@tag-success-background: @skin-success;
+@tag-info-background: @skin-info;
+@tag-danger-background: @skin-danger;
+@tag-warn-background: @skin-warn;
+
+
+// ==================================================================
+//  Tag
+// ==================================================================
+
+[pam-Tag] {
+    background: @tag-background;
+    box-sizing: border-box;
+    color: @tag-color;
+    display: inline-block;
+    font-size: @tag-font-size;
+    font-weight: @tag-font-weight;
+    line-height: @tag-line-height;
+    padding: @tag-padding-vertical @tag-padding-horizontal;
+    text-align: center;
+    text-transform: @tag-text-transform;
+    vertical-align: middle;
+    border-radius: @tag-border-radius;
+
+    .hook-tag;
+}
+
+
+//  Modifier: rounded
+// ==================================================================
+
+// Rounded
+//
+// Creates a rounded tag.
+//
+// Markup:
+// <span pam-Tag="rounded">1</span>
+// <span pam-Tag="rounded">2</span>
+// <span pam-Tag="rounded">3</span>
+// <span pam-Tag="rounded">22</span>
+// <span pam-Tag="rounded">333</span>
+//
+// Style guide: tags.rounded
+
+[pam-Tag~="rounded"] {
+    border-radius: @tag-rounded-border-radius;
+    font-size: @tag-rounded-font-size;
+    line-height: @tag-rounded-line-height;
+    min-width: @tag-rounded-min-width;
+
+    .hook-tag-rounded;
+}
+
+
+//  Modifier: Colors
+// ==================================================================
+
+// Variations
+//
+// Changes the tags contextual apperance.
+//
+// Markup:
+// <span pam-Tag>Default</span>
+// <span pam-Tag="primary">Primary</span>
+// <span pam-Tag="success">Success</span>
+// <span pam-Tag="info">Info</span>
+// <span pam-Tag="warn">warn</span>
+// <span pam-Tag="danger">danger</span>
+//
+// Style guide: tags.variations
+
+[pam-Tag~="primary"] {
+	background-color: @tag-primary-background;
+}
+
+[pam-Tag~="info"] {
+	background-color: @tag-info-background;
+}
+
+[pam-Tag~="success"] {
+	background-color: @tag-success-background;
+}
+
+[pam-Tag~="warn"] {
+	background-color: @tag-warn-background;
+}
+
+[pam-Tag~="danger"] {
+	background-color: @tag-danger-background;
+}
+
+
+//  Hooks
+// ==================================================================
+
+// Hooks
+//
+// `.hook-tag`
+// `.hook-tag-rounded`
+//
+// Weight: 10
+//
+// Style guide: tags.hooks
+
+.hook-tag() {}
+.hook-tag-rounded() {}
