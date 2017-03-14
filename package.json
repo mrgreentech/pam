@@ -1,0 +1,42 @@
+{
+  "name": "pam",
+  "description": "PAM is a light and modular CSS library.",
+  "version": "0.12.0",
+  "private": true,
+  "author": "The PAM Authors (https://github.com/mrgreentech/pam/graphs/contributors)",
+  "license": "BSD",
+  "homepage": "https://mrgreentech.github.io/pam/",
+  "contributors": [
+    "Mr Green & Co Technology"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrgreentech/pam.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrgreentech/pam/issues"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "deploy:styleguide": "git subtree push --prefix release/styleguide origin gh-pages"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "bower": "^1.3.7",
+    "grunt": "^0.4.5",
+    "grunt-browser-sync": "^2.0.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "0.6.0",
+    "grunt-contrib-compress": "^0.13.0",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-csslint": "^0.4.0",
+    "grunt-contrib-cssmin": "^0.6.2",
+    "grunt-contrib-less": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-lesslint": "^1.1.14",
+    "grunt-postcss": "^0.6.0",
+    "grunt-stripmq": "0.0.6",
+    "grunt-styledown": "0.0.3"
+  }
+}

@@ -1,0 +1,379 @@
+/*csslint outline-none:false*/
+
+// Name:            Buttons
+// Description:     Buttons style definitions
+//
+// Component:       pam-Button
+//
+// Modifiers:       pam-Button~"hover"
+//                  pam-Button~"active"
+//                  pam-Button~"disabled"
+//                  pam-Button~"hidden"
+//                  pam-Button~"selected"
+//                  pam-Button~"primary"
+//                  pam-Button~"secondary"
+//                  pam-Button~"fluid"
+//                  pam-Button~"dark"
+//                  pam-Button~"bright"
+//
+// States:          pam-Button~"active"
+//
+// ==========================================================================
+
+
+//  Imports
+// ==========================================================================
+
+@import "variables";
+@import "../mixins/lesshat-prefixed";
+
+
+//  Variables
+// ==========================================================================
+
+@button-background:     @skin-primary;
+@button-border-radius:  @border-radius-base;
+@button-color:          @skin-text;
+@button-font-size:      @font-size-medium;
+@button-lighten:        7%;
+@button-line-height:    @space-24;
+@button-padding:        @space-16;
+
+@button-primary-background: @skin-feature;
+
+@button-secondary-font-size: @font-size-small;
+@button-secondary-line-height: @space-16;
+@button-secondary-color: @skin-text-primary;
+
+@button-tertiary-font-size: @font-size-small;
+@button-tertiary-line-height: @space-16;
+@button-tertiary-color: @skin-primary;
+
+
+/***
+ * Buttons:
+ */
+
+
+//  Default Button
+// ==========================================================================
+
+/**
+ * Default Button:
+ * `pam-Button` Creates a default button. Works with `button` and `a` elements.
+ *
+ *     @example
+ *     <button pam-Button>
+ *          A Default Button
+ *     </button>
+ *     <a href="#" pam-Button>
+ *          An Default Anchor Button
+ *     </a>
+ */
+
+[pam-Button] {
+    /* Structure */
+    cursor: pointer;
+    display: inline-block;
+    line-height: @button-line-height;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+    zoom: 1;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+[pam-Button] {
+    background-color: @button-background;
+    border-radius: @button-border-radius;
+    border: none;
+    color: @button-color;
+    font-family: inherit;
+    font-size: @button-font-size;
+    padding: @button-padding;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    .lh-box-sizing(border-box);
+    .hook-button;
+}
+
+[pam-Button~="hover"],
+[pam-Button]:hover,
+[pam-Button]:focus {
+    background-color: lighten(@button-background, @button-lighten);
+    .hook-button-hover;
+}
+
+[pam-Button]:focus {
+    outline: 0;
+}
+
+[pam-Button~="active"],
+[pam-Button]:active {
+    // TODO: Add feedback animation on active.
+    .hook-button-active;
+}
+
+
+//  Modifier: disabled
+// ==========================================================================
+
+/**
+ * Disabled Button:
+ * `pam-Button="disabled"` marks a button as disabled, alternative approch is to add the `disabled` attribute togheter with
+ * `pam-Button`.
+ *
+ *     @example
+ *     <button pam-Button="disabled">
+ *          A Disabled Button
+ *     </button>
+ *     <a href="#" pam-Button="disabled">
+ *          An Disabled Anchor Button
+ *     </a>
+ */
+
+[pam-Button][disabled],
+[pam-Button~="disabled"],
+[pam-Button~="disabled"]:hover,
+[pam-Button~="disabled"]:focus,
+[pam-Button~="disabled"]:active {
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    cursor: not-allowed;
+    .lh-opacity(0.4);
+    .hook-button-disabled;
+}
+
+[pam-Button~="hidden"] {
+    display: none;
+    .hook-button-hidden;
+}
+
+/* Firefox: Get rid of the inner focus border */
+[pam-Button]::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+
+//  Modifier: primary / selected
+// ==========================================================================
+
+/**
+ * Primary Button:
+ * `pam-Button="primary"` Indicates that a button represents a primary action.
+ *
+ *     @example
+ *     <button pam-Button="primary">
+ *          A Primary Button
+ *     </button>
+ *     <a href="#" pam-Button="primary">
+ *          An Primary Anchor Button
+ *     </a>
+ */
+
+[pam-Button~="primary"],
+[pam-Button~="selected"],
+a[pam-Button~="primary"],
+a[pam-Button~="selected"] {
+    background-color: @button-primary-background;
+    color: @button-color;
+
+    &:hover,
+    &:focus {
+        background-color: lighten(@button-primary-background, @button-lighten);
+    }
+
+    .hook-button-primary;
+}
+
+
+// Modifier: secondary
+// ========================================================================
+
+/**
+ * Secondary Button:
+ * `pam-Button="secondary"` Indicates that a button represents a secondary action.
+ *
+ *     @example
+ *     <button pam-Button="secondary text:primary">
+ *          A Secondary Button
+ *     </button>
+ *     <a href="#" pam-Button="secondary text:primary">
+ *          An Secondary Anchor Button
+ *     </a>
+ */
+
+[pam-Button~="secondary"],
+a[pam-Button~="secondary"] {
+    background-color: transparent;
+    color: @button-secondary-color;
+    font-size: @button-secondary-font-size;
+    line-height: @button-secondary-line-height;
+
+    &:hover,
+    &:focus {
+        color: lighten(@button-secondary-color, @button-lighten);
+        background: initial;
+    }
+
+    .hook-button-secondary;
+}
+
+
+// Modifier: tertiary
+// ========================================================================
+
+/**
+ * Tertiary Button:
+ * `pam-Button="tertiary"` Indicates that a button represents a tertiary action.
+ *
+ *     @example
+ *     <button pam-Button="tertiary">
+ *          A Secondary Button
+ *     </button>
+ *     <a href="#" pam-Button="tertiary">
+ *          An Secondary Anchor Button
+ *     </a>
+ */
+
+[pam-Button~="tertiary"],
+a[pam-Button~="tertiary"] {
+    background: transparent;
+    border: 2px solid @button-tertiary-color;
+    color: @button-tertiary-color;
+    font-size: @button-tertiary-font-size;
+    line-height: @button-tertiary-line-height;
+
+    &:hover,
+    &:focus {
+        color: lighten(@button-tertiary-color, @button-lighten);
+        background: initial;
+    }
+
+    .hook-button-tertiary;
+}
+
+
+// Modifier: round
+// ========================================================================
+
+/**
+ * Round Button:
+ * `pam-Button="round"` makes a round button to use with `icons`.
+ *
+ *     @example
+ *     <button pam-Button="round">
+ *          <i class="fa fa-plus"></i>
+ *     </button>
+ *     <button href="#" pam-Button="round">
+ *          <i class="fa fa-minus"></i>
+ *     </button>
+ */
+
+[pam-Button~="round"],
+a[pam-Button~="round"] {
+    border-radius: 50%;
+    box-shadow: none;
+    height: @space-56;
+    padding: 0;
+    position: relative;
+    width: @space-56;
+    z-index: 0;
+    .hook-button-round;
+}
+
+
+// Size Modifier: fluid
+// ========================================================================
+
+/**
+ * Fluid Button:
+ * `pam-Button="fluid"` Creates a fluid button.
+ *
+ *     @example
+ *     <button pam-Button="fluid">
+ *          A Fluid Button
+ *     </button>
+ */
+
+[pam-Button~="fluid"],
+a[pam-Button~="fluid"] {
+    width: 100%;
+    .hook-button-fluid;
+}
+
+
+/**
+ * Button text colors:
+ * `pam-Button="text:[primary|secondary]"` Changes button font color.
+ *
+ *     @example
+ *     <button pam-Button="text">
+ *          Text color
+ *     </button>
+ *     <button pam-Button="text:primary">
+ *          Primary text color
+ *     </button>
+ *     <button pam-Button="secondary text:secondary">
+ *          Secondary text color
+ *     </button>
+ */
+
+[pam-Button~="text"],
+a[pam-Button~="text"] {
+    color: @skin-text;
+    .hook-button-text;
+}
+
+[pam-Button~="text:primary"],
+a[pam-Button~="text:primary"] {
+    color: @skin-text-primary;
+    .hook-button-text-primary;
+}
+
+[pam-Button~="text:secondary"],
+a[pam-Button~="text:secondary"] {
+    color: @skin-text-secondary;
+    .hook-button-text-secondary;
+}
+
+
+//  Hooks
+// ==========================================================================
+
+/**
+ * Hooks:
+ * `.hook-button`
+ * `.hook-button-hover`
+ * `.hook-button-active`
+ * `.hook-button-disabled`
+ * `.hook-button-hidden`
+ * `.hook-button-primary`
+ * `.hook-button-secondary`
+ * `.hook-button-tertiary`
+ * `.hook-button-fluid`
+ * `.hook-button-text`
+ * `.hook-button-text-primary`
+ * `.hook-button-text-secondary`
+ */
+
+.hook-button() {}
+.hook-button-hover() {}
+.hook-button-active() {}
+.hook-button-disabled() {}
+.hook-button-hidden() {}
+.hook-button-primary() {}
+.hook-button-secondary() {}
+.hook-button-tertiary() {}
+.hook-button-round() {}
+.hook-button-fluid() {}
+.hook-button-text() {}
+.hook-button-text-primary() {}
+.hook-button-text-secondary() {}

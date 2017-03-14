@@ -1,0 +1,39 @@
+{
+  "name": "pam",
+  "description": "PAM is a light and modular CSS library",
+  "version": "0.12.0",
+  "main": "release/less/pam.less",
+  "authors": [
+    "Olle Harju <olle.harju@mrgreen.com>"
+  ],
+  "authors": [
+    "Olle Harju <olle.harju@mrgreen.com> (https://github.com/mrgreentech/pam/graphs/contributors)"
+  ],
+  "keywords": [
+    "css",
+    "amcss",
+    "less"
+  ],
+  "devDependencies": {
+    "normalize-css": "^3.0.2",
+    "lesshat": "~3.0.2",
+    "styledown-skins": "~0.1.1"
+  },
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "src",
+    "tasks",
+    "Gruntfile.js",
+    "HISTORY.md",
+    "LICENSE.md",
+    "package.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrgreentech/pam.git"
+  }
+}

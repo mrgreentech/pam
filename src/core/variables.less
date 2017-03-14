@@ -1,0 +1,91 @@
+// Skin
+// ==================================================================
+
+// Intention
+// primary - used to represent primary interface elements for a user
+// accent - used to represent secondary interface elements for a user
+// warn - used to represent interface elements that the user should be careful of
+// success - used to represent a successful action
+// feature - used to represent color of feature flow
+// text - used to represent colors of text and icons
+
+@skin-primary:          #AAAAAA;
+@skin-primary-light:    #F5F5F5;
+@skin-primary-dark:     #616161;
+@skin-accent:           #006CB0;
+@skin-text:             #FFFFFF;
+@skin-text-primary:     #444444;
+@skin-text-secondary:   #9F9F9F;
+@skin-feature:          #607D8B;
+@skin-warn:             #961924;
+@skin-success:          #8AE43E;
+@skin-divider:          #DDDDDD;
+
+
+// Layout spacing
+// ==================================================================
+
+@space-base:    4px;
+@space-8:       @space-base * 2;
+@space-16:      @space-base * 4;
+@space-24:      @space-base * 6;
+@space-48:      @space-base * 12;
+@space-56:      @space-base * 14;
+@space-72:      @space-base * 18;
+@space-80:      @space-base * 20;
+
+
+// Z-index topography
+// ==================================================================
+// Warning: Avoid customizing these values. Use .application-layer
+// mixin to set which layer and optional what offset you want to use.
+
+@zindex-tropospehre:    0;
+@zindex-stratosphere:   1000;
+@zindex-mesosphere:     2000;
+@zindex-thermosphere:   3000;
+@zindex-exosphere:      9000;
+
+// .application-layer (@base-index: @z-index-troposphere, @offset: 0) {
+//  z-index: @base-index + @offset;
+// }
+
+
+// Typography
+// ==================================================================
+
+@font-family: 'Roboto', sans-serif;
+
+@font-size-base:        16px;
+@font-size-xxsmall:     0.6875rem; // 11px
+@font-size-xsmall:      0.75rem;   // 12px
+@font-size-small:       0.8125rem; // 13px
+@font-size-medium:      0.875rem;  // 14px
+@font-size-large:       1rem;      // 16px
+@font-size-xlarge:      1.5rem;    // 24px
+@font-size-xxlarge:     3.5rem;    // 56px
+
+@line-height-normal:    normal;
+@line-height-base:      1;
+@line-height-secondary: 1.5;
+
+@font-weight-thin:      100;
+@font-weight-light:     300;
+@font-weight-normal:    400;
+@font-weight-medium:    500;
+@font-weight-bold:      700;
+
+
+// Breakpoints
+// ==================================================================
+
+@breakpoint-small:  480px;
+@breakpoint-medium: 768px;
+@breakpoint-large:  960px;
+@breakpoint-xlarge: 1200px;
+
+
+// Components
+// ==================================================================
+
+@border-radius-base: 0;

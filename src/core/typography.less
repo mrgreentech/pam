@@ -1,0 +1,235 @@
+// Name:            Typography
+// Description:     PAM typography
+//
+// Trait:           pam-typography
+//
+// Variations:      pam-typography~"display"
+//                  pam-typography~"headline"
+//                  pam-typography~"subheader"
+//                  pam-typography~"form"
+//                  pam-typography~"body"
+//                  pam-typography~"body-strong"
+//                  pam-typography~"caption"
+//                  pam-typography~"small"
+//
+// ==========================================================================
+
+
+//  Imports
+// ==========================================================================
+
+@import "variables";
+@import "../mixins/lesshat-prefixed";
+
+
+//  Variables
+// ==========================================================================
+
+@typography-font-family:           @font-family;
+
+@typography-display-font-size:     @font-size-xxlarge;
+@typography-display-font-weight:   @font-weight-thin;
+@typography-display-line-height:   @line-height-base;
+
+@typography-headline-font-size:    @font-size-xlarge;
+@typography-headline-font-weight:  @font-weight-thin;
+@typography-headline-line-height:  @line-height-secondary;
+
+@typography-subheader-font-size:   @font-size-large;
+@typography-subheader-font-weight: @font-weight-light;
+@typography-subheader-line-height: @line-height-secondary;
+
+@typography-form-font-size:        @font-size-medium;
+@typography-form-font-weight:      @font-weight-light;
+@typography-form-line-height:      @line-height-base;
+
+@typography-body-font-size:        @font-size-small;
+@typography-body-font-weight:      @font-weight-light;
+@typography-body-line-height:      @line-height-secondary;
+
+@typography-caption-font-size:     @font-size-xsmall;
+@typography-caption-font-weight:   @font-weight-light;
+@typography-caption-line-height:   @line-height-secondary;
+
+@typography-small-font-size:       @font-size-xxsmall;
+@typography-small-font-weight:     @font-weight-light;
+@typography-small-line-height:     @line-height-base;
+
+
+/***
+ * Typography:
+ */
+
+
+/**
+ * Font family:
+ * `pam-typography` uses Roboto as the default font-family.
+ *
+ *     @example
+ *     <p pam-typography> Hi, I´m Roboto!</p>
+ */
+
+[pam-typography] {
+    font-family: @typography-font-family;
+    .hook-typography;
+}
+
+
+/**
+ * Display:
+ * `pam-typography="display"` is the juggernaut typography used in
+ * promos, main headers and cards.
+ *
+ *     @example
+ *     <h1 pam-typography="display">Display</h1>
+ */
+
+[pam-typography~="display"] {
+    font-size: @typography-display-font-size;
+    font-weight: @typography-display-font-weight;
+    line-height: @typography-display-line-height;
+    .hook-typography-display;
+}
+
+
+/**
+ * Headline:
+ * `pam-typography="headline"` is used as title for articles, sections, views etc.
+ *
+ *     @example
+ *     <h1 pam-typography="headline">Headline</h1>
+ */
+
+[pam-typography~="headline"] {
+    font-size: @typography-headline-font-size;
+    font-weight: @typography-headline-font-weight;
+    line-height: @typography-headline-line-height;
+    .hook-typography-headline;
+}
+
+
+/**
+ * Subheader:
+ * `pam-typography="subheader"` is used in conjunction with a parent header.
+ *
+ *     @example
+ *     <h1 pam-typography="subheader">Subheader</h1>
+ */
+
+[pam-typography~="subheader"] {
+    font-size: @typography-subheader-font-size;
+    font-weight: @typography-subheader-font-weight;
+    line-height: @typography-subheader-line-height;
+    .hook-typography-subheader;
+}
+
+
+/**
+ * Form:
+ * `pam-typography="form"` is the general typography for forms.
+ *
+ *     @example
+ *     <form pam-typography="form">
+ *      <label>Form text</label>
+ *     </form>
+ */
+
+[pam-typography~="form"] {
+    font-size: @typography-form-font-size;
+    font-weight: @typography-form-font-weight;
+    line-height: @typography-form-line-height;
+    .hook-typography-form;
+}
+
+
+/**
+ * Body:
+ * `pam-typography="body"` is the primary body text.
+ *
+ *     @example
+ *     <p pam-typography="body">Body</p>
+ */
+
+[pam-typography~="body"] {
+    font-size: @typography-body-font-size;
+    font-weight: @typography-body-font-weight;
+    line-height: @typography-body-line-height;
+    .hook-typography-body;
+}
+
+
+/**
+ * Body strong:
+ * `pam-typography="body-strong"` is the strong version of body.
+ *
+ *     @example
+ *     <strong pam-typography="body:strong">Body a bit heavier</strong>
+ */
+
+[pam-typography~="body:strong"] {
+    font-size: @typography-body-font-size;
+    font-weight: @font-weight-medium;
+    line-height: @typography-body-line-height;
+    .hook-typography-body-strong;
+}
+
+
+/**
+ * Caption:
+ * `pam-typography="caption"` is a title or brief explanation appended
+ *  to an article, illustration or poster.
+ *
+ *     @example
+ *     <p pam-typography="caption">Caption</p>
+ */
+
+[pam-typography~="caption"] {
+    font-size: @typography-caption-font-size;
+    font-weight: @typography-caption-font-weight;
+    line-height: @typography-caption-line-height;
+    .hook-typography-caption;
+}
+
+
+/**
+ * Small:
+ * `pam-typography="small"` is a complementary text that displays
+ *  meta data in cramped spaces.
+ *
+ *     @example
+ *     <p pam-typography="small">Small</p>
+ */
+
+[pam-typography~="small"] {
+    font-size: @typography-small-font-size;
+    font-weight: @typography-small-font-weight;
+    line-height: @typography-small-line-height;
+    .hook-typography-small;
+}
+
+
+//  Hooks
+// ==========================================================================
+
+/**
+ * Hooks:
+ * `.hook-typography`
+ * `.hook-typography-display`
+ * `.hook-typography-headline`
+ * `.hook-typography-subheader`
+ * `.hook-typography-form`
+ * `.hook-typography-body`
+ * `.hook-typography-body-strong`
+ * `.hook-typography-caption`
+ * `.hook-typography-small`
+ */
+
+.hook-typography() {}
+.hook-typography-display() {}
+.hook-typography-headline() {}
+.hook-typography-subheader() {}
+.hook-typography-form() {}
+.hook-typography-body() {}
+.hook-typography-body-strong() {}
+.hook-typography-caption() {}
+.hook-typography-small() {}

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Forms Tests</title>
+
+    <link rel="stylesheet" href="../../../../build/base.css">
+    <link rel="stylesheet" href="../../../../build/grids.css">
+    <link rel="stylesheet" href="../../../../build/grids-responsive.css">
+    <link rel="stylesheet" href="../../../../build/buttons.css">
+    <link rel="stylesheet" href="../../../../build/forms.css">
+
+    <style>
+        body {
+            margin: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Forms Tests</h1>
+
+    <h2>Default Form</h2>
+
+    <form pam-Form>
+        <fieldset>
+            <legend>A default inline form.</legend>
+
+            <input type="text" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <input type="text" placeholder="Password" pam-Input="borderless">
+
+            <label>
+                <input type="checkbox"> Remember me
+            </label>
+
+            <button type="submit" pam-Button>Sign in</button>
+        </fieldset>
+    </form>
+
+
+    <h2>Multi-Column Form with Grids</h2>
+
+    <form pam-Form="stacked">
+        <fieldset>
+            <legend>Legend</legend>
+
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <label>First Name</label>
+                    <input type="text">
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <label>Password</label>
+                    <input type="password">
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <label>E-Mail</label>
+                    <input type="email" required>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <label>City</label>
+                    <input type="text">
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <label>Country</label>
+                    <select>
+                        <option>UK</option>
+                        <option>US</option>
+                        <option>SV</option>
+                        <option>PL</option>
+                        <option>IE</option>
+                    </select>
+                </div>
+            </div>
+
+            <label pam-CheckBox>
+                <input type="checkbox"> I've read the terms and conditions
+            </label>
+
+            <button type="submit" pam-Button>Submit</button>
+            <button type="reset" pam-Button>Reset</button>
+        </fieldset>
+    </form>
+
+
+    <h2>Stacked Form</h2>
+
+    <form pam-Form="stacked">
+        <fieldset>
+            <legend>Legend</legend>
+
+            <label>First Name</label>
+            <input type="text">
+
+            <label>Password</label>
+            <input type="password">
+
+            <label>E-Mail</label>
+            <input type="email" required>
+            <aside pam-Form-Message="inline">This is a required field.</aside>
+
+            <label>City</label>
+            <input type="text">
+            <aside pam-Form-Message>This is another required field.</aside>
+
+            <label>Country</label>
+            <select>
+                <option>UK</option>
+                <option>US</option>
+                <option>SV</option>
+                <option>PL</option>
+                <option>IE</option>
+            </select>
+
+            <label>Color</label>
+            <input type="color">
+
+            <label pam-CheckBox>
+                <input type="checkbox"> I've read the terms and conditions
+            </label>
+
+            <button type="submit" pam-Button>Submit</button>
+            <button type="reset" pam-Button>Reset</button>
+        </fieldset>
+    </form>
+
+
+    <h2>Aligned Form</h2>
+
+    <form pam-Form="aligned">
+        <fieldset>
+            <div pam-Control="group">
+                <label for="tomte">Username</label>
+                <input type="text" id="tomte" name="tomte" placeholder="Username">
+                <aside pam-Form-Message="inline">This is a <code>pam-form-message inline</code> field.</aside>
+            </div>
+
+            <div pam-Control="group">
+                <label>Password</label>
+                <input type="password" placeholder="Password">
+                <aside pam-Form-Message="inline">This is a <code>pam-form-message inline</code> field.</aside>
+            </div>
+
+            <div pam-Control="group">
+                <label>Email Address</label>
+                <input type="text" placeholder="Email Address">
+            </div>
+
+            <div pam-Control="group">
+                <label>Here's a button</label>
+                <input type="button" pam-Button value="Button">
+            </div>
+
+            <div pam-Control="group">
+                <label>Supercalifragilistic Label</label>
+                <input type="text" placeholder="Enter something here...">
+            </div>
+
+            <div pam-Controls>
+                <label pam-Checkbox>
+                    <input type="checkbox"> Remember Me
+                </label>
+
+                <button type="submit" pam-Button>Submit</button>
+            </div>
+        </fieldset>
+    </form>
+
+
+    <h2>Grouped Inputs</h2>
+
+    <form pam-Form>
+        <fieldset pam-Group>
+            <input type="text" pam-Input="1of3" placeholder="Username">
+            <input type="text" pam-Input="1of3" placeholder="Password">
+            <input type="text" pam-Input="1of3" placeholder="Email">
+        </fieldset>
+
+        <fieldset pam-Group>
+            <input type="text"  pam-Input="1of3" placeholder="Another Group">
+            <input type="text" pam-Input="1of3" placeholder="More Stuff">
+            <button type="submit" pam-Button pam-Input="1of3">Sign in</button>
+        </fieldset>
+    </form>
+
+    <h2>Input Sizing</h2>
+
+    <form pam-Form>
+        <input pam-Input="1of1" type="text" placeholder="pam-Input 1of1"><br/>
+        <input pam-Input="2of3" type="text" placeholder="pam-Input 2of3"><br/>
+        <input pam-Input="1of2" type="text" placeholder="pam-Input 1of2"><br/>
+        <input pam-Input="1of3" type="text" placeholder="pam-Input 1of3"><br/>
+        <input pam-Input="1of4" type="text" placeholder="pam-Input 1of4"><br/>
+    </form>
+
+
+    <form pam-Form>
+        <div class="pure-g">
+            <div class="pure-u-1-4">
+                <input pam-Input="1of1" type="text" placeholder=".pure-u-1-4">
+            </div>
+
+            <div class="pure-u-3-4">
+                <input pam-Input="1of1" type="text" placeholder=".pure-u-3-4">
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <input pam-Input="1of1" type="text" placeholder=".pure-u-1-2">
+            </div>
+
+            <div class="pure-u-1-2">
+                <input pam-Input="1of1" type="text" placeholder=".pure-u-1-2">
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-8">
+                <input pam-Input="1of1" type="text" placeholder=".pure-u-1-8">
+            </div>
+
+            <div class="pure-u-1-8">
+                <input pam-Input="1of1" type="text" placeholder=".pure-u-1-8">
+            </div>
+
+            <div class="pure-u-1-4">
+                <input pam-Input="1of1" type="text" placeholder=".pure-u-1-4">
+            </div>
+
+            <div class="pure-u-1-2">
+                <input pam-Input="1of1" type="text" placeholder=".pure-u-1-2">
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-5">
+                <input pam-Input="1of1" type="text" placeholder=".pure-u-1-5">
+            </div>
+
+            <div class="pure-u-2-5">
+                <input pam-Input="1of1" type="text" placeholder=".pure-u-2-5">
+            </div>
+
+            <div class="pure-u-2-5">
+                <input pam-Input="1of1" type="text" placeholder=".pure-u-2-5">
+            </div>
+
+            <div class="pure-u-1">
+                <input pam-Input="1of1" type="text" placeholder=".pure-u-1">
+            </div>
+        </div>
+    </form>
+
+
+    <h2>Invalid Inputs</h2>
+
+    <form pam-Form>
+        <input type="email" placeholder="Requires an email" required>
+    </form>
+
+
+    <h2>Disabled Inputs</h2>
+
+    <form pam-Form>
+        <input type="text" placeholder="Disabled input here..." value="Foo bar baz" disabled>
+    </form>
+
+
+    <h2>Readonly Inputs</h2>
+
+    <form pam-Form>
+        <input type="text" placeholder="Readonly input here..." value="Foo bar baz" readonly>
+    </form>
+
+
+    <h2>Borderless Inputs</h2>
+
+    <form pam-Form>
+        <input type="text" placeholder="Borderless input" pam-Input="borderless">
+    </form>
+
+
+   <h2>Input with icon</h2>
+
+   <form pam-Form>
+        <div pam-Input-Icon>
+            <label for="icon-input"><img src="http://placehold.it/24x24"></label>
+            <input type="text" id="icon-input" name="icon-input">
+        </div>
+        <div pam-Input-Icon>
+            <label for="icon-input"><img src="http://placehold.it/24x24"></label>
+            <input type="text" id="icon-input" name="icon-input" required>
+        </div>
+   </form>
+
+
+    <h2>Select with icon</h2>
+
+   <form pam-Form>
+        <div pam-Select-Icon>
+            <label for="icon-select"><img src="http://placehold.it/24x24"></label>
+            <select id="icon-select" name="icon-select">
+                <option>Brazil</option>
+                <option>Canada</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>Venezuela</option>
+            </select>
+        </div>
+   </form>
+
+
+    <h2>Selects</h2>
+
+    <form pam-Form>
+        <select>
+            <option>Brazil</option>
+            <option>Canada</option>
+            <option>United States</option>
+            <option>United Kingdom</option>
+            <option>Venezuela</option>
+        </select>
+
+        <select multiple="multiple">
+            <option>Brazil</option>
+            <option>Canada</option>
+            <option>United States</option>
+            <option>United Kingdom</option>
+            <option>Venezuela</option>
+        </select>
+    </form>
+
+
+    <h2>Checkboxes and Radios</h2>
+
+    <form pam-Form>
+        <label pam-Checkbox>
+            <input type="checkbox" value="">
+            Here's option one.
+        </label>
+
+        <label pam-Radio>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Here's a radio button. Choose this one...
+        </label>
+
+        <label pam-Radio>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            ...Or this one!
+        </label>
+    </form>
+
+    <h2>Help text</h2>
+
+    <form pam-Form="stacked">
+        <fieldset>
+            <label>Last Name</label>
+            <input type="text" />
+            <aside pam-Form-Message>Block help text</aside>
+        </fieldset>
+    </form>
+
+
+    <h2>Buttons</h2>
+
+    <form pam-Form>
+        <a pam-Button="primary">Anchor</a>
+        <button pam-Button="primary">Button</button>
+        <input type="submit" pam-Button="primary" value="Submit" />
+        <input type="button" pam-Button="primary" value="Input Button" />
+        <input type="reset" pam-Button="primary" value="Reset" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,2349 @@
+<!doctype html>
+<html class="sg">
+
+<head>
+  <meta charset="utf-8">
+  <title>PAM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="styleguide.css">
+  <link rel="stylesheet" href="pam-responsive.css">
+  <style>
+    body.sg {
+      padding: 24px;
+    }
+    [pam-Unit-Test] {
+      border: 1px solid #999;
+      text-align: center;
+      padding: 16px;
+      margin: 5px;
+    }
+    [pam-Menu-Scrollable-Test] {
+      width: 200px;
+      height: 150px;
+      border: 1px solid #666;
+    }
+    [pam-Theme-Test] {
+      padding: 16px;
+      text-align: center;
+    }
+    [pam-Theme-Test~="text"] {
+      background-color: #ddd;
+    }
+    [pam-Tile] h3 {
+      margin: 0;
+    }
+    [pam-Tile] h4 {
+      margin: 0;
+    }
+    #pure span {
+      color: #dd514c !important;
+    }
+    #amcss span {
+      color: #965ddc !important;
+    }
+    #material span {
+      color: #00bcd4 !important;
+    }
+    .pure {
+      color: #dd514c !important;
+    }
+    .amcss {
+      color: #965ddc !important;
+    }
+    .material {
+      color: #00bcd4 !important;
+    }
+    [sg-mock-icon] {
+      width: 24px;
+      height: 24px;
+      background-color: #616161;
+    }
+  </style>
+</head>
+
+<body class="sg">
+  <div class="sg-menu">
+    <div class="sg-title">
+      <span class="pure">P</span>
+      <span class="amcss">A</span>
+      <span class="material">M</span>
+      <span>- styleguide</span>
+    </div>
+    <nav class="sg-toc"></nav>
+  </div>
+  <div class="sg-content">
+    <section class="sg-section">
+      <h2 id="concepts" class="sg">Concepts</h2>
+      <section class="sg-block">
+        <div class="sg-text">
+          <h3 id="pure" class="sg">
+            <span>P</span>ure</h3>
+          <p>PAM is based on
+            <a target="_blank" href="http://purecss.io/">Pure.css</a>. It is a set of small, responsive CSS modules created by Yahoo.</p>
+        </div>
+      </section>
+      <section class="sg-block">
+        <div class="sg-text">
+          <h3 id="amcss" class="sg">
+            <span>A</span>MCSS</h3>
+          <p>PAM markup syntax use the concept of Attribute Modules for CSS (
+            <a target="_blank" href="https://amcss.github.io/">AMCSS</a>), which is a methodology for using HTML attributes and their values rather than classes for styling elements. The result is more readable and maintainable HTML &amp; CSS.</p>
+        </div>
+      </section>
+      <section class="sg-block">
+        <div class="sg-text">
+          <h3 id="material" class="sg">
+            <span>M</span>aterial design</h3>
+          <p>
+            <a target="_blank" href="https://www.google.com/design/spec/material-design/introduction.html">Material design</a>, a visual language for the classic principles of good design with the innovation and possibility of technology and science.</p>
+        </div>
+      </section>
+      <section class="sg-block">
+        <div class="sg-text">
+          <h3 id="hooks" class="sg">Hooks</h3>
+          <p>PAM uses the concepts of hooks which are LESS Mixins, this approach is inspired by the excellent
+            <a target="_blank" href="http://getuikit.com/">UIkit front-end framework</a>. These mixins hook into predefined selectors and make it possible to add properties. This makes the process of customization much more convenient. Component hooks are presented at the end of every section.</p>
+        </div>
+      </section>
+    </section>
+    <div>
+      <section class="sg-section sg-section-buttons">
+        <h2 id="buttons" class="sg">Buttons</h2>
+        <section class="sg-block sg-section-default-button">
+          <div class="sg-text">
+            <h3 id="default-button" class="sg">Default Button</h3>
+            <p class="sg">
+              <code class="sg">pam-Button</code>Creates a default button. Works with
+              <code class="sg">button</code>and
+              <code class="sg">a</code>elements.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <button pam-button="">
+                A Default Button
+              </button>
+              <a href="#" pam-button="">
+                An Default Anchor Button
+              </a>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">pam-Button</span>&gt;</span>
+  A Default Button
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Button</span>&gt;</span>
+  An Default Anchor Button
+<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-disabled-button">
+          <div class="sg-text">
+            <h3 id="disabled-button" class="sg">Disabled Button</h3>
+            <p class="sg">
+              <code class="sg">pam-Button=&quot;disabled&quot;</code>marks a button as disabled, alternative approch is to add the
+              <code class="sg">disabled</code>attribute togheter with
+              <code class="sg">pam-Button</code>.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <button pam-button="disabled">
+                A Disabled Button
+              </button>
+              <a href="#" pam-button="disabled">
+                An Disabled Anchor Button
+              </a>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">pam-Button</span>=<span class="hljs-value">&quot;disabled&quot;</span>&gt;</span>
+  A Disabled Button
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Button</span>=<span class="hljs-value">&quot;disabled&quot;</span>&gt;</span>
+  An Disabled Anchor Button
+<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-primary-button">
+          <div class="sg-text">
+            <h3 id="primary-button" class="sg">Primary Button</h3>
+            <p class="sg">
+              <code class="sg">pam-Button=&quot;primary&quot;</code>Indicates that a button represents a primary action.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <button pam-button="primary">
+                A Primary Button
+              </button>
+              <a href="#" pam-button="primary">
+                An Primary Anchor Button
+              </a>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">pam-Button</span>=<span class="hljs-value">&quot;primary&quot;</span>&gt;</span>
+  A Primary Button
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Button</span>=<span class="hljs-value">&quot;primary&quot;</span>&gt;</span>
+  An Primary Anchor Button
+<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-secondary-button">
+          <div class="sg-text">
+            <h3 id="secondary-button" class="sg">Secondary Button</h3>
+            <p class="sg">
+              <code class="sg">pam-Button=&quot;secondary&quot;</code>Indicates that a button represents a secondary action.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <button pam-button="secondary text:primary">
+                A Secondary Button
+              </button>
+              <a href="#" pam-button="secondary text:primary">
+                An Secondary Anchor Button
+              </a>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">pam-Button</span>=<span class="hljs-value">&quot;secondary text:primary&quot;</span>&gt;</span>
+  A Secondary Button
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Button</span>=<span class="hljs-value">&quot;secondary text:primary&quot;</span>&gt;</span>
+  An Secondary Anchor Button
+<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-tertiary-button">
+          <div class="sg-text">
+            <h3 id="tertiary-button" class="sg">Tertiary Button</h3>
+            <p class="sg">
+              <code class="sg">pam-Button=&quot;tertiary&quot;</code>Indicates that a button represents a tertiary action.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <button pam-button="tertiary">
+                A Secondary Button
+              </button>
+              <a href="#" pam-button="tertiary">
+                An Secondary Anchor Button
+              </a>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">pam-Button</span>=<span class="hljs-value">&quot;tertiary&quot;</span>&gt;</span>
+  A Secondary Button
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Button</span>=<span class="hljs-value">&quot;tertiary&quot;</span>&gt;</span>
+  An Secondary Anchor Button
+<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-round-button">
+          <div class="sg-text">
+            <h3 id="round-button" class="sg">Round Button</h3>
+            <p class="sg">
+              <code class="sg">pam-Button=&quot;round&quot;</code>makes a round button to use with
+              <code class="sg">icons</code>.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <button pam-button="round">
+                <i class="fa fa-plus"></i>
+              </button>
+              <button href="#" pam-button="round">
+                <i class="fa fa-minus"></i>
+              </button>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">pam-Button</span>=<span class="hljs-value">&quot;round&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-plus&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Button</span>=<span class="hljs-value">&quot;round&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-minus&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-fluid-button">
+          <div class="sg-text">
+            <h3 id="fluid-button" class="sg">Fluid Button</h3>
+            <p class="sg">
+              <code class="sg">pam-Button=&quot;fluid&quot;</code>Creates a fluid button.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <button pam-button="fluid">
+                A Fluid Button
+              </button>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">pam-Button</span>=<span class="hljs-value">&quot;fluid&quot;</span>&gt;</span>
+  A Fluid Button
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-button-text-colors">
+          <div class="sg-text">
+            <h3 id="button-text-colors" class="sg">Button text colors</h3>
+            <p class="sg">
+              <code class="sg">pam-Button=&quot;text:[primary|secondary]&quot;</code>Changes button font color.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <button pam-button="text">
+                Text color
+              </button>
+              <button pam-button="text:primary">
+                Primary text color
+              </button>
+              <button pam-button="secondary text:secondary">
+                Secondary text color
+              </button>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">pam-Button</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>
+  Text color
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">pam-Button</span>=<span class="hljs-value">&quot;text:primary&quot;</span>&gt;</span>
+  Primary text color
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">pam-Button</span>=<span class="hljs-value">&quot;secondary text:secondary&quot;</span>&gt;</span>
+  Secondary text color
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-hooks">
+          <h3 id="hooks" class="sg">Hooks</h3>
+          <p class="sg">
+            <code class="sg">.hook-button</code>
+            <code class="sg">.hook-button-hover</code>
+            <code class="sg">.hook-button-active</code>
+            <code class="sg">.hook-button-disabled</code>
+            <code class="sg">.hook-button-hidden</code>
+            <code class="sg">.hook-button-primary</code>
+            <code class="sg">.hook-button-secondary</code>
+            <code class="sg">.hook-button-tertiary</code>
+            <code class="sg">.hook-button-fluid</code>
+            <code class="sg">.hook-button-text</code>
+            <code class="sg">.hook-button-text-primary</code>
+            <code class="sg">.hook-button-text-secondary</code>
+          </p>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-forms">
+        <h2 id="forms" class="sg">Forms</h2>
+        <section class="sg-block sg-section-default-inline-form">
+          <div class="sg-text">
+            <h3 id="default-inline-form" class="sg">Default Inline Form</h3>
+            <p class="sg">
+              <code class="sg">pam-Form</code>creates a default inline form.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-form="">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button pam-button="">Log in</button>
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-Form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;email&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Email&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;password&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Password&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">pam-Button</span>&gt;</span>Log in<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-checkboxes-and-radios">
+          <div class="sg-text">
+            <h3 id="checkboxes-and-radios" class="sg">Checkboxes and Radios</h3>
+            <p class="sg">
+              <code class="sg">pam-Checkbox or pam-Radio</code>is used to normalize and align checkboxes and radio inputs.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-form="">
+                <label pam-checkbox="">
+                  <input type="checkbox" value="">&#xA0; I&#xB4;m a hipster
+                </label>
+                <label pam-radio="">
+                  <input type="radio" id="radio1" name="optionsRadios" value="radios" checked>&#xA0; Programmer
+                </label>
+                <label pam-radio="">
+                  <input type="radio" id="radio2" name="optionsRadios" value="radios">&#xA0; Designer
+                </label>
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-Form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">pam-Checkbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>&amp;nbsp; I&#xB4;m a hipster
+  <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">pam-Radio</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;radio1&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;optionsRadios&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;radios&quot;</span> <span class="hljs-attribute">checked</span>&gt;</span>&amp;nbsp; Programmer
+  <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">pam-Radio</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;radio2&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;optionsRadios&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;radios&quot;</span>&gt;</span>&amp;nbsp; Designer
+  <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-disabled-input">
+          <div class="sg-text">
+            <h3 id="disabled-input" class="sg">Disabled Input</h3>
+            <p class="sg">
+              <code class="sg">disabled</code>makes a input field disabled.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-form="">
+                <input type="text" placeholder="Disabled Input" disabled>
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-Form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Disabled Input&quot;</span> <span class="hljs-attribute">disabled</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-read-only-input">
+          <div class="sg-text">
+            <h3 id="read-only-input" class="sg">Read-only Input</h3>
+            <p class="sg">
+              <code class="sg">readonly</code>attribute puts a input to a read-only state.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-form="">
+                <input type="text" placeholder="Read-only Input" readonly>
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-Form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Read-only Input&quot;</span> <span class="hljs-attribute">readonly</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-borderless-input">
+          <div class="sg-text">
+            <h3 id="borderless-input" class="sg">Borderless Input</h3>
+            <p class="sg">
+              <code class="sg">pam-Input=&quot;borderless&quot;</code>attribute creates a borderless input.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-form="">
+                <input type="text" placeholder="Borderless Input" pam-input="borderless">
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-Form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Borderless Input&quot;</span> <span class="hljs-attribute">pam-Input</span>=<span class="hljs-value">&quot;borderless&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-required-input">
+          <div class="sg-text">
+            <h3 id="required-input" class="sg">Required Input</h3>
+            <p class="sg">
+              <code class="sg">required</code>attribute marks a input control as required.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-form="">
+                <input type="text" placeholder="Required Input" required>
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-Form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Required Input&quot;</span> <span class="hljs-attribute">required</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-stacked-form">
+          <div class="sg-text">
+            <h3 id="stacked-form" class="sg">Stacked Form</h3>
+            <p class="sg">
+              <code class="sg">pam-Form=&quot;stacked&quot;</code>Creates a stacked form.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-form="stacked">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button pam-button="">Log in</button>
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-Form</span>=<span class="hljs-value">&quot;stacked&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;email&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Email&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;password&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Password&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">pam-Button</span>&gt;</span>Log in<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-aligned-form">
+          <div class="sg-text">
+            <h3 id="aligned-form" class="sg">Aligned Form</h3>
+            <p class="sg">
+              <code class="sg">pam-Form=&quot;aligned&quot;</code>Creates a aligned form with labels to the left of the input fields.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-form="aligned">
+                <div pam-control="group">
+                  <label for="email">Email</label>
+                  <input type="email" id="password" placeholder="Email">
+                </div>
+
+                <div pam-control="group">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" placeholder="Password">
+                </div>
+
+                <div pam-controls="">
+                  <button pam-button="">Log in</button>
+                </div>
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-Form</span>=<span class="hljs-value">&quot;aligned&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Control</span>=<span class="hljs-value">&quot;group&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;email&quot;</span>&gt;</span>Email<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;email&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;password&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Email&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Control</span>=<span class="hljs-value">&quot;group&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;password&quot;</span>&gt;</span>Password<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;password&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;password&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Password&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Controls</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">pam-Button</span>&gt;</span>Log in<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-grouped-inputs">
+          <div class="sg-text">
+            <h3 id="grouped-inputs" class="sg">Grouped Inputs</h3>
+            <p class="sg">
+              <code class="sg">pam-Group</code>combined with a
+              <code class="sg">&lt;fieldset&gt;</code>element will group a set of text inputs.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-form="">
+                <fieldset pam-group="">
+                  <input type="text" placeholder="Username" pam-input="1of3">
+                  <input type="email" placeholder="Email" pam-input="1of3">
+                  <input type="password" placeholder="Password" pam-input="1of3">
+                </fieldset>
+
+                <fieldset pam-group="">
+                  <input type="text" placeholder="Nickname" pam-input="1of3">
+                  <input type="text" placeholder="City" pam-input="1of3">
+                  <input type="text" placeholder="Favorite movie" pam-input="1of3">
+                </fieldset>
+
+                <button type="submit" pam-button="" pam-input="1of3">Log in</button>
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-Form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">fieldset</span> <span class="hljs-attribute">pam-Group</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Username&quot;</span> <span class="hljs-attribute">pam-Input</span>=<span class="hljs-value">&quot;1of3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;email&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Email&quot;</span> <span class="hljs-attribute">pam-Input</span>=<span class="hljs-value">&quot;1of3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;password&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Password&quot;</span> <span class="hljs-attribute">pam-Input</span>=<span class="hljs-value">&quot;1of3&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">fieldset</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">fieldset</span> <span class="hljs-attribute">pam-Group</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Nickname&quot;</span> <span class="hljs-attribute">pam-Input</span>=<span class="hljs-value">&quot;1of3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;City&quot;</span> <span class="hljs-attribute">pam-Input</span>=<span class="hljs-value">&quot;1of3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Favorite movie&quot;</span> <span class="hljs-attribute">pam-Input</span>=<span class="hljs-value">&quot;1of3&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">fieldset</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;submit&quot;</span> <span class="hljs-attribute">pam-Button</span> <span class="hljs-attribute">pam-Input</span>=<span class="hljs-value">&quot;1of3&quot;</span>&gt;</span>Log in<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-icon-input">
+          <div class="sg-text">
+            <h3 id="icon-input" class="sg">Icon Input</h3>
+            <p class="sg">
+              <code class="sg">pam-Input-Icon</code>enables icons to be used with a input.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-form="">
+                <div pam-input-icon="">
+                  <label for="icon">
+                    <img src="http://placehold.it/24x24">
+                  </label>
+                  <input id="icon" type="text" placeholder="Icon">
+                </div>
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-Form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Input-Icon</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;icon&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;http://placehold.it/24x24&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;icon&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Icon&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-select-box">
+          <div class="sg-text">
+            <h3 id="select-box" class="sg">Select Box</h3>
+            <p class="sg">
+              <code class="sg">pam-Select-Box</code>turns of the platform native styling of select boxes and adds normalized styling for cross browser compatibility.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-form="">
+                <div pam-select-box="">
+                  <select>
+                    <option value="honda">Honda</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="nissan">Nissan</option>
+                  </select>
+                </div>
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-Form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Select-Box</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">select</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;honda&quot;</span>&gt;</span>Honda<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;toyota&quot;</span>&gt;</span>Toyota<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;nissan&quot;</span>&gt;</span>Nissan<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-input-sizes">
+          <div class="sg-text">
+            <h3 id="input-sizes" class="sg">Input Sizes</h3>
+            <p class="sg">
+              <code class="sg">pam-Input=&quot;1of[1-4]&quot;</code>modifies the input width in fixed percentage steps.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-form="">
+                <input pam-input="1of1" type="text" id="password" placeholder="pam-Input 1of1">
+                <br>
+                <input pam-input="2of3" type="text" id="password" placeholder="pam-Input 2of3">
+                <br>
+                <input pam-input="1of2" type="text" id="password" placeholder="pam-Input 1of2">
+                <br>
+                <input pam-input="1of3" type="text" id="password" placeholder="pam-Input 1of3">
+                <br>
+                <input pam-input="1of4" type="text" id="password" placeholder="pam-Input 1of4">
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-Form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">pam-Input</span>=<span class="hljs-value">&quot;1of1&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;password&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;pam-Input 1of1&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">pam-Input</span>=<span class="hljs-value">&quot;2of3&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;password&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;pam-Input 2of3&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">pam-Input</span>=<span class="hljs-value">&quot;1of2&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;password&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;pam-Input 1of2&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">pam-Input</span>=<span class="hljs-value">&quot;1of3&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;password&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;pam-Input 1of3&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">pam-Input</span>=<span class="hljs-value">&quot;1of4&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;password&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;pam-Input 1of4&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-block-help-text">
+          <div class="sg-text">
+            <h3 id="block-help-text" class="sg">Block Help Text</h3>
+            <p class="sg">
+              <code class="sg">pam-Form-Message</code>
+            </p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-form="stacked">
+                <fieldset>
+                  <label>Username</label>
+                  <input type="text">
+                  <aside pam-form-message="">Block help text</aside>
+                </fieldset>
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-Form</span>=<span class="hljs-value">&quot;stacked&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">fieldset</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Username<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">aside</span> <span class="hljs-attribute">pam-Form-Message</span>&gt;</span>Block help text<span class="hljs-tag">&lt;/<span class="hljs-title">aside</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-inline-help-text">
+          <div class="sg-text">
+            <h3 id="inline-help-text" class="sg">Inline Help Text</h3>
+            <p class="sg">
+              <code class="sg">pam-Form-Message=&quot;inline&quot;</code>
+            </p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-form="">
+                <fieldset>
+                  <label>Nickname</label>
+                  <input type="text">
+                  <aside pam-form-message="inline">Block help text</aside>
+                </fieldset>
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-Form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">fieldset</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Nickname<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">aside</span> <span class="hljs-attribute">pam-Form-Message</span>=<span class="hljs-value">&quot;inline&quot;</span>&gt;</span>Block help text<span class="hljs-tag">&lt;/<span class="hljs-title">aside</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-hooks">
+          <h3 id="hooks" class="sg">Hooks</h3>
+          <p class="sg">
+            <code class="sg">.hook-form</code>
+            <code class="sg">.hook-form-focus</code>
+            <code class="sg">.hook-form-disabled</code>
+            <code class="sg">.hook-form-readonly</code>
+            <code class="sg">.hook-form-readonly-focus</code>
+            <code class="sg">.hook-form-focus-invalid</code>
+            <code class="sg">.hook-form-focus-invalid-focus</code>
+            <code class="sg">.hook-form-input-borderless</code>
+            <code class="sg">.hook-form-select</code>
+            <code class="sg">.hook-form-select-multiple</code>
+            <code class="sg">.hook-form-select-focus</code>
+            <code class="sg">.hook-form-label</code>
+            <code class="sg">.hook-form-fieldset</code>
+            <code class="sg">.hook-form-legend</code>
+            <code class="sg">.hook-form-stacked</code>
+            <code class="sg">.hook-form-aligned</code>
+            <code class="sg">.hook-form-group</code>
+            <code class="sg">.hook-form-input-icon</code>
+            <code class="sg">.hook-select-box</code>
+            <code class="sg">.hook-form-message</code>
+            <code class="sg">.hook-form-message-inline</code>
+          </p>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-grids">
+        <h2 id="grids" class="sg">Grids</h2>
+        <p class="sg">PAM comes with a 5ths and 24ths based grid and to wield the grids power there are some concepts to keep in mind. PAM Grid consist of two types of attribute selectors:
+          <code class="sg">pam-Grid</code>and
+          <code class="sg">pam-Unit</code>. All child elements of a grid must be units. Child elements contained within an grid element must be a grid unit. All content which is visible needs to be contained inside a grid unit.</p>
+        <section class="sg-block sg-section-grid-5ths-based">
+          <div class="sg-text">
+            <h3 id="grid-5ths-based" class="sg">Grid 5ths-Based</h3>
+            <p class="sg">
+              <code class="sg">pam-Unit=&quot;[1-5]-5&quot;</code>Generates fractions for the 5ths-Based grid.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-grid="">
+                <div pam-unit="1-5">
+                  <div pam-unit-test="">1/5</div>
+                </div>
+                <div pam-unit="4-5">
+                  <div pam-unit-test="">4/5</div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-5&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1/5<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;4-5&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>4/5<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-grid-24ths-based">
+          <div class="sg-text">
+            <h3 id="grid-24ths-based" class="sg">Grid 24ths-Based</h3>
+            <p class="sg">
+              <code class="sg">pam-Unit=&quot;[1-24]-24&quot;</code>Generates fractions for the 24ths-Based grid.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-grid="">
+                <div pam-unit="2-24">
+                  <div pam-unit-test="">2/24</div>
+                </div>
+                <div pam-unit="4-24">
+                  <div pam-unit-test="">4/24</div>
+                </div>
+                <div pam-unit="8-24">
+                  <div pam-unit-test="">8/24</div>
+                </div>
+                <div pam-unit="10-24">
+                  <div pam-unit-test="">10/24</div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;2-24&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>2/24<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;4-24&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>4/24<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;8-24&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>8/24<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;10-24&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>10/24<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-nested-grid">
+          <div class="sg-text">
+            <h3 id="nested-grid" class="sg">Nested Grid</h3>
+            <p class="sg">Grids can be nested. This examples shows a grid with two 1-2 units that each contains a grid.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-grid="">
+                <div pam-unit="1-2">
+                  <div pam-unit-test="">
+                    <div pam-grid="">
+                      <div pam-unit="1-2">
+                        <div pam-unit-test="">1-2</div>
+                      </div>
+                      <div pam-unit="1-2">
+                        <div pam-unit-test="">1-2</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div pam-unit="1-2">
+                  <div pam-unit-test="">
+                    <div pam-grid="">
+                      <div pam-unit="1-3">
+                        <div pam-unit-test="">1-3</div>
+                      </div>
+                      <div pam-unit="1-3">
+                        <div pam-unit-test="">1-3</div>
+                      </div>
+                      <div pam-unit="1-3">
+                        <div pam-unit-test="">1-3</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-2&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-2&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-2&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-2&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-media-queries">
+          <div class="sg-text">
+            <h3 id="media-queries" class="sg">Media Queries</h3>
+            <p class="sg">To control responsive grids, use the default breakpoints with their correspinding attribute selector
+              <code class="sg">pam-Unit=&quot;[breakpointName]:[size]&quot;</code>. For more details on how to use, have a look at the responsive grids section.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <table pam-table="striped">
+                <thead>
+                  <tr>
+                    <th>Key</th>
+                    <th>Attribute</th>
+                    <th>Applies</th>
+                    <th>Media Query</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>none</td>
+                    <td>`pam-Unit=&quot;[size]&quot;`</td>
+                    <td>Always</td>
+                    <td>None</td>
+                  </tr>
+                  <tr>
+                    <td>`small`</td>
+                    <td>`pam-Unit=&quot;small:[size]&quot;`</td>
+                    <td>&#x2265; 480px</td>
+                    <td>@media screen and (min-width: 480px)</td>
+                  </tr>
+                  <tr>
+                    <td>`medium`</td>
+                    <td>`pam-Unit=&quot;medium:[size]&quot;`</td>
+                    <td>&#x2265; 768px</td>
+                    <td>@media screen and (min-width: 768px)</td>
+                  </tr>
+                  <tr>
+                    <td>`large`</td>
+                    <td>`pam-Unit=&quot;large:[size]&quot;`</td>
+                    <td>&#x2265; 960px</td>
+                    <td>@media screen and (min-width: 960px)</td>
+                  </tr>
+                  <tr>
+                    <td>`xlarge`</td>
+                    <td>`pam-Unit=&quot;xlarge:[size]&quot;`</td>
+                    <td>&#x2265; 1200px</td>
+                    <td>@media screen and (min-width: 1200px)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">pam-Table</span>=<span class="hljs-value">&quot;striped&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Key<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Attribute<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Applies<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Media Query<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>none<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>`pam-Unit=&quot;[size]&quot;`<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Always<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>None<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>`small`<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>`pam-Unit=&quot;small:[size]&quot;`<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>&#x2265; 480px<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>@media screen and (min-width: 480px)<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>`medium`<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>`pam-Unit=&quot;medium:[size]&quot;`<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>&#x2265; 768px<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>@media screen and (min-width: 768px)<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>`large`<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>`pam-Unit=&quot;large:[size]&quot;`<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>&#x2265; 960px<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>@media screen and (min-width: 960px)<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>`xlarge`<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>`pam-Unit=&quot;xlarge:[size]&quot;`<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>&#x2265; 1200px<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>@media screen and (min-width: 1200px)<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-responsive-grid">
+          <div class="sg-text">
+            <h3 id="responsive-grid" class="sg">Responsive Grid</h3>
+            <p class="sg">
+              <code class="sg">pam-Unit=&quot;1-1 small:1-2 large:1-4&quot;</code>Creates a responsive grid. On small devices it will have width: 100%, then it will shrink to become width: 50% on small-sized screens and shrink even more to 25% on large-sized screens and above.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-grid="">
+                <div pam-unit="1-1 small:1-2 large:1-4">
+                  <div pam-unit-test="">1-1 -&gt; 1-2 -&gt; 1-4</div>
+                </div>
+                <div pam-unit="1-1 small:1-2 large:1-4">
+                  <div pam-unit-test="">1-1 -&gt; 1-2 -&gt; 1-4</div>
+                </div>
+                <div pam-unit="1-1 small:1-2 large:1-4">
+                  <div pam-unit-test="">1-1 -&gt; 1-2 -&gt; 1-4</div>
+                </div>
+                <div pam-unit="1-1 small:1-2 large:1-4">
+                  <div pam-unit-test="">1-1 -&gt; 1-2 -&gt; 1-4</div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 small:1-2 large:1-4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-1 -&gt; 1-2 -&gt; 1-4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 small:1-2 large:1-4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-1 -&gt; 1-2 -&gt; 1-4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 small:1-2 large:1-4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-1 -&gt; 1-2 -&gt; 1-4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 small:1-2 large:1-4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-1 -&gt; 1-2 -&gt; 1-4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-responsive-grid-landscape">
+          <div class="sg-text">
+            <h3 id="responsive-grid-landscape" class="sg">Responsive Grid Landscape</h3>
+            <p class="sg">
+              <code class="sg">pam-Unit=&quot;1-1 small:1-2 small:landscape:1-3&quot;</code>Creates a responsive grid which has the additional landscape state. On a small device and in landscape the unit width will shrink to 33%.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-grid="">
+                <div pam-unit="1-1 small:1-2 small:landscape:1-3">
+                  <div pam-unit-test="">1-1 -&gt; 1-2 -&gt; landscape:1-3</div>
+                </div>
+                <div pam-unit="1-1 small:1-2 small:landscape:1-3">
+                  <div pam-unit-test="">1-1 -&gt; 1-2 -&gt; landscape:1-3</div>
+                </div>
+                <div pam-unit="1-1 small:1-2 small:landscape:1-3">
+                  <div pam-unit-test="">1-1 -&gt; 1-2 -&gt; landscape:1-3</div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 small:1-2 small:landscape:1-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-1 -&gt; 1-2 -&gt; landscape:1-3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 small:1-2 small:landscape:1-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-1 -&gt; 1-2 -&gt; landscape:1-3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 small:1-2 small:landscape:1-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-1 -&gt; 1-2 -&gt; landscape:1-3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-nested-responsive-grid">
+          <div class="sg-text">
+            <h3 id="nested-responsive-grid" class="sg">Nested Responsive Grid</h3>
+            <p class="sg">As with the regular grid the responsive grid can be nested. This example shows two units
+              <code class="sg">pam-Unit=&quot;1-1 medium:1-2&quot;</code>that each contain a responsive grid.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-grid="">
+                <div pam-unit="1-1 medium:1-2">
+                  <div pam-unit-test="">
+                    <div pam-grid="">
+                      <div pam-unit="1-1 large:1-2">
+                        <div pam-unit-test="">1-1 -&gt; 1-2</div>
+                      </div>
+                      <div pam-unit="1-1 large:1-2">
+                        <div pam-unit-test="">1-1 -&gt; 1-2</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div pam-unit="1-1 medium:1-2">
+                  <div pam-unit-test="">
+                    <div pam-grid="">
+                      <div pam-unit="1-3 large:1-2">
+                        <div pam-unit-test="">1-3 -&gt; 1-2</div>
+                      </div>
+                      <div pam-unit="1-3 large:1-4">
+                        <div pam-unit-test="">1-3 -&gt; 1-4</div>
+                      </div>
+                      <div pam-unit="1-3 large:1-4">
+                        <div pam-unit-test="">1-3 -&gt; 1-4</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 medium:1-2&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 large:1-2&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-1 -&gt; 1-2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 large:1-2&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-1 -&gt; 1-2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 medium:1-2&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3 large:1-2&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-3 -&gt; 1-2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3 large:1-4&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-3 -&gt; 1-4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3 large:1-4&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit-Test</span>&gt;</span>1-3 -&gt; 1-4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-responsive-grid-with-img-content">
+          <div class="sg-text">
+            <h3 id="responsive-grid-with-img-content" class="sg">Responsive Grid with img content</h3>
+            <p class="sg">This example shows a
+              <code class="sg">pam-Unit=&quot;1-1 small:1-2 large:1-4&quot;</code>grid with
+              <code class="sg">pam-Image</code>
+              elements.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-grid="">
+                <div pam-unit="1-1 small:1-2 large:1-4">
+                  <img pam-image="" src="http://placehold.it/350x200">
+                </div>
+                <div pam-unit="1-1 small:1-2 large:1-4">
+                  <img pam-image="" src="http://placehold.it/350x200">
+                </div>
+                <div pam-unit="1-1 small:1-2 large:1-4">
+                  <img pam-image="" src="http://placehold.it/350x200">
+                </div>
+                <div pam-unit="1-1 small:1-2 large:1-4">
+                  <img pam-image="" src="http://placehold.it/350x200">
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 small:1-2 large:1-4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">pam-Image</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;http://placehold.it/350x200&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 small:1-2 large:1-4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">pam-Image</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;http://placehold.it/350x200&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 small:1-2 large:1-4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">pam-Image</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;http://placehold.it/350x200&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-1 small:1-2 large:1-4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">pam-Image</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;http://placehold.it/350x200&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-hooks">
+          <h3 id="hooks" class="sg">Hooks</h3>
+          <p class="sg">
+            <code class="sg">.hook-grid</code>
+            <code class="sg">.hook-unit</code>
+          </p>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-menus">
+        <h2 id="menus" class="sg">Menus</h2>
+        <p class="sg">By default menus are vertical and take up 100% width. Therfore a good tip is to add a custom attribute to limit the menu width or set the menu to display:inline-block.</p>
+        <section class="sg-block sg-section-default-menu">
+          <div class="sg-text">
+            <h3 id="default-menu" class="sg">Default Menu</h3>
+            <p class="sg">
+              <code class="sg">pam-Menu</code>
+            </p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-menu="">
+                <ul pam-menu-list="">
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Home</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">About</a>
+                  </li>
+                </ul>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Menu</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">pam-Menu-List</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-limited-width-menu">
+          <div class="sg-text">
+            <h3 id="limited-width-menu" class="sg">Limited width Menu</h3>
+            <p class="sg">
+              <code class="sg">pam-Menu=&quot;limited&quot;</code>overrides the default menu behaviour of 100% width by using
+              <code class="sg">display: inline-block</code>.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-menu="limited">
+                <ul pam-menu-list="">
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Home</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">About</a>
+                  </li>
+                </ul>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Menu</span>=<span class="hljs-value">&quot;limited&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">pam-Menu-List</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-horizontal-menu">
+          <div class="sg-text">
+            <h3 id="horizontal-menu" class="sg">Horizontal Menu</h3>
+            <p class="sg">
+              <code class="sg">pam-Menu=&quot;horizontal&quot;</code>creates a horizontal menu.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-menu="horizontal">
+                <ul pam-menu-list="">
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Home</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">About</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Blog</a>
+                  </li>
+                </ul>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Menu</span>=<span class="hljs-value">&quot;horizontal&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">pam-Menu-List</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Blog<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-vertical-submenu">
+          <div class="sg-text">
+            <h3 id="vertical-submenu" class="sg">Vertical Submenu</h3>
+            <p class="sg">
+              <code class="sg">pam-Menu</code>
+            </p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-menu="limited">
+                <ul pam-menu-list="">
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Home</a>
+                  </li>
+                  <li pam-menu-item="" pam-menu-has-children="" pam-menu-allow-hover="">
+                    <a href="#" pam-menu-link="">Blog</a>
+                    <ul pam-menu-children="">
+                      <li pam-menu-item="">
+                        <a pam-menu-link="" href="#">Node</a>
+                      </li>
+                      <li pam-menu-item="">
+                        <a pam-menu-link="" href="#">JavaScript</a>
+                      </li>
+                      <li pam-menu-item="">
+                        <a pam-menu-link="" href="#">Angular</a>
+                      </li>
+                      <li pam-menu-item="">
+                        <a pam-menu-link="" href="#">React</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Menu</span>=<span class="hljs-value">&quot;limited&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">pam-Menu-List</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span> <span class="hljs-attribute">pam-Menu-Has-Children</span> <span class="hljs-attribute">pam-Menu-Allow-Hover</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Blog<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">pam-Menu-Children</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">pam-Menu-Link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Node<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">pam-Menu-Link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>JavaScript<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">pam-Menu-Link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Angular<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">pam-Menu-Link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>React<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-dropdown-menu">
+          <div class="sg-text">
+            <h3 id="dropdown-menu" class="sg">Dropdown Menu</h3>
+            <p class="sg">
+              <code class="sg">pam-Menu=&quot;horizontal&quot;</code>
+            </p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-menu="horizontal">
+                <ul pam-menu-list="">
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Home</a>
+                  </li>
+                  <li pam-menu-item="" pam-menu-has-children="" pam-menu-allow-hover="">
+                    <a href="#" pam-menu-link="">Blog</a>
+                    <ul pam-menu-children="">
+                      <li pam-menu-item="">
+                        <a pam-menu-link="" href="#">Node</a>
+                      </li>
+                      <li pam-menu-item="">
+                        <a pam-menu-link="" href="#">JavaScript</a>
+                      </li>
+                      <li pam-menu-item="">
+                        <a pam-menu-link="" href="#">Angular</a>
+                      </li>
+                      <li pam-menu-item="">
+                        <a pam-menu-link="" href="#">React</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Menu</span>=<span class="hljs-value">&quot;horizontal&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">pam-Menu-List</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span> <span class="hljs-attribute">pam-Menu-Has-Children</span> <span class="hljs-attribute">pam-Menu-Allow-Hover</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Blog<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">pam-Menu-Children</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">pam-Menu-Link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Node<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">pam-Menu-Link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>JavaScript<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">pam-Menu-Link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Angular<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">pam-Menu-Link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>React<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-scrollable-vertical-menu">
+          <div class="sg-text">
+            <h3 id="scrollable-vertical-menu" class="sg">Scrollable Vertical Menu</h3>
+            <p class="sg">Limit the height of the menu and add
+              <code class="sg">pam-Menu=&quot;scrollable&quot;</code>. This creates a scrollable menu.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-menu="scrollable" pam-menu-scrollable-test="">
+                <ul pam-menu-list="">
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Home</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Star Trek</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">The Lord of the rings</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Star Wars</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">X-Men</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Fast and the Furious</a>
+                  </li>
+                </ul>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Menu</span>=<span class="hljs-value">&quot;scrollable&quot;</span> <span class="hljs-attribute">pam-Menu-Scrollable-Test</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">pam-Menu-List</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Star Trek<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>The Lord of the rings<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Star Wars<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>X-Men<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Fast and the Furious<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-scrollable-horizontal-menu">
+          <div class="sg-text">
+            <h3 id="scrollable-horizontal-menu" class="sg">Scrollable Horizontal Menu</h3>
+            <p class="sg">To create a scrollable horizontal menu, add the pure-menu-scrollable class name. When there isn&apos;t enough room, the menu items can be scrolled or flicked.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-menu="horizontal scrollable">
+                <ul pam-menu-list="">
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Home</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Star Trek</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">The Lord of the rings</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Star Wars</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">X-Men</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Fast and the Furious</a>
+                  </li>
+                </ul>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Menu</span>=<span class="hljs-value">&quot;horizontal scrollable&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">pam-Menu-List</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Star Trek<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>The Lord of the rings<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Star Wars<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>X-Men<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Fast and the Furious<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-menu-with-separator">
+          <div class="sg-text">
+            <h3 id="menu-with-separator" class="sg">Menu with Separator</h3>
+            <p class="sg">To add a menu separator use the
+              <code class="sg">pam-Menu-Separator</code>attribute in a li element. It works the same for horizontal menus.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-menu="limited">
+                <ul pam-menu-list="">
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Home</a>
+                  </li>
+                  <li pam-menu-separator=""></li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Honda</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Toyota</a>
+                  </li>
+                  <li pam-menu-separator=""></li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Koenigsegg</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">BMW</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Audi</a>
+                  </li>
+                </ul>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Menu</span>=<span class="hljs-value">&quot;limited&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">pam-Menu-List</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Separator</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Honda<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Toyota<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Separator</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Koenigsegg<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>BMW<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-menu-with-heading">
+          <div class="sg-text">
+            <h3 id="menu-with-heading" class="sg">Menu with Heading</h3>
+            <p class="sg">
+              <code class="sg">pam-Menu-Heading</code>is used to add a heading to menus.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-menu="limited">
+                <a href="#" pam-menu-heading="">Menu title</a>
+                <ul pam-menu-list="">
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">Home</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">About</a>
+                  </li>
+                </ul>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Menu</span>=<span class="hljs-value">&quot;limited&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Heading</span>&gt;</span>Menu title<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">pam-Menu-List</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-selected-and-disabled-menu">
+          <div class="sg-text">
+            <h3 id="selected-and-disabled-menu" class="sg">Selected and disabled Menu</h3>
+            <p class="sg">
+              <code class="sg">pam-Menu-Selected and pam-Menu-Disabled</code>are AMCSS traits used to set if a menu item should be selected or disabled.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-menu="horizontal">
+                <ul pam-menu-list="">
+                  <li pam-menu-item="" pam-menu-selected="">
+                    <a href="#" pam-menu-link="">Home</a>
+                  </li>
+                  <li pam-menu-item="">
+                    <a href="#" pam-menu-link="">About</a>
+                  </li>
+                  <li pam-menu-item="" pam-menu-disabled="">
+                    <a href="#" pam-menu-link="">Blog</a>
+                  </li>
+                </ul>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Menu</span>=<span class="hljs-value">&quot;horizontal&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">pam-Menu-List</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span> <span class="hljs-attribute">pam-Menu-Selected</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">pam-Menu-Item</span> <span class="hljs-attribute">pam-Menu-Disabled</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">pam-Menu-Link</span>&gt;</span>Blog<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-hooks">
+          <h3 id="hooks" class="sg">Hooks</h3>
+          <p class="sg">
+            <code class="sg">.hook-menu</code>
+            <code class="sg">.hook-menu-fixed</code>
+            <code class="sg">.hook-menu-limited</code>
+            <code class="sg">.hook-menu-list</code>
+            <code class="sg">.hook-menu-item</code>
+            <code class="sg">.hook-menu-link-heading</code>
+            <code class="sg">.hook-menu-horizontal</code>
+            <code class="sg">.hook-menu-horizontal-list</code>
+            <code class="sg">.hook-menu-horizontal-item-heading-seperator</code>
+            <code class="sg">.hook-menu-children</code>
+            <code class="sg">.hook-menu-horizontal-children</code>
+            <code class="sg">.hook-menu-active-children</code>
+            <code class="sg">.hook-menu-has-children-link-after</code>
+            <code class="sg">.hook-menu-horizontal-has-children-link-after</code>
+            <code class="sg">.hook-menu-scrollable</code>
+            <code class="sg">.hook-menu-scrollable-list</code>
+            <code class="sg">.hook-menu-horizontal-scrollable-list</code>
+            <code class="sg">.hook-menu-horizontal-scrollable</code>
+            <code class="sg">.hook-menu-horizontal-scrollable-scrollbar</code>
+            <code class="sg">.hook-menu-separator</code>
+            <code class="sg">.hook-menu-horizontal-separator</code>
+            <code class="sg">.hook-menu-heading</code>
+            <code class="sg">.hook-menu-link</code>
+            <code class="sg">.hook-menu-disabled</code>
+            <code class="sg">.hook-menu-disabled-link-hover</code>
+            <code class="sg">.hook-menu-link-hover-focus</code>
+            <code class="sg">.hook-menu-selected-link</code>
+          </p>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-tables">
+        <h2 id="tables" class="sg">Tables</h2>
+        <section class="sg-block sg-section-table">
+          <div class="sg-text">
+            <h3 id="table" class="sg">Table</h3>
+            <p class="sg">This is the base
+              <code class="sg">pam-Table</code>.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <table pam-table="">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Honda</td>
+                    <td>Accord</td>
+                    <td>2009</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Toyota</td>
+                    <td>Camry</td>
+                    <td>2012</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Hyundai</td>
+                    <td>Elantra</td>
+                    <td>2010</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">pam-Table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>#<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Make<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Model<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Year<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Honda<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Accord<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2009<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Toyota<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Camry<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2012<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Hyundai<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Elantra<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2010<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-table-bordered">
+          <div class="sg-text">
+            <h3 id="table-bordered" class="sg">Table bordered</h3>
+            <p class="sg">
+              <code class="sg">pam-Table~=&quot;bordered&quot;</code>adds borders to tables.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <table pam-table="bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Honda</td>
+                    <td>Accord</td>
+                    <td>2009</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Toyota</td>
+                    <td>Camry</td>
+                    <td>2012</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Hyundai</td>
+                    <td>Elantra</td>
+                    <td>2010</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">pam-Table</span>=<span class="hljs-value">&quot;bordered&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>#<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Make<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Model<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Year<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Honda<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Accord<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2009<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Toyota<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Camry<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2012<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Hyundai<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Elantra<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2010<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-hooks">
+          <h3 id="hooks" class="sg">Hooks</h3>
+          <p class="sg">
+            <code class="sg">.hook-table</code>
+            <code class="sg">.hook-table-caption</code>
+            <code class="sg">.hook-table-td-th</code>
+            <code class="sg">.hook-table-td-th-first-child</code>
+            <code class="sg">.hook-table-thead</code>
+            <code class="sg">.hook-table-td</code>
+            <code class="sg">.hook-table-odd-td</code>
+            <code class="sg">.hook-table-striped</code>
+            <code class="sg">.hook-table-bordered</code>
+            <code class="sg">.hook-table-bordered-tbody-tr-last-child</code>
+            <code class="sg">.hook-table-horizontal-td-th</code>
+            <code class="sg">.hook-table-horizontal-tbody-tr-last-child</code>
+          </p>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-theming">
+        <h2 id="theming" class="sg">Theming</h2>
+        <section class="sg-block sg-section-primary">
+          <div class="sg-text">
+            <h3 id="primary" class="sg">Primary</h3>
+            <p class="sg">
+              <code class="sg">pam-theme=&quot;primary&quot;</code>,
+              <code class="sg">pam-theme=&quot;primary:light&quot;</code>,
+              <code class="sg">pam-theme=&quot;primary:dark&quot;</code>
+            </p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-grid="">
+                <div pam-unit="1-3">
+                  <div pam-theme-test="" pam-theme="primary">primary</div>
+                </div>
+                <div pam-unit="1-3">
+                  <div pam-theme-test="" pam-theme="primary:light">primary-light</div>
+                </div>
+                <div pam-unit="1-3">
+                  <div pam-theme-test="" pam-theme="primary:dark">primary-dark</div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Theme-Test</span> <span class="hljs-attribute">pam-theme</span>=<span class="hljs-value">&quot;primary&quot;</span>&gt;</span>primary<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Theme-Test</span> <span class="hljs-attribute">pam-theme</span>=<span class="hljs-value">&quot;primary:light&quot;</span>&gt;</span>primary-light<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Theme-Test</span> <span class="hljs-attribute">pam-theme</span>=<span class="hljs-value">&quot;primary:dark&quot;</span>&gt;</span>primary-dark<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-text">
+          <div class="sg-text">
+            <h3 id="text" class="sg">Text</h3>
+            <p class="sg">
+              <code class="sg">pam-theme=&quot;text&quot;</code>
+              <code class="sg">pam-theme=&quot;text:primary&quot;</code>,
+              <code class="sg">pam-theme=&quot;text:secondary&quot;</code>
+            </p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-grid="">
+                <div pam-unit="1-3">
+                  <div pam-theme-test="text" pam-theme="text">text</div>
+                </div>
+                <div pam-unit="1-3">
+                  <div pam-theme-test="text" pam-theme="text:primary">text-primary</div>
+                </div>
+                <div pam-unit="1-3">
+                  <div pam-theme-test="text" pam-theme="text:secondary">text-secondary</div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Theme-Test</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">pam-theme</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>text<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Theme-Test</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">pam-theme</span>=<span class="hljs-value">&quot;text:primary&quot;</span>&gt;</span>text-primary<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Theme-Test</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">pam-theme</span>=<span class="hljs-value">&quot;text:secondary&quot;</span>&gt;</span>text-secondary<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-information">
+          <div class="sg-text">
+            <h3 id="information" class="sg">Information</h3>
+            <p class="sg">
+              <code class="sg">pam-theme=&quot;warn&quot;</code>,
+              <code class="sg">pam-theme=&quot;success&quot;</code>
+            </p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-grid="">
+                <div pam-unit="1-2">
+                  <div pam-theme-test="" pam-theme="warn">warn</div>
+                </div>
+                <div pam-unit="1-2">
+                  <div pam-theme-test="" pam-theme="success">success</div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-2&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Theme-Test</span> <span class="hljs-attribute">pam-theme</span>=<span class="hljs-value">&quot;warn&quot;</span>&gt;</span>warn<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-2&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Theme-Test</span> <span class="hljs-attribute">pam-theme</span>=<span class="hljs-value">&quot;success&quot;</span>&gt;</span>success<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-misc">
+          <div class="sg-text">
+            <h3 id="misc" class="sg">Misc</h3>
+            <p class="sg">
+              <code class="sg">pam-theme=&quot;accent&quot;</code>
+              <code class="sg">pam-theme=&quot;feature&quot;</code>,
+              <code class="sg">pam-theme=&quot;divider&quot;</code>
+            </p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-grid="">
+                <div pam-unit="1-3">
+                  <div pam-theme-test="" pam-theme="accent">accent</div>
+                </div>
+                <div pam-unit="1-3">
+                  <div pam-theme-test="" pam-theme="feature">feature</div>
+                </div>
+                <div pam-unit="1-3">
+                  <div pam-theme-test="" pam-theme="divider">divider</div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Grid</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Theme-Test</span> <span class="hljs-attribute">pam-theme</span>=<span class="hljs-value">&quot;accent&quot;</span>&gt;</span>accent<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Theme-Test</span> <span class="hljs-attribute">pam-theme</span>=<span class="hljs-value">&quot;feature&quot;</span>&gt;</span>feature<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Unit</span>=<span class="hljs-value">&quot;1-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Theme-Test</span> <span class="hljs-attribute">pam-theme</span>=<span class="hljs-value">&quot;divider&quot;</span>&gt;</span>divider<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-typography">
+        <h2 id="typography" class="sg">Typography</h2>
+        <section class="sg-block sg-section-font-family">
+          <div class="sg-text">
+            <h3 id="font-family" class="sg">Font family</h3>
+            <p class="sg">
+              <code class="sg">pam-typography</code>uses Roboto as the default font-family.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <p pam-typography="">Hi, I&#xB4;m Roboto!</p>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">pam-typography</span>&gt;</span>Hi, I&#xB4;m Roboto!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-display">
+          <div class="sg-text">
+            <h3 id="display" class="sg">Display</h3>
+            <p class="sg">
+              <code class="sg">pam-typography=&quot;display&quot;</code>is the juggernaut typography used in promos, main headers and cards.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <h1 pam-typography="display">Display</h1>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;display&quot;</span>&gt;</span>Display<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-headline">
+          <div class="sg-text">
+            <h3 id="headline" class="sg">Headline</h3>
+            <p class="sg">
+              <code class="sg">pam-typography=&quot;headline&quot;</code>is used as title for articles, sections, views etc.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <h1 pam-typography="headline">Headline</h1>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;headline&quot;</span>&gt;</span>Headline<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-subheader">
+          <div class="sg-text">
+            <h3 id="subheader" class="sg">Subheader</h3>
+            <p class="sg">
+              <code class="sg">pam-typography=&quot;subheader&quot;</code>is used in conjunction with a parent header.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <h1 pam-typography="subheader">Subheader</h1>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;subheader&quot;</span>&gt;</span>Subheader<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-form">
+          <div class="sg-text">
+            <h3 id="form" class="sg">Form</h3>
+            <p class="sg">
+              <code class="sg">pam-typography=&quot;form&quot;</code>is the general typography for forms.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form pam-typography="form">
+                <label>Form text</label>
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;form&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Form text<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-body">
+          <div class="sg-text">
+            <h3 id="body" class="sg">Body</h3>
+            <p class="sg">
+              <code class="sg">pam-typography=&quot;body&quot;</code>is the primary body text.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <p pam-typography="body">Body</p>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;body&quot;</span>&gt;</span>Body<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-body-strong">
+          <div class="sg-text">
+            <h3 id="body-strong" class="sg">Body strong</h3>
+            <p class="sg">
+              <code class="sg">pam-typography=&quot;body-strong&quot;</code>is the strong version of body.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <strong pam-typography="body:strong">Body a bit heavier</strong>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">strong</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;body:strong&quot;</span>&gt;</span>Body a bit heavier<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-caption">
+          <div class="sg-text">
+            <h3 id="caption" class="sg">Caption</h3>
+            <p class="sg">
+              <code class="sg">pam-typography=&quot;caption&quot;</code>is a title or brief explanation appended to an article, illustration or poster.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <p pam-typography="caption">Caption</p>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;caption&quot;</span>&gt;</span>Caption<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-small">
+          <div class="sg-text">
+            <h3 id="small" class="sg">Small</h3>
+            <p class="sg">
+              <code class="sg">pam-typography=&quot;small&quot;</code>is a complementary text that displays meta data in cramped spaces.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <p pam-typography="small">Small</p>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;small&quot;</span>&gt;</span>Small<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-hooks">
+          <h3 id="hooks" class="sg">Hooks</h3>
+          <p class="sg">
+            <code class="sg">.hook-typography</code>
+            <code class="sg">.hook-typography-display</code>
+            <code class="sg">.hook-typography-headline</code>
+            <code class="sg">.hook-typography-subheader</code>
+            <code class="sg">.hook-typography-form</code>
+            <code class="sg">.hook-typography-body</code>
+            <code class="sg">.hook-typography-body-strong</code>
+            <code class="sg">.hook-typography-caption</code>
+            <code class="sg">.hook-typography-small</code>
+          </p>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-divider">
+        <h2 id="divider" class="sg">Divider</h2>
+        <section class="sg-block sg-section-default-divider">
+          <div class="sg-text">
+            <h3 id="default-divider" class="sg">Default divider</h3>
+            <p class="sg">
+              <code class="sg">pam-Divider</code>Creates a horizontal divider. This is used to separate content.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <h1 pam-typography="headline">Title</h1>
+              <div pam-divider=""></div>
+              <h2 pam-typography="subheader">Subtitle</h2>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;headline&quot;</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Divider</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;subheader&quot;</span>&gt;</span>Subtitle<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-inset-divider">
+          <div class="sg-text">
+            <h3 id="inset-divider" class="sg">Inset divider</h3>
+            <p class="sg">
+              <code class="sg">pam-Divider=&quot;inset&quot;</code>Creates a horizontal divider with a inset value to be used with list items etc.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-list="">
+                <div pam-item="content">
+                  <div pam-tile="left">
+                    <div sg-mock-icon=""></div>
+                  </div>
+                  <div pam-tile="content">
+                    <h3 pam-typography="subheader">Item content</h3>
+                  </div>
+                </div>
+                <div pam-divider="inset">
+                </div>
+              </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-List</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Item</span>=<span class="hljs-value">&quot;content&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-tile</span>=<span class="hljs-value">&quot;left&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">sg-mock-icon</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-tile</span>=<span class="hljs-value">&quot;content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;subheader&quot;</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Divider</span>=<span class="hljs-value">&quot;inset&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+            </div>
+          </div>
+        </section>
+        <section class="sg-block sg-section-transparent-divider">
+          <div class="sg-text">
+            <h3 id="transparent-divider" class="sg">Transparent divider</h3>
+            <p class="sg">
+              <code class="sg">pam-Divider=&quot;transparent&quot;</code>Creates a horizontal divider with a transparent color.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-divider="transparent">
+              </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Divider</span>=<span class="hljs-value">&quot;transparent&quot;</span>&gt;</span></pre>
+            </div>
+          </div>
+        </section>
+        <section class="sg-block sg-section-hooks">
+          <h3 id="hooks" class="sg">Hooks</h3>
+          <p class="sg">
+            <code class="sg">.hook-divider</code>
+            <code class="sg">.hook-divider-inset</code>
+            <code class="sg">.hook-divider-transparent</code>
+          </p>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-lists">
+        <h2 id="lists" class="sg">Lists</h2>
+        <p class="sg">
+          <code class="sg">pam-List</code>wraps a
+          <code class="sg">pam-Item</code>which in turn can contain up to three type of tiles
+          <code class="sg">pam-Tile=&quot;[left | content | right]&quot;</code>.</p>
+        <section class="sg-block sg-section-one-line-list-item">
+          <div class="sg-text">
+            <h3 id="one-line-list-item" class="sg">One line list item</h3>
+            <p class="sg">Use
+              <code class="sg">pam-Item</code>to wrap one or more
+              <code class="sg">pam-Tiles</code>and apply one row of content.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-list="">
+                <div pam-item="">
+                  <div pam-tile="left">
+                    <div sg-mock-icon=""></div>
+                  </div>
+                  <div pam-tile="content">
+                    <h3 pam-typography="subheader">Item content</h3>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-List</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;left&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">sg-mock-icon</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;subheader&quot;</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-two-line-list-item">
+          <div class="sg-text">
+            <h3 id="two-line-list-item" class="sg">Two line list item</h3>
+            <p class="sg">Use
+              <code class="sg">pam-Item</code>to wrap one or more
+              <code class="sg">pam-Tiles</code>and apply two rows of content.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-list="">
+                <div pam-item="">
+                  <div pam-tile="left">
+                    <div sg-mock-icon=""></div>
+                  </div>
+                  <div pam-tile="content">
+                    <h3 pam-typography="subheader">Item content</h3>
+                    <h4 pam-typography="caption">Item content</h4>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-List</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;left&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">sg-mock-icon</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;subheader&quot;</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;caption&quot;</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-three-line-list-item">
+          <div class="sg-text">
+            <h3 id="three-line-list-item" class="sg">Three line list item</h3>
+            <p class="sg">Use
+              <code class="sg">pam-Item</code>to wrap one or more
+              <code class="sg">pam-Tiles</code>. Add
+              <code class="sg">pam-Tile=&quot;top&quot;</code>to align the left tile and apply three rows of content.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-list="">
+                <div pam-item="">
+                  <div pam-tile="left top">
+                    <div sg-mock-icon=""></div>
+                  </div>
+                  <div pam-tile="content">
+                    <h3 pam-typography="subheader">Item content</h3>
+                    <h4 pam-typography="caption">Item content</h4>
+                    <p>Item content</p>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-List</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;left top&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">sg-mock-icon</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;subheader&quot;</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;caption&quot;</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-list-item-with-right-icon-area">
+          <div class="sg-text">
+            <h3 id="list-item-with-right-icon-area" class="sg">List item with right icon area</h3>
+            <p class="sg">
+              <code class="sg">pam-Tile=&quot;right&quot;</code>adds a right icon area for a list item.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-list="">
+                <div pam-item="">
+                  <div pam-tile="left">
+                    <div sg-mock-icon=""></div>
+                  </div>
+                  <div pam-tile="content">
+                    <h3 pam-typography="subheader">Item content</h3>
+                  </div>
+                  <div pam-tile="right">
+                    <div sg-mock-icon=""></div>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-List</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;left&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">sg-mock-icon</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;subheader&quot;</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;right&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">sg-mock-icon</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-list-items-with-dividers">
+          <div class="sg-text">
+            <h3 id="list-items-with-dividers" class="sg">List items with dividers</h3>
+            <p class="sg">Use
+              <code class="sg">pam-Item</code>to wrap one or more
+              <code class="sg">pam-Tiles</code>and apply a
+              <code class="sg">pam-Divider</code>after each item.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div pam-list="">
+                <div pam-item="">
+                  <div pam-tile="left top">
+                    <div sg-mock-icon=""></div>
+                  </div>
+                  <div pam-tile="content">
+                    <h3 pam-typography="subheader">Item content</h3>
+                    <h4 pam-typography="caption">Item content</h4>
+                    <p>Item content</p>
+                  </div>
+                </div>
+                <div pam-divider="inset"></div>
+                <div pam-item="">
+                  <div pam-tile="left top">
+                    <div sg-mock-icon=""></div>
+                  </div>
+                  <div pam-tile="content">
+                    <h3 pam-typography="subheader">Item content</h3>
+                    <h4 pam-typography="caption">Item content</h4>
+                    <p>Item content</p>
+                  </div>
+                </div>
+                <div pam-divider="inset"></div>
+                <div pam-item="">
+                  <div pam-tile="left top">
+                    <div sg-mock-icon=""></div>
+                  </div>
+                  <div pam-tile="content">
+                    <h3 pam-typography="subheader">Item content</h3>
+                    <h4 pam-typography="caption">Item content</h4>
+                    <p>Item content</p>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-List</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;left top&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">sg-mock-icon</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;subheader&quot;</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;caption&quot;</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Divider</span>=<span class="hljs-value">&quot;inset&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;left top&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">sg-mock-icon</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;subheader&quot;</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;caption&quot;</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Divider</span>=<span class="hljs-value">&quot;inset&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;left top&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">sg-mock-icon</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">pam-Tile</span>=<span class="hljs-value">&quot;content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;subheader&quot;</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">pam-typography</span>=<span class="hljs-value">&quot;caption&quot;</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Item content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-hooks">
+          <h3 id="hooks" class="sg">Hooks</h3>
+          <p class="sg">
+            <code class="sg">.hook-list</code>
+            <code class="sg">.hook-item</code>
+            <code class="sg">.hook-tile</code>
+            <code class="sg">.hook-tile-left</code>
+            <code class="sg">.hook-tile-content</code>
+            <code class="sg">.hook-tile-right</code>
+            <code class="sg">.hook-tile-top</code>
+          </p>
+        </section>
+      </section>
+
+    </div>
+    <div class="sg-copyright">&#xA9; Mr Green</div>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="styleguide.js"></script>
+</body>
+
+</html>

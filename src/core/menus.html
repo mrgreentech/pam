@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Menus CSS</title>
+    <link rel="stylesheet" type="text/css" href="../../../../build/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../../build/buttons.css">
+    <link rel="stylesheet" type="text/css" href="../../../../build/menus.css">
+    <script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"></script>
+    <style>
+        body {
+            padding: 16px;
+        }
+
+        [pam-Menu~="custom-1"] {
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            min-width: 480px;
+        }
+
+        [pam-Menu~="custom-2"] {
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            width: 150px;
+        }
+
+        [pam-Menu~="custom-2"] [pam-Menu-List] {
+            display: block;
+        }
+
+        [pam-Menu~="custom-2"] [pam-Menu-Children] {
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            width: 170px;
+            box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        }
+
+        [pam-Menu~="custom-3"] {
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            width: 180px;
+            height: 150px;
+        }
+
+        [pam-Menu~="custom-3"] [pam-Menu-List] {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Menu Tests</h1>
+
+    <h2>Menus</h2>
+
+    <h3>Default</h3>
+    <div pam-Menu>
+        <a href="#" pam-Menu-Heading>Title</a>
+        <ul pam-Menu-List>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+            <li pam-Menu-Item pam-Menu-Has-Children>
+                <a href="#" pam-Menu-Link>Blog</a>
+                <ul pam-Menu-Children>
+                    <li pam-Menu-Item><a pam-Menu-Link href="/handlebars">Handlebars Helpers</a></li>
+                    <li pam-Menu-Item><a pam-Menu-Link href="/dust">Dust Helpers</a></li>
+                    <li pam-Menu-Item><a pam-Menu-Link href="/react">React Mixins</a></li>
+                    <li pam-Menu-Item><a pam-Menu-Link href="/javascript">Intl Message Format</a></li>
+                </ul>
+            </li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Contact</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>GitHub</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Twitter</a></li>
+        </ul>
+    </div>
+
+    <h3>Custom Menu</h3>
+    <div pam-Menu="custom-2">
+        <a href="#" pam-Menu-Heading>Title</a>
+        <ul pam-Menu-List>
+            <li pam-Menu-Separator></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Blog</a></li>
+            <li pam-Menu-Separator></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Contact</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>GitHub</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Twitter</a></li>
+        </ul>
+    </div>
+
+    <h3>Custom Menu with nested children</h3>
+    <div pam-Menu="custom-2">
+        <a href="#" pam-Menu-Heading>Title</a>
+        <ul pam-Menu-List>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+            <li pam-Menu-Item pam-Menu-Has-Children>
+                <a href="#" pam-Menu-Link>Blog</a>
+                <ul pam-Menu-Children>
+                    <li pam-Menu-Item><a pam-Menu-Link href="/handlebars">Handlebars Helpers</a></li>
+                    <li pam-Menu-Item><a pam-Menu-Link href="/dust">Dust Helpers</a></li>
+                    <li pam-Menu-Item><a pam-Menu-Link href="/react">React Mixins</a></li>
+                    <li pam-Menu-Item pam-Menu-Has-Children>
+                        <a href="#" pam-Menu-Link>More Stuff</a>
+                        <ul pam-Menu-Children>
+                            <li pam-Menu-Item><a pam-Menu-Link href="/handlebars">Foo</a></li>
+                            <li pam-Menu-Item><a pam-Menu-Link href="/dust">Bar</a></li>
+                            <li pam-Menu-Item><a pam-Menu-Link href="/react">Baz</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Contact</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>GitHub</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Twitter</a></li>
+        </ul>
+    </div>
+
+    <h3>Custom Menu with nested children and allow hover</h3>
+    <div pam-Menu="custom-2">
+        <a href="#" pam-Menu-Heading>Title</a>
+        <ul pam-Menu-List>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+            <li pam-Menu-Item pam-Menu-Has-Children pam-Menu-Allow-Hover>
+                <a href="#" pam-Menu-Link>Blog</a>
+                <ul pam-Menu-Children>
+                    <li pam-Menu-Item><a pam-Menu-Link href="/handlebars">Handlebars Helpers</a></li>
+                    <li pam-Menu-Item><a pam-Menu-Link href="/dust">Dust Helpers</a></li>
+                    <li pam-Menu-Item><a pam-Menu-Link href="/react">React Mixins</a></li>
+                    <li pam-Menu-Item pam-Menu-Has-Children pam-Menu-Allow-Hover>
+                        <a href="#" pam-Menu-Link>More Stuff</a>
+                        <ul pam-Menu-Children>
+                            <li pam-Menu-Item><a pam-Menu-Link href="/handlebars">Foo</a></li>
+                            <li pam-Menu-Item><a pam-Menu-Link href="/dust">Bar</a></li>
+                            <li pam-Menu-Item><a pam-Menu-Link href="/react">Baz</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Contact</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>GitHub</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Twitter</a></li>
+        </ul>
+    </div>
+
+    <h2>Horizontal Menu</h2>
+
+    <h3>Default</h3>
+    <div pam-Menu="horizontal">
+        <a href="#" pam-Menu-Link pam-Menu-Heading>Title</a>
+        <ul pam-Menu-List>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Blog</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Contact</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>GitHub</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Twitter</a></li>
+        </ul>
+    </div>
+
+    <h3>Custom</h3>
+    <div pam-Menu="horizontal custom-1">
+        <a href="#" pam-Menu-Link pam-Menu-Heading>Title</a>
+        <ul pam-Menu-List>
+            <li pam-Menu-Separator></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Blog</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Contact</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>GitHub</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Twitter</a></li>
+        </ul>
+    </div>
+
+    <h2>Scrollable</h2>
+
+    <h3>Horizontal</h3>
+    <div pam-Menu="horizontal scrollable">
+        <a href="#" pam-Menu-Link pam-Menu-Heading>Title</a>
+        <ul pam-Menu-List>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Blog</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Contact</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>GitHub</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Twitter</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Google</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Apple</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Borland</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Wang</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Yahoo</a></li>
+        </ul>
+    </div>
+
+    <h3>Vertical Custom</h3>
+    <div pam-Menu="scrollable custom-3">
+        <a href="#" pam-Menu-Link pam-Menu-Heading>Title</a>
+        <ul pam-Menu-List>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Blog</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Contact</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>GitHub</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Twitter</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Google</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Apple</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Borland</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Wang</a></li>
+            <li pam-Menu-Item><a href="#" pam-Menu-Link>Yahoo</a></li>
+        </ul>
+    </div>
+</body>
+</html>
