@@ -17,7 +17,7 @@
     "url": "https://github.com/mrgreentech/pam/issues"
   },
   "scripts": {
-    "test": "grunt test",
+    "test": "grunt",
     "deploy:styleguide": "git subtree push --prefix release/styleguide origin gh-pages"
   },
   "devDependencies": {
