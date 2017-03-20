@@ -3,6 +3,13 @@ node_js:
 - '6'
 before_script:
 - bower install
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: "build/styleguide"
+  on:
+    branch: master
 notifications:
   slack:
     secure: swTiRcRHv3P7VRDLj88mFjvEVDlGBh9MmzkHVM+MmlrsXdKN7CaEqJDKjsD15NEvyxaJRw52NY/7vaXpMUqMb/2OMz8fOWXD3ozREdVIk2ZNgx/LIWxZQjZ4g7vyoyvssV6gRcQSCMh2SdbCtmwzJjaiXELpApg/LJnBVvyZLzj4H56D/mS+epHv7xAMMYAQghD0DYe/pIVCKNxp3SNlvdhltnNjQ7gTKCzlaJVW8RCWv7xoCQ2B+4/qazS13gS/mezI04Pt6lup8usteJv4mYBMcgQylyNCIo7X3cJy7qT/hXCBnfkB3xQBBtl1KdOJMTvpmhyTuo5BsojRKIQoOthhj5u3lVrrmmVwKNiuUwo9OaUVlVTx3PNAFN6ZiKgcyZCJl3aGUoM4lr18LiQfqre5VB2OP0EMvga7N4sYlbStuZbqFyeIKfKruXmX551gjGNd9vK7blWK8KfJnJNRjG8hWjsv1lguFK0NA18oWJUNh5xkhA4OXCwiEnPc7HK56i5SrzJ3hbsTcDGp0ms8Q8AsbxQVdklIgbQ1b2V5HyXzfwiwh8ukiX+aAX7FgHw9NX2xz/Q8qnhLqCEBFMDzFBeG6KIiXa5vkQACoOKgI0ZXfBbkPon+lAkT3q/B8BF/8tt4uFnqyICpXASYzShD4mcCOI/nB5+6iRwyJVnA1Zo=
