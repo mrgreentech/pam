@@ -8,6 +8,7 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: "build/styleguide"
+  name: "PAM Deployment Bot"
   on:
     branch: master
 notifications:
