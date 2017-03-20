@@ -1,8 +1,8 @@
 {
   "name": "pam",
-  "description": "PAM is a light and modular CSS library.",
   "version": "1.0.0",
-  "private": true,
+  "description": "PAM is a light, modular and maintainable CSS library.",
+  "keywords": ["css", "less", "amcss", "styling", "ui", "web"],
   "author": "The PAM Authors (https://github.com/mrgreentech/pam/graphs/contributors)",
   "contributors": [
     "Mr Green & Co Technology"
@@ -21,7 +21,8 @@
     "styleguide": "kss --config kss-config.json",
     "test": "npm run lint:css",
     "watch": "npm-run-all build --parallel serve watch:*",
-    "watch:css": "onchange src/**/*.* -- npm run build:watch"
+    "watch:css": "onchange src/**/*.* -- npm run build:watch",
+    "deploy:styleguide": "git subtree push --prefix release/styleguide origin gh-pages"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.6",
