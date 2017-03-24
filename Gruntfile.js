@@ -14,7 +14,7 @@ module.exports = function (grunt) {
         // ===================================================================
 
     	bower_json: {
-    		release: {
+    		dist: {
     			values: {
     				main: 'pam.less'
     			},
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
     	clean: {
             build: ['build/'],
     		build_files: ['build/*.css'],
-    		release: ['release/']
+    		dist: ['dist/']
     	},
 
 
@@ -44,10 +44,10 @@ module.exports = function (grunt) {
     			expand: true,
     		},
 
-    		release: {
+    		dist: {
     			cwd: 'build',
     			src: ['less/**/*.less', 'styleguide/*.*'],
-    			dest: 'release',
+    			dest: 'dist',
     			expand : true
     		},
 
@@ -186,9 +186,9 @@ module.exports = function (grunt) {
         // ===================================================================
 
     	compress: {
-    		release: {
+    		dist: {
     			options: {
-    				archive: 'release/<%= bower.name %>-<%= bower.version %>.tar.gz'
+    				archive: 'dist/<%= bower.name %>-<%= bower.version %>.tar.gz'
     			},
 
     			expand : true,
@@ -308,11 +308,11 @@ module.exports = function (grunt) {
         'copy:styleguide'
     ]);
 
-    grunt.registerTask('release', [
+    grunt.registerTask('dist', [
     	'default',
-    	'clean:release',
-    	'copy:release',
-    	'bower_json:release',
-    	'compress:release'
+    	'clean:dist',
+    	'copy:dist',
+    	'bower_json:dist',
+    	'compress:dist'
     ]);
 };
