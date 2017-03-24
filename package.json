@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/mrgreentech/pam.git"
   },
-  "licenses": "BSD",
+  "license": "BSD-3-Clause-Attribution",
   "scripts": {
     "build": "npm run lint:css && grunt build && npm run build:styleguide",
     "build:styleguide": "npm run styleguide",
