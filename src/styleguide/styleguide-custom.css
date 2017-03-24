@@ -40,6 +40,16 @@ body.sg {
     margin: 12px;
 }
 
+[sg-mock-button-icon] {
+    background-repeat: no-repeat;
+    height: 24px;
+    margin: auto;
+    min-height: 24px;
+    min-width: 24px;
+    vertical-align: middle;
+    width: 24px;
+}
+
 section.sg-block.sg-section-variables code {
     color: #F44336;
 }

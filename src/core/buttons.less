@@ -12,15 +12,6 @@
 //
 // Style guide: buttons
 
-// TODO: Add active / disabled and hidden modifier.
-// TODO: Add button group borderless.
-
-
-//  Imports
-// ==================================================================
-
-@import "variables";
-
 
 //  Variables
 // ==================================================================
@@ -224,6 +215,7 @@
 // <button pam-Button="primary">Primary</button>
 // <button pam-Button="secondary">Secondary</button>
 // <button pam-Button="tertiary">Tertiary</button>
+// <button pam-Button="link">Link</button>
 //
 // Weight: 1
 //
@@ -293,6 +285,27 @@ a[pam-Button~="tertiary"] {
     .hook-button-tertiary;
 }
 
+//  link
+
+[pam-Button~="link"],
+a[pam-Button~="link"] {
+    background-color: @button-link-background;
+    border: @button-link-border;
+    color: @button-link-color;
+    line-height: @button-link-line-height;
+    text-decoration: @button-link-decoration;
+    transition-property: @button-link-transition;
+
+    &:hover,
+    &:focus {
+        background-color: initial;
+        color: @button-link-hover-color;
+        text-decoration: @button-link-hover-decoration;
+    }
+
+    .hook-button-link;
+}
+
 
 // Color modifiers
 // ==================================================================
@@ -307,7 +320,6 @@ a[pam-Button~="tertiary"] {
 // <button pam-Button="success">Success</button>
 // <button pam-Button="warning">Warning</button>
 // <button pam-Button="danger">Danger</button>
-// <button pam-Button="link">Link</button>
 //
 // Weight: 2
 //
@@ -390,29 +402,6 @@ a[pam-Button~="danger"] {
 }
 
 
-// Modifier: link
-// ==================================================================
-
-[pam-Button~="link"],
-a[pam-Button~="link"] {
-    background-color: @button-link-background;
-    border: @button-link-border;
-    color: @button-link-color;
-    line-height: @button-link-line-height;
-    text-decoration: @button-link-decoration;
-    transition-property: @button-link-transition;
-
-    &:hover,
-    &:focus {
-        background-color: initial;
-        color: @button-link-hover-color;
-        text-decoration: @button-link-hover-decoration;
-    }
-
-    .hook-button-link;
-}
-
-
 // Size modifiers
 // ==================================================================
 
@@ -427,28 +416,28 @@ a[pam-Button~="link"] {
 //         <button pam-Button="large">Large</button>
 //         <button pam-Button="large flat">Large</button>
 //         <button pam-Button="circle large">
-//             <img pam-Icon src="sg-assets/plus.svg" />
+//             <img sg-mock-button-icon src="sg-assets/plus.svg" />
 //         </button>
 //     </div>
 //     <div>
 //         <button pam-Button>Default</button>
 //         <button pam-Button="flat">Default</button>
 //         <button pam-Button="circle">
-//             <img pam-Icon src="sg-assets/plus.svg" />
+//             <img sg-mock-button-icon src="sg-assets/plus.svg" />
 //         </button>
 //     </div>
 //     <div>
 //         <button pam-Button="small">Small</button>
 //         <button pam-Button="flat small">Small</button>
 //         <button pam-Button="circle small">
-//             <img pam-Icon src="sg-assets/plus.svg" />
+//             <img sg-mock-button-icon src="sg-assets/plus.svg" />
 //         </button>
 //     </div>
 //     <div>
 //         <button pam-Button="mini">Mini</button>
 //         <button pam-Button="flat mini">Mini</button>
 //         <button pam-Button="circle mini">
-//             <img pam-Icon src="sg-assets/plus.svg" />
+//             <img sg-mock-button-icon src="sg-assets/plus.svg" />
 //         </button>
 //     </div>
 // </div>
@@ -616,7 +605,7 @@ a[pam-Button~="fluid"] {
 }
 
 
-// Modifier: fab
+//  Modifier: circle
 // ==================================================================
 
 // Fab
@@ -626,13 +615,13 @@ a[pam-Button~="fluid"] {
 //
 // Markup:
 // <button pam-Button="circle">
-//    <img pam-Icon src="sg-assets/plus.svg" />
+//    <img sg-mock-button-icon src="sg-assets/plus.svg" />
 // </button>
 // <button pam-Button="circle raised">
-//    <img pam-Icon src="sg-assets/plus.svg" />
+//    <img sg-mock-button-icon src="sg-assets/plus.svg" />
 // </button>
 // <button pam-Button="circle flat">
-//    <img pam-Icon src="sg-assets/plus.svg" />
+//    <img sg-mock-button-icon src="sg-assets/plus.svg" />
 // </button>
 //
 // Weight: 8
@@ -655,13 +644,13 @@ a[pam-Button~="circle"][pam-Button~="mini"] {
     overflow: hidden;
     padding: @button-circle-padding;
     position: relative;
-    width: @button-circle-size;
     vertical-align: middle;
+    width: @button-circle-size;
 
     .hook-button-circle;
 }
 
-// Size modifier: FAB
+// Size modifier: circle
 // ==================================================================
 
 // large
@@ -695,25 +684,6 @@ a[pam-Button~="circle"][pam-Button~="mini"] {
 }
 
 
-// ==================================================================
-// Icon - TODO: move to icon file
-// ==================================================================
-
-[pam-Icon] {
-    margin: auto;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-    height: @space-24;
-    width: @space-24;
-    min-height: @space-24;
-    min-width: @space-24;
-
-    svg path {
-        fill: @skin-text;
-    }
-}
-
-
 // Object: button-group
 // ==================================================================
 
@@ -736,13 +706,13 @@ a[pam-Button~="circle"][pam-Button~="mini"] {
     display: flex;
 
     & > [pam-Button] {
-        display: block;
-        border-radius: 0;
         border-left: 1px solid fade(#000, 10%);
+        border-radius: 0;
+        display: block;
 
         &:first-child {
-            border-radius: @button-border-radius 0 0 @button-border-radius;
             border-left: none;
+            border-radius: @button-border-radius 0 0 @button-border-radius;
         }
 
         &:last-child {
@@ -753,8 +723,7 @@ a[pam-Button~="circle"][pam-Button~="mini"] {
     .hook-button-group;
 }
 
-
-// Object modifier: borderless
+// button-group modifier: borderless
 // ==================================================================
 
 // Borderless
@@ -763,9 +732,9 @@ a[pam-Button~="circle"][pam-Button~="mini"] {
 //
 // Markup:
 // <div pam-Button-Group="borderless">
-//     <button pam-Button="">Default</button>
-//     <button pam-Button="primary">Primary</button>
-//     <button pam-Button="secondary">Secondary</button>
+//     <button pam-Button="">Button</button>
+//     <button pam-Button="">Button</button>
+//     <button pam-Button="">Button</button>
 // </div>
 //
 // Style guide: buttons.group.borderless
@@ -776,6 +745,8 @@ a[pam-Button~="circle"][pam-Button~="mini"] {
     }
 }
 
+// button-group size modifiers
+// ==================================================================
 
 // Size
 //

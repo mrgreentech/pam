@@ -127,7 +127,14 @@ module.exports = function (grunt) {
                 map: false,
                 processors: [
                     require('autoprefixer')({
-                        browsers: ['> 2%', 'last 3 versions']
+                        browsers: [
+                            'Chrome >= 35', // Exact version number here is kinda arbitrary
+                            'Firefox >= 38', // Current Firefox Extended Support Release (ESR); https://www.mozilla.org/en-US/firefox/organizations/faq/
+                            'Edge >= 12',
+                            'Explorer >= 10',
+                            'iOS >= 8',
+                            'Safari >= 8'
+                        ]
                     })
                 ]
             },
