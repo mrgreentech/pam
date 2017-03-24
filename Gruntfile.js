@@ -40,7 +40,7 @@ module.exports = function (grunt) {
     		build: {
     			cwd: 'src',
     			src: ['**/*.less'],
-    			dest: 'build/less',
+    			dest: 'build',
     			expand: true,
     		},
 
@@ -77,28 +77,28 @@ module.exports = function (grunt) {
     	concat: {
     		build: {
     			files: [
-    				{'build/less/core/base.less': [
+    				{'build/less/base.less': [
     					'bower_components/normalize-css/normalize.css',
-    					'build/less/core/base.less'
+    					'build/less/base.less'
     				]},
 
-                    {'build/less/core/forms-responsive.less': [
-                        'build/less/core/forms.less',
-                        'build/less/core/forms-r.less'
+                    {'build/less/forms-responsive.less': [
+                        'build/less/forms.less',
+                        'build/less/forms-r.less'
                     ]},
 
-                    {'build/less/core/grids-responsive.less': [
-                        'build/less/core/grids.less',
-                        'build/less/core/grids-r.less'
+                    {'build/less/grids-responsive.less': [
+                        'build/less/grids.less',
+                        'build/less/grids-r.less'
                     ]}
     			]
     		},
 
     		base: {
     			files: {
-    				'build/less/core/base.less': [
-    					'build/less/core/font.less',
-    					'build/less/core/base.less'
+    				'build/less/base.less': [
+    					'build/less/font.less',
+    					'build/less/base.less'
     				]
     			}
     		}
@@ -110,7 +110,7 @@ module.exports = function (grunt) {
 
     	less: {
     		development: {
-    			src: 'build/less/*.less',
+    			src: 'build/less/pam.less',
     			dest: 'build/',
     			expand : true,
     			flatten: true,
@@ -150,7 +150,7 @@ module.exports = function (grunt) {
                     ],
                     syntax: require('postcss-less')
                 },
-                src: 'src/core/buttons.less'
+                src: 'src/less/buttons.less'
             },
             test: {
                 options: {
@@ -162,7 +162,7 @@ module.exports = function (grunt) {
                     ],
                     syntax: require('postcss-less')
                 },
-                src: 'src/core/buttons.less'
+                src: 'src/less/buttons.less'
             }
         },
 
@@ -214,14 +214,14 @@ module.exports = function (grunt) {
 
     			expand: true,
     			cwd: 'build/less',
-    			src: ['core/base*.less', 'core/<%= pkg.name %>*.less']
+    			src: ['base*.less', '<%= pkg.name %>*.less']
     		},
 
     		yahoo: {
     			options: {
     				banner: [
     					'/*!',
-    					'Pure v<%= pkg.version %>',
+    					'Pure v0.6.0',
     					'Copyright 2014 Yahoo! Inc. All rights reserved.',
     					'Licensed under the BSD License.',
     					'https://github.com/yahoo/pure/blob/master/LICENSE.md',
@@ -230,7 +230,7 @@ module.exports = function (grunt) {
     			},
 
     			expand: true,
-    			src: ['build/less/core/base.less']
+    			src: ['build/less/base.less']
     		},
 
     		pam: {
@@ -247,7 +247,7 @@ module.exports = function (grunt) {
 
     			expand: true,
     			cwd: 'build/less',
-    			src: ['core/base*.less', 'core/<%= pkg.name %>*.less']
+    			src: ['base*.less', '<%= pkg.name %>*.less']
     		}
     	}
     });
