@@ -128,8 +128,8 @@ module.exports = function (grunt) {
                 processors: [
                     require('autoprefixer')({
                         browsers: [
-                            'Chrome >= 35', // Exact version number here is kinda arbitrary
-                            'Firefox >= 38', // Current Firefox Extended Support Release (ESR); https://www.mozilla.org/en-US/firefox/organizations/faq/
+                            'Chrome >= 35',
+                            'Firefox >= 38',
                             'Edge >= 12',
                             'Explorer >= 10',
                             'iOS >= 8',
@@ -202,21 +202,6 @@ module.exports = function (grunt) {
         // ===================================================================
 
     	license: {
-    		normalize: {
-    			options: {
-    				banner: [
-    					'/*!',
-    					'normalize.css v<%= bower.devDependencies["normalize-css"] %> | MIT License | git.io/normalize',
-    					'Copyright (c) Nicolas Gallagher and Jonathan Neal',
-    					'*/\n'
-    				].join('\n')
-    			},
-
-    			expand: true,
-    			cwd: 'build/less',
-    			src: ['base*.less', '<%= pkg.name %>*.less']
-    		},
-
     		yahoo: {
     			options: {
     				banner: [
@@ -229,8 +214,9 @@ module.exports = function (grunt) {
     				].join('\n')
     			},
 
-    			expand: true,
-    			src: ['build/less/base.less']
+                expand: true,
+                cwd: 'build/less',
+                src: ['base.less']
     		},
 
     		pam: {
@@ -240,14 +226,14 @@ module.exports = function (grunt) {
     					'Pam v<%= bower.version %>',
     					'Copyright 2016 Mr Green! Inc. All rights reserved.',
     					'Licensed under the BSD License.',
-    					'https://[url]/LICENSE.md',
+    					'https://github.com/mrgreentech/pam/blob/master/LICENSE.md',
     					'*/\n'
     				].join('\n')
     			},
 
     			expand: true,
     			cwd: 'build/less',
-    			src: ['base*.less', '<%= pkg.name %>*.less']
+    			src: ['base.less']
     		}
     	}
     });
