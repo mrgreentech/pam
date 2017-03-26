@@ -22,7 +22,7 @@
     "test": "npm run lint:css",
     "watch": "npm-run-all build --parallel serve watch:*",
     "watch:css": "onchange src/**/*.* -- npm run build:watch",
-    "deploy:styleguide": "git subtree push --prefix release/styleguide origin gh-pages"
+    "deploy:styleguide": "git subtree push --prefix build/styleguide origin gh-pages"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.6",
