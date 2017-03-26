@@ -1,0 +1,192 @@
+// Tables
+//
+// Tables are awesome!
+//
+// Weight: 7
+//
+// Markup:
+// <table pam-Table="{{modifier_class}}">
+//     <caption>Hello, I'm caption</caption>
+//     <thead>
+//         <tr>
+//             <th>#</th>
+//             <th>Make</th>
+//             <th>Model</th>
+//             <th>Year</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//         <tr>
+//             <td>1</td>
+//             <td>Honda</td>
+//             <td>Accord</td>
+//             <td>2009</td>
+//         </tr>
+//         <tr>
+//             <td>2</td>
+//             <td>Lada</td>
+//             <td>Niva</td>
+//             <td>1999</td>
+//         </tr>
+//         <tr>
+//             <td>3</td>
+//             <td>Koenigsegg</td>
+//             <td>One:1</td>
+//             <td>2014</td>
+//         </tr>
+//     </tbody>
+// </table>
+//
+// horizontal - Creates a row focused table.
+// bordered - Applies inner borders to table.
+// striped - Exactly as it sounds, a striped table.
+//
+// Style guide: tables
+
+
+//  Variables
+// ==================================================================
+
+@table-border-color: #cbcbcb;
+@table-caption-color: #000;
+@table-head-bg-color: #e0e0e0;
+@table-head-color: #000;
+@table-striped-odd-bg-color: #f2f2f2;
+
+
+// ==================================================================
+//  Table
+// ==================================================================
+
+[pam-Table] {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid@table-border-color;
+
+    .hook-table;
+}
+
+[pam-Table] caption {
+    color: @table-caption-color;
+    font-style: italic;
+    padding: 1em 0;
+    text-align: center;
+
+    .hook-table-caption;
+}
+
+[pam-Table] td,
+[pam-Table] th {
+    border-left: 1px solid @table-border-color; /*  inner column border */
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: 0.5em 1em;
+
+    .hook-table-td-th;
+}
+
+[pam-Table] td:first-child,
+[pam-Table] th:first-child {
+    border-left-width: 0;
+
+    .hook-table-td-th-first-child;
+}
+
+[pam-Table] thead {
+    background-color: @table-head-bg-color;
+    color: @table-head-color;
+    text-align: left;
+    vertical-align: bottom;
+
+    .hook-table-thead;
+}
+
+[pam-Table] td {
+    background-color: transparent;
+
+    .hook-table-td;
+}
+
+
+//  Modifier: striped
+// ==================================================================
+
+[pam-Table~="striped"] tr:nth-child(2n-1) td {
+    background-color: @table-striped-odd-bg-color;
+
+    .hook-table-striped;
+}
+
+
+//  Modifier: bordered
+// ==================================================================
+
+[pam-Table~="bordered"] td {
+    border-bottom: 1px solid @table-border-color;
+
+    .hook-table-bordered;
+}
+
+[pam-Table~="bordered"] tbody > tr:last-child > td {
+    border-bottom-width: 0;
+
+    .hook-table-bordered-tbody-tr-last-child;
+}
+
+
+//  Modifier: horizontal
+// ==================================================================
+
+[pam-Table~="horizontal"] td,
+[pam-Table~="horizontal"] th {
+    border-width: 0 0 1px;
+    border-bottom: 1px solid @table-border-color;
+
+    .hook-table-horizontal-td-th;
+
+}
+
+[pam-Table~="horizontal"] tbody > tr:last-child > td {
+    border-bottom-width: 0;
+
+    .hook-table-horizontal-tbody-tr-last-child;
+}
+
+
+//  Hooks
+// ==================================================================
+
+// Hooks
+//
+// `.hook-table`
+// `.hook-table-caption`
+// `.hook-table-td-th`
+// `.hook-table-td-th-first-child`
+// `.hook-table-thead`
+// `.hook-table-td`
+// `.hook-table-odd-td`
+// `.hook-table-striped`
+// `.hook-table-bordered`
+// `.hook-table-bordered-tbody-tr-last-child`
+// `.hook-table-horizontal-td-th`
+// `.hook-table-horizontal-tbody-tr-last-child`
+//
+// Style guide: tables.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-table() {}
+.hook-table-caption() {}
+.hook-table-td-th() {}
+.hook-table-td-th-first-child() {}
+.hook-table-thead() {}
+.hook-table-td() {}
+.hook-table-odd-td() {}
+.hook-table-striped() {}
+.hook-table-bordered() {}
+.hook-table-bordered-tbody-tr-last-child() {}
+.hook-table-horizontal-td-th() {}
+.hook-table-horizontal-tbody-tr-last-child() {}
+/* stylelint-enable */

@@ -14,7 +14,7 @@ module.exports = function (grunt) {
         // ===================================================================
 
     	bower_json: {
-    		release: {
+    		dist: {
     			values: {
     				main: 'pam.less'
     			},
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
     	clean: {
             build: ['build/'],
     		build_files: ['build/*.css'],
-    		release: ['release/']
+    		dist: ['dist/']
     	},
 
 
@@ -40,26 +40,26 @@ module.exports = function (grunt) {
     		build: {
     			cwd: 'src',
     			src: ['**/*.less'],
-    			dest: 'build/less',
+    			dest: 'build',
     			expand: true,
     		},
 
-    		release: {
+    		dist: {
     			cwd: 'build',
-    			src: ['less/**/*.less', 'styleguide/*.*'],
-    			dest: 'release',
+    			src: ['less/**/*.less', 'styleguide/**'],
+    			dest: 'dist',
     			expand : true
     		},
 
             styleguide: {
                 files: [
-                    { expand: true, flatten: true, src: [
-                        'build/pam.css',
-                        'src/styleguide/*.css',
-                        'src/styleguide/*.js',
-                        'src/styleguide/*.png',
-                        'src/styleguide/logo.svg',
-                    ], dest: 'build/styleguide' },
+                    {
+                        expand: true, flatten: true, src: [
+                            'build/pam.css',
+                            'src/styleguide/*.*'
+                        ],
+                        dest: 'build/styleguide'
+                    },
                     {
                         expand: true,
                         cwd: 'src/styleguide',
@@ -77,28 +77,28 @@ module.exports = function (grunt) {
     	concat: {
     		build: {
     			files: [
-    				{'build/less/core/base.less': [
+    				{'build/less/base.less': [
     					'bower_components/normalize-css/normalize.css',
-    					'build/less/core/base.less'
+    					'build/less/base.less'
     				]},
 
-                    {'build/less/core/forms-responsive.less': [
-                        'build/less/core/forms.less',
-                        'build/less/core/forms-r.less'
+                    {'build/less/forms-responsive.less': [
+                        'build/less/forms.less',
+                        'build/less/forms-r.less'
                     ]},
 
-                    {'build/less/core/grids-responsive.less': [
-                        'build/less/core/grids.less',
-                        'build/less/core/grids-r.less'
+                    {'build/less/grids-responsive.less': [
+                        'build/less/grids.less',
+                        'build/less/grids-r.less'
                     ]}
     			]
     		},
 
     		base: {
     			files: {
-    				'build/less/core/base.less': [
-    					'build/less/core/font.less',
-    					'build/less/core/base.less'
+    				'build/less/base.less': [
+    					'build/less/font.less',
+    					'build/less/base.less'
     				]
     			}
     		}
@@ -110,7 +110,7 @@ module.exports = function (grunt) {
 
     	less: {
     		development: {
-    			src: 'build/less/*.less',
+    			src: 'build/less/pam.less',
     			dest: 'build/',
     			expand : true,
     			flatten: true,
@@ -128,8 +128,8 @@ module.exports = function (grunt) {
                 processors: [
                     require('autoprefixer')({
                         browsers: [
-                            'Chrome >= 35', // Exact version number here is kinda arbitrary
-                            'Firefox >= 38', // Current Firefox Extended Support Release (ESR); https://www.mozilla.org/en-US/firefox/organizations/faq/
+                            'Chrome >= 35',
+                            'Firefox >= 38',
                             'Edge >= 12',
                             'Explorer >= 10',
                             'iOS >= 8',
@@ -150,7 +150,7 @@ module.exports = function (grunt) {
                     ],
                     syntax: require('postcss-less')
                 },
-                src: 'src/core/buttons.less'
+                src: 'src/less/buttons.less'
             },
             test: {
                 options: {
@@ -162,7 +162,7 @@ module.exports = function (grunt) {
                     ],
                     syntax: require('postcss-less')
                 },
-                src: 'src/core/buttons.less'
+                src: 'src/less/buttons.less'
             }
         },
 
@@ -186,9 +186,9 @@ module.exports = function (grunt) {
         // ===================================================================
 
     	compress: {
-    		release: {
+    		dist: {
     			options: {
-    				archive: 'release/<%= bower.name %>-<%= bower.version %>.tar.gz'
+    				archive: 'dist/<%= bower.name %>-<%= bower.version %>.tar.gz'
     			},
 
     			expand : true,
@@ -202,26 +202,11 @@ module.exports = function (grunt) {
         // ===================================================================
 
     	license: {
-    		normalize: {
-    			options: {
-    				banner: [
-    					'/*!',
-    					'normalize.css v<%= bower.devDependencies["normalize-css"] %> | MIT License | git.io/normalize',
-    					'Copyright (c) Nicolas Gallagher and Jonathan Neal',
-    					'*/\n'
-    				].join('\n')
-    			},
-
-    			expand: true,
-    			cwd: 'build/less',
-    			src: ['core/base*.less', 'core/<%= pkg.name %>*.less']
-    		},
-
     		yahoo: {
     			options: {
     				banner: [
     					'/*!',
-    					'Pure v<%= pkg.version %>',
+    					'Pure v0.6.0',
     					'Copyright 2014 Yahoo! Inc. All rights reserved.',
     					'Licensed under the BSD License.',
     					'https://github.com/yahoo/pure/blob/master/LICENSE.md',
@@ -229,8 +214,9 @@ module.exports = function (grunt) {
     				].join('\n')
     			},
 
-    			expand: true,
-    			src: ['build/less/core/base.less']
+                expand: true,
+                cwd: 'build/less',
+                src: ['base.less']
     		},
 
     		pam: {
@@ -240,14 +226,14 @@ module.exports = function (grunt) {
     					'Pam v<%= bower.version %>',
     					'Copyright 2016 Mr Green! Inc. All rights reserved.',
     					'Licensed under the BSD License.',
-    					'https://[url]/LICENSE.md',
+    					'https://github.com/mrgreentech/pam/blob/master/LICENSE.md',
     					'*/\n'
     				].join('\n')
     			},
 
     			expand: true,
     			cwd: 'build/less',
-    			src: ['core/base*.less', 'core/<%= pkg.name %>*.less']
+    			src: ['base.less']
     		}
     	}
     });
@@ -308,11 +294,9 @@ module.exports = function (grunt) {
         'copy:styleguide'
     ]);
 
-    grunt.registerTask('release', [
-    	'default',
-    	'clean:release',
-    	'copy:release',
-    	'bower_json:release',
-    	'compress:release'
+    grunt.registerTask('dist', [
+    	'clean:dist',
+    	'copy:dist',
+    	'compress:dist'
     ]);
 };

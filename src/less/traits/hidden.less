@@ -1,0 +1,15 @@
+// Hidden
+//
+// Show or hide an element with `pam-show` and `pam-hidden` attribute.
+// These attributes is a exception for the use of **!important** to make sure they do not get overriden.
+//
+// Markup:
+// <div pam-show>...</div>
+// <div pam-hidden>...</div>
+//
+// Style guide: traits.hidden
+
+[hidden],
+[pam-hidden~="hidden"] {
+    display: none !important;
+}

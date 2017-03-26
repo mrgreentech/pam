@@ -1,0 +1,22 @@
+// .zindex(@elementName, @elementList)
+//
+// Handles z-index contextual by retrieving the elements position from a
+// element list and returns the positon as a z-index value.
+//
+// @elementName - Find position for given name.
+// @elementList - Contextual z-index element list.
+//
+// Style guide: mixins.zindex
+
+.zindex(@elementName, @elementList) {
+    .loop(@elementName, length(@elementList));
+}
+
+.loop(@elementName, @counter) when (@counter > 0) {
+    .loop(@elementName, @counter - 1);
+    .pickIndex(@elementName, @counter);
+}
+
+.pickIndex(@elementName, @counter) when (extract(@elementList, @counter) = @elementName) {
+    z-index: @counter;
+}

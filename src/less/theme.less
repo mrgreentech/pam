@@ -1,0 +1,194 @@
+// Theme
+//
+// Set of colors that is used as base for all colors in PAM. They all have their specific contextual intention.
+//
+// Weight: 4
+//
+// Style guide: theme
+
+
+// ==================================================================
+//  Theme
+// ==================================================================
+
+// Primary
+//
+//  Colors used to represent primary interface elements for a user.
+//
+// Markup:
+// <div pam-Theme-Test pam-theme="primary:light">@skin-primary-light</div>
+// <div pam-Theme-Test pam-theme="primary">@skin-primary</div>
+// <div pam-Theme-Test pam-theme="primary:dark">@skin-primary-dark</div>
+//
+// Weight: 1
+//
+// Style guide: theme.primary
+
+[pam-Theme~="primary"] {
+    background-color: @skin-primary;
+}
+
+[pam-Theme~="primary:light"] {
+    background-color: @skin-primary-light;
+}
+
+[pam-Theme~="primary:dark"] {
+    background-color: @skin-primary-dark;
+}
+
+
+//  Complementary
+// ==================================================================
+
+// Complementary
+//
+// Colors used to represent complementary interface elements
+//
+// Markup:
+// <div pam-Theme-Test pam-theme="accent">@skin-accent</div>
+// <div pam-Theme-Test pam-theme="feature">@skin-feature</div>
+// <div pam-Theme-Test pam-theme="divider">@skin-divider</div>
+//
+// Weight: 2
+//
+// Style guide: theme.complementary
+
+[pam-Theme~="accent"] {
+    background-color: @skin-accent;
+}
+
+[pam-Theme~="feature"] {
+    background-color: @skin-feature;
+}
+
+[pam-Theme~="divider"] {
+    background-color: @skin-divider;
+}
+
+
+//  Information
+// ==================================================================
+
+// Information
+//
+// Colors used to represent information interface elements.
+//
+// Markup:
+// <div pam-Theme-Test pam-theme="info">@skin-info</div>
+// <div pam-Theme-Test pam-theme="success">@skin-success</div>
+// <div pam-Theme-Test pam-theme="warn">@skin-warn</div>
+// <div pam-Theme-Test pam-theme="danger">@skin-danger</div>
+//
+// Weight: 3
+//
+// Style guide: theme.information
+
+[pam-Theme~="info"] {
+    background-color: @skin-info;
+}
+
+[pam-Theme~="success"] {
+    background-color: @skin-success;
+}
+
+[pam-Theme~="warn"] {
+    background-color: @skin-warn;
+}
+
+[pam-Theme~="danger"] {
+    background-color: @skin-danger;
+}
+
+
+//  Greyscales
+// ==================================================================
+
+// Greyscales
+//
+// Base greyscales colors.
+//
+// Markup:
+// <div pam-Theme-Test pam-theme="lighter">@skin-lighter</div>
+// <div pam-Theme-Test pam-theme="light">@skin-light</div>
+// <div pam-Theme-Test pam-theme="hint">@skin-hint</div>
+// <div pam-Theme-Test pam-theme="dark">@skin-dark</div>
+// <div pam-Theme-Test pam-theme="darker text">@skin-darker</div>
+//
+// Weight: 4
+//
+// Style guide: theme.greyscales
+
+[pam-Theme~="light"] {
+    background-color: @skin-light;
+}
+
+[pam-Theme~="lighter"] {
+    background-color: @skin-lighter;
+}
+
+[pam-Theme~="hint"] {
+    background-color: @skin-hint;
+}
+
+[pam-Theme~="dark"] {
+    background-color: @skin-dark;
+}
+
+[pam-Theme~="darker"] {
+    background-color: @skin-darker;
+}
+
+
+//  Text
+// ==================================================================
+
+// Text
+//
+// Colors used to represent text interface elements
+//
+// Markup:
+// <div pam-Theme-Test="text:light" pam-theme="text">@skin-text</div>
+// <div pam-Theme-Test="text:light" pam-theme="text text:hint">@skin-text-hint</div>
+// <div pam-Theme-Test="text:light" pam-theme="text text:light">@skin-text-light</div>
+// <div pam-Theme-Test="text:light" pam-theme="text text:lighter">@skin-text-lighter</div>
+// <div pam-Theme-Test="text" pam-theme="text text:primary">@skin-text-primary</div>
+// <div pam-Theme-Test="text" pam-theme="text text:secondary">@skin-text-secondary</div>
+// <div pam-Theme-Test="text" pam-theme="text text:darker">@skin-text-darker</div>
+// <div pam-Theme-Test="text" pam-theme="text text:dark">@skin-text-dark</div>
+//
+// Weight: 5
+//
+// Style guide: theme.text
+
+[pam-Theme~="text"] {
+    color: @skin-text;
+    margin-bottom: @space-base;
+}
+
+[pam-Theme~="text:primary"] {
+    color: @skin-text-primary;
+}
+
+[pam-Theme~="text:secondary"] {
+    color: @skin-text-secondary;
+}
+
+[pam-Theme~="text:darker"] {
+    color: @skin-text-darker;
+}
+
+[pam-Theme~="text:dark"] {
+    color: @skin-text-dark;
+}
+
+[pam-Theme~="text:hint"] {
+    color: @skin-text-hint;
+}
+
+[pam-Theme~="text:light"] {
+    color: @skin-text-light;
+}
+
+[pam-Theme~="text:lighter"] {
+    color: @skin-text-lighter;
+}

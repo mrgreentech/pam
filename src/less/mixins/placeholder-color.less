@@ -1,0 +1,25 @@
+// .placeholder-color(@color)
+//
+// Applies text color for placeholder.
+//
+// @color = @skin-text-secondary - Set placeholder color.
+//
+// Style guide: mixins.placeholder-color
+
+.placeholder-color(@color: @skin-text-secondary) {
+    &::-webkit-input-placeholder {
+        color: @color;
+    }
+
+    &:-moz-placeholder {
+        color: @color;
+    }
+
+    &::-moz-placeholder {
+        color: @color;
+    }
+
+    &:-ms-input-placeholder {
+        color: @color;
+    }
+}

@@ -1,0 +1,57 @@
+// Link
+//
+// Apply link styling to `a` elements.
+//
+// Markup:
+// <a href="#" pam-Link>Link</a>
+//
+// Weight: 11
+//
+// Style guide: links
+
+
+//  Variables
+// ==================================================================
+
+@link-color: @skin-primary;
+@link-decoration: none;
+@link-hover-color: darken(@link-color, 10%);
+@link-hover-decoration: underline;
+
+
+// ==================================================================
+//  Link
+// ==================================================================
+
+[pam-Link],
+a[pam-Link] {
+    color: @link-color;
+    text-decoration: @link-decoration;
+    cursor: pointer;
+    .hook-link;
+}
+
+[pam-Link]:focus,
+a[pam-Link]:focus,
+[pam-Link]:hover,
+a[pam-Link]:hover {
+    color: @link-hover-color;
+    text-decoration: @link-hover-decoration;
+    .hook-link-hover;
+}
+
+
+//  Hooks
+// ==================================================================
+
+// Hooks
+//
+// `.hook-link`
+// `.hook-link-hover`
+//
+// Style guide: links.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-link() {}
+.hook-link-hover() {}
+/* stylelint-enable */
