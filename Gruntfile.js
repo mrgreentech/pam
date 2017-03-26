@@ -46,20 +46,20 @@ module.exports = function (grunt) {
 
     		dist: {
     			cwd: 'build',
-    			src: ['less/**/*.less', 'styleguide/*.*'],
+    			src: ['less/**/*.less', 'styleguide/**'],
     			dest: 'dist',
     			expand : true
     		},
 
             styleguide: {
                 files: [
-                    { expand: true, flatten: true, src: [
-                        'build/pam.css',
-                        'src/styleguide/*.css',
-                        'src/styleguide/*.js',
-                        'src/styleguide/*.png',
-                        'src/styleguide/logo.svg',
-                    ], dest: 'build/styleguide' },
+                    {
+                        expand: true, flatten: true, src: [
+                            'build/pam.css',
+                            'src/styleguide/*.*'
+                        ],
+                        dest: 'build/styleguide'
+                    },
                     {
                         expand: true,
                         cwd: 'src/styleguide',
@@ -295,10 +295,8 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('dist', [
-    	'default',
     	'clean:dist',
     	'copy:dist',
-    	'bower_json:dist',
     	'compress:dist'
     ]);
 };
