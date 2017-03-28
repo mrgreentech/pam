@@ -79,24 +79,6 @@ gulp.task('concat-base', () => {
         .pipe(gulp.dest(buildLessPath));
 });
 
-gulp.task('concat-forms', () => {
-    return gulp.src([
-            'build/less/forms.less',
-            'build/less/forms-r.less'
-        ])
-        .pipe(concat('forms-responsive.less'))
-        .pipe(gulp.dest(buildLessPath));
-});
-
-gulp.task('concat-grids', () => {
-    return gulp.src([
-            'build/less/grids.less',
-            'build/less/grids-r.less'
-        ])
-        .pipe(concat('grids-responsive.less'))
-        .pipe(gulp.dest(buildLessPath));
-});
-
 gulp.task('concat-font', ['concat-base'], () => {
     return gulp.src([
             'build/less/font.less',
@@ -120,7 +102,7 @@ gulp.task('less', () => {
 
 // Build
 gulp.task('build', ['copy-build'], () => {
-    runSequence('copy-build', 'concat-font', 'concat-forms', 'concat-grids', 'less');
+    runSequence('copy-build', 'concat-font', 'less');
 });
 
 gulp.task('default', ['build']);

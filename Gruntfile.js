@@ -80,17 +80,7 @@ module.exports = function (grunt) {
     				{'build/less/base.less': [
     					'bower_components/normalize-css/normalize.css',
     					'build/less/base.less'
-    				]},
-
-                    {'build/less/forms-responsive.less': [
-                        'build/less/forms.less',
-                        'build/less/forms-r.less'
-                    ]},
-
-                    {'build/less/grids-responsive.less': [
-                        'build/less/grids.less',
-                        'build/less/grids-r.less'
-                    ]}
+    				]}
     			]
     		},
 
