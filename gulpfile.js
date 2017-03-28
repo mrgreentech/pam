@@ -1,6 +1,7 @@
 'use strict';
 
 // Config
+const pkg = require('./package.json');
 const supportedBrowsers = [
     'Chrome >= 35',
     'Firefox >= 38',
@@ -14,6 +15,7 @@ const supportedBrowsers = [
 // Modules
 const gulp           = require('gulp');
 const concat         = require('gulp-concat');
+const banner         = require('gulp-banner');
 const LessAutoprefix = require('less-plugin-autoprefix');
 const autoprefix     = new LessAutoprefix({ browsers: supportedBrowsers });
 const del            = require('del');
@@ -27,6 +29,27 @@ const buildLessPath   = './build/less/';
 const buildPath       = './build/';
 const distPath        = './dist/';
 const srcLessGlobPath = './src/less/**';
+
+
+// Banner
+let licenseBanner = {
+    pam: [
+        '\n/*!',
+        'Pam v<%= pkg.version %>',
+        'Copyright 2016 Mr Green & Co Technology All rights reserved.',
+        'Licensed under the BSD License.',
+        'https://github.com/mrgreentech/pam/blob/master/LICENSE.md',
+        '*/\n'
+    ].join('\n'),
+    pure: [
+        '\n/*!',
+        'Pure v0.6.0',
+        'Copyright 2014 Yahoo! Inc. All rights reserved.',
+        'Licensed under the BSD License.',
+        'https://github.com/yahoo/pure/blob/master/LICENSE.md',
+        '*/\n\n'
+    ].join('\n')
+}
 
 
 // Cleaning
@@ -50,6 +73,9 @@ gulp.task('copy-build', ['clean-build'], () => {
 gulp.task('concat-base', () => {
     return gulp.src(['bower_components/normalize-css/normalize.css', 'build/less/base.less'])
         .pipe(concat('base.less'))
+        .pipe(banner(licenseBanner.pam + licenseBanner.pure, {
+            pkg: pkg
+        }))
         .pipe(gulp.dest(buildLessPath));
 });
 

@@ -1,7 +1,7 @@
 {
   "name": "pam",
+  "description": "PAM is a light, modular and flexible AMCSS library.",
   "version": "1.0.0",
-  "description": "PAM is a light, modular and maintainable CSS library.",
   "keywords": [
     "css",
     "less",
@@ -10,6 +10,7 @@
     "ui",
     "web"
   ],
+  "homepage": "https://mrgreentech.github.io/pam/",
   "author": "The PAM Authors (https://github.com/mrgreentech/pam/graphs/contributors)",
   "contributors": [
     "Mr Green & Co Technology"
@@ -17,6 +18,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mrgreentech/pam.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrgreentech/pam/issues"
   },
   "license": "BSD-3-Clause-Attribution",
   "scripts": {
@@ -47,6 +51,7 @@
     "grunt-contrib-less": "^1.4.0",
     "grunt-postcss": "^0.8.0",
     "gulp": "^3.9.1",
+    "gulp-banner": "^0.1.3",
     "gulp-concat": "^2.6.1",
     "gulp-less": "^3.3.0",
     "gulp-util": "^3.0.8",
