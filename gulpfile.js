@@ -13,19 +13,25 @@ const supportedBrowsers = [
 
 
 // Modules
-const gulp           = require('gulp');
-const concat         = require('gulp-concat');
-const banner         = require('gulp-banner');
 const LessAutoprefix = require('less-plugin-autoprefix');
 const autoprefix     = new LessAutoprefix({ browsers: supportedBrowsers });
+const banner         = require('gulp-banner');
+const cleanCSS       = require('gulp-clean-css');
+const concat         = require('gulp-concat');
 const del            = require('del');
+const gulp           = require('gulp');
 const gutil          = require('gulp-util');
+const gzip           = require('gulp-gzip');
 const less           = require('gulp-less');
+const rename         = require('gulp-rename');
 const runSequence    = require('run-sequence');
+const size           = require('gulp-size');
+const sizereport     = require('gulp-sizereport');
 
 
 // File and folders
 const buildLessPath   = './build/less/';
+const buildMainCss    = './build/pam.css';
 const buildPath       = './build/';
 const distPath        = './dist/';
 const srcLessGlobPath = './src/less/**';
@@ -89,7 +95,7 @@ gulp.task('concat-font', ['concat-base'], () => {
 });
 
 
-// Preprocess
+// Styles
 gulp.task('less', () => {
     return gulp
         .src('./build/less/pam.less')
@@ -100,9 +106,31 @@ gulp.task('less', () => {
 });
 
 
+// Optimize
+gulp.task('minify', ['less'], function() {
+  return gulp.src(buildMainCss)
+    .pipe(cleanCSS({ compatibility: 'ie8', format: 'keep-breaks' }))
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest(buildPath));
+});
+
+gulp.task('compress', ['less'], function() {
+    gulp.src(buildMainCss)
+    .pipe(gzip())
+    .pipe(gulp.dest(buildPath));
+});
+
+gulp.task('size-report', ['compress'], function () {
+    return gulp.src('./build/*')
+        .pipe(sizereport());
+});
+
+
 // Build
 gulp.task('build', ['copy-build'], () => {
-    runSequence('copy-build', 'concat-font', 'less');
+    runSequence('copy-build', 'concat-font', 'less', 'minify', 'compress', 'size-report');
 });
 
 gulp.task('default', ['build']);
