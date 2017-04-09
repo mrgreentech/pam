@@ -30,6 +30,26 @@ body.sg {
     border-radius: 4px;
 }
 
+[sg-Hero] {
+    padding: 24px;
+    box-sizing: border-box;
+    text-align: center;
+
+    margin-left: -30px;
+    margin-right: -20px;
+}
+
+[sg-Hero-Header] img {
+    height: 144px;
+}
+
+[sg-Hero-Punchline],
+[sg-Hero-Header],
+[sg-Hero-Cta] {
+    margin: 2em auto;
+    max-width: 768px;
+}
+
 [sg-mock-icon] {
     width: 24px;
     height: 24px;

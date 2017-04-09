@@ -1,5 +1,21 @@
 'use strict';
 
+// Modules
+const banner         = require('gulp-banner');
+const cleanCSS       = require('gulp-clean-css');
+const concat         = require('gulp-concat');
+const del            = require('del');
+const gulp           = require('gulp');
+const gutil          = require('gulp-util');
+const gzip           = require('gulp-gzip');
+const less           = require('gulp-less');
+const LessAutoprefix = require('less-plugin-autoprefix');
+const rename         = require('gulp-rename');
+const runSequence    = require('run-sequence');
+const size           = require('gulp-size');
+const sizereport     = require('gulp-sizereport');
+
+
 // Config
 const pkg = require('./package.json');
 const supportedBrowsers = [
@@ -12,25 +28,9 @@ const supportedBrowsers = [
 ];
 
 
-// Modules
-const LessAutoprefix = require('less-plugin-autoprefix');
-const autoprefix     = new LessAutoprefix({ browsers: supportedBrowsers });
-const banner         = require('gulp-banner');
-const cleanCSS       = require('gulp-clean-css');
-const concat         = require('gulp-concat');
-const del            = require('del');
-const gulp           = require('gulp');
-const gutil          = require('gulp-util');
-const gzip           = require('gulp-gzip');
-const less           = require('gulp-less');
-const rename         = require('gulp-rename');
-const runSequence    = require('run-sequence');
-const size           = require('gulp-size');
-const sizereport     = require('gulp-sizereport');
-
-
 // File and folders
 const buildLessPath   = './build/less/';
+const buildSgPath     = './build/styleguide/';
 const buildMainCss    = './build/pam.css';
 const buildPath       = './build/';
 const distPath        = './dist/';
@@ -60,11 +60,15 @@ let licenseBanner = {
 
 // Cleaning
 gulp.task('clean-build', () => {
-    return del(buildPath);
+    return del('./build/**');
 });
 
 gulp.task('clean-dist', () => {
     return del(distPath);
+});
+
+gulp.task('clean-build-css', () => {
+    return del('./build/*.css');
 });
 
 
@@ -72,6 +76,16 @@ gulp.task('clean-dist', () => {
 gulp.task('copy-build', ['clean-build'], () => {
     return gulp.src(srcLessGlobPath)
         .pipe(gulp.dest(buildLessPath));
+});
+
+gulp.task('copy-build-dev', ['clean-build-css'], () => {
+    return gulp.src(srcLessGlobPath)
+        .pipe(gulp.dest(buildLessPath));
+});
+
+gulp.task('copy-pam-to-sg', ['compress'], () => {
+    return gulp.src(buildMainCss)
+        .pipe(gulp.dest(buildSgPath + '/kss-assets/css/'));
 });
 
 
@@ -100,14 +114,14 @@ gulp.task('less', () => {
     return gulp
         .src('./build/less/pam.less')
         .pipe(less({
-            plugins: [autoprefix]
+            plugins: [new LessAutoprefix({ browsers: supportedBrowsers })]
         }))
         .pipe(gulp.dest(buildPath));
 });
 
 
 // Optimize
-gulp.task('minify', ['less'], function() {
+gulp.task('minify', ['less'], () => {
   return gulp.src(buildMainCss)
     .pipe(cleanCSS({ compatibility: 'ie8', format: 'keep-breaks' }))
     .pipe(rename({
@@ -116,21 +130,25 @@ gulp.task('minify', ['less'], function() {
     .pipe(gulp.dest(buildPath));
 });
 
-gulp.task('compress', ['less'], function() {
+gulp.task('compress', ['less'], () => {
     gulp.src(buildMainCss)
     .pipe(gzip())
     .pipe(gulp.dest(buildPath));
 });
 
-gulp.task('size-report', ['compress'], function () {
+gulp.task('size-report', ['compress'], () => {
     return gulp.src('./build/*')
         .pipe(sizereport());
 });
 
 
-// Build
+// Builds
 gulp.task('build', ['copy-build'], () => {
-    runSequence('copy-build', 'concat-font', 'less', 'minify', 'compress', 'size-report');
+    runSequence('copy-build', 'concat-font', 'less', 'minify', 'compress', 'size-report', 'copy-pam-to-sg');
+});
+
+gulp.task('build-dev', () => {
+    runSequence('copy-build-dev', 'concat-font', 'less', 'minify', 'compress', 'size-report', 'copy-pam-to-sg');
 });
 
 gulp.task('default', ['build']);

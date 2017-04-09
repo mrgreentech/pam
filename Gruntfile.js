@@ -265,7 +265,7 @@ module.exports = function (grunt) {
     	'less',
         'postcss:dist',
     	'cssmin',
-        'copy:styleguide'
+        // 'copy:styleguide'
     ]);
 
     grunt.registerTask('build_bs', [
@@ -277,7 +277,7 @@ module.exports = function (grunt) {
         'less',
         'postcss:dist',
         'cssmin',
-        'copy:styleguide'
+        // 'copy:styleguide'
     ]);
 
     grunt.registerTask('build_styleguide', [
