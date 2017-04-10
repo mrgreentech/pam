@@ -27,14 +27,29 @@ const supportedBrowsers = [
     'Safari >= 8'
 ];
 
+let config = (function() {
+    const buildBase = './build/';
+    const srcBase = './src/';
+    const distBase = './dist/';
 
-// File and folders
-const buildLessPath   = './build/less/';
-const buildSgPath     = './build/styleguide/';
-const buildMainCss    = './build/pam.css';
-const buildPath       = './build/';
-const distPath        = './dist/';
-const srcLessGlobPath = './src/less/**';
+    return {
+        src: {
+            base: srcBase,
+            lessGlob: srcBase + 'less/**'
+        },
+        build: {
+            base: buildBase,
+            baseGlob: buildBase + '**',
+            cssFile: buildBase + 'pam.css',
+            less: buildBase + 'less/',
+            lessGlob: buildBase + 'less/**',
+            styleguide: buildBase + 'styleguide/'
+        },
+        dist: {
+            base: distBase
+        }
+    };
+}());
 
 
 // Banner
@@ -64,7 +79,7 @@ gulp.task('clean-build', () => {
 });
 
 gulp.task('clean-dist', () => {
-    return del(distPath);
+    return del(config.dist.base);
 });
 
 gulp.task('clean-build-css', () => {
@@ -73,19 +88,26 @@ gulp.task('clean-build-css', () => {
 
 
 // Copy
-gulp.task('copy-build', ['clean-build'], () => {
-    return gulp.src(srcLessGlobPath)
-        .pipe(gulp.dest(buildLessPath));
+gulp.task('copy-build', () => {
+    return gulp.src(config.src.lessGlob)
+        .pipe(gulp.dest(config.build.less));
 });
 
 gulp.task('copy-build-dev', ['clean-build-css'], () => {
-    return gulp.src(srcLessGlobPath)
-        .pipe(gulp.dest(buildLessPath));
+    return gulp.src(config.src.lessGlob)
+        .pipe(gulp.dest(config.build.less));
 });
 
-gulp.task('copy-pam-to-sg', ['compress'], () => {
-    return gulp.src(buildMainCss)
-        .pipe(gulp.dest(buildSgPath + '/kss-assets/css/'));
+gulp.task('copy-pam-to-sg', () => {
+    return gulp.src(config.build.cssFile)
+        .pipe(gulp.dest(config.build.styleguide + '/kss-assets/css/'));
+});
+
+gulp.task('copy-dist', () => {
+    gulp.src(config.build.lessGlob)
+        .pipe(gulp.dest(config.dist.base + 'less/'));
+    gulp.src(['./build/pam.css', './build/pam.min.css'])
+        .pipe(gulp.dest(config.dist.base));
 });
 
 
@@ -96,7 +118,7 @@ gulp.task('concat-base', () => {
         .pipe(banner(licenseBanner.pam + licenseBanner.pure, {
             pkg: pkg
         }))
-        .pipe(gulp.dest(buildLessPath));
+        .pipe(gulp.dest(config.build.less));
 });
 
 gulp.task('concat-font', ['concat-base'], () => {
@@ -105,50 +127,56 @@ gulp.task('concat-font', ['concat-base'], () => {
             'build/less/base.less'
         ])
         .pipe(concat('base.less'))
-        .pipe(gulp.dest(buildLessPath));
+        .pipe(gulp.dest(config.build.less));
 });
 
 
 // Styles
 gulp.task('less', () => {
     return gulp
-        .src('./build/less/pam.less')
+        .src(config.build.less + 'pam.less')
         .pipe(less({
             plugins: [new LessAutoprefix({ browsers: supportedBrowsers })]
         }))
-        .pipe(gulp.dest(buildPath));
+        .pipe(gulp.dest(config.build.base));
 });
 
 
 // Optimize
-gulp.task('minify', ['less'], () => {
-  return gulp.src(buildMainCss)
+gulp.task('minify', () => {
+  return gulp.src(config.build.cssFile)
     .pipe(cleanCSS({ compatibility: 'ie8', format: 'keep-breaks' }))
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest(buildPath));
+    .pipe(gulp.dest(config.build.base));
 });
 
-gulp.task('compress', ['less'], () => {
-    gulp.src(buildMainCss)
+gulp.task('compress', () => {
+    return gulp.src(config.build.base + '/pam.min.css')
     .pipe(gzip())
-    .pipe(gulp.dest(buildPath));
+    .pipe(gulp.dest(config.build.base));
 });
 
-gulp.task('size-report', ['compress'], () => {
+gulp.task('size-report', () => {
     return gulp.src('./build/*')
-        .pipe(sizereport());
+        .pipe(sizereport({
+            gzip: true,
+            '*': {
+                'maxSize': 20000
+            },
+        }));
 });
 
 
 // Builds
-gulp.task('build', ['copy-build'], () => {
-    runSequence('copy-build', 'concat-font', 'less', 'minify', 'compress', 'size-report', 'copy-pam-to-sg');
+gulp.task('build', () => {
+    return runSequence('clean-build', 'copy-build', 'concat-font', 'less', 'minify', 'copy-pam-to-sg');
 });
 
 gulp.task('build-dev', () => {
-    runSequence('copy-build-dev', 'concat-font', 'less', 'minify', 'compress', 'size-report', 'copy-pam-to-sg');
+    return runSequence('clean-build-css', 'copy-build', 'concat-font', 'less', 'minify', 'copy-pam-to-sg');
 });
+
 
 gulp.task('default', ['build']);
