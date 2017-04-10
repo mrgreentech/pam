@@ -12,7 +12,6 @@ const less           = require('gulp-less');
 const LessAutoprefix = require('less-plugin-autoprefix');
 const rename         = require('gulp-rename');
 const runSequence    = require('run-sequence');
-const size           = require('gulp-size');
 const sizereport     = require('gulp-sizereport');
 
 

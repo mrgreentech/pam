@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - '6'
 before_script:
-- bower install
+- bower update
 deploy:
   provider: pages
   skip_cleanup: true
