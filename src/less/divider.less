@@ -26,10 +26,9 @@
 
 [pam-Divider] {
     display: block;
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: @divider-color;
+    border-top: 1px solid @divider-color;
     margin: 0;
+
     .hook-divider;
 }
 
@@ -76,8 +75,8 @@
 // Style guide: divider.transparent
 
 [pam-Divider~="transparent"] {
-	border-top-color: fade(@divider-color, @divider-opacity);
-	.hook-divider-transparent;
+    border-top-color: fade(@divider-color, @divider-opacity);
+    .hook-divider-transparent;
 }
 
 

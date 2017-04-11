@@ -11,7 +11,7 @@
 // Variables
 // ==================================================================
 
-@alert-background:         #EFEFEF;
+@alert-background:         #efefef;
 @alert-border-radius:      @border-radius-base;
 @alert-color:              @skin-text-primary;
 @alert-line-height:        @line-height-base;
@@ -90,8 +90,8 @@
     color: @alert-info-color;
 
     [pam-Alert-Close] {
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             background-color: @alert-info-color;
         }
     }
@@ -109,8 +109,8 @@
     color: @alert-success-color;
 
     [pam-Alert-Close] {
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             background-color: @alert-success-color;
         }
     }
@@ -128,8 +128,8 @@
     color: @alert-warning-color;
 
     [pam-Alert-Close] {
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             background-color: @alert-warning-color;
         }
     }
@@ -147,8 +147,8 @@
     color: @alert-danger-color;
 
     [pam-Alert-Close] {
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             background-color: @alert-danger-color;
         }
     }
@@ -256,8 +256,8 @@
         opacity: 1;
     }
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
         color: inherit;
         position: absolute;
         left: 7px;
@@ -267,11 +267,11 @@
         background-color: @alert-color;
     }
 
-    &:before {
+    &::before {
         transform: rotate(45deg);
     }
 
-    &:after {
+    &::after {
         transform: rotate(-45deg);
     }
 }
