@@ -1,29 +1,38 @@
-# [PAM](https://mrgreentech.github.io/pam/)
+# [PAM][style-guide-link]
 
-[![Build Status](https://travis-ci.org/mrgreentech/pam.svg?branch=master)](https://travis-ci.org/mrgreentech/pam)
-![Bower version](https://img.shields.io/bower/v/pam.svg)
+[![Build Status](https://travis-ci.org/mrgreentech/pam.svg?branch=master)][travis-ci-link]
+![Bower version][bower-version-shield-link]
 
 PAM is a light and modular CSS library. Based and inspired by other great CSS stuff.
 
-* Choose which core components to use.
-* Light weight: **5.5KB minified + gzip**.
-* AMCSS semantic styling.
+* Pure AMCSS semantics.
 * LESS hooks for customization.
-* A minimalist default skin which is easy to customize and extend.
+* Light weight: **8.8KB minified + gzip**.
+
+[style-guide-link]: https://mrgreentech.github.io/pam/
+[travis-ci-link]: https://travis-ci.org/mrgreentech/pam/
+[bower-version-shield-link]: https://img.shields.io/bower/v/pam.svg
 
 
 ## Installation
 
-Choose how you want to install PAM:
+Available options:
 
-- [Download from GitHub.](https://github.com/mrgreentech/pam)
+- [Download from GitHub.][master-download-link]
 - Clone: `git clone https://github.com/mrgreentech/pam.git`
-- Install with Bower: `bower install pam`
+- Bower: `bower install pam`
 
-Once that's done either use the gzipped file in the `release` folder or the main .less file in the `release/less` folder to use in a project.
+[master-download-link]: https://github.com/mrgreentech/pam/archive/master.zip
 
 
-### Build from source is easy...
+## Use
+Ok, so that was easy to install. Now let's use it. To get started use one of the the raw css files (pam.css or pam.min.css) in the `release` folder.
+
+### LESS
+ PAM can be integrated in projects that use LESS as preprocessor. Import the main less file (`pam.less`) in the `release/less` folder to your projects main LESS file, and then your good to go.
+
+
+## Build
 
 **Prerequisites**: Node and npm
 
@@ -31,18 +40,40 @@ Once that's done either use the gzipped file in the `release` folder or the main
 $ git clone https://github.com/mrgreentech/pam.git
 $ cd pam
 $ npm i
-$ grunt
+$ npm run build
 ```
+
+### Commands
+
+* **build:** `npm run build`
+
+    It starts by linting all the less files in the source with `stylelint`.
+    After that gulp takes over and starts of by cleaning the build folders and copying the less source files to the build folder. Then files are concated and stamped with license banners. Now the less can be parsed to css which result in the `pam.css` file. The final step is to minify the css and then prepare the styleguide build by copying `pam.css` to the `styleguide` folder. Now it's time to build the styleguide and when that's done a file size report is shown in the console.
+
+* **watch:** `npm run watch`
+
+    This one is a mind bender. It starts of by doing a `build`, after that it runs browsersync and onchange in parallel. So that when a change in the `src` folder is done a build is triggered and when the files in the `build` folder is updated browsersync updates the browser with the changes.
+
+* **dist:** `npm run dist`
+
+    This is straight forward. Runs a build, cleans the dist folder and copies dist files from build folder.
+
+* **test:** `npm test`
+
+    This simply runs a build since it contains all the steps that needs to be working.
 
 
 ## Issues
 
-Found a bug or have a feature request? First search [reported and closed issues](https://github.com/mrgreentech/pam/issues). If that does not ring a bell feel free to [create a new issue](https://github.com/mrgreentech/pam/issues/new).
+Found a bug or have a feature request? First search [reported and closed issues][issues-link]. If that does not ring a bell feel free to [create a new issue][create-issue-link].
+
+[issues-link]: https://github.com/mrgreentech/pam/issues/
+[create-issue-link]: https://github.com/mrgreentech/pam/issues/new/
 
 
 ## Documentation
 
-Head over to the PAM [style guide](https://mrgreentech.github.io/pam/) for documentation and examples.
+Head over to the PAM [style guide][style-guide-link] for documentation and examples.
 
 
 ## Contributing
@@ -55,18 +86,20 @@ Head over to the PAM [style guide](https://mrgreentech.github.io/pam/) for docum
 
 
 ## History
-PAM 1.0 A.K.A [Legendary grasshopper](https://github.com/mrgreentech/pam/tree/legendary-grasshopper)  is in the making so stay tuned...
+PAM 1.0 A.K.A [Legendary grasshopper][legendary-grasshopper-link] is in the making so stay tuned...
 
 #### 1.X
 * Total rework of the 0.x pre-release.
 
-For further information about history have a look at the [CHANGELOG](https://github.com/mrgreentech/pam/blob/master/HISTORY.md).
+For further information about history have a look at the [CHANGELOG][changelog-link].
+
+[legendary-grasshopper-link]: https://github.com/mrgreentech/pam/tree/legendary-grasshopper
+[changelog-link]: ./CHANGELOG.md
 
 
 ## License
 
-This software is free to use under the Mr Green & Co Technology AB. BSD license.
-See the [license file](https://github.com/mrgreentech/pam/blob/master/LICENSE.md) for license text and copyright information.
+This software is free to use under the Mr Green & Co Technology AB BSD license.
+See the [license doc][license-link] for license and copyright information.
 
-
-[LICENSE file]: https://github.com/mrgreentech/pam/blob/master/LICENSE.md
+[license-link]: ./LICENSE.md
