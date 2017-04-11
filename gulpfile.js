@@ -16,66 +16,7 @@ const sizereport     = require('gulp-sizereport');
 
 
 // Config
-const pkg = require('./package.json');
-const supportedBrowsers = [
-    'Chrome >= 35',
-    'Firefox >= 38',
-    'Edge >= 12',
-    'Explorer >= 10',
-    'iOS >= 8',
-    'Safari >= 8'
-];
-
-let config = (function() {
-    const buildBase = './build/';
-    const srcBase = './src/';
-    const distBase = './dist/';
-
-    return {
-        src: {
-            base: srcBase,
-            lessGlob: srcBase + 'less/**'
-        },
-        build: {
-            base: buildBase,
-            baseGlob: buildBase + '**',
-            cssFile: buildBase + 'pam.css',
-            less: buildBase + 'less/',
-            lessGlob: buildBase + 'less/**',
-            styleguide: buildBase + 'styleguide/'
-        },
-        dist: {
-            base: distBase
-        }
-    };
-}());
-
-
-// Banner
-let licenseBanner = {
-    pam: [
-        '\n/*!',
-        'Pam v<%= pkg.version %>',
-        'Copyright 2016 Mr Green & Co Technology All rights reserved.',
-        'Licensed under the BSD License.',
-        'https://github.com/mrgreentech/pam/blob/master/LICENSE.md',
-        '*/\n'
-    ].join('\n'),
-    pure: [
-        '\n/*!',
-        'Pure v0.6.0',
-        'Copyright 2014 Yahoo! Inc. All rights reserved.',
-        'Licensed under the BSD License.',
-        'https://github.com/yahoo/pure/blob/master/LICENSE.md',
-        '*/\n'
-    ].join('\n'),
-    normalize: [
-        '\n/*!',
-        'normalize.css v<%= pkg.devDependencies["normalize.css"] %> | MIT License',
-        'Copyright (c) Nicolas Gallagher and Jonathan Neal',
-        '*/\n\n'
-    ].join('\n')
-}
+const config = require('./build.conf.js')();
 
 
 // Cleaning
@@ -120,8 +61,8 @@ gulp.task('copy-dist', () => {
 gulp.task('concat-base', () => {
     return gulp.src(['node_modules/normalize.css/normalize.css', 'build/less/base.less'])
         .pipe(concat('base.less'))
-        .pipe(banner(licenseBanner.pam + licenseBanner.pure + licenseBanner.normalize, {
-            pkg: pkg
+        .pipe(banner(`${config.banner.pam}${config.banner.pure}${config.banner.normalize}`, {
+            pkg: config.pkg
         }))
         .pipe(gulp.dest(config.build.less));
 });
@@ -141,7 +82,7 @@ gulp.task('less', () => {
     return gulp
         .src(config.build.less + 'pam.less')
         .pipe(less({
-            plugins: [new LessAutoprefix({ browsers: supportedBrowsers })]
+            plugins: [new LessAutoprefix({ browsers: config.supportedBrowsers })]
         }))
         .pipe(gulp.dest(config.build.base));
 });
@@ -180,8 +121,9 @@ gulp.task('build', () => {
 });
 
 gulp.task('build-dev', () => {
-    return runSequence('clean-build-css', 'copy-build', 'concat-font', 'less', 'minify', 'copy-pam-to-sg');
+    return runSequence('copy-build', 'concat-font', 'less', 'minify', 'copy-pam-to-sg');
 });
 
 
+// Default
 gulp.task('default', ['build']);
