@@ -67,6 +67,12 @@ let licenseBanner = {
         'Copyright 2014 Yahoo! Inc. All rights reserved.',
         'Licensed under the BSD License.',
         'https://github.com/yahoo/pure/blob/master/LICENSE.md',
+        '*/\n'
+    ].join('\n'),
+    normalize: [
+        '\n/*!',
+        'normalize.css v<%= pkg.devDependencies["normalize.css"] %> | MIT License',
+        'Copyright (c) Nicolas Gallagher and Jonathan Neal',
         '*/\n\n'
     ].join('\n')
 }
@@ -112,9 +118,9 @@ gulp.task('copy-dist', () => {
 
 // Concat
 gulp.task('concat-base', () => {
-    return gulp.src(['bower_components/normalize-css/normalize.css', 'build/less/base.less'])
+    return gulp.src(['node_modules/normalize.css/normalize.css', 'build/less/base.less'])
         .pipe(concat('base.less'))
-        .pipe(banner(licenseBanner.pam + licenseBanner.pure, {
+        .pipe(banner(licenseBanner.pam + licenseBanner.pure + licenseBanner.normalize, {
             pkg: pkg
         }))
         .pipe(gulp.dest(config.build.less));

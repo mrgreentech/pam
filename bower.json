@@ -11,9 +11,6 @@
     "amcss",
     "less"
   ],
-  "devDependencies": {
-    "normalize-css": "^3.0.2"
-  },
   "license": "BSD",
   "homepage": "https://mrgreentech.github.io/pam/",
   "ignore": [
