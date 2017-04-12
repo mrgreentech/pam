@@ -3,10 +3,10 @@ const pkg = require('./package.json');
 module.exports = () => {
     'use strict';
 
-    const version = `v${pkg.version}`;
+    const version   = `v${pkg.version}`;
     const buildBase = './build/';
-    const srcBase = './src/';
-    const distBase = './dist/';
+    const srcBase   = './src/';
+    const distBase  = './dist/';
 
     const supportedBrowsers = [
         'Chrome >= 35',
@@ -49,18 +49,21 @@ module.exports = () => {
         banner: licenseBanner,
         src: {
             base: srcBase,
-            lessGlob: srcBase + 'less/**'
+            lessGlob: `${srcBase}less/**`
         },
         build: {
             base: buildBase,
-            baseGlob: buildBase + '**',
-            cssFile: buildBase + 'pam.css',
-            less: buildBase + 'less/',
-            lessGlob: buildBase + 'less/**',
-            styleguide: buildBase + 'styleguide/'
+            baseGlob: `${buildBase}**`,
+            cssFile: `${buildBase}pam.css`,
+            cssMinFile: `${buildBase}pam.min.css`,
+            less: `${buildBase}less/`,
+            lessFile: `${buildBase}less/pam.less`,
+            lessGlob: `${buildBase}less/**`,
+            styleguide: `${buildBase}styleguide/`
         },
         dist: {
-            base: distBase
+            base: distBase,
+            less: `${distBase}less/`
         }
     };
 };

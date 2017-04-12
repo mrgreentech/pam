@@ -21,25 +21,16 @@ const config = require('./build.conf.js')();
 
 // Cleaning
 gulp.task('clean-build', () => {
-    return del('./build/**');
+    return del(config.build.base);
 });
 
 gulp.task('clean-dist', () => {
     return del(config.dist.base);
 });
 
-gulp.task('clean-build-css', () => {
-    return del('./build/*.css');
-});
-
 
 // Copy
 gulp.task('copy-build', () => {
-    return gulp.src(config.src.lessGlob)
-        .pipe(gulp.dest(config.build.less));
-});
-
-gulp.task('copy-build-dev', ['clean-build-css'], () => {
     return gulp.src(config.src.lessGlob)
         .pipe(gulp.dest(config.build.less));
 });
@@ -51,8 +42,8 @@ gulp.task('copy-pam-to-sg', () => {
 
 gulp.task('copy-dist', () => {
     gulp.src(config.build.lessGlob)
-        .pipe(gulp.dest(config.dist.base + 'less/'));
-    gulp.src(['./build/pam.css', './build/pam.min.css'])
+        .pipe(gulp.dest(config.dist.less));
+    gulp.src([config.build.cssFile, config.build.cssMinFile])
         .pipe(gulp.dest(config.dist.base));
 });
 
@@ -80,7 +71,7 @@ gulp.task('concat-font', ['concat-base'], () => {
 // Styles
 gulp.task('less', () => {
     return gulp
-        .src(config.build.less + 'pam.less')
+        .src(config.build.lessFile)
         .pipe(less({
             plugins: [new LessAutoprefix({ browsers: config.supportedBrowsers })]
         }))
