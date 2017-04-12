@@ -231,10 +231,12 @@ a[pam-Button~="primary"] {
     &:hover,
     &:focus {
         background-color: @button-primary-hover-background;
+        color: @button-primary-color;
     }
 
     &:active {
         background-color: darken(@button-primary-background, @button-darken);
+        color: @button-primary-color;
     }
 
     .hook-button-primary;
@@ -284,6 +286,34 @@ a[pam-Button~="tertiary"] {
 
     .hook-button-tertiary;
 }
+
+// Size modifier: tertiary
+// ==================================================================
+
+// large
+
+[pam-Button~="tertiary"][pam-Button~="large"],
+a[pam-Button~="tertiary"][pam-Button~="large"] {
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+// small
+
+[pam-Button~="tertiary"][pam-Button~="small"],
+a[pam-Button~="tertiary"][pam-Button~="small"] {
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+// mini
+
+[pam-Button~="tertiary"][pam-Button~="mini"],
+a[pam-Button~="tertiary"][pam-Button~="mini"] {
+    padding-top: @space-8;
+    padding-bottom: @space-8;
+}
+
 
 //  link
 
@@ -416,28 +446,28 @@ a[pam-Button~="danger"] {
 //         <button pam-Button="large">Large</button>
 //         <button pam-Button="large flat">Large</button>
 //         <button pam-Button="circle large">
-//             <img sg-mock-button-icon src="sg-assets/plus.svg" />
+//             <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
 //         </button>
 //     </div>
 //     <div>
 //         <button pam-Button>Default</button>
 //         <button pam-Button="flat">Default</button>
 //         <button pam-Button="circle">
-//             <img sg-mock-button-icon src="sg-assets/plus.svg" />
+//             <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
 //         </button>
 //     </div>
 //     <div>
 //         <button pam-Button="small">Small</button>
 //         <button pam-Button="flat small">Small</button>
 //         <button pam-Button="circle small">
-//             <img sg-mock-button-icon src="sg-assets/plus.svg" />
+//             <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
 //         </button>
 //     </div>
 //     <div>
 //         <button pam-Button="mini">Mini</button>
 //         <button pam-Button="flat mini">Mini</button>
 //         <button pam-Button="circle mini">
-//             <img sg-mock-button-icon src="sg-assets/plus.svg" />
+//             <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
 //         </button>
 //     </div>
 // </div>
@@ -530,13 +560,7 @@ a[pam-Button~="mini"] {
 //
 // Style guide: buttons.flat
 
-[pam-Button~="flat"],
-[pam-Button~="flat"][pam-Button~="primary"],
-[pam-Button~="flat"][pam-Button~="secondary"],
-[pam-Button~="flat"][pam-Button~="info"],
-[pam-Button~="flat"][pam-Button~="success"],
-[pam-Button~="flat"][pam-Button~="warning"],
-[pam-Button~="flat"][pam-Button~="danger"] {
+[pam-Button~="flat"] {
     background-color: transparent;
     color: @skin-text-primary;
 
@@ -584,8 +608,8 @@ a[pam-Button~="mini"] {
 // Fluid block level buttons span the full width of a parent.
 //
 // Markup:
-// <button pam-Button="fluid">Button</button>
-// <button pam-Button="primary fluid">Button</button>
+// <button pam-Button="fluid">Default</button>
+// <button pam-Button="primary fluid">Primary</button>
 //
 // Weight: 7
 //
@@ -605,6 +629,29 @@ a[pam-Button~="fluid"] {
 }
 
 
+// Modifier: rounded
+// ==================================================================
+
+// Rounded
+//
+// To get your buttons rounded just add the `rounded` modifier.
+//
+// Markup:
+// <button pam-Button="rounded">Default</button>
+// <button pam-Button="primary rounded">Primary</button>
+//
+// Weight: 7
+//
+// Style guide: buttons.rounded
+
+[pam-Button~="rounded"],
+a[pam-Button~="rounded"] {
+    border-radius: 500px;
+
+    // .hook-button-fluid;
+}
+
+
 //  Modifier: circle
 // ==================================================================
 
@@ -615,13 +662,13 @@ a[pam-Button~="fluid"] {
 //
 // Markup:
 // <button pam-Button="circle">
-//    <img sg-mock-button-icon src="sg-assets/plus.svg" />
+//    <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
 // </button>
 // <button pam-Button="circle raised">
-//    <img sg-mock-button-icon src="sg-assets/plus.svg" />
+//    <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
 // </button>
 // <button pam-Button="circle flat">
-//    <img sg-mock-button-icon src="sg-assets/plus.svg" />
+//    <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
 // </button>
 //
 // Weight: 8
@@ -629,13 +676,7 @@ a[pam-Button~="fluid"] {
 // Style guide: buttons.fab
 
 [pam-Button~="circle"],
-a[pam-Button~="circle"],
-[pam-Button~="circle"][pam-Button~="large"],
-a[pam-Button~="circle"][pam-Button~="large"],
-[pam-Button~="circle"][pam-Button~="small"],
-a[pam-Button~="circle"][pam-Button~="small"],
-[pam-Button~="circle"][pam-Button~="mini"],
-a[pam-Button~="circle"][pam-Button~="mini"] {
+a[pam-Button~="circle"] {
     border-radius: @button-circle-border-radius;
     height: @button-circle-size;
     line-height: @button-circle-line-height;
@@ -805,7 +846,7 @@ a[pam-Button~="circle"][pam-Button~="mini"] {
 //
 // Markup:
 // <button pam-Button="round">
-//    <img pam-Icon src="sg-assets/plus.svg" />
+//    <img pam-Icon src="kss-assets/img/plus.svg" />
 // </button>
 //
 // Style guide: buttons.deprecated.round
