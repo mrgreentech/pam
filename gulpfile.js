@@ -11,6 +11,7 @@ const gzip           = require('gulp-gzip');
 const less           = require('gulp-less');
 const LessAutoprefix = require('less-plugin-autoprefix');
 const rename         = require('gulp-rename');
+const replace        = require('gulp-replace');
 const runSequence    = require('run-sequence');
 const sizereport     = require('gulp-sizereport');
 
@@ -45,6 +46,13 @@ gulp.task('copy-dist', () => {
         .pipe(gulp.dest(config.dist.less));
     gulp.src([config.build.cssFile, config.build.cssMinFile])
         .pipe(gulp.dest(config.dist.base));
+});
+
+// Replace
+gulp.task('replace-version', () => {
+    gulp.src(`${config.build.styleguide}index.html`)
+        .pipe(replace('[[version]]', config.version))
+        .pipe(gulp.dest(config.build.styleguide));
 });
 
 

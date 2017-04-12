@@ -25,7 +25,7 @@
   "license": "BSD-3-Clause-Attribution",
   "scripts": {
     "build": "npm run lint:css && gulp build && npm run build:styleguide && gulp size-report",
-    "build:styleguide": "npm run styleguide",
+    "build:styleguide": "npm run styleguide && gulp replace-version",
     "build:watch": "npm run lint:css && gulp build-dev && npm run build:styleguide",
     "lint:css": "stylelint src/less/**/*.less --syntax less",
     "serve": "browser-sync start --server build/styleguide --files build/styleguide/*.html",
@@ -47,6 +47,7 @@
     "gulp-gzip": "^1.4.0",
     "gulp-less": "^3.3.0",
     "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
     "gulp-sizereport": "^1.2.0",
     "gulp-util": "^3.0.8",
     "kss": "^3.0.0-beta.18",

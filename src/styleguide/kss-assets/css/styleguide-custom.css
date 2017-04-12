@@ -2,7 +2,7 @@ body.sg {
     padding: 24px;
 }
 
-/* Styleguide custom */
+/* Styleguide kss overrides */
 
 .kss-style,
 .kss-style h1,
@@ -30,24 +30,31 @@ body.sg {
     border-radius: 4px;
 }
 
+/* Styleguide custom */
+
 [sg-Hero] {
     padding: 24px;
     box-sizing: border-box;
     text-align: center;
-
     margin-left: -30px;
     margin-right: -20px;
+}
+
+[sg-Hero] ul,
+[sg-Hero] ol {
+    margin: 0;
+    padding: 0;
 }
 
 [sg-Hero-Header] img {
     height: 172px;
 }
 
-[sg-Hero-Punchline],
-[sg-Hero-Header],
-[sg-Hero-Cta] {
-    margin: 2em auto;
+[sg-Hero] header,
+[sg-Hero] > div,
+[sg-Hero] footer {
     max-width: 768px;
+    margin: 2em auto;
 }
 
 [sg-mock-icon] {
