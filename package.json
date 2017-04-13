@@ -28,7 +28,7 @@
     "build:styleguide": "npm run styleguide && gulp replace-version",
     "build:watch": "npm run lint:css && gulp build-dev && npm run build:styleguide",
     "lint:css": "stylelint src/less/**/*.less --syntax less",
-    "serve": "browser-sync start --server build/styleguide --files build/styleguide/*.html",
+    "serve": "browser-sync start --server build/styleguide --files build/styleguide/index.html",
     "styleguide": "kss --config kss-config.json",
     "test": "npm run build",
     "watch": "npm-run-all build --parallel serve watch:*",

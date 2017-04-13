@@ -50,7 +50,7 @@ gulp.task('copy-dist', () => {
 
 // Replace
 gulp.task('replace-version', () => {
-    gulp.src(`${config.build.styleguide}index.html`)
+    return gulp.src(`${config.build.styleguide}index.html`)
         .pipe(replace('[[version]]', config.version))
         .pipe(gulp.dest(config.build.styleguide));
 });
