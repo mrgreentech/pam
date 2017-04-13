@@ -16,19 +16,20 @@
 //  Variables
 // ==================================================================
 
-@button-background:                 @skin-light;
+@button-background:                 @skin-text;
 @button-border-radius:              @border-radius-base;
-@button-border:                     none;
+@button-border:                     1px solid @skin-hint;
+@button-border-width:               1px;
 @button-color:                      @skin-text-primary;
-@button-darken:                     5%;
+@button-darken:                     7%;
 @button-decoration:                 none;
 @button-disabled-opacity:           0.4;
 @button-font-family:                inherit;
 @button-font-size:                  @font-size-medium;
 @button-font-weight:                @font-weight-medium;
-@button-hover-background:           lighten(@button-background, @button-lighten);
+@button-hover-background:           darken(@button-background, @button-darken);
 @button-lighten:                    7%;
-@button-line-height:                1rem;
+@button-line-height:                @line-height-base;
 @button-padding-horizontal:         @space-20;
 @button-padding-vertical:           @space-16;
 @button-padding:                    @button-padding-vertical @button-padding-horizontal;
@@ -37,51 +38,57 @@
 @button-transition-timing:          ease;
 
 @button-primary-background:         @skin-primary;
+@button-primary-border-color:       @skin-primary;
 @button-primary-color:              @skin-text;
 @button-primary-hover-background:   lighten(@button-primary-background, @button-lighten);
 
-@button-secondary-background:       @skin-accent;
+@button-secondary-background:       @skin-darker;
+@button-secondary-border-color:     @skin-darker;
 @button-secondary-color:            @skin-text;
 @button-secondary-hover-background: lighten(@button-secondary-background, @button-lighten);
 
+@button-tertiary-active-border:     darken(@button-tertiary-border-color, @button-darken);
+@button-tertiary-active-color:      darken(@button-tertiary-color, @button-darken);
 @button-tertiary-background:        transparent;
-@button-tertiary-border-width:      2px;
-@button-tertiary-border:            @skin-primary-light;
+@button-tertiary-border-color:      @skin-primary-light;
 @button-tertiary-color:             @skin-primary-light;
-@button-tertiary-hover-border:      lighten(@button-tertiary-border, 15%);
-@button-tertiary-hover-color:       lighten(@button-tertiary-color, 15%);
-@button-tertiary-padding:           @button-padding-vertical - @button-tertiary-border-width @button-padding-horizontal - @button-tertiary-border-width;
+@button-tertiary-hover-border:      lighten(@button-tertiary-border-color, 15%);
+@button-tertiary-hover-color:       lighten(@button-tertiary-border-color, 15%);
 @button-tertiary-transition:        color, border-color;
 
 @button-info-background:            @skin-info;
+@button-info-border-color:          @skin-info;
 @button-info-color:                 @skin-text;
 @button-info-hover-background:      lighten(@button-info-background, @button-lighten);
 
 @button-success-background:         @skin-success;
+@button-success-border-color:       @skin-success;
 @button-success-color:              @skin-text;
 @button-success-hover-background:   lighten(@button-success-background, @button-lighten);
 
 @button-warning-background:         @skin-warn;
+@button-warning-border-color:       @skin-warn;
 @button-warning-color:              @skin-text;
 @button-warning-hover-background:   lighten(@button-warning-background, @button-lighten);
 
 @button-danger-background:          @skin-danger;
+@button-danger-border-color:        @skin-danger;
 @button-danger-color:               @skin-text;
 @button-danger-hover-background:    lighten(@button-danger-background, @button-lighten);
 
 @button-large-font-size:            @font-size-large;
 @button-large-min-height:           @space-56;
-@button-large-padding:              @space-20 @space-32;
+@button-large-padding:              @space-20 - @button-border-width @space-32;
 
 @button-small-font-size:            @font-size-medium;
 @button-small-line-height:          @line-height-base;
 @button-small-min-height:           @space-40;
-@button-small-padding:              13px @space-16;
+@button-small-padding:              13px - @button-border-width @space-16;
 
 @button-mini-font-size:             @font-size-xsmall;
 @button-mini-line-height:           @line-height-base;
 @button-mini-min-height:            @space-32;
-@button-mini-padding:               10px @space-12;
+@button-mini-padding:               10px - @button-border-width @space-12;
 
 @button-link-background:            transparent;
 @button-link-border:                none;
@@ -94,6 +101,8 @@
 
 @button-fluid-margin-bottom:        @space-base;
 @button-fluid-width:                100%;
+
+@button-rounded-border-radius:      500px;
 
 @button-circle-border-radius:       50%;
 @button-circle-line-height:         @line-height-normal;
@@ -145,7 +154,7 @@
 
 [pam-Button~="active"],
 [pam-Button]:active {
-    background-color: darken(@button-background, @button-darken);
+    background-color: darken(@button-hover-background, @button-darken);
 
     .hook-button-active;
 }
@@ -226,6 +235,7 @@
 [pam-Button~="primary"],
 a[pam-Button~="primary"] {
     background-color: @button-primary-background;
+    border-color: @button-primary-border-color;
     color: @button-primary-color;
 
     &:hover,
@@ -247,6 +257,7 @@ a[pam-Button~="primary"] {
 [pam-Button~="secondary"],
 a[pam-Button~="secondary"] {
     background-color: @button-secondary-background;
+    border-color: @button-secondary-border-color;
     color: @button-secondary-color;
 
     &:hover,
@@ -266,9 +277,8 @@ a[pam-Button~="secondary"] {
 [pam-Button~="tertiary"],
 a[pam-Button~="tertiary"] {
     background: @button-tertiary-background;
-    border: @button-tertiary-border-width solid @button-tertiary-border;
+    border-color: @button-tertiary-border-color;
     color: @button-tertiary-color;
-    padding: @button-tertiary-padding;
     transition-property: @button-tertiary-transition;
 
     &:hover,
@@ -280,40 +290,12 @@ a[pam-Button~="tertiary"] {
 
     &:active {
         background: initial;
-        border-color: darken(@button-tertiary-border, @button-darken);
-        color: darken(@button-tertiary-color, @button-darken);
+        border-color: @button-tertiary-active-border;
+        color: @button-tertiary-active-color;
     }
 
     .hook-button-tertiary;
 }
-
-// Size modifier: tertiary
-// ==================================================================
-
-// large
-
-[pam-Button~="tertiary"][pam-Button~="large"],
-a[pam-Button~="tertiary"][pam-Button~="large"] {
-    padding-top: 18px;
-    padding-bottom: 18px;
-}
-
-// small
-
-[pam-Button~="tertiary"][pam-Button~="small"],
-a[pam-Button~="tertiary"][pam-Button~="small"] {
-    padding-top: 11px;
-    padding-bottom: 11px;
-}
-
-// mini
-
-[pam-Button~="tertiary"][pam-Button~="mini"],
-a[pam-Button~="tertiary"][pam-Button~="mini"] {
-    padding-top: @space-8;
-    padding-bottom: @space-8;
-}
-
 
 //  link
 
@@ -360,6 +342,7 @@ a[pam-Button~="link"] {
 [pam-Button~="info"],
 a[pam-Button~="info"] {
     background-color: @button-info-background;
+    border-color: @button-info-border-color;
     color: @button-info-color;
 
     &:hover,
@@ -379,6 +362,7 @@ a[pam-Button~="info"] {
 [pam-Button~="success"],
 a[pam-Button~="success"] {
     background-color: @button-success-background;
+    border-color: @button-info-border-color;
     color: @button-success-color;
 
     &:hover,
@@ -398,6 +382,7 @@ a[pam-Button~="success"] {
 [pam-Button~="warning"],
 a[pam-Button~="warning"] {
     background-color: @button-warning-background;
+    border-color: @button-warning-border-color;
     color: @button-warning-color;
 
     &:hover,
@@ -417,6 +402,7 @@ a[pam-Button~="warning"] {
 [pam-Button~="danger"],
 a[pam-Button~="danger"] {
     background-color: @button-danger-background;
+    border-color: @button-danger-border-color;
     color: @button-danger-color;
 
     &:hover,
@@ -535,6 +521,7 @@ a[pam-Button~="mini"] {
 // Style guide: buttons.raised
 
 [pam-Button~="raised"] {
+    border-color: transparent;
     box-shadow: @button-raised-box-shadow;
 
     &:active {
@@ -562,6 +549,7 @@ a[pam-Button~="mini"] {
 
 [pam-Button~="flat"] {
     background-color: transparent;
+    border-color: transparent;
     color: @skin-text-primary;
 
     &:hover,
@@ -570,7 +558,7 @@ a[pam-Button~="mini"] {
     }
 
     &:active {
-        background-color: @button-background;
+        background-color: darken(@button-hover-background, @button-darken);
     }
 
     .hook-button-flat;
@@ -646,9 +634,9 @@ a[pam-Button~="fluid"] {
 
 [pam-Button~="rounded"],
 a[pam-Button~="rounded"] {
-    border-radius: 500px;
+    border-radius: @button-rounded-border-radius;
 
-    // .hook-button-fluid;
+    .hook-button-rounded;
 }
 
 
@@ -747,16 +735,18 @@ a[pam-Button~="circle"][pam-Button~="mini"] {
     display: flex;
 
     & > [pam-Button] {
-        border-left: 1px solid fade(#000, 10%);
+        // border-left: 1px solid fade(#000, 10%);
+        // border-color: transparent;
         border-radius: 0;
         display: block;
 
         &:first-child {
-            border-left: none;
+            border-right: none;
             border-radius: @button-border-radius 0 0 @button-border-radius;
         }
 
         &:last-child {
+            border-left: none;
             border-radius: 0 @button-border-radius @button-border-radius 0;
         }
     }
@@ -782,7 +772,7 @@ a[pam-Button~="circle"][pam-Button~="mini"] {
 
 [pam-Button-Group="borderless"] {
     & > [pam-Button] {
-        border-left: none;
+        border-color: transparent;
     }
 }
 
@@ -929,6 +919,7 @@ a[pam-Button~="text:secondary"] {
 // `.hook-button-primary`
 // `.hook-button-raised`
 // `.hook-button-round`
+// `.hook-button-rounded`
 // `.hook-button-secondary`
 // `.hook-button-small`
 // `.hook-button-success`
@@ -960,6 +951,7 @@ a[pam-Button~="text:secondary"] {
 .hook-button-primary() {}
 .hook-button-raised() {}
 .hook-button-round() {}
+.hook-button-rounded() {}
 .hook-button-secondary() {}
 .hook-button-small() {}
 .hook-button-success() {}
