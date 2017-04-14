@@ -25,7 +25,7 @@ gulp.task('copy-build', () => {
         .pipe(gulp.dest(config.build.less));
 });
 
-gulp.task('copy-dist', () => {
+gulp.task('copy-dist', ['clean-dist'], () => {
     gulp.src(config.build.lessGlob)
         .pipe(gulp.dest(config.dist.less));
     gulp.src([config.build.cssFile, config.build.cssMinFile])
