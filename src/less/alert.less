@@ -1,7 +1,11 @@
 // Alert
 //
 // Contextual feedback messages with a set of variations to suite messages
-// with some type of intention.
+// with some type of intention. For the most basic alert use
+// the `pam-Alert` attribute.
+//
+// Markup:
+// <div pam-Alert>Alert message</div>
 //
 // Weight: 9
 //
@@ -11,59 +15,46 @@
 // Variables
 // ==================================================================
 
-@alert-background:         #efefef;
-@alert-border-radius:      @border-radius-base;
-@alert-color:              @skin-text-primary;
-@alert-line-height:        @line-height-base;
-@alert-margin-vertical:    @space-16;
-@alert-padding:            @space-16;
+@alert-background:           @skin-lighter;
+@alert-border-color:         darken(@alert-background, 10%);
+@alert-border-radius:        @border-radius-base;
+@alert-color:                @skin-text-primary;
+@alert-line-height:          @line-height-base;
+@alert-margin-vertical:      @space-16;
+@alert-padding:              @space-16;
 
-@alert-link-font-weight:   @font-weight-bold;
+@alert-info-background:      lighten(@skin-info, 30%);
+@alert-info-border:          darken(@alert-info-background, 10%);
+@alert-info-color:           darken(@alert-info-background, 40%);
 
-@alert-info-background:    lighten(@skin-info, 30%);
-@alert-info-border:        darken(@alert-info-background, 10%);
-@alert-info-color:         darken(@alert-info-background, 40%);
+@alert-success-background:   lighten(@skin-success, 30%);
+@alert-success-border:       darken(@alert-success-background, 10%);
+@alert-success-color:        darken(@alert-success-background, 40%);
 
-@alert-success-background: lighten(@skin-success, 30%);
-@alert-success-border:     darken(@alert-success-background, 10%);
-@alert-success-color:      darken(@alert-success-background, 40%);
+@alert-warning-background:   lighten(@skin-warn, 30%);
+@alert-warning-border:       darken(@alert-warning-background, 10%);
+@alert-warning-color:        darken(@alert-warning-background, 40%);
 
-@alert-warning-background: lighten(@skin-warn, 30%);
-@alert-warning-border:     darken(@alert-warning-background, 10%);
-@alert-warning-color:      darken(@alert-warning-background, 40%);
+@alert-danger-background:    lighten(@skin-danger, 30%);
+@alert-danger-border:        darken(@alert-danger-background, 10%);
+@alert-danger-color:         darken(@alert-danger-background, 40%);
 
-@alert-danger-background:  lighten(@skin-danger, 30%);
-@alert-danger-border:      darken(@alert-danger-background, 10%);
-@alert-danger-color:       darken(@alert-danger-background, 40%);
+@alert-callout-background:   #fff;
+@alert-callout-border-width: 6px;
 
-@alert-large-padding:      @space-20;
+@alert-link-font-weight:     @font-weight-bold;
+
+@alert-large-padding:        @space-20;
 
 
 // ==================================================================
 //  Alert
 // ==================================================================
 
-// Color modifiers
-//
-// Use color modifiers to change the contextual
-// intention of the alert.
-//
-// Markup:
-// <div pam-Alert="{{modifier_class}}">Alert message</div>
-//
-// info - This is not important but may need your attention.
-// success - Congratulations! You have successfully done something.
-// warning - Wow! You better take a look this needs your attention!
-// danger - Oh no! That did no go so well get another pair of glasses and try again.
-//
-// Weight: -1
-//
-// Style guide: alert.colors
-
 [pam-Alert] {
     background: @alert-background;
     border-radius: @alert-border-radius;
-    border: 1px solid transparent;
+    border: 1px solid @alert-border-color;
     color: @alert-color;
     line-height: @alert-line-height;
     margin-bottom: @alert-margin-vertical;
@@ -83,6 +74,23 @@
 
 //  Modifier: info
 // ==================================================================
+
+// Variations
+//
+// Use color modifiers to change the contextual
+// intention of the alert.
+//
+// Markup:
+// <div pam-Alert="{{modifier_class}}">Alert message</div>
+//
+// info - This is not important but may need your attention.
+// success - Congratulations! You have successfully done something.
+// warning - Wow! You better take a look this needs your attention!
+// danger - Oh no! That did no go so well get another pair of glasses and try again.
+//
+// Weight: -1
+//
+// Style guide: alert.variations
 
 [pam-Alert~="info"] {
     background-color: @alert-info-background;
@@ -157,12 +165,32 @@
 }
 
 
-/* Modifier: `uk-alert-large`
- ========================================================================== */
+//  Modifier: callout
+// ==================================================================
 
-// .uk-alert-large { padding: @alert-large-padding; }
+// Callout
+//
+// Callouts has a more emphasized styling and is a alternative way
+// to draw attention to information.
+//
+// Markup:
+// <div pam-Alert="callout {{modifier_class}}">Alert message</div>
+//
+// info - This is not important information, carry on.
+// success - Something was successfully done!
+// warning - Yes, this is something to pay attention to!
+// danger - That went sideways!
+//
+// Weight: 2
+//
+// Style guide: alert.callout
 
-// .uk-alert-large > .uk-close:first-child { margin: -10px -10px 0 0; }
+[pam-Alert~="callout"] {
+    background-color: @alert-callout-background;
+    border-left-width: @alert-callout-border-width;
+
+    .hook-alert-callout;
+}
 
 
 //  Sub-Object: pam-Alert-Heading
@@ -178,13 +206,14 @@
 //     <p>Alert with header can come in handy...</p>
 // </div>
 //
-// Weight: 4
+// Weight: 2
 //
 // Style guide: alert.header
 
 [pam-Alert-Heading] {
     color: inherit;
     margin: 0;
+
     .hook-alert-heading;
 }
 
@@ -200,6 +229,8 @@
 // <div pam-Alert>
 //     This alert has a <a pam-Link pam-Alert-Link src="#">awesome link!</a>
 // </div>
+//
+// Weight: 3
 //
 // Style guide: alert.link
 
@@ -310,6 +341,7 @@
 // Hooks
 //
 // `.hook-alert`
+// `.hook-alert-callout`
 // `.hook-alert-danger`
 // `.hook-alert-heading`
 // `.hook-alert-info`
@@ -323,6 +355,7 @@
 
 /* stylelint-disable block-no-empty */
 .hook-alert() {}
+.hook-alert-callout() {}
 .hook-alert-danger() {}
 .hook-alert-heading() {}
 .hook-alert-info() {}
