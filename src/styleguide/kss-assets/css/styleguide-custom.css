@@ -2,7 +2,7 @@ body.sg {
     padding: 24px;
 }
 
-/* Styleguide custom */
+/* Styleguide kss overrides */
 
 .kss-style,
 .kss-style h1,
@@ -28,6 +28,33 @@ body.sg {
     color: #c7254e;
     background-color: #f9f2f4;
     border-radius: 4px;
+}
+
+/* Styleguide custom */
+
+[sg-Hero] {
+    padding: 24px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-left: -30px;
+    margin-right: -20px;
+}
+
+[sg-Hero] ul,
+[sg-Hero] ol {
+    margin: 0;
+    padding: 0;
+}
+
+[sg-Hero-Header] img {
+    height: 172px;
+}
+
+[sg-Hero] header,
+[sg-Hero] > div,
+[sg-Hero] footer {
+    max-width: 768px;
+    margin: 2em auto;
 }
 
 [sg-mock-icon] {

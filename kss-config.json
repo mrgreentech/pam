@@ -4,9 +4,10 @@
     "src/"
   ],
   "destination":  "build/styleguide",
+  "builder": "src/styleguide/",
 
   "//": "The css and js paths are URLs relative to the generated style guide.",
-  "css": ["pam.css", "styleguide-custom.css"],
+  "css": ["kss-assets/css/pam.css", "kss-assets/css/styleguide-custom.css"],
   "js": [],
-  "title": "PAM style guide"
+  "title": "PAM"
 }
