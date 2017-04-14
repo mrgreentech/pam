@@ -46,6 +46,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-gzip": "^1.4.0",
     "gulp-less": "^3.3.0",
+    "gulp-load-plugins": "^1.5.0",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-sizereport": "^1.2.0",

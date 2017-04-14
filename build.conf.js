@@ -17,6 +17,11 @@ module.exports = () => {
         'Safari >= 8'
     ];
 
+    const plugins = {
+        pattern: ['del', 'less-*', 'run-*'],
+        overridePattern: false
+    };
+
     let licenseBanner = {
         pam: [
             '\n/*!',
@@ -46,7 +51,8 @@ module.exports = () => {
         version: version,
         pkg: pkg,
         supportedBrowsers: supportedBrowsers,
-        banner: licenseBanner,
+        plugins: plugins,
+        banner: `${licenseBanner.pam}${licenseBanner.pure}${licenseBanner.normalize}`,
         src: {
             base: srcBase,
             lessGlob: `${srcBase}less/**`
@@ -58,12 +64,19 @@ module.exports = () => {
             cssMinFile: `${buildBase}pam.min.css`,
             less: `${buildBase}less/`,
             lessFile: `${buildBase}less/pam.less`,
+            lessFileBase: `${buildBase}less/base.less`,
+            lessFileFont: `${buildBase}less/font.less`,
             lessGlob: `${buildBase}less/**`,
-            styleguide: `${buildBase}styleguide/`
+            styleguide: `${buildBase}styleguide/`,
+            styleguideCss: `${buildBase}styleguide/kss-assets/css/`,
+            styleguideIndexFile: `${buildBase}styleguide/index.html`
         },
         dist: {
             base: distBase,
             less: `${distBase}less/`
+        },
+        node: {
+            normalize: './node_modules/normalize.css/normalize.css'
         }
     };
 };
