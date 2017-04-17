@@ -2,6 +2,27 @@
 //
 // Forms are cosy!
 //
+// Markup:
+// <form pam-Form="stacked">
+//     <legend>The Legend begins...</legend>
+//     <input type="text" placeholder="Input">
+//     <select>
+//         <option value="geek">Geek</option>
+//         <option value="nerd">Nerd</option>
+//         <option value="dork">Dork</option>
+//     </select>
+//     <textarea rows="5" placeholder="Textarea"></textarea>
+//     <label pam-Checkbox>
+//         <input type="checkbox" value=""> I´m a hipster
+//     </label>
+//     <label pam-Radio>
+//         <input type="radio" id="radio1" name="optionsRadios" value="radios" checked> Programmer
+//     </label>
+//     <label pam-Radio>
+//         <input type="radio" id="radio2" name="optionsRadios" value="radios"> Designer
+//     </label>
+// </form>
+//
 // Weight: 5
 //
 // Style guide: forms
@@ -56,6 +77,8 @@
 // readonly - attribute puts a input to a read-only state.
 // required - attribute marks a input control as required.
 //
+// Weight: -1
+//
 // Style guide: forms.input
 
 [pam-Form] input[type="text"],
@@ -75,8 +98,9 @@
 [pam-Form] select,
 [pam-Form] textarea {
     background: @form-background;
-    border: @form-border-width solid @form-border;
     border-radius: @form-border-radius;
+    border: @form-border-width solid @form-border;
+    box-sizing: border-box;
     color: @form-color;
     display: inline-block;
     font-size: @form-font-size;
@@ -85,13 +109,13 @@
     margin: 0 0 0.5rem;
     padding: @form-padding-vertical @form-padding-horizontal;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    box-sizing: border-box;
 
     .placeholder-color;
     .hook-form;
 }
 
 [pam-Form] textarea {
+    font-family: @font-family;
     height: auto;
 }
 
@@ -310,10 +334,10 @@
 
 [pam-Form] legend {
     display: block;
-    width: 100%;
-    padding: @space-8 0;
+    font-size: @font-size-large;
     margin-bottom: @space-8;
-    border-bottom: 1px solid @form-border;
+    padding: @space-8 0;
+    width: 100%;
 
     .hook-form-legend;
 }
@@ -716,53 +740,6 @@
     margin: 0.5rem 0;
 }
 
-// Deprecated
-// ========================================================================
-
-// Input icon
-//
-// `pam-Input-Icon` enables icons to be used with a input.
-//
-// Deprecated: Styling for legacy input icons. Support will be dropped
-// after PAM version 1.1.
-//
-// Markup:
-// <form pam-Form>
-//     <div pam-Input-Icon>
-//         <label for="icon">
-//         <img src="http://placehold.it/24x24">
-//         </label>
-//         <input id="icon" type="text" placeholder="Icon">
-//     </div>
-// </form>
-//
-// Style guide: forms.input.icon
-
-[pam-Form] [pam-Input-Icon],
-[pam-Form] [pam-Select-Icon] {
-    position: relative;
-
-    label {
-        background: transparent;
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin: 0;
-        width: @space-72;
-        box-sizing: border-box;
-    }
-
-    input,
-    > select {
-        display: block;
-        padding-left: @space-72;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .hook-form-input-icon;
-}
-
 
 // Sub-object: Input group
 // ========================================================================
@@ -969,6 +946,18 @@
 }
 
 
+// Experimental
+// ==================================================================
+
+// Experimental
+//
+// Following forms rulez are experimental, and has no offical browser support.
+//
+// Weight: 18
+//
+// Style guide: forms.experimental
+
+
 //  Sub-object: Floating label
 // ========================================================================
 
@@ -976,8 +965,10 @@
 //
 // `pam-Field` with `input` and `label` element creates a floating label composite.
 //
-// Experimental: CSS only floating label, evaluating to
-// implement for evergreen browsers.
+// <div pam-Alert="callout info">
+//    Experimental: CSS only floating label, evaluating to
+//    implement for evergreen browsers.
+// </div>
 //
 // Markup:
 // <form pam-Form>
@@ -987,15 +978,10 @@
 //     </div>
 // </form>
 //
-// Style guide: forms.label
+// Style guide: forms.experimental.label
 
 [pam-Field] {
-    display: -webkit-inline-box;
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
     display: inline-flex;
-    -webkit-flex-flow: column-reverse;
-    -ms-flex-flow: column-reverse;
     flex-flow: column-reverse;
     margin-bottom: 1em;
 }
@@ -1003,27 +989,25 @@
 [pam-Field] {
     label,
     input {
-        -webkit-transition: all 0.2s;
         transition: all 0.2s;
-        -ms-touch-action: manipulation;
         touch-action: manipulation;
     }
 
     input {
-        font-size: 1.5em;
-        border: 0;
         border-bottom: 1px solid #ccc;
-        font-family: inherit;
-        -webkit-appearance: none;
         border-radius: 0;
-        padding: 0;
+        border: 0;
         cursor: text;
+        font-family: inherit;
+        font-size: 1.5em;
+        padding: 0;
         position: relative;
+        -webkit-appearance: none;
     }
 
     input:focus {
-        outline: 0;
         border-bottom: 1px solid #666;
+        outline: 0;
     }
 
     label {
@@ -1033,18 +1017,15 @@
     input:placeholder-shown + label {
         cursor: text;
         max-width: 66.66%;
-        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        -webkit-transform-origin: left bottom;
         transform-origin: left bottom;
-        -webkit-transform: translate(1rem, 2.6rem) scale(1);
         transform: translate(1rem, 2.6rem) scale(1);
+        white-space: nowrap;
     }
 
     ::-webkit-input-placeholder {
         opacity: 0;
-        -webkit-transition: inherit;
         transition: inherit;
     }
 
@@ -1054,12 +1035,71 @@
 
     input:not(:placeholder-shown) + label,
     input:focus + label {
-        -webkit-transform: translate(1rem, 1.7rem) scale(1);
-        transform: translate(1rem, 1.7rem) scale(1);
         cursor: pointer;
+        transform: translate(1rem, 1.7rem) scale(1);
     }
 }
 
+
+// Deprecated
+// ==================================================================
+
+// Deprecated
+//
+// Following form rulez will be deprecated in version 1.1.0.
+//
+// Weight: 19
+//
+// Style guide: forms.deprecated
+
+// Input icon
+// ========================================================================
+
+// Input icon
+//
+// `pam-Input-Icon` enables icons to be used with a input.
+//
+//<div pam-Alert="callout warning">
+//    Deprecated: Styling for legacy input icons. Support will be dropped
+//    after PAM version 1.1.
+// </div>
+//
+// Markup:
+// <form pam-Form>
+//     <div pam-Input-Icon>
+//         <label for="icon">
+//         <img src="http://placehold.it/24x24">
+//         </label>
+//         <input id="icon" type="text" placeholder="Icon">
+//     </div>
+// </form>
+//
+// Style guide: forms.deprecated.input-icon
+
+[pam-Form] [pam-Input-Icon],
+[pam-Form] [pam-Select-Icon] {
+    position: relative;
+
+    label {
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: @space-72;
+        box-sizing: border-box;
+    }
+
+    input,
+    > select {
+        display: block;
+        padding-left: @space-72;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hook-form-input-icon;
+}
 
 //  Hooks
 // ========================================================================
@@ -1093,7 +1133,7 @@
 // `.hook-form-message`
 // `.hook-form-message-inline`
 //
-// Weight: 10
+// Weight: 20
 //
 // Style guide: forms.hooks
 
