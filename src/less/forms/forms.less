@@ -5,7 +5,8 @@
 // Markup:
 // <form pam-Form="stacked">
 //     <legend>The Legend begins...</legend>
-//     <input type="text" placeholder="Input">
+//     <label for="test-label">Test input</label>
+//     <input id="test-label" type="text" placeholder="Input">
 //     <select>
 //         <option value="geek">Geek</option>
 //         <option value="nerd">Nerd</option>
@@ -27,21 +28,23 @@
 //
 // Style guide: forms
 
+// TODO: form control sizes
+// TODO: form grid layouts
+// TODO: Update select box
 
 // Variables
 // ==========================================================================
 
-@form-field-height: @space-48;
-
 @form-background: rgba(255, 255, 255, 0.1);
-@form-border: #e3e3e3;
+@form-border: @skin-light;
 @form-border-radius: @border-radius-base;
 @form-border-width: 1px;
 @form-color: @skin-text-primary;
-@form-font-size: @font-size-medium;
-@form-line-height: normal;
+@form-font-size: @font-size-large;
+@form-line-height: 18px;
 @form-margin: @space-16;
-@form-padding: @space-16;
+@form-padding: @space-8;
+@form-placeholder-color: @skin-text-secondary;
 
 @form-focus-color: darken(@form-border, 30%);
 @form-focus-border: darken(@form-border, 30%);
@@ -57,8 +60,8 @@
 @form-input-group-margin: @space-8;
 @form-input-group-addon-space: @space-60;
 
-@form-padding-vertical: @space-16;
-@form-padding-horizontal: @space-16;
+@form-padding-vertical: 10px;
+@form-padding-horizontal: @space-8;
 
 
 //  Form
@@ -81,22 +84,10 @@
 //
 // Style guide: forms.input
 
-[pam-Form] input[type="text"],
-[pam-Form] input[type="password"],
-[pam-Form] input[type="email"],
-[pam-Form] input[type="url"],
-[pam-Form] input[type="date"],
-[pam-Form] input[type="month"],
-[pam-Form] input[type="time"],
-[pam-Form] input[type="datetime"],
-[pam-Form] input[type="datetime-local"],
-[pam-Form] input[type="week"],
-[pam-Form] input[type="number"],
-[pam-Form] input[type="search"],
-[pam-Form] input[type="tel"],
-[pam-Form] input[type="color"],
+[pam-Form] input,
 [pam-Form] select,
 [pam-Form] textarea {
+    font-family: inherit;
     background: @form-background;
     border-radius: @form-border-radius;
     border: @form-border-width solid @form-border;
@@ -104,13 +95,12 @@
     color: @form-color;
     display: inline-block;
     font-size: @form-font-size;
-    height: @form-field-height;
     line-height: @form-line-height;
     margin: 0 0 0.5rem;
     padding: @form-padding-vertical @form-padding-horizontal;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-    .placeholder-color;
+    .placeholder-color(@form-placeholder-color);
     .hook-form;
 }
 
@@ -124,20 +114,8 @@
     padding: @form-padding-vertical @form-padding-horizontal;
 }
 
-[pam-Form] input[type="text"]:focus,
-[pam-Form] input[type="password"]:focus,
-[pam-Form] input[type="email"]:focus,
-[pam-Form] input[type="url"]:focus,
-[pam-Form] input[type="date"]:focus,
-[pam-Form] input[type="month"]:focus,
-[pam-Form] input[type="time"]:focus,
-[pam-Form] input[type="datetime"]:focus,
-[pam-Form] input[type="datetime-local"]:focus,
-[pam-Form] input[type="week"]:focus,
-[pam-Form] input[type="number"]:focus,
-[pam-Form] input[type="search"]:focus,
-[pam-Form] input[type="tel"]:focus,
-[pam-Form] input[type="color"]:focus,
+
+[pam-Form] input:focus,
 [pam-Form] select:focus,
 [pam-Form] textarea:focus {
     outline: 0;
@@ -149,8 +127,8 @@
 [pam-Form] input[type="file"]:focus,
 [pam-Form] input[type="radio"]:focus,
 [pam-Form] input[type="checkbox"]:focus {
-    outline: thin dotted @skin-divider;
-    outline: @form-border-width auto @skin-divider;
+    // outline: thin dotted @skin-divider;
+    // outline: @form-border-width auto @skin-divider;
 }
 
 [pam-Form] input[type="color"]:focus {
@@ -161,38 +139,24 @@
 // Sub-modifier: Input placeholder properties
 // ========================================================================
 
-[pam-Form] input,
-[pam-Form] select,
-[pam-Form] textarea {
-    .placeholder-color;
+// [pam-Form] input,
+// [pam-Form] select,
+// [pam-Form] textarea {
+//     .placeholder-color;
 
-    .hook-form-placeholder;
-}
+//     .hook-form-placeholder;
+// }
 
 
 //  Disabled Input
 // ==========================================================================
 
-[pam-Form] input[type="text"][disabled],
-[pam-Form] input[type="password"][disabled],
-[pam-Form] input[type="email"][disabled],
-[pam-Form] input[type="url"][disabled],
-[pam-Form] input[type="date"][disabled],
-[pam-Form] input[type="month"][disabled],
-[pam-Form] input[type="time"][disabled],
-[pam-Form] input[type="datetime"][disabled],
-[pam-Form] input[type="datetime-local"][disabled],
-[pam-Form] input[type="week"][disabled],
-[pam-Form] input[type="number"][disabled],
-[pam-Form] input[type="search"][disabled],
-[pam-Form] input[type="tel"][disabled],
-[pam-Form] input[type="color"][disabled],
+[pam-Form] input[disabled],
 [pam-Form] select[disabled],
 [pam-Form] textarea[disabled] {
     cursor: not-allowed;
     color: @skin-text-secondary;
 
-    .placeholder-color;
     .hook-form-disabled;
 }
 
@@ -215,7 +179,6 @@
     color: @skin-text-secondary;
     border-color: @form-border;
 
-    .placeholder-color;
     .hook-form-readonly-focus;
 }
 
@@ -447,26 +410,26 @@
 // Style guide: forms.selectbox
 
 [pam-Form] [pam-Select-Box] {
-    position: relative;
+    background: @form-background;
+    box-sizing: border-box;
     display: inline-block;
     font-size: @form-font-size;
     line-height: @form-line-height;
     margin: 0 0 @space-8 0;
-    background: @form-background;
+    position: relative;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    box-sizing: border-box;
+
     .hook-select-box;
 
     select {
-        margin: 0;
-        padding: @form-padding;
-        box-shadow: none;
+        appearance: none;
         background: transparent;
         background-image: none;
+        box-shadow: none;
         box-sizing: border-box;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
+        margin: 0;
+        padding: @form-padding-vertical @form-padding-horizontal;
+        padding-right: 24px;
 
         &::-ms-expand {
             display: none;
@@ -478,10 +441,10 @@
     }
 
     &::after {
+        content: " ▾";
         position: absolute;
         right: @space-base;
-        top: @space-16;
-        content: " ▾";
+        top: @space-8;
     }
 }
 
@@ -555,20 +518,22 @@
 // Style guide: forms.message.inline
 
 [pam-Form-Message] {
-    display: block;
     color: @skin-text-primary;
+    display: block;
     font-size: @font-size-xsmall;
+
     .hook-form-message;
 }
 
 // Sub-modifier: Form input inline message
 
 [pam-Form-Message~="inline"] {
+    color: @skin-text-primary;
     display: inline-block;
     font-size: @font-size-xsmall;
     padding-left: @space-8;
-    color: @skin-text-primary;
     vertical-align: middle;
+
     .hook-form-message-inline;
 }
 
@@ -608,25 +573,13 @@
 //
 // Style guide: forms.type.stacked
 
-[pam-Form~="stacked"] input[type="text"],
-[pam-Form~="stacked"] input[type="password"],
-[pam-Form~="stacked"] input[type="email"],
-[pam-Form~="stacked"] input[type="url"],
-[pam-Form~="stacked"] input[type="date"],
-[pam-Form~="stacked"] input[type="month"],
-[pam-Form~="stacked"] input[type="time"],
-[pam-Form~="stacked"] input[type="datetime"],
-[pam-Form~="stacked"] input[type="datetime-local"],
-[pam-Form~="stacked"] input[type="week"],
-[pam-Form~="stacked"] input[type="number"],
-[pam-Form~="stacked"] input[type="search"],
-[pam-Form~="stacked"] input[type="tel"],
-[pam-Form~="stacked"] input[type="color"],
+[pam-Form~="stacked"] input:not([type="checkbox"]):not([type="radio"]),
 [pam-Form~="stacked"] select,
 [pam-Form~="stacked"] label,
 [pam-Form~="stacked"] textarea {
     display: block;
     margin: @space-8 0;
+
     .hook-form-stacked;
 }
 
@@ -659,8 +612,9 @@
 [pam-Form~="aligned"] textarea,
 [pam-Form~="aligned"] select {
     display: inline-block;
-    vertical-align: middle;
     margin-bottom: 0;
+    vertical-align: middle;
+
     .hook-form-aligned;
 }
 
@@ -669,23 +623,17 @@
 }
 
 [pam-Form~="aligned"] [pam-Control~="group"] {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
+    display: flex;
     margin-bottom: @space-8;
 }
 
 [pam-Form~="aligned"] [pam-Control~="group"] label {
-    text-align: right;
     display: inline-block;
+    margin: 0 1rem 0 0;
+    text-align: right;
     vertical-align: middle;
     width: 10rem;
-    margin: 0 1rem 0 0;
 }
 
 [pam-Form~="aligned"] [pam-Controls] {
@@ -729,6 +677,7 @@
     display: block;
     padding: @form-padding;
     position: relative;
+
     .hook-form-group;
 }
 
@@ -994,13 +943,6 @@
     }
 
     input {
-        border-bottom: 1px solid #ccc;
-        border-radius: 0;
-        border: 0;
-        cursor: text;
-        font-family: inherit;
-        font-size: 1.5em;
-        padding: 0;
         position: relative;
         -webkit-appearance: none;
     }
@@ -1129,7 +1071,6 @@
 // `.hook-form-input-icon`
 // `.hook-form-input-group`
 // `.hook-select-box`
-// `.hook-form-placeholder`
 // `.hook-form-message`
 // `.hook-form-message-inline`
 //
@@ -1159,7 +1100,6 @@
 .hook-form-input-icon() {}
 .hook-form-input-group() {}
 .hook-select-box() {}
-.hook-form-placeholder() {}
 .hook-form-message() {}
 .hook-form-message-inline() {}
 /* stylelint-enable */
