@@ -4,24 +4,35 @@
 //
 // Markup:
 // <form pam-Form="stacked">
-//     <legend>The Legend begins...</legend>
-//     <label for="test-label">Test input</label>
-//     <input id="test-label" type="text" placeholder="Input">
-//     <select>
-//         <option value="geek">Geek</option>
-//         <option value="nerd">Nerd</option>
-//         <option value="dork">Dork</option>
-//     </select>
-//     <textarea rows="5" placeholder="Textarea"></textarea>
-//     <label pam-Checkbox>
-//         <input type="checkbox" value=""> I´m a hipster
-//     </label>
-//     <label pam-Radio>
-//         <input type="radio" id="radio1" name="optionsRadios" value="radios" checked> Programmer
-//     </label>
-//     <label pam-Radio>
-//         <input type="radio" id="radio2" name="optionsRadios" value="radios"> Designer
-//     </label>
+//     <fieldset>
+//         <legend>The Legend begins...</legend>
+//         <label for="input-name">Name</label>
+//         <input id="input-name" type="text" placeholder="What is it?">
+//         <label for="input-email">Email</label>
+//         <input id="input-email" type="email" placeholder="Spam time">
+//         <label for="input-password">Password</label>
+//         <input id="input-password" type="password" placeholder="A secret...">
+//         <label for="select-geek">Choose geek level</label>
+//         <select id="select-geek">
+//             <option value="geek">Geek</option>
+//             <option value="nerd">Nerd</option>
+//             <option value="dork">Dork</option>
+//         </select>
+//         <label for="textarea-description">Please explain</label>
+//         <textarea rows="5" placeholder="The secret of 42..."></textarea>
+//     </fieldset>
+//     <fieldset>
+//         <legend>Check and radios</legend>
+//         <label pam-Checkbox>
+//             <input type="checkbox" value=""> I´m a hipster
+//         </label>
+//         <label pam-Radio>
+//             <input type="radio" id="radio1" name="optionsRadios" value="radios" checked> Programmer
+//         </label>
+//         <label pam-Radio>
+//             <input type="radio" id="radio2" name="optionsRadios" value="radios"> Designer
+//         </label>
+//     </fieldset>
 // </form>
 //
 // Weight: 5
@@ -88,7 +99,7 @@
 [pam-Form] select,
 [pam-Form] textarea {
     font-family: inherit;
-    background: @form-background;
+    background-color: @form-background;
     border-radius: @form-border-radius;
     border: @form-border-width solid @form-border;
     box-sizing: border-box;
@@ -109,7 +120,7 @@
     height: auto;
 }
 
-// Not supported in IE, Safari or iOS Safari.
+// Limited support for this type.
 [pam-Form] input[type="color"] {
     padding: @form-padding-vertical @form-padding-horizontal;
 }
@@ -211,31 +222,46 @@
 }
 
 
-//  Borderless input
-// ==========================================================================
+[pam-Form] select:not([multiple]):not([pam-Select]):not([pam-form-Control]) {
+    height: @space-40;
+    padding: 0;
 
-// Borderless input controller
-//
-// Markup:
-// <form pam-Form>
-//      <input type="text" placeholder="Input" pam-Input="borderless">
-// </form>
-//
-// Style guide: forms.input.borderless
-
-[pam-Form] input[pam-Input~="borderless"],
-[pam-Form] select[pam-Input~="borderless"],
-[pam-Form] textarea[pam-Input~="borderless"] {
-    border: none;
-
-    .hook-form-input-borderless;
+    .hook-form-select;
 }
 
-[pam-Form] input[pam-Input~="borderless"]:focus {
-    outline: 0;
-    border: transparent;
+[pam-Form] select[multiple] {
+    height: auto;
+    overflow: auto;
 
-    .hook-form-input-borderless-focus;
+    .hook-form-select-multiple;
+}
+
+[pam-Form] select:focus {
+    .hook-form-select-focus;
+}
+
+[pam-Form] label {
+    margin: @space-8 0;
+
+    .hook-form-label;
+}
+
+[pam-Form] fieldset {
+    margin: 0;
+    padding: @space-8 0 1rem;
+    border: 0;
+
+    .hook-form-fieldset;
+}
+
+[pam-Form] legend {
+    display: block;
+    font-size: @font-size-xlarge;
+    margin-bottom: @space-8;
+    padding: @space-8 0;
+    width: 100%;
+
+    .hook-form-legend;
 }
 
 
@@ -267,42 +293,16 @@
     display: block;
 }
 
-[pam-Form] select {
-    .hook-form-select;
+
+// Modifier: Form control
+// ========================================================================
+
+[pam-Form] [pam-Form-Control~="borderless"] {
+    border-color: transparent;
 }
 
-[pam-Form] select[multiple] {
-    height: auto;
-
-    .hook-form-select-multiple;
-}
-
-[pam-Form] select:focus {
-    .hook-form-select-focus;
-}
-
-[pam-Form] label {
-    margin: @space-8 0;
-
-    .hook-form-label;
-}
-
-[pam-Form] fieldset {
-    margin: 0;
-    padding: @space-8 0 1rem;
-    border: 0;
-
-    .hook-form-fieldset;
-}
-
-[pam-Form] legend {
-    display: block;
-    font-size: @font-size-large;
-    margin-bottom: @space-8;
-    padding: @space-8 0;
+[pam-Form] [pam-Form-Control~="fluid"] {
     width: 100%;
-
-    .hook-form-legend;
 }
 
 
@@ -384,96 +384,72 @@
 }
 
 
-// Sub-object: Select box
+//  Select
 // ========================================================================
 
-// Select box
+// Select
 //
-// `pam-Select-Box` turns of the platform native styling of select boxes
-//  and adds normalized styling for cross browser compatibility.
+// `pam-Select` turns on custom styling of the select element.
 //
 // Markup:
-// <form pam-Form>
-//     <div pam-Select-Box="{{modifier_class}}">
-//         <select>
-//             <option value="geek">Geek</option>
-//             <option value="nerd">Nerd</option>
-//             <option value="dork">Dork</option>
-//         </select>
-//     </div>
+// <form pam-Form="stacked">
+//     <label for="select-native">Native select</label>
+//     <select id="select-native">
+//         <option value="geek">Geek</option>
+//         <option value="nerd">Nerd</option>
+//         <option value="dork">Dork</option>
+//     </select>
+//     <label for="select-custom">Custom select</label>
+//     <select id="select-custom" pam-Select="">
+//         <option value="geek">Geek</option>
+//         <option value="nerd">Nerd</option>
+//         <option value="dork">Dork</option>
+//     </select>
+//     <label for="select-borderless">Borderless select</label>
+//     <select id="select-borderless" pam-Select pam-Form-Control="borderless">
+//         <option value="geek">Geek</option>
+//         <option value="nerd">Nerd</option>
+//         <option value="dork">Dork</option>
+//     </select>
+//     <label for="select-fluid">Fluid select</label>
+//     <select id="select-fluid" pam-Select pam-Form-Control="fluid">
+//         <option value="geek">Geek</option>
+//         <option value="nerd">Nerd</option>
+//         <option value="dork">Dork</option>
+//     </select>
+//     <label for="select-multiple">Multiple select</label>
+//     <select id="select-multiple" multiple>
+//         <option value="geek">Geek</option>
+//         <option value="nerd">Nerd</option>
+//         <option value="dork">Dork</option>
+//     </select>
 // </form>
 //
-// multiple - enables the multi select box.
-// fluid - enables a select box with fluid width.
-// borderless - removes the select box borders.
-//
-// Style guide: forms.selectbox
+// Style guide: forms.select
 
-[pam-Form] [pam-Select-Box] {
-    background: @form-background;
-    box-sizing: border-box;
+@form-select-background-image: "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M10%201L5%208h10l-5-7zm0%2018l5-7H5l5%207z%27%2F%3E%3C%2Fsvg%3E";
+@form-select-background-size: 12px;
+@form-select-background-offset: @space-8;
+@form-select-background-color: @form-background;
+
+[pam-Form] select[pam-Select]:not([multiple]) {
+    appearance: none;
+    background: url(@form-select-background-image) right @form-select-background-offset center;
+    background-color: @form-select-background-color;
+    background-repeat: no-repeat;
+    background-size: @form-select-background-size @form-select-background-size;
+    color: @skin-text-primary;
     display: inline-block;
-    font-size: @form-font-size;
-    line-height: @form-line-height;
-    margin: 0 0 @space-8 0;
-    position: relative;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    max-width: 100%;
+    padding-right: @space-28;
+    vertical-align: middle;
 
-    .hook-select-box;
-
-    select {
-        appearance: none;
-        background: transparent;
-        background-image: none;
-        box-shadow: none;
-        box-sizing: border-box;
-        margin: 0;
-        padding: @form-padding-vertical @form-padding-horizontal;
-        padding-right: 24px;
-
-        &::-ms-expand {
-            display: none;
-        }
-
-        &:focus {
-            outline: none;
-        }
+    &::-ms-expand {
+        display: none;
     }
 
-    &::after {
-        content: " ▾";
-        position: absolute;
-        right: @space-base;
-        top: @space-8;
-    }
+    // .hook-form-select;
 }
-
-// Sub-modifier: Select box multiple
-
-[pam-Form] [pam-Select-Box~="multiple"] {
-    &::after {
-        content: " ";
-    }
-}
-
-// Sub-modifier: Select box fluid
-
-[pam-Form] [pam-Select-Box~="fluid"] {
-    width: 100%;
-
-    select {
-        width: 100%;
-    }
-}
-
-// Sub-modifier: Select box fluid
-
-[pam-Form] [pam-Select-Box~="borderless"] {
-    select {
-        border: 0;
-    }
-}
-
 
 // Sub-object: Form field message
 // ========================================================================
@@ -702,21 +678,25 @@
 // <form pam-Form>
 //     <div pam-Input-Group>
 //         <label for="group-input" pam-Input-Group-Addon>
-//             <div sg-mock-icon="padded"></div>
+//             <div sg-mock-icon></div>
 //         </label>
 //         <input id="group-input" type="text" placeholder="Input group" pam-Form-Control>
 //     </div>
 //     <div pam-Input-Group>
 //         <label for="group-select" pam-Input-Group-Addon>
-//             <div sg-mock-icon="padded"></div>
+//             <div sg-mock-icon></div>
 //         </label>
-//         <div pam-Select-Box="fluid">
-//             <select id="group-select" pam-Form-Control>
-//                 <option value="geek">Geek</option>
-//                 <option value="nerd">Nerd</option>
-//                 <option value="dork">Dork</option>
-//             </select>
-//         </div>
+//         <select id="group-select" pam-Form-Control>
+//             <option value="geek">Geek</option>
+//             <option value="nerd">Nerd</option>
+//             <option value="dork">Dork</option>
+//         </select>
+//     </div>
+//     <div pam-Input-Group="reverse">
+//         <label for="group-input-reverse" pam-Input-Group-Addon>
+//             <div sg-mock-icon></div>
+//         </label>
+//         <input id="group-input-reverse" type="text" placeholder="Input group" pam-Form-Control>
 //     </div>
 // </form>
 //
@@ -731,23 +711,41 @@
     }
 
     [pam-Input-Group-Addon] {
+        align-items: center;
         background: transparent;
+        bottom: 0;
         box-sizing: border-box;
+        display: inline-flex;
+        justify-content: center;
         left: 0;
+        right: auto;
         margin: 0;
         position: absolute;
         top: 0;
-        width: @form-input-group-addon-space;
+        width: @space-48;
     }
 
     [pam-Form-Control] {
-        display: block;
-        padding-left: @form-input-group-addon-space;
-        width: 100%;
         box-sizing: border-box;
+        display: block;
+        padding-left: @space-48;
+        width: 100%;
     }
 
     .hook-form-input-group;
+}
+
+[pam-Form] [pam-Input-Group~="reverse"] {
+    [pam-Input-Group-Addon] {
+        left: auto;
+        right: 0;
+    }
+
+    [pam-Form-Control] {
+        padding-left: @space-8;
+        padding-right: @space-48;
+        width: 100%;
+    }
 }
 
 
@@ -1042,6 +1040,138 @@
 
     .hook-form-input-icon;
 }
+
+// Input borderless
+// ========================================================================
+
+// Input borderless
+//
+// `pam-Input="borderless"` removes the form field border.
+//
+// <div pam-Alert="callout warning">
+//    Deprecated: Styling for borderless legacy form fields. Support will be dropped
+//    after PAM version 1.1.
+// </div>
+//
+// Markup:
+// <form pam-Form="stacked">
+//     <label for="borderless">Borderless input</label>
+//     <input id="borderless" type="text" placeholder="Borderless" pam-Input="borderless">
+// </form>
+//
+// Style guide: forms.deprecated.input-borderless
+
+[pam-Form] input[pam-Input~="borderless"],
+[pam-Form] select[pam-Input~="borderless"],
+[pam-Form] textarea[pam-Input~="borderless"] {
+    border: none;
+
+    .hook-form-input-borderless;
+}
+
+[pam-Form] input[pam-Input~="borderless"]:focus {
+    outline: 0;
+    border: transparent;
+
+    .hook-form-input-borderless-focus;
+}
+
+
+// Sub-object: Select box
+// ========================================================================
+
+// Select box
+//
+// `pam-Select-Box` turns of the platform native styling of select boxes
+//  and adds normalized styling for cross browser compatibility.
+//
+// <div pam-Alert="callout warning">
+//    Deprecated: Support for select box styling will be dropped
+//    after PAM version 1.1. Use custom select instead `pam-Select`.
+// </div>
+//
+// Markup:
+// <form pam-Form>
+//     <div pam-Select-Box="{{modifier_class}}">
+//         <select>
+//             <option value="geek">Geek</option>
+//             <option value="nerd">Nerd</option>
+//             <option value="dork">Dork</option>
+//         </select>
+//     </div>
+// </form>
+//
+// multiple - enables the multi select box.
+// fluid - enables a select box with fluid width.
+// borderless - removes the select box borders.
+//
+// Style guide: forms.deprecated.selectbox
+
+[pam-Form] [pam-Select-Box] {
+    background: @form-background;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: @form-font-size;
+    line-height: @form-line-height;
+    margin: 0 0 @space-8 0;
+    position: relative;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    .hook-select-box;
+
+    select {
+        appearance: none;
+        background: transparent;
+        background-image: none;
+        box-shadow: none;
+        box-sizing: border-box;
+        margin: 0;
+        padding: @form-padding-vertical @form-padding-horizontal;
+        padding-right: 24px;
+
+        &::-ms-expand {
+            display: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &::after {
+        content: " ▾";
+        position: absolute;
+        right: @space-base;
+        top: @space-8;
+    }
+}
+
+// Sub-modifier: Select box multiple
+
+[pam-Form] [pam-Select-Box~="multiple"] {
+    &::after {
+        content: " ";
+    }
+}
+
+// Sub-modifier: Select box fluid
+
+[pam-Form] [pam-Select-Box~="fluid"] {
+    width: 100%;
+
+    select {
+        width: 100%;
+    }
+}
+
+// Sub-modifier: Select box fluid
+
+[pam-Form] [pam-Select-Box~="borderless"] {
+    select {
+        border: 0;
+    }
+}
+
 
 //  Hooks
 // ========================================================================
