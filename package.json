@@ -37,7 +37,7 @@
     "watch:css": "onchange src/**/*.* -- npm run build:watch"
   },
   "devDependencies": {
-    "browser-sync": "2.12.12",
+    "browser-sync": "^2.18.8",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-banner": "^0.1.3",
