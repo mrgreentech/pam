@@ -24,17 +24,17 @@
   },
   "license": "BSD-3-Clause-Attribution",
   "scripts": {
-    "build": "npm run lint:css && gulp build && npm run build:styleguide && gulp size-report",
-    "build:styleguide": "npm run styleguide && gulp replace-version",
-    "build:watch": "npm run lint:css && gulp build-dev && npm run build:styleguide",
+    "build": "yarn run lint:css && gulp build && yarn run build:styleguide && gulp size-report",
+    "build:styleguide": "yarn run styleguide && gulp replace-version",
+    "build:watch": "yarn run lint:css && gulp build-dev && yarn run build:styleguide",
     "deploy:styleguide": "git subtree push --prefix build/styleguide origin gh-pages",
-    "dist": "npm run build && gulp copy-dist",
+    "dist": "yarn run build && gulp copy-dist",
     "lint:css": "stylelint src/less/**/*.less --syntax less",
     "serve": "browser-sync start --server build/styleguide --files build/styleguide/index.html",
     "styleguide": "kss --config kss-config.json",
-    "test": "npm run build",
+    "test": "yarn run build",
     "watch": "npm-run-all build --parallel serve watch:*",
-    "watch:css": "onchange src/**/*.* -- npm run build:watch"
+    "watch:css": "onchange src/**/*.* -- yarn run build:watch"
   },
   "devDependencies": {
     "browser-sync": "^2.18.8",
