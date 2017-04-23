@@ -1,47 +1,62 @@
 // Forms
 //
-// Forms are cosy!
+// Pam gives you a opiniated style for forms. If that's not enough there are form control selectors, custom components and some layout variations to put together a great variations of forms.
 //
 // Markup:
-// <form pam-Form="stacked">
-//     <fieldset>
-//         <legend>The Legend begins...</legend>
-//         <label for="input-name">Name</label>
-//         <input id="input-name" type="text" placeholder="What is it?">
-//         <label for="input-email">Email</label>
-//         <input id="input-email" type="email" placeholder="Spam time">
-//         <label for="input-password">Password</label>
-//         <input id="input-password" type="password" placeholder="A secret...">
-//         <label for="select-geek">Choose geek level</label>
-//         <select id="select-geek">
-//             <option value="geek">Geek</option>
-//             <option value="nerd">Nerd</option>
-//             <option value="dork">Dork</option>
-//         </select>
-//         <label for="textarea-description">Please explain</label>
-//         <textarea rows="5" placeholder="The secret of 42..."></textarea>
-//     </fieldset>
-//     <fieldset>
-//         <legend>Check and radios</legend>
-//         <label pam-Checkbox>
-//             <input type="checkbox" value=""> I´m a hipster
-//         </label>
-//         <label pam-Radio>
-//             <input type="radio" id="radio1" name="optionsRadios" value="radios" checked> Programmer
-//         </label>
-//         <label pam-Radio>
-//             <input type="radio" id="radio2" name="optionsRadios" value="radios"> Designer
-//         </label>
-//     </fieldset>
+// <form pam-Form="stacked fluid padded">
+//     <div pam-Grid>
+//         <div pam-Unit="1-1 medium:1-2">
+//             <fieldset>
+//                 <legend>Text and select</legend>
+//                 <label for="input-name">Name</label>
+//                 <input id="input-name" type="text" placeholder="What is it?">
+//                 <label for="input-email">Email</label>
+//                 <input id="input-email" type="email" placeholder="Spam time">
+//                 <label for="input-password">Password</label>
+//                 <input id="input-password" type="password" placeholder="A secret...">
+//                 <label for="select-geek">Choose geek level</label>
+//                 <select id="select-geek">
+//                     <option value="geek">Geek</option>
+//                     <option value="nerd">Nerd</option>
+//                     <option value="dork">Dork</option>
+//                 </select>
+//                 <label for="textarea-description">Please explain</label>
+//                 <textarea rows="5" placeholder="The secret of 42..."></textarea>
+//             </fieldset>
+//         </div>
+//         <div pam-Unit="1-1 medium:1-2">
+//             <fieldset>
+//                 <legend>Checkboxes</legend>
+//                 <label pam-Checkbox>
+//                     <input type="checkbox" value=""> I´m a hipster
+//                 </label>
+//                 <label pam-Radio>
+//                     <input type="radio" id="radio1" name="optionsRadios" value="radios" checked> Programmer
+//                 </label>
+//                 <label pam-Radio>
+//                     <input type="radio" id="radio2" name="optionsRadios" value="radios"> Designer
+//                 </label>
+//             </fieldset>
+//             <fieldset>
+//                 <legend>Misc</legend>
+//                 <label for="input-file">File</label>
+//                 <input id="input-file" type="file">
+//                 <label for="input-color">Color</label>
+//                 <input id="input-color" type="color">
+//             </fieldset>
+//         </div>
+//     </div>
 // </form>
 //
 // Weight: 5
 //
 // Style guide: forms
 
-// TODO: form control sizes
 // TODO: form grid layouts
 // TODO: Update select box
+// TODO: Update input size to input width
+// TODO: form control sizes
+
 
 // Variables
 // ==========================================================================
@@ -108,6 +123,7 @@
     font-size: @form-font-size;
     line-height: @form-line-height;
     margin: 0 0 0.5rem;
+    transition: border 0.3s;
     padding: @form-padding-vertical @form-padding-horizontal;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
@@ -122,7 +138,8 @@
 
 // Limited support for this type.
 [pam-Form] input[type="color"] {
-    padding: @form-padding-vertical @form-padding-horizontal;
+    height: @space-40;
+    padding: @space-base;
 }
 
 
@@ -247,9 +264,9 @@
 }
 
 [pam-Form] fieldset {
+    border: 0;
     margin: 0;
     padding: @space-8 0 1rem;
-    border: 0;
 
     .hook-form-fieldset;
 }
@@ -262,6 +279,11 @@
     width: 100%;
 
     .hook-form-legend;
+}
+
+// TODO: Move to traits
+[pam-padded] {
+    padding: @space-16;
 }
 
 
@@ -517,11 +539,11 @@
 //  Modifier: Stacked
 // ==========================================================================
 
-// Form types
+// Layout
 //
-// Different form types
+// Form layout variations
 //
-// Style guide: forms.type
+// Style guide: forms.layout
 
 // Default
 //
@@ -534,7 +556,7 @@
 //     <button pam-Button>Log in</button>
 // </form>
 //
-// Style guide: forms.type.inline
+// Style guide: forms.layout.inline
 
 // Stacked
 //
@@ -547,7 +569,7 @@
 //     <button pam-Button>Log in</button>
 // </form>
 //
-// Style guide: forms.type.stacked
+// Style guide: forms.layout.stacked
 
 [pam-Form~="stacked"] input:not([type="checkbox"]):not([type="radio"]),
 [pam-Form~="stacked"] select,
@@ -582,7 +604,7 @@
 //     </div>
 // </form>
 //
-// Style guide: forms.type.aligned
+// Style guide: forms.layout.aligned
 
 [pam-Form~="aligned"] input,
 [pam-Form~="aligned"] textarea,
@@ -614,6 +636,29 @@
 
 [pam-Form~="aligned"] [pam-Controls] {
     margin: @space-8 0 0 11em;
+}
+
+
+[pam-Form~="fluid"] {
+    input:not([type="radio"]):not([type="checkbox"]),
+    select,
+    textarea {
+        width: 100%;
+    }
+}
+
+[pam-Form~="padded"] {
+    fieldset {
+        padding: @space-8 0 @space-16;
+    }
+}
+
+@media screen and (min-width: @breakpoint-medium) {
+    [pam-Form~="padded"] {
+        fieldset {
+            padding: @space-16;
+        }
+    }
 }
 
 
