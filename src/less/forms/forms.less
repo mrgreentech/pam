@@ -31,10 +31,10 @@
 //                     <input type="checkbox" value=""> I´m a hipster
 //                 </label>
 //                 <label>
-//                     <input type="radio" id="radio1" name="optionsRadios" value="radios" checked> Programmer
+//                     <input type="radio" id="radio1" name="optionsRadios" value="radios" checked> Hipster
 //                 </label>
 //                 <label>
-//                     <input type="radio" id="radio2" name="optionsRadios" value="radios"> Designer
+//                     <input type="radio" id="radio2" name="optionsRadios" value="radios"> Geek
 //                 </label>
 //             </fieldset>
 //             <fieldset>
@@ -287,18 +287,6 @@
 }
 
 
-// Modifier: Form control
-// ========================================================================
-
-[pam-Form] [pam-Form-Control~="borderless"] {
-    border-color: transparent;
-}
-
-[pam-Form] [pam-Form-Control~="fluid"] {
-    width: 100%;
-}
-
-
 // Modifier: State
 // ==========================================================================
 
@@ -453,142 +441,14 @@
 }
 
 
-//  Select
-// ========================================================================
-
-// Select
-//
-// `pam-Select` turns on custom styling of the select element.
-//
-// Markup:
-// <form pam-Form="stacked">
-//     <label for="select-native">Native select</label>
-//     <select id="select-native">
-//         <option value="geek">Geek</option>
-//         <option value="nerd">Nerd</option>
-//         <option value="dork">Dork</option>
-//     </select>
-//     <label for="select-custom">Custom select</label>
-//     <select id="select-custom" pam-Select="">
-//         <option value="geek">Geek</option>
-//         <option value="nerd">Nerd</option>
-//         <option value="dork">Dork</option>
-//     </select>
-//     <label for="select-borderless">Borderless select</label>
-//     <select id="select-borderless" pam-Select pam-Form-Control="borderless">
-//         <option value="geek">Geek</option>
-//         <option value="nerd">Nerd</option>
-//         <option value="dork">Dork</option>
-//     </select>
-//     <label for="select-fluid">Fluid select</label>
-//     <select id="select-fluid" pam-Select pam-Form-Control="fluid">
-//         <option value="geek">Geek</option>
-//         <option value="nerd">Nerd</option>
-//         <option value="dork">Dork</option>
-//     </select>
-//     <label for="select-multiple">Multiple select</label>
-//     <select id="select-multiple" multiple>
-//         <option value="geek">Geek</option>
-//         <option value="nerd">Nerd</option>
-//         <option value="dork">Dork</option>
-//     </select>
-// </form>
-//
-// Style guide: forms.select
-
-@form-select-background-image: "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M10%201L5%208h10l-5-7zm0%2018l5-7H5l5%207z%27%2F%3E%3C%2Fsvg%3E";
-@form-select-background-size: 12px;
-@form-select-background-offset: @space-8;
-@form-select-background-color: @form-background;
-
-[pam-Form] select[pam-Select]:not([multiple]) {
-    appearance: none;
-    background: url(@form-select-background-image) right @form-select-background-offset center;
-    background-color: @form-select-background-color;
-    background-repeat: no-repeat;
-    background-size: @form-select-background-size @form-select-background-size;
-    color: @skin-text-primary;
-    display: inline-block;
-    max-width: 100%;
-    padding-right: @space-28;
-    vertical-align: middle;
-
-    &::-ms-expand {
-        display: none;
-    }
-
-    // .hook-form-select;
-}
-
-// Sub-object: Form field message
-// ========================================================================
-
-// Form message
-//
-// `pam-Form-Message` is a helper element that shows text
-// under or on the side of a form field.
-//
-//
-// Style guide: forms.message
-
-// Form block message
-//
-// The default message is a block element
-//
-// Markup:
-// <form pam-Form="stacked">
-//     <fieldset>
-//         <label>Username</label>
-//         <input type="text">
-//         <aside pam-Form-Message>Block help text</aside>
-//     </fieldset>
-// </form>
-//
-// Style guide: forms.message.block
-
-// Form inline message
-//
-// To display the message inline apply the `inline`
-// value to `pam-Form-Message`.
-//
-// Markup:
-// <form pam-Form>
-//     <fieldset>
-//         <label>Username</label>
-//         <input type="text">
-//         <aside pam-Form-Message="inline">Block help text</aside>
-//     </fieldset>
-// </form>
-//
-// Style guide: forms.message.inline
-
-[pam-Form-Message] {
-    color: @skin-text-primary;
-    display: block;
-    font-size: @font-size-xsmall;
-
-    .hook-form-message;
-}
-
-// Sub-modifier: Form input inline message
-
-[pam-Form-Message~="inline"] {
-    color: @skin-text-primary;
-    display: inline-block;
-    font-size: @font-size-xsmall;
-    padding-left: @space-8;
-    vertical-align: middle;
-
-    .hook-form-message-inline;
-}
-
-
 //  Modifier: Stacked
 // ==========================================================================
 
 // Layout
 //
 // Form layout variations
+//
+// Weight: 10
 //
 // Style guide: forms.layout
 
@@ -600,7 +460,7 @@
 // <form pam-Form>
 //     <input type="email" placeholder="Email">
 //     <input type="password" placeholder="Password">
-//     <button pam-Button>Log in</button>
+//     <button pam-Button="small">Log in</button>
 // </form>
 //
 // Style guide: forms.layout.inline
@@ -613,7 +473,7 @@
 // <form pam-Form="stacked">
 //     <input type="email" placeholder="Email">
 //     <input type="password" placeholder="Password">
-//     <button pam-Button>Log in</button>
+//     <button pam-Button="small">Log in</button>
 // </form>
 //
 // Style guide: forms.layout.stacked
@@ -647,7 +507,7 @@
 //         <input type="password" id="password" placeholder="Password">
 //     </div>
 //     <div pam-Controls>
-//         <button pam-Button>Log in</button>
+//         <button pam-Button="small">Log in</button>
 //     </div>
 // </form>
 //
@@ -719,16 +579,16 @@
 // Markup:
 // <form pam-Form>
 //     <fieldset pam-Group>
-//         <input type="text" placeholder="Username" pam-Input="1of3">
-//         <input type="email" placeholder="Email" pam-Input="1of3">
-//         <input type="password" placeholder="Password" pam-Input="1of3">
+//         <input type="text" placeholder="Username">
+//         <input type="email" placeholder="Email">
+//         <input type="password" placeholder="Password">
 //     </fieldset>
 //     <fieldset pam-Group>
-//         <input type="text" placeholder="Nickname" pam-Input="1of3">
-//         <input type="text" placeholder="City" pam-Input="1of3">
-//         <input type="text" placeholder="Favorite movie" pam-Input="1of3">
+//         <input type="text" placeholder="Nickname">
+//         <input type="text" placeholder="City">
+//         <input type="text" placeholder="Favorite movie">
 //     </fieldset>
-//     <button type="submit" pam-Button pam-Input="1of3">Log in</button>
+//     <button type="submit" pam-Button="small">Log in</button>
 // </form>
 //
 // Style guide: forms.layout.grouped
@@ -756,6 +616,83 @@
 [pam-Form] [pam-Group] button {
     margin: 0.5rem 0;
 }
+
+
+// Sub-object: Form message
+// ========================================================================
+
+// Message
+//
+// `pam-Form-Message` is a helper element that shows text
+// under or on the side of a form field.
+//
+// Weight: 18
+//
+// Style guide: forms.message
+
+// Block
+//
+// The default message is a block element
+//
+// Markup:
+// <form pam-Form="stacked">
+//     <fieldset>
+//         <label>Username</label>
+//         <input type="text">
+//         <aside pam-Form-Message>Block help text</aside>
+//     </fieldset>
+// </form>
+//
+// Style guide: forms.message.block
+
+// Inline
+//
+// To display the message inline apply the `inline`
+// value to `pam-Form-Message`.
+//
+// Markup:
+// <form pam-Form>
+//     <fieldset>
+//         <label>Username</label>
+//         <input type="text">
+//         <aside pam-Form-Message="inline">Block help text</aside>
+//     </fieldset>
+// </form>
+//
+// Style guide: forms.message.inline
+
+[pam-Form-Message] {
+    color: @skin-text-primary;
+    display: block;
+    font-size: @font-size-xsmall;
+
+    .hook-form-message;
+}
+
+// Sub-modifier: Form input inline message
+
+[pam-Form-Message~="inline"] {
+    color: @skin-text-primary;
+    display: inline-block;
+    font-size: @font-size-xsmall;
+    padding-left: @space-8;
+    vertical-align: middle;
+
+    .hook-form-message-inline;
+}
+
+
+// Sub-objects: Custom controls
+// ========================================================================
+
+// Custom controls
+//
+// There are group of custom controls to use which gives more flexibility
+// and control over the form controls.
+//
+// Weight: 20
+//
+// Style guide: forms.custom
 
 
 // Sub-object: Input group
@@ -792,7 +729,7 @@
 //     </div>
 // </form>
 //
-// Style guide: forms.input-group
+// Style guide: forms.custom.group
 
 [pam-Form] [pam-Input-Group] {
     margin-bottom: @form-input-group-margin;
@@ -908,7 +845,7 @@
 //     </div>
 // </form>
 //
-// Style guide: forms.input-group.lego
+// Style guide: forms.custom.group-lego
 
 [pam-Form] [pam-Input-Group~="lego"] {
     border-collapse: separate;
@@ -985,6 +922,91 @@
 }
 
 
+//  Select
+// ========================================================================
+
+// Select
+//
+// `pam-Select` turns on custom styling of the select element.
+//
+// Markup:
+// <form pam-Form="stacked">
+//     <label for="select-native">Native select</label>
+//     <select id="select-native">
+//         <option value="geek">Geek</option>
+//         <option value="nerd">Nerd</option>
+//         <option value="dork">Dork</option>
+//     </select>
+//     <label for="select-custom">Custom select</label>
+//     <select id="select-custom" pam-Select="">
+//         <option value="geek">Geek</option>
+//         <option value="nerd">Nerd</option>
+//         <option value="dork">Dork</option>
+//     </select>
+//     <label for="select-multiple">Multiple select</label>
+//     <select id="select-multiple" multiple>
+//         <option value="geek">Geek</option>
+//         <option value="nerd">Nerd</option>
+//         <option value="dork">Dork</option>
+//     </select>
+// </form>
+//
+// Style guide: forms.custom.select
+
+@form-select-background-image: "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M10%201L5%208h10l-5-7zm0%2018l5-7H5l5%207z%27%2F%3E%3C%2Fsvg%3E";
+@form-select-background-size: 12px;
+@form-select-background-offset: @space-8;
+@form-select-background-color: @form-background;
+
+[pam-Form] select[pam-Select]:not([multiple]) {
+    appearance: none;
+    background: url(@form-select-background-image) right @form-select-background-offset center;
+    background-color: @form-select-background-color;
+    background-repeat: no-repeat;
+    background-size: @form-select-background-size @form-select-background-size;
+    color: @skin-text-primary;
+    display: inline-block;
+    max-width: 100%;
+    padding-right: @space-28;
+    vertical-align: middle;
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    // .hook-form-select;
+}
+
+
+// Sub-Object: Form control
+// ========================================================================
+
+// Traits
+//
+// `pam-form-control` is a generic trait to be used with form controls
+// to optimize and trim their behaviour when needed.
+//
+// Markup:
+// <form pam-Form="stacked">
+//     <label for="input-borderless">So borderless!</label>
+//     <input id="input-borderless" placeholder="Borderless" pam-Form-Control="borderless">
+//     <label for="input-fluid">Fluid like water</label>
+//     <input id="input-fluid" placeholder="Fluid" pam-Form-Control="fluid">
+// </form>
+//
+// Weight: 20
+//
+// Style guide: forms.traits
+
+[pam-Form] [pam-Form-Control~="borderless"] {
+    border-color: transparent;
+}
+
+[pam-Form] [pam-Form-Control~="fluid"] {
+    width: 100%;
+}
+
+
 // Experimental
 // ==================================================================
 
@@ -992,7 +1014,7 @@
 //
 // Following forms rulez are experimental, and has no offical browser support.
 //
-// Weight: 18
+// Weight: 25
 //
 // Style guide: forms.experimental
 
@@ -1080,7 +1102,7 @@
 //
 // Following form rulez will be deprecated in version 1.1.0.
 //
-// Weight: 19
+// Weight: 27
 //
 // Style guide: forms.deprecated
 
@@ -1296,7 +1318,7 @@
 // `.hook-form-message`
 // `.hook-form-message-inline`
 //
-// Weight: 20
+// Weight: 30
 //
 // Style guide: forms.hooks
 
