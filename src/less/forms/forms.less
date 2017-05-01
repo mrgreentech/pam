@@ -27,13 +27,13 @@
 //         <div pam-Unit="1-1 medium:1-2">
 //             <fieldset>
 //                 <legend>Checkboxes</legend>
-//                 <label pam-Checkbox>
+//                 <label>
 //                     <input type="checkbox" value=""> I´m a hipster
 //                 </label>
-//                 <label pam-Radio>
+//                 <label>
 //                     <input type="radio" id="radio1" name="optionsRadios" value="radios" checked> Programmer
 //                 </label>
-//                 <label pam-Radio>
+//                 <label>
 //                     <input type="radio" id="radio2" name="optionsRadios" value="radios"> Designer
 //                 </label>
 //             </fieldset>
@@ -90,25 +90,9 @@
 @form-padding-horizontal: @space-8;
 
 
+// ==========================================================================
 //  Form
 // ==========================================================================
-
-// Inputs
-//
-// Input controllers
-//
-// Markup:
-// <form pam-Form>
-//      <input type="text" placeholder="Input" {{modifier_class}}>
-// </form>
-//
-// disabled - makes a input field disabled.
-// readonly - attribute puts a input to a read-only state.
-// required - attribute marks a input control as required.
-//
-// Weight: -1
-//
-// Style guide: forms.input
 
 [pam-Form] input,
 [pam-Form] select,
@@ -239,6 +223,9 @@
 }
 
 
+//  Select
+// ========================================================================
+
 [pam-Form] select:not([multiple]):not([pam-Select]):not([pam-form-Control]) {
     height: @space-40;
     padding: 0;
@@ -257,19 +244,9 @@
     .hook-form-select-focus;
 }
 
-[pam-Form] label {
-    margin: @space-8 0;
 
-    .hook-form-label;
-}
-
-[pam-Form] fieldset {
-    border: 0;
-    margin: 0;
-    padding: @space-8 0 1rem;
-
-    .hook-form-fieldset;
-}
+//  Legend
+// ========================================================================
 
 [pam-Form] legend {
     display: block;
@@ -281,38 +258,32 @@
     .hook-form-legend;
 }
 
-// TODO: Move to traits
-[pam-padded] {
-    padding: @space-16;
+
+//  Fieldset
+// ========================================================================
+
+[pam-Form] fieldset {
+    border: 0;
+    margin: 0;
+    padding: @space-8 0 1rem;
+
+    .hook-form-fieldset;
 }
 
 
-//  Checkboxes and Radios
-// ==========================================================================
+//  Label
+// ========================================================================
 
-// Radio/Checkboxes
-//
-// Radio/checkbox controllers
-//
-// Markup:
-// <form pam-Form>
-//     <label pam-Checkbox>
-//         <input type="checkbox" value="">&nbsp; I´m a hipster
-//     </label>
-//     <label pam-Radio>
-//         <input type="radio" id="radio1" name="optionsRadios" value="radios" checked>&nbsp; Programmer
-//     </label>
-//     <label pam-Radio>
-//         <input type="radio" id="radio2" name="optionsRadios" value="radios">&nbsp; Designer
-//     </label>
-// </form>
-//
-// Style guide: forms.checkbox
+[pam-Form] label {
+    margin: @space-8 0;
 
-[pam-Form] [pam-Checkbox],
-[pam-Form] [pam-Radio] {
-    margin: @form-margin 0;
-    display: block;
+    .hook-form-label;
+}
+
+
+// TODO: Move to traits
+[pam-padded] {
+    padding: @space-16;
 }
 
 
@@ -328,81 +299,157 @@
 }
 
 
-// Sub-modifier: Input size
-// ========================================================================
+// Modifier: State
+// ==========================================================================
 
-// Input size
+// State
 //
-// Input size modifiers
+// Use states to give users feedback related to form controls
+// by using native or custom states.
+//
+// Weight: 1
+//
+// Style guide: forms.states
+
+// Native
+//
+// Just add the natibve form attributes `disabled`, `readonly` and `required`
+// to use with PAM forms.
 //
 // Markup:
 // <form pam-Form>
-//     <input pam-Input="1-1" type="text" id="password" placeholder="pam-Input 1-1"><br>
-//     <input pam-Input="2-3" type="text" id="password" placeholder="pam-Input 2-3"><br>
-//     <input pam-Input="1-2" type="text" id="password" placeholder="pam-Input 1-2"><br>
-//     <input pam-Input="1-3" type="text" id="password" placeholder="pam-Input 1-3"><br>
-//     <input pam-Input="1-4" type="text" id="password" placeholder="pam-Input 1-4">
+//      <input type="text" placeholder="Input" {{modifier_class}}>
 // </form>
 //
-// Style guide: forms.size
+// disabled - makes a input field disabled.
+// readonly - attribute puts a input to a read-only state.
+// required - attribute marks a input control as required.
+//
+// Weight: 1
+//
+// Style guide: forms.states.native
 
-[pam-Form] [pam-Input~="1-1"] {
-    width: 100%;
-}
 
-[pam-Form] [pam-Input~="2-3"] {
-    width: 66%;
-}
-
-[pam-Form] [pam-Input~="1-2"] {
-    width: 50%;
-}
-
-[pam-Form] [pam-Input~="1-3"] {
-    width: 33%;
-}
-
-[pam-Form] [pam-Input~="1-4"] {
-    width: 25%;
-}
-
-//  Sub-modifier: Validation states
+//  Sub-modifier: Custom states
 // ========================================================================
 
-// Input validation
+// Custom
 //
-// Input validation states
+// Use the `pam-Form-State` to apply the custom form states `success` or `danger`.
 //
 // Markup:
 // <form pam-Form>
-//      <input type="text" placeholder="Input" pam-Input="{{modifier_class}}">
+//      <input type="text" placeholder="Input" pam-Form-State="{{modifier_class}}">
 // </form>
 //
 // success - attribute marks a success state for the input.
 // danger - attribute marks a error state for the input.
 //
-// Style guide: forms.validation
+// Weight: 2
+//
+// Style guide: forms.states.custom
 
-[pam-Form] input[pam-Input~="success"],
-[pam-Form] input[pam-Input~="success"]:focus,
-[pam-Form] select[pam-Input~="success"],
-[pam-Form] select[pam-Input~="success"]:focus,
-[pam-Form] textarea[pam-Input~="success"],
-[pam-Form] textarea[pam-Input~="success"]:focus {
+[pam-Form] input[pam-Form-State~="success"],
+[pam-Form] input[pam-Form-State~="success"]:focus,
+[pam-Form] select[pam-Form-State~="success"],
+[pam-Form] select[pam-Form-State~="success"]:focus,
+[pam-Form] textarea[pam-Form-State~="success"],
+[pam-Form] textarea[pam-Form-State~="success"]:focus {
     background-color: @form-success-background;
     border: @form-border-width solid @form-success-border;
     color: @form-success-color;
 }
 
-[pam-Form] input[pam-Input~="danger"],
-[pam-Form] input[pam-Input~="danger"]:focus,
-[pam-Form] select[pam-Input~="danger"],
-[pam-Form] select[pam-Input~="danger"]:focus,
-[pam-Form] textarea[pam-Input~="danger"],
-[pam-Form] textarea[pam-Input~="danger"]:focus {
+[pam-Form] input[pam-Form-State~="danger"],
+[pam-Form] input[pam-Form-State~="danger"]:focus,
+[pam-Form] select[pam-Form-State~="danger"],
+[pam-Form] select[pam-Form-State~="danger"]:focus,
+[pam-Form] textarea[pam-Form-State~="danger"],
+[pam-Form] textarea[pam-Form-State~="danger"]:focus {
     background-color: @form-danger-background;
     border: @form-border-width solid @form-danger-border;
     color: @form-danger-color;
+}
+
+
+// Sub-modifier: Size
+// ========================================================================
+
+// Size
+//
+// To adjust a `input`, `select` or `textarea` width use
+// `pam-Form-Size` which supports thirds and fifths.
+//
+// Markup:
+// <form pam-Form="stacked">
+//     <input pam-Form-Size="large" type="text" id="password" placeholder="Large">
+//     <input type="text" id="password" placeholder="Default">
+//     <input pam-Form-Size="small" type="text" id="password" placeholder="Small">
+// </form>
+//
+// Weight: 3
+//
+// Style guide: forms.size
+
+[pam-Form] [pam-Form-Size~="large"] {
+    font-size: @font-size-larger;
+    height: @space-56;
+    line-height: @line-height-base;
+}
+
+[pam-Form] [pam-Form-Size~="small"] {
+    font-size: @font-size-medium;
+    height: @space-32;
+    line-height: @line-height-base;
+}
+
+
+// Sub-modifier: Width
+// ========================================================================
+
+// Width
+//
+// To adjust a `input`, `select` or `textarea` width use
+// `pam-Form-Width` which supports thirds and fifths.
+//
+// Markup:
+// <form pam-Form="stacked">
+//     <input pam-Form-Width="1-1" type="text" id="password" placeholder="1-1">
+//     <input pam-Form-Width="2-3" type="text" id="password" placeholder="2-3">
+//     <input pam-Form-Width="1-2" type="text" id="password" placeholder="1-2">
+//     <input pam-Form-Width="1-3" type="text" id="password" placeholder="1-3">
+//     <input pam-Form-Width="1-4" type="text" id="password" placeholder="1-4">
+// </form>
+//
+// Weight: 5
+//
+// Style guide: forms.width
+
+[pam-Form] [pam-Form-Width~="1-1"] {
+    width: 100%;
+}
+
+[pam-Form] [pam-Form-Width~="2-3"] {
+    width: 66%;
+}
+
+[pam-Form] [pam-Form-Width~="1-2"] {
+    width: 50%;
+}
+
+[pam-Form] [pam-Form-Width~="1-3"] {
+    width: 33%;
+}
+
+[pam-Form] [pam-Form-Width~="1-4"] {
+    width: 25%;
+}
+
+
+// TODO: Add text trait
+
+[pam-text~="center"] {
+    text-align: center;
 }
 
 
@@ -684,7 +731,7 @@
 //     <button type="submit" pam-Button pam-Input="1of3">Log in</button>
 // </form>
 //
-// Style guide: forms.group
+// Style guide: forms.layout.grouped
 
 [pam-Form] fieldset[pam-Group] {
     padding-bottom: 12px;
@@ -714,7 +761,7 @@
 // Sub-object: Input group
 // ========================================================================
 
-// Input icon
+// Input group
 //
 // `pam-Input-Group` extend form controls by adding icons before
 // select or text-based form controls.
@@ -745,7 +792,7 @@
 //     </div>
 // </form>
 //
-// Style guide: forms.input.group
+// Style guide: forms.input-group
 
 [pam-Form] [pam-Input-Group] {
     margin-bottom: @form-input-group-margin;
@@ -861,7 +908,7 @@
 //     </div>
 // </form>
 //
-// Style guide: forms.input.group.lego
+// Style guide: forms.input-group.lego
 
 [pam-Form] [pam-Input-Group~="lego"] {
     border-collapse: separate;
