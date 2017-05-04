@@ -1000,6 +1000,12 @@
 
 [pam-Form] [pam-Form-Control~="borderless"] {
     border-color: transparent;
+    transition: box-shadow 0.3s ease;
+}
+
+[pam-Form] [pam-Form-Control~="borderless"]:focus {
+    border-color: transparent;
+    box-shadow: 0 1px 3px @skin-dark;
 }
 
 [pam-Form] [pam-Form-Control~="fluid"] {
