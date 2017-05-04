@@ -76,11 +76,11 @@
 @form-focus-border: darken(@form-border, 30%);
 
 @form-success-border: @skin-success;
-@form-success-background: lighten(@skin-success, 30%);
+@form-success-background: lighten(@skin-success, 45%);
 @form-success-color: @skin-success;
 
 @form-danger-border: @skin-danger;
-@form-danger-background: lighten(@skin-danger, 30%);
+@form-danger-background: lighten(@skin-danger, 40%);
 @form-danger-color: @skin-danger;
 
 @form-input-group-margin: @space-8;
@@ -108,6 +108,7 @@
     line-height: @form-line-height;
     margin: 0 0 0.5rem;
     transition: border 0.3s;
+    // vertical-align: middle;
     padding: @form-padding-vertical @form-padding-horizontal;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
@@ -301,7 +302,7 @@
 
 // Native
 //
-// Just add the natibve form attributes `disabled`, `readonly` and `required`
+// Add the native form attributes `disabled`, `readonly` and `required`
 // to use with PAM forms.
 //
 // Markup:
@@ -695,24 +696,23 @@
 // Style guide: forms.custom
 
 
-// Sub-object: Input group
+// Sub-object: Inline
 // ========================================================================
 
-// Input group
+// Icon
 //
-// `pam-Input-Group` extend form controls by adding icons before
-// select or text-based form controls.
+// `pam-Form-Inline` can group a form control with a icon. To apply the icon on the right side use `pam-Form-Inline="reverse"`.
 //
 // Markup:
 // <form pam-Form>
-//     <div pam-Input-Group>
-//         <label for="group-input" pam-Input-Group-Addon>
+//     <div pam-Form-Inline>
+//         <label for="group-input" pam-Form-Icon>
 //             <div sg-mock-icon></div>
 //         </label>
 //         <input id="group-input" type="text" placeholder="Input group" pam-Form-Control>
 //     </div>
-//     <div pam-Input-Group>
-//         <label for="group-select" pam-Input-Group-Addon>
+//     <div pam-Form-Inline>
+//         <label for="group-select" pam-Form-Icon>
 //             <div sg-mock-icon></div>
 //         </label>
 //         <select id="group-select" pam-Form-Control>
@@ -721,17 +721,17 @@
 //             <option value="dork">Dork</option>
 //         </select>
 //     </div>
-//     <div pam-Input-Group="reverse">
-//         <label for="group-input-reverse" pam-Input-Group-Addon>
+//     <div pam-Form-Inline="reverse">
+//         <label for="group-input-reverse" pam-Form-Icon>
 //             <div sg-mock-icon></div>
 //         </label>
 //         <input id="group-input-reverse" type="text" placeholder="Input group" pam-Form-Control>
 //     </div>
 // </form>
 //
-// Style guide: forms.custom.group
+// Style guide: forms.custom.inline
 
-[pam-Form] [pam-Input-Group] {
+[pam-Form] [pam-Form-Inline] {
     margin-bottom: @form-input-group-margin;
     position: relative;
 
@@ -739,7 +739,7 @@
         margin-bottom: 0;
     }
 
-    [pam-Input-Group-Addon] {
+    [pam-Form-Icon] {
         align-items: center;
         background: transparent;
         bottom: 0;
@@ -764,8 +764,8 @@
     .hook-form-input-group;
 }
 
-[pam-Form] [pam-Input-Group~="reverse"] {
-    [pam-Input-Group-Addon] {
+[pam-Form] [pam-Form-Inline~="reverse"] {
+    [pam-Form-Icon] {
         left: auto;
         right: 0;
     }
@@ -778,80 +778,55 @@
 }
 
 
-// Sub-object: Input group lego
+// Sub-object: Lego
 // ========================================================================
 
-// Input group lego
+// Lego
 //
-// `pam-Input-Group="lego"` extend form controls by adding icons, buttons, selects
+// `pam-Form-Group="lego"` extend form controls by adding icons, buttons, selects
 //  before or after text-based form controls as lego bricks.
 //
 // Markup:
 // <form pam-Form>
-//     <div pam-Input-Group="lego">
-//         <div pam-Input-Group-Addon>
-//             <div pam-Select-Box>
+//     <div pam-Form-Group="lego">
+//         <div pam-Form-Group-Addon>
 //             <select>
 //                 <option value="honda">+46</option>
 //                 <option value="toyota">+211</option>
 //                 <option value="nissan">+1-284</option>
 //             </select>
-//             </div>
 //         </div>
 //         <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
 //     </div>
-//     <div pam-Input-Group="lego">
+//     <div pam-Form-Group="lego">
 //         <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
-//         <div pam-Input-Group-Addon>
-//             <div pam-Button>Send</div>
+//         <div pam-Form-Group-Addon>
+//             <div pam-Button="small">Send</div>
 //         </div>
 //     </div>
-//     <div pam-Input-Group="lego">
-//         <div pam-Input-Group-Addon>
-//             <div pam-Select-Box>
-//                 <select>
-//                     <option value="honda">+46</option>
-//                     <option value="toyota">+211</option>
-//                     <option value="nissan" selected>+1-284</option>
-//                 </select>
-//             </div>
+//     <div pam-Form-Group="lego">
+//         <div pam-Form-Group-Addon>
+//             <select>
+//                 <option value="honda">+46</option>
+//                 <option value="toyota">+211</option>
+//                 <option value="nissan" selected>+1-284</option>
+//             </select>
 //         </div>
 //             <input id="addon-lego" type="text" placeholder="Two combo addons" pam-Form-Control>
-//         <div pam-Input-Group-Addon>
-//             <div pam-Button>Send</div>
-//         </div>
-//     </div>
-//     <div pam-Input-Group="lego">
-//         <div pam-Input-Group-Addon>
-//             <div pam-Button>
-//                 <i class="fa fa-plus"></i>
-//             </div>
-//         </div>
-//         <input id="addon-lego" type="text" placeholder="Two button addons" pam-Form-Control>
-//         <div pam-Input-Group-Addon>
-//             <div pam-Button>
-//                 <i class="fa fa-minus"></i>
-//             </div>
-//         </div>
-//     </div>
-//     <div pam-Input-Group="lego">
-//         <div pam-Input-Group-Addon>
-//             <div pam-Button="primary">Foo</div>
-//         </div>
-//         <input id="addon-lego" type="text" placeholder="Two button addons" pam-Form-Control>
-//         <div pam-Input-Group-Addon>
-//             <div pam-Button>Bar</div>
+//         <div pam-Form-Group-Addon>
+//             <div pam-Button="small">Send</div>
 //         </div>
 //     </div>
 // </form>
 //
-// Style guide: forms.custom.group-lego
+// Style guide: forms.custom.lego
 
-[pam-Form] [pam-Input-Group~="lego"] {
-    border-collapse: separate;
-    display: table;
+[pam-Form] [pam-Form-Group~="lego"] {
+    display: flex;
+    margin-bottom: @space-16;
 
-    [pam-Input-Group-Addon] {
+
+    [pam-Form-Group-Addon] {
         background-color: @form-border;
         border-radius: @form-border-radius;
         color: @form-color;
@@ -860,14 +835,13 @@
         min-width: @form-input-group-addon-space;
         position: relative;
         text-align: center;
-        vertical-align: middle;
+        // vertical-align: middle;
         white-space: nowrap;
-        width: 1%;
     }
 
     [pam-Form-Control] {
         margin-bottom: 0;
-        padding: @space-16;
+        // padding: @space-16;
         position: relative;
         z-index: 2;
 
@@ -876,9 +850,9 @@
         }
     }
 
-    [pam-Input-Group-Addon],
+    [pam-Form-Group-Addon],
     [pam-Form-Control] {
-        display: table-cell;
+        display: flex;
 
         > * {
             margin-bottom: 0;
@@ -891,7 +865,7 @@
     }
 
     [pam-Form-Control]:first-child,
-    [pam-Input-Group-Addon]:first-child {
+    [pam-Form-Group-Addon]:first-child {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
 
@@ -901,12 +875,14 @@
         }
     }
 
-    [pam-Input-Group-Addon]:first-child {
-        border-right: 0;
+    [pam-Form-Group-Addon]:first-child {
+        > * {
+            border-right: 0;
+        }
     }
 
     [pam-Form-Control]:last-child,
-    [pam-Input-Group-Addon]:last-child {
+    [pam-Form-Group-Addon]:last-child {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
 
@@ -916,8 +892,10 @@
         }
     }
 
-    [pam-Input-Group-Addon]:last-child {
-        border-left: 0;
+    [pam-Form-Group-Addon]:last-child {
+        > * {
+            border-left: 0;
+        }
     }
 }
 
