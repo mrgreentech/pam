@@ -1,6 +1,6 @@
 // Forms
 //
-// Pam gives you a opiniated style for forms. If that's not enough there are form control selectors, custom components and some layout variations to put together a great variations of forms.
+// Put together variation of forms and form controls with form control selectors, custom components and some layout variations.
 //
 // Markup:
 // <form pam-Form="stacked fluid padded">
@@ -366,8 +366,7 @@
 
 // Size
 //
-// To adjust a `input`, `select` or `textarea` width use
-// `pam-Form-Size` which supports thirds and fifths.
+// Adjust size of `input`, `select` or `textarea` with `pam-Form-Size`.
 //
 // Markup:
 // <form pam-Form="stacked">
@@ -398,7 +397,7 @@
 
 // Width
 //
-// To adjust a `input`, `select` or `textarea` width use
+// Adjust width of `input`, `select` or `textarea` with
 // `pam-Form-Width` which supports thirds and fifths.
 //
 // Markup:
@@ -464,6 +463,8 @@
 //     <button pam-Button="small">Log in</button>
 // </form>
 //
+// Weight: 1
+//
 // Style guide: forms.layout.inline
 
 // Stacked
@@ -476,6 +477,8 @@
 //     <input type="password" placeholder="Password">
 //     <button pam-Button="small">Log in</button>
 // </form>
+//
+// Weight: 2
 //
 // Style guide: forms.layout.stacked
 
@@ -511,6 +514,8 @@
 //         <button pam-Button="small">Log in</button>
 //     </div>
 // </form>
+//
+// Weight: 3
 //
 // Style guide: forms.layout.aligned
 
@@ -592,10 +597,12 @@
 //     <button type="submit" pam-Button="small">Log in</button>
 // </form>
 //
+// Weight: 2
+//
 // Style guide: forms.layout.grouped
 
 [pam-Form] fieldset[pam-Group] {
-    padding-bottom: 12px;
+    padding-bottom: @space-16;
 }
 
 [pam-Form] fieldset[pam-Group]:last-of-type {
@@ -604,7 +611,6 @@
 
 [pam-Form] [pam-Group] input {
     display: block;
-    padding: @form-padding;
     position: relative;
 
     .hook-form-group;
