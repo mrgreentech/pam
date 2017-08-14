@@ -807,7 +807,7 @@
 //     <div pam-Form-Group="lego">
 //         <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
 //         <div pam-Form-Group-Addon>
-//             <div pam-Button="small">Send</div>
+//             <input type="button" pam-Button="small" value="send">
 //         </div>
 //     </div>
 //     <div pam-Form-Group="lego">
@@ -818,9 +818,9 @@
 //                 <option value="nissan" selected>+1-284</option>
 //             </select>
 //         </div>
-//             <input id="addon-lego" type="text" placeholder="Two combo addons" pam-Form-Control>
+//             <input id="addon-lego" type="text" placeholder="Two addons" pam-Form-Control>
 //         <div pam-Form-Group-Addon>
-//             <div pam-Button="small">Send</div>
+//             <input type="button" pam-Button="small" value="send">
 //         </div>
 //     </div>
 // </form>
@@ -828,12 +828,11 @@
 // Style guide: forms.custom.lego
 
 [pam-Form] [pam-Form-Group~="lego"] {
-    display: flex;
+    display: inline-flex;
     margin-bottom: @space-16;
 
-
     [pam-Form-Group-Addon] {
-        background-color: @form-border;
+        // background-color: @form-border;
         border-radius: @form-border-radius;
         color: @form-color;
         font-size: @font-size-base;
@@ -883,7 +882,13 @@
 
     [pam-Form-Group-Addon]:first-child {
         > * {
-            border-right: 0;
+            border-right-color: transparent;
+        }
+    }
+
+    [pam-Form-Group-Addon]:first-child {
+        > *:focus {
+            border-right-color: @form-focus-border;
         }
     }
 
@@ -900,9 +905,61 @@
 
     [pam-Form-Group-Addon]:last-child {
         > * {
-            border-left: 0;
+            border-left-color: transparent;
         }
     }
+
+    [pam-Form-Group-Addon]:last-child {
+        > *:focus {
+            border-left-color: @form-focus-border;
+        }
+    }
+}
+
+// Sub-object: Lego block
+// ========================================================================
+
+// Lego block
+//
+// `pam-Form-Group="lego block"` display lego brick as a block.
+//
+// Markup:
+// <form pam-Form>
+//     <div pam-Form-Group="lego block">
+//         <div pam-Form-Group-Addon>
+//             <select>
+//                 <option value="honda">+46</option>
+//                 <option value="toyota">+211</option>
+//                 <option value="nissan">+1-284</option>
+//             </select>
+//         </div>
+//         <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+//     </div>
+//     <div pam-Form-Group="lego block">
+//         <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+//         <div pam-Form-Group-Addon>
+//             <input type="button" pam-Button="small" value="send">
+//         </div>
+//     </div>
+//     <div pam-Form-Group="lego block">
+//         <div pam-Form-Group-Addon>
+//             <select>
+//                 <option value="honda">+46</option>
+//                 <option value="toyota">+211</option>
+//                 <option value="nissan" selected>+1-284</option>
+//             </select>
+//         </div>
+//             <input id="addon-lego" type="text" placeholder="Two addons" pam-Form-Control>
+//         <div pam-Form-Group-Addon>
+//             <input type="button" pam-Button="small" value="send">
+//         </div>
+//     </div>
+// </form>
+//
+// Style guide: forms.custom.lego.block
+
+[pam-Form] [pam-Form-Group~="block"] {
+    display: flex;
 }
 
 
