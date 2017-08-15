@@ -1,6 +1,6 @@
 @media only screen and (max-width: 480px) {
     [pam-Form] button[type="submit"] {
-        margin: 0.5rem 0 0;
+        margin: @space-8 0 0;
     }
 
     [pam-Form] input:not([type]),
@@ -19,43 +19,29 @@
     [pam-Form] input[type="tel"],
     [pam-Form] input[type="color"],
     [pam-Form] label {
-        margin-bottom: 0.5rem;
+        margin-bottom: @space-8;
         display: block;
     }
 
-    [pam-Group] input:not([type]),
-    [pam-Group] input[type="text"],
-    [pam-Group] input[type="password"],
-    [pam-Group] input[type="email"],
-    [pam-Group] input[type="url"],
-    [pam-Group] input[type="date"],
-    [pam-Group] input[type="month"],
-    [pam-Group] input[type="time"],
-    [pam-Group] input[type="datetime"],
-    [pam-Group] input[type="datetime-local"],
-    [pam-Group] input[type="week"],
-    [pam-Group] input[type="number"],
-    [pam-Group] input[type="search"],
-    [pam-Group] input[type="tel"],
-    [pam-Group] input[type="color"] {
-        margin-bottom: 0;
+    [pam-Form~="aligned"] [pam-Fieldset] {
+        display: block;
     }
 
-    [pam-Form~="aligned"] [pam-Control~="group"] label {
-        margin-bottom: 0.5rem;
+    [pam-Form~="aligned"] [pam-Fieldset] label {
+        margin-bottom: @space-8;
         text-align: left;
         display: block;
         width: 100%;
     }
 
-    [pam-Form~="aligned"] [pam-Controls] {
-        margin: 1.5em 0 0;
+    [pam-Form~="aligned"] [pam-Fieldset~="actions"] {
+        margin: @space-24 0 0;
     }
 
     [pam-Form-Message~="inline"],
     [pam-Form-Message] {
         display: block;
-        font-size: 0.75rem;
-        padding: 0.5rem 0;
+        font-size: @font-size-xsmall;
+        padding: @space-8 0;
     }
 }
