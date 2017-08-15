@@ -1,23 +1,9 @@
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: @breakpoint-small) {
     [pam-Form] button[type="submit"] {
         margin: @space-8 0 0;
     }
 
-    [pam-Form] input:not([type]),
-    [pam-Form] input[type="text"],
-    [pam-Form] input[type="password"],
-    [pam-Form] input[type="email"],
-    [pam-Form] input[type="url"],
-    [pam-Form] input[type="date"],
-    [pam-Form] input[type="month"],
-    [pam-Form] input[type="time"],
-    [pam-Form] input[type="datetime"],
-    [pam-Form] input[type="datetime-local"],
-    [pam-Form] input[type="week"],
-    [pam-Form] input[type="number"],
-    [pam-Form] input[type="search"],
-    [pam-Form] input[type="tel"],
-    [pam-Form] input[type="color"],
+    [pam-Form] input:not([type="checkbox"]):not([type="radio"]),
     [pam-Form] label {
         margin-bottom: @space-8;
         display: block;
