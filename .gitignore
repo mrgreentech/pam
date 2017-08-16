@@ -1,3 +1,4 @@
+# Folders
 bower_components/
 build/
 coverage/
@@ -8,5 +9,9 @@ logs
 *.log
 npm-debug.log*
 
+# Lock files
+package-lock.json
+
+# Sublime
 *.sublime-project
 *.sublime-workspace

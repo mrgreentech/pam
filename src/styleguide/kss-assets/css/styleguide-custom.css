@@ -23,11 +23,11 @@ body.sg {
 }
 
 .kss-description code {
-    padding: 2px 4px;
+    padding: 0.2rem 0.4rem;
     font-size: 90%;
-    color: #c7254e;
-    background-color: #f9f2f4;
-    border-radius: 4px;
+    color: #bd4147;
+    background-color: #f7f7f9;
+    border-radius: 0.25rem;
 }
 
 /* Styleguide custom */
@@ -78,25 +78,24 @@ body.sg {
 }
 
 section.sg-block.sg-section-variables code {
-    color: #F44336;
+    color: #f44336;
 }
 
 section.sg-block.sg-section-hooks code {
-    color: #50B2CE;
+    color: #50b2ce;
 }
 
 .sg.pure {
-    color: #8156A7 !important;
+    color: #8156a7 !important;
 }
 
 .sg.amcss {
-    color: #008ED5 !important;
+    color: #008ed5 !important;
 }
 
 .sg.material {
-    color: #E04F4A !important;
+    color: #e04f4a !important;
 }
-
 
 /* PAM styleguide helpers */
 
@@ -109,8 +108,8 @@ section.sg-block.sg-section-hooks code {
 }
 
 [pam-Unit-Test] {
-    background-color: #008ED5;
-    color: #FFF;
+    background-color: #008ed5;
+    color: #fff;
     text-align: center;
     padding: 16px;
     margin: 5px;
@@ -119,7 +118,6 @@ section.sg-block.sg-section-hooks code {
 [pam-Unit-Test] [pam-Unit-Test] {
     background-color: #22b5ff;
 }
-
 
 [pam-Menu-Scrollable-Test] {
     width: 200px;
@@ -139,7 +137,6 @@ section.sg-block.sg-section-hooks code {
 [pam-Theme-Test~="text:light"] {
     background-color: #444;
 }
-
 
 [pam-Tile] h3 {
     margin: 0;
@@ -163,14 +160,14 @@ section.sg-block.sg-section-hooks code {
 #kssref-divider-hooks .kss-style code,
 #kssref-tags-hooks .kss-style code {
     background-color: #e0e0e0;
-    border-radius: .25em;
+    border-radius: 0.25em;
     color: #555;
     display: inline;
     font-family: 'Roboto', sans-serif;
     font-size: 75%;
     font-weight: 700;
     line-height: 1;
-    padding: .2em .6em .3em;
+    padding: 0.2em 0.6em 0.3em;
     text-align: center;
     vertical-align: baseline;
     white-space: nowrap;
@@ -182,10 +179,10 @@ section.sg-block.sg-section-hooks code {
     font-style: italic;
 }
 
-#icon-input:after {
+#icon-input::after {
     content: "deprecated";
-    background-color: #F44336;
-    color: #FFF;
+    background-color: #f44336;
+    color: #fff;
     font-size: 12px;
     display: inline-block;
     padding: 2px 4px;
@@ -197,10 +194,10 @@ section.sg-block.sg-section-hooks code {
 
 /* Experimental badge styles */
 
-#floating-label:after {
+#floating-label::after {
     content: "experimental";
     background-color: #4caf50;
-    color: #FFF;
+    color: #fff;
     font-size: 12px;
     display: inline-block;
     padding: 2px 4px;
