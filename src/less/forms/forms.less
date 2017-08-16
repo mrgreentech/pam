@@ -52,50 +52,30 @@
 //
 // Style guide: forms
 
-// TODO: form grid layouts
-// TODO: Update select box
-// TODO: Update input size to input width
-// TODO: form control sizes
-
 
 // Variables
-// ==========================================================================
+// ==================================================================
 
 @form-background: rgba(255, 255, 255, 0.1);
-@form-border: @skin-light;
 @form-border-radius: @border-radius-base;
-@form-border-width: 1px;
 @form-border-style: solid;
+@form-border-width: 1px;
+@form-border: @skin-light;
 @form-color: @skin-text-primary;
 @form-font-size: @font-size-large;
 @form-line-height: 18px;
-@form-margin: @space-16;
-@form-padding: @space-8;
 @form-margin: 0 0 @space-8;
-@form-placeholder-color: @skin-text-secondary;
-
-@form-focus-color: darken(@form-border, 30%);
-@form-focus-border: darken(@form-border, 30%);
-
-@form-success-border: @skin-success;
-@form-success-background: lighten(@skin-success, 45%);
-@form-success-color: @skin-success;
-
-@form-danger-border: @skin-danger;
-@form-danger-background: lighten(@skin-danger, 40%);
-@form-danger-color: @skin-danger;
-
-@form-input-group-margin: @space-8;
-@form-input-group-addon-space: @space-60;
-
-@form-padding-vertical: 10px;
 @form-padding-horizontal: @space-8;
-
+@form-padding-vertical: 10px;
+@form-padding: @space-8;
+@form-placeholder-color: @skin-text-secondary;
+@form-tap-highlight-color: rgba(0, 0, 0, 0);
 @form-transition-duration: 0.3s;
 @form-transition-property: border;
 @form-transition-timing: ease;
 
-@form-tap-highlight-color: rgba(0, 0, 0, 0);
+@form-focus-color: darken(@form-border, 30%);
+@form-focus-border: darken(@form-border, 30%);
 
 @form-legend-width: 100%;
 @form-legend-padding: @space-8 0;
@@ -107,67 +87,10 @@
 
 @form-label-margin: @space-8 0;
 
-@form-stacked-display: block;
-@form-stacked-margin: @space-8 0;
 
-@form-aligned-display: inline-flex;
-@form-aligned-margin: 0;
-@form-aligned-vertical-align: middle;
-@form-aligned-text-area-vertical-align: top;
-@form-aligned-fieldset-align-items: center;
-@form-aligned-fieldset-display: flex;
-@form-aligned-fieldset-margin: 0 0 @space-8;
-@form-aligned-fieldset-label-margin: 0 @space-16 0 0;
-@form-aligned-fieldset-label-text-align: right;
-@form-aligned-fieldset-label-vertical-align: middle;
-@form-aligned-fieldset-label-width: 10rem;
-@form-aligned-fieldset-actions-margin: @space-16 0 0 11em;
-
-@form-fieldset-grouped-padding-bottom: @space-16;
-@form-fieldset-grouped-last-padding-bottom: @space-24;
-@form-fieldset-grouped-input-display: block;
-@form-fieldset-grouped-input-position: relative;
-@form-fieldset-grouped-input-last-margin-bottom: 0;
-
-@form-message-color: @skin-text-primary;
-@form-message-display: block;
-@form-message-font-size: @font-size-xsmall;
-@form-message-inline-display: inline-block;
-@form-message-inline-padding: 0 0 0 @space-8;
-@form-message-inline-vertical-align: middle;
-
-@form-field-inline-margin: 0 0 @space-8;
-@form-field-inline-position: relative;
-@form-field-inline-control-box-sizing: border-box;
-@form-field-inline-control-display: block;
-@form-field-inline-control-padding-left: @space-48;
-@form-field-inline-control-width: 100%;
-@form-field-inline-icon-align-items: center;
-@form-field-inline-icon-background: transparent;
-@form-field-inline-icon-bottom: 0;
-@form-field-inline-icon-box-sizing: border-box;
-@form-field-inline-icon-display: inline-flex;
-@form-field-inline-icon-justify-content: center;
-@form-field-inline-icon-position: absolute;
-@form-field-inline-icon-left: 0;
-@form-field-inline-icon-margin: 0;
-@form-field-inline-icon-right: auto;
-@form-field-inline-icon-top: 0;
-@form-field-inline-icon-width: @space-48;
-@form-field-inline-reverse-icon-left: auto;
-@form-field-inline-reverse-icon-right: 0;
-@form-field-inline-reverse-control-padding-left: @space-8;
-@form-field-inline-reverse-control-padding-right: @space-48;
-@form-field-inline-reverse-control-padding-width: 100%;
-
-@form-select-background-image: "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M10%201L5%208h10l-5-7zm0%2018l5-7H5l5%207z%27%2F%3E%3C%2Fsvg%3E";
-@form-select-background-size: @space-12;
-@form-select-background-offset: @space-8;
-@form-select-background-color: @form-background;
-
-// ==========================================================================
+// ==================================================================
 //  Form
-// ==========================================================================
+// ==================================================================
 
 [pam-Form] input,
 [pam-Form] select,
@@ -222,7 +145,7 @@
 
 
 //  Disabled Input
-// ==========================================================================
+// ==================================================================
 
 [pam-Form] input[disabled],
 [pam-Form] select[disabled],
@@ -235,7 +158,7 @@
 
 
 //  Read-only input
-// ==========================================================================
+// ==================================================================
 
 [pam-Form] input[readonly],
 [pam-Form] select[readonly],
@@ -257,7 +180,7 @@
 
 
 //  Required input
-// ==========================================================================
+// ==================================================================
 
 [pam-Form] input:focus:invalid,
 [pam-Form] textarea:focus:invalid,
@@ -285,7 +208,7 @@
 
 
 //  Select
-// ========================================================================
+// ==================================================================
 
 [pam-Form] select:not([multiple]):not([pam-Select]):not([pam-form-Control]) {
     height: @space-40;
@@ -307,7 +230,7 @@
 
 
 //  Legend
-// ========================================================================
+// ==================================================================
 
 [pam-Form] legend {
     display: block;
@@ -321,7 +244,7 @@
 
 
 //  Fieldset
-// ========================================================================
+// ==================================================================
 
 [pam-Form] fieldset {
     border: @form-fieldset-border;
@@ -345,7 +268,7 @@
 
 
 //  Label
-// ========================================================================
+// ==================================================================
 
 [pam-Form] label {
     margin: @form-label-margin;
@@ -355,7 +278,7 @@
 
 
 // Modifier: State
-// ==========================================================================
+// ==================================================================
 
 // State
 //
@@ -386,7 +309,7 @@
 
 
 //  Sub-modifier: Custom states
-// ========================================================================
+// ==================================================================
 
 // Custom
 //
@@ -403,6 +326,16 @@
 // Weight: 2
 //
 // Style guide: forms.states.custom
+
+@form-success-background: lighten(@skin-success, 45%);
+@form-success-border: @skin-success;
+@form-success-color: @skin-success;
+
+@form-danger-background: lighten(@skin-danger, 40%);
+@form-danger-border: @skin-danger;
+@form-danger-color: @skin-danger;
+
+// ------------------------------------------------------------------
 
 [pam-Form] input[pam-Form-State~="success"],
 [pam-Form] input[pam-Form-State~="success"]:focus,
@@ -432,7 +365,7 @@
 
 
 // Sub-modifier: Size
-// ========================================================================
+// ==================================================================
 
 // Size
 //
@@ -468,7 +401,7 @@
 
 
 // Sub-modifier: Width
-// ========================================================================
+// ==================================================================
 
 // Width
 //
@@ -510,7 +443,7 @@
 
 
 //  Layouts
-// ==========================================================================
+// ==================================================================
 
 // Layout
 //
@@ -537,7 +470,7 @@
 
 
 //  Modifier: Stacked
-// ==========================================================================
+// ==================================================================
 
 // Stacked
 //
@@ -556,6 +489,11 @@
 //
 // Style guide: forms.layout.stacked
 
+@form-stacked-display: block;
+@form-stacked-margin: @space-8 0;
+
+// ------------------------------------------------------------------
+
 [pam-Form~="stacked"] input:not([type="checkbox"]):not([type="radio"]),
 [pam-Form~="stacked"] select,
 [pam-Form~="stacked"] label,
@@ -572,7 +510,7 @@
 
 
 //  Modifier: Aligned
-// ==========================================================================
+// ==================================================================
 
 // Aligned
 //
@@ -596,6 +534,22 @@
 // Weight: 3
 //
 // Style guide: forms.layout.aligned
+
+@form-aligned-margin: 0;
+@form-aligned-text-area-vertical-align: top;
+@form-aligned-vertical-align: middle;
+@form-aligned-display: inline-flex;
+
+@form-aligned-fieldset-actions-margin: @space-16 0 0 11em;
+@form-aligned-fieldset-align-items: center;
+@form-aligned-fieldset-display: flex;
+@form-aligned-fieldset-label-margin: 0 @space-16 0 0;
+@form-aligned-fieldset-label-text-align: right;
+@form-aligned-fieldset-label-vertical-align: middle;
+@form-aligned-fieldset-label-width: 10rem;
+@form-aligned-fieldset-margin: 0 0 @space-8;
+
+// ------------------------------------------------------------------
 
 [pam-Form~="aligned"] input,
 [pam-Form~="aligned"] textarea,
@@ -629,7 +583,7 @@
 
 
 //  Sub-object: Grouped fields
-// ==========================================================================
+// ==================================================================
 
 // Grouped fields
 //
@@ -656,6 +610,15 @@
 //
 // Style guide: forms.layout.grouped
 
+@form-fieldset-grouped-padding-bottom: @space-16;
+@form-fieldset-grouped-last-padding-bottom: @space-24;
+
+@form-fieldset-grouped-input-display: block;
+@form-fieldset-grouped-input-last-margin-bottom: 0;
+@form-fieldset-grouped-input-position: relative;
+
+// ------------------------------------------------------------------
+
 [pam-Form] [pam-Fieldset~="grouped"] {
     padding-bottom: @form-fieldset-grouped-padding-bottom;
 
@@ -677,7 +640,7 @@
 
 
 // Sub-object: Form message
-// ========================================================================
+// ==================================================================
 
 // Message
 //
@@ -719,6 +682,16 @@
 //
 // Style guide: forms.message.inline
 
+@form-message-color: @skin-text-primary;
+@form-message-display: block;
+@form-message-font-size: @font-size-xsmall;
+
+@form-message-inline-display: inline-block;
+@form-message-inline-padding: 0 0 0 @space-8;
+@form-message-inline-vertical-align: middle;
+
+// ------------------------------------------------------------------
+
 [pam-Form-Message] {
     color: @form-message-color;
     display: @form-message-display;
@@ -739,7 +712,7 @@
 
 
 // Sub-objects: Custom controls
-// ========================================================================
+// ==================================================================
 
 // Custom controls
 //
@@ -752,7 +725,7 @@
 
 
 // Sub-object: Inline
-// ========================================================================
+// ==================================================================
 
 // Icon
 //
@@ -785,6 +758,36 @@
 // </form>
 //
 // Style guide: forms.custom.inline
+
+@form-field-inline-margin: 0 0 @space-8;
+@form-field-inline-position: relative;
+
+@form-field-inline-control-box-sizing: border-box;
+@form-field-inline-control-display: block;
+@form-field-inline-control-padding-left: @space-48;
+@form-field-inline-control-width: 100%;
+
+@form-field-inline-icon-align-items: center;
+@form-field-inline-icon-background: transparent;
+@form-field-inline-icon-bottom: 0;
+@form-field-inline-icon-box-sizing: border-box;
+@form-field-inline-icon-display: inline-flex;
+@form-field-inline-icon-justify-content: center;
+@form-field-inline-icon-left: 0;
+@form-field-inline-icon-margin: 0;
+@form-field-inline-icon-position: absolute;
+@form-field-inline-icon-right: auto;
+@form-field-inline-icon-top: 0;
+@form-field-inline-icon-width: @space-48;
+
+@form-field-inline-reverse-control-padding-left: @space-8;
+@form-field-inline-reverse-control-padding-right: @space-48;
+@form-field-inline-reverse-control-padding-width: 100%;
+
+@form-field-inline-reverse-icon-left: auto;
+@form-field-inline-reverse-icon-right: 0;
+
+// ------------------------------------------------------------------
 
 [pam-Form] [pam-Form-Inline] {
     margin: @form-field-inline-margin;
@@ -830,7 +833,7 @@
 
 
 // Sub-object: Lego
-// ========================================================================
+// ==================================================================
 
 // Lego
 //
@@ -872,94 +875,129 @@
 //
 // Style guide: forms.custom.lego
 
+@form-group-lego-display:                                    inline-flex;
+@form-group-lego-margin-bottom:                              @space-16;
+
+@form-group-lego-child-all-margin-bottom:                    0;
+@form-group-lego-child-all-min-width:                        @space-60;
+@form-group-lego-child-display:                              flex;
+@form-group-lego-child-last-border-bottom-left-radius:       0;
+@form-group-lego-child-last-border-top-left-radius:          0;
+
+@form-group-lego-child-first-all-border-bottom-right-radius: 0;
+@form-group-lego-child-first-all-border-top-right-radius:    0;
+@form-group-lego-child-first-border-bottom-right-radius:     0;
+@form-group-lego-child-first-border-top-right-radius:        0;
+
+@form-group-lego-child-last-all-border-bottom-left-radius:   0;
+@form-group-lego-child-last-all-border-top-left-radius:      0;
+
+@form-group-lego-child-not-first-last-radius:                0;
+
+@form-group-lego-addon-border-radius:                        @form-border-radius;
+@form-group-lego-addon-color:                                @form-color;
+@form-group-lego-addon-font-size:                            @font-size-base;
+@form-group-lego-addon-margin:                               0;
+@form-group-lego-addon-min-width:                            @space-60;
+@form-group-lego-addon-position:                             relative;
+@form-group-lego-addon-text-align:                           center;
+@form-group-lego-addon-white-space:                          nowrap;
+
+@form-group-lego-addon-first-all-border-right-color:         transparent;
+@form-group-lego-addon-first-all-focus-border-right-color:   @form-focus-border;
+
+@form-group-lego-addon-last-all-border-left-color:           transparent;
+@form-group-lego-addon-last-all-focus-border-left-color:     @form-focus-border;
+
+@form-group-lego-control-focus-zindex:                       3;
+@form-group-lego-control-margin-bottom:                      0;
+@form-group-lego-control-position:                           0;
+@form-group-lego-control-zindex:                             2;
+
+// ------------------------------------------------------------------
+
 [pam-Form] [pam-Form-Group~="lego"] {
-    display: inline-flex;
-    margin-bottom: @space-16;
-
-    [pam-Form-Group-Addon] {
-        border-radius: @form-border-radius;
-        color: @form-color;
-        font-size: @font-size-base;
-        margin: 0;
-        min-width: @form-input-group-addon-space;
-        position: relative;
-        text-align: center;
-        white-space: nowrap;
-    }
-
-    [pam-Form-Control] {
-        margin-bottom: 0;
-        position: relative;
-        z-index: 2;
-
-        &:focus {
-            z-index: 3;
-        }
-    }
+    display: @form-group-lego-display;
+    margin-bottom: @form-group-lego-margin-bottom;
 
     [pam-Form-Group-Addon],
     [pam-Form-Control] {
-        display: flex;
+        display: @form-group-lego-child-display;
 
         > * {
-            margin-bottom: 0;
-            min-width: @form-input-group-addon-space;
+            margin-bottom: @form-group-lego-child-all-margin-bottom;
+            min-width: @form-group-lego-child-all-min-width;
         }
 
         &:not(:first-child):not(:last-child) {
-            border-radius: 0;
+            border-radius: @form-group-lego-child-not-first-last-radius;
+        }
+
+        &:first-child {
+            border-top-right-radius: @form-group-lego-child-first-border-top-right-radius;
+            border-bottom-right-radius: @form-group-lego-child-first-border-bottom-right-radius;
+
+            * {
+                border-top-right-radius: @form-group-lego-child-first-all-border-top-right-radius;
+                border-bottom-right-radius: @form-group-lego-child-first-all-border-bottom-right-radius;
+            }
+        }
+
+        &:last-child {
+            border-top-left-radius: @form-group-lego-child-last-border-top-left-radius;
+            border-bottom-left-radius: @form-group-lego-child-last-border-bottom-left-radius;
+
+            * {
+                border-top-left-radius: @form-group-lego-child-last-all-border-top-left-radius;
+                border-bottom-left-radius: @form-group-lego-child-last-all-border-bottom-left-radius;
+            }
         }
     }
 
-    [pam-Form-Control]:first-child,
-    [pam-Form-Group-Addon]:first-child {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+    [pam-Form-Group-Addon] {
+        border-radius: @form-group-lego-addon-border-radius;
+        color: @form-group-lego-addon-color;
+        font-size: @form-group-lego-addon-font-size;
+        margin: @form-group-lego-addon-margin;
+        min-width: @form-group-lego-addon-min-width;
+        position: @form-group-lego-addon-position;
+        text-align: @form-group-lego-addon-text-align;
+        white-space: @form-group-lego-addon-white-space;
 
-        * {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
+        &:first-child {
+            > * {
+                border-right-color: @form-group-lego-addon-first-all-border-right-color;
+            }
+
+            > *:focus {
+                border-right-color: @form-group-lego-addon-first-all-focus-border-right-color;
+            }
+        }
+
+        &:last-child {
+            > * {
+                border-left-color: @form-group-lego-addon-last-all-border-left-color;
+            }
+
+            > *:focus {
+                border-left-color: @form-group-lego-addon-last-all-focus-border-left-color;
+            }
         }
     }
 
-    [pam-Form-Group-Addon]:first-child {
-        > * {
-            border-right-color: transparent;
-        }
-    }
+    [pam-Form-Control] {
+        margin-bottom: @form-group-lego-control-margin-bottom;
+        position: @form-group-lego-control-position;
+        z-index: @form-group-lego-control-zindex;
 
-    [pam-Form-Group-Addon]:first-child {
-        > *:focus {
-            border-right-color: @form-focus-border;
-        }
-    }
-
-    [pam-Form-Control]:last-child,
-    [pam-Form-Group-Addon]:last-child {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-
-        * {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-    }
-
-    [pam-Form-Group-Addon]:last-child {
-        > * {
-            border-left-color: transparent;
-        }
-    }
-
-    [pam-Form-Group-Addon]:last-child {
-        > *:focus {
-            border-left-color: @form-focus-border;
+        &:focus {
+            z-index: @form-group-lego-control-focus-zindex;
         }
     }
 }
 
 // Sub-object: Lego block
-// ========================================================================
+// ==================================================================
 
 // Lego block
 //
@@ -1000,13 +1038,17 @@
 //
 // Style guide: forms.custom.lego.block
 
+@form-group-lego-block-display: flex;
+
+// ------------------------------------------------------------------
+
 [pam-Form] [pam-Form-Group~="block"] {
-    display: flex;
+    display: @form-group-lego-block-display;
 }
 
 
 //  Select
-// ========================================================================
+// ==================================================================
 
 // Select
 //
@@ -1036,28 +1078,41 @@
 //
 // Style guide: forms.custom.select
 
+@form-select-custom-appearance:        none;
+@form-select-custom-background-color:  @form-background;
+@form-select-custom-background-image:  "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M10%201L5%208h10l-5-7zm0%2018l5-7H5l5%207z%27%2F%3E%3C%2Fsvg%3E";
+@form-select-custom-background-offset: @space-8;
+@form-select-custom-background-repeat: no-repeat;
+@form-select-custom-background-size:   @space-12;
+@form-select-custom-display:           inline-block;
+@form-select-custom-max-width:         100%;
+@form-select-custom-padding-right:     @space-28;
+@form-select-custom-vertical-align:    middle;
+
+// ------------------------------------------------------------------
+
 [pam-Form] select[pam-Select]:not([multiple]) {
-    appearance: none;
-    background: url(@form-select-background-image) right @form-select-background-offset center;
-    background-color: @form-select-background-color;
-    background-repeat: no-repeat;
-    background-size: @form-select-background-size @form-select-background-size;
+    appearance: @form-select-custom-appearance;
+    background: url(@form-select-custom-background-image) right @form-select-custom-background-offset center;
+    background-color: @form-select-custom-background-color;
+    background-repeat: @form-select-custom-background-repeat;
+    background-size: @form-select-custom-background-size;
     color: @skin-text-primary;
-    display: inline-block;
-    max-width: 100%;
-    padding-right: @space-28;
-    vertical-align: middle;
+    display: @form-select-custom-display;
+    max-width: @form-select-custom-max-width;
+    padding-right: @form-select-custom-padding-right;
+    vertical-align: @form-select-custom-vertical-align;
 
     &::-ms-expand {
         display: none;
     }
 
-    // .hook-form-select;
+    .hook-form-select-custom;
 }
 
 
 // Sub-Object: Form control
-// ========================================================================
+// ==================================================================
 
 // Traits
 //
@@ -1076,38 +1131,50 @@
 //
 // Style guide: forms.traits
 
+@form-control-borderless-border-color-focus:     transparent;
+@form-control-borderless-border-color:           transparent;
+@form-control-borderless-focus-box-shadow:       0 1px 3px @skin-dark;
+@form-control-borderless-transition:             box-shadow 0.3s ease;
+
+@form-control-fluid-width:                       100%;
+
+@form-control-padded-medium-screen-size-padding: @space-16;
+@form-control-padded-padding:                    @space-8 0 @space-16;
+
+// ------------------------------------------------------------------
+
 [pam-Form] [pam-Form-Control~="borderless"] {
-    border-color: transparent;
-    transition: box-shadow 0.3s ease;
+    border-color: @form-control-borderless-border-color;
+    transition: @form-control-borderless-transition;
 }
 
 [pam-Form] [pam-Form-Control~="borderless"]:focus {
-    border-color: transparent;
+    border-color: @form-control-borderless-border-color-focus;
     box-shadow: 0 1px 3px @skin-dark;
 }
 
 [pam-Form] [pam-Form-Control~="fluid"] {
-    width: 100%;
+    width: @form-control-fluid-width;
 }
 
 [pam-Form~="fluid"] {
     input:not([type="radio"]):not([type="checkbox"]),
     select,
     textarea {
-        width: 100%;
+        width: @form-control-fluid-width;
     }
 }
 
 [pam-Form~="padded"] {
     fieldset {
-        padding: @space-8 0 @space-16;
+        padding: @form-control-padded-padding;
     }
 }
 
 @media screen and (min-width: @breakpoint-medium) {
     [pam-Form~="padded"] {
         fieldset {
-            padding: @space-16;
+            padding: @form-control-padded-medium-screen-size-padding;
         }
     }
 }
@@ -1126,7 +1193,7 @@
 
 
 //  Sub-object: Floating label
-// ========================================================================
+// ==================================================================
 
 // Floating label
 //
@@ -1147,10 +1214,12 @@
 //
 // Style guide: forms.experimental.label
 
+@form-field-floating-label-border-bottom: @form-border-width @form-border-style @form-focus-border;
+
 [pam-Field] {
     display: inline-flex;
     flex-flow: column-reverse;
-    margin-bottom: 1em;
+    margin-bottom: @space-16;
 }
 
 [pam-Field] {
@@ -1166,12 +1235,12 @@
     }
 
     input:focus {
-        border-bottom: 1px solid #666;
+        border-bottom: @form-border-width @form-border-style @form-focus-border;
         outline: 0;
     }
 
     label {
-        font-size: 0.875rem;
+        font-size: @font-size-medium;
     }
 
     input:placeholder-shown + label {
@@ -1196,7 +1265,7 @@
     input:not(:placeholder-shown) + label,
     input:focus + label {
         cursor: pointer;
-        font-size: 0.75rem;
+        font-size: @font-size-xsmall;
         transform: translate(0.5rem, 1.4rem) scale(1);
     }
 }
@@ -1214,7 +1283,7 @@
 // Style guide: forms.deprecated
 
 // Input icon
-// ========================================================================
+// ==================================================================
 
 // Input icon
 //
@@ -1263,7 +1332,7 @@
 }
 
 // Input borderless
-// ========================================================================
+// ==================================================================
 
 // Input borderless
 //
@@ -1299,7 +1368,7 @@
 
 
 // Sub-object: Select box
-// ========================================================================
+// ==================================================================
 
 // Select box
 //
@@ -1395,7 +1464,7 @@
 
 
 //  Hooks
-// ========================================================================
+// ==================================================================
 
 // Hooks
 //
@@ -1413,6 +1482,7 @@
 // `.hook-form-select`
 // `.hook-form-select-multiple`
 // `.hook-form-select-focus`
+// `.hook-form-select-custom`
 // `.hook-form-label`
 // `.hook-form-fieldset`
 // `.hook-form-legend`
@@ -1447,6 +1517,7 @@
 .hook-form-select() {}
 .hook-form-select-multiple() {}
 .hook-form-select-focus() {}
+.hook-form-select-custom() {}
 .hook-form-label() {}
 .hook-form-fieldset() {}
 .hook-form-legend() {}
