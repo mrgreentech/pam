@@ -10,28 +10,6 @@
 //
 // Style guide: grids
 
-[pam-Grid] {
-    letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
-    text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
-
-    /*
-    Sets the font stack to fonts known to work properly with the above letter
-    and word spacings. See: https://github.com/yahoo/pure/issues/41/
-
-    The following font stack makes Pure Grids work on all known environments.
-    * Helvetica, Arial, sans-serif: Common font stack on OS X and Windows.
-    */
-    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    flex-flow: row wrap;
-    -webkit-flex-flow: row wrap;
-    -ms-flex-flow: row wrap;
-    .hook-grid;
-}
-
 
 // 5th-based
 //
@@ -330,7 +308,7 @@
 // Media Queries
 //
 // To control responsive grids, use the default breakpoints with their
-// correspinding attribute selector `pam-Unit="[breakpointName]:[size]"`. For more
+// correspinding attribute selector `pam-Unit="[breakpointKey]:[size]"`. For more
 // details on how to use, have a look at the responsive grids section.
 // <table pam-Table="striped">
 //     <thead>
@@ -378,156 +356,259 @@
 // Style guide: grids.media-queries
 
 
-[pam-Unit] {
+// ==================================================================
+//  Grid
+// ==================================================================
+
+[pam-Grid] {
+    letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
+    text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
+    font-family: Arial, sans-serif;
+    display: -webkit-box;
+    display: flex;
+    flex-flow: row wrap;
+
+    .hook-grid;
+}
+
+
+//  Grid unit
+// ==================================================================
+
+[pam-Grid] [pam-Unit] {
     display: inline-block;
+    font-family: @font-family;
     letter-spacing: normal;
-    word-spacing: normal;
-    vertical-align: top;
     text-rendering: auto;
+    vertical-align: top;
+    word-spacing: normal;
+
     .hook-unit;
 }
 
-/*
-Resets the font family back to the OS/browser's default sans-serif font,
-this the same font stack that Normalize.css sets for the `body`.
-*/
-[pam-Grid] [pam-Unit] {
-    font-family: @font-family;
+//  Generate grid columns
+// ------------------------------------------------------------------
+
+// 1th-based units
+.grid-units(1);
+
+// 2th-based units
+.grid-units(2);
+
+// 3th-based units
+.grid-units(3);
+
+// 4th-based units
+.grid-units(4);
+
+// 5th-based units
+.grid-units(5);
+
+// 24th-based units
+.grid-units(24);
+
+
+// Small device breakpoint
+// ------------------------------------------------------------------
+
+@media screen and (min-width: @breakpoint-small) {
+    // 1th-based units
+    .grid-units(1, 1, 'small:');
+
+    // 2th-based units
+    .grid-units(2, 1, 'small:');
+
+    // 3th-based units
+    .grid-units(3, 1, 'small:');
+
+    // 4th-based units
+    .grid-units(4, 1, 'small:');
+
+    // 5th-based units
+    .grid-units(5, 1, 'small:');
+
+    // 24th-based units
+    .grid-units(24, 1, 'small:');
 }
 
-[pam-Unit~="1-24"] {
-    width: 4.1667%;
+@media screen and (min-width: @breakpoint-small) and (orientation: landscape) {
+    // 1th-based units
+    .grid-units(1, 1, 'small:landscape:');
+
+    // 2th-based units
+    .grid-units(2, 1, 'small:landscape:');
+
+    // 3th-based units
+    .grid-units(3, 1, 'small:landscape:');
+
+    // 4th-based units
+    .grid-units(4, 1, 'small:landscape:');
+
+    // 5th-based units
+    .grid-units(5, 1, 'small:landscape:');
+
+    // 24th-based units
+    .grid-units(24, 1, 'small:landscape:');
 }
 
-[pam-Unit~="1-12"],
-[pam-Unit~="2-24"] {
-    width: 8.3333%;
+
+// Medium device breakpoint
+// ------------------------------------------------------------------
+
+@media screen and (min-width: @breakpoint-medium) {
+    // 1th-based units
+    .grid-units(1, 1, 'medium:');
+
+    // 2th-based units
+    .grid-units(2, 1, 'medium:');
+
+    // 3th-based units
+    .grid-units(3, 1, 'medium:');
+
+    // 4th-based units
+    .grid-units(4, 1, 'medium:');
+
+    // 5th-based units
+    .grid-units(5, 1, 'medium:');
+
+    // 24th-based units
+    .grid-units(24, 1, 'medium:');
 }
 
-[pam-Unit~="1-8"],
-[pam-Unit~="3-24"] {
-    width: 12.5%;
+@media screen and (min-width: @breakpoint-medium) and (orientation: landscape) {
+    // 1th-based units
+    .grid-units(1, 1, 'medium:landscape:');
+
+    // 2th-based units
+    .grid-units(2, 1, 'medium:landscape:');
+
+    // 3th-based units
+    .grid-units(3, 1, 'medium:landscape:');
+
+    // 4th-based units
+    .grid-units(4, 1, 'medium:landscape:');
+
+    // 5th-based units
+    .grid-units(5, 1, 'medium:landscape:');
+
+    // 24th-based units
+    .grid-units(24, 1, 'medium:landscape:');
 }
 
-[pam-Unit~="1-6"],
-[pam-Unit~="4-24"] {
-    width: 16.6667%;
+
+// Large device breakpoint
+// ------------------------------------------------------------------
+
+@media screen and (min-width: @breakpoint-large) {
+    // 1th-based units
+    .grid-units(1, 1, 'large:');
+
+    // 2th-based units
+    .grid-units(2, 1, 'large:');
+
+    // 3th-based units
+    .grid-units(3, 1, 'large:');
+
+    // 4th-based units
+    .grid-units(4, 1, 'large:');
+
+    // 5th-based units
+    .grid-units(5, 1, 'large:');
+
+    // 24th-based units
+    .grid-units(24, 1, 'large:');
 }
 
-[pam-Unit~="1-5"] {
-    width: 20%;
+@media screen and (min-width: @breakpoint-large) and (orientation: landscape) {
+    // 1th-based units
+    .grid-units(1, 1, 'large:landscape:');
+
+    // 2th-based units
+    .grid-units(2, 1, 'large:landscape:');
+
+    // 3th-based units
+    .grid-units(3, 1, 'large:landscape:');
+
+    // 4th-based units
+    .grid-units(4, 1, 'large:landscape:');
+
+    // 5th-based units
+    .grid-units(5, 1, 'large:landscape:');
+
+    // 24th-based units
+    .grid-units(24, 1, 'large:landscape:');
 }
 
-[pam-Unit~="5-24"] {
-    width: 20.8333%;
+
+// Xlarge device breakpoint
+// ------------------------------------------------------------------
+
+@media screen and (min-width: @breakpoint-xlarge) {
+    // 1th-based units
+    .grid-units(1, 1, 'xlarge:');
+
+    // 2th-based units
+    .grid-units(2, 1, 'xlarge:');
+
+    // 3th-based units
+    .grid-units(3, 1, 'xlarge:');
+
+    // 4th-based units
+    .grid-units(4, 1, 'xlarge:');
+
+    // 5th-based units
+    .grid-units(5, 1, 'xlarge:');
+
+    // 24th-based units
+    .grid-units(24, 1, 'xlarge:');
 }
 
-[pam-Unit~="1-4"],
-[pam-Unit~="6-24"] {
-    width: 25%;
+@media screen and (min-width: @breakpoint-xlarge) and (orientation: landscape) {
+    // 1th-based units
+    .grid-units(1, 1, 'xlarge:landscape:');
+
+    // 2th-based units
+    .grid-units(2, 1, 'xlarge:landscape:');
+
+    // 3th-based units
+    .grid-units(3, 1, 'xlarge:landscape:');
+
+    // 4th-based units
+    .grid-units(4, 1, 'xlarge:landscape:');
+
+    // 5th-based units
+    .grid-units(5, 1, 'xlarge:landscape:');
+
+    // 24th-based units
+    .grid-units(24, 1, 'xlarge:landscape:');
 }
 
-[pam-Unit~="7-24"] {
-    width: 29.1667%;
-}
 
-[pam-Unit~="1-3"],
-[pam-Unit~="8-24"] {
-    width: 33.3333%;
-}
+// Unit mixin
+// ==================================================================
 
-[pam-Unit~="3-8"],
-[pam-Unit~="9-24"] {
-    width: 37.5%;
-}
+// .grid-units(@columns, @startIndex, @prefix)
+//
+// Generate number of requested columns starting from given number
+// and optional adds a passed prefixed value.
+//
+// @columns - Number of columns.
+// @startIndex - What number to start on.
+// @prefix - Attribute value prefix.
+//
+// Style guide: mixins.grid-units
 
-[pam-Unit~="2-5"] {
-    width: 40%;
-}
+.grid-units(@columns, @startIndex: 1, @prefix: '') when (@startIndex =< @columns) {
+    [pam-Unit~="@{prefix}@{startIndex}-@{columns}"] {
+        width: (@startIndex * 100% / @columns);
+    }
 
-[pam-Unit~="5-12"],
-[pam-Unit~="10-24"] {
-    width: 41.6667%;
-}
-
-[pam-Unit~="11-24"] {
-    width: 45.8333%;
-}
-
-[pam-Unit~="1-2"],
-[pam-Unit~="12-24"] {
-    width: 50%;
-}
-
-[pam-Unit~="13-24"] {
-    width: 54.1667%;
-}
-
-[pam-Unit~="7-12"],
-[pam-Unit~="14-24"] {
-    width: 58.3333%;
-}
-
-[pam-Unit~="3-5"] {
-    width: 60%;
-}
-
-[pam-Unit~="5-8"],
-[pam-Unit~="15-24"] {
-    width: 62.5%;
-}
-
-[pam-Unit~="2-3"],
-[pam-Unit~="16-24"] {
-    width: 66.6667%;
-}
-
-[pam-Unit~="17-24"] {
-    width: 70.8333%;
-}
-
-[pam-Unit~="3-4"],
-[pam-Unit~="18-24"] {
-    width: 75%;
-}
-
-[pam-Unit~="19-24"] {
-    width: 79.1667%;
-}
-
-[pam-Unit~="4-5"] {
-    width: 80%;
-}
-
-[pam-Unit~="5-6"],
-[pam-Unit~="20-24"] {
-    width: 83.3333%;
-}
-
-[pam-Unit~="7-8"],
-[pam-Unit~="21-24"] {
-    width: 87.5%;
-}
-
-[pam-Unit~="11-12"],
-[pam-Unit~="22-24"] {
-    width: 91.6667%;
-}
-
-[pam-Unit~="23-24"] {
-    width: 95.8333%;
-}
-
-[pam-Unit~="1"],
-[pam-Unit~="1-1"],
-[pam-Unit~="5-5"],
-[pam-Unit~="24-24"] {
-    width: 100%;
+    .grid-units(@columns, (@startIndex + 1), @prefix);
 }
 
 
 // Hooks
-// ========================================================================
+// ==================================================================
 
 /**
  * Hooks:
