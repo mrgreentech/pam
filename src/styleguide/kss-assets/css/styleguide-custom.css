@@ -107,16 +107,26 @@ section.sg-block.sg-section-hooks code {
     margin: 0;
 }
 
+[sg-Height~="150"] {
+    height: 150px;
+}
+
 [pam-Unit-Test] {
     background-color: #008ed5;
     color: #fff;
     text-align: center;
     padding: 16px;
-    margin: 5px;
+    margin: 1px;
+    box-sizing: border-box;
 }
 
 [pam-Unit-Test] [pam-Unit-Test] {
     background-color: #22b5ff;
+}
+
+[pam-Unit-Test~="stretch"] {
+    margin: 0 1px;
+    height: 100%;
 }
 
 [pam-Menu-Scrollable-Test] {
