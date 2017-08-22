@@ -107,16 +107,26 @@ section.sg-block.sg-section-hooks code {
     margin: 0;
 }
 
+[sg-Height~="150"] {
+    height: 150px;
+}
+
 [pam-Unit-Test] {
     background-color: #008ed5;
     color: #fff;
     text-align: center;
     padding: 16px;
-    margin: 5px;
+    margin: 1px;
+    box-sizing: border-box;
 }
 
 [pam-Unit-Test] [pam-Unit-Test] {
     background-color: #22b5ff;
+}
+
+[pam-Unit-Test~="stretch"] {
+    margin: 0 1px;
+    height: 100%;
 }
 
 [pam-Menu-Scrollable-Test] {
@@ -150,15 +160,16 @@ section.sg-block.sg-section-hooks code {
     margin: 12px 0;
 }
 
-#kssref-buttons-hooks .kss-style code,
-#kssref-forms-hooks .kss-style code,
-#kssref-tables-hooks .kss-style code,
-#kssref-menus-hooks .kss-style code,
-#kssref-typography-hooks .kss-style code,
-#kssref-lists-hooks .kss-style code,
 #kssref-alert-hooks .kss-style code,
+#kssref-buttons-hooks .kss-style code,
 #kssref-divider-hooks .kss-style code,
-#kssref-tags-hooks .kss-style code {
+#kssref-forms-hooks .kss-style code,
+#kssref-grids-hooks .kss-style code,
+#kssref-lists-hooks .kss-style code,
+#kssref-menus-hooks .kss-style code,
+#kssref-tables-hooks .kss-style code,
+#kssref-tags-hooks .kss-style code,
+#kssref-typography-hooks .kss-style code {
     background-color: #e0e0e0;
     border-radius: 0.25em;
     color: #555;
@@ -167,7 +178,6 @@ section.sg-block.sg-section-hooks code {
     font-size: 75%;
     font-weight: 700;
     line-height: 1;
-    padding: 0.2em 0.6em 0.3em;
     text-align: center;
     vertical-align: baseline;
     white-space: nowrap;
