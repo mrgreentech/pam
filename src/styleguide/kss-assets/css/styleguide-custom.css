@@ -150,15 +150,16 @@ section.sg-block.sg-section-hooks code {
     margin: 12px 0;
 }
 
-#kssref-buttons-hooks .kss-style code,
-#kssref-forms-hooks .kss-style code,
-#kssref-tables-hooks .kss-style code,
-#kssref-menus-hooks .kss-style code,
-#kssref-typography-hooks .kss-style code,
-#kssref-lists-hooks .kss-style code,
 #kssref-alert-hooks .kss-style code,
+#kssref-buttons-hooks .kss-style code,
 #kssref-divider-hooks .kss-style code,
-#kssref-tags-hooks .kss-style code {
+#kssref-forms-hooks .kss-style code,
+#kssref-grids-hooks .kss-style code,
+#kssref-lists-hooks .kss-style code,
+#kssref-menus-hooks .kss-style code,
+#kssref-tables-hooks .kss-style code,
+#kssref-tags-hooks .kss-style code,
+#kssref-typography-hooks .kss-style code {
     background-color: #e0e0e0;
     border-radius: 0.25em;
     color: #555;
@@ -167,7 +168,6 @@ section.sg-block.sg-section-hooks code {
     font-size: 75%;
     font-weight: 700;
     line-height: 1;
-    padding: 0.2em 0.6em 0.3em;
     text-align: center;
     vertical-align: baseline;
     white-space: nowrap;

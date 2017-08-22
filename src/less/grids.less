@@ -1,315 +1,14 @@
 // Grids
 //
-// PAM comes with a 5ths and 24ths based grid and to wield the grids power there are
+// PAM comes with 1ths to 5ths and 24ths based grid and to wield the grids power there are
 // some concepts to keep in mind. PAM Grid consist of two types of attribute selectors:
-// `pam-Grid` and `pam-Unit`. All child elements of a grid must be units. Child elements
+// `pam-Grid` and `pam-Unit`. **All child elements of a grid must be units. Child elements
 // contained within an grid element must be a grid unit. All content which is visible
-// needs to be contained inside a grid unit.
+// needs to be contained inside a grid unit.**
 //
-// Weight: 2
-//
-// Style guide: grids
-
-
-// 5th-based
-//
-// `pam-Unit="[1-5]-5"` Generates fractions for the 5th-based grid.
-//
-// Markup:
-// <div pam-Grid>
-//     <div pam-Unit="1-5">
-//         <div pam-Unit-Test>1</div>
-//     </div>
-//     <div pam-Unit="1-5">
-//         <div pam-Unit-Test>1</div>
-//     </div>
-//     <div pam-Unit="1-5">
-//         <div pam-Unit-Test>1</div>
-//     </div>
-//     <div pam-Unit="1-5">
-//         <div pam-Unit-Test>1</div>
-//     </div>
-//     <div pam-Unit="1-5">
-//         <div pam-Unit-Test>1</div>
-//     </div>
-// </div>
-// <div pam-Grid>
-//     <div pam-Unit="2-5">
-//         <div pam-Unit-Test>2</div>
-//     </div>
-//     <div pam-Unit="1-5">
-//         <div pam-Unit-Test>1</div>
-//     </div>
-//     <div pam-Unit="1-5">
-//         <div pam-Unit-Test>1</div>
-//     </div>
-//     <div pam-Unit="1-5">
-//         <div pam-Unit-Test>1</div>
-//     </div>
-// </div>
-// <div pam-Grid>
-//     <div pam-Unit="3-5">
-//         <div pam-Unit-Test>3</div>
-//     </div>
-//     <div pam-Unit="1-5">
-//         <div pam-Unit-Test>1</div>
-//     </div>
-//     <div pam-Unit="1-5">
-//         <div pam-Unit-Test>1</div>
-//     </div>
-// </div>
-// <div pam-Grid>
-//     <div pam-Unit="4-5">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-//     <div pam-Unit="1-5">
-//         <div pam-Unit-Test>1</div>
-//     </div>
-// </div>
-// <div pam-Grid>
-//     <div pam-Unit="5-5">
-//         <div pam-Unit-Test>5</div>
-//     </div>
-// </div>
-//
-// Style guide: grids.5th-based
-
-
-// 24th-based
-//
-// `pam-Unit="[1-24]-24"` Generates fractions for the 24th-based grid.
-//
-// Markup:
-// <div pam-Grid>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-// </div>
-// <div pam-Grid>
-//     <div pam-Unit="8-24">
-//         <div pam-Unit-Test>8</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-// </div>
-//     <div pam-Grid>
-//         <div pam-Unit="12-24">
-//     <div pam-Unit-Test>12</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-// </div>
-//     <div pam-Grid>
-//         <div pam-Unit="16-24">
-//     <div pam-Unit-Test>16</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-// </div>
-// <div pam-Grid>
-//     <div pam-Unit="20-24">
-//         <div pam-Unit-Test>20</div>
-//     </div>
-//     <div pam-Unit="4-24">
-//         <div pam-Unit-Test>4</div>
-//     </div>
-//     </div>
-//     <div pam-Grid>
-//         <div pam-Unit="24-24">
-//         <div pam-Unit-Test>24</div>
-//     </div>
-// </div>
-//
-// Style guide: grids.24th-based
-
-
-// Nested
-//
-// Grids can be nested. This examples shows a two level nested grid...
-//
-// Markup:
-// <div pam-Grid>
-//     <div pam-Unit="1-2">
-//         <div pam-Unit-Test>
-//         <div pam-Grid>
-//             <div pam-Unit="1-2">
-//                 <div pam-Unit-Test>1-2</div>
-//             </div>
-//             <div pam-Unit="1-2">
-//                 <div pam-Unit-Test>1-2</div>
-//             </div>
-//         </div>
-//     </div>
-// </div>
-// <div pam-Unit="1-2">
-//         <div pam-Unit-Test>
-//             <div pam-Grid>
-//                 <div pam-Unit="1-3">
-//                     <div pam-Unit-Test>1-3</div>
-//                 </div>
-//                 <div pam-Unit="1-3">
-//                     <div pam-Unit-Test>1-3</div>
-//                 </div>
-//                 <div pam-Unit="1-3">
-//                     <div pam-Unit-Test>1-3</div>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-// </div>
-//
-// Style guide: grids.nested
-
-
-// Responsive
-//
-// `pam-Unit="1-1 small:1-2 large:1-4"` Creates a responsive grid. On small devices it will
-// have width: 100%, then it will shrink to width: 50% on small-sized screens and
-// shrink to 25% on large-sized screens and above.
-//
-// Markup:
-// <div pam-Grid>
-//     <div pam-Unit="1-1 small:1-2 large:1-4">
-//         <div pam-Unit-Test>1 &#10141; 2 &#10141; 4</div>
-//     </div>
-//     <div pam-Unit="1-1 small:1-2 large:1-4">
-//         <div pam-Unit-Test>1 &#10141; 2 &#10141; 4</div>
-//     </div>
-//     <div pam-Unit="1-1 small:1-2 large:1-4">
-//         <div pam-Unit-Test>1 &#10141; 2 &#10141; 4</div>
-//     </div>
-//     <div pam-Unit="1-1 small:1-2 large:1-4">
-//         <div pam-Unit-Test>1 &#10141; 2 &#10141; 4</div>
-//     </div>
-// </div>
-//
-// Style guide: grids.responsive
-
-
-// Responsive landscape
-//
-// `pam-Unit="1-1 small:1-2 small:landscape:1-3"` Creates a responsive grid which has the
-// additional landscape state. On a small device and in landscape the unit width will shrink to 33%.
-//
-// Markup:
-// <div pam-Grid>
-//     <div pam-Unit="1-1 small:1-2 small:landscape:1-3">
-//         <div pam-Unit-Test>1 &#10141; 2 &#10141; landscape 3</div>
-//     </div>
-//     <div pam-Unit="1-1 small:1-2 small:landscape:1-3">
-//         <div pam-Unit-Test>1 &#10141; 2 &#10141; landscape 3</div>
-//     </div>
-//     <div pam-Unit="1-1 small:1-2 small:landscape:1-3">
-//         <div pam-Unit-Test>1 &#10141; 2 &#10141; landscape 3</div>
-//     </div>
-// </div>
-//
-// Style guide: grids.responsive-landscape
-
-
-// Responsive nested
-//
-// As with the regular grid the responsive grid can be nested. This example shows
-// two units `pam-Unit="1-1 medium:1-2"` that each contain a responsive grid.
-//
-// Markup:
-// <div pam-Grid>
-//     <div pam-Unit="1-1 medium:1-2">
-//         <div pam-Unit-Test>
-//             <div pam-Grid>
-//                 <div pam-Unit="1-1 large:1-2">
-//                     <div pam-Unit-Test>1 &#10141; 2</div>
-//                 </div>
-//                 <div pam-Unit="1-1 large:1-2">
-//                     <div pam-Unit-Test>1 &#10141; 2</div>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-1 medium:1-2">
-//         <div pam-Unit-Test>
-//             <div pam-Grid>
-//                 <div pam-Unit="1-3 large:1-2">
-//                     <div pam-Unit-Test>3 &#10141; 2</div>
-//                 </div>
-//                 <div pam-Unit="1-3 large:1-4">
-//                     <div pam-Unit-Test>3 &#10141; 4</div>
-//                 </div>
-//                 <div pam-Unit="1-3 large:1-4">
-//                     <div pam-Unit-Test>3 &#10141; 4</div>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-// </div>
-//
-// Style guide: grids.responsive-nested
-
-
-// Responsive with img content
-//
-// `pam-Image` elements can easily be used with the grid. This example shows a `pam-Unit="1-1 small:1-2 large:1-4"` grid with `pam-Image` elements.
-//
-// Markup:
-// <div pam-Grid>
-//     <div pam-Unit="1-1 small:1-2 large:1-4">
-//         <img pam-Image src="kss-assets/img/icon-60@3x.png">
-//     </div>
-//     <div pam-Unit="1-1 small:1-2 large:1-4">
-//         <img pam-Image src="kss-assets/img/icon-60@3x.png">
-//     </div>
-//     <div pam-Unit="1-1 small:1-2 large:1-4">
-//         <img pam-Image src="kss-assets/img/icon-60@3x.png">
-//     </div>
-//         <div pam-Unit="1-1 small:1-2 large:1-4">
-//     <img pam-Image src="kss-assets/img/icon-60@3x.png">
-//     </div>
-// </div>
-//
-// Style guide: grids.img
-
-
-// Media Queries
-//
-// To control responsive grids, use the default breakpoints with their
+// To control adaptive grids, use the default breakpoints with their
 // correspinding attribute selector `pam-Unit="[breakpointKey]:[size]"`. For more
-// details on how to use, have a look at the responsive grids section.
+// details on how to use, have a look at the adaptive grids section.
 // <table pam-Table="striped">
 //     <thead>
 //         <tr>
@@ -353,7 +52,248 @@
 //     </tbody>
 // </table>
 //
-// Style guide: grids.media-queries
+// Weight: 2
+//
+// Style guide: grids
+
+
+// Fractions
+//
+// PAM grid supports 1th to 5th and 24th-based grid fractions. Use them
+// with `pam-Unit="[1-X]-X"`.
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="1-1">
+//         <div pam-Unit-Test>1</div>
+//     </div>
+// </div>
+// <div pam-Grid>
+//     <div pam-Unit="1-2">
+//         <div pam-Unit-Test>2</div>
+//     </div>
+//     <div pam-Unit="1-2">
+//         <div pam-Unit-Test>2</div>
+//     </div>
+// </div>
+// <div pam-Grid>
+//     <div pam-Unit="1-3">
+//         <div pam-Unit-Test>3</div>
+//     </div>
+//     <div pam-Unit="1-3">
+//         <div pam-Unit-Test>3</div>
+//     </div>
+//     <div pam-Unit="1-3">
+//         <div pam-Unit-Test>3</div>
+//     </div>
+// </div>
+// <div pam-Grid>
+//     <div pam-Unit="1-4">
+//         <div pam-Unit-Test>4</div>
+//     </div>
+//     <div pam-Unit="1-4">
+//         <div pam-Unit-Test>4</div>
+//     </div>
+//     <div pam-Unit="1-4">
+//         <div pam-Unit-Test>4</div>
+//     </div>
+//     <div pam-Unit="1-4">
+//         <div pam-Unit-Test>4</div>
+//     </div>
+// </div>
+// <div pam-Grid>
+//     <div pam-Unit="1-5">
+//         <div pam-Unit-Test>5</div>
+//     </div>
+//     <div pam-Unit="1-5">
+//         <div pam-Unit-Test>5</div>
+//     </div>
+//     <div pam-Unit="1-5">
+//         <div pam-Unit-Test>5</div>
+//     </div>
+//     <div pam-Unit="1-5">
+//         <div pam-Unit-Test>5</div>
+//     </div>
+//     <div pam-Unit="1-5">
+//         <div pam-Unit-Test>5</div>
+//     </div>
+// </div>
+// <div pam-Grid>
+//     <div pam-Unit="4-24">
+//         <div pam-Unit-Test>24</div>
+//     </div>
+//     <div pam-Unit="4-24">
+//         <div pam-Unit-Test>24</div>
+//     </div>
+//     <div pam-Unit="4-24">
+//         <div pam-Unit-Test>24</div>
+//     </div>
+//     <div pam-Unit="4-24">
+//         <div pam-Unit-Test>24</div>
+//     </div>
+//     <div pam-Unit="4-24">
+//         <div pam-Unit-Test>24</div>
+//     </div>
+//     <div pam-Unit="4-24">
+//         <div pam-Unit-Test>24</div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: grids.fractions
+
+
+// Nested
+//
+// Grids can be nested. This examples shows a two level nested grid...
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="1-2">
+//         <div pam-Unit-Test>
+//         <div pam-Grid>
+//             <div pam-Unit="1-2">
+//                 <div pam-Unit-Test>1-2</div>
+//             </div>
+//             <div pam-Unit="1-2">
+//                 <div pam-Unit-Test>1-2</div>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+// <div pam-Unit="1-2">
+//         <div pam-Unit-Test>
+//             <div pam-Grid>
+//                 <div pam-Unit="1-3">
+//                     <div pam-Unit-Test>1-3</div>
+//                 </div>
+//                 <div pam-Unit="1-3">
+//                     <div pam-Unit-Test>1-3</div>
+//                 </div>
+//                 <div pam-Unit="1-3">
+//                     <div pam-Unit-Test>1-3</div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Style guide: grids.nested
+
+
+// Adaptive
+//
+// `pam-Unit="1-1 small:1-2 large:1-4"` Creates a adaptive grid. On small devices it will
+// have width: 100%, then it will shrink to width: 50% on small-sized screens and
+// shrink to 25% on large-sized screens and above.
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="1-1 small:1-2 large:1-4">
+//         <div pam-Unit-Test>1 &#10141; 2 &#10141; 4</div>
+//     </div>
+//     <div pam-Unit="1-1 small:1-2 large:1-4">
+//         <div pam-Unit-Test>1 &#10141; 2 &#10141; 4</div>
+//     </div>
+//     <div pam-Unit="1-1 small:1-2 large:1-4">
+//         <div pam-Unit-Test>1 &#10141; 2 &#10141; 4</div>
+//     </div>
+//     <div pam-Unit="1-1 small:1-2 large:1-4">
+//         <div pam-Unit-Test>1 &#10141; 2 &#10141; 4</div>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Style guide: grids.adaptive
+
+
+// Landscape
+//
+// `pam-Unit="1-1 small:1-2 small:landscape:1-3"` Creates a adaptive grid which has the
+// additional landscape state. On a small device and in landscape the unit width will shrink to 33%.
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="1-1 small:1-2 small:landscape:1-3">
+//         <div pam-Unit-Test>1 &#10141; 2 &#10141; landscape 3</div>
+//     </div>
+//     <div pam-Unit="1-1 small:1-2 small:landscape:1-3">
+//         <div pam-Unit-Test>1 &#10141; 2 &#10141; landscape 3</div>
+//     </div>
+//     <div pam-Unit="1-1 small:1-2 small:landscape:1-3">
+//         <div pam-Unit-Test>1 &#10141; 2 &#10141; landscape 3</div>
+//     </div>
+// </div>
+//
+// Style guide: grids.adaptive.landscape
+
+
+// Nested
+//
+// As with the regular grid the adaptive grid can be nested. This example shows
+// two units `pam-Unit="1-1 medium:1-2"` that each contain a adaptive grid.
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="1-1 medium:1-2">
+//         <div pam-Unit-Test>
+//             <div pam-Grid>
+//                 <div pam-Unit="1-1 large:1-2">
+//                     <div pam-Unit-Test>1 &#10141; 2</div>
+//                 </div>
+//                 <div pam-Unit="1-1 large:1-2">
+//                     <div pam-Unit-Test>1 &#10141; 2</div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-1 medium:1-2">
+//         <div pam-Unit-Test>
+//             <div pam-Grid>
+//                 <div pam-Unit="1-3 large:1-2">
+//                     <div pam-Unit-Test>3 &#10141; 2</div>
+//                 </div>
+//                 <div pam-Unit="1-3 large:1-4">
+//                     <div pam-Unit-Test>3 &#10141; 4</div>
+//                 </div>
+//                 <div pam-Unit="1-3 large:1-4">
+//                     <div pam-Unit-Test>3 &#10141; 4</div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Style guide: grids.adaptive.nested
+
+
+// Media items
+//
+// `pam-Image` elements can easily be used with the grid. This example shows a `pam-Unit="1-1 small:1-2 large:1-4"` grid with `pam-Image` elements.
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="1-1 small:1-2 large:1-4">
+//         <img pam-Image src="kss-assets/img/icon-60@3x.png">
+//     </div>
+//     <div pam-Unit="1-1 small:1-2 large:1-4">
+//         <img pam-Image src="kss-assets/img/icon-60@3x.png">
+//     </div>
+//     <div pam-Unit="1-1 small:1-2 large:1-4">
+//         <img pam-Image src="kss-assets/img/icon-60@3x.png">
+//     </div>
+//         <div pam-Unit="1-1 small:1-2 large:1-4">
+//     <img pam-Image src="kss-assets/img/icon-60@3x.png">
+//     </div>
+// </div>
+//
+// Weight: 4
+//
+// Style guide: grids.media
 
 
 // ==================================================================
@@ -610,11 +550,16 @@
 // Hooks
 // ==================================================================
 
-/**
- * Hooks:
- * `.hook-grid`
- * `.hook-unit`
- */
+// Hooks
+//
+// Use hooks to customize form.
+//
+// `.hook-grid`
+// `.hook-unit`
+//
+// Weight: 5
+//
+// Style guide: grids.hooks
 
 /* stylelint-disable block-no-empty */
 .hook-grid() {}
