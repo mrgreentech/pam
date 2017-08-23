@@ -135,16 +135,17 @@ section.sg-block.sg-section-hooks code {
     border: 1px solid #666;
 }
 
-[pam-Theme-Test] {
+[pam-Skin-Test] {
     padding: 16px;
+    margin: 1px;
     text-align: center;
 }
 
-[pam-Theme-Test~="text"] {
+[pam-Skin-Test~="text"] {
     background-color: #f9f9f9;
 }
 
-[pam-Theme-Test~="text:light"] {
+[pam-Skin-Test~="text:light"] {
     background-color: #444;
 }
 
