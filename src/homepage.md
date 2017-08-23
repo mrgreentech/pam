@@ -1,4 +1,4 @@
-<div sg-Hero pam-theme="lighter">
+<div sg-Hero pam-skin="lighter">
     <header sg-Hero-Header>
         <div>
             <img
