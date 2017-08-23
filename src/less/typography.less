@@ -1,17 +1,17 @@
 // Typography
 //
-// PAM follws [material design typography styles](https://material.google.com/style/typography.html). This means that the default typeface is Roboto and the script type is English and English-like (Latin, Greek, and Cyrillic). There are 11 contextual typography styles to choose from which can be mixed to suit a large number of text layouts.
+// There are 11 contextual typography styles to choose from which can be mixed to suit a large number of text layouts. These styles mimics the [material design typography styles](https://material.google.com/style/typography.html). This means that the default typeface is **Roboto** and the script type is English and English-like (Latin, Greek, and Cyrillic).
 //
 // Markup:
 // <p pam-typography="display-4" pam-Typography-Text>Display 4</p>
 // <p pam-typography="display-3" pam-Typography-Text>Display 3</p>
 // <p pam-typography="display-2" pam-Typography-Text>Display 2</p>
-// <p pam-typography="display" pam-Typography-Text>Display</p>
+// <p pam-typography="display-1" pam-Typography-Text>Display 1</p>
 // <p pam-typography="headline" pam-Typography-Text>Headline</p>
 // <p pam-typography="title" pam-Typography-Text>Title</p>
 // <p pam-typography="subheading" pam-Typography-Text>Subheading</p>
 // <p pam-typography="body-2" pam-Typography-Text>Body 2</p>
-// <p pam-typography="body" pam-Typography-Text>Body</p>
+// <p pam-typography="body-1" pam-Typography-Text>Body 1</p>
 // <p pam-typography="caption" pam-Typography-Text>Caption</p>
 // <p pam-typography="button" pam-Typography-Text>Button</p>
 //
@@ -20,82 +20,54 @@
 // Style guide: typography
 
 
-// Deprecated
-//
-// Following typography rulez will be deprecated in version **1.1.0**.
-//
-// Markup:
-// <p pam-typography="subheader" pam-Typography-Text>Subheader</p>
-// <p pam-typography="form" pam-Typography-Text>Form</p>
-// <p pam-typography="body:strong" pam-Typography-Text>Body strong</p>
-// <p pam-typography="small" pam-Typography-Text>Small</p>
-//
-// Style guide: typography.deprecated
-
-
 //  Variables
 // ==================================================================
 
 @typography-font-family:            @font-family;
 
-@typography-display-4-font-size:    112px;
+@typography-display-4-font-size:    7rem;
 @typography-display-4-font-weight:  @font-weight-light;
 @typography-display-4-line-height:  @line-height-base;
 
-@typography-display-3-font-size:    56px;
+@typography-display-3-font-size:    @font-size-xxlarge;
 @typography-display-3-font-weight:  @font-weight-normal;
 @typography-display-3-line-height:  @line-height-base;
 
-@typography-display-2-font-size:    45px;
+@typography-display-2-font-size:    2.8125rem;
 @typography-display-2-font-weight:  @font-weight-normal;
 @typography-display-2-line-height:  @line-height-base;
 
-@typography-display-font-size:      34px;
+@typography-display-font-size:      2.125rem;
 @typography-display-font-weight:    @font-weight-normal;
 @typography-display-line-height:    @line-height-base;
 
-@typography-headline-font-size:     24px;
+@typography-headline-font-size:     @font-size-xlarge;
 @typography-headline-font-weight:   @font-weight-normal;
 @typography-headline-line-height:   @line-height-secondary;
 
-@typography-title-font-size:        20px;
+@typography-title-font-size:        @font-size-larger;
 @typography-title-font-weight:      @font-weight-medium;
 @typography-title-line-height:      @line-height-secondary;
 
-@typography-subheading-font-size:   16px;
+@typography-subheading-font-size:   @font-size-large;
 @typography-subheading-font-weight: @font-weight-normal;
 @typography-subheading-line-height: @line-height-secondary;
 
-@typography-body-2-font-size:       14px;
+@typography-body-2-font-size:       @font-size-medium;
 @typography-body-2-font-weight:     @font-weight-medium;
 @typography-body-2-line-height:     @line-height-secondary;
 
-@typography-body-font-size:         14px;
+@typography-body-font-size:         @font-size-medium;
 @typography-body-font-weight:       @font-weight-normal;
 @typography-body-line-height:       @line-height-secondary;
 
-@typography-caption-font-size:      12px;
+@typography-caption-font-size:      @font-size-xsmall;
 @typography-caption-font-weight:    @font-weight-normal;
 @typography-caption-line-height:    @line-height-secondary;
 
-@typography-button-font-size:       14px;
+@typography-button-font-size:       @font-size-medium;
 @typography-button-font-weight:     @font-weight-medium;
 @typography-button-line-height:     @line-height-secondary;
-
-
-// Deprecated
-
-@typography-subheader-font-size:   @font-size-large;
-@typography-subheader-font-weight: @font-weight-light;
-@typography-subheader-line-height: @line-height-secondary;
-
-@typography-form-font-size:        @font-size-medium;
-@typography-form-font-weight:      @font-weight-light;
-@typography-form-line-height:      @line-height-base;
-
-@typography-small-font-size:       @font-size-xxsmall;
-@typography-small-font-weight:     @font-weight-light;
-@typography-small-line-height:     @line-height-base;
 
 
 // ==================================================================
@@ -112,12 +84,12 @@
 //  Display
 // ==================================================================
 
-[pam-typography~="display"] {
+[pam-typography~="display-1"] {
     font-size: @typography-display-font-size;
     font-weight: @typography-display-font-weight;
     line-height: @typography-display-line-height;
 
-    .hook-typography-display;
+    .hook-typography-display-1;
 }
 
 [pam-typography~="display-2"] {
@@ -168,18 +140,6 @@
 }
 
 
-//  Subheader [deprecated]
-// ==================================================================
-
-[pam-typography~="subheader"] {
-    font-size: @typography-subheader-font-size;
-    font-weight: @typography-subheader-font-weight;
-    line-height: @typography-subheader-line-height;
-
-    .hook-typography-subheader;
-}
-
-
 //  Subheading
 // ==================================================================
 
@@ -192,27 +152,15 @@
 }
 
 
-//  Form [deprecated]
-// ==================================================================
-
-[pam-typography~="form"] {
-    font-size: @typography-form-font-size;
-    font-weight: @typography-form-font-weight;
-    line-height: @typography-form-line-height;
-
-    .hook-typography-form;
-}
-
-
 //  Body
 // ==================================================================
 
-[pam-typography~="body"] {
+[pam-typography~="body-1"] {
     font-size: @typography-body-font-size;
     font-weight: @typography-body-font-weight;
     line-height: @typography-body-line-height;
 
-    .hook-typography-body;
+    .hook-typography-body-1;
 }
 
 [pam-typography~="body-2"] {
@@ -221,18 +169,6 @@
     line-height: @typography-body-2-line-height;
 
     .hook-typography-body-2;
-}
-
-
-//  Body strong [deprecated]
-// ==================================================================
-
-[pam-typography~="body:strong"] {
-    font-size: @typography-body-font-size;
-    font-weight: @font-weight-medium;
-    line-height: @typography-body-line-height;
-
-    .hook-typography-body-strong;
 }
 
 
@@ -260,6 +196,78 @@
 }
 
 
+//  Deprecated typography
+// ==================================================================
+
+// Deprecated
+//
+// These typography rulez will be deprecated in version **1.0.0+**.
+//
+// <div pam-Alert="warning" role="alert">
+//    <strong>Deprecated:</strong> Styling for legacy typography types. Support will be dropped
+//    after PAM version 1.0+.
+// </div>
+//
+// Markup:
+// <p pam-typography="subheader" pam-Typography-Text>Subheader</p>
+// <p pam-typography="form" pam-Typography-Text>Form</p>
+// <p pam-typography="body:strong" pam-Typography-Text>Body strong</p>
+// <p pam-typography="small" pam-Typography-Text>Small</p>
+//
+// Style guide: typography.deprecated
+
+
+//  Variables
+
+@typography-subheader-font-size:   @font-size-large;
+@typography-subheader-font-weight: @font-weight-light;
+@typography-subheader-line-height: @line-height-secondary;
+
+@typography-form-font-size:        @font-size-medium;
+@typography-form-font-weight:      @font-weight-light;
+@typography-form-line-height:      @line-height-base;
+
+@typography-small-font-size:       @font-size-xxsmall;
+@typography-small-font-weight:     @font-weight-light;
+@typography-small-line-height:     @line-height-base;
+
+
+//  Subheader [deprecated]
+// ==================================================================
+
+[pam-typography~="subheader"] {
+    font-size: @typography-subheader-font-size;
+    font-weight: @typography-subheader-font-weight;
+    line-height: @typography-subheader-line-height;
+
+    .hook-typography-subheader;
+}
+
+
+//  Form [deprecated]
+// ==================================================================
+
+[pam-typography~="form"] {
+    font-size: @typography-form-font-size;
+    font-weight: @typography-form-font-weight;
+    line-height: @typography-form-line-height;
+
+    .hook-typography-form;
+}
+
+
+//  Body strong [deprecated]
+// ==================================================================
+
+[pam-typography~="body:strong"] {
+    font-size: @typography-body-font-size;
+    font-weight: @font-weight-medium;
+    line-height: @typography-body-line-height;
+
+    .hook-typography-body-strong;
+}
+
+
 //  Small [deprecated]
 // ==================================================================
 
@@ -283,7 +291,7 @@
 // `.hook-typography-body-strong`
 // `.hook-typography-button`
 // `.hook-typography-caption`
-// `.hook-typography-display`
+// `.hook-typography-display-1`
 // `.hook-typography-display-2`
 // `.hook-typography-display-3`
 // `.hook-typography-display-4`
@@ -298,12 +306,12 @@
 
 /* stylelint-disable block-no-empty */
 .hook-typography() {}
-.hook-typography-body() {}
+.hook-typography-body-1() {}
 .hook-typography-body-2() {}
 .hook-typography-body-strong() {}
 .hook-typography-button() {}
 .hook-typography-caption() {}
-.hook-typography-display() {}
+.hook-typography-display-1() {}
 .hook-typography-display-2() {}
 .hook-typography-display-3() {}
 .hook-typography-display-4() {}
