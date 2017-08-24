@@ -1,6 +1,7 @@
 // Tables
 //
-// Tables are awesome!
+// Apply simple and clean styles to tables by using the `pam-Table` attribute.
+// There are a number of basic modifiers that can be used such as `striped`, `bordered` and `fluid`.
 //
 // Weight: 7
 //
@@ -10,29 +11,29 @@
 //     <thead>
 //         <tr>
 //             <th>#</th>
-//             <th>Make</th>
-//             <th>Model</th>
+//             <th>Title</th>
+//             <th>Rating</th>
 //             <th>Year</th>
 //         </tr>
 //     </thead>
 //     <tbody>
 //         <tr>
 //             <td>1</td>
-//             <td>Honda</td>
-//             <td>Accord</td>
-//             <td>2009</td>
+//             <td>Swordfish</td>
+//             <td>10</td>
+//             <td>2001</td>
 //         </tr>
 //         <tr>
 //             <td>2</td>
-//             <td>Lada</td>
-//             <td>Niva</td>
-//             <td>1999</td>
+//             <td>WarGames</td>
+//             <td>9.0</td>
+//             <td>1983</td>
 //         </tr>
 //         <tr>
 //             <td>3</td>
-//             <td>Koenigsegg</td>
-//             <td>One:1</td>
-//             <td>2014</td>
+//             <td>Sneakers</td>
+//             <td>8.9</td>
+//             <td>1992</td>
 //         </tr>
 //     </tbody>
 // </table>
@@ -40,6 +41,9 @@
 // horizontal - Creates a row focused table.
 // bordered - Applies inner borders to table.
 // striped - Exactly as it sounds, a striped table.
+// borderless - Remove all borders.
+// center - Horizontally center all cells.
+// fluid - Adjusts it's width to its parent element.
 //
 // Style guide: tables
 
@@ -47,11 +51,22 @@
 //  Variables
 // ==================================================================
 
-@table-border-color: #cbcbcb;
-@table-caption-color: #000;
-@table-head-bg-color: #e0e0e0;
-@table-head-color: #000;
+@table-border-color: @skin-light;
+@table-border-style: solid;
+@table-border-width: 1px;
+@table-caption-color: @skin-darker;
+@table-head-bg-color: @skin-light;
+@table-head-color: @skin-darker;
+
 @table-striped-odd-bg-color: #f2f2f2;
+
+@table-border-bordered-color: @skin-light;
+@table-border-bordered-style: solid;
+@table-border-bordered-width: 1px;
+
+@table-border-horizontal-color: @skin-light;
+@table-border-horizontal-style: solid;
+@table-border-horizontal-width: 1px;
 
 
 // ==================================================================
@@ -61,8 +76,8 @@
 [pam-Table] {
     border-collapse: collapse;
     border-spacing: 0;
+    border: @table-border-width @table-border-style @table-border-color;
     empty-cells: show;
-    border: 1px solid@table-border-color;
 
     .hook-table;
 }
@@ -70,7 +85,7 @@
 [pam-Table] caption {
     color: @table-caption-color;
     font-style: italic;
-    padding: 1em 0;
+    padding: @space-16 0;
     text-align: center;
 
     .hook-table-caption;
@@ -78,12 +93,12 @@
 
 [pam-Table] td,
 [pam-Table] th {
-    border-left: 1px solid @table-border-color; /*  inner column border */
-    border-width: 0 0 0 1px;
+    border-left: @table-border-width @table-border-style @table-border-color;
+    border-width: 0 0 0 @table-border-width;
     font-size: inherit;
     margin: 0;
     overflow: visible;
-    padding: 0.5em 1em;
+    padding: @space-8 @space-16;
 
     .hook-table-td-th;
 }
@@ -111,7 +126,7 @@
 }
 
 
-//  Modifier: striped
+//  Modifier: Striped
 // ==================================================================
 
 [pam-Table~="striped"] tr:nth-child(2n-1) td {
@@ -121,11 +136,11 @@
 }
 
 
-//  Modifier: bordered
+//  Modifier: Bordered
 // ==================================================================
 
 [pam-Table~="bordered"] td {
-    border-bottom: 1px solid @table-border-color;
+    border-bottom: @table-border-bordered-width @table-border-bordered-style @table-border-bordered-color;
 
     .hook-table-bordered;
 }
@@ -137,13 +152,13 @@
 }
 
 
-//  Modifier: horizontal
+//  Modifier: Horizontal
 // ==================================================================
 
 [pam-Table~="horizontal"] td,
 [pam-Table~="horizontal"] th {
-    border-width: 0 0 1px;
-    border-bottom: 1px solid @table-border-color;
+    border-bottom: @table-border-horizontal-width @table-border-horizontal-style @table-border-horizontal-color;
+    border-width: 0 0 @table-border-horizontal-width;
 
     .hook-table-horizontal-td-th;
 }
@@ -155,37 +170,80 @@
 }
 
 
+//  Modifier: Borderless
+// ==================================================================
+
+[pam-Table~="borderless"] {
+    border: none;
+
+    .hook-table-borderless;
+}
+
+[pam-Table~="borderless"] td,
+[pam-Table~="borderless"] th {
+    border-left: none;
+}
+
+
+//  Modifier: Center
+// ==================================================================
+
+[pam-Table~="center"] td,
+[pam-Table~="center"] th {
+    text-align: center;
+
+    .hook-table-center;
+}
+
+
+//  Modifier: Fluid
+// ==================================================================
+
+[pam-Table~="fluid"] {
+    width: 100%;
+
+    .hook-table-fluid;
+}
+
+
 //  Hooks
 // ==================================================================
 
 // Hooks
 //
-// `.hook-table`
-// `.hook-table-caption`
-// `.hook-table-td-th`
-// `.hook-table-td-th-first-child`
-// `.hook-table-thead`
-// `.hook-table-td`
-// `.hook-table-odd-td`
-// `.hook-table-striped`
-// `.hook-table-bordered`
-// `.hook-table-bordered-tbody-tr-last-child`
-// `.hook-table-horizontal-td-th`
-// `.hook-table-horizontal-tbody-tr-last-child`
+// `hook-table`
+// `hook-table-caption`
+// `hook-table-odd-td`
+// `hook-table-td`
+// `hook-table-td-th`
+// `hook-table-td-th-first-child`
+// `hook-table-thead`
+// `hook-table-bordered`
+// `hook-table-bordered-tbody-tr-last-child`
+// `hook-table-borderless`
+// `hook-table-center`
+// `hook-table-fluid`
+// `hook-table-horizontal-tbody-tr-last-child`
+// `hook-table-horizontal-td-th`
+// `hook-table-striped`
 //
 // Style guide: tables.hooks
 
 /* stylelint-disable block-no-empty */
 .hook-table() {}
 .hook-table-caption() {}
+.hook-table-odd-td() {}
+.hook-table-td() {}
 .hook-table-td-th() {}
 .hook-table-td-th-first-child() {}
 .hook-table-thead() {}
-.hook-table-td() {}
-.hook-table-odd-td() {}
-.hook-table-striped() {}
 .hook-table-bordered() {}
 .hook-table-bordered-tbody-tr-last-child() {}
-.hook-table-horizontal-td-th() {}
+.hook-table-borderless() {}
+.hook-table-center() {}
+.hook-table-fluid() {}
 .hook-table-horizontal-tbody-tr-last-child() {}
+.hook-table-horizontal-td-th() {}
+.hook-table-striped() {}
+
 /* stylelint-enable */
