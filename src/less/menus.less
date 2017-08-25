@@ -1,21 +1,22 @@
 // Menus
 //
-// By default menus are vertical and take up 100% width. Therfore a good tip
+// By default menus are horizontal and take up 100% width. Therfore a good tip
 // is to add a custom attribute to limit the menu width or set
 // the menu to display:inline-block.
 //
 // Markup:
 // <div pam-Menu="{{modifier_class}}">
 //     <ul pam-Menu-List>
-//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
 //     </ul>
 // </div>
 //
-// limited - overrides the default menu behaviour of 100% width by using `display: inline-block`.
-// horizontal - creates a horizontal menu.
-// justified - creates a horizontal justified menu.
+// fill - Extends the menu over the available width.
+// justified - Extends the menu items of equal-width over the available width.
+// vertical - Well, the name explains it.
+// truncated - Collapse the menu width to the widest menu item.
 //
 // Weight: 8
 //
@@ -48,21 +49,6 @@
     .hook-menu;
 }
 
-[pam-Menu~="fixed"] {
-    left: 0;
-    position: fixed;
-    top: 0;
-    z-index: 3;
-
-    .hook-menu-fixed;
-}
-
-[pam-Menu~="limited"] {
-    display: inline-block;
-
-    .hook-menu-limited;
-}
-
 [pam-Menu-List],
 [pam-Menu-Item] {
     position: relative;
@@ -72,12 +58,12 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
 
     .hook-menu-list;
 }
 
 [pam-Menu-Item] {
-    height: 100%;
     margin: 0;
     padding: 0;
 
@@ -86,39 +72,104 @@
 
 [pam-Menu-Link],
 [pam-Menu-Heading] {
-    display: block;
+    display: inline-flex;
     text-decoration: none;
     white-space: nowrap;
 
     .hook-menu-link-heading;
 }
 
+//  Modifier: vertical
+// ==========================================================================
+
+[pam-Menu~="vertical"] {
+    // .hook-menu-vertical;
+}
+
+[pam-Menu~="vertical"] [pam-Menu-List] {
+    display: flex;
+    flex-direction: column;
+
+    // .hook-menu-vertical-list;
+}
+
+[pam-Menu~="vertical"] [pam-Menu-Item],
+[pam-Menu~="vertical"] [pam-Menu-Heading],
+[pam-Menu~="vertical"] [pam-Menu-Separator] {
+    display: inline-block;
+    vertical-align: middle;
+
+    // .hook-menu-vertical-item;
+}
+
+//  Modifier: fixed
+// ==================================================================
+
+[pam-Menu~="fixed"] {
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+
+    .hook-menu-fixed;
+}
+
+
+//  Modifier: truncated
+// ==================================================================
+
+[pam-Menu~="truncated"] {
+    display: inline-flex;
+
+    .hook-menu-truncated;
+}
+
 
 //  Modifier: horizontal
 // ==========================================================================
 
-[pam-Menu~="horizontal"] {
-    white-space: nowrap;
-    width: 100%;
+// [pam-Menu~="horizontal"] {
+//     white-space: nowrap;
+//     width: 100%;
 
-    .hook-menu-horizontal;
+//     .hook-menu-horizontal;
+// }
+
+// [pam-Menu~="horizontal"] [pam-Menu-List] {
+//     display: inline-flex;
+
+//     .hook-menu-horizontal-list;
+// }
+
+// [pam-Menu~="horizontal"] [pam-Menu-Item],
+// [pam-Menu~="horizontal"] [pam-Menu-Heading],
+// [pam-Menu~="horizontal"] [pam-Menu-Separator] {
+//     display: inline-block;
+//     vertical-align: middle;
+//     zoom: 1;
+
+//     .hook-menu-horizontal-item;
+// }
+
+
+// Modifier: fill
+// ========================================================================
+
+[pam-Menu~="fill"] {
+    .hook-menu-fill;
 }
 
-[pam-Menu~="horizontal"] [pam-Menu-List] {
-    display: inline-block;
-
-    .hook-menu-horizontal-list;
+[pam-Menu~="fill"] [pam-Menu-List] {
+    .hook-menu-fill-list;
 }
 
-/* Initial menus should be inline-block so that they are horizontal */
-[pam-Menu~="horizontal"] [pam-Menu-Item],
-[pam-Menu~="horizontal"] [pam-Menu-Heading],
-[pam-Menu~="horizontal"] [pam-Menu-Separator] {
-    display: inline-block;
-    vertical-align: middle;
-    zoom: 1;
+[pam-Menu~="fill"] [pam-Menu-Item],
+[pam-Menu~="fill"] [pam-Menu-Heading],
+[pam-Menu~="fill"] [pam-Menu-Separator] {
+    flex: 1 1 auto;
+    text-align: center;
 
-    .hook-menu-horizontal-item-heading-seperator;
+    .hook-menu-fill-item;
 }
 
 
@@ -130,29 +181,31 @@
 }
 
 [pam-Menu~="justified"] [pam-Menu-List] {
-    display: table;
-    table-layout: fixed;
-    text-align: center;
-    width: 100%;
-
     .hook-menu-justified-list;
 }
 
 [pam-Menu~="justified"] [pam-Menu-Item],
 [pam-Menu~="justified"] [pam-Menu-Heading],
 [pam-Menu~="justified"] [pam-Menu-Separator] {
-    display: table-cell;
+    flex: 1 1 100%;
+    text-align: center;
 
-    .hook-menu-justified-item-heading-seperator;
+    .hook-menu-justified-item;
 }
 
 
 //  Submenu
 // ==========================================================================
 
-// Submenu vertical
+// Sub
 //
-//  By using pam-Menu-Item and pam-Menu-Has-Children a sub menu can be created.
+//  To enable a dropdown use `pam-Menu-Item` and `pam-Menu-Has-Children` this can be used with `limited`and  `horizontal`menu types.
+//
+// Style guide: menus.sub
+
+// Vertical
+//
+// A vertical submenu is enabled with the limited menu type.
 //
 // Markup:
 // <div pam-Menu="limited">
@@ -172,11 +225,11 @@
 //     </ul>
 // </div>
 //
-// Style guide: menus.submenu
+// Style guide: menus.sub.vertical
 
-// Submenu dropdown
+// Dropdown
 //
-//  By using pam-Menu="horizontal", pam-Menu-Item and pam-Menu-Has-Children a dropdown sub menu can be created.
+// By using the horizontal menu type, a dropdown sub menu can be created.
 //
 // Markup:
 // <div pam-Menu="horizontal">
@@ -196,7 +249,7 @@
 //     </ul>
 // </div>
 //
-// Style guide: menus.submenu-dropdown
+// Style guide: menus.sub.dropdown
 
 [pam-Menu-Item] [pam-Menu-Item] {
     display: block;
@@ -252,7 +305,8 @@
 
 // Scrollable
 //
-// Limit the height of the menu and add `pam-Menu="scrollable"`. This creates a scrollable menu.
+// Limit the height of the menu and use the `scrollable` menu attribute.
+// This creates a scrollable menu.
 //
 // Markup:
 // <div pam-Menu="scrollable" pam-Menu-Scrollable-Test>
@@ -281,9 +335,11 @@
     .hook-menu-scrollable-list;
 }
 
-// Scrollable horizontal
+// Horizontal
 //
-// To create a scrollable horizontal menu, add the pure-menu-scrollable class name. When there isn't enough room, the menu items can be scrolled or flicked.
+// To enable a scrollable horizontal menu, use the `horizontal` menu type
+// with the `scrollable` attribute. When there isn't enough room,
+// the menu items can be scrolled.
 //
 // Markup:
 // <div pam-Menu="horizontal scrollable">
@@ -297,7 +353,7 @@
 //     </ul>
 // </div>
 //
-// Style guide: menus.scrollable-horizontal
+// Style guide: menus.scrollable.horizontal
 
 [pam-Menu~="horizontal"][pam-Menu~="scrollable"] [pam-Menu-List] {
     display: inline-block;
@@ -368,7 +424,7 @@
 // `pam-Menu-Heading` is used to add a heading to menus.
 //
 // Markup:
-// <div pam-Menu="limited">
+// <div pam-Menu="vertical">
 //     <a href="#" pam-Menu-Heading>Menu title</a>
 //     <ul pam-Menu-List>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
@@ -399,9 +455,8 @@
 }
 
 [pam-Menu-Link],
-[pam-Menu-Disabled],
 [pam-Menu-Heading] {
-    padding: 0.5rem 1rem;
+    padding: @space-8 @space-16;
 }
 
 
@@ -412,9 +467,15 @@
 // Markup:
 // <div pam-Menu="horizontal">
 //     <ul pam-Menu-List>
-//         <li pam-Menu-Item pam-Menu-Selected><a href="#" pam-Menu-Link>Home</a></li>
-//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
-//         <li pam-Menu-Item pam-Menu-Disabled><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item pam-Menu-Selected>
+//             <a href="#" pam-Menu-Link>Home</a>
+//         </li>
+//         <li pam-Menu-Item>
+//             <a href="#" pam-Menu-Link>About</a>
+//         </li>
+//         <li pam-Menu-Item pam-Menu-Disabled>
+//             <a href="#" pam-Menu-Link>Stuff</a>
+//         </li>
 //     </ul>
 // </div>
 //
@@ -426,6 +487,12 @@
     opacity: @menu-disabled-opacity;
 
     .hook-menu-disabled;
+}
+
+[pam-Menu-Disabled] [pam-Menu-Link] {
+    cursor: not-allowed;
+
+    // .hook-menu-disabled-link-hover;
 }
 
 [pam-Menu-Disabled] [pam-Menu-Link]:hover {
@@ -458,16 +525,19 @@
 //
 // `.hook-menu`
 // `.hook-menu-fixed`
-// `.hook-menu-limited`
+// `.hook-menu-fill`
+// `.hook-menu-fill-list`
+// `.hook-menu-fill-item`
+// `.hook-menu-truncated`
 // `.hook-menu-list`
 // `.hook-menu-item`
 // `.hook-menu-link-heading`
 // `.hook-menu-horizontal`
 // `.hook-menu-horizontal-list`
-// `.hook-menu-horizontal-item-heading-seperator`
+// `.hook-menu-horizontal-item`
 // `.hook-menu-justified`
 // `.hook-menu-justified-list`
-// `.hook-menu-justified-item-heading-seperator`
+// `.hook-menu-justified-item`
 // `.hook-menu-children`
 // `.hook-menu-horizontal-children`
 // `.hook-menu-active-children`
@@ -497,13 +567,16 @@
 .hook-menu-children() {}
 .hook-menu-disabled() {}
 .hook-menu-disabled-link-hover() {}
+.hook-menu-fill() {}
+.hook-menu-fill-list() {}
+.hook-menu-fill-item() {}
 .hook-menu-fixed() {}
 .hook-menu-has-children-link-after() {}
 .hook-menu-heading() {}
 .hook-menu-horizontal() {}
 .hook-menu-horizontal-children() {}
 .hook-menu-horizontal-has-children-link-after() {}
-.hook-menu-horizontal-item-heading-seperator() {}
+.hook-menu-horizontal-item() {}
 .hook-menu-horizontal-list() {}
 .hook-menu-horizontal-scrollable() {}
 .hook-menu-horizontal-scrollable-list() {}
@@ -511,9 +584,9 @@
 .hook-menu-horizontal-separator() {}
 .hook-menu-item() {}
 .hook-menu-justified() {}
-.hook-menu-justified-item-heading-seperator() {}
+.hook-menu-justified-item() {}
 .hook-menu-justified-list() {}
-.hook-menu-limited() {}
+.hook-menu-truncated() {}
 .hook-menu-link() {}
 .hook-menu-link-heading() {}
 .hook-menu-link-hover-focus() {}
