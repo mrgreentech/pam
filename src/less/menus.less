@@ -1,22 +1,18 @@
 // Menus
 //
-// By default menus are horizontal and take up 100% width. Therfore a good tip
+// By default menus are horizontal and take up 100% width. Use custom or preset modifiers
+// to change the apperance and d tip
 // is to add a custom attribute to limit the menu width or set
 // the menu to display:inline-block.
 //
 // Markup:
-// <div pam-Menu="{{modifier_class}}">
+// <div pam-Menu>
 //     <ul pam-Menu-List>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
 //     </ul>
 // </div>
-//
-// fill - Extends the menu over the available width.
-// justified - Extends the menu items of equal-width over the available width.
-// vertical - Well, the name explains it.
-// truncated - Collapse the menu width to the widest menu item.
 //
 // Weight: 8
 //
@@ -72,15 +68,46 @@
 
 [pam-Menu-Link],
 [pam-Menu-Heading] {
-    display: inline-flex;
+    display: block;
     text-decoration: none;
     white-space: nowrap;
 
     .hook-menu-link-heading;
 }
 
+
+//  Modifier: fixed
+// ==================================================================
+
+[pam-Menu~="fixed"] {
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+
+    .hook-menu-fixed;
+}
+
+
 //  Modifier: vertical
 // ==========================================================================
+
+// Vertical
+//
+// Well, the name explains it.
+//
+// Markup:
+// <div pam-Menu="vertical">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: menus.vertical
 
 [pam-Menu~="vertical"] {
     // .hook-menu-vertical;
@@ -102,21 +129,26 @@
     // .hook-menu-vertical-item;
 }
 
-//  Modifier: fixed
-// ==================================================================
-
-[pam-Menu~="fixed"] {
-    left: 0;
-    position: fixed;
-    top: 0;
-    z-index: 3;
-
-    .hook-menu-fixed;
-}
-
 
 //  Modifier: truncated
 // ==================================================================
+
+// Truncated
+//
+// Collapse the menu width to the widest menu item.
+//
+// Markup:
+// <div pam-Menu="vertical truncated">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 2
+//
+// Style guide: menus.truncated
 
 [pam-Menu~="truncated"] {
     display: inline-flex;
@@ -125,35 +157,25 @@
 }
 
 
-//  Modifier: horizontal
-// ==========================================================================
-
-// [pam-Menu~="horizontal"] {
-//     white-space: nowrap;
-//     width: 100%;
-
-//     .hook-menu-horizontal;
-// }
-
-// [pam-Menu~="horizontal"] [pam-Menu-List] {
-//     display: inline-flex;
-
-//     .hook-menu-horizontal-list;
-// }
-
-// [pam-Menu~="horizontal"] [pam-Menu-Item],
-// [pam-Menu~="horizontal"] [pam-Menu-Heading],
-// [pam-Menu~="horizontal"] [pam-Menu-Separator] {
-//     display: inline-block;
-//     vertical-align: middle;
-//     zoom: 1;
-
-//     .hook-menu-horizontal-item;
-// }
-
-
 // Modifier: fill
 // ========================================================================
+
+// Fill
+//
+// Extends the menu over the available width.
+//
+// Markup:
+// <div pam-Menu="fill">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 3
+//
+// Style guide: menus.fill
 
 [pam-Menu~="fill"] {
     .hook-menu-fill;
@@ -175,6 +197,23 @@
 
 // Modifier: justified
 // ========================================================================
+
+// Justified
+//
+// Extends the menu items of equal-width over the available width.
+//
+// Markup:
+// <div pam-Menu="justified">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 3
+//
+// Style guide: menus.justified
 
 [pam-Menu~="justified"] {
     .hook-menu-justified;
@@ -199,7 +238,9 @@
 
 // Sub
 //
-//  To enable a dropdown use `pam-Menu-Item` and `pam-Menu-Has-Children` this can be used with `limited`and  `horizontal`menu types.
+// To enable a dropdown use `pam-Menu-Item` and `pam-Menu-Has-Children` this can be used with `limited`and  `horizontal`menu types.
+//
+// Weight: 5
 //
 // Style guide: menus.sub
 
@@ -320,6 +361,8 @@
 //     </ul>
 // </div>
 //
+// Weight: 4
+//
 // Style guide: menus.scrollable
 
 [pam-Menu~="scrollable"] {
@@ -362,12 +405,12 @@
 }
 
 [pam-Menu~="horizontal"][pam-Menu~="scrollable"] {
-    -ms-overflow-style: none;
-    -webkit-overflow-scrolling: touch;
     overflow-x: auto;
     overflow-y: hidden;
     padding: 0.5rem 0;
     white-space: nowrap;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
 
     .hook-menu-horizontal-scrollable;
 }
@@ -387,7 +430,7 @@
 // To add a menu separator use the `pam-Menu-Separator` attribute in a li element. It works the same for horizontal menus.
 //
 // Markup:
-// <div pam-Menu="limited">
+// <div pam-Menu="vertical truncated">
 //     <ul pam-Menu-List>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
 //         <li pam-Menu-Separator></li>
@@ -399,25 +442,27 @@
 //     </ul>
 // </div>
 //
-// Weight: -1
+// Weight: 8
 //
 // Style guide: menus.seperator
 
-[pam-Menu-Separator] {
+[pam-Menu] [pam-Menu-Separator] {
     background-color: @menu-seperator-bg-color;
-    height: @menu-seperator-thickness;
-    margin: 0.3rem 0;
+    height: auto;
+    margin: 0 @space-base;
+    width: @menu-seperator-thickness;
 
     .hook-menu-separator;
 }
 
-[pam-Menu~="horizontal"] [pam-Menu-Separator] {
-    height: @menu-seperator-length;
-    margin: 0 0.3rem;
-    width: @menu-seperator-thickness;
+[pam-Menu~="vertical"] [pam-Menu-Separator] {
+    height: @menu-seperator-thickness;
+    margin: @space-base 0;
+    width: auto;
 
-    .hook-menu-horizontal-separator;
+    .hook-menu-vertical-separator;
 }
+
 
 // Heading
 //
@@ -432,7 +477,7 @@
 //     </ul>
 // </div>
 //
-// Weight: -2
+// Weight: 7
 //
 // Style guide: menus.heading
 
@@ -479,7 +524,7 @@
 //     </ul>
 // </div>
 //
-// Weight: -1
+// Weight: 6
 //
 // Style guide: menus.states
 
@@ -549,7 +594,7 @@
 // `.hook-menu-horizontal-scrollable`
 // `.hook-menu-horizontal-scrollable-scrollbar`
 // `.hook-menu-separator`
-// `.hook-menu-horizontal-separator`
+// `.hook-menu-vertical-separator`
 // `.hook-menu-heading`
 // `.hook-menu-link`
 // `.hook-menu-disabled`
