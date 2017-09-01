@@ -19,7 +19,7 @@
         <a href="https://github.com/mrgreentech/pam" pam-Button="tertiary large">GitHub</a>
     </div>
     <footer>
-        <div pam-Menu="horizontal">
+        <div pam-Menu="vertical">
             <ul pam-Menu-List>
                 <li pam-Menu-Item>[[version]]</li>
             </ul>
