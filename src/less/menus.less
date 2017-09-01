@@ -68,7 +68,7 @@
 }
 
 
-//  Sub-object: States
+//  Sub-object: Item states
 // ==========================================================================
 
 // States
@@ -98,34 +98,30 @@
 [pam-Menu] [pam-Menu-Item~="active"] > [pam-Menu-Link] {
     background-color: @menu-link-hover-bg-color;
 
-    // .hook-menu-link-hover-focus;
+    .hook-menu-item-active-link;
 }
-
 
 [pam-Menu] [pam-Menu-Item~="disabled"] {
     opacity: @menu-disabled-opacity;
 
-    // .hook-menu-disabled;
+    .hook-menu-item-disabled;
 }
 
 [pam-Menu] [pam-Menu-Item~="disabled"] [pam-Menu-Link] {
     cursor: not-allowed;
 
-    // .hook-menu-disabled-link-hover;
+    .hook-menu-item-disabled-link;
 }
 
 [pam-Menu] [pam-Menu-Item~="disabled"] [pam-Menu-Link]:hover {
     background-color: transparent;
-
-    // .hook-menu-disabled-link-hover;
 }
-
 
 [pam-Menu] [pam-Menu-Item~="selected"] [pam-Menu-Link],
 [pam-Menu] [pam-Menu-Item~="selected"] [pam-Menu-Link]:visited {
     color: @menu-selected-link-color;
 
-    // .hook-menu-selected-link;
+    .hook-menu-item-selected-link;
 }
 
 
@@ -145,8 +141,6 @@
 [pam-Menu] [pam-Menu-Link]:hover,
 [pam-Menu] [pam-Menu-Link]:focus {
     background-color: @menu-link-hover-bg-color;
-
-    .hook-menu-link-hover-focus;
 }
 
 
@@ -574,37 +568,37 @@
 // Hooks
 //
 // `.hook-menu`
-// `.hook-menu-fixed`
-// `.hook-menu-fill`
-// `.hook-menu-fill-list`
-// `.hook-menu-fill-item`
-// `.hook-menu-truncated`
-// `.hook-menu-list`
-// `.hook-menu-item`
-// `.hook-menu-horizontal`
-// `.hook-menu-horizontal-list`
-// `.hook-menu-horizontal-item`
-// `.hook-menu-justified`
-// `.hook-menu-justified-list`
-// `.hook-menu-justified-item`
-// `.hook-menu-children`
-// `.hook-menu-horizontal-children`
 // `.hook-menu-active-children`
+// `.hook-menu-children`
+// `.hook-menu-fill`
+// `.hook-menu-fill-item`
+// `.hook-menu-fill-list`
+// `.hook-menu-fixed`
 // `.hook-menu-has-children-link-after`
-// `.hook-menu-horizontal-has-children-link-after`
+// `.hook-menu-heading`
+// `.hook-menu-horizontal-scrollable`
+// `.hook-menu-horizontal-scrollable-list`
+// `.hook-menu-horizontal-scrollable-scrollbar`
+// `.hook-menu-item`
+// `.hook-menu-item-active-link`
+// `.hook-menu-item-disabled`
+// `.hook-menu-item-disabled-link`
+// `.hook-menu-item-selected-link`
+// `.hook-menu-justified`
+// `.hook-menu-justified-item`
+// `.hook-menu-justified-list`
+// `.hook-menu-link`
+// `.hook-menu-list`
 // `.hook-menu-scrollable`
 // `.hook-menu-scrollable-list`
-// `.hook-menu-horizontal-scrollable-list`
-// `.hook-menu-horizontal-scrollable`
-// `.hook-menu-horizontal-scrollable-scrollbar`
 // `.hook-menu-separator`
+// `.hook-menu-truncated`
+// `.hook-menu-vertical`
+// `.hook-menu-vertical-children`
+// `.hook-menu-vertical-has-children-link-after`
+// `.hook-menu-vertical-item`
+// `.hook-menu-vertical-list`
 // `.hook-menu-vertical-separator`
-// `.hook-menu-heading`
-// `.hook-menu-link`
-// `.hook-menu-disabled`
-// `.hook-menu-disabled-link-hover`
-// `.hook-menu-link-hover-focus`
-// `.hook-menu-selected-link`
 //
 // Weight: 10
 //
@@ -617,27 +611,30 @@
 .hook-menu-fill() {}
 .hook-menu-fill-item() {}
 .hook-menu-fill-list() {}
-.hook-menu-link() {}
-.hook-menu-link-hover-focus() {}
 .hook-menu-fixed() {}
 .hook-menu-has-children-link-after() {}
 .hook-menu-heading() {}
-.hook-menu-vertical() {}
-.hook-menu-vertical-item() {}
-.hook-menu-vertical-list() {}
 .hook-menu-horizontal-scrollable() {}
 .hook-menu-horizontal-scrollable-list() {}
 .hook-menu-horizontal-scrollable-scrollbar() {}
 .hook-menu-item() {}
+.hook-menu-item-active-link() {}
+.hook-menu-item-disabled() {}
+.hook-menu-item-disabled-link() {}
+.hook-menu-item-selected-link() {}
 .hook-menu-justified() {}
 .hook-menu-justified-item() {}
 .hook-menu-justified-list() {}
+.hook-menu-link() {}
 .hook-menu-list() {}
 .hook-menu-scrollable() {}
 .hook-menu-scrollable-list() {}
 .hook-menu-separator() {}
 .hook-menu-truncated() {}
+.hook-menu-vertical() {}
 .hook-menu-vertical-children() {}
 .hook-menu-vertical-has-children-link-after() {}
+.hook-menu-vertical-item() {}
+.hook-menu-vertical-list() {}
 .hook-menu-vertical-separator() {}
 /* stylelint-enable */
