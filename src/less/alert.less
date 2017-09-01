@@ -4,9 +4,6 @@
 // with some type of intention. For the most basic alert use
 // the `pam-Alert` attribute.
 //
-// Markup:
-// <div pam-Alert>Alert message</div>
-//
 // Weight: 9
 //
 // Style guide: alert
@@ -39,8 +36,8 @@
 @alert-danger-border:        darken(@alert-danger-background, 10%);
 @alert-danger-color:         darken(@alert-danger-background, 40%);
 
-@alert-callout-background:   #fff;
-@alert-callout-border-width: 6px;
+@alert-callout-background:   @skin-text;
+@alert-callout-border-width: @space-base;
 
 @alert-link-font-weight:     @font-weight-bold;
 
@@ -57,7 +54,6 @@
     border: 1px solid @alert-border-color;
     color: @alert-color;
     line-height: @alert-line-height;
-    margin-bottom: @alert-margin-vertical;
     padding: @alert-padding;
 
     .hook-alert;
@@ -174,7 +170,10 @@
 // to draw attention to information.
 //
 // Markup:
-// <div pam-Alert="callout {{modifier_class}}">Alert message</div>
+// <div pam-Alert="callout {{modifier_class}}">
+//     <h1 pam-Alert-Heading>Title</h1>
+//     <p>Callout message</p>
+// </div>
 //
 // info - This is not important information, carry on.
 // success - Something was successfully done!
@@ -187,9 +186,55 @@
 
 [pam-Alert~="callout"] {
     background-color: @alert-callout-background;
+    border-color: @alert-border-color;
     border-left-width: @alert-callout-border-width;
+    color: @alert-color;
+
+    > [pam-Alert-Heading] {
+        color: @alert-border-color;
+    }
 
     .hook-alert-callout;
+}
+
+[pam-Alert~="callout"][pam-Alert~="info"] {
+    border-left-color: @alert-info-color;
+
+    > [pam-Alert-Heading] {
+        color: @alert-info-color;
+    }
+
+    // .hook-alert-callout;
+}
+
+[pam-Alert~="callout"][pam-Alert~="success"] {
+    border-left-color: @alert-success-color;
+
+    > [pam-Alert-Heading] {
+        color: @alert-success-color;
+    }
+
+    // .hook-alert-callout;
+}
+
+[pam-Alert~="callout"][pam-Alert~="warning"] {
+    border-left-color: @alert-warning-color;
+
+    > [pam-Alert-Heading] {
+        color: @alert-warning-color;
+    }
+
+    // .hook-alert-callout;
+}
+
+[pam-Alert~="callout"][pam-Alert~="danger"] {
+    border-left-color: @alert-danger-color;
+
+    > [pam-Alert-Heading] {
+        color: @alert-danger-color;
+    }
+
+    // .hook-alert-callout;
 }
 
 
