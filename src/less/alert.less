@@ -5,7 +5,10 @@
 // the `pam-Alert` attribute.
 //
 // Markup:
-// <div pam-Alert="{{modifier_class}}">Alert message</div>
+// <div pam-Alert="{{modifier_class}}">
+//     <h1 pam-Alert-Heading>Title</h1>
+//     <p>Callout message</p>
+// </div>
 //
 // info - This is not important but may need your attention.
 // success - Congratulations! You have successfully done something.
@@ -167,7 +170,7 @@
         color: @alert-info-color;
     }
 
-    // .hook-alert-callout;
+    .hook-alert-callout-info;
 }
 
 [pam-Alert~="callout"][pam-Alert~="success"] {
@@ -177,7 +180,7 @@
         color: @alert-success-color;
     }
 
-    // .hook-alert-callout;
+    .hook-alert-callout-success;
 }
 
 [pam-Alert~="callout"][pam-Alert~="warning"] {
@@ -187,7 +190,7 @@
         color: @alert-warning-color;
     }
 
-    // .hook-alert-callout;
+    .hook-alert-callout-warning;
 }
 
 [pam-Alert~="callout"][pam-Alert~="danger"] {
@@ -197,7 +200,7 @@
         color: @alert-danger-color;
     }
 
-    // .hook-alert-callout;
+    .hook-alert-callout-danger;
 }
 
 
@@ -265,11 +268,11 @@
 
 // Close
 //
-// `pam-Alert="close"` Adds styling for closeable alert by expanding
+// `pam-Alert="closeable"` Adds styling for closeable alert by expanding
 // the right padding and make place for the close icon position.
 //
 // Markup:
-// <div pam-Alert="close info">
+// <div pam-Alert="closeable">
 //     <strong>Eyy!</strong> This alert can be terminated, awesome!
 //     <div pam-Close="right">×</div>
 // </div>
@@ -278,8 +281,8 @@
 //
 // Style guide: alert.close
 
-[pam-Alert~="close"] {
-    padding-right: (@alert-padding * 2 + 8);
+[pam-Alert~="closeable"] {
+    padding-right: (@alert-padding * 2 + @space-8);
     position: relative;
 }
 
@@ -309,9 +312,9 @@
 // a **fully loaded** alert!
 //
 // Markup:
-// <div pam-Alert="close info">
+// <div pam-Alert="closeable">
 //     <h2 pam-Alert-Heading>Fully loaded!</h2>
-//     <p><strong>Oh yeah</strong>, fully loaded with close icon, header and link.</p>
+//     <p><strong>Oh yeah</strong>, all alert features closeable, header and link.</p>
 //     <p>Well, <a pam-Alert-Link href="#">that's just crazy!</a></p>
 //     <div pam-Close>×</div>
 // </div>
@@ -328,6 +331,10 @@
 //
 // `.hook-alert`
 // `.hook-alert-callout`
+// `.hook-alert-callout-danger`
+// `.hook-alert-callout-info`
+// `.hook-alert-callout-success`
+// `.hook-alert-callout-warning`
 // `.hook-alert-danger`
 // `.hook-alert-heading`
 // `.hook-alert-info`
@@ -342,6 +349,10 @@
 /* stylelint-disable block-no-empty */
 .hook-alert() {}
 .hook-alert-callout() {}
+.hook-alert-callout-danger() {}
+.hook-alert-callout-info() {}
+.hook-alert-callout-success() {}
+.hook-alert-callout-warning() {}
 .hook-alert-danger() {}
 .hook-alert-heading() {}
 .hook-alert-info() {}
