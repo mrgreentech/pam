@@ -19,6 +19,7 @@
 
 @divider-color: @skin-divider;
 @divider-opacity: 20;
+@divider-size: 1px;
 
 
 // ==================================================================
@@ -27,7 +28,7 @@
 
 [pam-Divider] {
     display: block;
-    border-top: 1px solid @divider-color;
+    border-top: @dicider-size solid @divider-color;
     margin: 0;
 
     .hook-divider;
@@ -59,6 +60,7 @@
 
 [pam-Divider~="inset"] {
     margin-left: @space-72;
+
     .hook-divider-inset;
 }
 
@@ -77,6 +79,7 @@
 
 [pam-Divider~="transparent"] {
     border-top-color: fade(@divider-color, @divider-opacity);
+
     .hook-divider-transparent;
 }
 
