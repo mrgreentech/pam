@@ -5,7 +5,15 @@
 // the `pam-Alert` attribute.
 //
 // Markup:
-// <div pam-Alert>Alert message</div>
+// <div pam-Alert="{{modifier_class}}">
+//     <h1 pam-Alert-Heading>Title</h1>
+//     <p>Callout message</p>
+// </div>
+//
+// info - This is not important but may need your attention.
+// success - Congratulations! You have successfully done something.
+// warning - Wow! You better take a look this needs your attention!
+// danger - Oh no! That did no go so well get another pair of glasses and try again.
 //
 // Weight: 9
 //
@@ -39,8 +47,8 @@
 @alert-danger-border:        darken(@alert-danger-background, 10%);
 @alert-danger-color:         darken(@alert-danger-background, 40%);
 
-@alert-callout-background:   #fff;
-@alert-callout-border-width: 6px;
+@alert-callout-background:   @skin-text;
+@alert-callout-border-width: @space-base;
 
 @alert-link-font-weight:     @font-weight-bold;
 
@@ -57,7 +65,6 @@
     border: 1px solid @alert-border-color;
     color: @alert-color;
     line-height: @alert-line-height;
-    margin-bottom: @alert-margin-vertical;
     padding: @alert-padding;
 
     .hook-alert;
@@ -75,34 +82,10 @@
 //  Modifier: info
 // ==================================================================
 
-// Variations
-//
-// Use color modifiers to change the contextual
-// intention of the alert.
-//
-// Markup:
-// <div pam-Alert="{{modifier_class}}">Alert message</div>
-//
-// info - This is not important but may need your attention.
-// success - Congratulations! You have successfully done something.
-// warning - Wow! You better take a look this needs your attention!
-// danger - Oh no! That did no go so well get another pair of glasses and try again.
-//
-// Weight: -1
-//
-// Style guide: alert.variations
-
 [pam-Alert~="info"] {
     background-color: @alert-info-background;
     border-color: @alert-info-border;
     color: @alert-info-color;
-
-    [pam-Alert-Close] {
-        &::before,
-        &::after {
-            background-color: @alert-info-color;
-        }
-    }
 
     .hook-alert-info;
 }
@@ -116,13 +99,6 @@
     border-color: @alert-success-border;
     color: @alert-success-color;
 
-    [pam-Alert-Close] {
-        &::before,
-        &::after {
-            background-color: @alert-success-color;
-        }
-    }
-
     .hook-alert-success;
 }
 
@@ -134,13 +110,6 @@
     background-color: @alert-warning-background;
     border-color: @alert-warning-border;
     color: @alert-warning-color;
-
-    [pam-Alert-Close] {
-        &::before,
-        &::after {
-            background-color: @alert-warning-color;
-        }
-    }
 
     .hook-alert-warning;
 }
@@ -154,13 +123,6 @@
     border-color: @alert-danger-border;
     color: @alert-danger-color;
 
-    [pam-Alert-Close] {
-        &::before,
-        &::after {
-            background-color: @alert-danger-color;
-        }
-    }
-
     .hook-alert-danger;
 }
 
@@ -170,26 +132,75 @@
 
 // Callout
 //
-// Callouts has a more emphasized styling and is a alternative way
+// This variation of alerts has a more emphasized styling and is a alternative way
 // to draw attention to information.
 //
 // Markup:
-// <div pam-Alert="callout {{modifier_class}}">Alert message</div>
+// <div pam-Alert="callout {{modifier_class}}">
+//     <h1 pam-Alert-Heading>Title</h1>
+//     <p>Callout message</p>
+// </div>
 //
 // info - This is not important information, carry on.
 // success - Something was successfully done!
 // warning - Yes, this is something to pay attention to!
 // danger - That went sideways!
 //
-// Weight: 2
+// Weight: 6
 //
 // Style guide: alert.callout
 
 [pam-Alert~="callout"] {
     background-color: @alert-callout-background;
+    border-color: @alert-border-color;
     border-left-width: @alert-callout-border-width;
+    color: @alert-color;
+
+    > [pam-Alert-Heading] {
+        color: @alert-border-color;
+    }
 
     .hook-alert-callout;
+}
+
+[pam-Alert~="callout"][pam-Alert~="info"] {
+    border-left-color: @alert-info-color;
+
+    > [pam-Alert-Heading] {
+        color: @alert-info-color;
+    }
+
+    .hook-alert-callout-info;
+}
+
+[pam-Alert~="callout"][pam-Alert~="success"] {
+    border-left-color: @alert-success-color;
+
+    > [pam-Alert-Heading] {
+        color: @alert-success-color;
+    }
+
+    .hook-alert-callout-success;
+}
+
+[pam-Alert~="callout"][pam-Alert~="warning"] {
+    border-left-color: @alert-warning-color;
+
+    > [pam-Alert-Heading] {
+        color: @alert-warning-color;
+    }
+
+    .hook-alert-callout-warning;
+}
+
+[pam-Alert~="callout"][pam-Alert~="danger"] {
+    border-left-color: @alert-danger-color;
+
+    > [pam-Alert-Heading] {
+        color: @alert-danger-color;
+    }
+
+    .hook-alert-callout-danger;
 }
 
 
@@ -202,17 +213,18 @@
 //
 // Markup:
 // <div pam-Alert>
-//     <h2 pam-Alert-Heading>Funny header</h2>
-//     <p>Alert with header can come in handy...</p>
+//     <h2 pam-Alert-Heading>Header</h2>
+//     <p>Alert with a header can come in handy...</p>
 // </div>
 //
-// Weight: 2
+// Weight: 1
 //
 // Style guide: alert.header
 
 [pam-Alert-Heading] {
     color: inherit;
     margin: 0;
+    font-size: @font-size-xlarge;
 
     .hook-alert-heading;
 }
@@ -227,22 +239,27 @@
 //
 // Markup:
 // <div pam-Alert>
-//     This alert has a <a pam-Link pam-Alert-Link src="#">awesome link!</a>
+//     This alert has a <a pam-Alert-Link href="#">awesome link!</a>
 // </div>
 //
-// Weight: 3
+// Weight: 2
 //
 // Style guide: alert.link
 
 [pam-Alert-Link] {
     color: inherit;
     font-weight: @alert-link-font-weight;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 
     .hook-alert-link;
 }
 
 
-//  Sub-Object: pam-Alert-Close
+//  Sub-Object: pam-Close
 // ==================================================================
 
 // Dismissible alerts
@@ -251,66 +268,38 @@
 
 // Close
 //
-// `pam-Alert="close"` Adds styling for closeable alert by expanding
+// `pam-Alert="closeable"` Adds styling for closeable alert by expanding
 // the right padding and make place for the close icon position.
 //
 // Markup:
-// <div pam-Alert="close info">
+// <div pam-Alert="closeable">
 //     <strong>Eyy!</strong> This alert can be terminated, awesome!
-//     <div pam-Close="right"></div>
+//     <div pam-Close="right">×</div>
 // </div>
 //
-// Weight: 5
+// Weight: 4
 //
 // Style guide: alert.close
 
-[pam-Alert~="close"] {
-    padding-right: (@alert-padding * 2 + 8);
+[pam-Alert~="closeable"] {
+    padding-right: (@alert-padding * 2 + @space-8);
     position: relative;
-}
-
-[pam-Alert-Close] {
-    position: absolute;
-    top: @space-16 + 2;
-    right: @space-16;
 }
 
 [pam-Close] {
     color: inherit;
-    height: @space-16;
+    font-size: @font-size-xlarge;
     opacity: 0.5;
-    position: relative;
+    padding: @space-12 @space-16;
+    position: absolute;
+    right: 0;
+    top: 0;
     transition: color 0.3s ease;
-    width: @space-16;
 
     &:hover {
         opacity: 1;
+        cursor: pointer;
     }
-
-    &::before,
-    &::after {
-        color: inherit;
-        position: absolute;
-        left: 7px;
-        content: ' ';
-        height: @space-16;
-        width: 2px;
-        background-color: @alert-color;
-    }
-
-    &::before {
-        transform: rotate(45deg);
-    }
-
-    &::after {
-        transform: rotate(-45deg);
-    }
-}
-
-[pam-Close~="right"] {
-    position: absolute;
-    top: @space-16 + 2;
-    right: @space-16;
 }
 
 
@@ -323,14 +312,14 @@
 // a **fully loaded** alert!
 //
 // Markup:
-// <div pam-Alert="close">
+// <div pam-Alert="closeable">
 //     <h2 pam-Alert-Heading>Fully loaded!</h2>
-//     <p><strong>Oh yeah</strong>, fully loaded with close icon, header and link.</p>
-//     <p>Well, <a pam-Link pam-Alert-Link src="#">that's just crazy!</a></p>
-//     <div pam-Close="right"></div>
+//     <p><strong>Oh yeah</strong>, all alert features closeable, header and link.</p>
+//     <p>Well, <a pam-Alert-Link href="#">that's just crazy!</a></p>
+//     <div pam-Close>×</div>
 // </div>
 //
-// Weight: 9
+// Weight: 5
 //
 // Style guide: alert.fully-loaded
 
@@ -342,6 +331,10 @@
 //
 // `.hook-alert`
 // `.hook-alert-callout`
+// `.hook-alert-callout-danger`
+// `.hook-alert-callout-info`
+// `.hook-alert-callout-success`
+// `.hook-alert-callout-warning`
 // `.hook-alert-danger`
 // `.hook-alert-heading`
 // `.hook-alert-info`
@@ -356,6 +349,10 @@
 /* stylelint-disable block-no-empty */
 .hook-alert() {}
 .hook-alert-callout() {}
+.hook-alert-callout-danger() {}
+.hook-alert-callout-info() {}
+.hook-alert-callout-success() {}
+.hook-alert-callout-warning() {}
 .hook-alert-danger() {}
 .hook-alert-heading() {}
 .hook-alert-info() {}
