@@ -1,9 +1,11 @@
 // Link
 //
-// Apply link styling to `a` elements.
+// Apply link styling to `a` elements for real links or style elements
+// such as `div`, `p`, `span` etc as a link.
 //
 // Markup:
-// <a href="#" pam-Link>Link</a>
+// <a href="#" pam-Link>Anchor</a>
+// <div pam-Link>Element</div>
 //
 // Weight: 11
 //
@@ -13,9 +15,9 @@
 //  Variables
 // ==================================================================
 
-@link-color: @skin-primary;
-@link-decoration: none;
-@link-hover-color: darken(@link-color, 10%);
+@link-color:            @skin-primary;
+@link-decoration:       none;
+@link-hover-color:      darken(@link-color, 10%);
 @link-hover-decoration: underline;
 
 
@@ -28,6 +30,7 @@ a[pam-Link] {
     color: @link-color;
     text-decoration: @link-decoration;
     cursor: pointer;
+
     .hook-link;
 }
 
@@ -37,6 +40,7 @@ a[pam-Link]:focus,
 a[pam-Link]:hover {
     color: @link-hover-color;
     text-decoration: @link-hover-decoration;
+
     .hook-link-hover;
 }
 

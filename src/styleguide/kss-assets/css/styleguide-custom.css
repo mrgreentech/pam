@@ -22,6 +22,10 @@ body.sg {
     max-width: 400px;
 }
 
+.kss-description {
+    margin-bottom: 8px;
+}
+
 .kss-description code {
     padding: 0.2rem 0.4rem;
     font-size: 90%;
