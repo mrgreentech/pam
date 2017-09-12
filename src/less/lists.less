@@ -19,12 +19,12 @@
 //             <div sg-mock-icon></div>
 //         </div>
 //         <div pam-Tile="content">
-//             <h3 pam-typography="subheader">Item content</h3>
+//             <h1 pam-typography="body-2">Item content</h1>
 //         </div>
 //     </div>
 // </div>
 //
-// Weight: -2
+// Weight: 1
 //
 // Style guide: lists.one-line
 
@@ -40,13 +40,13 @@
 //             <div sg-mock-icon></div>
 //         </div>
 //         <div pam-Tile="content">
-//             <h3 pam-typography="subheader">Item content</h3>
-//             <h4 pam-typography="caption">Item content</h4>
+//             <h1 pam-typography="body-2">Item content</h1>
+//             <p>Item content</p>
 //         </div>
 //     </div>
 // </div>
 //
-// Weight: -1
+// Weight: 2
 //
 // Style guide: lists.two-line
 
@@ -63,12 +63,14 @@
 //             <div sg-mock-icon></div>
 //         </div>
 //         <div pam-Tile="content">
-//             <h3 pam-typography="subheader">Item content</h3>
-//             <h4 pam-typography="caption">Item content</h4>
+//             <h1 pam-typography="body-2">Item content</h1>
+//             <p>Item content</p>
 //             <p>Item content</p>
 //         </div>
 //     </div>
 // </div>
+//
+// Weight: 3
 //
 // Style guide: lists.three-line
 
@@ -84,13 +86,15 @@
 //             <div sg-mock-icon></div>
 //         </div>
 //         <div pam-Tile="content">
-//             <h3 pam-typography="subheader">Item content</h3>
+//             <h1 pam-typography="body-2">Item content</h1>
 //         </div>
 //             <div pam-Tile="right">
 //             <div sg-mock-icon></div>
 //         </div>
 //     </div>
 // </div>
+//
+// Weight: 4
 //
 // Style guide: lists.three-part
 
@@ -107,8 +111,8 @@
 //             <div sg-mock-icon></div>
 //         </div>
 //         <div pam-Tile="content">
-//             <h3 pam-typography="subheader">Item content</h3>
-//             <h4 pam-typography="caption">Item content</h4>
+//             <h1 pam-typography="body-2">Item content</h1>
+//             <p>Item content</p>
 //             <p>Item content</p>
 //         </div>
 //     </div>
@@ -118,8 +122,8 @@
 //             <div sg-mock-icon></div>
 //         </div>
 //         <div pam-Tile="content">
-//             <h3 pam-typography="subheader">Item content</h3>
-//             <h4 pam-typography="caption">Item content</h4>
+//             <h1 pam-typography="body-2">Item content</h1>
+//             <p>Item content</p>
 //             <p>Item content</p>
 //         </div>
 //     </div>
@@ -129,22 +133,27 @@
 //             <div sg-mock-icon></div>
 //         </div>
 //         <div pam-Tile="content">
-//             <h3 pam-typography="subheader">Item content</h3>
-//             <h4 pam-typography="caption">Item content</h4>
+//             <h1 pam-typography="body-2">Item content</h1>
+//             <p>Item content</p>
 //             <p>Item content</p>
 //         </div>
 //     </div>
 // </div>
 //
-// Weight: 9
+// Weight: 5
 //
 // Style guide: lists.divider
 
 [pam-List] {
-    padding: @space-8 0 @space-8 0;
+    // padding: @space-8 0;
 
     .hook-list;
 }
+
+* + [pam-List] {
+    padding-top: @space-8;
+}
+
 
 [pam-Item] {
     align-items: center;
@@ -179,21 +188,15 @@
     text-overflow: ellipsis;
     width: 100%;
 
-    [pam-Subheader] {
-        font-size: @space-16;
-        font-weight: 300;
-        margin: 0;
-    }
-
-    [pam-Caption] {
-        font-size: 12px;
-        font-weight: 300;
+    [pam-typography="body-1"],
+    [pam-typography="body-2"],
+    p {
         margin: 0;
     }
 
     p {
-        font-size: @font-size-xxsmall;
-        margin: 0;
+        font-size: @font-size-medium;
+        color: @skin-text-primary;
     }
 
     .hook-tile-content;
