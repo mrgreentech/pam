@@ -1,6 +1,6 @@
 // Tags
 //
-// Apply tags to contextual highlight content.
+// Contextual highlight content with tags which can be a label, tag or a indicator.
 //
 // Markup:
 // <h1 pam-typography="display">Example <span pam-Tag="{{modifier_class}}">Updated</span></h1>
@@ -16,26 +16,26 @@
 //  Variables
 // ==================================================================
 
-@tag-background: #969696;
-@tag-border-radius: @border-radius-base;
-@tag-color: @skin-text;
-@tag-font-size: 65%;
-@tag-font-weight: @font-weight-normal;
-@tag-line-height: @line-height-normal;
-@tag-padding-horizontal: 6px;
-@tag-padding-vertical: 3px;
-@tag-text-transform: none;
+@tag-background:            @skin-dark;
+@tag-border-radius:         @border-radius-base;
+@tag-color:                 @skin-text;
+@tag-font-size:             65%;
+@tag-font-weight:           @font-weight-normal;
+@tag-line-height:           @line-height-normal;
+@tag-padding-horizontal:    6px;
+@tag-padding-vertical:      3px;
+@tag-text-transform:        none;
 
 @tag-rounded-border-radius: 500px;
-@tag-rounded-font-size: 65%;
-@tag-rounded-line-height: @line-height-normal;
-@tag-rounded-min-width: @space-16;
+@tag-rounded-font-size:     65%;
+@tag-rounded-line-height:   @line-height-normal;
+@tag-rounded-min-width:     @space-16;
 
-@tag-primary-background: @skin-primary;
-@tag-success-background: @skin-success;
-@tag-info-background: @skin-info;
-@tag-danger-background: @skin-danger;
-@tag-warn-background: @skin-warn;
+@tag-primary-background:    @skin-primary;
+@tag-success-background:    @skin-success;
+@tag-info-background:       @skin-info;
+@tag-danger-background:     @skin-danger;
+@tag-warn-background:       @skin-warn;
 
 
 // ==================================================================
@@ -44,6 +44,7 @@
 
 [pam-Tag] {
     background: @tag-background;
+    border-radius: @tag-border-radius;
     box-sizing: border-box;
     color: @tag-color;
     display: inline-block;
@@ -54,7 +55,6 @@
     text-align: center;
     text-transform: @tag-text-transform;
     vertical-align: middle;
-    border-radius: @tag-border-radius;
 
     .hook-tag;
 }
@@ -74,6 +74,8 @@
 // <span pam-Tag="rounded">22</span>
 // <span pam-Tag="rounded">333</span>
 //
+//  Weight: 1
+//
 // Style guide: tags.rounded
 
 [pam-Tag~="rounded"] {
@@ -91,7 +93,7 @@
 
 // Variations
 //
-// Changes the tags contextual apperance.
+// Change the tags contextual apperance by using the available variations.
 //
 // Markup:
 // <span pam-Tag>Default</span>
@@ -100,6 +102,8 @@
 // <span pam-Tag="info">Info</span>
 // <span pam-Tag="warn">warn</span>
 // <span pam-Tag="danger">danger</span>
+//
+//  Weight: 2
 //
 // Style guide: tags.variations
 
