@@ -50,9 +50,9 @@ $ npm run build
     It starts by linting all the less files in the source with `stylelint`.
     After that gulp takes over and starts of by cleaning the build folders and copying the less source files to the build folder. Then files are concated and stamped with license banners. Now the less can be parsed to css which result in the `pam.css` file. The final step is to minify the css and then prepare the styleguide build by copying `pam.css` to the `styleguide` folder. Now it's time to build the styleguide and when that's done a file size report is shown in the console.
 
-* **watch:** `npm run watch`
+* **dev:** `npm run dev`
 
-    This one is a mind bender. It starts of by doing a `build`, after that it runs browsersync and onchange in parallel. So that when a change in the `src` folder is done a build is triggered and when the files in the `build` folder is updated browsersync updates the browser with the changes.
+    This is the one to use for local development of PAM and it's kind of a mind bender. It starts of by doing a `build`, after that it runs browsersync and onchange in parallel. So that when a change in the `src` folder is done a build is triggered and when the files in the `build` folder is updated browsersync updates the browser with the changes.
 
 * **dist:** `npm run dist`
 
