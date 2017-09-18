@@ -301,8 +301,8 @@
 // ==================================================================
 
 [pam-Grid] {
-    letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
-    text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
+    letter-spacing: -0.31em;
+    text-rendering: optimizespeed;
     font-family: Arial, sans-serif;
     display: -webkit-box;
     display: flex;
@@ -780,29 +780,6 @@
 
 [pam-Grid][pam-Grid-Control~="align-content:stretch"] {
     align-content: stretch;
-}
-
-
-// Unit mixin
-// ==================================================================
-
-// .grid-units(@columns, @startIndex, @prefix)
-//
-// Generate number of requested columns starting from given number
-// and optional adds a passed prefixed value.
-//
-// @columns - Number of columns.
-// @startIndex = 1 - What number to start on.
-// @prefix = '' - Attribute value prefix.
-//
-// Style guide: mixins.grid-units
-
-.grid-units(@columns, @startIndex: 1, @prefix: '') when (@startIndex =< @columns) {
-    [pam-Unit~="@{prefix}@{startIndex}-@{columns}"] {
-        width: (@startIndex * 100% / @columns);
-    }
-
-    .grid-units(@columns, (@startIndex + 1), @prefix);
 }
 
 
