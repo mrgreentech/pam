@@ -46,7 +46,7 @@
 @skin-text-lighter:   @skin-lighter;
 
 
-// Layout spacing
+// Spacing
 // ==================================================================
 
 @space-base: 4px;
@@ -75,6 +75,16 @@
 @space-96:   @space-base * 24;
 @space-100:  @space-base * 25;
 
+@space-x:    @space-base;
+@space-x2:   @space-base * 2;
+@space-x3:   @space-base * 3;
+@space-x4:   @space-base * 4;
+@space-x5:   @space-base * 5;
+@space-x6:   @space-base * 6;
+@space-x8:   @space-base * 7;
+@space-x9:   @space-base * 8;
+@space-x10:  @space-base * 9;
+
 
 // Z-index topography
 // ==================================================================
@@ -93,8 +103,6 @@
 // Typography
 // ==================================================================
 
-// TODO: Add more font-sizes
-
 @font-url:              'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700';
 @font-family:           'Roboto', sans-serif;
 
@@ -107,6 +115,13 @@
 @font-size-larger:      1.25rem;   // 20px
 @font-size-xlarge:      1.5rem;    // 24px
 @font-size-xxlarge:     3.5rem;    // 56px
+
+@font-size-h1:          2.5rem;
+@font-size-h2:          2rem;
+@font-size-h3:          1.75rem;
+@font-size-h4:          1.5rem;
+@font-size-h5:          1.25rem;
+@font-size-h6:          1rem;
 
 @line-height-normal:    normal;
 @line-height-base:      1;
@@ -128,10 +143,26 @@
 @breakpoint-xlarge: 1200px;
 
 
-// Components
+// Border radius
 // ==================================================================
 
-@border-radius-base: 2px;
-@border-color:       #e3e3e3;
+@border-radius-small: 2px;
+@border-radius-base:  4px;
+@border-radius-large: 8px;
 
-@opacity-base:       0.6;
+
+// Opacity
+// ==================================================================
+
+@opacity-less:      0.8;
+@opacity-base:      0.6;
+@opacity-more:      0.4;
+
+
+// Transition
+// ==================================================================
+
+@transition-duration: 0.3s;
+@transition-property: all;
+@transition-timing:   ease-in-out;
+@transition-base:     @transition-property @transition-duration @transition-timing;
