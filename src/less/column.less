@@ -1,0 +1,90 @@
+// Column
+//
+// `pam-Column` use the native CSS multi-column layout
+//  to allow easy definition of multiple columns in a text.
+//
+// Markup:
+// <p pam-Column="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dictum congue fringilla. Suspendisse ut pellentesque dolor. Sed eget arcu posuere, elementum nibh id, porta ligula. Nulla gravida tortor sem, et venenatis tellus vestibulum at. Maecenas at velit eu felis placerat dictum eu eget erat. Duis ornare mi id massa feugiat efficitur. Fusce cursus sollicitudin volutpat. Integer egestas nunc dictum ornare laoreet. Phasellus dignissim lacinia tortor ac vehicula. In ac porttitor purus. In massa enim, elementum eget gravida in, efficitur a sem. Aliquam erat volutpat. Nunc a tellus sapien.</p>
+//
+// Weight: 14
+//
+// Style guide: column
+
+
+// Variables
+// ==================================================================
+
+
+// ==================================================================
+//  Column
+// ==================================================================
+
+[pam-Column] {
+    columns: 1 auto;
+    column-gap: @space-16;
+
+    .hook-column;
+}
+
+
+// Columns modifier
+// ==================================================================
+
+[pam-Column~="2"] {
+    columns: 2 auto;
+}
+
+[pam-Column~="3"] {
+    columns: 3 auto;
+}
+
+[pam-Column~="4"] {
+    columns: 4 auto;
+}
+
+[pam-Column~="5"] {
+    columns: 5 auto;
+}
+
+// Width modifier
+// ==================================================================
+
+[pam-Column~="width:small"] {
+    column-width: 100px;
+}
+
+[pam-Column~="width:medium"] {
+    column-width: 200px;
+}
+
+[pam-Column~="width:large"] {
+    column-width: 400px;
+}
+
+
+// Gap modifier
+// ==================================================================
+
+[pam-Column~="gap:small"] {
+    column-gap: @space-8;
+}
+
+[pam-Column~="gap:large"] {
+    column-gap: @space-24;
+}
+
+
+// Hooks
+// ==================================================================
+
+// Hooks
+//
+// `.hook-column`
+//
+// Weight: 10
+//
+// Style guide: column.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-column() {}
+/* stylelint-enable */
