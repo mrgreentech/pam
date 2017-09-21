@@ -1,10 +1,10 @@
 // Column
 //
-// `pam-Column` use the native CSS multi-column layout
-//  to allow easy definition of multiple columns in a text.
+// `pam-Column="[2-5]"` use the native CSS multi-column layout
+//  to allow easy definition of multiple columns in a text. Onte to five columns are supported.
 //
 // Markup:
-// <p pam-Column="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dictum congue fringilla. Suspendisse ut pellentesque dolor. Sed eget arcu posuere, elementum nibh id, porta ligula. Nulla gravida tortor sem, et venenatis tellus vestibulum at. Maecenas at velit eu felis placerat dictum eu eget erat. Duis ornare mi id massa feugiat efficitur. Fusce cursus sollicitudin volutpat. Integer egestas nunc dictum ornare laoreet. Phasellus dignissim lacinia tortor ac vehicula. In ac porttitor purus. In massa enim, elementum eget gravida in, efficitur a sem. Aliquam erat volutpat. Nunc a tellus sapien.</p>
+// <p pam-Column="3">Sed consequat vulputate ornare. Etiam non orci quis ligula posuere pretium. Duis a mollis turpis. Curabitur tincidunt, orci ac pulvinar auctor, libero eros luctus dui, non posuere dolor neque ultrices dolor. Suspendisse vehicula, erat vel malesuada bibendum, purus magna rhoncus sem, in faucibus lacus leo a massa. Aliquam metus massa, mattis eu lorem ac, vestibulum rutrum nunc. Donec sagittis quam nec libero semper lobortis.</p>
 //
 // Weight: 14
 //
@@ -14,63 +14,104 @@
 // Variables
 // ==================================================================
 
+@column-count:        1;
+@column-gap:          1;
+@column-width:        auto;
+
+@column-width-small:  100px;
+@column-width-medium: 200px;
+@column-width-large:  400px;
+
+@column-gap-small:    @space-8;
+@column-gap-medium:   @space-16;
+@column-gap-large:    @space-24;
+
 
 // ==================================================================
 //  Column
 // ==================================================================
 
 [pam-Column] {
-    columns: 1 auto;
+    columns: @column-count @column-width;
     column-gap: @space-16;
 
     .hook-column;
 }
 
 
-// Columns modifier
+// Modifier: Column count
 // ==================================================================
 
 [pam-Column~="2"] {
-    columns: 2 auto;
+    column-count: 2;
 }
 
 [pam-Column~="3"] {
-    columns: 3 auto;
+    column-count: 3;
 }
 
 [pam-Column~="4"] {
-    columns: 4 auto;
+    column-count: 4;
 }
 
 [pam-Column~="5"] {
-    columns: 5 auto;
+    column-count: 5;
 }
 
-// Width modifier
+
+// Modifier: Column width
 // ==================================================================
 
+// Width
+//
+// Use `pam-Column="width:[small|medium|large]"` to declare the min-width of the columns.
+// `Small` is 100px, `medium` is 200px and `large` is 400px.
+//
+// Markup:
+// <p pam-Column="3 width:large">Sed consequat vulputate ornare. Etiam non orci quis ligula posuere pretium. Duis a mollis turpis. Curabitur tincidunt, orci ac pulvinar auctor, libero eros luctus dui, non posuere dolor neque ultrices dolor. Suspendisse vehicula, erat vel malesuada bibendum, purus magna rhoncus sem, in faucibus lacus leo a massa. Aliquam metus massa, mattis eu lorem ac, vestibulum rutrum nunc. Donec sagittis quam nec libero semper lobortis.</p>
+//
+// Weight: 2
+//
+// Style guide: column.width
+
 [pam-Column~="width:small"] {
-    column-width: 100px;
+    column-width: @column-width-small;
 }
 
 [pam-Column~="width:medium"] {
-    column-width: 200px;
+    column-width: @column-width-medium;
 }
 
 [pam-Column~="width:large"] {
-    column-width: 400px;
+    column-width: @column-width-large;
 }
 
 
-// Gap modifier
+// Modifier: Column gap
 // ==================================================================
 
+// Gap
+//
+// Use `pam-Column="gap:[small|medium|large]"` to adjust the gutter, or the space
+// between columns. `Small` is 8px, `medium` is 16px (default) and `large` is 24px.
+//
+// Markup:
+// <p pam-Column="3 gap:large">Sed consequat vulputate ornare. Etiam non orci quis ligula posuere pretium. Duis a mollis turpis. Curabitur tincidunt, orci ac pulvinar auctor, libero eros luctus dui, non posuere dolor neque ultrices dolor. Suspendisse vehicula, erat vel malesuada bibendum, purus magna rhoncus sem, in faucibus lacus leo a massa. Aliquam metus massa, mattis eu lorem ac, vestibulum rutrum nunc. Donec sagittis quam nec libero semper lobortis.</p>
+//
+// Weight: 3
+//
+// Style guide: column.gap
+
 [pam-Column~="gap:small"] {
-    column-gap: @space-8;
+    column-gap: @column-gap-small;
+}
+
+[pam-Column~="gap:medium"] {
+    column-gap: @column-gap-medium;
 }
 
 [pam-Column~="gap:large"] {
-    column-gap: @space-24;
+    column-gap: @column-gap-large;
 }
 
 
