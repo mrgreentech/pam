@@ -27,11 +27,44 @@ body.sg {
 }
 
 .kss-description code {
-    padding: 0.2rem 0.4rem;
-    font-size: 90%;
-    color: #bd4147;
-    background-color: #f7f7f9;
+    background-color: #fbfbfb;
     border-radius: 0.25rem;
+    color: #bd4147;
+    font-size: 90%;
+    padding: 0.2rem 0.4rem;
+}
+
+#kss-node .kss-style.kss-markup {
+    border-top: none;
+    margin: 0 0 24px;
+}
+
+#kss-node .kss-style.kss-markup summary {
+    padding: 8px 10px;
+    margin: 0;
+}
+
+#kss-node .kss-style.kss-markup summary:focus {
+    outline: none;
+}
+
+#kss-node .kss-markup[open] summary {
+    background-color: #eee;
+}
+
+.kss-style.kss-markup pre {
+    background-color: #fbfbfb;
+    overflow: auto;
+    padding: 8px;
+}
+
+#kss-node .kss-style.kss-markup pre ol.linenums {
+    padding: 0;
+}
+
+#kss-node .kss-style.kss-markup pre ol.linenums li {
+    background-color: #fbfbfb;
+    border: none;
 }
 
 /* Styleguide custom */
