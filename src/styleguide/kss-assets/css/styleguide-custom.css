@@ -27,15 +27,25 @@ body.sg {
 }
 
 .kss-description code {
-    background-color: #fbfbfb;
+    background-color: #f9f9f9;
     border-radius: 0.25rem;
     color: #bd4147;
     font-size: 90%;
     padding: 0.2rem 0.4rem;
 }
 
+#kss-node .kss-modifier__wrapper {
+    border-color: #e0e0e0;
+}
+
+#kss-node .kss-modifier__heading {
+    background-color: #f9f9f9;
+    border-bottom-color: #e0e0e0;
+}
+
 #kss-node .kss-style.kss-markup {
     border-top: none;
+    border-color: #e0e0e0;
     margin: 0 0 24px;
 }
 
@@ -49,11 +59,11 @@ body.sg {
 }
 
 #kss-node .kss-markup[open] summary {
-    background-color: #eee;
+    border-bottom-color: #e0e0e0;
 }
 
 .kss-style.kss-markup pre {
-    background-color: #fbfbfb;
+    background-color: #f9f9f9;
     overflow: auto;
     padding: 8px;
 }
@@ -63,9 +73,20 @@ body.sg {
 }
 
 #kss-node .kss-style.kss-markup pre ol.linenums li {
-    background-color: #fbfbfb;
+    background-color: #f9f9f9;
     border: none;
 }
+
+#kss-node .kss-toolbar {
+    background-color: #f9f9f9;
+    border: none;
+    display: inline-block;
+    float: right;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
 
 /* Styleguide custom */
 
