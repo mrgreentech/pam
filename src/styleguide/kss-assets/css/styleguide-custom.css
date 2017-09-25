@@ -18,6 +18,19 @@ body.sg {
     font-family: 'Roboto', sans-serif;
 }
 
+#kss-node .kss-main.kss-homepage .kss-section {
+    margin: 0;
+}
+
+@media screen and (min-width: 769px) {
+    #kss-node .kss-main.kss-homepage {
+        height: 100%;
+        margin-left: 0;
+        padding: 0;
+        width: 100%;
+    }
+}
+
 .kss-overview img {
     max-width: 400px;
 }
@@ -107,11 +120,11 @@ body.sg {
 /* Styleguide custom */
 
 [sg-Hero] {
-    padding: 24px;
     box-sizing: border-box;
+    height: 100vh;
+    margin: 0;
+    padding: 24px;
     text-align: center;
-    margin-left: -30px;
-    margin-right: -20px;
 }
 
 [sg-Hero] ul,

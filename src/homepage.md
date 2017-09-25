@@ -1,4 +1,4 @@
-<div sg-Hero pam-skin="lighter">
+<div sg-Hero>
     <header sg-Hero-Header>
         <div>
             <img
@@ -8,10 +8,10 @@
                 sg-Hero-Img>
         </div>
         <h2 sg-Hero-Punchline pam-typography="display">
-            CSS library with an opinion
+            CSS with an opinion
         </h2>
         <p pam-typography="subheading">
-            Let us present our take on an opiniated CSS library. It's skinny, bold and easy to use.
+            It's skinny, bold and easy to use.
         </p>
     </header>
     <div sg-Hero-Cta>

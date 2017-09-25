@@ -13,6 +13,16 @@
 </head>
 <body id="kss-node" {{#if template.isItem}}class="kss-fullscreen-mode"{{/if}}>
 
+
+{{#if template.isHomepage}}
+  <article role="main" class="kss-main kss-homepage">
+  {{#if homepage}}
+    <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
+      {{{homepage}}}
+    </div>
+  {{/if}}
+  </article>
+{{else}}
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
     <h1 class="kss-doc-title">{{options.title}}</h1>
@@ -221,6 +231,7 @@
   {{/each}}
 {{/if}}
 </article>
+{{/if}}
 
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
