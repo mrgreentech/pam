@@ -78,15 +78,31 @@ body.sg {
 }
 
 #kss-node .kss-toolbar {
+    display: none;
     background-color: #f9f9f9;
     border: none;
-    display: inline-block;
     float: right;
     line-height: 1;
     margin: 0;
     padding: 0;
 }
 
+@media screen and (min-width: 768px) {
+    #kss-node .kss-toolbar {
+        display: inline-block;
+    }
+}
+
+#kss-node .kss-toolbar__tooltip {
+    right: -10px;
+    left: auto;
+}
+
+#kss-node .kss-toolbar__tooltip::before,
+#kss-node .kss-toolbar__tooltip::after {
+    right: 15px;
+    left: auto;
+}
 
 /* Styleguide custom */
 
