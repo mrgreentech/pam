@@ -18,7 +18,36 @@
   <article role="main" class="kss-main kss-homepage">
   {{#if homepage}}
     <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
+      <header sg-header>
+        <div pam-Grid pam-Grid-Control="align:end">
+            <div pam-Unit="1-5">
+                <img
+                  src="kss-assets/img/logo.svg"
+                  alt="PAM"
+                  title="© 2016 Mr Green Tech All Rights Reserved"
+                  height="48"
+                  width="48"
+                  sg-Logo>
+            </div>
+            <div pam-Unit="4-5">
+                <div pam-Menu sg-Nav>
+                    <ul pam-Menu-List>
+                        <li pam-Menu-Item>
+                          <a href="https://github.com/mrgreentech/pam/blob/master/HISTORY.md" pam-Menu-Link>Changelog</a>
+                        </li>
+                        <li pam-Menu-Item>
+                          <a href="https://github.com/mrgreentech/pam/issues" pam-Menu-Link>Issues</a>
+                        </li>
+                        <li pam-Menu-Item>
+                          <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="small">Download</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </header>
       {{{homepage}}}
+      <footer sg-footer></footer>
     </div>
   {{/if}}
   </article>

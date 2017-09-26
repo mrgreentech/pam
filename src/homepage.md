@@ -7,11 +7,11 @@
                 title="© 2016 Mr Green Tech All Rights Reserved"
                 sg-Hero-Img>
         </div>
-        <h2 sg-Hero-Punchline pam-typography="display">
-            CSS with an opinion
+        <h2 sg-Hero-Punchline pam-typography="headline">
+            CSS with attitude
         </h2>
-        <p pam-typography="subheading">
-            It's skinny, bold and easy to use.
+        <p pam-typography="headline">
+            It's skinny, bold and simply awesome.
         </p>
     </header>
     <div sg-Hero-Cta>
