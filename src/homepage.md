@@ -15,7 +15,7 @@
         </p>
     </header>
     <div sg-Hero-Cta>
-        <a href="./section-grids.html" pam-Button="primary large">The docs</a>
+        <a href="./section-getting-started.html" pam-Button="primary large">The docs</a>
         <a href="https://github.com/mrgreentech/pam" pam-Button="tertiary large">GitHub</a>
     </div>
     <footer>

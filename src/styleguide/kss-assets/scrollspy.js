@@ -44,14 +44,9 @@
           this.win = window;
 
           this.winH = this.win.innerHeight;
-
           this.className = opt.className;
-
           this.callback = opt.callback;
-
           this.header = this.wrapper.querySelectorAll('[sg-Header]');
-          console.log(this.header);
-
           this.init();
         }
 
