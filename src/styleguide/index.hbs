@@ -16,13 +16,15 @@
 <header sg-header>
   <div pam-Grid pam-Grid-Control="align:center">
       <div pam-Unit="1-5">
-          <img
-            src="kss-assets/img/logo.svg"
-            alt="PAM"
-            title="© 2016 Mr Green Tech All Rights Reserved"
-            height="48"
-            width="48"
-            sg-Logo>
+          <a href="./">
+            <img
+              src="kss-assets/img/logo.svg"
+              alt="PAM"
+              title="© 2016 Mr Green Tech All Rights Reserved"
+              height="48"
+              width="48"
+              sg-Logo>
+          </a>
       </div>
       <div pam-Unit="4-5">
           <div pam-Menu sg-Nav>
@@ -54,7 +56,7 @@
   {{else}}
   <div class="kss-sidebar kss-style">
     <header class="kss-header">
-      <h1 class="kss-doc-title">{{options.title}}</h1>
+      <h1 class="kss-doc-title">Documentation</h1>
     </header>
     <nav class="kss-nav">
       <ul class="kss-nav__menu">
@@ -65,7 +67,7 @@
           </a>
         </li>
       {{#each menu}}
-        <li class="kss-nav__menu-item">
+        <li class="kss-nav__menu-item" {{#if isActive}}active{{/if}}>
           <a class="kss-nav__menu-link" href="section-{{referenceURI}}.html">
             <span class="kss-nav__ref">{{referenceNumber}}</span><span class="kss-nav__name">{{header}}</span>
           </a>

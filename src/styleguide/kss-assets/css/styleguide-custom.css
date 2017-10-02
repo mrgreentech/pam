@@ -31,23 +31,61 @@ body {
     width: 100%;
 }
 
+#kss-node .kss-main.kss-homepage .kss-section {
+    margin: 0;
+}
+
+#kss-node .kss-nav__menu-link {
+    font-weight: 300;
+    transition: font-weight 0.4s;
+}
+
+#kss-node .kss-nav__menu-link.is-in-viewport {
+    font-weight: 700;
+}
+
+#kss-node .kss-nav__menu-link.is-in-viewport::before {
+    background-color: #0645ad;
+    width: 12px;
+    height: 2px;
+}
+
+#kss-node .kss-nav__ref {
+    display: none;
+}
+
+#kss-node .kss-title,
+#kss-node .kss-doc-title {
+    font-weight: 300;
+}
+
 @media screen and (min-width: 769px) {
     #kss-node .kss-main.kss-homepage {
         margin-left: 0;
         padding: 0;
         width: 100%;
     }
-}
 
-#kss-node .kss-main.kss-homepage .kss-section {
-    margin: 0;
-}
-
-@media screen and (min-width: 769px) {
     #kss-node .kss-sidebar {
         background: none;
         box-shadow: none;
         border-right: 1px solid #e0e0e0;
+    }
+
+    #kss-node .kss-nav__menu-item[active] {
+        margin-top: 8px;
+    }
+
+    #kss-node .kss-nav__menu-item[active] > .kss-nav__menu-link .kss-nav__name {
+        font-weight: 500;
+    }
+
+    #kss-node .kss-nav__menu-child {
+        font-size: 0.875rem;
+    }
+
+    #kss-node .kss-nav__menu-link::before {
+        top: 10px;
     }
 }
 
