@@ -85,6 +85,10 @@
     border-bottom-color: #e0e0e0;
 }
 
+#kss-node .kss-style p {
+    margin: 8px 0 16px;
+}
+
 #kss-node .kss-style.kss-markup {
     border-color: #e0e0e0;
     margin: 0 0 24px;
@@ -126,6 +130,10 @@
     line-height: 1;
     margin: 0;
     padding: 0;
+}
+
+#kss-node .kss-style p.kss-toolbar {
+    margin: 0;
 }
 
 @media screen and (min-width: 768px) {
