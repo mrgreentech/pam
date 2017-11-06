@@ -21,7 +21,9 @@
     <footer>
         <div pam-Menu="vertical">
             <ul pam-Menu-List>
-                <li pam-Menu-Item>[[version]]</li>
+                <li pam-Menu-Item>
+                    <span pam-Tag>Version [[version]]</span>
+                </li>
             </ul>
         </div>
     </footer>

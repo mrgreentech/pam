@@ -319,6 +319,10 @@ section.sg-block.sg-section-hooks code {
     height: 150px;
 }
 
+[sg-Link] {
+    display: inline-block;
+}
+
 [pam-Unit-Test] {
     background-color: #008ed5;
     color: #fff;
