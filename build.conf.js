@@ -73,7 +73,8 @@ module.exports = () => {
         },
         dist: {
             base: distBase,
-            less: `${distBase}less/`
+            less: `${distBase}less/`,
+            styleGuide: `${distBase}styleguide/`
         },
         node: {
             normalize: './node_modules/normalize.css/normalize.css'
