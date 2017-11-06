@@ -3,10 +3,10 @@ const pkg = require('./package.json');
 module.exports = () => {
     'use strict';
 
-    const version   = `v${pkg.version}`;
+    const version = `${pkg.version}`;
     const buildBase = './build/';
-    const srcBase   = './src/';
-    const distBase  = './dist/';
+    const srcBase = './src/';
+    const distBase = './dist/';
 
     const supportedBrowsers = [
         'Chrome >= 35',
@@ -45,7 +45,7 @@ module.exports = () => {
             'Copyright (c) Nicolas Gallagher and Jonathan Neal',
             '*/\n\n'
         ].join('\n')
-    }
+    };
 
     return {
         version: version,
@@ -73,7 +73,8 @@ module.exports = () => {
         },
         dist: {
             base: distBase,
-            less: `${distBase}less/`
+            less: `${distBase}less/`,
+            styleGuide: `${distBase}styleguide/`
         },
         node: {
             normalize: './node_modules/normalize.css/normalize.css'

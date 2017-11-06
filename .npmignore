@@ -1,0 +1,9 @@
+# Folders
+src/
+
+# Files
+*.json
+*.js
+
+# Dot files
+*.*
