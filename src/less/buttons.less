@@ -120,7 +120,8 @@
 //  Button
 // ==================================================================
 
-[pam-Button] {
+[pam-Button],
+a[pam-Button] {
     background-color: @button-background;
     border-radius: @button-border-radius;
     border: @button-border;
@@ -146,25 +147,34 @@
 }
 
 [pam-Button]:hover,
-[pam-Button]:focus {
+a[pam-Button]:hover,
+[pam-Button]:focus,
+a[pam-Button]:focus {
     background-color: @button-hover-background;
 
     .hook-button-hover;
 }
 
 [pam-Button~="active"],
-[pam-Button]:active {
+[pam-Button]:active,
+a[pam-Button]:active {
     background-color: darken(@button-hover-background, @button-darken);
 
     .hook-button-active;
 }
 
-[pam-Button]:focus {
+[pam-Button]:focus,
+a[pam-Button]:focus {
     outline: 0;
 }
 
-/* Firefox: Get rid of the inner focus border */
-[pam-Button]::-moz-focus-inner {
+[pam-Button]:visited,
+a[pam-Button]:visited {
+    color: @button-color;
+}
+
+[pam-Button]::-moz-focus-inner,
+a[pam-Button]::-moz-focus-inner {
     padding: 0;
     border: 0;
 }
@@ -204,7 +214,8 @@
 
 //  hidden
 
-[pam-Button~="hidden"] {
+[pam-Button~="hidden"],
+a[pam-Button~="hidden"] {
     display: none;
 
     .hook-button-hidden;
@@ -249,6 +260,10 @@ a[pam-Button~="primary"] {
         color: @button-primary-color;
     }
 
+    &:visited {
+        color: @button-primary-color;
+    }
+
     .hook-button-primary;
 }
 
@@ -267,6 +282,10 @@ a[pam-Button~="secondary"] {
 
     &:active {
         background-color: darken(@button-secondary-background, @button-darken);
+    }
+
+    &:visited {
+        color: @button-secondary-color;
     }
 
     .hook-button-secondary;
@@ -294,6 +313,10 @@ a[pam-Button~="tertiary"] {
         color: @button-tertiary-active-color;
     }
 
+    &:visited {
+        color: @button-tertiary-color;
+    }
+
     .hook-button-tertiary;
 }
 
@@ -313,6 +336,10 @@ a[pam-Button~="link"] {
         background-color: initial;
         color: @button-link-hover-color;
         text-decoration: @button-link-hover-decoration;
+    }
+
+    &:visited {
+        color: @button-link-color;
     }
 
     .hook-button-link;
@@ -354,6 +381,10 @@ a[pam-Button~="info"] {
         background-color: darken(@button-info-background, @button-darken);
     }
 
+    &:visited {
+        color: @button-info-color;
+    }
+
     .hook-button-info;
 }
 
@@ -372,6 +403,10 @@ a[pam-Button~="success"] {
 
     &:active {
         background-color: darken(@button-success-background, @button-darken);
+    }
+
+    &:visited {
+        color: @button-success-color;
     }
 
     .hook-button-success;
@@ -394,6 +429,10 @@ a[pam-Button~="warning"] {
         background-color: darken(@button-warning-background, @button-darken);
     }
 
+    &:visited {
+        color: @button-warning-color;
+    }
+
     .hook-button-warning;
 }
 
@@ -412,6 +451,10 @@ a[pam-Button~="danger"] {
 
     &:active {
         background-color: darken(@button-danger-background, @button-darken);
+    }
+
+    &:visited {
+        color: @button-danger-color;
     }
 
     .hook-button-danger;
@@ -492,7 +535,7 @@ a[pam-Button~="small"] {
 // mini
 
 [pam-Button-Group~="mini"] > [pam-Button],
-[pam-Button-Group~="mini"] > [pam-Button],
+[pam-Button-Group~="mini"] > a[pam-Button],
 [pam-Button~="mini"],
 a[pam-Button~="mini"] {
     font-size: @button-mini-font-size;
@@ -520,7 +563,8 @@ a[pam-Button~="mini"] {
 //
 // Style guide: buttons.raised
 
-[pam-Button~="raised"] {
+[pam-Button~="raised"],
+a[pam-Button~="raised"] {
     border-color: transparent;
     box-shadow: @button-raised-box-shadow;
 
@@ -547,7 +591,8 @@ a[pam-Button~="mini"] {
 //
 // Style guide: buttons.flat
 
-[pam-Button~="flat"] {
+[pam-Button~="flat"],
+a[pam-Button~="flat"] {
     background-color: transparent;
     border-color: transparent;
     color: @skin-text-primary;
@@ -564,27 +609,33 @@ a[pam-Button~="mini"] {
     .hook-button-flat;
 }
 
-[pam-Button~="flat"][pam-Button~="primary"] {
+[pam-Button~="flat"][pam-Button~="primary"],
+a[pam-Button~="flat"][pam-Button~="primary"] {
     color: @button-primary-background;
 }
 
-[pam-Button~="flat"][pam-Button~="secondary"] {
+[pam-Button~="flat"][pam-Button~="secondary"],
+a[pam-Button~="flat"][pam-Button~="secondary"] {
     color: @button-secondary-background;
 }
 
-[pam-Button~="flat"][pam-Button~="info"] {
+[pam-Button~="flat"][pam-Button~="info"],
+a[pam-Button~="flat"][pam-Button~="info"] {
     color: @button-info-background;
 }
 
-[pam-Button~="flat"][pam-Button~="success"] {
+[pam-Button~="flat"][pam-Button~="success"],
+a[pam-Button~="flat"][pam-Button~="success"] {
     color: @button-success-background;
 }
 
-[pam-Button~="flat"][pam-Button~="warning"] {
+[pam-Button~="flat"][pam-Button~="warning"],
+a[pam-Button~="flat"][pam-Button~="warning"] {
     color: @button-warning-background;
 }
 
-[pam-Button~="flat"][pam-Button~="danger"] {
+[pam-Button~="flat"][pam-Button~="danger"],
+a[pam-Button~="flat"][pam-Button~="danger"] {
     color: @button-danger-background;
 }
 
