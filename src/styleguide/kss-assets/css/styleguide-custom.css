@@ -397,40 +397,6 @@ section.sg-block.sg-section-hooks code {
     white-space: nowrap;
 }
 
-/* Deprecated badge styles */
-
-#icon-input {
-    font-style: italic;
-}
-
-#icon-input::after {
-    content: "deprecated";
-    background-color: #f44336;
-    color: #fff;
-    font-size: 12px;
-    display: inline-block;
-    padding: 2px 4px;
-    margin-left: 8px;
-    border-radius: 4px;
-    position: relative;
-    bottom: 3px;
-}
-
-/* Experimental badge styles */
-
-#floating-label::after {
-    content: "experimental";
-    background-color: #4caf50;
-    color: #fff;
-    font-size: 12px;
-    display: inline-block;
-    padding: 2px 4px;
-    margin-left: 8px;
-    border-radius: 4px;
-    position: relative;
-    bottom: 3px;
-}
-
 /* Animations */
 [animated] {
     animation-duration: 1s;
