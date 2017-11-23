@@ -66,3 +66,83 @@ html {
     font-family: @font-family;
     font-size: @font-size-base;
 }
+
+// Loaders
+//
+// Loaders communicate that somethings is happening right now.
+// They can be used on almost all elements `div`, `span` etc.
+// Use modifiers or a specific type to adopt the loader to your context.
+//
+// Markup:
+//    <div loader="{{modifier_class}}"></div>
+//
+// spinner - This is a spinning loader, can be used in buttons etc.
+// pulse - A alternative to spinner for a centered generic loader.
+//
+// Weight: 6
+//
+// Style guide: loaders
+
+[loader~="spinner"] {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 0.25rem solid rgba(0, 0, 0, 0.2);
+    border-top-color: #3a3a3a;
+    -webkit-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+}
+
+[loader~="pulse"] {
+    position: relative;
+    width: 6px;
+    height: 24px;
+    background: #3a3a3a;
+    animation: pulse 750ms infinite;
+    animation-delay: 250ms;
+
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 16px;
+        width: 6px;
+        background: #3a3a3a;
+        top: 50%;
+        transform: translateY(-50%);
+        animation: pulse 750ms infinite;
+        left: -12px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 16px;
+        width: 6px;
+        background: #3a3a3a;
+        top: 50%;
+        transform: translateY(-50%);
+        animation: pulse 750ms infinite;
+        left: 12px;
+        animation-delay: 0.5s;
+    }
+}
+
+@keyframes pulse {
+    50% {
+        background: #ddd;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
