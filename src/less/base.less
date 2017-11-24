@@ -76,14 +76,15 @@ html {
 // Markup:
 //    <div loader="{{modifier_class}}"></div>
 //
-// spinner - This is a spinning loader, can be used in buttons etc.
-// pulse - A alternative to spinner for a centered generic loader.
+// circle - This is a spinning loader, can be used in buttons etc.
+// pulse - Suitable for centered generic context loading.
+// spinner - A variation to circle.
 //
 // Weight: 6
 //
 // Style guide: loaders
 
-[loader~="spinner"] {
+[loader~="circle"] {
     display: inline-block;
     vertical-align: middle;
     border-radius: 50%;
@@ -91,8 +92,7 @@ html {
     height: 16px;
     border: 0.25rem solid rgba(0, 0, 0, 0.2);
     border-top-color: #3a3a3a;
-    -webkit-animation: spin 1s infinite linear;
-    animation: spin 1s infinite linear;
+    animation: spin 750ms infinite linear;
 }
 
 [loader~="pulse"] {
@@ -131,6 +131,25 @@ html {
     }
 }
 
+[loader~="spinner"] {
+    width: 8px;
+    height: 8px;
+    margin: 16px;
+    opacity: 0.5;
+    border-radius: 50%;
+    box-shadow:
+        0 -14px 0 rgba(0, 0, 0, 0.8),
+        10px -10px 0 rgba(0, 0, 0, 0.7),
+        14px 0 1px rgba(0, 0, 0, 0.6),
+        10px 10px 1px rgba(0, 0, 0, 0.5),
+        0 14px 2px rgba(0, 0, 0, 0.4),
+        -10px 10px 2px rgba(0, 0, 0, 0.3),
+        -14px 0 3px rgba(0, 0, 0, 0.2),
+        -10px -10px 3px;
+    transform-origin: 50%;
+    animation: load 0.5s steps(8, end) infinite;
+}
+
 @keyframes pulse {
     50% {
         background: #ddd;
@@ -140,6 +159,16 @@ html {
 @keyframes spin {
     0% {
         transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load {
+    0% {
+        transform: rotate(0);
     }
 
     100% {
