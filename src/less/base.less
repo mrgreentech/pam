@@ -74,7 +74,7 @@ html {
 // Use modifiers or a specific type to adopt the loader to your context.
 //
 // Markup:
-//    <div loader="{{modifier_class}}"></div>
+// <div pam-Loader="{{modifier_class}} active"></div>
 //
 // circle - This is a spinning loader, can be used in buttons etc.
 // pulse - Suitable for centered generic context loading.
@@ -84,8 +84,15 @@ html {
 //
 // Style guide: loaders
 
-[loader~="circle"] {
+[pam-Loader] {
+    display: none;
+}
+
+[pam-Loader~="active"] {
     display: inline-block;
+}
+
+[pam-Loader~="circle"] {
     vertical-align: middle;
     border-radius: 50%;
     width: 16px;
@@ -95,7 +102,7 @@ html {
     animation: spin 750ms infinite linear;
 }
 
-[loader~="pulse"] {
+[pam-Loader~="pulse"] {
     position: relative;
     width: 6px;
     height: 24px;
@@ -131,7 +138,7 @@ html {
     }
 }
 
-[loader~="spinner"] {
+[pam-Loader~="spinner"] {
     width: 8px;
     height: 8px;
     margin: 16px;
@@ -174,4 +181,35 @@ html {
     100% {
         transform: rotate(360deg);
     }
+}
+
+// Overlay
+//
+// Create an element overlay, which can be used as a cover
+// with information, call to action buttons or a loader.
+//
+// Markup:
+// <div>
+//     <img pam-Image src="kss-assets/img/icon-60@3x.png">
+//     <div pam-Overlay></div>
+// </div>
+//
+// Weight: 7
+//
+// Style guide: overlay
+
+[pam-Overlay] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    opacity: 1;
+    background: rgba(39, 42, 43, 0.8);
+    transition: opacity 200ms ease-in-out;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
