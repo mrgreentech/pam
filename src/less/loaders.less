@@ -1,0 +1,160 @@
+// Loaders
+//
+// Loaders communicate that somethings is happening right now.
+// They can be used on almost all elements `div`, `span` etc.
+// Use modifiers or a specific type to adopt the loader to your context.
+//
+// Markup:
+// <div pam-Loader="{{modifier_class}} active"></div>
+//
+// circle - This is a spinning loader, can be used in buttons etc.
+// pulse - Suitable for centered generic context loading.
+//
+// Weight: 6
+//
+// Style guide: loaders
+
+
+//  Variables
+// ==================================================================
+
+@circle-height: @space-24;
+@circle-width: @space-24;
+@circle-border-width: 0.25rem;
+
+
+// ==================================================================
+//  Loader
+// ==================================================================
+[pam-Loader] {
+    display: none;
+}
+
+[pam-Loader~="active"] {
+    display: inline-block;
+}
+
+[pam-Loader~="circle"] {
+    animation: spin 750ms infinite linear;
+    border: @circle-border-width solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    border-top-color: #3a3a3a;
+    height: @circle-height;
+    vertical-align: middle;
+    width: @circle-width;
+}
+
+[pam-Loader~="circle"][pam-Loader~="small"] {
+    height: @circle-height / 2;
+    width: @circle-width / 2;
+}
+
+[pam-Loader~="circle"][pam-Loader~="large"] {
+    height: @circle-height * 2;
+    width: @circle-width * 2;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+[pam-Loader~="pulse"] {
+    animation: pulse 750ms infinite;
+    animation-delay: 250ms;
+    background: #3a3a3a;
+    height: 24px;
+    margin: 0 16px;
+    position: relative;
+    width: 6px;
+
+    &::before {
+        animation: pulse 750ms infinite;
+        background: #3a3a3a;
+        content: '';
+        display: block;
+        height: 16px;
+        left: -12px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 16px;
+        width: 6px;
+        background: #3a3a3a;
+        top: 50%;
+        transform: translateY(-50%);
+        animation: pulse 750ms infinite;
+        left: 12px;
+        animation-delay: 0.5s;
+    }
+}
+
+[pam-Loader~="pulse:small"] {
+    width: 6px / 2;
+    height: 24px / 2;
+    margin: 0 16px / 2;
+
+    &::before {
+        height: 16px / 2;
+        width: 6px / 2;
+        left: -12px / 2;
+    }
+
+    &::after {
+        height: 16px /2;
+        width: 6px / 2;
+        left: 12px / 2;
+    }
+}
+
+@keyframes pulse {
+    50% {
+        background: @skin-light;
+    }
+}
+
+
+// Overlay
+//
+// Create an element overlay, which can be used as a cover
+// with information, call to action buttons or a loader.
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="1-1 small:1-2 large:1-4">
+//         <div pam-Overlay></div>
+//         <div pam-Loader="pulse active"></div>
+//     </div>
+// </div>
+//
+// Weight: 7
+//
+// Style guide: overlay
+
+[pam-Overlay] {
+    align-items: center;
+    background-color: rgba(39, 42, 43, 0.8);
+    border-radius: 4px;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    transition: opacity 200ms ease-in-out;
+    width: 100%;
+    z-index: 1;
+}
