@@ -80,7 +80,13 @@ gulp.task('less', () => {
 gulp.task('minify', () => {
     return gulp
         .src(config.build.cssFile)
-        .pipe(plugins.cleanCss({ compatibility: 'ie8', format: 'keep-breaks' }))
+        .pipe(
+            plugins.cleanCss({
+                compatibility: '*',
+                format: 'keep-breaks',
+                level: 2
+            })
+        )
         .pipe(
             plugins.rename({
                 suffix: '.min'
