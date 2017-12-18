@@ -3,6 +3,7 @@
     "rules": {
         "indentation": 4,
         "max-empty-lines": 2,
-        "no-extra-semicolons": null
+        "no-extra-semicolons": null,
+        "no-descending-specificity": null
     }
 }

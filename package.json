@@ -54,9 +54,9 @@
     "less-plugin-autoprefix": "^1.5.1",
     "normalize.css": "^7.0.0",
     "npm-run-all": "^4.1.2",
-    "onchange": "^3.0.2",
+    "onchange": "^3.3.0",
     "run-sequence": "^2.2.0",
-    "stylelint": "^8.2.0",
-    "stylelint-config-standard": "^17.0.0"
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0"
   }
 }
