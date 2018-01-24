@@ -1,0 +1,20 @@
+// Group
+//
+// To easily clear floats use the `pam-group` attribute to clear the parent element.
+//
+// Markup:
+// <div pam-group>
+//     <div style="float:left;">Floting element</div>
+// </div>
+//
+// Weight: 2
+//
+// Style guide: traits.group
+
+[pam-group] {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

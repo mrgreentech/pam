@@ -23,7 +23,6 @@ gulp.task('copy-build', () => {
 
 gulp.task('copy-dist', ['clean-dist'], () => {
     gulp.src(config.build.baseGlob).pipe(gulp.dest(config.dist.base));
-    gulp.src(['*.md']).pipe(gulp.dest(config.dist.base));
 });
 
 gulp.task('copy-pam-to-sg', () => {

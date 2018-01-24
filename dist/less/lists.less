@@ -1,0 +1,248 @@
+// Lists
+//
+// `pam-List` wraps a `pam-Item` which in turn can contain up to three type of tiles
+// `pam-Tile="[left | content | right]"`.
+//
+// Weight: 12
+//
+// Style guide: lists
+
+
+// One line
+//
+// Use `pam-Item` to wrap one or more `pam-Tiles` and apply one row of content.
+//
+// Markup:
+// <div pam-List>
+//     <div pam-Item>
+//         <div pam-Tile="left">
+//             <div sg-mock-icon></div>
+//         </div>
+//         <div pam-Tile="content">
+//             <h1 pam-typography="body-2">Item content</h1>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: lists.one-line
+
+
+// Two line
+//
+// Use `pam-Item` to wrap one or more `pam-Tiles` and apply two rows of content.
+//
+// Markup:
+// <div pam-List>
+//     <div pam-Item>
+//         <div pam-Tile="left">
+//             <div sg-mock-icon></div>
+//         </div>
+//         <div pam-Tile="content">
+//             <h1 pam-typography="body-2">Item content</h1>
+//             <p>Item content</p>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Style guide: lists.two-line
+
+
+// Three line
+//
+// Use `pam-Item` to wrap one or more `pam-Tiles`. Add `pam-Tile="top"` to align the left
+// tile and apply three rows of content.
+//
+// Markup:
+// <div pam-List>
+//     <div pam-Item>
+//         <div pam-Tile="left top">
+//             <div sg-mock-icon></div>
+//         </div>
+//         <div pam-Tile="content">
+//             <h1 pam-typography="body-2">Item content</h1>
+//             <p>Item content</p>
+//             <p>Item content</p>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Style guide: lists.three-line
+
+
+// Three parts
+//
+// List item with right icon area: `pam-Tile="right"` adds a right icon area for a list item.
+//
+// Markup:
+// <div pam-List>
+//     <div pam-Item>
+//         <div pam-Tile="left">
+//             <div sg-mock-icon></div>
+//         </div>
+//         <div pam-Tile="content">
+//             <h1 pam-typography="body-2">Item content</h1>
+//         </div>
+//             <div pam-Tile="right">
+//             <div sg-mock-icon></div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 4
+//
+// Style guide: lists.three-part
+
+
+// Divider
+//
+// List items with dividers: Use `pam-Item` to wrap one or
+// more `pam-Tiles` and apply a `pam-Divider` after each item.
+//
+// Markup:
+// <div pam-List>
+//     <div pam-Item>
+//         <div pam-Tile="left top">
+//             <div sg-mock-icon></div>
+//         </div>
+//         <div pam-Tile="content">
+//             <h1 pam-typography="body-2">Item content</h1>
+//             <p>Item content</p>
+//             <p>Item content</p>
+//         </div>
+//     </div>
+//     <div pam-Divider="inset"></div>
+//     <div pam-Item>
+//         <div pam-Tile="left top">
+//             <div sg-mock-icon></div>
+//         </div>
+//         <div pam-Tile="content">
+//             <h1 pam-typography="body-2">Item content</h1>
+//             <p>Item content</p>
+//             <p>Item content</p>
+//         </div>
+//     </div>
+//     <div pam-Divider="inset"></div>
+//     <div pam-Item>
+//         <div pam-Tile="left top">
+//             <div sg-mock-icon></div>
+//         </div>
+//         <div pam-Tile="content">
+//             <h1 pam-typography="body-2">Item content</h1>
+//             <p>Item content</p>
+//             <p>Item content</p>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 5
+//
+// Style guide: lists.divider
+
+[pam-List] {
+    padding: @space-8 0;
+
+    .hook-list;
+}
+
+
+[pam-Item] {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    line-height: @space-16;
+    padding: 0;
+    position: relative;
+
+    .hook-item;
+}
+
+* + [pam-Item] {
+    padding-top: @space-8;
+}
+
+
+[pam-Tile] {
+    box-sizing: border-box;
+
+    .hook-tile;
+}
+
+[pam-Tile~="left"] {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    width: @space-72;
+
+    .hook-tile-left;
+}
+
+[pam-Tile~="content"] {
+    flex: 1;
+    padding: @space-16 @space-16 @space-16 0;
+    text-overflow: ellipsis;
+    width: 100%;
+
+    [pam-typography="body-1"],
+    [pam-typography="body-2"],
+    p {
+        margin: 0;
+    }
+
+    p {
+        font-size: @font-size-medium;
+        color: @skin-text-primary;
+    }
+
+    .hook-tile-content;
+}
+
+[pam-Tile~="right"] {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    padding-right: @space-16;
+
+    .hook-tile-right;
+}
+
+[pam-Tile~="top"] {
+    align-self: flex-start;
+    padding-top: @space-20;
+
+    .hook-tile-top;
+}
+
+
+// Hooks
+// ========================================================================
+
+// Hooks
+//
+// `.hook-item`
+// `.hook-list`
+// `.hook-tile`
+// `.hook-tile-content`
+// `.hook-tile-left`
+// `.hook-tile-right`
+// `.hook-tile-top`
+//
+//  Weight: 10
+//
+// Style guide: lists.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-item() {}
+.hook-list() {}
+.hook-tile() {}
+.hook-tile-content() {}
+.hook-tile-left() {}
+.hook-tile-right() {}
+.hook-tile-top() {}
+/* stylelint-enable */
