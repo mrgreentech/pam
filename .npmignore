@@ -1,9 +1,9 @@
 # Folders
-src/
+# src/
 
 # Files
-*.json
-*.js
+# *.json
+# *.js
 
 # Dot files
-*.*
+# *.*
