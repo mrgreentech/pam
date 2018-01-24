@@ -1,0 +1,25 @@
+// Visibility
+//
+// Hide or make an element invisible with `pam-visibility="hidden" / hidden`
+// or `pam-visibility="invisible" / invisible`. These attributes is a exception for
+// the use of **!important** to make sure they do not get overriden.
+//
+// Markup:
+// <div pam-visibility="{{modifier_class}}">Now u see me!</div>
+//
+// hidden - Element is hidden and does not take up any space.
+// invisible - Element is hidden and still takes up it's space.
+//
+// Weight: 4
+//
+// Style guide: traits.visibility
+
+[hidden],
+[pam-visibility="hidden"] {
+    display: none !important;
+}
+
+[invisible],
+[pam-visibility="invisible"] {
+    visibility: hidden !important;
+}

@@ -1,0 +1,1535 @@
+// Forms
+//
+// Combine various forms, form control selectors, custom components and layout variations to create forms that covers a wide range of use cases.
+//
+// Markup:
+// <form pam-Form="stacked padded">
+//     <div pam-Grid>
+//         <div pam-Unit="1-1 medium:1-2">
+//             <fieldset pam-Fieldset="column">
+//                 <legend>Text and select</legend>
+//                 <label for="input-name">Name</label>
+//                 <input id="input-name" type="text" placeholder="What is it?" pam-Form-Control="fluid">
+//                 <label for="input-email">Email</label>
+//                 <input id="input-email" type="email" placeholder="Spam time" pam-Form-Control="fluid">
+//                 <label for="input-password">Password</label>
+//                 <input id="input-password" type="password" placeholder="A secret..." pam-Form-Control="fluid">
+//                 <label for="select-geek">Choose geek level</label>
+//                 <select id="select-geek" pam-Form-Control="fluid">
+//                     <option value="geek">Geek</option>
+//                     <option value="nerd">Nerd</option>
+//                     <option value="dork">Dork</option>
+//                 </select>
+//                 <label for="textarea-description">Please explain</label>
+//                 <textarea rows="5" placeholder="The secret of 42..." pam-Form-Control="fluid"></textarea>
+//             </fieldset>
+//         </div>
+//         <div pam-Unit="1-1 medium:1-2">
+//             <fieldset pam-Fieldset="column">
+//                 <legend>Checkboxes</legend>
+//                 <label>
+//                     <input type="checkbox" value=""> I´m a hipster
+//                 </label>
+//                 <label>
+//                     <input type="radio" id="radio1" name="optionsRadios" value="radios" checked> Hipster
+//                 </label>
+//                 <label>
+//                     <input type="radio" id="radio2" name="optionsRadios" value="radios"> Geek
+//                 </label>
+//             </fieldset>
+//             <fieldset>
+//                 <legend>Misc</legend>
+//                 <label for="input-file">File</label>
+//                 <input id="input-file" type="file" pam-Form-Control="fluid">
+//                 <label for="input-color">Color</label>
+//                 <input id="input-color" type="color" pam-Form-Control="fluid">
+//             </fieldset>
+//         </div>
+//     </div>
+// </form>
+//
+// Weight: 5
+//
+// Style guide: forms
+
+
+// Variables
+// ==================================================================
+
+@form-background:              rgba(255, 255, 255, 0.1);
+@form-border-radius:           @border-radius-base;
+@form-border-style:            solid;
+@form-border-width:            1px;
+@form-border:                  @skin-light;
+@form-color:                   @skin-text-primary;
+@form-font-size:               @font-size-large;
+@form-line-height:             18px;
+@form-margin:                  0 0 @space-8;
+@form-padding-horizontal:      @space-8;
+@form-padding-vertical:        10px;
+@form-padding:                 @space-8;
+@form-placeholder-color:       @skin-text-secondary;
+@form-tap-highlight-color:     rgba(0, 0, 0, 0);
+@form-transition-duration:     @transition-duration;
+@form-transition-property:     border;
+@form-transition-timing:       ease;
+
+@form-focus-color:             darken(@form-border, 30%);
+@form-focus-border:            darken(@form-border, 30%);
+
+@form-legend-width:            100%;
+@form-legend-padding:          @space-8 0;
+
+@form-fieldset-border:         0;
+@form-fieldset-margin:         0;
+@form-fieldset-padding:        @space-8 0 @space-16;
+@form-fieldset-column-padding: @space-16;
+
+@form-label-margin:            @space-8 0;
+
+
+// ==================================================================
+//  Form
+// ==================================================================
+
+[pam-Form] input,
+[pam-Form] select,
+[pam-Form] textarea {
+    background-color: @form-background;
+    border-radius: @form-border-radius;
+    border: @form-border-width @form-border-style @form-border;
+    box-sizing: border-box;
+    color: @form-color;
+    display: inline-block;
+    font-family: inherit;
+    font-size: @form-font-size;
+    line-height: @form-line-height;
+    margin: @form-margin;
+    padding: @form-padding-vertical @form-padding-horizontal;
+    transition: @form-transition-property @form-transition-duration @form-transition-timing;
+    -webkit-tap-highlight-color: @form-tap-highlight-color;
+
+    .placeholder-color(@form-placeholder-color);
+    .hook-form;
+}
+
+[pam-Form] textarea {
+    font-family: @font-family;
+    height: auto;
+}
+
+// Limited support for this type.
+[pam-Form] input[type="color"] {
+    height: @space-40;
+    padding: @space-base;
+}
+
+[pam-Form] input:focus,
+[pam-Form] select:focus,
+[pam-Form] textarea:focus {
+    outline: 0;
+    border: @form-border-width @form-border-style @form-focus-border;
+
+    .hook-form-focus;
+}
+
+[pam-Form] input[type="file"]:focus,
+[pam-Form] input[type="radio"]:focus,
+[pam-Form] input[type="checkbox"]:focus {
+    // Keep them native...
+}
+
+[pam-Form] input[type="color"]:focus {
+    border-color: @skin-divider;
+}
+
+
+//  Disabled Input
+// ==================================================================
+
+[pam-Form] input[disabled],
+[pam-Form] select[disabled],
+[pam-Form] textarea[disabled] {
+    cursor: not-allowed;
+    color: @skin-text-secondary;
+
+    .hook-form-disabled;
+}
+
+
+//  Read-only input
+// ==================================================================
+
+[pam-Form] input[readonly],
+[pam-Form] select[readonly],
+[pam-Form] textarea[readonly] {
+    color: @skin-text-primary;
+    border-color: @form-border;
+
+    .hook-form-readonly;
+}
+
+[pam-Form] input[readonly]:focus,
+[pam-Form] select[readonly]:focus,
+[pam-Form] textarea[readonly]:focus {
+    color: @skin-text-secondary;
+    border-color: @form-border;
+
+    .hook-form-readonly-focus;
+}
+
+
+//  Required input
+// ==================================================================
+
+[pam-Form] input:focus:invalid,
+[pam-Form] textarea:focus:invalid,
+[pam-Form] select:focus:invalid {
+    border-color: @form-danger-color;
+
+    .hook-form-focus-invalid;
+}
+
+[pam-Form] input:focus:invalid:focus,
+[pam-Form] textarea:focus:invalid:focus,
+[pam-Form] select:focus:invalid:focus {
+    border-color: @form-danger-color;
+
+    .hook-form-focus-invalid-focus;
+}
+
+[pam-Form] input[type="file"]:focus:invalid:focus,
+[pam-Form] input[type="radio"]:focus:invalid:focus,
+[pam-Form] input[type="checkbox"]:focus:invalid:focus {
+    outline-color: @form-danger-color;
+
+    .hook-form-focus-invalid-focus;
+}
+
+
+//  Select
+// ==================================================================
+
+[pam-Form] select:not([multiple]):not([pam-Select]):not([pam-form-Control]) {
+    height: @space-40;
+    padding: 0;
+
+    .hook-form-select;
+}
+
+[pam-Form] select[multiple] {
+    height: auto;
+    overflow: auto;
+
+    .hook-form-select-multiple;
+}
+
+[pam-Form] select:focus {
+    .hook-form-select-focus;
+}
+
+
+//  Legend
+// ==================================================================
+
+[pam-Form] legend {
+    display: block;
+    font-size: @font-size-xlarge;
+    margin-bottom: @space-8;
+    padding: @form-legend-padding;
+    width: @form-legend-width;
+
+    .hook-form-legend;
+}
+
+
+//  Fieldset
+// ==================================================================
+
+[pam-Form] fieldset {
+    border: @form-fieldset-border;
+    margin: @form-fieldset-margin;
+    padding: @form-fieldset-padding;
+
+    .hook-form-fieldset;
+}
+
+[pam-Form] fieldset:last-of-type {
+    padding-bottom: 0;
+}
+
+@media screen and (min-width: @breakpoint-medium) {
+    [pam-Form] {
+        [pam-Fieldset~="column"] {
+            padding: @form-fieldset-column-padding;
+        }
+    }
+}
+
+
+//  Label
+// ==================================================================
+
+[pam-Form] label {
+    margin: @form-label-margin;
+
+    .hook-form-label;
+}
+
+
+// Modifier: State
+// ==================================================================
+
+// State
+//
+// Give users feedback related to form controls
+// by using native or custom states.
+//
+// Weight: 1
+//
+// Style guide: forms.states
+
+// Native
+//
+// Add the native form attributes `disabled`, `readonly` and `required`
+// to use native states with PAM forms.
+//
+// Markup:
+// <form pam-Form>
+//      <input type="text" placeholder="Input" value="{{modifier_class}}" {{modifier_class}}>
+// </form>
+//
+// disabled - makes a input field disabled.
+// readonly - puts a input to a read-only state.
+// required - marks a input control as required.
+//
+// Weight: 1
+//
+// Style guide: forms.states.native
+
+
+//  Sub-modifier: Custom states
+// ==================================================================
+
+// Custom
+//
+// Use the `pam-Form-State` to apply custom form states `success` or `danger`.
+//
+// Markup:
+// <form pam-Form>
+//      <input type="text" placeholder="Input" value="{{modifier_class}}" pam-Form-State="{{modifier_class}}">
+// </form>
+//
+// success - attribute marks a success state for the input.
+// danger - attribute marks a error state for the input.
+//
+// Weight: 2
+//
+// Style guide: forms.states.custom
+
+@form-success-background: lighten(@skin-success, 45%);
+@form-success-border:     @skin-success;
+@form-success-color:      @skin-success;
+
+@form-danger-background:  lighten(@skin-danger, 40%);
+@form-danger-border:      @skin-danger;
+@form-danger-color:       @skin-danger;
+
+// ------------------------------------------------------------------
+
+[pam-Form] input[pam-Form-State~="success"],
+[pam-Form] input[pam-Form-State~="success"]:focus,
+[pam-Form] select[pam-Form-State~="success"],
+[pam-Form] select[pam-Form-State~="success"]:focus,
+[pam-Form] textarea[pam-Form-State~="success"],
+[pam-Form] textarea[pam-Form-State~="success"]:focus {
+    background-color: @form-success-background;
+    border: @form-border-width @form-border-style @form-success-border;
+    color: @form-success-color;
+
+    .hook-form-state-success;
+}
+
+[pam-Form] input[pam-Form-State~="danger"],
+[pam-Form] input[pam-Form-State~="danger"]:focus,
+[pam-Form] select[pam-Form-State~="danger"],
+[pam-Form] select[pam-Form-State~="danger"]:focus,
+[pam-Form] textarea[pam-Form-State~="danger"],
+[pam-Form] textarea[pam-Form-State~="danger"]:focus {
+    background-color: @form-danger-background;
+    border: @form-border-width @form-border-style @form-danger-border;
+    color: @form-danger-color;
+
+    .hook-form-state-danger;
+}
+
+
+// Sub-modifier: Size
+// ==================================================================
+
+// Size
+//
+// Adjust size of `input`, `select` or `textarea` with `pam-Form-Size`.
+//
+// Markup:
+// <form pam-Form="stacked">
+//     <input pam-Form-Size="large" type="text" id="password" placeholder="Large">
+//     <input type="text" id="password" placeholder="Default">
+//     <input pam-Form-Size="small" type="text" id="password" placeholder="Small">
+// </form>
+//
+// Weight: 3
+//
+// Style guide: forms.size
+
+[pam-Form] [pam-Form-Size~="large"] {
+    font-size: @font-size-larger;
+    height: @space-56;
+    line-height: @line-height-base;
+    padding-left: @space-16;
+
+    .hook-form-size-large;
+}
+
+[pam-Form] [pam-Form-Size~="small"] {
+    font-size: @font-size-medium;
+    height: @space-32;
+    line-height: @line-height-base;
+
+    .hook-form-size-small;
+}
+
+
+// Sub-modifier: Width
+// ==================================================================
+
+// Width
+//
+// Adjust width of `input`, `select` or `textarea` with
+// `pam-Form-Width` which supports `thirds` and `fifths`.
+//
+// Markup:
+// <form pam-Form="stacked">
+//     <input pam-Form-Width="1-1" type="text" id="password" placeholder="1-1">
+//     <input pam-Form-Width="2-3" type="text" id="password" placeholder="2-3">
+//     <input pam-Form-Width="1-2" type="text" id="password" placeholder="1-2">
+//     <input pam-Form-Width="1-3" type="text" id="password" placeholder="1-3">
+//     <input pam-Form-Width="1-4" type="text" id="password" placeholder="1-4">
+// </form>
+//
+// Weight: 5
+//
+// Style guide: forms.width
+
+[pam-Form] [pam-Form-Width~="1-1"] {
+    width: 100%;
+}
+
+[pam-Form] [pam-Form-Width~="2-3"] {
+    width: 66%;
+}
+
+[pam-Form] [pam-Form-Width~="1-2"] {
+    width: 50%;
+}
+
+[pam-Form] [pam-Form-Width~="1-3"] {
+    width: 33%;
+}
+
+[pam-Form] [pam-Form-Width~="1-4"] {
+    width: 25%;
+}
+
+
+//  Layouts
+// ==================================================================
+
+// Layout
+//
+// Form layout variations
+//
+// Weight: 10
+//
+// Style guide: forms.layout
+
+// Default
+//
+// `pam-Form` sets up the base for forms and outputs a default inline form.
+//
+// Markup:
+// <form pam-Form>
+//     <input type="email" placeholder="Email">
+//     <input type="password" placeholder="Password">
+//     <input type="button" pam-Button="small" value="Log in">
+// </form>
+//
+// Weight: 1
+//
+// Style guide: forms.layout.inline
+
+
+//  Modifier: Stacked
+// ==================================================================
+
+// Stacked
+//
+// `pam-Form="stacked"` changes form elements to blocks so that the output is a stacked form.
+//
+// Markup:
+// <form pam-Form="stacked">
+//    <label for="email">Email</label>
+//     <input type="email" placeholder="Email">
+//     <label for="password">Password</label>
+//     <input type="password" placeholder="Password">
+//     <input type="button" pam-Button="small" value="Log in">
+// </form>
+//
+// Weight: 2
+//
+// Style guide: forms.layout.stacked
+
+@form-stacked-display: block;
+@form-stacked-margin: @space-8 0;
+
+// ------------------------------------------------------------------
+
+[pam-Form~="stacked"] input:not([type="checkbox"]):not([type="radio"]),
+[pam-Form~="stacked"] select,
+[pam-Form~="stacked"] label,
+[pam-Form~="stacked"] textarea {
+    display: @form-stacked-display;
+    margin: @form-stacked-margin;
+
+    &[pam-button]:last-of-type {
+        margin-top: @space-16;
+    }
+
+    .hook-form-stacked;
+}
+
+
+//  Modifier: Aligned
+// ==================================================================
+
+// Aligned
+//
+// `pam-Form="aligned"` sets up a aligned form with labels to the left of the input fields.
+//
+// Markup:
+// <form pam-Form="aligned">
+//     <div pam-Fieldset>
+//         <label for="email">Email</label>
+//         <input type="email" id="password" placeholder="Email">
+//     </div>
+//     <div pam-Fieldset>
+//         <label for="password">Password</label>
+//         <input type="password" id="password" placeholder="Password">
+//     </div>
+//     <div pam-Fieldset="actions">
+//         <input type="button" pam-Button="small" value="Log in">
+//     </div>
+// </form>
+//
+// Weight: 3
+//
+// Style guide: forms.layout.aligned
+
+@form-aligned-margin:                        0;
+@form-aligned-text-area-vertical-align:      top;
+@form-aligned-vertical-align:                middle;
+@form-aligned-display:                       inline-flex;
+
+@form-aligned-fieldset-actions-margin:       @space-16 0 0 11em;
+@form-aligned-fieldset-align-items:          center;
+@form-aligned-fieldset-display:              flex;
+@form-aligned-fieldset-label-margin:         0 @space-16 0 0;
+@form-aligned-fieldset-label-text-align:     right;
+@form-aligned-fieldset-label-vertical-align: middle;
+@form-aligned-fieldset-label-width:          10rem;
+@form-aligned-fieldset-margin:               0 0 @space-8;
+
+// ------------------------------------------------------------------
+
+[pam-Form~="aligned"] input,
+[pam-Form~="aligned"] textarea,
+[pam-Form~="aligned"] select {
+    margin: @form-aligned-margin;
+    vertical-align: @form-aligned-vertical-align;
+
+    .hook-form-aligned;
+}
+
+[pam-Form~="aligned"] textarea {
+    vertical-align: @form-aligned-text-area-vertical-align;
+}
+
+[pam-Form~="aligned"] [pam-Fieldset] {
+    align-items: @form-aligned-fieldset-align-items;
+    display: @form-aligned-fieldset-display;
+    margin: @form-aligned-fieldset-margin;
+}
+
+[pam-Form~="aligned"] [pam-Fieldset] label {
+    margin: @form-aligned-fieldset-label-margin;
+    text-align: @form-aligned-fieldset-label-text-align;
+    vertical-align: @form-aligned-fieldset-label-vertical-align;
+    width: @form-aligned-fieldset-label-width;
+}
+
+[pam-Form~="aligned"] [pam-Fieldset~="actions"] {
+    margin: @form-aligned-fieldset-actions-margin;
+}
+
+
+//  Sub-object: Grouped fields
+// ==================================================================
+
+// Grouped fields
+//
+// `pam-Fieldset` combined with a `<fieldset>` element will group a set of form fields.
+//
+// Markup:
+// <form pam-Form>
+//     <fieldset pam-Fieldset="grouped">
+//         <input type="text" placeholder="Username">
+//         <input type="email" placeholder="Email">
+//         <input type="password" placeholder="Password">
+//     </fieldset>
+//     <fieldset pam-Fieldset="grouped">
+//         <input type="text" placeholder="Nickname">
+//         <input type="text" placeholder="City">
+//         <input type="text" placeholder="Favorite movie">
+//     </fieldset>
+//     <fieldset pam-Fieldset="actions">
+//         <input type="button" pam-Button="small" value="Log in">
+//     </fieldset>
+// </form>
+//
+// Weight: 4
+//
+// Style guide: forms.layout.grouped
+
+@form-fieldset-grouped-padding-bottom:           @space-16;
+@form-fieldset-grouped-last-padding-bottom:      @space-24;
+
+@form-fieldset-grouped-input-display:            block;
+@form-fieldset-grouped-input-last-margin-bottom: 0;
+@form-fieldset-grouped-input-position:           relative;
+
+// ------------------------------------------------------------------
+
+[pam-Form] [pam-Fieldset~="grouped"] {
+    padding-bottom: @form-fieldset-grouped-padding-bottom;
+
+    .hook-form-group;
+}
+
+[pam-Form] fieldset[pam-Fieldset~="grouped"]:last-of-type {
+    padding-bottom: @form-fieldset-grouped-last-padding-bottom;
+}
+
+[pam-Form] [pam-Fieldset~="grouped"] input {
+    display: @form-fieldset-grouped-input-display;
+    position: @form-fieldset-grouped-input-position;
+}
+
+[pam-Form] [pam-Fieldset~="grouped"] input:last-child {
+    margin-bottom: @form-fieldset-grouped-input-last-margin-bottom;
+}
+
+
+// Sub-object: Form message
+// ==================================================================
+
+// Message
+//
+// `pam-Form-Message` is a helper element that shows text
+// under or on the side of a form field.
+//
+// Weight: 18
+//
+// Style guide: forms.message
+
+// Block
+//
+// The default message is a block element
+//
+// Markup:
+// <form pam-Form="stacked">
+//     <fieldset>
+//         <label>Username</label>
+//         <input type="text">
+//         <aside pam-Form-Message>Block help text</aside>
+//     </fieldset>
+// </form>
+//
+// Style guide: forms.message.block
+
+// Inline
+//
+// To display the message inline apply the `inline`
+// value to `pam-Form-Message`.
+//
+// Markup:
+// <form pam-Form>
+//     <fieldset>
+//         <label>Username</label>
+//         <input type="text">
+//         <aside pam-Form-Message="inline">Block help text</aside>
+//     </fieldset>
+// </form>
+//
+// Style guide: forms.message.inline
+
+@form-message-color:                 @skin-text-primary;
+@form-message-display:               block;
+@form-message-font-size:             @font-size-xsmall;
+
+@form-message-inline-display:        inline-block;
+@form-message-inline-padding:        0 0 0 @space-8;
+@form-message-inline-vertical-align: middle;
+
+// ------------------------------------------------------------------
+
+[pam-Form-Message] {
+    color: @form-message-color;
+    display: @form-message-display;
+    font-size: @form-message-font-size;
+
+    .hook-form-message;
+}
+
+// Sub-modifier: Form input inline message
+
+[pam-Form-Message~="inline"] {
+    display: @form-message-inline-display;
+    padding-left: @form-message-inline-padding;
+    vertical-align: @form-message-inline-vertical-align;
+
+    .hook-form-message-inline;
+}
+
+
+// Sub-objects: Custom controls
+// ==================================================================
+
+// Custom controls
+//
+// There are group of custom controls to use which gives more flexibility
+// and control over the form controls.
+//
+// Weight: 20
+//
+// Style guide: forms.custom
+
+
+// Sub-object: Inline
+// ==================================================================
+
+// Icon
+//
+// `pam-Form-Inline` can group a form control with a icon. To apply the icon on the right side use `pam-Form-Inline="reverse"`.
+//
+// Markup:
+// <form pam-Form>
+//     <div pam-Form-Inline>
+//         <label for="group-input" pam-Form-Icon>
+//             <div sg-mock-icon></div>
+//         </label>
+//         <input id="group-input" type="text" placeholder="Input group" pam-Form-Control>
+//     </div>
+//     <div pam-Form-Inline>
+//         <label for="group-select" pam-Form-Icon>
+//             <div sg-mock-icon></div>
+//         </label>
+//         <select id="group-select" pam-Form-Control>
+//             <option value="geek">Geek</option>
+//             <option value="nerd">Nerd</option>
+//             <option value="dork">Dork</option>
+//         </select>
+//     </div>
+//     <div pam-Form-Inline="reverse">
+//         <label for="group-input-reverse" pam-Form-Icon>
+//             <div sg-mock-icon></div>
+//         </label>
+//         <input id="group-input-reverse" type="text" placeholder="Input group" pam-Form-Control>
+//     </div>
+// </form>
+//
+// Style guide: forms.custom.inline
+
+@form-field-inline-margin:                        0 0 @space-8;
+@form-field-inline-position:                      relative;
+
+@form-field-inline-control-box-sizing:            border-box;
+@form-field-inline-control-display:               block;
+@form-field-inline-control-padding-left:          @space-48;
+@form-field-inline-control-width:                 100%;
+
+@form-field-inline-icon-align-items:              center;
+@form-field-inline-icon-background:               transparent;
+@form-field-inline-icon-bottom:                   0;
+@form-field-inline-icon-box-sizing:               border-box;
+@form-field-inline-icon-display:                  inline-flex;
+@form-field-inline-icon-justify-content:          center;
+@form-field-inline-icon-left:                     0;
+@form-field-inline-icon-margin:                   0;
+@form-field-inline-icon-position:                 absolute;
+@form-field-inline-icon-right:                    auto;
+@form-field-inline-icon-top:                      0;
+@form-field-inline-icon-width:                    @space-48;
+
+@form-field-inline-reverse-control-padding-left:  @space-8;
+@form-field-inline-reverse-control-padding-right: @space-48;
+@form-field-inline-reverse-control-padding-width: 100%;
+
+@form-field-inline-reverse-icon-left:             auto;
+@form-field-inline-reverse-icon-right:            0;
+
+// ------------------------------------------------------------------
+
+[pam-Form] [pam-Form-Inline] {
+    margin: @form-field-inline-margin;
+    position: @form-field-inline-position;
+
+    [pam-Form-Control] {
+        box-sizing: @form-field-inline-control-box-sizing;
+        display: @form-field-inline-control-display;
+        padding-left: @form-field-inline-control-padding-left;
+        width: @form-field-inline-control-width;
+    }
+
+    [pam-Form-Icon] {
+        align-items: @form-field-inline-icon-align-items;
+        background: @form-field-inline-icon-background;
+        bottom: @form-field-inline-icon-bottom;
+        box-sizing: @form-field-inline-icon-box-sizing;
+        display: @form-field-inline-icon-display;
+        justify-content: @form-field-inline-icon-justify-content;
+        left: @form-field-inline-icon-left;
+        margin: @form-field-inline-icon-margin;
+        position: @form-field-inline-icon-position;
+        right: @form-field-inline-icon-right;
+        top: @form-field-inline-icon-top;
+        width: @form-field-inline-icon-width;
+    }
+
+    .hook-form-field-inline;
+}
+
+[pam-Form] [pam-Form-Inline~="reverse"] {
+    [pam-Form-Icon] {
+        left: @form-field-inline-reverse-icon-left;
+        right: @form-field-inline-reverse-icon-right;
+    }
+
+    [pam-Form-Control] {
+        padding-left: @form-field-inline-reverse-control-padding-left;
+        padding-right: @form-field-inline-reverse-control-padding-right;
+        width: @form-field-inline-reverse-control-padding-width;
+    }
+}
+
+
+// Sub-object: Lego
+// ==================================================================
+
+// Lego
+//
+// `pam-Form-Group="lego"` extend form controls by adding icons, buttons, selects
+//  before or after text-based form controls as lego bricks.
+//
+// Markup:
+// <form pam-Form>
+//     <div pam-Form-Group="lego">
+//         <div pam-Form-Group-Addon>
+//             <select>
+//                 <option value="honda">+46</option>
+//                 <option value="toyota">+211</option>
+//                 <option value="nissan">+1-284</option>
+//             </select>
+//         </div>
+//         <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+//     </div>
+//     <div pam-Form-Group="lego">
+//         <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+//         <div pam-Form-Group-Addon>
+//             <input type="button" pam-Button="small" value="send">
+//         </div>
+//     </div>
+//     <div pam-Form-Group="lego">
+//         <div pam-Form-Group-Addon>
+//             <select>
+//                 <option value="honda">+46</option>
+//                 <option value="toyota">+211</option>
+//                 <option value="nissan" selected>+1-284</option>
+//             </select>
+//         </div>
+//             <input id="addon-lego" type="text" placeholder="Two addons" pam-Form-Control>
+//         <div pam-Form-Group-Addon>
+//             <input type="button" pam-Button="small" value="send">
+//         </div>
+//     </div>
+// </form>
+//
+// Style guide: forms.custom.lego
+
+@form-group-lego-display:                                    inline-flex;
+@form-group-lego-margin-bottom:                              @space-16;
+
+@form-group-lego-child-all-margin-bottom:                    0;
+@form-group-lego-child-all-min-width:                        @space-60;
+@form-group-lego-child-display:                              flex;
+@form-group-lego-child-last-border-bottom-left-radius:       0;
+@form-group-lego-child-last-border-top-left-radius:          0;
+
+@form-group-lego-child-first-all-border-bottom-right-radius: 0;
+@form-group-lego-child-first-all-border-top-right-radius:    0;
+@form-group-lego-child-first-border-bottom-right-radius:     0;
+@form-group-lego-child-first-border-top-right-radius:        0;
+
+@form-group-lego-child-last-all-border-bottom-left-radius:   0;
+@form-group-lego-child-last-all-border-top-left-radius:      0;
+
+@form-group-lego-child-not-first-last-radius:                0;
+
+@form-group-lego-addon-border-radius:                        @form-border-radius;
+@form-group-lego-addon-color:                                @form-color;
+@form-group-lego-addon-font-size:                            @font-size-base;
+@form-group-lego-addon-margin:                               0;
+@form-group-lego-addon-min-width:                            @space-60;
+@form-group-lego-addon-position:                             relative;
+@form-group-lego-addon-text-align:                           center;
+@form-group-lego-addon-white-space:                          nowrap;
+
+@form-group-lego-addon-first-all-border-right-color:         transparent;
+@form-group-lego-addon-first-all-focus-border-right-color:   @form-focus-border;
+
+@form-group-lego-addon-last-all-border-left-color:           transparent;
+@form-group-lego-addon-last-all-focus-border-left-color:     @form-focus-border;
+
+@form-group-lego-control-focus-zindex:                       3;
+@form-group-lego-control-margin-bottom:                      0;
+@form-group-lego-control-position:                           0;
+@form-group-lego-control-zindex:                             2;
+
+// ------------------------------------------------------------------
+
+[pam-Form] [pam-Form-Group~="lego"] {
+    display: @form-group-lego-display;
+    margin-bottom: @form-group-lego-margin-bottom;
+
+    [pam-Form-Group-Addon],
+    [pam-Form-Control] {
+        display: @form-group-lego-child-display;
+
+        > * {
+            margin-bottom: @form-group-lego-child-all-margin-bottom;
+            min-width: @form-group-lego-child-all-min-width;
+        }
+
+        &:not(:first-child):not(:last-child) {
+            border-radius: @form-group-lego-child-not-first-last-radius;
+        }
+
+        &:first-child {
+            border-top-right-radius: @form-group-lego-child-first-border-top-right-radius;
+            border-bottom-right-radius: @form-group-lego-child-first-border-bottom-right-radius;
+
+            * {
+                border-top-right-radius: @form-group-lego-child-first-all-border-top-right-radius;
+                border-bottom-right-radius: @form-group-lego-child-first-all-border-bottom-right-radius;
+            }
+        }
+
+        &:last-child {
+            border-top-left-radius: @form-group-lego-child-last-border-top-left-radius;
+            border-bottom-left-radius: @form-group-lego-child-last-border-bottom-left-radius;
+
+            * {
+                border-top-left-radius: @form-group-lego-child-last-all-border-top-left-radius;
+                border-bottom-left-radius: @form-group-lego-child-last-all-border-bottom-left-radius;
+            }
+        }
+    }
+
+    [pam-Form-Group-Addon] {
+        border-radius: @form-group-lego-addon-border-radius;
+        color: @form-group-lego-addon-color;
+        font-size: @form-group-lego-addon-font-size;
+        margin: @form-group-lego-addon-margin;
+        min-width: @form-group-lego-addon-min-width;
+        position: @form-group-lego-addon-position;
+        text-align: @form-group-lego-addon-text-align;
+        white-space: @form-group-lego-addon-white-space;
+
+        &:first-child {
+            > * {
+                border-right-color: @form-group-lego-addon-first-all-border-right-color;
+            }
+
+            > *:focus {
+                border-right-color: @form-group-lego-addon-first-all-focus-border-right-color;
+            }
+        }
+
+        &:last-child {
+            > * {
+                border-left-color: @form-group-lego-addon-last-all-border-left-color;
+            }
+
+            > *:focus {
+                border-left-color: @form-group-lego-addon-last-all-focus-border-left-color;
+            }
+        }
+    }
+
+    [pam-Form-Control] {
+        margin-bottom: @form-group-lego-control-margin-bottom;
+        position: @form-group-lego-control-position;
+        z-index: @form-group-lego-control-zindex;
+
+        &:focus {
+            z-index: @form-group-lego-control-focus-zindex;
+        }
+    }
+}
+
+// Sub-object: Lego block
+// ==================================================================
+
+// Lego block
+//
+// `pam-Form-Group="lego block"` display lego brick as a block.
+//
+// Markup:
+// <form pam-Form>
+//     <div pam-Form-Group="lego block">
+//         <div pam-Form-Group-Addon>
+//             <select>
+//                 <option value="honda">+46</option>
+//                 <option value="toyota">+211</option>
+//                 <option value="nissan">+1-284</option>
+//             </select>
+//         </div>
+//         <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+//     </div>
+//     <div pam-Form-Group="lego block">
+//         <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+//         <div pam-Form-Group-Addon>
+//             <input type="button" pam-Button="small" value="send">
+//         </div>
+//     </div>
+//     <div pam-Form-Group="lego block">
+//         <div pam-Form-Group-Addon>
+//             <select>
+//                 <option value="honda">+46</option>
+//                 <option value="toyota">+211</option>
+//                 <option value="nissan" selected>+1-284</option>
+//             </select>
+//         </div>
+//             <input id="addon-lego" type="text" placeholder="Two addons" pam-Form-Control>
+//         <div pam-Form-Group-Addon>
+//             <input type="button" pam-Button="small" value="send">
+//         </div>
+//     </div>
+// </form>
+//
+// Style guide: forms.custom.lego.block
+
+@form-group-lego-block-display: flex;
+
+// ------------------------------------------------------------------
+
+[pam-Form] [pam-Form-Group~="block"] {
+    display: @form-group-lego-block-display;
+}
+
+
+//  Select
+// ==================================================================
+
+// Select
+//
+// `pam-Select` turns on custom styling of the select element.
+//
+// Markup:
+// <form pam-Form="stacked">
+//     <label for="select-native">Native select</label>
+//     <select id="select-native">
+//         <option value="geek">Geek</option>
+//         <option value="nerd">Nerd</option>
+//         <option value="dork">Dork</option>
+//     </select>
+//     <label for="select-custom">Custom select</label>
+//     <select id="select-custom" pam-Select="">
+//         <option value="geek">Geek</option>
+//         <option value="nerd">Nerd</option>
+//         <option value="dork">Dork</option>
+//     </select>
+//     <label for="select-multiple">Multiple select</label>
+//     <select id="select-multiple" multiple>
+//         <option value="geek">Geek</option>
+//         <option value="nerd">Nerd</option>
+//         <option value="dork">Dork</option>
+//     </select>
+// </form>
+//
+// Style guide: forms.custom.select
+
+@form-select-custom-appearance:        none;
+@form-select-custom-background-color:  @form-background;
+@form-select-custom-background-image:  "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M10%201L5%208h10l-5-7zm0%2018l5-7H5l5%207z%27%2F%3E%3C%2Fsvg%3E";
+@form-select-custom-background-offset: @space-8;
+@form-select-custom-background-repeat: no-repeat;
+@form-select-custom-background-size:   @space-12;
+@form-select-custom-display:           inline-block;
+@form-select-custom-max-width:         100%;
+@form-select-custom-padding-right:     @space-28;
+@form-select-custom-vertical-align:    middle;
+
+// ------------------------------------------------------------------
+
+[pam-Form] select[pam-Select]:not([multiple]) {
+    appearance: @form-select-custom-appearance;
+    background: url(@form-select-custom-background-image) right @form-select-custom-background-offset center;
+    background-color: @form-select-custom-background-color;
+    background-repeat: @form-select-custom-background-repeat;
+    background-size: @form-select-custom-background-size;
+    color: @skin-text-primary;
+    display: @form-select-custom-display;
+    max-width: @form-select-custom-max-width;
+    padding-right: @form-select-custom-padding-right;
+    vertical-align: @form-select-custom-vertical-align;
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    .hook-form-select-custom;
+}
+
+
+// Sub-Object: Form control
+// ==================================================================
+
+// Traits
+//
+// `pam-form-control` is a generic trait to be used with form controls
+// to optimize and trim their behaviour when needed.
+//
+// Markup:
+// <form pam-Form="stacked">
+//     <label for="input-borderless">So borderless!</label>
+//     <input id="input-borderless" placeholder="Borderless" pam-Form-Control="borderless">
+//     <label for="input-fluid">Fluid like water</label>
+//     <input id="input-fluid" placeholder="Fluid" pam-Form-Control="fluid">
+// </form>
+//
+// Weight: 20
+//
+// Style guide: forms.traits
+
+@form-control-borderless-border-color-focus:     transparent;
+@form-control-borderless-border-color:           transparent;
+@form-control-borderless-focus-box-shadow:       0 1px 3px @skin-dark;
+@form-control-borderless-transition:             box-shadow 0.3s ease;
+
+@form-control-fluid-width:                       100%;
+
+@form-control-padded-medium-screen-size-padding: @space-16;
+@form-control-padded-padding:                    @space-8 0 @space-16;
+
+// ------------------------------------------------------------------
+
+[pam-Form] [pam-Form-Control~="borderless"] {
+    border-color: @form-control-borderless-border-color;
+    transition: @form-control-borderless-transition;
+}
+
+[pam-Form] [pam-Form-Control~="borderless"]:focus {
+    border-color: @form-control-borderless-border-color-focus;
+    box-shadow: 0 1px 3px @skin-dark;
+}
+
+[pam-Form] [pam-Form-Control~="fluid"] {
+    width: @form-control-fluid-width;
+}
+
+[pam-Form~="fluid"] {
+    input:not([type="radio"]):not([type="checkbox"]),
+    select,
+    textarea {
+        width: @form-control-fluid-width;
+    }
+}
+
+[pam-Form~="padded"] {
+    fieldset {
+        padding: @form-control-padded-padding;
+    }
+}
+
+@media screen and (min-width: @breakpoint-medium) {
+    [pam-Form~="padded"] {
+        fieldset {
+            padding: @form-control-padded-medium-screen-size-padding;
+        }
+    }
+}
+
+
+// Experimental
+// ==================================================================
+
+// Experimental
+//
+// Following forms rulez are experimental, and has **no offical browser support**.
+//
+// Weight: 25
+//
+// Style guide: forms.experimental
+
+
+//  Sub-object: Floating label
+// ==================================================================
+
+// Floating label
+//
+// `pam-Field` with `input` and `label` element creates a floating label composite.
+//
+// <div pam-Alert="info">
+//    Experimental: CSS only floating label, evaluating to
+//    implement for evergreen browsers.
+// </div>
+//
+// Markup:
+// <form pam-Form>
+//     <div pam-Field>
+//         <input type="text" name="fullname" id="fullname" placeholder="Jon Doe">
+//         <label for="fullname">Nickname</label>
+//     </div>
+// </form>
+//
+// Style guide: forms.experimental.label
+
+@form-field-floating-label-border-bottom: @form-border-width @form-border-style @form-focus-border;
+
+[pam-Field] {
+    display: inline-flex;
+    flex-flow: column-reverse;
+    margin-bottom: @space-16;
+}
+
+[pam-Field] {
+    label,
+    input {
+        transition: all 0.2s;
+        touch-action: manipulation;
+    }
+
+    input {
+        position: relative;
+        -webkit-appearance: none;
+    }
+
+    input:focus {
+        border-bottom: @form-border-width @form-border-style @form-focus-border;
+        outline: 0;
+    }
+
+    label {
+        font-size: @font-size-medium;
+    }
+
+    input:placeholder-shown + label {
+        cursor: text;
+        max-width: 66.66%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transform-origin: left bottom;
+        transform: translate(0.5rem, 2.4rem) scale(1);
+        white-space: nowrap;
+    }
+
+    ::-webkit-input-placeholder {
+        opacity: 0;
+        transition: inherit;
+    }
+
+    input:focus::-webkit-input-placeholder {
+        opacity: 1;
+    }
+
+    input:not(:placeholder-shown) + label,
+    input:focus + label {
+        cursor: pointer;
+        font-size: @font-size-xsmall;
+        transform: translate(0.5rem, 1.4rem) scale(1);
+    }
+}
+
+
+// Deprecated
+// ==================================================================
+
+// Deprecated
+//
+// Following form rulez will be deprecated in version 1.1.0.
+//
+// Weight: 27
+//
+// Style guide: forms.deprecated
+
+// Input icon
+// ==================================================================
+
+// Input icon
+//
+// `pam-Input-Icon` enables icons to be used with a input.
+//
+//<div pam-Alert="warning">
+//    Deprecated: Styling for legacy input icons. Support will be dropped
+//    after PAM version 1.1.
+// </div>
+//
+// Markup:
+// <form pam-Form>
+//     <div pam-Input-Icon>
+//         <label for="icon">
+//         <img src="http://placehold.it/24x24">
+//         </label>
+//         <input id="icon" type="text" placeholder="Icon">
+//     </div>
+// </form>
+//
+// Style guide: forms.deprecated.input-icon
+
+[pam-Form] [pam-Input-Icon],
+[pam-Form] [pam-Select-Icon] {
+    position: relative;
+
+    label {
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: @space-72;
+        box-sizing: border-box;
+    }
+
+    input,
+    > select {
+        display: block;
+        padding-left: @space-72;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hook-form-input-icon;
+}
+
+// Input borderless
+// ==================================================================
+
+// Input borderless
+//
+// `pam-Input="borderless"` removes the form field border.
+//
+// <div pam-Alert="warning">
+//    Deprecated: Styling for borderless legacy form fields. Support will be dropped
+//    after PAM version 1.1.
+// </div>
+//
+// Markup:
+// <form pam-Form="stacked">
+//     <label for="borderless">Borderless input</label>
+//     <input id="borderless" type="text" placeholder="Borderless" pam-Input="borderless">
+// </form>
+//
+// Style guide: forms.deprecated.input-borderless
+
+[pam-Form] input[pam-Input~="borderless"],
+[pam-Form] select[pam-Input~="borderless"],
+[pam-Form] textarea[pam-Input~="borderless"] {
+    border: none;
+
+    .hook-form-input-borderless;
+}
+
+[pam-Form] input[pam-Input~="borderless"]:focus {
+    outline: 0;
+    border: transparent;
+
+    .hook-form-input-borderless-focus;
+}
+
+
+// Sub-object: Select box
+// ==================================================================
+
+// Select box
+//
+// `pam-Select-Box` turns of the platform native styling of select boxes
+//  and adds normalized styling for cross browser compatibility.
+//
+// <div pam-Alert="warning">
+//    Deprecated: Support for select box styling will be dropped
+//    after PAM version 1.1. Use custom select instead `pam-Select`.
+// </div>
+//
+// Markup:
+// <form pam-Form>
+//     <div pam-Select-Box="{{modifier_class}}">
+//         <select>
+//             <option value="geek">Geek</option>
+//             <option value="nerd">Nerd</option>
+//             <option value="dork">Dork</option>
+//         </select>
+//     </div>
+// </form>
+//
+// multiple - enables the multi select box.
+// fluid - enables a select box with fluid width.
+// borderless - removes the select box borders.
+//
+// Style guide: forms.deprecated.selectbox
+
+[pam-Form] [pam-Select-Box] {
+    background: @form-background;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: @form-font-size;
+    line-height: @form-line-height;
+    margin: 0 0 @space-8 0;
+    position: relative;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    .hook-select-box;
+
+    select {
+        appearance: none;
+        background: transparent;
+        background-image: none;
+        box-shadow: none;
+        box-sizing: border-box;
+        margin: 0;
+        padding: @form-padding-vertical @form-padding-horizontal;
+        padding-right: 24px;
+
+        &::-ms-expand {
+            display: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &::after {
+        content: " ▾";
+        position: absolute;
+        right: @space-base;
+        top: @space-8;
+    }
+}
+
+// Sub-modifier: Select box multiple
+
+[pam-Form] [pam-Select-Box~="multiple"] {
+    &::after {
+        content: " ";
+    }
+}
+
+// Sub-modifier: Select box fluid
+
+[pam-Form] [pam-Select-Box~="fluid"] {
+    width: 100%;
+
+    select {
+        width: 100%;
+    }
+}
+
+// Sub-modifier: Select box borderless
+
+[pam-Form] [pam-Select-Box~="borderless"] {
+    select {
+        border: 0;
+    }
+}
+
+
+//  Hooks
+// ==================================================================
+
+// Hooks
+//
+// `.hook-form`
+// `.hook-form-focus`
+// `.hook-form-disabled`
+// `.hook-form-readonly`
+// `.hook-form-readonly-focus`
+// `.hook-form-focus-invalid`
+// `.hook-form-focus-invalid-focus`
+// `.hook-form-input-borderless`
+// `.hook-form-input-borderless-focus`
+// `.hook-form-select`
+// `.hook-form-select-multiple`
+// `.hook-form-select-focus`
+// `.hook-form-select-custom`
+// `.hook-form-label`
+// `.hook-form-fieldset`
+// `.hook-form-legend`
+// `.hook-form-stacked`
+// `.hook-form-aligned`
+// `.hook-form-group`
+// `.hook-form-input-icon`
+// `.hook-form-input-group`
+// `.hook-select-box`
+// `.hook-form-message`
+// `.hook-form-message-inline`
+// `.hook-form-state-success`
+// `.hook-form-state-danger`
+// `.hook-form-size-large`
+// `.hook-form-size-small`
+// `.hook-form-field-inline`
+//
+// Weight: 30
+//
+// Style guide: forms.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-form() {}
+.hook-form-focus() {}
+.hook-form-disabled() {}
+.hook-form-readonly() {}
+.hook-form-readonly-focus() {}
+.hook-form-focus-invalid() {}
+.hook-form-focus-invalid-focus() {}
+.hook-form-input-borderless() {}
+.hook-form-input-borderless-focus() {}
+.hook-form-select() {}
+.hook-form-select-multiple() {}
+.hook-form-select-focus() {}
+.hook-form-select-custom() {}
+.hook-form-label() {}
+.hook-form-fieldset() {}
+.hook-form-legend() {}
+.hook-form-stacked() {}
+.hook-form-aligned() {}
+.hook-form-group() {}
+.hook-form-input-icon() {}
+.hook-form-input-group() {}
+.hook-select-box() {}
+.hook-form-message() {}
+.hook-form-message-inline() {}
+.hook-form-state-success() {}
+.hook-form-state-danger() {}
+.hook-form-size-large() {}
+.hook-form-size-small() {}
+.hook-form-field-inline() {}
+/* stylelint-enable */
