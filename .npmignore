@@ -7,7 +7,5 @@ src/
 # Files
 *.json
 *.js
-CHANGELOG.md
-README.md
-LICENSE.md
+*.md
 yarn.lock
