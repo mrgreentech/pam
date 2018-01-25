@@ -1,0 +1,2634 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PAM</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="kss-assets/css/pam.css">
+<link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+
+</head>
+<body id="kss-node"  >
+
+<header sg-header>
+  <div pam-Grid pam-Grid-Control="align:center">
+      <div pam-Unit="1-5">
+          <a href="./" sg-Link>
+            <img
+              src="kss-assets/img/logo.svg"
+              alt="PAM"
+              title="© 2016 Mr Green Tech All Rights Reserved"
+              height="48"
+              width="48"
+              sg-Logo>
+          </a>
+      </div>
+      <div pam-Unit="4-5">
+          <div pam-Menu sg-Nav>
+              <ul pam-Menu-List>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/blob/master/CHANGELOG.md" pam-Menu-Link>Changelog</a>
+                  </li>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/issues" pam-Menu-Link>Issues</a>
+                  </li>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="small">Download</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</header>
+
+<main sg-main>
+  <div class="kss-sidebar kss-style">
+    <header class="kss-header">
+      <h1 class="kss-doc-title">Documentation</h1>
+    </header>
+    <nav class="kss-nav">
+      <ul class="kss-nav__menu">
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-getting-started.html">
+            <span class="kss-nav__ref">1</span><span class="kss-nav__name">Getting started</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-grids.html">
+            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Grids</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-typography.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">Typography</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" active>
+          <a class="kss-nav__menu-link" href="section-forms.html">
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Forms</span>
+          </a>
+              <ul class="kss-nav__menu-child">
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-states">
+                    <span class="kss-nav__ref ">4.1</span
+                    ><span class="kss-nav__name">State</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-size">
+                    <span class="kss-nav__ref ">4.2</span
+                    ><span class="kss-nav__name">Size</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-width">
+                    <span class="kss-nav__ref ">4.3</span
+                    ><span class="kss-nav__name">Width</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-layout">
+                    <span class="kss-nav__ref ">4.4</span
+                    ><span class="kss-nav__name">Layout</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-message">
+                    <span class="kss-nav__ref ">4.5</span
+                    ><span class="kss-nav__name">Message</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-custom">
+                    <span class="kss-nav__ref ">4.6</span
+                    ><span class="kss-nav__name">Custom controls</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-traits">
+                    <span class="kss-nav__ref ">4.7</span
+                    ><span class="kss-nav__name">Traits</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-experimental">
+                    <span class="kss-nav__ref ">4.8</span
+                    ><span class="kss-nav__name">Experimental</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-deprecated">
+                    <span class="kss-nav__ref ">4.9</span
+                    ><span class="kss-nav__name">Deprecated</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-hooks">
+                    <span class="kss-nav__ref ">4.10</span
+                    ><span class="kss-nav__name">Hooks</span>
+                  </a>
+                </li>
+              </ul>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-buttons.html">
+            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Buttons</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-tables.html">
+            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Tables</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-menus.html">
+            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Menus</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-alert.html">
+            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Alert</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-divider.html">
+            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Divider</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-links.html">
+            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Link</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-lists.html">
+            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Lists</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-tags.html">
+            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Tags</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-column.html">
+            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Column</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-traits.html">
+            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Traits</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-mixins.html">
+            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Mixins</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <article role="main" class="kss-main">
+
+      <div id="kssref-forms" class="kss-section kss-section--depth-1 ">
+
+        <div class="kss-style">
+          <h1 class="kss-title kss-title--level-1">
+            <a class="kss-title__permalink" href="#kssref-forms">
+              Forms
+            </a>
+          </h1>
+
+            <div class="kss-description">
+              <p>Combine various forms, form control selectors, custom components and layout variations to create forms that covers a wide range of use cases.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form="stacked padded">
+    <div pam-Grid>
+        <div pam-Unit="1-1 medium:1-2">
+            <fieldset pam-Fieldset="column">
+                <legend>Text and select</legend>
+                <label for="input-name">Name</label>
+                <input id="input-name" type="text" placeholder="What is it?" pam-Form-Control="fluid">
+                <label for="input-email">Email</label>
+                <input id="input-email" type="email" placeholder="Spam time" pam-Form-Control="fluid">
+                <label for="input-password">Password</label>
+                <input id="input-password" type="password" placeholder="A secret..." pam-Form-Control="fluid">
+                <label for="select-geek">Choose geek level</label>
+                <select id="select-geek" pam-Form-Control="fluid">
+                    <option value="geek">Geek</option>
+                    <option value="nerd">Nerd</option>
+                    <option value="dork">Dork</option>
+                </select>
+                <label for="textarea-description">Please explain</label>
+                <textarea rows="5" placeholder="The secret of 42..." pam-Form-Control="fluid"></textarea>
+            </fieldset>
+        </div>
+        <div pam-Unit="1-1 medium:1-2">
+            <fieldset pam-Fieldset="column">
+                <legend>Checkboxes</legend>
+                <label>
+                    <input type="checkbox" value=""> I´m a hipster
+                </label>
+                <label>
+                    <input type="radio" id="radio1" name="optionsRadios" value="radios" checked> Hipster
+                </label>
+                <label>
+                    <input type="radio" id="radio2" name="optionsRadios" value="radios"> Geek
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Misc</legend>
+                <label for="input-file">File</label>
+                <input id="input-file" type="file" pam-Form-Control="fluid">
+                <label for="input-color">Color</label>
+                <input id="input-color" type="color" pam-Form-Control="fluid">
+            </fieldset>
+        </div>
+    </div>
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms" data-kss-fullscreen="kssref-forms">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked padded&quot;&gt;
+    &lt;div pam-Grid&gt;
+        &lt;div pam-Unit&#x3D;&quot;1-1 medium:1-2&quot;&gt;
+            &lt;fieldset pam-Fieldset&#x3D;&quot;column&quot;&gt;
+                &lt;legend&gt;Text and select&lt;/legend&gt;
+                &lt;label for&#x3D;&quot;input-name&quot;&gt;Name&lt;/label&gt;
+                &lt;input id&#x3D;&quot;input-name&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;What is it?&quot; pam-Form-Control&#x3D;&quot;fluid&quot;&gt;
+                &lt;label for&#x3D;&quot;input-email&quot;&gt;Email&lt;/label&gt;
+                &lt;input id&#x3D;&quot;input-email&quot; type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Spam time&quot; pam-Form-Control&#x3D;&quot;fluid&quot;&gt;
+                &lt;label for&#x3D;&quot;input-password&quot;&gt;Password&lt;/label&gt;
+                &lt;input id&#x3D;&quot;input-password&quot; type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;A secret...&quot; pam-Form-Control&#x3D;&quot;fluid&quot;&gt;
+                &lt;label for&#x3D;&quot;select-geek&quot;&gt;Choose geek level&lt;/label&gt;
+                &lt;select id&#x3D;&quot;select-geek&quot; pam-Form-Control&#x3D;&quot;fluid&quot;&gt;
+                    &lt;option value&#x3D;&quot;geek&quot;&gt;Geek&lt;/option&gt;
+                    &lt;option value&#x3D;&quot;nerd&quot;&gt;Nerd&lt;/option&gt;
+                    &lt;option value&#x3D;&quot;dork&quot;&gt;Dork&lt;/option&gt;
+                &lt;/select&gt;
+                &lt;label for&#x3D;&quot;textarea-description&quot;&gt;Please explain&lt;/label&gt;
+                &lt;textarea rows&#x3D;&quot;5&quot; placeholder&#x3D;&quot;The secret of 42...&quot; pam-Form-Control&#x3D;&quot;fluid&quot;&gt;&lt;/textarea&gt;
+            &lt;/fieldset&gt;
+        &lt;/div&gt;
+        &lt;div pam-Unit&#x3D;&quot;1-1 medium:1-2&quot;&gt;
+            &lt;fieldset pam-Fieldset&#x3D;&quot;column&quot;&gt;
+                &lt;legend&gt;Checkboxes&lt;/legend&gt;
+                &lt;label&gt;
+                    &lt;input type&#x3D;&quot;checkbox&quot; value&#x3D;&quot;&quot;&gt; I´m a hipster
+                &lt;/label&gt;
+                &lt;label&gt;
+                    &lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;radio1&quot; name&#x3D;&quot;optionsRadios&quot; value&#x3D;&quot;radios&quot; checked&gt; Hipster
+                &lt;/label&gt;
+                &lt;label&gt;
+                    &lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;radio2&quot; name&#x3D;&quot;optionsRadios&quot; value&#x3D;&quot;radios&quot;&gt; Geek
+                &lt;/label&gt;
+            &lt;/fieldset&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;Misc&lt;/legend&gt;
+                &lt;label for&#x3D;&quot;input-file&quot;&gt;File&lt;/label&gt;
+                &lt;input id&#x3D;&quot;input-file&quot; type&#x3D;&quot;file&quot; pam-Form-Control&#x3D;&quot;fluid&quot;&gt;
+                &lt;label for&#x3D;&quot;input-color&quot;&gt;Color&lt;/label&gt;
+                &lt;input id&#x3D;&quot;input-color&quot; type&#x3D;&quot;color&quot; pam-Form-Control&#x3D;&quot;fluid&quot;&gt;
+            &lt;/fieldset&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </div>
+      <section id="kssref-forms-states" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-forms-states">
+              State
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Give users feedback related to form controls
+by using native or custom states.</p>
+
+            </div>
+
+        </div>
+
+      </section>
+      <section id="kssref-forms-states-native" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-states-native">
+              Native
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p>Add the native form attributes <code>disabled</code>, <code>readonly</code> and <code>required</code>
+to use native states with PAM forms.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__default-name kss-style">
+                Default styling
+              </div>
+
+            <div class="kss-modifier__example">
+              <form pam-Form>
+     <input type="text" placeholder="Input" value="" >
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+              <div class="kss-modifier__name kss-style">
+                disabled
+              </div>
+              <div class="kss-modifier__description kss-style">
+                makes a input field disabled.
+              </div>
+              <div class="kss-modifier__example">
+                <form pam-Form>
+     <input type="text" placeholder="Input" value="disabled" disabled>
+</form>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                readonly
+              </div>
+              <div class="kss-modifier__description kss-style">
+                puts a input to a read-only state.
+              </div>
+              <div class="kss-modifier__example">
+                <form pam-Form>
+     <input type="text" placeholder="Input" value="readonly" readonly>
+</form>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                required
+              </div>
+              <div class="kss-modifier__description kss-style">
+                marks a input control as required.
+              </div>
+              <div class="kss-modifier__example">
+                <form pam-Form>
+     <input type="text" placeholder="Input" value="required" required>
+</form>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-states-native" data-kss-fullscreen="kssref-forms-states-native">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-states-native.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-states-native" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-states-native" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+     &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Input&quot; value&#x3D;&quot;[modifier class]&quot; [modifier class]&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-states-custom" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-states-custom">
+              Custom
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p>Use the <code>pam-Form-State</code> to apply custom form states <code>success</code> or <code>danger</code>.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__default-name kss-style">
+                Default styling
+              </div>
+
+            <div class="kss-modifier__example">
+              <form pam-Form>
+     <input type="text" placeholder="Input" value="" pam-Form-State="">
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+              <div class="kss-modifier__name kss-style">
+                success
+              </div>
+              <div class="kss-modifier__description kss-style">
+                attribute marks a success state for the input.
+              </div>
+              <div class="kss-modifier__example">
+                <form pam-Form>
+     <input type="text" placeholder="Input" value="success" pam-Form-State="success">
+</form>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                danger
+              </div>
+              <div class="kss-modifier__description kss-style">
+                attribute marks a error state for the input.
+              </div>
+              <div class="kss-modifier__example">
+                <form pam-Form>
+     <input type="text" placeholder="Input" value="danger" pam-Form-State="danger">
+</form>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-states-custom" data-kss-fullscreen="kssref-forms-states-custom">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-states-custom.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-states-custom" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-states-custom" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+     &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Input&quot; value&#x3D;&quot;[modifier class]&quot; pam-Form-State&#x3D;&quot;[modifier class]&quot;&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-size" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-forms-size">
+              Size
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Adjust size of <code>input</code>, <code>select</code> or <code>textarea</code> with <code>pam-Form-Size</code>.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form="stacked">
+    <input pam-Form-Size="large" type="text" id="password" placeholder="Large">
+    <input type="text" id="password" placeholder="Default">
+    <input pam-Form-Size="small" type="text" id="password" placeholder="Small">
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-size" data-kss-fullscreen="kssref-forms-size">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-size.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-size" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-size" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
+    &lt;input pam-Form-Size&#x3D;&quot;large&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Large&quot;&gt;
+    &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Default&quot;&gt;
+    &lt;input pam-Form-Size&#x3D;&quot;small&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Small&quot;&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-width" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-forms-width">
+              Width
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Adjust width of <code>input</code>, <code>select</code> or <code>textarea</code> with
+<code>pam-Form-Width</code> which supports <code>thirds</code> and <code>fifths</code>.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form="stacked">
+    <input pam-Form-Width="1-1" type="text" id="password" placeholder="1-1">
+    <input pam-Form-Width="2-3" type="text" id="password" placeholder="2-3">
+    <input pam-Form-Width="1-2" type="text" id="password" placeholder="1-2">
+    <input pam-Form-Width="1-3" type="text" id="password" placeholder="1-3">
+    <input pam-Form-Width="1-4" type="text" id="password" placeholder="1-4">
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-width" data-kss-fullscreen="kssref-forms-width">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-width.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-width" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-width" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
+    &lt;input pam-Form-Width&#x3D;&quot;1-1&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;1-1&quot;&gt;
+    &lt;input pam-Form-Width&#x3D;&quot;2-3&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;2-3&quot;&gt;
+    &lt;input pam-Form-Width&#x3D;&quot;1-2&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;1-2&quot;&gt;
+    &lt;input pam-Form-Width&#x3D;&quot;1-3&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;1-3&quot;&gt;
+    &lt;input pam-Form-Width&#x3D;&quot;1-4&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;1-4&quot;&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-layout" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-forms-layout">
+              Layout
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Form layout variations</p>
+
+            </div>
+
+        </div>
+
+      </section>
+      <section id="kssref-forms-layout-inline" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-layout-inline">
+              Default
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p><code>pam-Form</code> sets up the base for forms and outputs a default inline form.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form>
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <input type="button" pam-Button="small" value="Log in">
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-layout-inline" data-kss-fullscreen="kssref-forms-layout-inline">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-layout-inline.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-layout-inline" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-layout-inline" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+    &lt;input type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Email&quot;&gt;
+    &lt;input type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Password&quot;&gt;
+    &lt;input type&#x3D;&quot;button&quot; pam-Button&#x3D;&quot;small&quot; value&#x3D;&quot;Log in&quot;&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-layout-stacked" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-layout-stacked">
+              Stacked
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p><code>pam-Form=&quot;stacked&quot;</code> changes form elements to blocks so that the output is a stacked form.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form="stacked">
+   <label for="email">Email</label>
+    <input type="email" placeholder="Email">
+    <label for="password">Password</label>
+    <input type="password" placeholder="Password">
+    <input type="button" pam-Button="small" value="Log in">
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-layout-stacked" data-kss-fullscreen="kssref-forms-layout-stacked">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-layout-stacked.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-layout-stacked" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-layout-stacked" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
+   &lt;label for&#x3D;&quot;email&quot;&gt;Email&lt;/label&gt;
+    &lt;input type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Email&quot;&gt;
+    &lt;label for&#x3D;&quot;password&quot;&gt;Password&lt;/label&gt;
+    &lt;input type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Password&quot;&gt;
+    &lt;input type&#x3D;&quot;button&quot; pam-Button&#x3D;&quot;small&quot; value&#x3D;&quot;Log in&quot;&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-layout-aligned" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-layout-aligned">
+              Aligned
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p><code>pam-Form=&quot;aligned&quot;</code> sets up a aligned form with labels to the left of the input fields.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form="aligned">
+    <div pam-Fieldset>
+        <label for="email">Email</label>
+        <input type="email" id="password" placeholder="Email">
+    </div>
+    <div pam-Fieldset>
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Password">
+    </div>
+    <div pam-Fieldset="actions">
+        <input type="button" pam-Button="small" value="Log in">
+    </div>
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-layout-aligned" data-kss-fullscreen="kssref-forms-layout-aligned">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-layout-aligned.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-layout-aligned" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-layout-aligned" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;aligned&quot;&gt;
+    &lt;div pam-Fieldset&gt;
+        &lt;label for&#x3D;&quot;email&quot;&gt;Email&lt;/label&gt;
+        &lt;input type&#x3D;&quot;email&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Email&quot;&gt;
+    &lt;/div&gt;
+    &lt;div pam-Fieldset&gt;
+        &lt;label for&#x3D;&quot;password&quot;&gt;Password&lt;/label&gt;
+        &lt;input type&#x3D;&quot;password&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Password&quot;&gt;
+    &lt;/div&gt;
+    &lt;div pam-Fieldset&#x3D;&quot;actions&quot;&gt;
+        &lt;input type&#x3D;&quot;button&quot; pam-Button&#x3D;&quot;small&quot; value&#x3D;&quot;Log in&quot;&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-layout-grouped" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-layout-grouped">
+              Grouped fields
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p><code>pam-Fieldset</code> combined with a <code>&lt;fieldset&gt;</code> element will group a set of form fields.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form>
+    <fieldset pam-Fieldset="grouped">
+        <input type="text" placeholder="Username">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+    </fieldset>
+    <fieldset pam-Fieldset="grouped">
+        <input type="text" placeholder="Nickname">
+        <input type="text" placeholder="City">
+        <input type="text" placeholder="Favorite movie">
+    </fieldset>
+    <fieldset pam-Fieldset="actions">
+        <input type="button" pam-Button="small" value="Log in">
+    </fieldset>
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-layout-grouped" data-kss-fullscreen="kssref-forms-layout-grouped">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-layout-grouped.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-layout-grouped" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-layout-grouped" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+    &lt;fieldset pam-Fieldset&#x3D;&quot;grouped&quot;&gt;
+        &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Username&quot;&gt;
+        &lt;input type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Email&quot;&gt;
+        &lt;input type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Password&quot;&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset pam-Fieldset&#x3D;&quot;grouped&quot;&gt;
+        &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Nickname&quot;&gt;
+        &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;City&quot;&gt;
+        &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Favorite movie&quot;&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset pam-Fieldset&#x3D;&quot;actions&quot;&gt;
+        &lt;input type&#x3D;&quot;button&quot; pam-Button&#x3D;&quot;small&quot; value&#x3D;&quot;Log in&quot;&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-message" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-forms-message">
+              Message
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p><code>pam-Form-Message</code> is a helper element that shows text
+under or on the side of a form field.</p>
+
+            </div>
+
+        </div>
+
+      </section>
+      <section id="kssref-forms-message-block" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-message-block">
+              Block
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p>The default message is a block element</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form="stacked">
+    <fieldset>
+        <label>Username</label>
+        <input type="text">
+        <aside pam-Form-Message>Block help text</aside>
+    </fieldset>
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-message-block" data-kss-fullscreen="kssref-forms-message-block">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-message-block.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-message-block" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-message-block" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
+    &lt;fieldset&gt;
+        &lt;label&gt;Username&lt;/label&gt;
+        &lt;input type&#x3D;&quot;text&quot;&gt;
+        &lt;aside pam-Form-Message&gt;Block help text&lt;/aside&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-message-inline" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-message-inline">
+              Inline
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p>To display the message inline apply the <code>inline</code>
+value to <code>pam-Form-Message</code>.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form>
+    <fieldset>
+        <label>Username</label>
+        <input type="text">
+        <aside pam-Form-Message="inline">Block help text</aside>
+    </fieldset>
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-message-inline" data-kss-fullscreen="kssref-forms-message-inline">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-message-inline.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-message-inline" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-message-inline" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+    &lt;fieldset&gt;
+        &lt;label&gt;Username&lt;/label&gt;
+        &lt;input type&#x3D;&quot;text&quot;&gt;
+        &lt;aside pam-Form-Message&#x3D;&quot;inline&quot;&gt;Block help text&lt;/aside&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-custom" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-forms-custom">
+              Custom controls
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>There are group of custom controls to use which gives more flexibility
+and control over the form controls.</p>
+
+            </div>
+
+        </div>
+
+      </section>
+      <section id="kssref-forms-custom-inline" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-custom-inline">
+              Icon
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p><code>pam-Form-Inline</code> can group a form control with a icon. To apply the icon on the right side use <code>pam-Form-Inline=&quot;reverse&quot;</code>.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form>
+    <div pam-Form-Inline>
+        <label for="group-input" pam-Form-Icon>
+            <div sg-mock-icon></div>
+        </label>
+        <input id="group-input" type="text" placeholder="Input group" pam-Form-Control>
+    </div>
+    <div pam-Form-Inline>
+        <label for="group-select" pam-Form-Icon>
+            <div sg-mock-icon></div>
+        </label>
+        <select id="group-select" pam-Form-Control>
+            <option value="geek">Geek</option>
+            <option value="nerd">Nerd</option>
+            <option value="dork">Dork</option>
+        </select>
+    </div>
+    <div pam-Form-Inline="reverse">
+        <label for="group-input-reverse" pam-Form-Icon>
+            <div sg-mock-icon></div>
+        </label>
+        <input id="group-input-reverse" type="text" placeholder="Input group" pam-Form-Control>
+    </div>
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-custom-inline" data-kss-fullscreen="kssref-forms-custom-inline">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-custom-inline.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-custom-inline" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-custom-inline" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+    &lt;div pam-Form-Inline&gt;
+        &lt;label for&#x3D;&quot;group-input&quot; pam-Form-Icon&gt;
+            &lt;div sg-mock-icon&gt;&lt;/div&gt;
+        &lt;/label&gt;
+        &lt;input id&#x3D;&quot;group-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Input group&quot; pam-Form-Control&gt;
+    &lt;/div&gt;
+    &lt;div pam-Form-Inline&gt;
+        &lt;label for&#x3D;&quot;group-select&quot; pam-Form-Icon&gt;
+            &lt;div sg-mock-icon&gt;&lt;/div&gt;
+        &lt;/label&gt;
+        &lt;select id&#x3D;&quot;group-select&quot; pam-Form-Control&gt;
+            &lt;option value&#x3D;&quot;geek&quot;&gt;Geek&lt;/option&gt;
+            &lt;option value&#x3D;&quot;nerd&quot;&gt;Nerd&lt;/option&gt;
+            &lt;option value&#x3D;&quot;dork&quot;&gt;Dork&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div pam-Form-Inline&#x3D;&quot;reverse&quot;&gt;
+        &lt;label for&#x3D;&quot;group-input-reverse&quot; pam-Form-Icon&gt;
+            &lt;div sg-mock-icon&gt;&lt;/div&gt;
+        &lt;/label&gt;
+        &lt;input id&#x3D;&quot;group-input-reverse&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Input group&quot; pam-Form-Control&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-custom-lego" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-custom-lego">
+              Lego
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p><code>pam-Form-Group=&quot;lego&quot;</code> extend form controls by adding icons, buttons, selects
+ before or after text-based form controls as lego bricks.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form>
+    <div pam-Form-Group="lego">
+        <div pam-Form-Group-Addon>
+            <select>
+                <option value="honda">+46</option>
+                <option value="toyota">+211</option>
+                <option value="nissan">+1-284</option>
+            </select>
+        </div>
+        <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+    </div>
+    <div pam-Form-Group="lego">
+        <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+        <div pam-Form-Group-Addon>
+            <input type="button" pam-Button="small" value="send">
+        </div>
+    </div>
+    <div pam-Form-Group="lego">
+        <div pam-Form-Group-Addon>
+            <select>
+                <option value="honda">+46</option>
+                <option value="toyota">+211</option>
+                <option value="nissan" selected>+1-284</option>
+            </select>
+        </div>
+            <input id="addon-lego" type="text" placeholder="Two addons" pam-Form-Control>
+        <div pam-Form-Group-Addon>
+            <input type="button" pam-Button="small" value="send">
+        </div>
+    </div>
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-custom-lego" data-kss-fullscreen="kssref-forms-custom-lego">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-custom-lego.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-custom-lego" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-custom-lego" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+    &lt;div pam-Form-Group&#x3D;&quot;lego&quot;&gt;
+        &lt;div pam-Form-Group-Addon&gt;
+            &lt;select&gt;
+                &lt;option value&#x3D;&quot;honda&quot;&gt;+46&lt;/option&gt;
+                &lt;option value&#x3D;&quot;toyota&quot;&gt;+211&lt;/option&gt;
+                &lt;option value&#x3D;&quot;nissan&quot;&gt;+1-284&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;input id&#x3D;&quot;addon-lego&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;One addon&quot; pam-Form-Control&gt;
+    &lt;/div&gt;
+    &lt;div pam-Form-Group&#x3D;&quot;lego&quot;&gt;
+        &lt;input id&#x3D;&quot;addon-lego&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;One addon&quot; pam-Form-Control&gt;
+        &lt;div pam-Form-Group-Addon&gt;
+            &lt;input type&#x3D;&quot;button&quot; pam-Button&#x3D;&quot;small&quot; value&#x3D;&quot;send&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div pam-Form-Group&#x3D;&quot;lego&quot;&gt;
+        &lt;div pam-Form-Group-Addon&gt;
+            &lt;select&gt;
+                &lt;option value&#x3D;&quot;honda&quot;&gt;+46&lt;/option&gt;
+                &lt;option value&#x3D;&quot;toyota&quot;&gt;+211&lt;/option&gt;
+                &lt;option value&#x3D;&quot;nissan&quot; selected&gt;+1-284&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+            &lt;input id&#x3D;&quot;addon-lego&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Two addons&quot; pam-Form-Control&gt;
+        &lt;div pam-Form-Group-Addon&gt;
+            &lt;input type&#x3D;&quot;button&quot; pam-Button&#x3D;&quot;small&quot; value&#x3D;&quot;send&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-custom-lego-block" class="kss-section kss-section--depth-4 ">
+
+        <div class="kss-style">
+          <h4 class="kss-title kss-title--level-4">
+            <a class="kss-title__permalink" href="#kssref-forms-custom-lego-block">
+              Lego block
+            </a>
+          </h4>
+
+            <div class="kss-description">
+              <p><code>pam-Form-Group=&quot;lego block&quot;</code> display lego brick as a block.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form>
+    <div pam-Form-Group="lego block">
+        <div pam-Form-Group-Addon>
+            <select>
+                <option value="honda">+46</option>
+                <option value="toyota">+211</option>
+                <option value="nissan">+1-284</option>
+            </select>
+        </div>
+        <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+    </div>
+    <div pam-Form-Group="lego block">
+        <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+        <div pam-Form-Group-Addon>
+            <input type="button" pam-Button="small" value="send">
+        </div>
+    </div>
+    <div pam-Form-Group="lego block">
+        <div pam-Form-Group-Addon>
+            <select>
+                <option value="honda">+46</option>
+                <option value="toyota">+211</option>
+                <option value="nissan" selected>+1-284</option>
+            </select>
+        </div>
+            <input id="addon-lego" type="text" placeholder="Two addons" pam-Form-Control>
+        <div pam-Form-Group-Addon>
+            <input type="button" pam-Button="small" value="send">
+        </div>
+    </div>
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-custom-lego-block" data-kss-fullscreen="kssref-forms-custom-lego-block">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-custom-lego-block.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-custom-lego-block" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-custom-lego-block" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+    &lt;div pam-Form-Group&#x3D;&quot;lego block&quot;&gt;
+        &lt;div pam-Form-Group-Addon&gt;
+            &lt;select&gt;
+                &lt;option value&#x3D;&quot;honda&quot;&gt;+46&lt;/option&gt;
+                &lt;option value&#x3D;&quot;toyota&quot;&gt;+211&lt;/option&gt;
+                &lt;option value&#x3D;&quot;nissan&quot;&gt;+1-284&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;input id&#x3D;&quot;addon-lego&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;One addon&quot; pam-Form-Control&gt;
+    &lt;/div&gt;
+    &lt;div pam-Form-Group&#x3D;&quot;lego block&quot;&gt;
+        &lt;input id&#x3D;&quot;addon-lego&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;One addon&quot; pam-Form-Control&gt;
+        &lt;div pam-Form-Group-Addon&gt;
+            &lt;input type&#x3D;&quot;button&quot; pam-Button&#x3D;&quot;small&quot; value&#x3D;&quot;send&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div pam-Form-Group&#x3D;&quot;lego block&quot;&gt;
+        &lt;div pam-Form-Group-Addon&gt;
+            &lt;select&gt;
+                &lt;option value&#x3D;&quot;honda&quot;&gt;+46&lt;/option&gt;
+                &lt;option value&#x3D;&quot;toyota&quot;&gt;+211&lt;/option&gt;
+                &lt;option value&#x3D;&quot;nissan&quot; selected&gt;+1-284&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+            &lt;input id&#x3D;&quot;addon-lego&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Two addons&quot; pam-Form-Control&gt;
+        &lt;div pam-Form-Group-Addon&gt;
+            &lt;input type&#x3D;&quot;button&quot; pam-Button&#x3D;&quot;small&quot; value&#x3D;&quot;send&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-custom-select" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-custom-select">
+              Select
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p><code>pam-Select</code> turns on custom styling of the select element.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form="stacked">
+    <label for="select-native">Native select</label>
+    <select id="select-native">
+        <option value="geek">Geek</option>
+        <option value="nerd">Nerd</option>
+        <option value="dork">Dork</option>
+    </select>
+    <label for="select-custom">Custom select</label>
+    <select id="select-custom" pam-Select="">
+        <option value="geek">Geek</option>
+        <option value="nerd">Nerd</option>
+        <option value="dork">Dork</option>
+    </select>
+    <label for="select-multiple">Multiple select</label>
+    <select id="select-multiple" multiple>
+        <option value="geek">Geek</option>
+        <option value="nerd">Nerd</option>
+        <option value="dork">Dork</option>
+    </select>
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-custom-select" data-kss-fullscreen="kssref-forms-custom-select">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-custom-select.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-custom-select" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-custom-select" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
+    &lt;label for&#x3D;&quot;select-native&quot;&gt;Native select&lt;/label&gt;
+    &lt;select id&#x3D;&quot;select-native&quot;&gt;
+        &lt;option value&#x3D;&quot;geek&quot;&gt;Geek&lt;/option&gt;
+        &lt;option value&#x3D;&quot;nerd&quot;&gt;Nerd&lt;/option&gt;
+        &lt;option value&#x3D;&quot;dork&quot;&gt;Dork&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;label for&#x3D;&quot;select-custom&quot;&gt;Custom select&lt;/label&gt;
+    &lt;select id&#x3D;&quot;select-custom&quot; pam-Select&#x3D;&quot;&quot;&gt;
+        &lt;option value&#x3D;&quot;geek&quot;&gt;Geek&lt;/option&gt;
+        &lt;option value&#x3D;&quot;nerd&quot;&gt;Nerd&lt;/option&gt;
+        &lt;option value&#x3D;&quot;dork&quot;&gt;Dork&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;label for&#x3D;&quot;select-multiple&quot;&gt;Multiple select&lt;/label&gt;
+    &lt;select id&#x3D;&quot;select-multiple&quot; multiple&gt;
+        &lt;option value&#x3D;&quot;geek&quot;&gt;Geek&lt;/option&gt;
+        &lt;option value&#x3D;&quot;nerd&quot;&gt;Nerd&lt;/option&gt;
+        &lt;option value&#x3D;&quot;dork&quot;&gt;Dork&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-traits" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-forms-traits">
+              Traits
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p><code>pam-form-control</code> is a generic trait to be used with form controls
+to optimize and trim their behaviour when needed.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form="stacked">
+    <label for="input-borderless">So borderless!</label>
+    <input id="input-borderless" placeholder="Borderless" pam-Form-Control="borderless">
+    <label for="input-fluid">Fluid like water</label>
+    <input id="input-fluid" placeholder="Fluid" pam-Form-Control="fluid">
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-traits" data-kss-fullscreen="kssref-forms-traits">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-traits.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-traits" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-traits" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
+    &lt;label for&#x3D;&quot;input-borderless&quot;&gt;So borderless!&lt;/label&gt;
+    &lt;input id&#x3D;&quot;input-borderless&quot; placeholder&#x3D;&quot;Borderless&quot; pam-Form-Control&#x3D;&quot;borderless&quot;&gt;
+    &lt;label for&#x3D;&quot;input-fluid&quot;&gt;Fluid like water&lt;/label&gt;
+    &lt;input id&#x3D;&quot;input-fluid&quot; placeholder&#x3D;&quot;Fluid&quot; pam-Form-Control&#x3D;&quot;fluid&quot;&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-experimental" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-forms-experimental">
+              Experimental
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Following forms rulez are experimental, and has <strong>no offical browser support</strong>.</p>
+
+            </div>
+
+        </div>
+
+      </section>
+      <section id="kssref-forms-experimental-label" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-experimental-label">
+              Floating label
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p><code>pam-Field</code> with <code>input</code> and <code>label</code> element creates a floating label composite.</p>
+<div pam-Alert="info">
+   Experimental: CSS only floating label, evaluating to
+   implement for evergreen browsers.
+</div>
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form>
+    <div pam-Field>
+        <input type="text" name="fullname" id="fullname" placeholder="Jon Doe">
+        <label for="fullname">Nickname</label>
+    </div>
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-experimental-label" data-kss-fullscreen="kssref-forms-experimental-label">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-experimental-label.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-experimental-label" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-experimental-label" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+    &lt;div pam-Field&gt;
+        &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;fullname&quot; id&#x3D;&quot;fullname&quot; placeholder&#x3D;&quot;Jon Doe&quot;&gt;
+        &lt;label for&#x3D;&quot;fullname&quot;&gt;Nickname&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-deprecated" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-forms-deprecated">
+              Deprecated
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Following form rulez will be deprecated in version 1.1.0.</p>
+
+            </div>
+
+        </div>
+
+      </section>
+      <section id="kssref-forms-deprecated-input-borderless" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-deprecated-input-borderless">
+              Input borderless
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p><code>pam-Input=&quot;borderless&quot;</code> removes the form field border.</p>
+<div pam-Alert="warning">
+   Deprecated: Styling for borderless legacy form fields. Support will be dropped
+   after PAM version 1.1.
+</div>
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form="stacked">
+    <label for="borderless">Borderless input</label>
+    <input id="borderless" type="text" placeholder="Borderless" pam-Input="borderless">
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-deprecated-input-borderless" data-kss-fullscreen="kssref-forms-deprecated-input-borderless">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-deprecated-input-borderless.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-deprecated-input-borderless" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-deprecated-input-borderless" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
+    &lt;label for&#x3D;&quot;borderless&quot;&gt;Borderless input&lt;/label&gt;
+    &lt;input id&#x3D;&quot;borderless&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Borderless&quot; pam-Input&#x3D;&quot;borderless&quot;&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-deprecated-input-icon" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-deprecated-input-icon">
+              Input icon
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p><code>pam-Input-Icon</code> enables icons to be used with a input.</p>
+<div pam-Alert="warning">
+   Deprecated: Styling for legacy input icons. Support will be dropped
+   after PAM version 1.1.
+</div>
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <form pam-Form>
+    <div pam-Input-Icon>
+        <label for="icon">
+        <img src="http://placehold.it/24x24">
+        </label>
+        <input id="icon" type="text" placeholder="Icon">
+    </div>
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-deprecated-input-icon" data-kss-fullscreen="kssref-forms-deprecated-input-icon">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-deprecated-input-icon.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-deprecated-input-icon" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-deprecated-input-icon" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+    &lt;div pam-Input-Icon&gt;
+        &lt;label for&#x3D;&quot;icon&quot;&gt;
+        &lt;img src&#x3D;&quot;http://placehold.it/24x24&quot;&gt;
+        &lt;/label&gt;
+        &lt;input id&#x3D;&quot;icon&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Icon&quot;&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-deprecated-selectbox" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-forms-deprecated-selectbox">
+              Select box
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p><code>pam-Select-Box</code> turns of the platform native styling of select boxes
+ and adds normalized styling for cross browser compatibility.</p>
+<div pam-Alert="warning">
+   Deprecated: Support for select box styling will be dropped
+   after PAM version 1.1. Use custom select instead <code>pam-Select</code>.
+</div>
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__default-name kss-style">
+                Default styling
+              </div>
+
+            <div class="kss-modifier__example">
+              <form pam-Form>
+    <div pam-Select-Box="">
+        <select>
+            <option value="geek">Geek</option>
+            <option value="nerd">Nerd</option>
+            <option value="dork">Dork</option>
+        </select>
+    </div>
+</form>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+              <div class="kss-modifier__name kss-style">
+                multiple
+              </div>
+              <div class="kss-modifier__description kss-style">
+                enables the multi select box.
+              </div>
+              <div class="kss-modifier__example">
+                <form pam-Form>
+    <div pam-Select-Box="multiple">
+        <select>
+            <option value="geek">Geek</option>
+            <option value="nerd">Nerd</option>
+            <option value="dork">Dork</option>
+        </select>
+    </div>
+</form>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                fluid
+              </div>
+              <div class="kss-modifier__description kss-style">
+                enables a select box with fluid width.
+              </div>
+              <div class="kss-modifier__example">
+                <form pam-Form>
+    <div pam-Select-Box="fluid">
+        <select>
+            <option value="geek">Geek</option>
+            <option value="nerd">Nerd</option>
+            <option value="dork">Dork</option>
+        </select>
+    </div>
+</form>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                borderless
+              </div>
+              <div class="kss-modifier__description kss-style">
+                removes the select box borders.
+              </div>
+              <div class="kss-modifier__example">
+                <form pam-Form>
+    <div pam-Select-Box="borderless">
+        <select>
+            <option value="geek">Geek</option>
+            <option value="nerd">Nerd</option>
+            <option value="dork">Dork</option>
+        </select>
+    </div>
+</form>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-forms-deprecated-selectbox" data-kss-fullscreen="kssref-forms-deprecated-selectbox">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-forms-deprecated-selectbox.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-forms-deprecated-selectbox" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-forms-deprecated-selectbox" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+    &lt;div pam-Select-Box&#x3D;&quot;[modifier class]&quot;&gt;
+        &lt;select&gt;
+            &lt;option value&#x3D;&quot;geek&quot;&gt;Geek&lt;/option&gt;
+            &lt;option value&#x3D;&quot;nerd&quot;&gt;Nerd&lt;/option&gt;
+            &lt;option value&#x3D;&quot;dork&quot;&gt;Dork&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+      </section>
+      <section id="kssref-forms-hooks" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-forms-hooks">
+              Hooks
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p><code>.hook-form</code>
+<code>.hook-form-focus</code>
+<code>.hook-form-disabled</code>
+<code>.hook-form-readonly</code>
+<code>.hook-form-readonly-focus</code>
+<code>.hook-form-focus-invalid</code>
+<code>.hook-form-focus-invalid-focus</code>
+<code>.hook-form-input-borderless</code>
+<code>.hook-form-input-borderless-focus</code>
+<code>.hook-form-select</code>
+<code>.hook-form-select-multiple</code>
+<code>.hook-form-select-focus</code>
+<code>.hook-form-select-custom</code>
+<code>.hook-form-label</code>
+<code>.hook-form-fieldset</code>
+<code>.hook-form-legend</code>
+<code>.hook-form-stacked</code>
+<code>.hook-form-aligned</code>
+<code>.hook-form-group</code>
+<code>.hook-form-input-icon</code>
+<code>.hook-form-input-group</code>
+<code>.hook-select-box</code>
+<code>.hook-form-message</code>
+<code>.hook-form-message-inline</code>
+<code>.hook-form-state-success</code>
+<code>.hook-form-state-danger</code>
+<code>.hook-form-size-large</code>
+<code>.hook-form-size-small</code>
+<code>.hook-form-field-inline</code></p>
+
+            </div>
+
+        </div>
+
+      </section>
+  </article>
+</main>
+<footer sg-footer></footer>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
+<script src="kss-assets/prettify.js"></script>
+<script src="kss-assets/kss-fullscreen.js"></script>
+<script src="kss-assets/kss-guides.js"></script>
+<script src="kss-assets/kss-markup.js"></script>
+<script>
+  prettyPrint();
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+  var kssFullScreen = new KssFullScreen({
+    idPrefix: 'kss-fullscreen-',
+    bodyClass: 'kss-fullscreen-mode',
+    elementClass: 'is-fullscreen'
+  });
+  var kssGuides = new KssGuides({
+    bodyClass: 'kss-guides-mode'
+  });
+  var kssMarkup = new KssMarkup({
+    bodyClass: 'kss-markup-mode',
+    detailsClass: 'kss-markup'
+  });
+</script>
+
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>

@@ -1,0 +1,33 @@
+@media only screen and (max-width: @breakpoint-small) {
+    [pam-Form] button[type="submit"] {
+        margin: @space-8 0 0;
+    }
+
+    [pam-Form] input:not([type="checkbox"]):not([type="radio"]),
+    [pam-Form] label {
+        margin-bottom: @space-8;
+        display: block;
+    }
+
+    [pam-Form~="aligned"] [pam-Fieldset] {
+        display: block;
+    }
+
+    [pam-Form~="aligned"] [pam-Fieldset] label {
+        margin-bottom: @space-8;
+        text-align: left;
+        display: block;
+        width: 100%;
+    }
+
+    [pam-Form~="aligned"] [pam-Fieldset~="actions"] {
+        margin: @space-24 0 0;
+    }
+
+    [pam-Form-Message~="inline"],
+    [pam-Form-Message] {
+        display: block;
+        font-size: @font-size-xsmall;
+        padding: @space-8 0;
+    }
+}

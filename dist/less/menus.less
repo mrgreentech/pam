@@ -1,0 +1,640 @@
+// Menus
+//
+// Menus are horizontal as default and take up 100% width. Use custom or preset modifiers
+// to change the apperance and style of the menu.
+//
+// Markup:
+// <div pam-Menu>
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 8
+//
+// Style guide: menus
+
+
+//  Variables
+// ==================================================================
+
+@menu-arrow-horizontal:    "\25BE";
+@menu-arrow-vertical:      "\25B8";
+@menu-children-color:      @skin-text;
+@menu-disabled-opacity:    @opacity-base;
+@menu-heading-color:       @skin-darker;
+@menu-link-color:          @skin-dark;
+@menu-link-hover-bg-color: #ededed;
+@menu-selected-link-color: #000;
+@menu-seperator-bg-color:  @skin-hint;
+@menu-seperator-thickness: 1px;
+
+
+// ==================================================================
+// Menu
+// ==================================================================
+
+[pam-Menu] {
+    box-sizing: border-box;
+
+    .hook-menu;
+}
+
+[pam-Menu] [pam-Menu-List],
+[pam-Menu] [pam-Menu-Item] {
+    position: relative;
+}
+
+[pam-Menu] [pam-Menu-List] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    .hook-menu-list;
+}
+
+
+//  Sub-object: Item
+// ==========================================================================
+
+[pam-Menu] [pam-Menu-Item] {
+    margin: 0;
+    padding: 0;
+
+    .hook-menu-item;
+}
+
+
+//  Sub-object: Item states
+// ==========================================================================
+
+// States
+//
+// `pam-Menu-Item` has states `active`, `selected` and `disabled` to
+// adjust menu items to different contexts.
+//
+// Markup:
+// <div pam-Menu="horizontal">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item="selected">
+//             <a href="#" pam-Menu-Link>Home</a>
+//         </li>
+//         <li pam-Menu-Item>
+//             <a href="#" pam-Menu-Link>About</a>
+//         </li>
+//         <li pam-Menu-Item="disabled">
+//             <a href="#" pam-Menu-Link>Stuff</a>
+//         </li>
+//     </ul>
+// </div>
+//
+// Weight: 6
+//
+// Style guide: menus.states
+
+[pam-Menu] [pam-Menu-Item~="active"] > [pam-Menu-Link] {
+    background-color: @menu-link-hover-bg-color;
+
+    .hook-menu-item-active-link;
+}
+
+[pam-Menu] [pam-Menu-Item~="disabled"] {
+    opacity: @menu-disabled-opacity;
+
+    .hook-menu-item-disabled;
+}
+
+[pam-Menu] [pam-Menu-Item~="disabled"] [pam-Menu-Link] {
+    cursor: not-allowed;
+
+    .hook-menu-item-disabled-link;
+}
+
+[pam-Menu] [pam-Menu-Item~="disabled"] [pam-Menu-Link]:hover {
+    background-color: transparent;
+}
+
+[pam-Menu] [pam-Menu-Item~="selected"] [pam-Menu-Link],
+[pam-Menu] [pam-Menu-Item~="selected"] [pam-Menu-Link]:visited {
+    color: @menu-selected-link-color;
+
+    .hook-menu-item-selected-link;
+}
+
+
+//  Sub-object: Link
+// ==========================================================================
+
+[pam-Menu] [pam-Menu-Link] {
+    color: @menu-link-color;
+    padding: @space-8 @space-16;
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+
+    .hook-menu-link;
+}
+
+[pam-Menu] [pam-Menu-Link]:hover,
+[pam-Menu] [pam-Menu-Link]:focus {
+    background-color: @menu-link-hover-bg-color;
+}
+
+
+//  Sub-object: Heading
+// ==========================================================================
+
+// Heading
+//
+// `pam-Menu-Heading` is used to add a heading to menus.
+//
+// Markup:
+// <div pam-Menu="vertical">
+//     <a href="#" pam-Menu-Heading>Menu title</a>
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 7
+//
+// Style guide: menus.heading
+
+[pam-Menu] [pam-Menu-Heading] {
+    color: @menu-heading-color;
+    padding: @space-8 @space-16;
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+
+    .hook-menu-heading;
+}
+
+
+//  Modifier: fixed
+// ==================================================================
+
+[pam-Menu~="fixed"] {
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+
+    .hook-menu-fixed;
+}
+
+
+//  Modifier: vertical
+// ==========================================================================
+
+// Vertical
+//
+// Well, the name explains it.
+//
+// Markup:
+// <div pam-Menu="vertical">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: menus.vertical
+
+[pam-Menu~="vertical"] {
+    .hook-menu-vertical;
+}
+
+[pam-Menu~="vertical"] [pam-Menu-List] {
+    display: flex;
+    flex-direction: column;
+
+    .hook-menu-vertical-list;
+}
+
+[pam-Menu~="vertical"] [pam-Menu-Item],
+[pam-Menu~="vertical"] [pam-Menu-Heading],
+[pam-Menu~="vertical"] [pam-Menu-Separator] {
+    display: inline-block;
+    vertical-align: middle;
+
+    .hook-menu-vertical-item;
+}
+
+
+//  Modifier: truncated
+// ==================================================================
+
+// Truncated
+//
+// Collapse the menu width to the widest menu item.
+//
+// Markup:
+// <div pam-Menu="vertical truncated">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 2
+//
+// Style guide: menus.truncated
+
+[pam-Menu~="truncated"] {
+    display: inline-flex;
+
+    .hook-menu-truncated;
+}
+
+
+// Modifier: fill
+// ========================================================================
+
+// Fill
+//
+// Extends the menu over the available width.
+//
+// Markup:
+// <div pam-Menu="fill">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 3
+//
+// Style guide: menus.fill
+
+[pam-Menu~="fill"] {
+    .hook-menu-fill;
+}
+
+[pam-Menu~="fill"] [pam-Menu-List] {
+    .hook-menu-fill-list;
+}
+
+[pam-Menu~="fill"] [pam-Menu-Item],
+[pam-Menu~="fill"] [pam-Menu-Heading],
+[pam-Menu~="fill"] [pam-Menu-Separator] {
+    flex: 1 1 auto;
+    text-align: center;
+
+    .hook-menu-fill-item;
+}
+
+
+// Modifier: justified
+// ========================================================================
+
+// Justified
+//
+// Extends the menu items of equal-width over the available width.
+//
+// Markup:
+// <div pam-Menu="justified">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 3
+//
+// Style guide: menus.justified
+
+[pam-Menu~="justified"] {
+    .hook-menu-justified;
+}
+
+[pam-Menu~="justified"] [pam-Menu-List] {
+    .hook-menu-justified-list;
+}
+
+[pam-Menu~="justified"] [pam-Menu-Item],
+[pam-Menu~="justified"] [pam-Menu-Heading],
+[pam-Menu~="justified"] [pam-Menu-Separator] {
+    flex: 1 1 100%;
+    text-align: center;
+
+    .hook-menu-justified-item;
+}
+
+
+//  Submenu
+// ==========================================================================
+
+// Sub
+//
+// To enable a dropdown use `pam-Menu-Item` and `pam-Menu-Has-Children` this can be used with `limited`and  `horizontal`menu types.
+//
+// Weight: 5
+//
+// Style guide: menus.sub
+
+// Vertical
+//
+// A vertical submenu is enabled with the truncated menu type and
+// `pam-Menu-Has-Children` attribute.
+//
+// Markup:
+// <div pam-Menu="vertical truncated">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item>
+//             <a href="#" pam-Menu-Link>Home</a>
+//         </li>
+//         <li pam-Menu-Item pam-Menu-Has-Children pam-Menu-Allow-Hover>
+//             <a href="#" pam-Menu-Link>Stuff</a>
+//             <ul pam-Menu-Children>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">Node</a></li>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">JavaScript</a></li>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">Angular</a></li>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">React</a></li>
+//             </ul>
+//         </li>
+//     </ul>
+// </div>
+//
+// Style guide: menus.sub.vertical
+
+// Dropdown
+//
+// By using the horizontal menu type, a dropdown sub menu can be created.
+//
+// Markup:
+// <div pam-Menu="horizontal">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item>
+//             <a href="#" pam-Menu-Link>Home</a>
+//         </li>
+//         <li pam-Menu-Item pam-Menu-Has-Children pam-Menu-Allow-Hover>
+//             <a href="#" pam-Menu-Link>Stuff</a>
+//             <ul pam-Menu-Children>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">Node</a></li>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">JavaScript</a></li>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">Angular</a></li>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">React</a></li>
+//             </ul>
+//         </li>
+//     </ul>
+// </div>
+//
+// Style guide: menus.sub.dropdown
+
+[pam-Menu] [pam-Menu-Item] [pam-Menu-Item] {
+    display: block;
+}
+
+[pam-Menu] [pam-Menu-Children] {
+    background-color: @menu-children-color;
+    display: none;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: auto;
+    z-index: 3;
+
+    .hook-menu-children;
+}
+
+[pam-Menu~="vertical"] [pam-Menu-Children] {
+    left: 100%;
+    top: 0;
+
+    .hook-menu-vertical-children;
+}
+
+[pam-Menu] [pam-Menu-Allow-Hover]:hover > [pam-Menu-Children],
+[pam-Menu] [pam-Menu-Active] > [pam-Menu-Children] {
+    display: block;
+    position: absolute;
+
+    .hook-menu-active-children;
+}
+
+[pam-Menu] [pam-Menu-Has-Children] > [pam-Menu-Link]::after {
+    content: @menu-arrow-horizontal;
+    font-size: small;
+    padding-left: @space-8;
+
+    .hook-menu-has-children-link-after;
+}
+
+[pam-Menu~="vertical"] [pam-Menu-Has-Children] > [pam-Menu-Link]::after {
+    content: @menu-arrow-vertical;
+
+    .hook-menu-vertical-has-children-link-after;
+}
+
+
+//  Scrollable
+// ==========================================================================
+
+// Scrollable
+//
+// Limit the height of the menu and use the `scrollable` menu attribute.
+// This creates a scrollable menu.
+//
+// Markup:
+// <div pam-Menu="scrollable" pam-Menu-Scrollable-Test>
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>JavaScript</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>C++</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Dart</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Smalltalk</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Cobol</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 4
+//
+// Style guide: menus.scrollable
+
+[pam-Menu~="scrollable"] {
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    .hook-menu-scrollable;
+}
+
+[pam-Menu~="scrollable"] [pam-Menu-List] {
+    display: block;
+
+    .hook-menu-scrollable-list;
+}
+
+// Horizontal
+//
+// To enable a scrollable horizontal menu, use the `horizontal` menu type
+// with the `scrollable` attribute. When there isn't enough room,
+// the menu items can be scrolled.
+//
+// Markup:
+// <div pam-Menu="horizontal scrollable">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>JavaScript</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>C++</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Dart</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Smalltalk</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Cobol</a></li>
+//     </ul>
+// </div>
+//
+// Style guide: menus.scrollable.horizontal
+
+[pam-Menu~="horizontal"][pam-Menu~="scrollable"] {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: @space-8 0;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+
+    .hook-menu-horizontal-scrollable;
+}
+
+[pam-Menu~="horizontal"][pam-Menu~="scrollable"]::-webkit-scrollbar {
+    display: none;
+
+    .hook-menu-horizontal-scrollable-scrollbar;
+}
+
+[pam-Menu~="horizontal"][pam-Menu~="scrollable"] [pam-Menu-List] [pam-Menu-Item] {
+    display: inline-block;
+
+    .hook-menu-horizontal-scrollable-list;
+}
+
+
+//  Sub-object: Separator
+// ==========================================================================
+
+// Separator
+//
+// To add a menu separator use the `pam-Menu-Separator` attribute in a li element. It works the same for horizontal menus.
+//
+// Markup:
+// <div pam-Menu="vertical truncated">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+//         <li pam-Menu-Separator></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>JavaScript</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>C++</a></li>
+//         <li pam-Menu-Separator></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Smalltalk</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Cobol</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 8
+//
+// Style guide: menus.seperator
+
+[pam-Menu] [pam-Menu-Separator] {
+    background-color: @menu-seperator-bg-color;
+    height: auto;
+    margin: 0 @space-base;
+    width: @menu-seperator-thickness;
+
+    .hook-menu-separator;
+}
+
+[pam-Menu~="vertical"] [pam-Menu-Separator] {
+    height: @menu-seperator-thickness;
+    margin: @space-base 0;
+    width: auto;
+
+    .hook-menu-vertical-separator;
+}
+
+
+//  Hooks
+// ==========================================================================
+
+// Hooks
+//
+// `.hook-menu`
+// `.hook-menu-active-children`
+// `.hook-menu-children`
+// `.hook-menu-fill`
+// `.hook-menu-fill-item`
+// `.hook-menu-fill-list`
+// `.hook-menu-fixed`
+// `.hook-menu-has-children-link-after`
+// `.hook-menu-heading`
+// `.hook-menu-horizontal-scrollable`
+// `.hook-menu-horizontal-scrollable-list`
+// `.hook-menu-horizontal-scrollable-scrollbar`
+// `.hook-menu-item`
+// `.hook-menu-item-active-link`
+// `.hook-menu-item-disabled`
+// `.hook-menu-item-disabled-link`
+// `.hook-menu-item-selected-link`
+// `.hook-menu-justified`
+// `.hook-menu-justified-item`
+// `.hook-menu-justified-list`
+// `.hook-menu-link`
+// `.hook-menu-list`
+// `.hook-menu-scrollable`
+// `.hook-menu-scrollable-list`
+// `.hook-menu-separator`
+// `.hook-menu-truncated`
+// `.hook-menu-vertical`
+// `.hook-menu-vertical-children`
+// `.hook-menu-vertical-has-children-link-after`
+// `.hook-menu-vertical-item`
+// `.hook-menu-vertical-list`
+// `.hook-menu-vertical-separator`
+//
+// Weight: 10
+//
+// Style guide: menus.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-menu() {}
+.hook-menu-active-children() {}
+.hook-menu-children() {}
+.hook-menu-fill() {}
+.hook-menu-fill-item() {}
+.hook-menu-fill-list() {}
+.hook-menu-fixed() {}
+.hook-menu-has-children-link-after() {}
+.hook-menu-heading() {}
+.hook-menu-horizontal-scrollable() {}
+.hook-menu-horizontal-scrollable-list() {}
+.hook-menu-horizontal-scrollable-scrollbar() {}
+.hook-menu-item() {}
+.hook-menu-item-active-link() {}
+.hook-menu-item-disabled() {}
+.hook-menu-item-disabled-link() {}
+.hook-menu-item-selected-link() {}
+.hook-menu-justified() {}
+.hook-menu-justified-item() {}
+.hook-menu-justified-list() {}
+.hook-menu-link() {}
+.hook-menu-list() {}
+.hook-menu-scrollable() {}
+.hook-menu-scrollable-list() {}
+.hook-menu-separator() {}
+.hook-menu-truncated() {}
+.hook-menu-vertical() {}
+.hook-menu-vertical-children() {}
+.hook-menu-vertical-has-children-link-after() {}
+.hook-menu-vertical-item() {}
+.hook-menu-vertical-list() {}
+.hook-menu-vertical-separator() {}
+/* stylelint-enable */
