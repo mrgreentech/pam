@@ -1,0 +1,11 @@
+# Dot files
+.*
+
+# Folders
+src/
+
+# Files
+*.json
+*.js
+*.md
+yarn.lock
