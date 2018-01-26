@@ -1,16 +1,13 @@
 // Loaders
 //
-// Loaders communicate that somethings is happening right now.
+// Communicate that somethings is happening with a loader.
 // They can be used on almost all elements `div`, `span` etc.
-// Use modifiers or a specific type to adopt the loader to your context.
+// Use type or size modifiers to adopt the loader to your context.
+// Out of the box there are three sizes `small`, `default` and `large`.
+// To control the visibility of the loader use the trait
+// `pam-visibility="hidden | invisible"`.
 //
-// Markup:
-// <div pam-Loader="{{modifier_class}} active"></div>
-//
-// circle - This is a spinning loader, can be used in buttons etc.
-// pulse - Suitable for centered generic context loading.
-//
-// Weight: 6
+// Weight: 15
 //
 // Style guide: loaders
 
@@ -21,28 +18,61 @@
 @circle-height: @space-24;
 @circle-width: @space-24;
 @circle-border-width: 0.25rem;
+@circle-border-color: rgba(0, 0, 0, 0.2);
+@circle-border-indicator-color: @skin-darker;
+
+@pulse-background-color: #3a3a3a;
+@pulse-height: @space-24;
+@pulse-margin: 0 @space-16;
+@pulse-width: @space-base + 2;
+@pulse-animation-speed: 750ms;
+@pulse-animation-delay: 250ms;
+
+@pulse-small-bar-height: @space-16;
+@pulse-small-bar-offset: @space-12;
 
 
 // ==================================================================
 //  Loader
 // ==================================================================
+
 [pam-Loader] {
-    display: none;
+    display: inline-block;
+    line-height: 0;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    text-transform: none;
+    vertical-align: middle;
 }
 
-[pam-Loader~="active"] {
-    display: inline-block;
-}
+//  Modifier: Circle
+// ==================================================================
+
+// Circle
+//
+// The classic spinning loader, can for example be used in buttons.
+//
+// Markup:
+// <div pam-Loader="circle small"></div>
+// <div pam-Loader="circle"></div>
+// <div pam-Loader="circle large"></div>
+//
+// Weight: 1
+//
+// Style guide: loaders.circle
 
 [pam-Loader~="circle"] {
     animation: spin 750ms infinite linear;
-    border: @circle-border-width solid rgba(0, 0, 0, 0.2);
     border-radius: 50%;
-    border-top-color: #3a3a3a;
+    border: @circle-border-width solid @circle-border-color;
+    border-top-color: @circle-border-indicator-color;
     height: @circle-height;
-    vertical-align: middle;
     width: @circle-width;
 }
+
+//  Size modifier: Circle
+// ==================================================================
 
 [pam-Loader~="circle"][pam-Loader~="small"] {
     height: @circle-height / 2;
@@ -54,6 +84,9 @@
     width: @circle-width * 2;
 }
 
+//  Animation: Spin
+// ==================================================================
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -64,97 +97,105 @@
     }
 }
 
+
+//  Modifier: Pulse
+// ==================================================================
+
+// Pulse
+//
+// Suitable for centered generic context loading.
+//
+// Markup:
+// <div pam-Loader="pulse small"></div>
+// <div pam-Loader="pulse"></div>
+// <div pam-Loader="pulse large"></div>
+//
+// Weight: 2
+//
+// Style guide: loaders.pulse
+
+
 [pam-Loader~="pulse"] {
-    animation: pulse 750ms infinite;
-    animation-delay: 250ms;
-    background: #3a3a3a;
-    height: 24px;
-    margin: 0 16px;
+    animation: pulse @pulse-animation-speed infinite;
+    animation-delay: @pulse-animation-delay;
+    background: @pulse-background-color;
+    height: @pulse-height;
+    margin: @pulse-margin;
     position: relative;
-    width: 6px;
+    width: @pulse-width;
 
     &::before {
-        animation: pulse 750ms infinite;
-        background: #3a3a3a;
+        animation: pulse @pulse-animation-speed infinite;
+        background: @pulse-background-color;
         content: '';
         display: block;
-        height: 16px;
-        left: -12px;
+        height: @pulse-small-bar-height;
+        left: -@pulse-small-bar-offset;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 6px;
+        width: @pulse-width;
     }
 
     &::after {
-        content: '';
-        position: absolute;
-        display: block;
-        height: 16px;
-        width: 6px;
-        background: #3a3a3a;
-        top: 50%;
-        transform: translateY(-50%);
-        animation: pulse 750ms infinite;
-        left: 12px;
+        animation: pulse @pulse-animation-speed infinite;
         animation-delay: 0.5s;
+        background: @pulse-background-color;
+        content: '';
+        display: block;
+        height: @pulse-small-bar-height;
+        left: @pulse-small-bar-offset;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: @pulse-width;
     }
 }
 
-[pam-Loader~="pulse:small"] {
-    width: 6px / 2;
-    height: 24px / 2;
+//  Size modifier: Pulse
+// ==================================================================
+
+[pam-Loader~="pulse"][pam-Loader~="small"] {
+    height: @pulse-height / 2;
     margin: 0 16px / 2;
+    width: @pulse-width / 2;
 
     &::before {
-        height: 16px / 2;
-        width: 6px / 2;
-        left: -12px / 2;
+        height: @pulse-small-bar-height / 2;
+        left: -@pulse-small-bar-offset / 2;
+        width: @pulse-width / 2;
     }
 
     &::after {
-        height: 16px /2;
-        width: 6px / 2;
-        left: 12px / 2;
+        height: @pulse-small-bar-height /2;
+        left: @pulse-small-bar-offset / 2;
+        width: @pulse-width / 2;
     }
 }
+
+[pam-Loader~="pulse"][pam-Loader~="large"] {
+    height: @pulse-height * 2;
+    margin: 0 16px * 2;
+    width: @pulse-width * 2;
+
+    &::before {
+        height: @pulse-small-bar-height * 2;
+        left: -@pulse-small-bar-offset * 2;
+        width: @pulse-width * 2;
+    }
+
+    &::after {
+        height: @pulse-small-bar-height * 2;
+        left: @pulse-small-bar-offset * 2;
+        width: @pulse-width * 2;
+    }
+}
+
+//  Animation: Pulse
+// ==================================================================
 
 @keyframes pulse {
     50% {
         background: @skin-light;
     }
-}
-
-
-// Overlay
-//
-// Create an element overlay, which can be used as a cover
-// with information, call to action buttons or a loader.
-//
-// Markup:
-// <div pam-Grid>
-//     <div pam-Unit="1-1 small:1-2 large:1-4">
-//         <div pam-Overlay></div>
-//         <div pam-Loader="pulse active"></div>
-//     </div>
-// </div>
-//
-// Weight: 7
-//
-// Style guide: overlay
-
-[pam-Overlay] {
-    align-items: center;
-    background-color: rgba(39, 42, 43, 0.8);
-    border-radius: 4px;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    left: 0;
-    opacity: 1;
-    position: absolute;
-    top: 0;
-    transition: opacity 200ms ease-in-out;
-    width: 100%;
-    z-index: 1;
 }

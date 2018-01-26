@@ -1,0 +1,46 @@
+// Overlay
+//
+// Create an element overlay, which can be used as a cover
+// with information, call to action buttons or a loader.
+//
+// Markup:
+// <div pam-Alert>
+//     <h1 pam-Alert-Heading>Title</h1>
+//     <p>Callout message</p>
+//     <div pam-Overlay>
+//         <div pam-Loader="pulse"></div>
+//     </div>
+// </div>
+//
+// Weight: 16
+//
+// Style guide: overlay
+
+
+//  Variables
+// ==================================================================
+
+@overlay-border-radius: @border-radius-base;
+@overlay-opacity: @opacity-base;
+@overlay-padding: @space-16;
+
+
+// ==================================================================
+//  Overlay
+// ==================================================================
+
+[pam-Overlay] {
+    align-items: center;
+    background: rgba(0, 0, 0, @overlay-opacity);
+    border-radius: @overlay-border-radius;
+    display: inline-flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    line-height: 1;
+    padding: @overlay-padding;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
