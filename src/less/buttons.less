@@ -7,6 +7,8 @@
 // <button pam-Button>Button</button>
 // <a href="#" pam-Button>Link</a>
 // <input type="button" value="Input" pam-Button>
+// <input type="submit" value="Submit" pam-Button>
+// <input type="reset" value="Reset" pam-Button>
 //
 // Weight: 6
 //
@@ -18,8 +20,8 @@
 
 @button-background:                 @skin-text;
 @button-border-radius:              @border-radius-base;
-@button-border:                     1px solid @skin-hint;
 @button-border-width:               1px;
+@button-border:                     1px solid @skin-hint;
 @button-color:                      @skin-text-primary;
 @button-darken:                     7%;
 @button-decoration:                 none;
@@ -29,13 +31,17 @@
 @button-font-weight:                @font-weight-medium;
 @button-hover-background:           darken(@button-background, @button-darken);
 @button-lighten:                    7%;
-@button-line-height:                @line-height-base;
-@button-padding-horizontal:         @space-20;
-@button-padding-vertical:           @space-16;
+@button-line-height:                1.7;
+@button-margin:                     @space-base;
+@button-min-height:                 @space-40;
+@button-min-width:                  @space-88;
+@button-padding-horizontal:         @space-16;
+@button-padding-vertical:           @space-8;
 @button-padding:                    @button-padding-vertical @button-padding-horizontal;
 @button-transition-duration:        @transition-duration;
 @button-transition-property:        background-color;
 @button-transition-timing:          ease;
+@button-white-space:                normal;
 
 @button-primary-background:         @skin-primary;
 @button-primary-border-color:       @skin-primary;
@@ -47,14 +53,16 @@
 @button-secondary-color:            @skin-text;
 @button-secondary-hover-background: lighten(@button-secondary-background, @button-lighten);
 
-@button-tertiary-active-border:     darken(@button-tertiary-border-color, @button-darken);
-@button-tertiary-active-color:      darken(@button-tertiary-color, @button-darken);
+@button-tertiary-active-background: darken(@skin-primary, @button-darken);
+@button-tertiary-active-border:     darken(@skin-primary, @button-darken);
+@button-tertiary-active-color:      @skin-text;
 @button-tertiary-background:        transparent;
-@button-tertiary-border-color:      @skin-primary-light;
-@button-tertiary-color:             @skin-primary-light;
-@button-tertiary-hover-border:      lighten(@button-tertiary-border-color, 15%);
-@button-tertiary-hover-color:       lighten(@button-tertiary-border-color, 15%);
-@button-tertiary-transition:        color, border-color;
+@button-tertiary-border-color:      @skin-primary;
+@button-tertiary-color:             @skin-primary;
+@button-tertiary-hover-backgorund:  @skin-primary;
+@button-tertiary-hover-border:      @skin-primary;
+@button-tertiary-hover-color:       @skin-text;
+@button-tertiary-transition:        color, border-color, background-color;
 
 @button-info-background:            @skin-info;
 @button-info-border-color:          @skin-info;
@@ -77,18 +85,16 @@
 @button-danger-hover-background:    lighten(@button-danger-background, @button-lighten);
 
 @button-large-font-size:            @font-size-large;
+@button-large-line-height:          2.4;
 @button-large-min-height:           @space-56;
-@button-large-padding:              @space-20 - @button-border-width @space-32;
+@button-large-padding:              @space-8 @space-16;
+@button-large-min-width:            @space-96;
 
-@button-small-font-size:            @font-size-medium;
-@button-small-line-height:          @line-height-base;
-@button-small-min-height:           @space-40;
-@button-small-padding:              13px - @button-border-width @space-16;
-
-@button-mini-font-size:             @font-size-xsmall;
-@button-mini-line-height:           @line-height-base;
-@button-mini-min-height:            @space-32;
-@button-mini-padding:               10px - @button-border-width @space-12;
+@button-small-font-size:            0.75rem;
+@button-small-line-height:          1.4;
+@button-small-min-height:           @space-32;
+@button-small-padding:              @space-base @space-16;
+@button-small-min-width:            @space-80;
 
 @button-link-background:            transparent;
 @button-link-border:                none;
@@ -105,12 +111,11 @@
 @button-rounded-border-radius:      500px;
 
 @button-circle-border-radius:       50%;
-@button-circle-line-height:         @line-height-normal;
-@button-circle-size:                @space-48;
-@button-circle-padding:             0;
 @button-circle-large-size:          @space-56;
-@button-circle-small-size:          @space-40;
-@button-circle-mini-size:           @space-32;
+@button-circle-line-height:         @line-height-normal;
+@button-circle-padding:             0;
+@button-circle-size:                @space-40;
+@button-circle-small-size:          @space-32;
 
 @button-raised-box-shadow:          0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
 @button-raised-active-box-shadow:   0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -122,7 +127,6 @@
 
 [pam-Button],
 a[pam-Button] {
-    position: relative;
     background-color: @button-background;
     border-radius: @button-border-radius;
     border: @button-border;
@@ -133,13 +137,17 @@ a[pam-Button] {
     font-size: @button-font-size;
     font-weight: @button-font-weight;
     line-height: @button-line-height;
+    margin: @button-margin;
+    min-height: @button-min-height;
+    min-width: @button-min-width;
     padding: @button-padding;
+    position: relative;
     text-align: center;
     text-decoration: @button-decoration;
     transition: @button-transition-property @button-transition-duration @button-transition-timing;
     user-select: none;
     vertical-align: baseline;
-    white-space: nowrap;
+    white-space: @button-white-space;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-user-drag: none;
 
@@ -302,13 +310,13 @@ a[pam-Button~="tertiary"] {
 
     &:hover,
     &:focus {
-        background: initial;
+        background-color: @button-tertiary-hover-backgorund;
         border-color: @button-tertiary-hover-border;
         color: @button-tertiary-hover-color;
     }
 
     &:active {
-        background: initial;
+        background-color: @button-tertiary-active-background;
         border-color: @button-tertiary-active-border;
         color: @button-tertiary-active-color;
     }
@@ -466,7 +474,7 @@ a[pam-Button~="danger"] {
 
 // Size
 //
-// Sometimes size matters. Use the `mini`, `small` or `large`
+// Sometimes size matters. Use the `small` or `large`
 // modifier to make the button smaller or larger.
 //
 // Markup:
@@ -492,13 +500,6 @@ a[pam-Button~="danger"] {
 //             <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
 //         </button>
 //     </div>
-//     <div>
-//         <button pam-Button="mini">Mini</button>
-//         <button pam-Button="flat mini">Mini</button>
-//         <button pam-Button="circle mini">
-//             <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
-//         </button>
-//     </div>
 // </div>
 //
 // Weight: 4
@@ -512,7 +513,9 @@ a[pam-Button~="danger"] {
 [pam-Button~="large"],
 a[pam-Button~="large"] {
     font-size: @button-large-font-size;
+    line-height: @button-large-line-height;
     min-height: @button-large-min-height;
+    min-width: @button-large-min-width;
     padding: @button-large-padding;
 
     .hook-button-large;
@@ -527,23 +530,10 @@ a[pam-Button~="small"] {
     font-size: @button-small-font-size;
     line-height: @button-small-line-height;
     min-height: @button-small-min-height;
+    min-width: @button-small-min-width;
     padding: @button-small-padding;
 
     .hook-button-small;
-}
-
-// mini
-
-[pam-Button-Group~="mini"] > [pam-Button],
-[pam-Button-Group~="mini"] > a[pam-Button],
-[pam-Button~="mini"],
-a[pam-Button~="mini"] {
-    font-size: @button-mini-font-size;
-    line-height: @button-mini-line-height;
-    min-height: @button-mini-min-height;
-    padding: @button-mini-padding;
-
-    .hook-button-mini;
 }
 
 
@@ -719,7 +709,6 @@ a[pam-Button~="circle"] {
     border-radius: @button-circle-border-radius;
     height: @button-circle-size;
     line-height: @button-circle-line-height;
-    margin: auto;
     min-width: @button-circle-size;
     overflow: hidden;
     padding: @button-circle-padding;
@@ -753,16 +742,6 @@ a[pam-Button~="circle"][pam-Button~="small"] {
     width: @button-circle-small-size;
 }
 
-// mini
-
-[pam-Button~="circle"][pam-Button~="mini"],
-a[pam-Button~="circle"][pam-Button~="mini"] {
-    height: @button-circle-mini-size;
-    min-width: @button-circle-mini-size;
-    padding: @button-circle-padding;
-    width: @button-circle-mini-size;
-}
-
 
 // Object: button-group
 // ==================================================================
@@ -783,13 +762,13 @@ a[pam-Button~="circle"][pam-Button~="mini"] {
 // Style guide: buttons.group
 
 [pam-Button-Group] {
-    display: flex;
+    display: inline-flex;
+    margin: @button-margin;
 
     & > [pam-Button] {
-        // border-left: 1px solid fade(#000, 10%);
-        // border-color: transparent;
         border-radius: 0;
         display: block;
+        margin: 0;
 
         &:first-child {
             border-right: none;
@@ -832,30 +811,23 @@ a[pam-Button~="circle"][pam-Button~="mini"] {
 
 // Size
 //
-// Button groups support same sizes as buttons  `large`, `default`, `small` or `mini`.
+// Button groups support same sizes as buttons  `large`, `default` or `small`.
 //
 // Markup:
-// <div sg-Stack>
-//     <div pam-Button-Group="large">
-//         <button pam-Button>Large</button>
-//         <button pam-Button>Large</button>
-//         <button pam-Button>Large</button>
-//     </div>
-//     <div pam-Button-Group>
-//         <button pam-Button>Default</button>
-//         <button pam-Button>Default</button>
-//         <button pam-Button>Default</button>
-//     </div>
-//     <div pam-Button-Group="small">
-//         <button pam-Button>Small</button>
-//         <button pam-Button>Small</button>
-//         <button pam-Button>Small</button>
-//     </div>
-//     <div pam-Button-Group="mini">
-//         <button pam-Button>Mini</button>
-//         <button pam-Button>Mini</button>
-//         <button pam-Button>Mini</button>
-//     </div>
+// <div pam-Button-Group="large">
+//     <button pam-Button>Large</button>
+//     <button pam-Button>Large</button>
+//     <button pam-Button>Large</button>
+// </div>
+// <div pam-Button-Group>
+//     <button pam-Button>Default</button>
+//     <button pam-Button>Default</button>
+//     <button pam-Button>Default</button>
+// </div>
+// <div pam-Button-Group="small">
+//     <button pam-Button>Small</button>
+//     <button pam-Button>Small</button>
+//     <button pam-Button>Small</button>
 // </div>
 //
 // Style guide: buttons.group.size
@@ -976,7 +948,6 @@ a[pam-Button~="text:secondary"] {
 // `.hook-button-info`
 // `.hook-button-large`
 // `.hook-button-link`
-// `.hook-button-mini`
 // `.hook-button-primary`
 // `.hook-button-raised`
 // `.hook-button-round`
@@ -1008,7 +979,6 @@ a[pam-Button~="text:secondary"] {
 .hook-button-info() {}
 .hook-button-large() {}
 .hook-button-link() {}
-.hook-button-mini() {}
 .hook-button-primary() {}
 .hook-button-raised() {}
 .hook-button-round() {}
