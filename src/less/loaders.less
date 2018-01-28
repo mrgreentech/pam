@@ -11,13 +11,36 @@
 //
 // Style guide: loaders
 
+// Examples
+//
+// Some examples of circle loader in button and input context.
+//
+// Markup:
+// <form pam-Form>
+//     <div pam-Form-Inline="reverse">
+//         <label for="group-input-loader" pam-Form-Icon>
+//             <div pam-Loader="circle small"></div>
+//         </label>
+//         <input id="group-input-loader" type="text" placeholder="Input group loader" pam-Form-Control disabled>
+//     </div>
+// <form>
+//
+// <button pam-Button>
+//     Button
+//     <div pam-Loader="circle small"></div>
+// </button>
+//
+// Weight: 3
+//
+// Style guide: loaders.examples
+
 
 //  Variables
 // ==================================================================
 
 @circle-height: @space-24;
 @circle-width: @space-24;
-@circle-border-width: 0.25rem;
+@circle-border-width: 0.2rem;
 @circle-border-color: rgba(0, 0, 0, 0.2);
 @circle-border-indicator-color: @skin-darker;
 
@@ -75,11 +98,13 @@
 // ==================================================================
 
 [pam-Loader~="circle"][pam-Loader~="small"] {
+    border-width: @circle-border-width / 2;
     height: @circle-height / 2;
     width: @circle-width / 2;
 }
 
 [pam-Loader~="circle"][pam-Loader~="large"] {
+    border-width: @circle-border-width * 1.25;
     height: @circle-height * 2;
     width: @circle-width * 2;
 }

@@ -4,7 +4,7 @@
 // with information, call to action buttons or a loader.
 //
 // Markup:
-// <div pam-Alert>
+// <div pam-Alert pam-Overlay-Wrapper>
 //     <h1 pam-Alert-Heading>Title</h1>
 //     <p>Callout message</p>
 //     <div pam-Overlay>
@@ -28,6 +28,10 @@
 // ==================================================================
 //  Overlay
 // ==================================================================
+
+[pam-Overlay-Wrapper] {
+    position: relative;
+}
 
 [pam-Overlay] {
     align-items: center;
