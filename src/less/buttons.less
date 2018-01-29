@@ -249,6 +249,19 @@ a[pam-Button~="hidden"] {
 //
 // Style guide: buttons.variations
 
+// Outlined
+//
+// The inverse of filled buttons is outlined buttons.
+//
+// Markup:
+// <button pam-Button="primary outlined">Primary</button>
+// <button pam-Button="secondary outlined">Secondary</button>
+//
+// Weight: 3
+//
+// Style guide: buttons.outlined
+
+
 //  primary
 
 [pam-Button~="primary"],
@@ -270,6 +283,28 @@ a[pam-Button~="primary"] {
 
     &:visited {
         color: @button-primary-color;
+    }
+
+    &[pam-Button~="outlined"] {
+        background: transparent;
+        color: @skin-primary;
+        transition-property: color, border-color, background-color;
+
+        &:hover,
+        &:focus {
+            background-color: @skin-primary;
+            border-color: @skin-primary;
+            color: @skin-text;
+        }
+
+        &:active {
+            background-color: darken(@skin-primary, @button-darken);
+            border-color: darken(@skin-primary, @button-darken);
+        }
+
+        &:visited {
+            color: @skin-primary;
+        }
     }
 
     .hook-button-primary;
@@ -294,6 +329,28 @@ a[pam-Button~="secondary"] {
 
     &:visited {
         color: @button-secondary-color;
+    }
+
+    &[pam-Button~="outlined"] {
+        background: transparent;
+        color: @button-secondary-background;
+        transition-property: color, border-color, background-color;
+
+        &:hover,
+        &:focus {
+            background-color: @button-secondary-background;
+            border-color: @button-secondary-background;
+            color: @skin-text;
+        }
+
+        &:active {
+            background-color: darken(@button-secondary-background, @button-darken);
+            border-color: darken(@button-secondary-background, @button-darken);
+        }
+
+        &:visited {
+            color: @button-secondary-color;
+        }
     }
 
     .hook-button-secondary;
@@ -372,6 +429,7 @@ a[pam-Button~="link"] {
 //
 // Style guide: buttons.colors
 
+
 // info
 
 [pam-Button~="info"],
@@ -401,7 +459,7 @@ a[pam-Button~="info"] {
 [pam-Button~="success"],
 a[pam-Button~="success"] {
     background-color: @button-success-background;
-    border-color: @button-info-border-color;
+    border-color: @button-success-border-color;
     color: @button-success-color;
 
     &:hover,
