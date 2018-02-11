@@ -744,6 +744,7 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 //     <button pam-Button="">Button</button>
 //     <button pam-Button="">Button</button>
 //     <button pam-Button="">Button</button>
+//     <button pam-Button="">Button</button>
 // </div>
 //
 // Weight: 8
@@ -758,14 +759,14 @@ a[pam-Button~="circle"][pam-Button~="small"] {
         border-radius: 0;
         display: block;
         margin: 0;
+        border-right-width: 0;
 
         &:first-child {
-            border-right: none;
             border-radius: @button-border-radius 0 0 @button-border-radius;
         }
 
         &:last-child {
-            border-left: none;
+            border-right-width: 1px;
             border-radius: 0 @button-border-radius @button-border-radius 0;
         }
     }
