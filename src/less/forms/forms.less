@@ -63,7 +63,7 @@
 @form-border:                  @skin-light;
 @form-color:                   @skin-text-primary;
 @form-font-size:               @font-size-large;
-@form-line-height:             18px;
+@form-line-height:             @line-height-base;
 @form-margin:                  0 0 @space-8;
 @form-padding-horizontal:      @space-8;
 @form-padding-vertical:        10px;
@@ -381,19 +381,24 @@
 //
 // Style guide: forms.size
 
-[pam-Form] [pam-Form-Size~="large"] {
+[pam-Form] input[pam-Form-Size~="large"],
+[pam-Form] select[pam-Form-Size~="large"],
+[pam-Form] textarea[pam-Form-Size~="large"] {
     font-size: @font-size-larger;
-    height: @space-56;
     line-height: @line-height-base;
-    padding-left: @space-16;
+    min-height: @space-56;
+    padding: @space-16 - 1 @space-16;
 
     .hook-form-size-large;
 }
 
-[pam-Form] [pam-Form-Size~="small"] {
+[pam-Form] input[pam-Form-Size~="small"],
+[pam-Form] select[pam-Form-Size~="small"],
+[pam-Form] textarea[pam-Form-Size~="small"] {
     font-size: @font-size-medium;
-    height: @space-32;
     line-height: @line-height-base;
+    min-height: @space-32;
+    padding: @space-base;
 
     .hook-form-size-small;
 }
