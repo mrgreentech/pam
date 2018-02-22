@@ -66,7 +66,7 @@
 @form-line-height:             @line-height-base;
 @form-margin:                  0 0 @space-8;
 @form-padding-horizontal:      @space-8;
-@form-padding-vertical:        10px;
+@form-padding-vertical:        @space-8;
 @form-padding:                 @space-8;
 @form-placeholder-color:       @skin-text-secondary;
 @form-tap-highlight-color:     rgba(0, 0, 0, 0);
@@ -102,6 +102,7 @@
     display: inline-block;
     font-family: inherit;
     font-size: @form-font-size;
+    height: @space-40 + 1;
     line-height: @form-line-height;
     margin: @form-margin;
     padding: @form-padding-vertical @form-padding-horizontal;
@@ -115,6 +116,12 @@
 [pam-Form] textarea {
     font-family: @font-family;
     height: auto;
+}
+
+[pam-Form] input[type="checkbox"],
+[pam-Form] input[type="radio"] {
+    height: auto;
+    margin: 0;
 }
 
 // Limited support for this type.
@@ -209,9 +216,7 @@
 //  Select
 // ==================================================================
 
-[pam-Form] select:not([multiple]):not([pam-Select]):not([pam-form-Control]) {
-    height: @space-40;
-    padding: 0;
+[pam-Form] select:not([multiple]):not([pam-Select]) {
 
     .hook-form-select;
 }
@@ -386,7 +391,7 @@
 [pam-Form] textarea[pam-Form-Size~="large"] {
     font-size: @font-size-larger;
     line-height: @line-height-base;
-    min-height: @space-56;
+    height: @space-56;
     padding: @space-16 - 1 @space-16;
 
     .hook-form-size-large;
@@ -397,7 +402,7 @@
 [pam-Form] textarea[pam-Form-Size~="small"] {
     font-size: @font-size-medium;
     line-height: @line-height-base;
-    min-height: @space-32;
+    height: @space-32;
     padding: @space-base;
 
     .hook-form-size-small;
@@ -465,7 +470,7 @@
 // <form pam-Form>
 //     <input type="email" placeholder="Email">
 //     <input type="password" placeholder="Password">
-//     <input type="button" pam-Button="small" value="Log in">
+//     <input type="button" pam-Button value="Log in">
 // </form>
 //
 // Weight: 1
@@ -486,7 +491,7 @@
 //     <input type="email" placeholder="Email">
 //     <label for="password">Password</label>
 //     <input type="password" placeholder="Password">
-//     <input type="button" pam-Button="small" value="Log in">
+//     <input type="button" pam-Button value="Log in">
 // </form>
 //
 // Weight: 2

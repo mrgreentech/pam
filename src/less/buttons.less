@@ -33,7 +33,7 @@
 @button-lighten:                    7%;
 @button-line-height:                1.7;
 @button-margin:                     @space-base;
-@button-min-height:                 @space-40;
+@button-min-height:                 @space-40 + 1;
 @button-min-width:                  @space-88;
 @button-padding-horizontal:         @space-16;
 @button-padding-vertical:           @space-8;
@@ -135,7 +135,7 @@ a[pam-Button] {
     text-decoration: @button-decoration;
     transition: @button-transition-property @button-transition-duration @button-transition-timing;
     user-select: none;
-    vertical-align: baseline;
+    vertical-align: top;
     white-space: @button-white-space;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-user-drag: none;
