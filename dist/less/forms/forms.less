@@ -92,13 +92,12 @@
 //  Form
 // ==================================================================
 
-[pam-Form] input,
+[pam-Form] input:not([type="checkbox"]),
 [pam-Form] select,
 [pam-Form] textarea {
     background-color: @form-background;
     border-radius: @form-border-radius;
     border: @form-border-width @form-border-style @form-border;
-    box-sizing: border-box;
     color: @form-color;
     display: inline-block;
     font-family: inherit;
@@ -762,7 +761,6 @@
 @form-field-inline-margin:                        0 0 @space-8;
 @form-field-inline-position:                      relative;
 
-@form-field-inline-control-box-sizing:            border-box;
 @form-field-inline-control-display:               block;
 @form-field-inline-control-padding-left:          @space-48;
 @form-field-inline-control-width:                 100%;
@@ -770,7 +768,6 @@
 @form-field-inline-icon-align-items:              center;
 @form-field-inline-icon-background:               transparent;
 @form-field-inline-icon-bottom:                   0;
-@form-field-inline-icon-box-sizing:               border-box;
 @form-field-inline-icon-display:                  inline-flex;
 @form-field-inline-icon-justify-content:          center;
 @form-field-inline-icon-left:                     0;
@@ -794,7 +791,6 @@
     position: @form-field-inline-position;
 
     [pam-Form-Control] {
-        box-sizing: @form-field-inline-control-box-sizing;
         display: @form-field-inline-control-display;
         padding-left: @form-field-inline-control-padding-left;
         width: @form-field-inline-control-width;
@@ -804,7 +800,6 @@
         align-items: @form-field-inline-icon-align-items;
         background: @form-field-inline-icon-background;
         bottom: @form-field-inline-icon-bottom;
-        box-sizing: @form-field-inline-icon-box-sizing;
         display: @form-field-inline-icon-display;
         justify-content: @form-field-inline-icon-justify-content;
         left: @form-field-inline-icon-left;
@@ -919,6 +914,7 @@
 [pam-Form] [pam-Form-Group~="lego"] {
     display: @form-group-lego-display;
     margin-bottom: @form-group-lego-margin-bottom;
+    vertical-align: top;
 
     [pam-Form-Group-Addon],
     [pam-Form-Control] {
@@ -1216,13 +1212,13 @@
 
 @form-field-floating-label-border-bottom: @form-border-width @form-border-style @form-focus-border;
 
+// ------------------------------------------------------------------
+
 [pam-Field] {
     display: inline-flex;
     flex-flow: column-reverse;
     margin-bottom: @space-16;
-}
 
-[pam-Field] {
     label,
     input {
         transition: all 0.2s;
@@ -1317,7 +1313,6 @@
         left: 0;
         margin: 0;
         width: @space-72;
-        box-sizing: border-box;
     }
 
     input,
@@ -1325,7 +1320,6 @@
         display: block;
         padding-left: @space-72;
         width: 100%;
-        box-sizing: border-box;
     }
 
     .hook-form-input-icon;
@@ -1399,7 +1393,6 @@
 
 [pam-Form] [pam-Select-Box] {
     background: @form-background;
-    box-sizing: border-box;
     display: inline-block;
     font-size: @form-font-size;
     line-height: @form-line-height;
@@ -1414,7 +1407,6 @@
         background: transparent;
         background-image: none;
         box-shadow: none;
-        box-sizing: border-box;
         margin: 0;
         padding: @form-padding-vertical @form-padding-horizontal;
         padding-right: 24px;
