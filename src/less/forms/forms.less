@@ -518,79 +518,6 @@
 }
 
 
-//  Modifier: Aligned
-// ==================================================================
-
-// Aligned
-//
-// `pam-Form="aligned"` sets up a aligned form with labels to the left of the input fields.
-//
-// Markup:
-// <form pam-Form="aligned">
-//     <div pam-Fieldset>
-//         <label for="email">Email</label>
-//         <input type="email" id="password" placeholder="Email">
-//     </div>
-//     <div pam-Fieldset>
-//         <label for="password">Password</label>
-//         <input type="password" id="password" placeholder="Password">
-//     </div>
-//     <div pam-Fieldset="actions">
-//         <input type="button" pam-Button="small" value="Log in">
-//     </div>
-// </form>
-//
-// Weight: 3
-//
-// Style guide: forms.layout.aligned
-
-@form-aligned-margin:                        0;
-@form-aligned-text-area-vertical-align:      top;
-@form-aligned-vertical-align:                middle;
-@form-aligned-display:                       inline-flex;
-
-@form-aligned-fieldset-actions-margin:       @space-16 0 0 11em;
-@form-aligned-fieldset-align-items:          center;
-@form-aligned-fieldset-display:              flex;
-@form-aligned-fieldset-label-margin:         0 @space-16 0 0;
-@form-aligned-fieldset-label-text-align:     right;
-@form-aligned-fieldset-label-vertical-align: middle;
-@form-aligned-fieldset-label-width:          10rem;
-@form-aligned-fieldset-margin:               0 0 @space-8;
-
-// ------------------------------------------------------------------
-
-[pam-Form~="aligned"] input,
-[pam-Form~="aligned"] textarea,
-[pam-Form~="aligned"] select {
-    margin: @form-aligned-margin;
-    vertical-align: @form-aligned-vertical-align;
-
-    .hook-form-aligned;
-}
-
-[pam-Form~="aligned"] textarea {
-    vertical-align: @form-aligned-text-area-vertical-align;
-}
-
-[pam-Form~="aligned"] [pam-Fieldset] {
-    align-items: @form-aligned-fieldset-align-items;
-    display: @form-aligned-fieldset-display;
-    margin: @form-aligned-fieldset-margin;
-}
-
-[pam-Form~="aligned"] [pam-Fieldset] label {
-    margin: @form-aligned-fieldset-label-margin;
-    text-align: @form-aligned-fieldset-label-text-align;
-    vertical-align: @form-aligned-fieldset-label-vertical-align;
-    width: @form-aligned-fieldset-label-width;
-}
-
-[pam-Form~="aligned"] [pam-Fieldset~="actions"] {
-    margin: @form-aligned-fieldset-actions-margin;
-}
-
-
 //  Sub-object: Grouped fields
 // ==================================================================
 
@@ -1487,7 +1414,6 @@
 // `.hook-form-fieldset`
 // `.hook-form-legend`
 // `.hook-form-stacked`
-// `.hook-form-aligned`
 // `.hook-form-group`
 // `.hook-form-input-icon`
 // `.hook-form-input-group`
@@ -1522,7 +1448,6 @@
 .hook-form-fieldset() {}
 .hook-form-legend() {}
 .hook-form-stacked() {}
-.hook-form-aligned() {}
 .hook-form-group() {}
 .hook-form-input-icon() {}
 .hook-form-input-group() {}
