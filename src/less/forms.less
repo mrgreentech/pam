@@ -1392,6 +1392,29 @@
 }
 
 
+// Small device breakpoint
+// ==================================================================
+
+@media only screen and (max-width: @breakpoint-small) {
+    [pam-Form] button[type="submit"] {
+        margin: @space-8 0 0;
+    }
+
+    [pam-Form] input:not([type="checkbox"]):not([type="radio"]),
+    [pam-Form] label {
+        margin-bottom: @space-8;
+        display: block;
+    }
+
+    [pam-Form-Message~="inline"],
+    [pam-Form-Message] {
+        display: block;
+        font-size: @font-size-xsmall;
+        padding: @space-8 0;
+    }
+}
+
+
 //  Hooks
 // ==================================================================
 
