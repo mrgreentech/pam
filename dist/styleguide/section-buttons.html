@@ -102,56 +102,62 @@
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-buttons.html#kssref-buttons-size">
+                  <a class="kss-nav__menu-link" href="section-buttons.html#kssref-buttons-outlined">
                     <span class="kss-nav__ref ">6.4</span
+                    ><span class="kss-nav__name">Outlined</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-buttons.html#kssref-buttons-size">
+                    <span class="kss-nav__ref ">6.5</span
                     ><span class="kss-nav__name">Size</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-buttons.html#kssref-buttons-raised">
-                    <span class="kss-nav__ref ">6.5</span
+                    <span class="kss-nav__ref ">6.6</span
                     ><span class="kss-nav__name">Raised</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-buttons.html#kssref-buttons-flat">
-                    <span class="kss-nav__ref ">6.6</span
+                    <span class="kss-nav__ref ">6.7</span
                     ><span class="kss-nav__name">Flat</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-buttons.html#kssref-buttons-fluid">
-                    <span class="kss-nav__ref ">6.7</span
+                    <span class="kss-nav__ref ">6.8</span
                     ><span class="kss-nav__name">Fluid</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-buttons.html#kssref-buttons-rounded">
-                    <span class="kss-nav__ref ">6.8</span
+                    <span class="kss-nav__ref ">6.9</span
                     ><span class="kss-nav__name">Rounded</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-buttons.html#kssref-buttons-fab">
-                    <span class="kss-nav__ref ">6.9</span
+                    <span class="kss-nav__ref ">6.10</span
                     ><span class="kss-nav__name">Fab</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-buttons.html#kssref-buttons-group">
-                    <span class="kss-nav__ref ">6.10</span
+                    <span class="kss-nav__ref ">6.11</span
                     ><span class="kss-nav__name">Button group</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-buttons.html#kssref-buttons-deprecated">
-                    <span class="kss-nav__ref ">6.11</span
+                    <span class="kss-nav__ref ">6.12</span
                     ><span class="kss-nav__name">Deprecated</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-buttons.html#kssref-buttons-hooks">
-                    <span class="kss-nav__ref ">6.12</span
+                    <span class="kss-nav__ref ">6.13</span
                     ><span class="kss-nav__name">Hooks</span>
                   </a>
                 </li>
@@ -245,6 +251,8 @@ the user clicks or touches them. They can be used on <code>button</code>, <code>
               <button pam-Button>Button</button>
 <a href="#" pam-Button>Link</a>
 <input type="button" value="Input" pam-Button>
+<input type="submit" value="Submit" pam-Button>
+<input type="reset" value="Reset" pam-Button>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
@@ -306,7 +314,9 @@ the user clicks or touches them. They can be used on <code>button</code>, <code>
               </summary>
               <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button pam-Button&gt;Button&lt;/button&gt;
 &lt;a href&#x3D;&quot;#&quot; pam-Button&gt;Link&lt;/a&gt;
-&lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;Input&quot; pam-Button&gt;</code></pre>
+&lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;Input&quot; pam-Button&gt;
+&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Submit&quot; pam-Button&gt;
+&lt;input type&#x3D;&quot;reset&quot; value&#x3D;&quot;Reset&quot; pam-Button&gt;</code></pre>
             </details>
       </div>
       <section id="kssref-buttons-states" class="kss-section kss-section--depth-2 ">
@@ -407,7 +417,7 @@ the user clicks or touches them. They can be used on <code>button</code>, <code>
 
             <div class="kss-description">
               <p>To differentiate what type of action a button has in a
-set of buttons use <code>primary</code>, <code>secondary</code> or <code>tertiary</code> modifiers.</p>
+set of buttons use <code>primary</code> or <code>secondary</code>.</p>
 
             </div>
 
@@ -419,7 +429,6 @@ set of buttons use <code>primary</code>, <code>secondary</code> or <code>tertiar
               <button pam-Button="">Default</button>
 <button pam-Button="primary">Primary</button>
 <button pam-Button="secondary">Secondary</button>
-<button pam-Button="tertiary">Tertiary</button>
 <button pam-Button="link">Link</button>
               <div class="kss-modifier__example-footer"></div>
             </div>
@@ -483,7 +492,6 @@ set of buttons use <code>primary</code>, <code>secondary</code> or <code>tertiar
               <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button pam-Button&#x3D;&quot;&quot;&gt;Default&lt;/button&gt;
 &lt;button pam-Button&#x3D;&quot;primary&quot;&gt;Primary&lt;/button&gt;
 &lt;button pam-Button&#x3D;&quot;secondary&quot;&gt;Secondary&lt;/button&gt;
-&lt;button pam-Button&#x3D;&quot;tertiary&quot;&gt;Tertiary&lt;/button&gt;
 &lt;button pam-Button&#x3D;&quot;link&quot;&gt;Link&lt;/button&gt;</code></pre>
             </details>
       </section>
@@ -576,6 +584,98 @@ of it&#39;s action.</p>
 &lt;button pam-Button&#x3D;&quot;danger&quot;&gt;Danger&lt;/button&gt;</code></pre>
             </details>
       </section>
+      <section id="kssref-buttons-outlined" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-buttons-outlined">
+              Outlined
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>The inverse of filled buttons is outlined buttons.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <button pam-Button="primary outlined">Primary</button>
+<button pam-Button="secondary outlined">Secondary</button>
+<button pam-Button="info outlined">Info</button>
+<button pam-Button="success outlined">Success</button>
+<button pam-Button="warning outlined">Warning</button>
+<button pam-Button="danger outlined">Danger</button>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-buttons-outlined" data-kss-fullscreen="kssref-buttons-outlined">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-buttons-outlined.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-buttons-outlined" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-buttons-outlined" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button pam-Button&#x3D;&quot;primary outlined&quot;&gt;Primary&lt;/button&gt;
+&lt;button pam-Button&#x3D;&quot;secondary outlined&quot;&gt;Secondary&lt;/button&gt;
+&lt;button pam-Button&#x3D;&quot;info outlined&quot;&gt;Info&lt;/button&gt;
+&lt;button pam-Button&#x3D;&quot;success outlined&quot;&gt;Success&lt;/button&gt;
+&lt;button pam-Button&#x3D;&quot;warning outlined&quot;&gt;Warning&lt;/button&gt;
+&lt;button pam-Button&#x3D;&quot;danger outlined&quot;&gt;Danger&lt;/button&gt;</code></pre>
+            </details>
+      </section>
       <section id="kssref-buttons-size" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -586,7 +686,7 @@ of it&#39;s action.</p>
           </h2>
 
             <div class="kss-description">
-              <p>Sometimes size matters. Use the <code>mini</code>, <code>small</code> or <code>large</code>
+              <p>Sometimes size matters. Use the <code>small</code> or <code>large</code>
 modifier to make the button smaller or larger.</p>
 
             </div>
@@ -615,13 +715,6 @@ modifier to make the button smaller or larger.</p>
         <button pam-Button="small">Small</button>
         <button pam-Button="flat small">Small</button>
         <button pam-Button="circle small">
-            <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
-        </button>
-    </div>
-    <div>
-        <button pam-Button="mini">Mini</button>
-        <button pam-Button="flat mini">Mini</button>
-        <button pam-Button="circle mini">
             <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
         </button>
     </div>
@@ -704,13 +797,6 @@ modifier to make the button smaller or larger.</p>
         &lt;button pam-Button&#x3D;&quot;small&quot;&gt;Small&lt;/button&gt;
         &lt;button pam-Button&#x3D;&quot;flat small&quot;&gt;Small&lt;/button&gt;
         &lt;button pam-Button&#x3D;&quot;circle small&quot;&gt;
-            &lt;img sg-mock-button-icon src&#x3D;&quot;kss-assets/img/plus.svg&quot; /&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;button pam-Button&#x3D;&quot;mini&quot;&gt;Mini&lt;/button&gt;
-        &lt;button pam-Button&#x3D;&quot;flat mini&quot;&gt;Mini&lt;/button&gt;
-        &lt;button pam-Button&#x3D;&quot;circle mini&quot;&gt;
             &lt;img sg-mock-button-icon src&#x3D;&quot;kss-assets/img/plus.svg&quot; /&gt;
         &lt;/button&gt;
     &lt;/div&gt;
@@ -1176,6 +1262,7 @@ floating above other elements.</p>
     <button pam-Button="">Button</button>
     <button pam-Button="">Button</button>
     <button pam-Button="">Button</button>
+    <button pam-Button="">Button</button>
 </div>
               <div class="kss-modifier__example-footer"></div>
             </div>
@@ -1237,6 +1324,7 @@ floating above other elements.</p>
                   </p>
               </summary>
               <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div pam-Button-Group&gt;
+    &lt;button pam-Button&#x3D;&quot;&quot;&gt;Button&lt;/button&gt;
     &lt;button pam-Button&#x3D;&quot;&quot;&gt;Button&lt;/button&gt;
     &lt;button pam-Button&#x3D;&quot;&quot;&gt;Button&lt;/button&gt;
     &lt;button pam-Button&#x3D;&quot;&quot;&gt;Button&lt;/button&gt;
@@ -1343,7 +1431,7 @@ floating above other elements.</p>
           </h3>
 
             <div class="kss-description">
-              <p>Button groups support same sizes as buttons  <code>large</code>, <code>default</code>, <code>small</code> or <code>mini</code>.</p>
+              <p>Button groups support same sizes as buttons  <code>large</code>, <code>default</code> or <code>small</code>.</p>
 
             </div>
 
@@ -1352,27 +1440,20 @@ floating above other elements.</p>
           <div class="kss-modifier__wrapper">
 
             <div class="kss-modifier__example">
-              <div sg-Stack>
-    <div pam-Button-Group="large">
-        <button pam-Button>Large</button>
-        <button pam-Button>Large</button>
-        <button pam-Button>Large</button>
-    </div>
-    <div pam-Button-Group>
-        <button pam-Button>Default</button>
-        <button pam-Button>Default</button>
-        <button pam-Button>Default</button>
-    </div>
-    <div pam-Button-Group="small">
-        <button pam-Button>Small</button>
-        <button pam-Button>Small</button>
-        <button pam-Button>Small</button>
-    </div>
-    <div pam-Button-Group="mini">
-        <button pam-Button>Mini</button>
-        <button pam-Button>Mini</button>
-        <button pam-Button>Mini</button>
-    </div>
+              <div pam-Button-Group="large">
+    <button pam-Button>Large</button>
+    <button pam-Button>Large</button>
+    <button pam-Button>Large</button>
+</div>
+<div pam-Button-Group>
+    <button pam-Button>Default</button>
+    <button pam-Button>Default</button>
+    <button pam-Button>Default</button>
+</div>
+<div pam-Button-Group="small">
+    <button pam-Button>Small</button>
+    <button pam-Button>Small</button>
+    <button pam-Button>Small</button>
 </div>
               <div class="kss-modifier__example-footer"></div>
             </div>
@@ -1433,27 +1514,20 @@ floating above other elements.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div sg-Stack&gt;
-    &lt;div pam-Button-Group&#x3D;&quot;large&quot;&gt;
-        &lt;button pam-Button&gt;Large&lt;/button&gt;
-        &lt;button pam-Button&gt;Large&lt;/button&gt;
-        &lt;button pam-Button&gt;Large&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div pam-Button-Group&gt;
-        &lt;button pam-Button&gt;Default&lt;/button&gt;
-        &lt;button pam-Button&gt;Default&lt;/button&gt;
-        &lt;button pam-Button&gt;Default&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div pam-Button-Group&#x3D;&quot;small&quot;&gt;
-        &lt;button pam-Button&gt;Small&lt;/button&gt;
-        &lt;button pam-Button&gt;Small&lt;/button&gt;
-        &lt;button pam-Button&gt;Small&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div pam-Button-Group&#x3D;&quot;mini&quot;&gt;
-        &lt;button pam-Button&gt;Mini&lt;/button&gt;
-        &lt;button pam-Button&gt;Mini&lt;/button&gt;
-        &lt;button pam-Button&gt;Mini&lt;/button&gt;
-    &lt;/div&gt;
+              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div pam-Button-Group&#x3D;&quot;large&quot;&gt;
+    &lt;button pam-Button&gt;Large&lt;/button&gt;
+    &lt;button pam-Button&gt;Large&lt;/button&gt;
+    &lt;button pam-Button&gt;Large&lt;/button&gt;
+&lt;/div&gt;
+&lt;div pam-Button-Group&gt;
+    &lt;button pam-Button&gt;Default&lt;/button&gt;
+    &lt;button pam-Button&gt;Default&lt;/button&gt;
+    &lt;button pam-Button&gt;Default&lt;/button&gt;
+&lt;/div&gt;
+&lt;div pam-Button-Group&#x3D;&quot;small&quot;&gt;
+    &lt;button pam-Button&gt;Small&lt;/button&gt;
+    &lt;button pam-Button&gt;Small&lt;/button&gt;
+    &lt;button pam-Button&gt;Small&lt;/button&gt;
 &lt;/div&gt;</code></pre>
             </details>
       </section>
@@ -1686,7 +1760,6 @@ the color of a button text.</p>
 <code>.hook-button-info</code>
 <code>.hook-button-large</code>
 <code>.hook-button-link</code>
-<code>.hook-button-mini</code>
 <code>.hook-button-primary</code>
 <code>.hook-button-raised</code>
 <code>.hook-button-round</code>
@@ -1694,7 +1767,6 @@ the color of a button text.</p>
 <code>.hook-button-secondary</code>
 <code>.hook-button-small</code>
 <code>.hook-button-success</code>
-<code>.hook-button-tertiary</code>
 <code>.hook-button-text</code>
 <code>.hook-button-text-primary</code>
 <code>.hook-button-text-secondary</code>

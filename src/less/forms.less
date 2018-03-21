@@ -63,10 +63,10 @@
 @form-border:                  @skin-light;
 @form-color:                   @skin-text-primary;
 @form-font-size:               @font-size-large;
-@form-line-height:             18px;
+@form-line-height:             @line-height-base;
 @form-margin:                  0 0 @space-8;
 @form-padding-horizontal:      @space-8;
-@form-padding-vertical:        10px;
+@form-padding-vertical:        @space-8;
 @form-padding:                 @space-8;
 @form-placeholder-color:       @skin-text-secondary;
 @form-tap-highlight-color:     rgba(0, 0, 0, 0);
@@ -102,6 +102,7 @@
     display: inline-block;
     font-family: inherit;
     font-size: @form-font-size;
+    height: @space-40 + 1;
     line-height: @form-line-height;
     margin: @form-margin;
     padding: @form-padding-vertical @form-padding-horizontal;
@@ -115,6 +116,12 @@
 [pam-Form] textarea {
     font-family: @font-family;
     height: auto;
+}
+
+[pam-Form] input[type="checkbox"],
+[pam-Form] input[type="radio"] {
+    height: auto;
+    margin: 0;
 }
 
 // Limited support for this type.
@@ -209,9 +216,7 @@
 //  Select
 // ==================================================================
 
-[pam-Form] select:not([multiple]):not([pam-Select]):not([pam-form-Control]) {
-    height: @space-40;
-    padding: 0;
+[pam-Form] select:not([multiple]):not([pam-Select]) {
 
     .hook-form-select;
 }
@@ -381,19 +386,24 @@
 //
 // Style guide: forms.size
 
-[pam-Form] [pam-Form-Size~="large"] {
+[pam-Form] input[pam-Form-Size~="large"],
+[pam-Form] select[pam-Form-Size~="large"],
+[pam-Form] textarea[pam-Form-Size~="large"] {
     font-size: @font-size-larger;
-    height: @space-56;
     line-height: @line-height-base;
-    padding-left: @space-16;
+    height: @space-56;
+    padding: @space-16 - 1 @space-16;
 
     .hook-form-size-large;
 }
 
-[pam-Form] [pam-Form-Size~="small"] {
+[pam-Form] input[pam-Form-Size~="small"],
+[pam-Form] select[pam-Form-Size~="small"],
+[pam-Form] textarea[pam-Form-Size~="small"] {
     font-size: @font-size-medium;
-    height: @space-32;
     line-height: @line-height-base;
+    height: @space-32;
+    padding: @space-base;
 
     .hook-form-size-small;
 }
@@ -460,7 +470,7 @@
 // <form pam-Form>
 //     <input type="email" placeholder="Email">
 //     <input type="password" placeholder="Password">
-//     <input type="button" pam-Button="small" value="Log in">
+//     <input type="button" pam-Button value="Log in">
 // </form>
 //
 // Weight: 1
@@ -481,7 +491,7 @@
 //     <input type="email" placeholder="Email">
 //     <label for="password">Password</label>
 //     <input type="password" placeholder="Password">
-//     <input type="button" pam-Button="small" value="Log in">
+//     <input type="button" pam-Button value="Log in">
 // </form>
 //
 // Weight: 2
@@ -505,79 +515,6 @@
     }
 
     .hook-form-stacked;
-}
-
-
-//  Modifier: Aligned
-// ==================================================================
-
-// Aligned
-//
-// `pam-Form="aligned"` sets up a aligned form with labels to the left of the input fields.
-//
-// Markup:
-// <form pam-Form="aligned">
-//     <div pam-Fieldset>
-//         <label for="email">Email</label>
-//         <input type="email" id="password" placeholder="Email">
-//     </div>
-//     <div pam-Fieldset>
-//         <label for="password">Password</label>
-//         <input type="password" id="password" placeholder="Password">
-//     </div>
-//     <div pam-Fieldset="actions">
-//         <input type="button" pam-Button="small" value="Log in">
-//     </div>
-// </form>
-//
-// Weight: 3
-//
-// Style guide: forms.layout.aligned
-
-@form-aligned-margin:                        0;
-@form-aligned-text-area-vertical-align:      top;
-@form-aligned-vertical-align:                middle;
-@form-aligned-display:                       inline-flex;
-
-@form-aligned-fieldset-actions-margin:       @space-16 0 0 11em;
-@form-aligned-fieldset-align-items:          center;
-@form-aligned-fieldset-display:              flex;
-@form-aligned-fieldset-label-margin:         0 @space-16 0 0;
-@form-aligned-fieldset-label-text-align:     right;
-@form-aligned-fieldset-label-vertical-align: middle;
-@form-aligned-fieldset-label-width:          10rem;
-@form-aligned-fieldset-margin:               0 0 @space-8;
-
-// ------------------------------------------------------------------
-
-[pam-Form~="aligned"] input,
-[pam-Form~="aligned"] textarea,
-[pam-Form~="aligned"] select {
-    margin: @form-aligned-margin;
-    vertical-align: @form-aligned-vertical-align;
-
-    .hook-form-aligned;
-}
-
-[pam-Form~="aligned"] textarea {
-    vertical-align: @form-aligned-text-area-vertical-align;
-}
-
-[pam-Form~="aligned"] [pam-Fieldset] {
-    align-items: @form-aligned-fieldset-align-items;
-    display: @form-aligned-fieldset-display;
-    margin: @form-aligned-fieldset-margin;
-}
-
-[pam-Form~="aligned"] [pam-Fieldset] label {
-    margin: @form-aligned-fieldset-label-margin;
-    text-align: @form-aligned-fieldset-label-text-align;
-    vertical-align: @form-aligned-fieldset-label-vertical-align;
-    width: @form-aligned-fieldset-label-width;
-}
-
-[pam-Form~="aligned"] [pam-Fieldset~="actions"] {
-    margin: @form-aligned-fieldset-actions-margin;
 }
 
 
@@ -1455,6 +1392,29 @@
 }
 
 
+// Small device breakpoint
+// ==================================================================
+
+@media only screen and (max-width: @breakpoint-small) {
+    [pam-Form] button[type="submit"] {
+        margin: @space-8 0 0;
+    }
+
+    [pam-Form] input:not([type="checkbox"]):not([type="radio"]),
+    [pam-Form] label {
+        margin-bottom: @space-8;
+        display: block;
+    }
+
+    [pam-Form-Message~="inline"],
+    [pam-Form-Message] {
+        display: block;
+        font-size: @font-size-xsmall;
+        padding: @space-8 0;
+    }
+}
+
+
 //  Hooks
 // ==================================================================
 
@@ -1477,7 +1437,6 @@
 // `.hook-form-fieldset`
 // `.hook-form-legend`
 // `.hook-form-stacked`
-// `.hook-form-aligned`
 // `.hook-form-group`
 // `.hook-form-input-icon`
 // `.hook-form-input-group`
@@ -1512,7 +1471,6 @@
 .hook-form-fieldset() {}
 .hook-form-legend() {}
 .hook-form-stacked() {}
-.hook-form-aligned() {}
 .hook-form-group() {}
 .hook-form-input-icon() {}
 .hook-form-input-group() {}
