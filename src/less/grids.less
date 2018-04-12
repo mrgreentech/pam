@@ -56,7 +56,6 @@
 //
 // Style guide: grids
 
-
 // Fractions
 //
 // PAM grid supports 1th to 5th and 24th-based grid fractions. Use them
@@ -143,7 +142,6 @@
 //
 // Style guide: grids.fractions
 
-
 // Nested
 //
 // Grids can be nested. This examples shows a two level nested grid...
@@ -183,7 +181,6 @@
 //
 // Style guide: grids.nested
 
-
 // Adaptive
 //
 // `pam-Unit="1-1 small:1-2 large:1-4"` Creates a adaptive grid. On small devices it will
@@ -210,7 +207,6 @@
 //
 // Style guide: grids.adaptive
 
-
 // Landscape
 //
 // `pam-Unit="1-1 small:1-2 small:landscape:1-3"` Creates a adaptive grid which has the
@@ -230,7 +226,6 @@
 // </div>
 //
 // Style guide: grids.adaptive.landscape
-
 
 // Nested
 //
@@ -270,7 +265,6 @@
 //
 // Style guide: grids.adaptive.nested
 
-
 // Media items
 //
 // `pam-Image` elements can easily be used with the grid. This example shows a `pam-Unit="1-1 small:1-2 large:1-4"` grid with `pam-Image` elements.
@@ -295,7 +289,6 @@
 //
 // Style guide: grids.media
 
-
 // ==================================================================
 //  Grid
 // ==================================================================
@@ -310,7 +303,6 @@
 
     .hook-grid;
 }
-
 
 //  Sub-object: Unit
 // ==================================================================
@@ -348,182 +340,177 @@
 // 24th-based units
 .grid-units(24);
 
-
 // Small device breakpoint
 // ------------------------------------------------------------------
 
 @media screen and (min-width: @breakpoint-small) {
     // 1th-based units
-    .grid-units(1, 1, 'small:');
+    .grid-units(1, 1, "small:");
 
     // 2th-based units
-    .grid-units(2, 1, 'small:');
+    .grid-units(2, 1, "small:");
 
     // 3th-based units
-    .grid-units(3, 1, 'small:');
+    .grid-units(3, 1, "small:");
 
     // 4th-based units
-    .grid-units(4, 1, 'small:');
+    .grid-units(4, 1, "small:");
 
     // 5th-based units
-    .grid-units(5, 1, 'small:');
+    .grid-units(5, 1, "small:");
 
     // 24th-based units
-    .grid-units(24, 1, 'small:');
+    .grid-units(24, 1, "small:");
 }
 
 @media screen and (min-width: @breakpoint-small) and (orientation: landscape) {
     // 1th-based units
-    .grid-units(1, 1, 'small:landscape:');
+    .grid-units(1, 1, "small:landscape:");
 
     // 2th-based units
-    .grid-units(2, 1, 'small:landscape:');
+    .grid-units(2, 1, "small:landscape:");
 
     // 3th-based units
-    .grid-units(3, 1, 'small:landscape:');
+    .grid-units(3, 1, "small:landscape:");
 
     // 4th-based units
-    .grid-units(4, 1, 'small:landscape:');
+    .grid-units(4, 1, "small:landscape:");
 
     // 5th-based units
-    .grid-units(5, 1, 'small:landscape:');
+    .grid-units(5, 1, "small:landscape:");
 
     // 24th-based units
-    .grid-units(24, 1, 'small:landscape:');
+    .grid-units(24, 1, "small:landscape:");
 }
-
 
 // Medium device breakpoint
 // ------------------------------------------------------------------
 
 @media screen and (min-width: @breakpoint-medium) {
     // 1th-based units
-    .grid-units(1, 1, 'medium:');
+    .grid-units(1, 1, "medium:");
 
     // 2th-based units
-    .grid-units(2, 1, 'medium:');
+    .grid-units(2, 1, "medium:");
 
     // 3th-based units
-    .grid-units(3, 1, 'medium:');
+    .grid-units(3, 1, "medium:");
 
     // 4th-based units
-    .grid-units(4, 1, 'medium:');
+    .grid-units(4, 1, "medium:");
 
     // 5th-based units
-    .grid-units(5, 1, 'medium:');
+    .grid-units(5, 1, "medium:");
 
     // 24th-based units
-    .grid-units(24, 1, 'medium:');
+    .grid-units(24, 1, "medium:");
 }
 
 @media screen and (min-width: @breakpoint-medium) and (orientation: landscape) {
     // 1th-based units
-    .grid-units(1, 1, 'medium:landscape:');
+    .grid-units(1, 1, "medium:landscape:");
 
     // 2th-based units
-    .grid-units(2, 1, 'medium:landscape:');
+    .grid-units(2, 1, "medium:landscape:");
 
     // 3th-based units
-    .grid-units(3, 1, 'medium:landscape:');
+    .grid-units(3, 1, "medium:landscape:");
 
     // 4th-based units
-    .grid-units(4, 1, 'medium:landscape:');
+    .grid-units(4, 1, "medium:landscape:");
 
     // 5th-based units
-    .grid-units(5, 1, 'medium:landscape:');
+    .grid-units(5, 1, "medium:landscape:");
 
     // 24th-based units
-    .grid-units(24, 1, 'medium:landscape:');
+    .grid-units(24, 1, "medium:landscape:");
 }
-
 
 // Large device breakpoint
 // ------------------------------------------------------------------
 
 @media screen and (min-width: @breakpoint-large) {
     // 1th-based units
-    .grid-units(1, 1, 'large:');
+    .grid-units(1, 1, "large:");
 
     // 2th-based units
-    .grid-units(2, 1, 'large:');
+    .grid-units(2, 1, "large:");
 
     // 3th-based units
-    .grid-units(3, 1, 'large:');
+    .grid-units(3, 1, "large:");
 
     // 4th-based units
-    .grid-units(4, 1, 'large:');
+    .grid-units(4, 1, "large:");
 
     // 5th-based units
-    .grid-units(5, 1, 'large:');
+    .grid-units(5, 1, "large:");
 
     // 24th-based units
-    .grid-units(24, 1, 'large:');
+    .grid-units(24, 1, "large:");
 }
 
 @media screen and (min-width: @breakpoint-large) and (orientation: landscape) {
     // 1th-based units
-    .grid-units(1, 1, 'large:landscape:');
+    .grid-units(1, 1, "large:landscape:");
 
     // 2th-based units
-    .grid-units(2, 1, 'large:landscape:');
+    .grid-units(2, 1, "large:landscape:");
 
     // 3th-based units
-    .grid-units(3, 1, 'large:landscape:');
+    .grid-units(3, 1, "large:landscape:");
 
     // 4th-based units
-    .grid-units(4, 1, 'large:landscape:');
+    .grid-units(4, 1, "large:landscape:");
 
     // 5th-based units
-    .grid-units(5, 1, 'large:landscape:');
+    .grid-units(5, 1, "large:landscape:");
 
     // 24th-based units
-    .grid-units(24, 1, 'large:landscape:');
+    .grid-units(24, 1, "large:landscape:");
 }
-
 
 // Xlarge device breakpoint
 // ------------------------------------------------------------------
 
 @media screen and (min-width: @breakpoint-xlarge) {
     // 1th-based units
-    .grid-units(1, 1, 'xlarge:');
+    .grid-units(1, 1, "xlarge:");
 
     // 2th-based units
-    .grid-units(2, 1, 'xlarge:');
+    .grid-units(2, 1, "xlarge:");
 
     // 3th-based units
-    .grid-units(3, 1, 'xlarge:');
+    .grid-units(3, 1, "xlarge:");
 
     // 4th-based units
-    .grid-units(4, 1, 'xlarge:');
+    .grid-units(4, 1, "xlarge:");
 
     // 5th-based units
-    .grid-units(5, 1, 'xlarge:');
+    .grid-units(5, 1, "xlarge:");
 
     // 24th-based units
-    .grid-units(24, 1, 'xlarge:');
+    .grid-units(24, 1, "xlarge:");
 }
 
 @media screen and (min-width: @breakpoint-xlarge) and (orientation: landscape) {
     // 1th-based units
-    .grid-units(1, 1, 'xlarge:landscape:');
+    .grid-units(1, 1, "xlarge:landscape:");
 
     // 2th-based units
-    .grid-units(2, 1, 'xlarge:landscape:');
+    .grid-units(2, 1, "xlarge:landscape:");
 
     // 3th-based units
-    .grid-units(3, 1, 'xlarge:landscape:');
+    .grid-units(3, 1, "xlarge:landscape:");
 
     // 4th-based units
-    .grid-units(4, 1, 'xlarge:landscape:');
+    .grid-units(4, 1, "xlarge:landscape:");
 
     // 5th-based units
-    .grid-units(5, 1, 'xlarge:landscape:');
+    .grid-units(5, 1, "xlarge:landscape:");
 
     // 24th-based units
-    .grid-units(24, 1, 'xlarge:landscape:');
+    .grid-units(24, 1, "xlarge:landscape:");
 }
-
 
 //  Grid controls
 // ==================================================================
@@ -539,7 +526,6 @@
 // Weight: 6
 //
 // Style guide: grids.controls
-
 
 // Direction
 //
@@ -579,7 +565,6 @@
     flex-direction: column-reverse;
 }
 
-
 // Wrap
 //
 // Use `pam-Grid-Control="wrap:[wrap|wrap-reverse|nowrap]"`
@@ -613,7 +598,6 @@
 [pam-Grid][pam-Grid-Control~="wrap:nowrap"] {
     flex-wrap: nowrap;
 }
-
 
 // Justify content
 //
@@ -664,7 +648,6 @@
 [pam-Grid][pam-Grid-Control~="justify:evenly"] {
     justify-content: space-evenly;
 }
-
 
 // Align items
 //
@@ -727,7 +710,6 @@
     align-items: stretch;
 }
 
-
 // Align content
 //
 // Use `pam-Grid-Control="align-content:[start|center|end|space-between|space-around|stretch]"`
@@ -783,7 +765,6 @@
     align-content: stretch;
 }
 
-
 // Hooks
 // ==================================================================
 
@@ -797,6 +778,8 @@
 // Style guide: grids.hooks
 
 /* stylelint-disable block-no-empty */
-.hook-grid() {}
-.hook-unit() {}
+.hook-grid() {
+}
+.hook-unit() {
+}
 /* stylelint-enable */

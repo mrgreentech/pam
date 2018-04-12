@@ -52,41 +52,39 @@
 //
 // Style guide: forms
 
-
 // Variables
 // ==================================================================
 
-@form-background:              rgba(255, 255, 255, 0.1);
-@form-border-radius:           @border-radius-base;
-@form-border-style:            solid;
-@form-border-width:            1px;
-@form-border:                  @skin-light;
-@form-color:                   @skin-text-primary;
-@form-font-size:               @font-size-large;
-@form-line-height:             @line-height-base;
-@form-margin:                  0 0 @space-8;
-@form-padding-horizontal:      @space-8;
-@form-padding-vertical:        @space-8;
-@form-padding:                 @space-8;
-@form-placeholder-color:       @skin-text-secondary;
-@form-tap-highlight-color:     rgba(0, 0, 0, 0);
-@form-transition-duration:     @transition-duration;
-@form-transition-property:     border;
-@form-transition-timing:       ease;
+@form-background: rgba(255, 255, 255, 0.1);
+@form-border-radius: @border-radius-base;
+@form-border-style: solid;
+@form-border-width: 1px;
+@form-border: @skin-light;
+@form-color: @skin-text-primary;
+@form-font-size: @font-size-large;
+@form-line-height: @line-height-base;
+@form-margin: 0 0 @space-8;
+@form-padding-horizontal: @space-8;
+@form-padding-vertical: @space-8;
+@form-padding: @space-8;
+@form-placeholder-color: @skin-text-secondary;
+@form-tap-highlight-color: rgba(0, 0, 0, 0);
+@form-transition-duration: @transition-duration;
+@form-transition-property: border;
+@form-transition-timing: ease;
 
-@form-focus-color:             darken(@form-border, 30%);
-@form-focus-border:            darken(@form-border, 30%);
+@form-focus-color: darken(@form-border, 30%);
+@form-focus-border: darken(@form-border, 30%);
 
-@form-legend-width:            100%;
-@form-legend-padding:          @space-8 0;
+@form-legend-width: 100%;
+@form-legend-padding: @space-8 0;
 
-@form-fieldset-border:         0;
-@form-fieldset-margin:         0;
-@form-fieldset-padding:        @space-8 0 @space-16;
+@form-fieldset-border: 0;
+@form-fieldset-margin: 0;
+@form-fieldset-padding: @space-8 0 @space-16;
 @form-fieldset-column-padding: @space-16;
 
-@form-label-margin:            @space-8 0;
-
+@form-label-margin: @space-8 0;
 
 // ==================================================================
 //  Form
@@ -149,7 +147,6 @@
     border-color: @skin-divider;
 }
 
-
 //  Disabled Input
 // ==================================================================
 
@@ -161,7 +158,6 @@
 
     .hook-form-disabled;
 }
-
 
 //  Read-only input
 // ==================================================================
@@ -183,7 +179,6 @@
 
     .hook-form-readonly-focus;
 }
-
 
 //  Required input
 // ==================================================================
@@ -212,12 +207,10 @@
     .hook-form-focus-invalid-focus;
 }
 
-
 //  Select
 // ==================================================================
 
 [pam-Form] select:not([multiple]):not([pam-Select]) {
-
     .hook-form-select;
 }
 
@@ -232,7 +225,6 @@
     .hook-form-select-focus;
 }
 
-
 //  Legend
 // ==================================================================
 
@@ -245,7 +237,6 @@
 
     .hook-form-legend;
 }
-
 
 //  Fieldset
 // ==================================================================
@@ -270,7 +261,6 @@
     }
 }
 
-
 //  Label
 // ==================================================================
 
@@ -279,7 +269,6 @@
 
     .hook-form-label;
 }
-
 
 // Modifier: State
 // ==================================================================
@@ -311,7 +300,6 @@
 //
 // Style guide: forms.states.native
 
-
 //  Sub-modifier: Custom states
 // ==================================================================
 
@@ -332,12 +320,12 @@
 // Style guide: forms.states.custom
 
 @form-success-background: lighten(@skin-success, 45%);
-@form-success-border:     @skin-success;
-@form-success-color:      @skin-success;
+@form-success-border: @skin-success;
+@form-success-color: @skin-success;
 
-@form-danger-background:  lighten(@skin-danger, 40%);
-@form-danger-border:      @skin-danger;
-@form-danger-color:       @skin-danger;
+@form-danger-background: lighten(@skin-danger, 40%);
+@form-danger-border: @skin-danger;
+@form-danger-color: @skin-danger;
 
 // ------------------------------------------------------------------
 
@@ -366,7 +354,6 @@
 
     .hook-form-state-danger;
 }
-
 
 // Sub-modifier: Size
 // ==================================================================
@@ -407,7 +394,6 @@
 
     .hook-form-size-small;
 }
-
 
 // Sub-modifier: Width
 // ==================================================================
@@ -450,7 +436,6 @@
     width: 25%;
 }
 
-
 //  Layouts
 // ==================================================================
 
@@ -476,7 +461,6 @@
 // Weight: 1
 //
 // Style guide: forms.layout.inline
-
 
 //  Modifier: Stacked
 // ==================================================================
@@ -517,7 +501,6 @@
     .hook-form-stacked;
 }
 
-
 //  Sub-object: Grouped fields
 // ==================================================================
 
@@ -546,12 +529,12 @@
 //
 // Style guide: forms.layout.grouped
 
-@form-fieldset-grouped-padding-bottom:           @space-16;
-@form-fieldset-grouped-last-padding-bottom:      @space-24;
+@form-fieldset-grouped-padding-bottom: @space-16;
+@form-fieldset-grouped-last-padding-bottom: @space-24;
 
-@form-fieldset-grouped-input-display:            block;
+@form-fieldset-grouped-input-display: block;
 @form-fieldset-grouped-input-last-margin-bottom: 0;
-@form-fieldset-grouped-input-position:           relative;
+@form-fieldset-grouped-input-position: relative;
 
 // ------------------------------------------------------------------
 
@@ -573,7 +556,6 @@
 [pam-Form] [pam-Fieldset~="grouped"] input:last-child {
     margin-bottom: @form-fieldset-grouped-input-last-margin-bottom;
 }
-
 
 // Sub-object: Form message
 // ==================================================================
@@ -618,12 +600,12 @@
 //
 // Style guide: forms.message.inline
 
-@form-message-color:                 @skin-text-primary;
-@form-message-display:               block;
-@form-message-font-size:             @font-size-xsmall;
+@form-message-color: @skin-text-primary;
+@form-message-display: block;
+@form-message-font-size: @font-size-xsmall;
 
-@form-message-inline-display:        inline-block;
-@form-message-inline-padding:        0 0 0 @space-8;
+@form-message-inline-display: inline-block;
+@form-message-inline-padding: 0 0 0 @space-8;
 @form-message-inline-vertical-align: middle;
 
 // ------------------------------------------------------------------
@@ -646,7 +628,6 @@
     .hook-form-message-inline;
 }
 
-
 // Sub-objects: Custom controls
 // ==================================================================
 
@@ -658,7 +639,6 @@
 // Weight: 20
 //
 // Style guide: forms.custom
-
 
 // Sub-object: Inline
 // ==================================================================
@@ -695,31 +675,31 @@
 //
 // Style guide: forms.custom.inline
 
-@form-field-inline-margin:                        0 0 @space-8;
-@form-field-inline-position:                      relative;
+@form-field-inline-margin: 0 0 @space-8;
+@form-field-inline-position: relative;
 
-@form-field-inline-control-display:               block;
-@form-field-inline-control-padding-left:          @space-48;
-@form-field-inline-control-width:                 100%;
+@form-field-inline-control-display: block;
+@form-field-inline-control-padding-left: @space-48;
+@form-field-inline-control-width: 100%;
 
-@form-field-inline-icon-align-items:              center;
-@form-field-inline-icon-background:               transparent;
-@form-field-inline-icon-bottom:                   0;
-@form-field-inline-icon-display:                  inline-flex;
-@form-field-inline-icon-justify-content:          center;
-@form-field-inline-icon-left:                     0;
-@form-field-inline-icon-margin:                   0;
-@form-field-inline-icon-position:                 absolute;
-@form-field-inline-icon-right:                    auto;
-@form-field-inline-icon-top:                      0;
-@form-field-inline-icon-width:                    @space-48;
+@form-field-inline-icon-align-items: center;
+@form-field-inline-icon-background: transparent;
+@form-field-inline-icon-bottom: 0;
+@form-field-inline-icon-display: inline-flex;
+@form-field-inline-icon-justify-content: center;
+@form-field-inline-icon-left: 0;
+@form-field-inline-icon-margin: 0;
+@form-field-inline-icon-position: absolute;
+@form-field-inline-icon-right: auto;
+@form-field-inline-icon-top: 0;
+@form-field-inline-icon-width: @space-48;
 
-@form-field-inline-reverse-control-padding-left:  @space-8;
+@form-field-inline-reverse-control-padding-left: @space-8;
 @form-field-inline-reverse-control-padding-right: @space-48;
 @form-field-inline-reverse-control-padding-width: 100%;
 
-@form-field-inline-reverse-icon-left:             auto;
-@form-field-inline-reverse-icon-right:            0;
+@form-field-inline-reverse-icon-left: auto;
+@form-field-inline-reverse-icon-right: 0;
 
 // ------------------------------------------------------------------
 
@@ -762,7 +742,6 @@
         width: @form-field-inline-reverse-control-padding-width;
     }
 }
-
 
 // Sub-object: Lego
 // ==================================================================
@@ -807,44 +786,44 @@
 //
 // Style guide: forms.custom.lego
 
-@form-group-lego-display:                                    inline-flex;
-@form-group-lego-margin-bottom:                              @space-16;
+@form-group-lego-display: inline-flex;
+@form-group-lego-margin-bottom: @space-16;
 
-@form-group-lego-child-all-margin-bottom:                    0;
-@form-group-lego-child-all-min-width:                        @space-60;
-@form-group-lego-child-display:                              flex;
-@form-group-lego-child-last-border-bottom-left-radius:       0;
-@form-group-lego-child-last-border-top-left-radius:          0;
+@form-group-lego-child-all-margin-bottom: 0;
+@form-group-lego-child-all-min-width: @space-60;
+@form-group-lego-child-display: flex;
+@form-group-lego-child-last-border-bottom-left-radius: 0;
+@form-group-lego-child-last-border-top-left-radius: 0;
 
 @form-group-lego-child-first-all-border-bottom-right-radius: 0;
-@form-group-lego-child-first-all-border-top-right-radius:    0;
-@form-group-lego-child-first-border-bottom-right-radius:     0;
-@form-group-lego-child-first-border-top-right-radius:        0;
+@form-group-lego-child-first-all-border-top-right-radius: 0;
+@form-group-lego-child-first-border-bottom-right-radius: 0;
+@form-group-lego-child-first-border-top-right-radius: 0;
 
-@form-group-lego-child-last-all-border-bottom-left-radius:   0;
-@form-group-lego-child-last-all-border-top-left-radius:      0;
+@form-group-lego-child-last-all-border-bottom-left-radius: 0;
+@form-group-lego-child-last-all-border-top-left-radius: 0;
 
-@form-group-lego-child-not-first-last-radius:                0;
+@form-group-lego-child-not-first-last-radius: 0;
 
-@form-group-lego-addon-border-radius:                        @form-border-radius;
-@form-group-lego-addon-color:                                @form-color;
-@form-group-lego-addon-font-size:                            @font-size-base;
-@form-group-lego-addon-margin:                               0;
-@form-group-lego-addon-min-width:                            @space-60;
-@form-group-lego-addon-position:                             relative;
-@form-group-lego-addon-text-align:                           center;
-@form-group-lego-addon-white-space:                          nowrap;
+@form-group-lego-addon-border-radius: @form-border-radius;
+@form-group-lego-addon-color: @form-color;
+@form-group-lego-addon-font-size: @font-size-base;
+@form-group-lego-addon-margin: 0;
+@form-group-lego-addon-min-width: @space-60;
+@form-group-lego-addon-position: relative;
+@form-group-lego-addon-text-align: center;
+@form-group-lego-addon-white-space: nowrap;
 
-@form-group-lego-addon-first-all-border-right-color:         transparent;
-@form-group-lego-addon-first-all-focus-border-right-color:   @form-focus-border;
+@form-group-lego-addon-first-all-border-right-color: transparent;
+@form-group-lego-addon-first-all-focus-border-right-color: @form-focus-border;
 
-@form-group-lego-addon-last-all-border-left-color:           transparent;
-@form-group-lego-addon-last-all-focus-border-left-color:     @form-focus-border;
+@form-group-lego-addon-last-all-border-left-color: transparent;
+@form-group-lego-addon-last-all-focus-border-left-color: @form-focus-border;
 
-@form-group-lego-control-focus-zindex:                       3;
-@form-group-lego-control-margin-bottom:                      0;
-@form-group-lego-control-position:                           0;
-@form-group-lego-control-zindex:                             2;
+@form-group-lego-control-focus-zindex: 3;
+@form-group-lego-control-margin-bottom: 0;
+@form-group-lego-control-position: 0;
+@form-group-lego-control-zindex: 2;
 
 // ------------------------------------------------------------------
 
@@ -979,7 +958,6 @@
     display: @form-group-lego-block-display;
 }
 
-
 //  Select
 // ==================================================================
 
@@ -1011,16 +989,16 @@
 //
 // Style guide: forms.custom.select
 
-@form-select-custom-appearance:        none;
-@form-select-custom-background-color:  @form-background;
-@form-select-custom-background-image:  "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M10%201L5%208h10l-5-7zm0%2018l5-7H5l5%207z%27%2F%3E%3C%2Fsvg%3E";
+@form-select-custom-appearance: none;
+@form-select-custom-background-color: @form-background;
+@form-select-custom-background-image: "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M10%201L5%208h10l-5-7zm0%2018l5-7H5l5%207z%27%2F%3E%3C%2Fsvg%3E";
 @form-select-custom-background-offset: @space-8;
 @form-select-custom-background-repeat: no-repeat;
-@form-select-custom-background-size:   @space-12;
-@form-select-custom-display:           inline-block;
-@form-select-custom-max-width:         100%;
-@form-select-custom-padding-right:     @space-28;
-@form-select-custom-vertical-align:    middle;
+@form-select-custom-background-size: @space-12;
+@form-select-custom-display: inline-block;
+@form-select-custom-max-width: 100%;
+@form-select-custom-padding-right: @space-28;
+@form-select-custom-vertical-align: middle;
 
 // ------------------------------------------------------------------
 
@@ -1043,7 +1021,6 @@
     .hook-form-select-custom;
 }
 
-
 // Sub-Object: Form control
 // ==================================================================
 
@@ -1064,15 +1041,15 @@
 //
 // Style guide: forms.traits
 
-@form-control-borderless-border-color-focus:     transparent;
-@form-control-borderless-border-color:           transparent;
-@form-control-borderless-focus-box-shadow:       0 1px 3px @skin-dark;
-@form-control-borderless-transition:             box-shadow 0.3s ease;
+@form-control-borderless-border-color-focus: transparent;
+@form-control-borderless-border-color: transparent;
+@form-control-borderless-focus-box-shadow: 0 1px 3px @skin-dark;
+@form-control-borderless-transition: box-shadow 0.3s ease;
 
-@form-control-fluid-width:                       100%;
+@form-control-fluid-width: 100%;
 
 @form-control-padded-medium-screen-size-padding: @space-16;
-@form-control-padded-padding:                    @space-8 0 @space-16;
+@form-control-padded-padding: @space-8 0 @space-16;
 
 // ------------------------------------------------------------------
 
@@ -1112,7 +1089,6 @@
     }
 }
 
-
 // Experimental
 // ==================================================================
 
@@ -1123,7 +1099,6 @@
 // Weight: 25
 //
 // Style guide: forms.experimental
-
 
 //  Sub-object: Floating label
 // ==================================================================
@@ -1202,7 +1177,6 @@
         transform: translate(0.5rem, 1.4rem) scale(1);
     }
 }
-
 
 // Deprecated
 // ==================================================================
@@ -1297,7 +1271,6 @@
     .hook-form-input-borderless-focus;
 }
 
-
 // Sub-object: Select box
 // ==================================================================
 
@@ -1391,7 +1364,6 @@
     }
 }
 
-
 // Small device breakpoint
 // ==================================================================
 
@@ -1413,7 +1385,6 @@
         padding: @space-8 0;
     }
 }
-
 
 //  Hooks
 // ==================================================================
@@ -1454,32 +1425,60 @@
 // Style guide: forms.hooks
 
 /* stylelint-disable block-no-empty */
-.hook-form() {}
-.hook-form-focus() {}
-.hook-form-disabled() {}
-.hook-form-readonly() {}
-.hook-form-readonly-focus() {}
-.hook-form-focus-invalid() {}
-.hook-form-focus-invalid-focus() {}
-.hook-form-input-borderless() {}
-.hook-form-input-borderless-focus() {}
-.hook-form-select() {}
-.hook-form-select-multiple() {}
-.hook-form-select-focus() {}
-.hook-form-select-custom() {}
-.hook-form-label() {}
-.hook-form-fieldset() {}
-.hook-form-legend() {}
-.hook-form-stacked() {}
-.hook-form-group() {}
-.hook-form-input-icon() {}
-.hook-form-input-group() {}
-.hook-select-box() {}
-.hook-form-message() {}
-.hook-form-message-inline() {}
-.hook-form-state-success() {}
-.hook-form-state-danger() {}
-.hook-form-size-large() {}
-.hook-form-size-small() {}
-.hook-form-field-inline() {}
+.hook-form() {
+}
+.hook-form-focus() {
+}
+.hook-form-disabled() {
+}
+.hook-form-readonly() {
+}
+.hook-form-readonly-focus() {
+}
+.hook-form-focus-invalid() {
+}
+.hook-form-focus-invalid-focus() {
+}
+.hook-form-input-borderless() {
+}
+.hook-form-input-borderless-focus() {
+}
+.hook-form-select() {
+}
+.hook-form-select-multiple() {
+}
+.hook-form-select-focus() {
+}
+.hook-form-select-custom() {
+}
+.hook-form-label() {
+}
+.hook-form-fieldset() {
+}
+.hook-form-legend() {
+}
+.hook-form-stacked() {
+}
+.hook-form-group() {
+}
+.hook-form-input-icon() {
+}
+.hook-form-input-group() {
+}
+.hook-select-box() {
+}
+.hook-form-message() {
+}
+.hook-form-message-inline() {
+}
+.hook-form-state-success() {
+}
+.hook-form-state-danger() {
+}
+.hook-form-size-large() {
+}
+.hook-form-size-small() {
+}
+.hook-form-field-inline() {
+}
 /* stylelint-enable */
