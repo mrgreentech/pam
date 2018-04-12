@@ -34,7 +34,8 @@
     "serve": "browser-sync start --server build/styleguide --files build/styleguide/index.html",
     "styleguide": "kss --config kss-config.json",
     "test": "npm run build",
-    "watch:css": "onchange src/**/*.* -- npm run build:watch"
+    "watch:css": "onchange src/**/*.* -- npm run build:watch",
+    "stylelint-check": "stylelint-config-prettier-check"
   },
   "devDependencies": {
     "browser-sync": "^2.23.6",
@@ -58,6 +59,7 @@
     "prettier": "1.11.1",
     "run-sequence": "^2.2.1",
     "stylelint": "^9.2.0",
+    "stylelint-config-prettier": "^3.2.0",
     "stylelint-config-standard": "^18.2.0"
   }
 }
