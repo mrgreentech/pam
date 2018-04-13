@@ -1,8 +1,9 @@
 {
-    "extends": "stylelint-config-standard",
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-prettier"
+    ],
     "rules": {
-        "indentation": 4,
-        "max-empty-lines": 2,
         "no-extra-semicolons": null,
         "no-descending-specificity": null
     }

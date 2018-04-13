@@ -10,21 +10,19 @@
 //
 // Style guide: column
 
-
 // Variables
 // ==================================================================
 
-@column-count:        1;
-@column-width:        auto;
+@column-count: 1;
+@column-width: auto;
 
-@column-width-small:  100px;
+@column-width-small: 100px;
 @column-width-medium: 200px;
-@column-width-large:  400px;
+@column-width-large: 400px;
 
-@column-gap-small:    @space-8;
-@column-gap-medium:   @space-16;
-@column-gap-large:    @space-24;
-
+@column-gap-small: @space-8;
+@column-gap-medium: @space-16;
+@column-gap-large: @space-24;
 
 // ==================================================================
 //  Column
@@ -36,7 +34,6 @@
 
     .hook-column;
 }
-
 
 // Modifier: Column count
 // ==================================================================
@@ -56,7 +53,6 @@
 [pam-Column~="5"] {
     column-count: 5;
 }
-
 
 // Modifier: Column width
 // ==================================================================
@@ -85,7 +81,6 @@
     column-width: @column-width-large;
 }
 
-
 // Modifier: Column gap
 // ==================================================================
 
@@ -113,7 +108,6 @@
     column-gap: @column-gap-large;
 }
 
-
 // Hooks
 // ==================================================================
 
@@ -126,5 +120,6 @@
 // Style guide: column.hooks
 
 /* stylelint-disable block-no-empty */
-.hook-column() {}
+.hook-column() {
+}
 /* stylelint-enable */

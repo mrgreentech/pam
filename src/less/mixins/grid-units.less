@@ -9,7 +9,7 @@
 //
 // Style guide: mixins.grid-units
 
-.grid-units(@columns, @startIndex: 1, @prefix: '') when (@startIndex =< @columns) {
+.grid-units(@columns, @startIndex: 1, @prefix: "") when (@startIndex =< @columns) {
     [pam-Unit~="@{prefix}@{startIndex}-@{columns}"] {
         max-width: (@startIndex * 100% / @columns);
         flex: 0 0 (@startIndex * 100% / @columns);

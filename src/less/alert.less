@@ -19,41 +19,39 @@
 //
 // Style guide: alert
 
-
 // Variables
 // ==================================================================
 
-@alert-background:           @skin-lighter;
-@alert-border-color:         darken(@alert-background, 10%);
-@alert-border-radius:        @border-radius-base;
-@alert-color:                @skin-text-primary;
-@alert-line-height:          @line-height-base;
-@alert-margin-vertical:      @space-16;
-@alert-padding:              @space-16;
+@alert-background: @skin-lighter;
+@alert-border-color: darken(@alert-background, 10%);
+@alert-border-radius: @border-radius-base;
+@alert-color: @skin-text-primary;
+@alert-line-height: @line-height-base;
+@alert-margin-vertical: @space-16;
+@alert-padding: @space-16;
 
-@alert-info-background:      lighten(@skin-info, 30%);
-@alert-info-border:          darken(@alert-info-background, 10%);
-@alert-info-color:           darken(@alert-info-background, 40%);
+@alert-info-background: lighten(@skin-info, 30%);
+@alert-info-border: darken(@alert-info-background, 10%);
+@alert-info-color: darken(@alert-info-background, 40%);
 
-@alert-success-background:   lighten(@skin-success, 30%);
-@alert-success-border:       darken(@alert-success-background, 10%);
-@alert-success-color:        darken(@alert-success-background, 40%);
+@alert-success-background: lighten(@skin-success, 30%);
+@alert-success-border: darken(@alert-success-background, 10%);
+@alert-success-color: darken(@alert-success-background, 40%);
 
-@alert-warning-background:   lighten(@skin-warn, 30%);
-@alert-warning-border:       darken(@alert-warning-background, 10%);
-@alert-warning-color:        darken(@alert-warning-background, 40%);
+@alert-warning-background: lighten(@skin-warn, 30%);
+@alert-warning-border: darken(@alert-warning-background, 10%);
+@alert-warning-color: darken(@alert-warning-background, 40%);
 
-@alert-danger-background:    lighten(@skin-danger, 30%);
-@alert-danger-border:        darken(@alert-danger-background, 10%);
-@alert-danger-color:         darken(@alert-danger-background, 40%);
+@alert-danger-background: lighten(@skin-danger, 30%);
+@alert-danger-border: darken(@alert-danger-background, 10%);
+@alert-danger-color: darken(@alert-danger-background, 40%);
 
-@alert-callout-background:   @skin-text;
+@alert-callout-background: @skin-text;
 @alert-callout-border-width: @space-base;
 
-@alert-link-font-weight:     @font-weight-bold;
+@alert-link-font-weight: @font-weight-bold;
 
-@alert-large-padding:        @space-20;
-
+@alert-large-padding: @space-20;
 
 // ==================================================================
 //  Alert
@@ -82,7 +80,6 @@
     margin-bottom: 0;
 }
 
-
 //  Modifier: info
 // ==================================================================
 
@@ -93,7 +90,6 @@
 
     .hook-alert-info;
 }
-
 
 //  Modifier: success
 // ==================================================================
@@ -106,7 +102,6 @@
     .hook-alert-success;
 }
 
-
 //  Modifier: warning
 // ==================================================================
 
@@ -118,7 +113,6 @@
     .hook-alert-warning;
 }
 
-
 //  Modifier: danger
 // ==================================================================
 
@@ -129,7 +123,6 @@
 
     .hook-alert-danger;
 }
-
 
 //  Modifier: callout
 // ==================================================================
@@ -207,7 +200,6 @@
     .hook-alert-callout-danger;
 }
 
-
 //  Sub-Object: pam-Alert-Heading
 // ==================================================================
 
@@ -232,7 +224,6 @@
 
     .hook-alert-heading;
 }
-
 
 //  Sub-Object: pam-Alert-Link
 // ==================================================================
@@ -261,7 +252,6 @@
 
     .hook-alert-link;
 }
-
 
 //  Sub-Object: pam-Close
 // ==================================================================
@@ -306,7 +296,6 @@
     }
 }
 
-
 //  Fully loaded
 // ==================================================================
 
@@ -326,7 +315,6 @@
 // Weight: 5
 //
 // Style guide: alert.fully-loaded
-
 
 // Hooks
 // ========================================================================
@@ -351,16 +339,28 @@
 // Style guide: alert.hooks
 
 /* stylelint-disable block-no-empty */
-.hook-alert() {}
-.hook-alert-callout() {}
-.hook-alert-callout-danger() {}
-.hook-alert-callout-info() {}
-.hook-alert-callout-success() {}
-.hook-alert-callout-warning() {}
-.hook-alert-danger() {}
-.hook-alert-heading() {}
-.hook-alert-info() {}
-.hook-alert-link() {}
-.hook-alert-success() {}
-.hook-alert-warning() {}
+.hook-alert() {
+}
+.hook-alert-callout() {
+}
+.hook-alert-callout-danger() {
+}
+.hook-alert-callout-info() {
+}
+.hook-alert-callout-success() {
+}
+.hook-alert-callout-warning() {
+}
+.hook-alert-danger() {
+}
+.hook-alert-heading() {
+}
+.hook-alert-info() {
+}
+.hook-alert-link() {
+}
+.hook-alert-success() {
+}
+.hook-alert-warning() {
+}
 /* stylelint-enable */
