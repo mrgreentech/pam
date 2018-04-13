@@ -35,7 +35,7 @@
     "styleguide": "kss --config kss-config.json",
     "test": "npm run build",
     "watch:css": "onchange src/**/*.* -- npm run build:watch",
-    "stylelint-check": "stylelint-config-prettier-check",
+    "stylelint:check": "stylelint-config-prettier-check",
     "precommit": "lint-staged"
   },
   "devDependencies": {
