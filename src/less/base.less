@@ -1,63 +1,64 @@
-// Getting started
-//
-// Welcome to the CSS library with attitude!
-//
-// Weight: 0
-//
-// Style guide: getting-started
+/*
+ Getting started
 
-// Introduction
-//
-// PAM is a light and modular CSS library. Based and inspired by other great CSS stuff.
-// * Pure AMCSS semantics.
-// * LESS hooks for customization.
-// * Light weight: **8.8KB minified + gzip**.
-//
-// Weight: 0
-//
-// Style guide: getting-started.introduction
+ Lets learn the basics of PAM. To do that, first download and install PAM. After that you may want to checkout how to compile the source of PAM and how to create a custom skin.
 
-// Installation
-//
-// Available options:
-//
-// - [Download from GitHub.][master-download-link]
-// - Clone: `git clone https://github.com/mrgreentech/pam.git`
-// - Bower: `bower install pam`
-//
-// [master-download-link]: https://github.com/mrgreentech/pam/archive/master.zip
-//
-// Weight: 0
-//
-// Style guide: getting-started.installation
+ Weight: 0
 
-// Use
-//
-// Ok, so that was easy to install. Now lets use it. To get started use one of the the raw css files (pam.css or pam.min.css) in the `release` folder.
-//
-// Weight: 0
-//
-// Style guide: getting-started.use
+ Style guide: getting-started
+*/
+
+/*
+ Installation
+
+ To download and install PAM the following options are available.
+
+ - Download source from [GitHub.][master-download-link]
+ - Clone the repo to get all source files: `git clone https:github.com/mrgreentech/pam.git`
+ - Install with a package manager, PAM supports npm (`npm install pam`) and Bower (`bower install pam`)
+
+Alright, that was easy. Now choose one of the compiled css files (`pam.css` or `pam.min.css`) in the *dist* folder and add it to the *head* section of your index file and yourt ready to go.
+
+```
+<!-- PAM CSS -->
+<head>
+    <link rel="stylesheet" href="[your-path-to-pam]" />
+<head/>
+```
+
+ [master-download-link]: https:github.com/mrgreentech/pam/archive/master.zip
+
+ Weight: 0
+
+ Style guide: getting-started.installation
+*/
+
+/*
+ Compile source
+
+To build the source on your own make sure you have node and npm installed and then use the shell commands below.
+
+ **Prerequisites**: `node.js` and `npm`
+
+```shell
+$ git clone https://github.com/mrgreentech/pam.git
+$ cd pam
+$ npm i
+$ npm run build
+```
+
+ Weight: 1
+
+ Style guide: getting-started.compile-source
+*/
 
 // LESS
 //
-//  PAM can be integrated in projects that use LESS as preprocessor. Import the main less file (`pam.less`) in the `release/less` folder to your projects main LESS file, and then your good to go.
+//  PAM can be integrated in projects that use LESS. Import the main less file (`pam.less`) in the `dist/less` folder to your projects main LESS file and that's it.
 //
-// Weight: 0
+// Weight: 2
 //
-// Style guide: getting-started.use.less
-
-// Build
-//
-// **Prerequisites**: Node and npm
-//
-// - First clone PAM: `git clone https://github.com/mrgreentech/pam.git`
-// - Then `cd` to the PAM folder and install node modules: `npm i`
-// - And finally run the build: `npm run build`
-//
-// Weight: 0
-//
-// Style guide: getting-started.use.build
+// Style guide: getting-started.less
 
 // ==================================================================
 //  Base
