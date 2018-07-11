@@ -53,7 +53,7 @@
 
 #kss-node .kss-title,
 #kss-node .kss-doc-title {
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .kss-overview img {
@@ -68,6 +68,10 @@
     background-color: #f9f9f9;
     padding: 16px;
     overflow: auto;
+}
+
+.kss-description pre code {
+    display: inline-block;
 }
 
 .kss-description code {
@@ -97,7 +101,7 @@
 
 #kss-node .kss-style.kss-markup {
     background-color: #f9f9f9;
-    border-color: #e0e0e0;
+    border: none;
     margin: 0 0 24px;
 }
 
@@ -111,7 +115,8 @@
 }
 
 #kss-node .kss-markup[open] summary {
-    border-bottom-color: #e0e0e0;
+    background-color: #e0e0e0;
+    border: none;
 }
 
 .kss-style.kss-markup pre {
@@ -188,6 +193,16 @@
     #kss-node .kss-nav__menu-link::before {
         top: 10px;
     }
+}
+
+#kss-node hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    text-align: inherit;
+    margin: 24px 0;
+    border: 0;
+    border-top: 1px solid rgb(229, 229, 229);
 }
 
 /* Styleguide custom */
