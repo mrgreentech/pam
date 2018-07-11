@@ -11,7 +11,7 @@
 .kss-style code,
 .kss-style kbd,
 .kss-style samp {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 #kss-node {
@@ -62,6 +62,12 @@
 
 .kss-description {
     margin-bottom: 8px;
+}
+
+.kss-description pre {
+    background-color: #f9f9f9;
+    padding: 16px;
+    overflow: auto;
 }
 
 .kss-description code {
@@ -389,7 +395,7 @@ section.sg-block.sg-section-hooks code {
     border-radius: 0.25em;
     color: #555;
     display: inline;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 75%;
     font-weight: 700;
     line-height: 1;
