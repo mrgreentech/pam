@@ -5,7 +5,7 @@
                 src="kss-assets/img/logo.svg"
                 alt="PAM"
                 title="© 2016 Mr Green Tech All Rights Reserved"
-                sg-Hero-Img animated="bounceIn">
+                sg-Hero-Img animated="">
         </div>
         <h2 sg-Hero-Punchline pam-typography="headline">
             CSS with attitude

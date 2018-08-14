@@ -1,16 +1,14 @@
-$(function () {
+(function(window) {
     boot();
 
     function boot() {
-        alertHandler();
+        refreshBounch();
     }
 
-    function alertHandler() {
-        $('[pam-Alert-Close]').on('click', function(event) {
-            $(event.target).closest('[pam-Alert]')
-                .text('Bye Bye!')
-                .delay(500)
-                .fadeOut('slow', function () {});
-        });
+    function refreshBounch() {
+        var logo = window.document.querySelector("[sg-hero-img]");
+        var animated = !logo.getAttribute("animated") ? logo.setAttribute("animated", "rubberBand") : logo.setAttribute("animated", "");
+
+        return window.setTimeout(refreshBounch, 2000);
     }
-});
+})(window);
