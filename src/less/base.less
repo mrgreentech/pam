@@ -1,7 +1,7 @@
 /*
  Getting started
 
- Lets learn the basics of PAM. To do that, first download and install PAM. After that you may want to checkout how to compile the source of PAM and how to create a custom skin.
+ Lets start with the the basics of PAM. First off, choose how to install PAM. After that you may want to checkout how to compile the source, create a custom skin and or include it in your own builds.
 
  Weight: 0
 
@@ -11,7 +11,7 @@
 /*
  Installation
 
- To download and install PAM the following options are available.
+ Following download options are available.
 
  - Download source from [GitHub.][master-download-link]
  - Clone the repo to get all source files: `git clone https:github.com/mrgreentech/pam.git`
@@ -22,7 +22,7 @@ Alright, that was easy. Now choose one of the compiled css files (`pam.css` or `
 ```
 <!-- PAM CSS -->
 <head>
-    <link rel="stylesheet" href="[your-path-to-pam]" />
+    <link rel="stylesheet" href="[your-path-to-pam]/[pam.css |pam.min.css]" />
 <head/>
 ```
 
@@ -36,9 +36,9 @@ Alright, that was easy. Now choose one of the compiled css files (`pam.css` or `
 /*
  Compile source
 
-To build the source on your own make sure you have node and npm installed and then use the shell commands below.
+To build the source `node` and `npm` is needed, once installed use the shell commands below.
 
- **Prerequisites**: `node.js` and `npm`
+ <span pam-Tag="info">Prerequisites</span> `node.js` and `npm`
 
 ```shell
 $ git clone https://github.com/mrgreentech/pam.git
@@ -52,13 +52,43 @@ $ npm run build
  Style guide: getting-started.compile-source
 */
 
-// LESS
-//
-//  PAM can be integrated in projects that use LESS. Import the main less file (`pam.less`) in the `dist/less` folder to your projects main LESS file and that's it.
-//
-// Weight: 2
-//
-// Style guide: getting-started.less
+/*
+LESS
+
+PAM can be integrated in projects that use LESS. Import the main less file (`pam.less`) in the `dist/less` folder to your projects main LESS file and that's it.
+
+Weight: 2
+
+Style guide: getting-started.less
+*/
+
+/*
+Browser support
+
+PAM have been tested on all major evergreen browsers according to the table below.
+
+<div pam-Grid>
+    <div pam-Unit="1-1 small:1-2 large:1-5">
+        <img pam-Image src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/45.10.0/chrome/chrome.svg" width="48" height="48">
+    </div>
+    <div pam-Unit="1-1 small:1-2 large:1-5">
+        <img pam-Image src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/45.10.0/firefox/firefox.svg" width="48" height="48">
+    </div>
+    <div pam-Unit="1-1 small:1-2 large:1-5">
+        <img pam-Image src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/45.10.0/edge/edge.svg" width="48" height="48">
+    </div>
+    <div pam-Unit="1-1 small:1-2 large:1-5">
+       <img pam-Image src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/45.10.0/archive/internet-explorer_9-11/internet-explorer_9-11.svg" width="48" height="48">
+    </div>
+    <div pam-Unit="1-1 small:1-2 large:1-5">
+       <img pam-Image src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/45.10.0/safari-ios/safari-ios.svg" width="48" height="48">
+    </div>
+</div>
+
+ Weight: 3
+
+ Style guide: getting-started.browser-support
+*/
 
 // ==================================================================
 //  Base

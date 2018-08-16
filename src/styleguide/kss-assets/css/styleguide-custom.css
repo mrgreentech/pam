@@ -56,6 +56,14 @@
     font-weight: 300;
 }
 
+h1.kss-title {
+    font-size: 38px;
+}
+
+h2.kss-title {
+    font-size: 24px;
+}
+
 .kss-overview img {
     max-width: 400px;
 }
@@ -95,8 +103,11 @@
     border-bottom-color: #e0e0e0;
 }
 
+#kss-node .kss-style {
+    font-size: 15px;
+}
+
 #kss-node .kss-style p {
-    margin: 8px 0 16px;
 }
 
 #kss-node .kss-style.kss-markup {
@@ -183,6 +194,7 @@
     }
 
     #kss-node .kss-nav__menu-item[active] > .kss-nav__menu-link .kss-nav__name {
+        font-size: 1rem;
         font-weight: 500;
     }
 
