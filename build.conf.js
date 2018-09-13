@@ -1,50 +1,43 @@
-const pkg = require('./package.json');
+const pkg = require("./package.json");
 
 module.exports = () => {
-    'use strict';
+    "use strict";
 
     const version = `${pkg.version}`;
-    const buildBase = './build/';
-    const srcBase = './src/';
-    const distBase = './dist/';
+    const buildBase = "./build/";
+    const srcBase = "./src/";
+    const distBase = "./dist/";
 
-    const supportedBrowsers = [
-        'Chrome >= 35',
-        'Firefox >= 38',
-        'Edge >= 12',
-        'Explorer >= 10',
-        'iOS >= 8',
-        'Safari >= 8'
-    ];
+    const supportedBrowsers = ["Chrome >= 35", "Firefox >= 38", "Edge >= 12", "Explorer >= 10", "iOS >= 9", "Safari >= 9"];
 
     const plugins = {
-        pattern: ['del', 'less-*', 'run-*'],
+        pattern: ["del", "less-*", "run-*"],
         overridePattern: false
     };
 
     let licenseBanner = {
         pam: [
-            '\n/*!',
-            'Pam v<%= pkg.version %>',
-            'Copyright 2016 Mr Green & Co Technology All rights reserved.',
-            'Licensed under the BSD License.',
-            'https://github.com/mrgreentech/pam/blob/master/LICENSE.md',
-            '*/\n'
-        ].join('\n'),
+            "\n/*!",
+            "Pam v<%= pkg.version %>",
+            "Copyright 2016 Mr Green & Co Technology All rights reserved.",
+            "Licensed under the BSD License.",
+            "https://github.com/mrgreentech/pam/blob/master/LICENSE.md",
+            "*/\n"
+        ].join("\n"),
         pure: [
-            '\n/*!',
-            'Pure v0.6.0',
-            'Copyright 2014 Yahoo! Inc. All rights reserved.',
-            'Licensed under the BSD License.',
-            'https://github.com/yahoo/pure/blob/master/LICENSE.md',
-            '*/\n'
-        ].join('\n'),
+            "\n/*!",
+            "Pure v0.6.0",
+            "Copyright 2014 Yahoo! Inc. All rights reserved.",
+            "Licensed under the BSD License.",
+            "https://github.com/yahoo/pure/blob/master/LICENSE.md",
+            "*/\n"
+        ].join("\n"),
         normalize: [
-            '\n/*!',
+            "\n/*!",
             'normalize.css v<%= pkg.devDependencies["normalize.css"] %> | MIT License',
-            'Copyright (c) Nicolas Gallagher and Jonathan Neal',
-            '*/\n\n'
-        ].join('\n')
+            "Copyright (c) Nicolas Gallagher and Jonathan Neal",
+            "*/\n\n"
+        ].join("\n")
     };
 
     return {
@@ -77,7 +70,7 @@ module.exports = () => {
             styleGuide: `${distBase}styleguide/`
         },
         node: {
-            normalize: './node_modules/normalize.css/normalize.css'
+            normalize: "./node_modules/normalize.css/normalize.css"
         }
     };
 };
