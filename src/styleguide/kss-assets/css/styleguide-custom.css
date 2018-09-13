@@ -7,11 +7,14 @@
 .kss-style h4,
 .kss-style h5,
 .kss-style h6,
-.kss-style pre,
-.kss-style code,
 .kss-style kbd,
 .kss-style samp {
     font-family: "Roboto", sans-serif;
+}
+
+.kss-style pre,
+.kss-style code {
+    font-family: monospace, serif;
 }
 
 #kss-node {
@@ -33,8 +36,14 @@
 }
 
 #kss-node .kss-nav__menu-link {
+    color: #444;
     font-weight: 300;
     transition: font-weight 0.4s;
+}
+
+#kss-node .kss-nav__menu-link:hover {
+    font-weight: 500;
+    transition: font-weight 0.1s;
 }
 
 #kss-node .kss-nav__menu-link.is-in-viewport {
@@ -42,7 +51,7 @@
 }
 
 #kss-node .kss-nav__menu-link.is-in-viewport::before {
-    background-color: #0645ad;
+    background-color: #008ed5;
     width: 12px;
     height: 2px;
 }
@@ -177,6 +186,10 @@ h2.kss-title {
 }
 
 @media screen and (min-width: 769px) {
+    #kss-node .kss-main {
+        padding: 40px 40px 0 40px;
+    }
+
     #kss-node .kss-main.kss-homepage {
         margin-left: 0;
         padding: 0;
@@ -187,6 +200,7 @@ h2.kss-title {
         background: none;
         box-shadow: none;
         border-right: 1px solid #e0e0e0;
+        height: calc(100vh - 85px);
     }
 
     #kss-node .kss-nav__menu-item[active] {
@@ -429,7 +443,7 @@ section.sg-block.sg-section-hooks code {
     border-radius: 0.25em;
     color: #555;
     display: inline;
-    font-family: "Roboto", sans-serif;
+    font-family: monospace, serif;
     font-size: 75%;
     font-weight: 700;
     line-height: 1;
