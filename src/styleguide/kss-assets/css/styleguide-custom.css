@@ -340,6 +340,12 @@ section.sg-block.sg-section-hooks code {
     color: #e04f4a !important;
 }
 
+#kss-node figure {
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+}
+
 /* PAM styleguide helpers */
 
 [sg-Stack] > div {
