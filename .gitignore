@@ -3,6 +3,7 @@ bower_components/
 build/
 coverage/
 node_modules/
+skins/
 
 # Logs
 logs
@@ -11,9 +12,9 @@ npm-debug.log*
 
 # Lock files
 package-lock.json
+yarn.lock
 
 # Sublime
-*.sublime-project
 *.sublime-workspace
 
 # Yarn
