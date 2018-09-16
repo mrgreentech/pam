@@ -53,9 +53,9 @@
 @table-border-color: @skin-light;
 @table-border-style: solid;
 @table-border-width: 1px;
-@table-caption-color: @skin-darker;
-@table-head-bg-color: @skin-light;
-@table-head-color: @skin-darker;
+@table-color: @skin-text-dark;
+
+@table-head-bg-color: transparent;
 
 @table-striped-odd-bg-color: @skin-lighter;
 
@@ -74,19 +74,27 @@
 [pam-Table] {
     border-collapse: collapse;
     border-spacing: 0;
-    border: @table-border-width @table-border-style @table-border-color;
+    color: @table-color;
     empty-cells: show;
 
     .hook-table;
 }
 
 [pam-Table] caption {
-    color: @table-caption-color;
     font-style: italic;
     padding: @space-16 0;
     text-align: center;
 
     .hook-table-caption;
+}
+
+[pam-Table] thead {
+    background-color: @table-head-bg-color;
+    text-transform: uppercase;
+    text-align: left;
+    vertical-align: bottom;
+
+    .hook-table-thead;
 }
 
 [pam-Table] td,
@@ -96,7 +104,7 @@
     font-size: inherit;
     margin: 0;
     overflow: visible;
-    padding: @space-8 @space-16;
+    padding: @space-12 @space-16;
 
     .hook-table-td-th;
 }
@@ -106,15 +114,6 @@
     border-left-width: 0;
 
     .hook-table-td-th-first-child;
-}
-
-[pam-Table] thead {
-    background-color: @table-head-bg-color;
-    color: @table-head-color;
-    text-align: left;
-    vertical-align: bottom;
-
-    .hook-table-thead;
 }
 
 [pam-Table] td {
