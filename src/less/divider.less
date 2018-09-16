@@ -18,16 +18,21 @@
 // ==================================================================
 
 @divider-color: @skin-divider;
-@divider-opacity: 20;
+@divider-opacity: 10;
 @divider-size: 1px;
+@divider-transparent-border-color: fade(@skin-black, @divider-opacity);
 
 // ==================================================================
 //  Divider
 // ==================================================================
 
-[pam-Divider] {
-    display: block;
+[pam-Divider],
+hr[pam-Divider] {
+    border: 0;
     border-top: @divider-size solid @divider-color;
+    box-sizing: content-box;
+    display: block;
+    height: 0;
     margin: 0;
 
     .hook-divider;
@@ -56,7 +61,8 @@
 //
 // Style guide: divider.inset
 
-[pam-Divider~="inset"] {
+[pam-Divider~="inset"],
+hr[pam-Divider~="inset"] {
     margin-left: @space-72;
 
     .hook-divider-inset;
@@ -70,12 +76,13 @@
 // `pam-Divider="transparent"` Creates a horizontal divider with a transparent color.
 //
 // Markup:
-// <div pam-Divider="transparent">
+// <div pam-Divider="transparent"></div>
 //
 // Style guide: divider.transparent
 
-[pam-Divider~="transparent"] {
-    border-top-color: fade(@divider-color, @divider-opacity);
+[pam-Divider~="transparent"],
+hr[pam-Divider~="transparent"] {
+    border-top-color: @divider-transparent-border-color;
 
     .hook-divider-transparent;
 }
