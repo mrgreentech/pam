@@ -52,7 +52,7 @@
 
 #kss-node .kss-nav__menu-link.is-in-viewport::before {
     background-color: #008ed5;
-    width: 12px;
+    width: 14px;
     height: 2px;
 }
 
@@ -62,14 +62,21 @@
 
 #kss-node .kss-title,
 #kss-node .kss-doc-title {
-    font-weight: 300;
+    font-weight: 500;
 }
 
+.kss-style h1,
 h1.kss-title {
-    font-size: 38px;
+    font-size: 45px;
 }
 
+.kss-style h2,
 h2.kss-title {
+    font-size: 34px;
+}
+
+.kss-style h3,
+h3.kss-title {
     font-size: 24px;
 }
 
@@ -187,7 +194,7 @@ h2.kss-title {
 
 @media screen and (min-width: 769px) {
     #kss-node .kss-main {
-        padding: 40px 40px 0 40px;
+        padding: 40px 56px 0 56px;
     }
 
     #kss-node .kss-main.kss-homepage {
@@ -198,9 +205,10 @@ h2.kss-title {
 
     #kss-node .kss-sidebar {
         background: none;
-        box-shadow: none;
         border-right: 1px solid #e0e0e0;
+        box-shadow: none;
         height: calc(100vh - 85px);
+        padding: 0 40px;
     }
 
     #kss-node .kss-nav__menu-item[active] {
@@ -222,13 +230,13 @@ h2.kss-title {
 }
 
 #kss-node hr {
+    border: 0;
+    border-top: 1px solid #e5e5e5;
     box-sizing: content-box;
     height: 0;
+    margin: 48px 0;
     overflow: visible;
     text-align: inherit;
-    margin: 24px 0;
-    border: 0;
-    border-top: 1px solid rgb(229, 229, 229);
 }
 
 /* Styleguide custom */
