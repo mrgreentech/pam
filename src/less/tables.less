@@ -54,8 +54,11 @@
 @table-border-style: solid;
 @table-border-width: 1px;
 @table-color: @skin-text-dark;
+@table-padding-bp-medium: @space-16;
+@table-padding: @space-8;
 
-@table-head-bg-color: transparent;
+@table-head-bg-color: @skin-lighter;
+@table-head-border-bottom: @table-border-width @table-border-style @table-border-color;
 
 @table-striped-odd-bg-color: @skin-lighter;
 
@@ -82,7 +85,7 @@
 
 [pam-Table] caption {
     font-style: italic;
-    padding: @space-16 0;
+    padding: @table-padding 0;
     text-align: center;
 
     .hook-table-caption;
@@ -90,6 +93,7 @@
 
 [pam-Table] thead {
     background-color: @table-head-bg-color;
+    border-bottom: @table-head-border-bottom;
     text-transform: uppercase;
     text-align: left;
     vertical-align: bottom;
@@ -104,7 +108,7 @@
     font-size: inherit;
     margin: 0;
     overflow: visible;
-    padding: @space-12 @space-16;
+    padding: @table-padding;
 
     .hook-table-td-th;
 }
@@ -196,26 +200,46 @@
     .hook-table-fluid;
 }
 
+// Device breakpoints
+// ==================================================================
+
+@media screen and (min-width: @breakpoint-medium) {
+    [pam-Table] caption {
+        padding: @table-padding-bp-medium 0;
+
+        .hook-table-caption-bp-medium;
+    }
+
+    [pam-Table] td,
+    [pam-Table] th {
+        padding: @table-padding-bp-medium;
+
+        .hook-table-td-th-bp-medium;
+    }
+}
+
 //  Hooks
 // ==================================================================
 
 // Hooks
 //
-// `hook-table`
-// `hook-table-caption`
-// `hook-table-odd-td`
-// `hook-table-td`
-// `hook-table-td-th`
-// `hook-table-td-th-first-child`
-// `hook-table-thead`
-// `hook-table-bordered`
-// `hook-table-bordered-tbody-tr-last-child`
-// `hook-table-borderless`
-// `hook-table-center`
-// `hook-table-fluid`
-// `hook-table-horizontal-tbody-tr-last-child`
-// `hook-table-horizontal-td-th`
-// `hook-table-striped`
+// `.hook-table`
+// `.hook-table-caption`
+// `.hook-table-caption-bp-medium`
+// `.hook-table-odd-td`
+// `.hook-table-td`
+// `.hook-table-td-th`
+// `.hook-table-td-th-bp-medium`
+// `.hook-table-td-th-first-child`
+// `.hook-table-thead`
+// `.hook-table-bordered`
+// `.hook-table-bordered-tbody-tr-last-child`
+// `.hook-table-borderless`
+// `.hook-table-center`
+// `.hook-table-fluid`
+// `.hook-table-horizontal-tbody-tr-last-child`
+// `.hook-table-horizontal-td-th`
+// `.hook-table-striped`
 //
 // Style guide: tables.hooks
 
@@ -224,11 +248,15 @@
 }
 .hook-table-caption() {
 }
+.hook-table-caption-bp-medium() {
+}
 .hook-table-odd-td() {
 }
 .hook-table-td() {
 }
 .hook-table-td-th() {
+}
+.hook-table-td-th-bp-medium() {
 }
 .hook-table-td-th-first-child() {
 }
