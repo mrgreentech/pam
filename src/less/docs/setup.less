@@ -1,0 +1,168 @@
+/*
+ Setup
+
+PAM is written in Less and has support for cutomization. So instead of manually overriding CSS rules in your project use the build process to create and include a custom skin. To use the custom skin in your project the sources files and custom skin needs to be compiled. There are two choices, use your own build process or use PAMs native build process.
+
+ Weight: 1
+
+ Style guide: setup
+*/
+
+/*
+ Build with your project
+
+To include PAM in your project build, import (`pam.less`) or only the componens you want to use into your project's main less file. Remember to think about the import order in your main file so that css rules come in the right order. If you want to customize or create your own skin of PAM you need to create a skin folder. See [how to create a skin][how-to-create-a-skin-link].
+
+```less
+// Import PAM
+@import "node_modules/pam/dist/less/pam.less";
+
+// Custom styles, variables, hooks and mixins...
+```
+
+[how-to-create-a-skin-link]: /section-setup.html#kssref-setup-create-skin
+
+ Weight: 1
+
+ Style guide: setup.your-project
+*/
+
+/*
+ Build with PAM
+
+Somtimes it's better to keep things separated. So if you want to create a custom skin of PAM and don't want to keep it in your project you can use the provided build process to create a custom skin. By using this approach PAM is not needed to be included in your own build process.
+
+Create a `/skins` folder to to include custom skins in the build. The `/skins` folder is listed in `.gitignore` to prevent custom skins from being pushed to the PAM repository.
+
+<span pam-Tag="info">Tip</span> Create a git repository for the `/skins` folder so that you have the skins under version control.
+
+Create a file `/skins/my-skin.less` and import PAM.
+
+```less
+// Import PAM
+@import "../src/less/pam.less";
+
+// Custom styles, variables, hooks and mixins...
+```
+
+To build PAM and your custom skin use the shell commands below. `node`, `npm` and `git` are needed.
+
+<span pam-Tag="info">Prerequisites</span> `node`, `npm` and `git`
+
+```sh
+# Install dependencies
+$ npm i
+
+# Build, watch files and create a local style guide automagically on file changes
+$ npm run dev
+```
+
+ Weight: 2
+
+ Style guide: setup.with-pam
+*/
+
+/*
+Create a skin
+
+When you have created and setup a skins file it's time to skin PAM the way you want. First of make sure you are familiar with [Less](http://lesscss.org/). To customize and extend PAM in a efficent way there is a **best practice** to follow.
+
+### Variables
+
+First resort of customization is by overwriting default variables. Global variables can be found in the `/src/less/variables.less` file. For components the variables resides in respective Less file which also can be overriden.
+
+Find a Less variable you want to change. For example, the primary skin color which is defined in `/src/less/variables.less`.
+
+```less
+// default value
+@skin-primary: #008ed5;
+```
+
+Now, override the default value by setting a new value inside `/skins/my-skin.less`.
+
+```less
+// new value
+@skin-primary: #666;
+```
+
+Compile the build and the CSS will have the new value. Since a global variable have been changed many components and other global varibales use this variable and will be updated accordingly. So changing some global variables will result in a totally diffrent skin. This also gives the control to change the skin on a global or component level depending on what type of variable have been modified.
+
+### Hooks
+
+To prevent creation of overhead selectors, Less mixins hooks are declared in all components which hook into predefined selectors. Available hooks are documented in the style guide for every component. This way it's easy to change or apply additional properties.
+
+Look trough the style guide and find a rule to extend. Lets take the divider component as an example `/src/less/divider.less`.
+
+```less
+[pam-Divider] {
+    border: 0;
+    border-top: @divider-size solid @divider-color;
+    box-sizing: content-box;
+    display: block;
+    height: 0;
+    margin: 0;
+
+    // Mixin hook
+    .hook-divider;
+}
+```
+
+Now inject an additional CSS property by using the hook inside the new and shiny skin file (`/skins/my-skin.less`). Lets be bold and reuse a global and local variable to set the value for the new declaration.
+
+```less
+// Divider
+.hook-divider() { border-bottom: @divider-size solid @skin-dark; }
+```
+ Weight: 3
+
+ Style guide: setup.create-skin
+*/
+
+/*
+Skin folder structure
+
+In the examples so far all custom changes have been made in one file `/skins/my-skin.less`. This is fine as long as there only a few variables and hooks calls. But if your skin requires larger modification it's recommended to use a complete folder structure for the skin and use `/skins/my-skin.less` as an entry point. All variables and hooks should be put into single files per component.
+
+Following example shows how to stucture the skins folder if it's used in the PAM build and is placed in the root directory. If you have the skins folder in your own project adapt the paths to that.
+
+```html
+skins/
+    <!-- entry file -->
+    my-skin.less
+
+    <!-- folder with one component per file -->
+    my-skin/
+        <!-- imports all components in this folder -->
+        _custom.less
+
+        <!-- one file per component -->
+        accordion.less
+        alert.less
+        ...
+```
+
+Skin entry point, `/skins/skin-theme.less`:
+
+```less
+// PAM
+@import "../src/less/pam.less";
+
+// Skin
+@import "my-skin/_custom.less";
+```
+
+The `skins/my-skin/_custom.less` file imports all customized components.
+
+```less
+@import "alert.less";
+@import "buttons.less";
+@import ...
+// ...
+```
+
+<span pam-Tag="success">success</span> That's it, your own scalable skin is all setup. Good luck and godspeed!
+
+ Weight: 3
+
+ Style guide: setup.skin-folder-structure
+*/
