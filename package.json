@@ -2,19 +2,10 @@
   "name": "pam",
   "description": "PAM is a light, modular and flexible AMCSS library.",
   "version": "1.0.0",
-  "keywords": [
-    "css",
-    "less",
-    "amcss",
-    "styling",
-    "ui",
-    "web"
-  ],
+  "keywords": ["css", "less", "amcss", "styling", "ui", "web"],
   "homepage": "https://mrgreentech.github.io/pam/",
   "author": "Olle Harju <olle.harju@gmail.com>",
-  "contributors": [
-    "The PAM Contributors (https://github.com/mrgreentech/pam/graphs/contributors)"
-  ],
+  "contributors": ["The PAM Contributors (https://github.com/mrgreentech/pam/graphs/contributors)"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mrgreentech/pam.git"
@@ -66,9 +57,6 @@
     "stylelint-config-standard": "^18.2.0"
   },
   "lint-staged": {
-    "*.less": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.less": ["prettier --write", "git add"]
   }
 }

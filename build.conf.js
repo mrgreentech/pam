@@ -5,8 +5,9 @@ module.exports = () => {
 
     const version = `${pkg.version}`;
     const buildBase = "./build/";
-    const srcBase = "./src/";
     const distBase = "./dist/";
+    const skinsBase = "./skins/";
+    const srcBase = "./src/";
 
     const supportedBrowsers = ["Chrome >= 35", "Firefox >= 38", "Edge >= 12", "Explorer >= 10", "iOS >= 9", "Safari >= 9"];
 
@@ -55,6 +56,7 @@ module.exports = () => {
             baseGlob: `${buildBase}**`,
             cssFile: `${buildBase}pam.css`,
             cssMinFile: `${buildBase}pam.min.css`,
+            cssSkinsGlob: `${buildBase}*-skin.css`,
             less: `${buildBase}less/`,
             lessFile: `${buildBase}less/pam.less`,
             lessFileBase: `${buildBase}less/base.less`,
@@ -68,6 +70,11 @@ module.exports = () => {
             base: distBase,
             less: `${distBase}less/`,
             styleGuide: `${distBase}styleguide/`
+        },
+        skin: {
+            base: skinsBase,
+            baseGlob: `${skinsBase}**`,
+            lessFileGlob: `${skinsBase}*-skin.less`
         },
         node: {
             normalize: "./node_modules/normalize.css/normalize.css"
