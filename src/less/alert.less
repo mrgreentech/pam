@@ -2,14 +2,16 @@
 //
 // Contextual feedback messages with a set of variations to suite messages
 // with some type of intention. For the most basic alert use
-// the `pam-Alert` attribute.
+// the `pam-Alert` attribute with a `<h1>` as title and `<p>` as message element.
 //
 // Markup:
 // <div pam-Alert="{{modifier_class}}">
-//     <h1 pam-Alert-Heading>Title</h1>
-//     <p>Callout message</p>
+//     <h1>Title</h1>
+//     <p>Alert message</p>
 // </div>
 //
+// primary - This is a primary alert.
+// secondary - This is a secondary alert.
 // info - This is not important but may need your attention.
 // success - Congratulations! You have successfully done something.
 // warning - Wow! You better take a look this needs your attention!
@@ -23,27 +25,37 @@
 // ==================================================================
 
 @alert-background: @skin-lighter;
-@alert-border-color: darken(@alert-background, 10%);
+@alert-border-color: darken(@alert-background, 5%);
+@alert-border-width: 1px;
 @alert-border-radius: @border-radius-base;
 @alert-color: @skin-text-primary;
 @alert-line-height: @line-height-base;
 @alert-margin-vertical: @space-16;
 @alert-padding: @space-16;
+@alert-title-font-size: @font-size-xlarge;
+
+@alert-primary-background: lighten(@skin-primary, 30%);
+@alert-primary-border: darken(@alert-primary-background, 5%);
+@alert-primary-color: darken(@alert-primary-background, 40%);
+
+@alert-secondary-background: lighten(@skin-darker, 30%);
+@alert-secondary-border: darken(@alert-secondary-background, 5%);
+@alert-secondary-color: darken(@alert-secondary-background, 40%);
 
 @alert-info-background: lighten(@skin-info, 30%);
-@alert-info-border: darken(@alert-info-background, 10%);
+@alert-info-border: darken(@alert-info-background, 5%);
 @alert-info-color: darken(@alert-info-background, 40%);
 
 @alert-success-background: lighten(@skin-success, 30%);
-@alert-success-border: darken(@alert-success-background, 10%);
+@alert-success-border: darken(@alert-success-background, 5%);
 @alert-success-color: darken(@alert-success-background, 40%);
 
 @alert-warning-background: lighten(@skin-warn, 30%);
-@alert-warning-border: darken(@alert-warning-background, 10%);
+@alert-warning-border: darken(@alert-warning-background, 5%);
 @alert-warning-color: darken(@alert-warning-background, 40%);
 
 @alert-danger-background: lighten(@skin-danger, 30%);
-@alert-danger-border: darken(@alert-danger-background, 10%);
+@alert-danger-border: darken(@alert-danger-background, 5%);
 @alert-danger-color: darken(@alert-danger-background, 40%);
 
 @alert-callout-background: @skin-text;
@@ -60,10 +72,24 @@
 [pam-Alert] {
     background: @alert-background;
     border-radius: @alert-border-radius;
-    border: 1px solid @alert-border-color;
+    border: @alert-border-width solid @alert-border-color;
     color: @alert-color;
     line-height: @alert-line-height;
     padding: @alert-padding;
+
+    & > :first-child:not(p) {
+        color: inherit;
+        font-size: @alert-title-font-size;
+        margin: 0;
+    }
+
+    & > p:first-child {
+        margin: 0;
+    }
+
+    & > :last-child {
+        margin-bottom: 0;
+    }
 
     .hook-alert;
 }
@@ -72,12 +98,26 @@
     margin-top: @alert-margin-vertical;
 }
 
-[pam-Alert] > :first-child:not([pam-Alert-Heading]) {
-    margin-top: 0;
+//  Modifier: primary
+// ==================================================================
+
+[pam-Alert~="primary"] {
+    background-color: @alert-primary-background;
+    border-color: @alert-primary-border;
+    color: @alert-primary-color;
+
+    .hook-alert-primary;
 }
 
-[pam-Alert] > :last-child {
-    margin-bottom: 0;
+//  Modifier: secondary
+// ==================================================================
+
+[pam-Alert~="secondary"] {
+    background-color: @alert-secondary-background;
+    border-color: @alert-secondary-border;
+    color: @alert-secondary-color;
+
+    .hook-alert-secondary;
 }
 
 //  Modifier: info
@@ -134,16 +174,18 @@
 //
 // Markup:
 // <div pam-Alert="callout {{modifier_class}}">
-//     <h1 pam-Alert-Heading>Title</h1>
+//     <h1>Title</h1>
 //     <p>Callout message</p>
 // </div>
 //
+// primary - This is primary callout.
+// secondary - This is secondary callout.
 // info - This is not important information, carry on.
 // success - Something was successfully done!
 // warning - Yes, this is something to pay attention to!
 // danger - That went sideways!
 //
-// Weight: 6
+// Weight: 1
 //
 // Style guide: alert.callout
 
@@ -153,17 +195,33 @@
     border-left-width: @alert-callout-border-width;
     color: @alert-color;
 
-    > [pam-Alert-Heading] {
-        color: @alert-border-color;
+    .hook-alert-callout;
+}
+
+[pam-Alert~="callout"][pam-Alert~="primary"] {
+    border-left-color: @alert-primary-color;
+
+    > :first-child:not(p) {
+        color: @alert-primary-color;
     }
 
-    .hook-alert-callout;
+    .hook-alert-callout-primary;
+}
+
+[pam-Alert~="callout"][pam-Alert~="secondary"] {
+    border-left-color: @alert-secondary-color;
+
+    > :first-child:not(p) {
+        color: @alert-secondary-color;
+    }
+
+    .hook-alert-callout-secondary;
 }
 
 [pam-Alert~="callout"][pam-Alert~="info"] {
     border-left-color: @alert-info-color;
 
-    > [pam-Alert-Heading] {
+    > :first-child:not(p) {
         color: @alert-info-color;
     }
 
@@ -173,7 +231,7 @@
 [pam-Alert~="callout"][pam-Alert~="success"] {
     border-left-color: @alert-success-color;
 
-    > [pam-Alert-Heading] {
+    > :first-child:not(p) {
         color: @alert-success-color;
     }
 
@@ -183,7 +241,7 @@
 [pam-Alert~="callout"][pam-Alert~="warning"] {
     border-left-color: @alert-warning-color;
 
-    > [pam-Alert-Heading] {
+    > :first-child:not(p) {
         color: @alert-warning-color;
     }
 
@@ -193,36 +251,11 @@
 [pam-Alert~="callout"][pam-Alert~="danger"] {
     border-left-color: @alert-danger-color;
 
-    > [pam-Alert-Heading] {
+    > :first-child:not(p) {
         color: @alert-danger-color;
     }
 
     .hook-alert-callout-danger;
-}
-
-//  Sub-Object: pam-Alert-Heading
-// ==================================================================
-
-// Header
-//
-// `pam-Alert-Heading` keeps headers in check in a alert context.
-//
-// Markup:
-// <div pam-Alert>
-//     <h2 pam-Alert-Heading>Header</h2>
-//     <p>Alert with a header can come in handy...</p>
-// </div>
-//
-// Weight: 1
-//
-// Style guide: alert.header
-
-[pam-Alert-Heading] {
-    color: inherit;
-    margin: 0;
-    font-size: @font-size-xlarge;
-
-    .hook-alert-heading;
 }
 
 //  Sub-Object: pam-Alert-Link
@@ -234,7 +267,7 @@
 //
 // Markup:
 // <div pam-Alert>
-//     This alert has a <a pam-Alert-Link href="#">awesome link!</a>
+//     <p>This alert has a <a pam-Alert-Link href="#">awesome link!</a></p>
 // </div>
 //
 // Weight: 2
@@ -248,6 +281,7 @@
 
     &:hover {
         text-decoration: underline;
+        cursor: pointer;
     }
 
     .hook-alert-link;
@@ -267,7 +301,7 @@
 //
 // Markup:
 // <div pam-Alert="closeable">
-//     <strong>Eyy!</strong> This alert can be terminated, awesome!
+//     <p><strong>Eyy!</strong> This alert can be terminated, awesome!</p>
 //     <div pam-Close="right">×</div>
 // </div>
 //
@@ -301,15 +335,16 @@
 
 // Fully loaded
 //
-// Combine alert sub-objects and throw in a color modifier to create
-// a **fully loaded** alert!
+// Combine alert sub-objects, throw in a color modifier and add a transaprent divider
+// to create a **fully loaded** alert!
 //
 // Markup:
-// <div pam-Alert="closeable">
-//     <h2 pam-Alert-Heading>Fully loaded!</h2>
-//     <p><strong>Oh yeah</strong>, all alert features closeable, header and link.</p>
-//     <p>Well, <a pam-Alert-Link href="#">that's just crazy!</a></p>
+// <div pam-Alert="info closeable">
+//     <h1>Title</h1>
 //     <div pam-Close>×</div>
+//     <p><strong>Oh yeah</strong>, all alert features closeable, header and link.</p>
+//     <div pam-Divider="transparent"></div>
+//     <p>Well, <a pam-Alert-Link href="#">that's just crazy!</a></p>
 // </div>
 //
 // Weight: 5
@@ -325,12 +360,15 @@
 // `.hook-alert-callout`
 // `.hook-alert-callout-danger`
 // `.hook-alert-callout-info`
+// `.hook-alert-callout-primary`
+// `.hook-alert-callout-secondary`
 // `.hook-alert-callout-success`
 // `.hook-alert-callout-warning`
 // `.hook-alert-danger`
-// `.hook-alert-heading`
 // `.hook-alert-info`
 // `.hook-alert-link`
+// `.hook-alert-primary`
+// `.hook-alert-secondary`
 // `.hook-alert-success`
 // `.hook-alert-warning`
 //
@@ -347,17 +385,23 @@
 }
 .hook-alert-callout-info() {
 }
+.hook-alert-callout-primary() {
+}
+.hook-alert-callout-secondary() {
+}
 .hook-alert-callout-success() {
 }
 .hook-alert-callout-warning() {
 }
 .hook-alert-danger() {
 }
-.hook-alert-heading() {
-}
 .hook-alert-info() {
 }
 .hook-alert-link() {
+}
+.hook-alert-primary() {
+}
+.hook-alert-secondary() {
 }
 .hook-alert-success() {
 }

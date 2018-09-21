@@ -5,7 +5,7 @@
                 src="kss-assets/img/logo.svg"
                 alt="PAM"
                 title="© 2016 Mr Green Tech All Rights Reserved"
-                sg-Hero-Img animated="bounceIn">
+                sg-Hero-Img animated="">
         </div>
         <h2 sg-Hero-Punchline pam-typography="headline">
             CSS with attitude
@@ -15,7 +15,7 @@
         </p>
     </header>
     <div sg-Hero-Cta>
-        <a href="./section-getting-started.html" pam-Button="primary large">The docs</a>
+        <a href="./section-getting-started.html" pam-Button="primary large">Get started</a>
         <a href="https://github.com/mrgreentech/pam" pam-Button="primary outlined large">GitHub</a>
     </div>
     <footer>

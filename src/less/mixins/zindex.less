@@ -3,18 +3,18 @@
 // Handles z-index contextual by retrieving the elements position from a
 // element list and returns the positon as a z-index value.
 //
-// `@z-index-global` is shiped with PAM and is empty by default. Add
+// `@z-index-global` list is shipped with PAM and is empty by default. Add
 // element names to appropriate z-index in the list and use the
 // .zindex mixin to retrive the z-index value for that element
 // in the given context. If more z-index contexts are needed
 // add another `@z-index-*` list for that context.
 //
-// <div pam-Alert>
-// <span pam-ALert-Heading>Example</span>
-// <p><b>@z-index-global:</b> 'overlay', 'dialog', 'notification';</p>
-// <p>.zindex('notification', @z-index-global);</p>
-// <p><b>output:</b> z-index: 3;</p>
-// </div>
+//```less
+//  // Example
+//  @z-index-global: 'overlay', 'dialog', 'notification';
+//  zindex('notification', @z-index-global);
+//  output: z-index: 3;
+//```
 //
 // @elementName - Find position for given name.
 // @elementList - Contextual z-index element list.
