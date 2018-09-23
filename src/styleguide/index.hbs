@@ -11,7 +11,19 @@
   <link rel="icon" type="image/png" href="kss-assets/img/favicon.png" />
   <link rel="stylesheet" href="kss-assets/kss.css">
   <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
+  {{!-- TODO: Add stylesheets dynamically, default or latest selected custom skin. --}}
   {{{styles}}}
+
+  <script type="text/javascript">
+  var skinsData = [
+    {{#each options.skins}}
+      {
+        path: "{{this.path}}",
+        name: "{{this.name}}"
+      },
+    {{/each}}
+  ];
+  </script>
 </head>
 <body id="kss-node" {{#if template.isItem}}class="kss-fullscreen-mode"{{/if}} {{#if template.isHomepage}}sg-node="homepage"{{/if}}>
 
@@ -32,13 +44,13 @@
           <div pam-Menu sg-Nav>
               <ul pam-Menu-List>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/blob/master/CHANGELOG.md" pam-Menu-Link>Changelog</a>
+                    <a href="https://github.com/mrgreentech/pam/blob/master/CHANGELOG.md"  pam-Button="small">Changelog</a>
                   </li>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/issues" pam-Menu-Link>Issues</a>
+                    <a href="https://github.com/mrgreentech/pam/issues" pam-Button="small">Issues</a>
                   </li>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="small">Download</a>
+                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button=" primary small">Download</a>
                   </li>
               </ul>
           </div>
@@ -60,6 +72,15 @@
     <header class="kss-header">
       <h1 class="kss-doc-title">Documentation</h1>
     </header>
+      <form pam-Form="stacked">
+          {{!-- <label for="select-skin">Native select</label> --}}
+          <select id="select-skin" animated="fadeIn">
+                {{!-- <option value="pam.css">Default skin</option> --}}
+{{!--               {{#each options.skins}}
+                <option value="{{this.path}}">{{this.name}} skin</option>
+              {{/each}} --}}
+          </select>
+      </form>
     <nav class="kss-nav">
       <ul class="kss-nav__menu">
       {{#each menu}}
