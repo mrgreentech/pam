@@ -364,9 +364,9 @@
 //
 // Markup:
 // <form pam-Form="stacked">
-//     <input pam-Form-Size="large" type="text" id="password" placeholder="Large">
-//     <input type="text" id="password" placeholder="Default">
-//     <input pam-Form-Size="small" type="text" id="password" placeholder="Small">
+//     <input pam-Form-Size="large" type="text" placeholder="Large">
+//     <input type="text" placeholder="Default">
+//     <input pam-Form-Size="small" type="text" placeholder="Small">
 // </form>
 //
 // Weight: 3
@@ -405,11 +405,11 @@
 //
 // Markup:
 // <form pam-Form="stacked">
-//     <input pam-Form-Width="1-1" type="text" id="password" placeholder="1-1">
-//     <input pam-Form-Width="2-3" type="text" id="password" placeholder="2-3">
-//     <input pam-Form-Width="1-2" type="text" id="password" placeholder="1-2">
-//     <input pam-Form-Width="1-3" type="text" id="password" placeholder="1-3">
-//     <input pam-Form-Width="1-4" type="text" id="password" placeholder="1-4">
+//     <input pam-Form-Width="1-1" type="text" placeholder="1-1">
+//     <input pam-Form-Width="2-3" type="text" placeholder="2-3">
+//     <input pam-Form-Width="1-2" type="text" placeholder="1-2">
+//     <input pam-Form-Width="1-3" type="text" placeholder="1-3">
+//     <input pam-Form-Width="1-4" type="text" placeholder="1-4">
 // </form>
 //
 // Weight: 5
@@ -761,10 +761,10 @@
 //                 <option value="nissan">+1-284</option>
 //             </select>
 //         </div>
-//         <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+//         <input id="addon-lego-1" type="text" placeholder="One addon" pam-Form-Control>
 //     </div>
 //     <div pam-Form-Group="lego">
-//         <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+//         <input id="addon-lego-2" type="text" placeholder="One addon" pam-Form-Control>
 //         <div pam-Form-Group-Addon>
 //             <input type="button" pam-Button="small" value="send">
 //         </div>
@@ -777,7 +777,7 @@
 //                 <option value="nissan" selected>+1-284</option>
 //             </select>
 //         </div>
-//             <input id="addon-lego" type="text" placeholder="Two addons" pam-Form-Control>
+//             <input id="addon-lego-3" type="text" placeholder="Two addons" pam-Form-Control>
 //         <div pam-Form-Group-Addon>
 //             <input type="button" pam-Button="small" value="send">
 //         </div>
@@ -925,10 +925,10 @@
 //                 <option value="nissan">+1-284</option>
 //             </select>
 //         </div>
-//         <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+//         <input id="addon-lego-block-1" type="text" placeholder="One addon" pam-Form-Control>
 //     </div>
 //     <div pam-Form-Group="lego block">
-//         <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+//         <input id="addon-lego-block-2" type="text" placeholder="One addon" pam-Form-Control>
 //         <div pam-Form-Group-Addon>
 //             <input type="button" pam-Button="small" value="send">
 //         </div>
@@ -941,7 +941,7 @@
 //                 <option value="nissan" selected>+1-284</option>
 //             </select>
 //         </div>
-//             <input id="addon-lego" type="text" placeholder="Two addons" pam-Form-Control>
+//             <input id="addon-lego-block-3" type="text" placeholder="Two addons" pam-Form-Control>
 //         <div pam-Form-Group-Addon>
 //             <input type="button" pam-Button="small" value="send">
 //         </div>
@@ -1086,95 +1086,6 @@
         fieldset {
             padding: @form-control-padded-medium-screen-size-padding;
         }
-    }
-}
-
-// Experimental
-// ==================================================================
-
-// Experimental
-//
-// Following forms rulez are experimental, and has **no offical browser support**.
-//
-// Weight: 25
-//
-// Style guide: forms.experimental
-
-//  Sub-object: Floating label
-// ==================================================================
-
-// Floating label
-//
-// `pam-Field` with `input` and `label` element creates a floating label composite.
-//
-// <div pam-Alert="info">
-//    Experimental: CSS only floating label, evaluating to
-//    implement for evergreen browsers.
-// </div>
-//
-// Markup:
-// <form pam-Form>
-//     <div pam-Field>
-//         <input type="text" name="fullname" id="fullname" placeholder="Jon Doe">
-//         <label for="fullname">Nickname</label>
-//     </div>
-// </form>
-//
-// Style guide: forms.experimental.label
-
-@form-field-floating-label-border-bottom: @form-border-width @form-border-style @form-focus-border;
-
-// ------------------------------------------------------------------
-
-[pam-Field] {
-    display: inline-flex;
-    flex-flow: column-reverse;
-    margin-bottom: @space-16;
-
-    label,
-    input {
-        transition: all 0.2s;
-        touch-action: manipulation;
-    }
-
-    input {
-        position: relative;
-        -webkit-appearance: none;
-    }
-
-    input:focus {
-        border-bottom: @form-border-width @form-border-style @form-focus-border;
-        outline: 0;
-    }
-
-    label {
-        font-size: @font-size-medium;
-    }
-
-    input:placeholder-shown + label {
-        cursor: text;
-        max-width: 66.66%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        transform-origin: left bottom;
-        transform: translate(0.5rem, 2.4rem) scale(1);
-        white-space: nowrap;
-    }
-
-    ::-webkit-input-placeholder {
-        opacity: 0;
-        transition: inherit;
-    }
-
-    input:focus::-webkit-input-placeholder {
-        opacity: 1;
-    }
-
-    input:not(:placeholder-shown) + label,
-    input:focus + label {
-        cursor: pointer;
-        font-size: @font-size-xsmall;
-        transform: translate(0.5rem, 1.4rem) scale(1);
     }
 }
 
