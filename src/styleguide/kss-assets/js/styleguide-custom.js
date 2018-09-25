@@ -14,23 +14,41 @@
         }
     };
 
+    var skinsHandler = (function(window) {})(window);
+
     document.addEventListener("DOMContentLoaded", function(evt) {
         skinStylesheet = getSkinStylesheet();
 
         var skinsData = window.skinsData;
-        var skinsSelect = document.getElementById("select-skin");
-        var hasCustomSkins = skinsData && skinsData.length >= 2 && skinsSelect;
+        var skinsPlaceholder = document.querySelector("main aside header");
+
+        // Create form
+        var skinForm = document.createElement("form");
+        skinForm.id = "skin-form";
+        skinForm.setAttribute("pam-Form", "stacked");
+
+        // Create skin select
+        var skinSelect = document.createElement("select");
+        skinSelect.id = "skin-select";
+        skinSelect.setAttribute("animated", "fadeIn");
+
+        var hasCustomSkins = skinsData && skinsData.length >= 2 && skinsPlaceholder;
 
         if (hasCustomSkins) {
+            // populate skin select with custom skins.
             skinsData.forEach(function(item, index) {
                 var hasLatestSkin = item.path === storage.getItem("latest");
 
                 //TODO: Add case for default option when there is no latest.
                 if (hasLatestSkin) {
-                    skinsSelect.options[skinsSelect.options.length] = new Option(item.name, item.path, true, true);
+                    skinSelect.options[skinSelect.options.length] = new Option(item.name, item.path, true, true);
                 } else {
-                    skinsSelect.options[skinsSelect.options.length] = new Option(item.name, item.path);
+                    skinSelect.options[skinSelect.options.length] = new Option(item.name, item.path);
                 }
+            });
+            window.requestAnimationFrame(function() {
+                skinForm.appendChild(skinSelect);
+                skinsPlaceholder.appendChild(skinForm);
             });
         }
     });
@@ -38,13 +56,14 @@
     window.onload = init;
 
     function init() {
-        setSelectListener("#select-skin", function(evt) {
-            skinStylesheet.nodeEl.setAttribute("href", skinStylesheet.cssPath + evt.srcElement.value);
-            storage.setItem("latest", evt.srcElement.value);
+        setSelectListener("#skin-select", function(evt) {
+            var src = evt.target || evt.srcElement;
+            skinStylesheet.nodeEl.setAttribute("href", skinStylesheet.cssPath + src.value);
+            storage.setItem("latest", src.value);
         });
 
         if (storage.getItem("latest")) {
-            var selectEl = document.querySelector("#select-skin");
+            var selectEl = document.querySelector("#skin-select");
 
             if (selectEl) {
                 selectEl.value = storage.getItem("latest");
@@ -57,7 +76,6 @@
                     selectEl.fireEvent("onchange");
                 }
                 // skinStylesheet.nodeEl.setAttribute("href", skinStylesheet.cssPath + storage.getItem("latest"));
-                // selectEl.setAttribute("pam-visibility", "");
             }
         }
 
