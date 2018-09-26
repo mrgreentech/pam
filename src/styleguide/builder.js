@@ -70,7 +70,7 @@ class KssBuilderHandlebars extends KssBuilderBaseHandlebars {
             cwd: path.join(process.cwd(), "build")
         };
         let defaultSkin = {
-            name: "Default skin",
+            name: "default skin",
             path: "pam.css"
         };
 

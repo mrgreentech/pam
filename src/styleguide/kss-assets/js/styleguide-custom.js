@@ -14,42 +14,100 @@
         }
     };
 
-    var skinsHandler = (function(window) {})(window);
+    // var skinSwitcher = (function(window) {})(window);
 
-    document.addEventListener("DOMContentLoaded", function(evt) {
-        skinStylesheet = getSkinStylesheet();
+    function bakeElement(tagName, appendTo, properties, action) {
+        var element = document.createElement(tagName);
 
-        var skinsData = window.skinsData;
-        var skinsPlaceholder = document.querySelector("main aside header");
+        if (properties) {
+            for (var property in properties) {
+                element.setAttribute(property, properties[property]);
+            }
+        }
 
+        return action(element, appendTo);
+    }
+
+    function setAlternateStyleSheets(data, defaultStyleSheet) {
+        var sourcePath = "kss-assets/css/";
+
+        data.forEach(function(item, index) {
+            if (item.path !== "pam.css") {
+                bakeElement(
+                    "link",
+                    defaultStyleSheet.nodeEl,
+                    {
+                        rel: "alternate stylesheet",
+                        href: sourcePath + item.path,
+                        id: item.path.split(".")[0],
+                        title: item.name
+                    },
+                    function(element, appendTo) {
+                        appendTo.after(element);
+                    }
+                );
+            }
+        });
+    }
+
+    function createSelect(data, appendTo) {
         // Create form
-        var skinForm = document.createElement("form");
-        skinForm.id = "skin-form";
-        skinForm.setAttribute("pam-Form", "stacked");
+        var skinForm = bakeElement(
+            "form",
+            "",
+            {
+                id: "skin-form",
+                "pam-Form": "stacked fluid"
+            },
+            function(element, appendTo) {
+                element.style.height = "48px";
+                return element;
+            }
+        );
 
         // Create skin select
-        var skinSelect = document.createElement("select");
-        skinSelect.id = "skin-select";
-        skinSelect.setAttribute("animated", "fadeIn");
+        var skinSelect = bakeElement(
+            "select",
+            skinForm,
+            {
+                id: "skin-select",
+                "pam-Select": "",
+                animated: "fadeIn"
+            },
+            function(element, appendTo) {
+                data.forEach(function(item, index) {
+                    var preferredSkin = item.name === storage.getItem("latest");
 
-        var hasCustomSkins = skinsData && skinsData.length >= 2 && skinsPlaceholder;
+                    //TODO: Add case for default option when there is no latest.
+                    if (preferredSkin) {
+                        element.options[element.options.length] = new Option(item.name, item.name, true, true);
+                    } else if (item.name === "default skin") {
+                        element.options[element.options.length] = new Option(item.name, item.name, true, true);
+                    } else {
+                        element.options[element.options.length] = new Option(item.name, item.name);
+                    }
+                });
+                return appendTo.appendChild(element);
+            }
+        );
 
-        if (hasCustomSkins) {
-            // populate skin select with custom skins.
-            skinsData.forEach(function(item, index) {
-                var hasLatestSkin = item.path === storage.getItem("latest");
+        window.requestAnimationFrame(function() {
+            appendTo.appendChild(skinForm);
+        });
+    }
 
-                //TODO: Add case for default option when there is no latest.
-                if (hasLatestSkin) {
-                    skinSelect.options[skinSelect.options.length] = new Option(item.name, item.path, true, true);
-                } else {
-                    skinSelect.options[skinSelect.options.length] = new Option(item.name, item.path);
-                }
-            });
-            window.requestAnimationFrame(function() {
-                skinForm.appendChild(skinSelect);
-                skinsPlaceholder.appendChild(skinForm);
-            });
+    document.addEventListener("DOMContentLoaded", function(evt) {
+        var skinsData = window.skinsData;
+        var skinsPlaceholder = document.querySelector("main aside header");
+        var skinsSelectEnabled = skinsData && skinsData.length >= 2 && skinsPlaceholder;
+
+        skinStylesheet = getSkinStylesheet();
+        skinStylesheet.nodeEl.setAttribute("title", "default skin");
+        setAlternateStyleSheets(skinsData, skinStylesheet);
+        setActiveStyleSheet(storage.getItem("latest") || getPreferredStyleSheet());
+
+        if (skinsSelectEnabled) {
+            createSelect(skinsData, skinsPlaceholder);
         }
     });
 
@@ -58,28 +116,39 @@
     function init() {
         setSelectListener("#skin-select", function(evt) {
             var src = evt.target || evt.srcElement;
-            skinStylesheet.nodeEl.setAttribute("href", skinStylesheet.cssPath + src.value);
+            setActiveStyleSheet(src.value);
             storage.setItem("latest", src.value);
         });
 
-        if (storage.getItem("latest")) {
-            var selectEl = document.querySelector("#skin-select");
+        refreshAnimation("[sg-hero-img]");
+    }
 
-            if (selectEl) {
-                selectEl.value = storage.getItem("latest");
+    function setActiveStyleSheet(title) {
+        var i;
+        var link;
 
-                if ("createEvent" in document) {
-                    var evt = document.createEvent("HTMLEvents");
-                    evt.initEvent("change", false, true);
-                    selectEl.dispatchEvent(evt);
-                } else {
-                    selectEl.fireEvent("onchange");
+        for (i = 0; (link = document.getElementsByTagName("link")[i]); i++) {
+            var preferredAndAlternate = link.getAttribute("rel").indexOf("style") != -1 && link.getAttribute("title");
+            var setActive = link.getAttribute("title") == title;
+
+            if (preferredAndAlternate) {
+                link.disabled = true;
+
+                if (setActive) {
+                    link.disabled = false;
                 }
-                // skinStylesheet.nodeEl.setAttribute("href", skinStylesheet.cssPath + storage.getItem("latest"));
             }
         }
+    }
 
-        refreshAnimation("[sg-hero-img]");
+    function getPreferredStyleSheet() {
+        var i, a;
+        for (i = 0; (a = document.getElementsByTagName("link")[i]); i++) {
+            if (a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("rel").indexOf("alt") == -1 && a.getAttribute("title")) {
+                return a.getAttribute("title");
+            }
+        }
+        return null;
     }
 
     function setSelectListener(selector, action) {
@@ -113,7 +182,7 @@
         var skinLinkStylesheet = undefined;
 
         for (var i = linkStylesheets.length - 1; i >= 0; i--) {
-            if (/pam.css/g.test(linkStylesheets[i].attributes.href.nodeValue)) {
+            if (linkStylesheets[i].getAttribute("href").indexOf("pam.css") != -1) {
                 skinLinkStylesheet = linkStylesheets[i];
             }
         }
@@ -135,12 +204,10 @@
         }
 
         timerId = setTimeout(function refreshTimer() {
-            var animated = !nodeEl.getAttribute(attrAnimationName)
-                ? nodeEl.setAttribute(attrAnimationName, getRandomAnimation())
-                : nodeEl.setAttribute(attrAnimationName, "");
+            var animation = nodeEl.getAttribute(attrAnimationName) ? "" : getRandomAnimation();
 
+            nodeEl.setAttribute(attrAnimationName, animation);
             clearInterval(timerId);
-
             timerId = setTimeout(refreshTimer, delay);
         }, delay);
     }
