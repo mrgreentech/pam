@@ -5,6 +5,8 @@
  */
 (function(window) {
     var skinStylesheet;
+    var skinsData;
+    var skinsEnabled;
     var storage = {
         getItem: function(key) {
             return JSON.parse(localStorage.getItem(key));
@@ -76,7 +78,7 @@
             },
             function(element, appendTo) {
                 data.forEach(function(item, index) {
-                    var preferredSkin = item.name === storage.getItem("latest");
+                    var preferredSkin = item.name === storage.getItem("title");
 
                     //TODO: Add case for default option when there is no latest.
                     if (preferredSkin) {
@@ -96,29 +98,57 @@
         });
     }
 
+    function isValidStyleSheet(data, wantedStyleSheet) {
+        return data.some(function(item) {
+            return item.name === wantedStyleSheet;
+        });
+    }
+
+    function getTitle(data) {
+        var storedTitle = storage.getItem("title");
+        return isValidStyleSheet(data, storedTitle) ? storedTitle : getPreferredStyleSheet();
+    }
+
+    function setTitle(data, title) {
+        var titleToStore = isValidStyleSheet(data, title) ? title : getPreferredStyleSheet();
+        return storage.setItem("title", titleToStore);
+    }
+
+    function setTitleAndActiveStyleSheet(value) {
+        setActiveStyleSheet(value);
+        storage.setItem("title", value);
+    }
+
     document.addEventListener("DOMContentLoaded", function(evt) {
-        var skinsData = window.skinsData;
+        skinsData = window.skinsData;
+        skinsEnabled = skinsData && skinsData.length >= 2;
+
         var skinsPlaceholder = document.querySelector("main aside header");
-        var skinsSelectEnabled = skinsData && skinsData.length >= 2 && skinsPlaceholder;
+        var skinsSelectEnabled = skinsEnabled && skinsPlaceholder;
 
-        skinStylesheet = getSkinStylesheet();
-        skinStylesheet.nodeEl.setAttribute("title", "default skin");
-        setAlternateStyleSheets(skinsData, skinStylesheet);
-        setActiveStyleSheet(storage.getItem("latest") || getPreferredStyleSheet());
+        if (skinsEnabled) {
+            skinStylesheet = getSkinStylesheet();
+            skinStylesheet.nodeEl.setAttribute("title", "default skin");
+            setAlternateStyleSheets(skinsData, skinStylesheet);
+            setActiveStyleSheet(getTitle(skinsData));
 
-        if (skinsSelectEnabled) {
-            createSelect(skinsData, skinsPlaceholder);
+            if (skinsSelectEnabled) {
+                createSelect(skinsData, skinsPlaceholder);
+            }
         }
     });
 
     window.onload = init;
 
     function init() {
-        setSelectListener("#skin-select", function(evt) {
-            var src = evt.target || evt.srcElement;
-            setActiveStyleSheet(src.value);
-            storage.setItem("latest", src.value);
-        });
+        if (skinsEnabled) {
+            setSelectListener("#skin-select", function(evt) {
+                var src = evt.target || evt.srcElement;
+                setTitleAndActiveStyleSheet(src.value);
+                // setActiveStyleSheet(src.value);
+                // storage.setItem("title", src.value);
+            });
+        }
 
         refreshAnimation("[sg-hero-img]");
     }
