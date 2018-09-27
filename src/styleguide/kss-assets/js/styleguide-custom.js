@@ -206,7 +206,10 @@
         timerId = setTimeout(function refreshTimer() {
             var animation = nodeEl.getAttribute(attrAnimationName) ? "" : getRandomAnimation();
 
-            nodeEl.setAttribute(attrAnimationName, animation);
+            window.requestAnimationFrame(function() {
+                nodeEl.setAttribute(attrAnimationName, animation);
+            });
+
             clearInterval(timerId);
             timerId = setTimeout(refreshTimer, delay);
         }, delay);
