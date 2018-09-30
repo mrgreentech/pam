@@ -4,16 +4,7 @@
  * @return {undefined}
  */
 (function(window) {
-    var storage = {
-        getItem: function(key) {
-            return JSON.parse(localStorage.getItem(key));
-        },
-        setItem: function(key, data) {
-            return localStorage.setItem(key, JSON.stringify(data));
-        }
-    };
-
-    var skinSwitcher = (function(window, storage) {
+    var skinSwitcher = (function(window) {
         // Constants
         var CSS_SRC_PATH = "kss-assets/css/";
         var PAM_FILENAME = "pam.css";
@@ -25,6 +16,16 @@
         var skinsData;
         var skinsEnabled;
         var skinsPlaceholder;
+
+        // Storage
+        var storage = {
+            getItem: function(key) {
+                return JSON.parse(localStorage.getItem(key));
+            },
+            setItem: function(key, data) {
+                return localStorage.setItem(key, JSON.stringify(data));
+            }
+        };
 
         // Public
         var pub = {
@@ -65,33 +66,40 @@
         }
 
         function getPreferredStyleSheet() {
-            var i, a;
-            for (i = 0; (a = document.getElementsByTagName("link")[i]); i++) {
-                if (a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("rel").indexOf("alt") == -1 && a.getAttribute("title")) {
-                    return a.getAttribute("title");
+            var i;
+            var tag;
+
+            for (i = 0; (tag = document.getElementsByTagName("link")[i]); i++) {
+                var isPreferredStyleSheet =
+                    tag.getAttribute("rel").indexOf("style") !== -1 &&
+                    tag.getAttribute("rel").indexOf("alt") === -1 &&
+                    tag.getAttribute("title");
+
+                if (isPreferredStyleSheet) {
+                    return tag.getAttribute("title");
                 }
             }
             return null;
         }
 
         function setAlternateStyleSheets(data, defaultStyleSheet) {
-            defaultStyleSheet.setAttribute("title", "default skin");
-            data.forEach(function(item, index) {
-                if (item.path !== "pam.css") {
-                    bakeElement(
-                        "link",
-                        defaultStyleSheet,
-                        {
-                            rel: "alternate stylesheet",
-                            href: CSS_SRC_PATH + item.path,
-                            id: item.path.split(".")[0],
-                            title: item.name
-                        },
-                        function(element, appendTo) {
-                            appendTo.after(element);
-                        }
-                    );
-                }
+            defaultStyleSheet.setAttribute("title", defaultSkinName);
+            data.filter(function(item) {
+                return item.path !== PAM_FILENAME;
+            }).forEach(function(item, index) {
+                bakeElement(
+                    "link",
+                    defaultStyleSheet,
+                    {
+                        rel: "alternate stylesheet",
+                        href: CSS_SRC_PATH + item.path,
+                        id: item.path.split(".")[0],
+                        title: item.name
+                    },
+                    function(element, appendTo) {
+                        appendTo.after(element);
+                    }
+                );
             });
         }
 
@@ -222,7 +230,7 @@
                 return appendTo.appendChild(skinForm);
             });
         }
-    })(window, storage);
+    })(window);
 
     document.addEventListener("DOMContentLoaded", function(evt) {
         skinSwitcher.enable("main aside header");
