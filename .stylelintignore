@@ -1,2 +1,2 @@
-*.hbs
+/build
 node_modules/

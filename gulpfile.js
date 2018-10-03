@@ -6,7 +6,6 @@ const config = require("./build.conf.js")();
 // Modules
 const gulp = require("gulp");
 const plugins = require("gulp-load-plugins")(config.plugins);
-const babel = require("gulp-babel");
 
 // Cleaning
 gulp.task("clean-build", () => {
@@ -64,11 +63,7 @@ gulp.task("less", () => {
         .src([config.build.lessFile, config.skin.lessFileGlob])
         .pipe(
             plugins.less({
-                plugins: [
-                    new plugins.lessPluginAutoprefix({
-                        browsers: config.supportedBrowsers
-                    })
-                ]
+                plugins: [new plugins.lessPluginAutoprefix()]
             })
         )
         .pipe(gulp.dest(config.build.base));
@@ -79,7 +74,7 @@ gulp.task("transpile-js", function() {
     return gulp
         .src(["src/js/styleguide.js"])
         .pipe(
-            babel({
+            plugins.babel({
                 presets: ["@babel/env"]
             })
         )
