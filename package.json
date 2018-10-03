@@ -69,4 +69,5 @@
   "lint-staged": {
     "*.less": ["prettier --write", "git add"]
   },
+  "browserslist": ["Chrome >= 35", "Firefox >= 38", "Edge >= 12", "Explorer >= 10", "iOS >= 9", "Safari >= 9"]
 }
