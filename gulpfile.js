@@ -6,6 +6,7 @@ const config = require("./build.conf.js")();
 // Modules
 const gulp = require("gulp");
 const plugins = require("gulp-load-plugins")(config.plugins);
+const babel = require("gulp-babel");
 
 // Cleaning
 gulp.task("clean-build", () => {
@@ -73,6 +74,18 @@ gulp.task("less", () => {
         .pipe(gulp.dest(config.build.base));
 });
 
+// Transpile
+gulp.task("transpile-js", function() {
+    return gulp
+        .src(["src/js/styleguide.js"])
+        .pipe(
+            babel({
+                presets: ["@babel/env"]
+            })
+        )
+        .pipe(gulp.dest("build/styleguide/kss-assets/js/"));
+});
+
 // Optimize
 gulp.task("minify", () => {
     return gulp
@@ -112,11 +125,11 @@ gulp.task("size-report", () => {
 
 // Builds
 gulp.task("build", () => {
-    return plugins.runSequence("clean-build", "copy-build", "concat-font", "less", "minify", "copy-pam-to-sg");
+    return plugins.runSequence("clean-build", "copy-build", "concat-font", "less", "transpile-js", "minify", "copy-pam-to-sg");
 });
 
 gulp.task("build-dev", () => {
-    return plugins.runSequence("copy-build", "concat-font", "less", "minify", "copy-pam-to-sg");
+    return plugins.runSequence("copy-build", "concat-font", "less", "transpile-js", "minify", "copy-pam-to-sg");
 });
 
 // Default

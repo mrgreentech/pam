@@ -4,21 +4,21 @@
  * @return {undefined}
  */
 (function(window) {
-    var skinSwitcher = (function(window) {
+    const skinSwitcher = (window => {
         // Constants
-        var CSS_SRC_PATH = "kss-assets/css/";
-        var PAM_FILENAME = "pam.css";
+        const CSS_SRC_PATH = "kss-assets/css/";
+        const PAM_FILENAME = "pam.css";
 
         // Module vars
-        var defaultLinkElement;
-        var defaultSkinName;
-        var selectParent;
-        var skinsData;
-        var skinsEnabled;
-        var skinsPlaceholder;
+        let defaultLinkElement;
+        let defaultSkinName;
+        let selectParent;
+        let skinsData;
+        let skinsEnabled;
+        let skinsPlaceholder;
 
         // Storage
-        var storage = {
+        const storage = {
             getItem: function(key) {
                 return JSON.parse(localStorage.getItem(key));
             },
@@ -28,7 +28,7 @@
         };
 
         // Public
-        var pub = {
+        const pub = {
             enable: enable,
             setSelectListener: setSelectListener,
             isSelectParent: isSelectParent,
@@ -66,17 +66,17 @@
         }
 
         function getPreferredStyleSheet() {
-            var i;
-            var tag;
+            let i;
+            const tags = document.getElementsByTagName("link");
 
-            for (i = 0; (tag = document.getElementsByTagName("link")[i]); i++) {
-                var isPreferredStyleSheet =
-                    tag.getAttribute("rel").indexOf("style") !== -1 &&
-                    tag.getAttribute("rel").indexOf("alt") === -1 &&
-                    tag.getAttribute("title");
+            for (i = 0; i < tags.length; i++) {
+                let isPreferredStyleSheet =
+                    tags[i].getAttribute("rel").indexOf("style") !== -1 &&
+                    tags[i].getAttribute("rel").indexOf("alt") === -1 &&
+                    tags[i].getAttribute("title");
 
                 if (isPreferredStyleSheet) {
-                    return tag.getAttribute("title");
+                    return tags[i].getAttribute("title");
                 }
             }
             return null;
@@ -104,25 +104,25 @@
         }
 
         function setActiveStyleSheet(title) {
-            var i;
-            var link;
+            let i;
+            const links = document.getElementsByTagName("link");
 
-            for (i = 0; (link = document.getElementsByTagName("link")[i]); i++) {
-                var preferredAndAlternate = link.getAttribute("rel").indexOf("style") != -1 && link.getAttribute("title");
-                var setActive = link.getAttribute("title") == title;
+            for (i = 0; i < links.length; i++) {
+                let preferredAndAlternate = links[i].getAttribute("rel").indexOf("style") != -1 && links[i].getAttribute("title");
+                let setActive = links[i].getAttribute("title") == title;
 
                 if (preferredAndAlternate) {
-                    link.disabled = true;
+                    links[i].disabled = true;
 
                     if (setActive) {
-                        link.disabled = false;
+                        links[i].disabled = false;
                     }
                 }
             }
         }
 
         function isValidStyleSheet(data, wantedStyleSheet) {
-            return data.some(function(item) {
+            return data.some(item => {
                 return item.name === wantedStyleSheet;
             });
         }
@@ -132,12 +132,12 @@
         }
 
         function getTitle(data) {
-            var storedTitle = storage.getItem("title");
+            const storedTitle = storage.getItem("title");
             return isValidStyleSheet(data, storedTitle) ? storedTitle : getPreferredStyleSheet();
         }
 
         function setTitle(data, title) {
-            var titleToStore = isValidStyleSheet(data, title) ? title : getPreferredStyleSheet();
+            const titleToStore = isValidStyleSheet(data, title) ? title : getPreferredStyleSheet();
             return storage.setItem("title", titleToStore);
         }
 
@@ -147,10 +147,10 @@
         }
 
         function bakeElement(tagName, appendTo, properties, action) {
-            var element = document.createElement(tagName);
+            let element = document.createElement(tagName);
 
             if (properties) {
-                for (var property in properties) {
+                for (let property in properties) {
                     element.setAttribute(property, properties[property]);
                 }
             }
@@ -160,7 +160,7 @@
 
         function listenOnSelectChange() {
             setSelectListener("#skin-select", function(evt) {
-                var src = evt.target || evt.srcElement;
+                let src = evt.target || evt.srcElement;
 
                 setTitleAndActiveStyleSheet(src.value);
             });
@@ -174,7 +174,7 @@
                 throw new Error("Action needs to be a function.");
             }
 
-            var select = document.querySelector(selector);
+            let select = document.querySelector(selector);
 
             if (select) {
                 select.onchange = function(evt) {
@@ -187,7 +187,7 @@
 
         function createSelect(data, appendTo) {
             // Create form
-            var skinForm = bakeElement(
+            const skinForm = bakeElement(
                 "form",
                 "",
                 {
@@ -211,7 +211,7 @@
                 },
                 function(element, appendTo) {
                     data.forEach(function(item, index) {
-                        var preferredSkin = item.name === storage.getItem("title");
+                        const preferredSkin = item.name === storage.getItem("title");
 
                         //TODO: Add case for default option when there is no latest.
                         if (preferredSkin) {
@@ -247,23 +247,23 @@
     }
 
     function getRandomAnimation() {
-        var animations = ["rubberBand", "swing", "jello"];
+        const animations = ["rubberBand", "swing", "jello"];
 
         return animations[Math.floor(Math.random() * animations.length)];
     }
 
     function refreshAnimation(selector) {
-        var nodeEl = window.document.querySelector(selector);
-        var attrAnimationName = "animated";
-        var delay = 2000;
-        var timerId;
+        const nodeEl = window.document.querySelector(selector);
+        const attrAnimationName = "animated";
+        const delay = 2000;
+        let timerId;
 
         if (!nodeEl) {
             return;
         }
 
         timerId = setTimeout(function refreshTimer() {
-            var animation = nodeEl.getAttribute(attrAnimationName) ? "" : getRandomAnimation();
+            let animation = nodeEl.getAttribute(attrAnimationName) ? "" : getRandomAnimation();
 
             window.requestAnimationFrame(function() {
                 nodeEl.setAttribute(attrAnimationName, animation);
