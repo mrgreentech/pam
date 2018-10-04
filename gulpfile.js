@@ -72,12 +72,8 @@ gulp.task("less", () => {
 // Transpile
 gulp.task("transpile-js", function() {
     return gulp
-        .src(["src/js/styleguide.js"])
-        .pipe(
-            plugins.babel({
-                presets: ["@babel/env"]
-            })
-        )
+        .src(["src/js/*.js"])
+        .pipe(plugins.babel())
         .pipe(gulp.dest("build/styleguide/kss-assets/js/"));
 });
 
