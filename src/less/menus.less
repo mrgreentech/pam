@@ -492,12 +492,6 @@
     .hook-menu-horizontal-scrollable;
 }
 
-[pam-Menu~="horizontal"][pam-Menu~="scrollable"]::-webkit-scrollbar {
-    display: none;
-
-    .hook-menu-horizontal-scrollable-scrollbar;
-}
-
 [pam-Menu~="horizontal"][pam-Menu~="scrollable"] [pam-Menu-List] [pam-Menu-Item] {
     display: inline-block;
 
@@ -561,7 +555,6 @@
 // `.hook-menu-heading`
 // `.hook-menu-horizontal-scrollable`
 // `.hook-menu-horizontal-scrollable-list`
-// `.hook-menu-horizontal-scrollable-scrollbar`
 // `.hook-menu-item`
 // `.hook-menu-item-active-link`
 // `.hook-menu-item-disabled`
@@ -609,8 +602,6 @@
 .hook-menu-horizontal-scrollable() {
 }
 .hook-menu-horizontal-scrollable-list() {
-}
-.hook-menu-horizontal-scrollable-scrollbar() {
 }
 .hook-menu-item() {
 }
