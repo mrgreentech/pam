@@ -1,4 +1,8 @@
+/* exported skinSwitcher */
+
 const skinSwitcher = (window => {
+    "use strict";
+
     // Constants
     const CSS_SRC_PATH = "kss-assets/css/";
     const PAM_FILENAME = "pam.css";

@@ -4,6 +4,8 @@
  * @return {undefined}
  */
 (window => {
+    "use strict";
+
     let skinSwitcher = window.skinSwitcher;
     let animator = window.animator;
 

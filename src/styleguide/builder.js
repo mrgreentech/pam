@@ -18,7 +18,6 @@
 
 const path = require("path");
 const Promise = require("bluebird");
-const fs = Promise.promisifyAll(require("fs-extra"));
 const glob = Promise.promisify(require("glob"));
 
 // We want to extend kss-node's Handlebars builder so we can add options that
@@ -80,7 +79,7 @@ class KssBuilderHandlebars extends KssBuilderBaseHandlebars {
         // Check if there are any custom skins and add them to options.
         glob("*-skin.css", globOptions, (err, files) => {
             if (err) {
-                console.log(err);
+                console.error(err);
             } else {
                 files.map(file => {
                     let skinName = file.split("-");

@@ -1,4 +1,8 @@
+/* exported animator */
+
 let animator = (window => {
+    "use strict";
+
     const animationAttribute = "animated";
     const animations = ["rubberBand", "swing", "jello"];
 
