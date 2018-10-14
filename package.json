@@ -24,7 +24,7 @@
     "lint:css": "stylelint src/less/**/*.less --syntax less",
     "lint:js": "eslint src/**/*.js",
     "lint": "npm run lint:css && npm run lint:js",
-    "serve": "browser-sync start --server build/styleguide --files build/styleguide/index.html",
+    "serve": "browser-sync start --config bs-config.js",
     "styleguide": "kss --config kss-config.json",
     "test": "npm run build",
     "watch:css": "onchange src/**/*.* -- npm run build:watch",
@@ -73,7 +73,7 @@
     }
   },
   "lint-staged": {
-    "*.less": ["prettier --write", "git add"]
+    "*.{js,less}": ["prettier --write", "git add"]
   },
   "browserslist": [
     "> 1%",

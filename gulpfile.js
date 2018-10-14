@@ -116,7 +116,15 @@ gulp.task("size-report", () => {
 
 // Builds
 gulp.task("build", () => {
-    return plugins.runSequence("clean-build", "copy-build", "concat-font", "less", "transpile-js", "minify", "copy-pam-to-sg");
+    return plugins.runSequence(
+        "clean-build",
+        "copy-build",
+        "concat-font",
+        "less",
+        "transpile-js",
+        "minify",
+        "copy-pam-to-sg"
+    );
 });
 
 gulp.task("build-dev", () => {

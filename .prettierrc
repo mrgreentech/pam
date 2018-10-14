@@ -1,5 +1,13 @@
 {
     "printWidth": 140,
     "tabWidth": 4,
-    "trailingComma": "none"
+    "trailingComma": "none",
+    "overrides": [
+        {
+            "files": "*.js",
+            "options": {
+                "printWidth": 120
+            }
+        }
+    ]
 }
