@@ -471,6 +471,10 @@ section.sg-block.sg-section-hooks code {
     animation-fill-mode: both;
 }
 
+[animated~="infinite"] {
+    animation-iteration-count: infinite;
+}
+
 @keyframes rubberBand {
     from {
         transform: scale3d(1, 1, 1);
@@ -571,4 +575,19 @@ section.sg-block.sg-section-hooks code {
 [animated~="jello"] {
     animation-name: jello;
     transform-origin: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+[animated~="fadeIn"] {
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
 }

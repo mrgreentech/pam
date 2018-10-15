@@ -1,0 +1,8 @@
+# Folders
+node_modules/
+
+# Files
+*.hbs
+**/kss*.js
+**/scrollspy.js
+**/highlight*.js

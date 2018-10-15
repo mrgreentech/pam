@@ -15,48 +15,75 @@
   },
   "license": "BSD-3-Clause-Attribution",
   "scripts": {
-    "build": "npm run lint:css && gulp build && npm run build:styleguide && gulp size-report",
+    "build": "npm run lint && gulp build && npm run build:styleguide && gulp size-report",
     "build:styleguide": "npm run styleguide && gulp replace-version",
-    "build:watch": "npm run lint:css && gulp build-dev && npm run build:styleguide",
+    "build:watch": "npm run lint && gulp build-dev && npm run build:styleguide",
     "deploy:styleguide": "git subtree push --prefix build/styleguide origin gh-pages",
     "dev": "npm-run-all build --parallel serve watch:*",
     "dist": "npm run build && gulp copy-dist",
     "lint:css": "stylelint src/less/**/*.less --syntax less",
-    "serve": "browser-sync start --server build/styleguide --files build/styleguide/index.html",
+    "lint:js": "eslint src/**/*.js",
+    "lint": "npm run lint:css && npm run lint:js",
+    "serve": "browser-sync start --config bs-config.js",
     "styleguide": "kss --config kss-config.json",
     "test": "npm run build",
     "watch:css": "onchange src/**/*.* -- npm run build:watch",
     "stylelint:check": "stylelint-config-prettier-check",
-    "precommit": "lint-staged"
+    "eslint:check": "eslint --print-config . | eslint-config-prettier-check"
   },
   "devDependencies": {
-    "browser-sync": "^2.24.7",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^7.1.2",
+    "browser-sync": "^2.26.0",
     "del": "^3.0.0",
+    "eslint": "^5.6.1",
+    "eslint-config-prettier": "^3.1.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
     "gulp-banner": "^0.1.3",
-    "gulp-clean-css": "^3.9.3",
+    "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.6.1",
     "gulp-gzip": "^1.4.2",
-    "gulp-less": "^4.0.0",
+    "gulp-less": "^4.0.1",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-rename": "^1.2.2",
+    "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
-    "gulp-sizereport": "^1.2.0",
+    "gulp-sizereport": "^1.2.1",
     "gulp-util": "^3.0.8",
-    "husky": "^0.14.3",
-    "kss": "^3.0.0-beta.18",
+    "husky": "^1.1.2",
+    "kss": "^3.0.0-beta.23",
     "less-plugin-autoprefix": "^2.0.0",
-    "lint-staged": "^7.0.4",
+    "lint-staged": "^7.3.0",
     "normalize.css": "^8.0.0",
-    "npm-run-all": "^4.1.2",
-    "onchange": "^4.1.0",
-    "prettier": "1.14.2",
+    "npm-run-all": "^4.1.3",
+    "onchange": "^5.0.2",
+    "prettier": "1.14.3",
     "run-sequence": "^2.2.1",
-    "stylelint": "^9.2.0",
+    "stylelint": "^9.6.0",
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-standard": "^18.2.0"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run lint"
+    }
+  },
   "lint-staged": {
-    "*.less": ["prettier --write", "git add"]
-  }
+    "*.{js,less}": ["prettier --write", "git add"]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 Chrome major versions",
+    "last 2 Firefox major versions",
+    "last 2 Edge major versions",
+    "last 2 Safari major versions",
+    "ie >= 11",
+    "last 2 Android major versions",
+    "last 2 ChromeAndroid major versions",
+    "last 3 iOS major versions"
+  ]
 }

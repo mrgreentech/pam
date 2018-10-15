@@ -63,14 +63,18 @@ gulp.task("less", () => {
         .src([config.build.lessFile, config.skin.lessFileGlob])
         .pipe(
             plugins.less({
-                plugins: [
-                    new plugins.lessPluginAutoprefix({
-                        browsers: config.supportedBrowsers
-                    })
-                ]
+                plugins: [new plugins.lessPluginAutoprefix()]
             })
         )
         .pipe(gulp.dest(config.build.base));
+});
+
+// Transpile
+gulp.task("transpile-js", function() {
+    return gulp
+        .src(["src/js/*.js"])
+        .pipe(plugins.babel())
+        .pipe(gulp.dest("build/styleguide/kss-assets/js/"));
 });
 
 // Optimize
@@ -112,11 +116,19 @@ gulp.task("size-report", () => {
 
 // Builds
 gulp.task("build", () => {
-    return plugins.runSequence("clean-build", "copy-build", "concat-font", "less", "minify", "copy-pam-to-sg");
+    return plugins.runSequence(
+        "clean-build",
+        "copy-build",
+        "concat-font",
+        "less",
+        "transpile-js",
+        "minify",
+        "copy-pam-to-sg"
+    );
 });
 
 gulp.task("build-dev", () => {
-    return plugins.runSequence("copy-build", "concat-font", "less", "minify", "copy-pam-to-sg");
+    return plugins.runSequence("copy-build", "concat-font", "less", "transpile-js", "minify", "copy-pam-to-sg");
 });
 
 // Default
