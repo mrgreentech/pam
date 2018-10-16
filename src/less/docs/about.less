@@ -1,7 +1,7 @@
 /*
 About
 
-PAM (Pure AMCSS and Material Design) is a skinny, bold and module CSS library based on the principles of AMCSS and Material design.
+PAM which stands for _*Pure AMCSS and Material Design*_ is a skinny, bold and module CSS library based on the principles of AMCSS and Material design. In this section we take a closer look at these concepts.
 
 Weight: 2
 
@@ -11,7 +11,21 @@ Style guide: about
 /*
 AMCSS
 
-PAM markup syntax use the concept of Attribute Modules for CSS ([AMCSS][amcss-link]), which is a methodology for using HTML attributes and their values rather than classes for styling elements. The result is more readable and maintainable HTML & CSS.
+All PAMs markup syntax use the concept of Attribute Modules for CSS ([AMCSS][amcss-link]), which is a methodology for using HTML attributes and their values rather than classes for styling elements. The result is more readable and maintainable HTML & CSS. Check out these examples and decide for yourself.
+
+```html
+<!-- Button -->
+<button class="button button-default">Default button</button>
+<button pam-Button>Default button</button>
+
+<!-- Large outlined button -->
+<button class="button button-outlined button-large">Large outlined button</button>
+<button pam-Button="outlined large">Large outlined button</button>
+
+<!-- Large outlined raised button -->
+<button class="button button-outlined button-raised button-large">Large outlined raised button</button>
+<button pam-Button="outlined raised large">Large outlined raised button</button>
+```
 
 [amcss-link]: https://amcss.github.io/
 
@@ -23,6 +37,37 @@ Style guide: about.amcss
 /*
 Material design
 
+Material is an design language consisting of guidelines, components, and tools that aim to support the best practices of user interface design. Material design helps and encourage collaboration between designers and developers, this leads teams into building products and features that are more robust and consist. It also helps ideas to be realised into solution more efficently.
+
+For example PAM implements Material designs [type system][material-design-type-system-link].
+
+```html
+<!-- H1 -->
+<h1 pam-type="h1">H1</h1>
+
+<!-- Subtitle 1 -->
+<h2 pam-type="subtitle-1">Subtitle 1</h2>
+
+<!-- Body -->
+<p pam-type="body-1">Body 1</p>
+```
+
+Another examples is that PAM follows the [Material Design color theme baseline][material-design-color-system-link]. PAM has additional skin colors that can be viewed at the [skins-variables] section.
+
+```html
+<!-- Primary background color -->
+<div pam-skin="primary">
+
+<!-- Secondary background color -->
+<div pam-skin="secondary">
+```
+
+Head over to the offical [Material Design][material-design-link] website for more information and inspiration.
+
+[material-design-link]: https://material.io/design/
+[material-design-type-system-link]: https://material.io/design/typography/the-type-system.html
+[material-design-color-system-link]: https://material.io/design/color/the-color-system.html#color-theme-creation
+
 Weight: 2
 
 Style guide: about.material-design
@@ -31,7 +76,15 @@ Style guide: about.material-design
 /*
 Performance
 
-[CSS selector performance][selector-performance]
+Since around 2009 there have been an on going debate about CSS selector speed in the web developer community. Since PAM uses AMCSS and the claims have been that `attribute selectors` are slow it's only fair to adress this. After doing some research I decided to let Ben frain have the final word and lay it out for you all. So please head over to the [CSS selector performance][selector-performance] article for performance tests and analysis to see if you still think it's an issue, I know I don't.
+
+Here's one of the key takeaways.
+
+<blockquote>
+    Sweating over the selectors used in modern browsers is futile; most selection methods are now so fast it's really not worth spending much time over.
+</blockquote>
+
+I'll leave this subject with the following quote.
 
 <blockquote>
     With CSS, architecture is outside the braces; performance is inside<br>
