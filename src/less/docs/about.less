@@ -11,7 +11,7 @@ Style guide: about
 /*
 AMCSS
 
-All PAMs markup syntax use the concept of Attribute Modules for CSS ([AMCSS][amcss-link]), which is a methodology for using HTML attributes and their values rather than classes for styling elements. The result is more readable and maintainable HTML & CSS. Check out these examples and decide for yourself.
+PAM use markup syntax that is based on the concept of Attribute Modules for CSS ([AMCSS][amcss-link]), which is a methodology for using HTML attributes and their values rather than classes for styling elements. The result is more readable and maintainable HTML & CSS. Check out these examples and decide for yourself.
 
 ```html
 <!-- Button -->
@@ -43,16 +43,16 @@ For example PAM implements Material designs [type system][material-design-type-s
 
 ```html
 <!-- H1 -->
-<h1 pam-type="h1">H1</h1>
+<h1 pam-typography="h1">H1</h1>
 
 <!-- Subtitle 1 -->
-<h2 pam-type="subtitle-1">Subtitle 1</h2>
+<h2 pam-typography="subtitle-1">Subtitle 1</h2>
 
 <!-- Body -->
-<p pam-type="body-1">Body 1</p>
+<p pam-typography="body-1">Body 1</p>
 ```
 
-Another examples is that PAM follows the [Material Design color theme baseline][material-design-color-system-link]. PAM has additional skin colors that can be viewed at the [skins-variables] section.
+Another example is that PAM follows the [Material Design color theme baseline][material-design-color-system-link]. PAM has additional skin colors that can be viewed at the [skins-variables] section.
 
 ```html
 <!-- Primary background color -->
@@ -76,7 +76,7 @@ Style guide: about.material-design
 /*
 Performance
 
-Since around 2009 there have been an on going debate about CSS selector speed in the web developer community. Since PAM uses AMCSS and the claims have been that `attribute selectors` are slow it's only fair to adress this. After doing some research I decided to let Ben frain have the final word and lay it out for you all. So please head over to the [CSS selector performance][selector-performance] article for performance tests and analysis to see if you still think it's an issue, I know I don't.
+Since around 2009 there have been an on going debate about CSS selector speed in the web developer community. Since PAM uses AMCSS and the claims have been that `attribute selectors` are slow it's only fair to adress this. After doing some research I decided to let Ben Frain have the final word and lay it out for you all. So please head over to the [CSS selector performance][selector-performance] article for performance tests and analysis to see if you still think it's an issue, I know I don't.
 
 Here's one of the key takeaways.
 
