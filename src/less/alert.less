@@ -78,18 +78,18 @@
     line-height: @alert-line-height;
     padding: @alert-padding;
 
-    & > :first-child:not(p) {
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    > :first-child:not(p) {
         color: inherit;
         font-size: @alert-title-font-size;
         margin: 0;
     }
 
-    & > p:first-child {
+    > p:first-child {
         margin: 0;
-    }
-
-    & > :last-child {
-        margin-bottom: 0;
     }
 
     .hook-alert;

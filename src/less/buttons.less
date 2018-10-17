@@ -143,6 +143,12 @@ a[pam-Button] {
     .hook-button;
 }
 
+[pam-Button]::-moz-focus-inner,
+a[pam-Button]::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
 [pam-Button]:hover,
 a[pam-Button]:hover,
 [pam-Button]:focus,
@@ -168,12 +174,6 @@ a[pam-Button]:focus {
 [pam-Button]:visited,
 a[pam-Button]:visited {
     color: @button-color;
-}
-
-[pam-Button]::-moz-focus-inner,
-a[pam-Button]::-moz-focus-inner {
-    padding: 0;
-    border: 0;
 }
 
 // Modifiers: States
@@ -721,6 +721,28 @@ a[pam-Button~="circle"][pam-Button~="small"] {
     width: @button-circle-small-size;
 }
 
+// button-group modifier: borderless
+// ==================================================================
+
+// Borderless
+//
+// Remove the borders from button groups with the `borderless` modifier.
+//
+// Markup:
+// <div pam-Button-Group="borderless">
+//     <button pam-Button="">Button</button>
+//     <button pam-Button="">Button</button>
+//     <button pam-Button="">Button</button>
+// </div>
+//
+// Style guide: buttons.group.borderless
+
+[pam-Button-Group~="borderless"] {
+    & > [pam-Button] {
+        border-color: transparent;
+    }
+}
+
 // Object: button-group
 // ==================================================================
 
@@ -761,28 +783,6 @@ a[pam-Button~="circle"][pam-Button~="small"] {
     }
 
     .hook-button-group;
-}
-
-// button-group modifier: borderless
-// ==================================================================
-
-// Borderless
-//
-// Remove the borders from button groups with the `borderless` modifier.
-//
-// Markup:
-// <div pam-Button-Group="borderless">
-//     <button pam-Button="">Button</button>
-//     <button pam-Button="">Button</button>
-//     <button pam-Button="">Button</button>
-// </div>
-//
-// Style guide: buttons.group.borderless
-
-[pam-Button-Group~="borderless"] {
-    & > [pam-Button] {
-        border-color: transparent;
-    }
 }
 
 // button-group size modifiers
