@@ -21,7 +21,7 @@
     "deploy:styleguide": "git subtree push --prefix build/styleguide origin gh-pages",
     "dev": "npm-run-all build --parallel serve watch:*",
     "dist": "npm run build && gulp copy-dist",
-    "lint:css": "stylelint src/less/**/*.less --syntax less",
+    "lint:css": "stylelint src/less/**/*.less",
     "lint:js": "eslint src/**/*.js",
     "lint": "npm run lint:css && npm run lint:js",
     "serve": "browser-sync start --config bs-config.js",
@@ -63,7 +63,8 @@
     "run-sequence": "^2.2.1",
     "stylelint": "^9.6.0",
     "stylelint-config-prettier": "^4.0.0",
-    "stylelint-config-standard": "^18.2.0"
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-no-unsupported-browser-features": "^3.0.2"
   },
   "husky": {
     "hooks": {
@@ -76,7 +77,6 @@
     "*.{js,less}": ["prettier --write", "git add"]
   },
   "browserslist": [
-    "> 1%",
     "last 2 Chrome major versions",
     "last 2 Firefox major versions",
     "last 2 Edge major versions",

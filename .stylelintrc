@@ -1,10 +1,15 @@
 {
-    "extends": [
-        "stylelint-config-standard",
-        "stylelint-config-prettier"
-    ],
+    "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+    "plugins": ["stylelint-no-unsupported-browser-features"],
     "rules": {
         "no-extra-semicolons": null,
-        "no-descending-specificity": null
+        "no-descending-specificity": null,
+        "plugin/no-unsupported-browser-features": [
+            true,
+            {
+                "ignore": ["rem", "outline", "css3-cursors", "css-initial-value", "multicolumn", "css-appearance", "flexbox"],
+                "severity": "warning"
+            }
+        ]
     }
 }
