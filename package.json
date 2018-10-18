@@ -1,6 +1,6 @@
 {
   "name": "pam",
-  "version": "0.12.1",
+  "version": "0.5.0",
   "description": "PAM is a light, modular and maintainable CSS library.",
   "keywords": ["css", "less", "amcss", "styling", "ui", "web"],
   "author": "The PAM Authors (https://github.com/mrgreentech/pam/graphs/contributors)",
