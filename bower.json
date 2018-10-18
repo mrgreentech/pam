@@ -1,11 +1,8 @@
 {
   "name": "pam",
   "description": "PAM is a light, modular and maintainable CSS library.",
-  "version": "0.12.0",
-  "main": "release/less/pam.less",
-  "authors": [
-    "Olle Harju <olle.harju@mrgreen.com>"
-  ],
+  "version": "0.12.1",
+  "main": "pam.less",
   "authors": [
     "Olle Harju <olle.harju@mrgreen.com> (https://github.com/mrgreentech/pam/graphs/contributors)"
   ],

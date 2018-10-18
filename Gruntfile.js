@@ -1,137 +1,139 @@
-module.exports = function (grunt) {
-
-/* ===================================================================
+module.exports = function(grunt) {
+    /* ===================================================================
     Config
 =================================================================== */
 
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        bower: grunt.file.readJSON('bower.json'),
 
-    	pkg: grunt.file.readJSON('package.json'),
-    	bower: grunt.file.readJSON('bower.json'),
-
-
-    	// bower.json
+        // bower.json
         // ===================================================================
 
-    	bower_json: {
-    		release: {
-    			values: {
-    				main: 'pam.less'
-    			},
-    			dest: ''
-    		}
-    	},
+        bower_json: {
+            release: {
+                values: {
+                    main: 'pam.less'
+                },
+                dest: ''
+            }
+        },
 
-
-    	// Clean
+        // Clean
         // ===================================================================
 
-    	clean: {
+        clean: {
             build: ['build/'],
-    		build_files: ['build/*.css'],
-    		release: ['release/']
-    	},
+            build_files: ['build/*.css'],
+            release: ['release/']
+        },
 
-
-    	// Copy
+        // Copy
         // ===================================================================
 
-    	copy: {
-    		build: {
-    			cwd: 'src',
-    			src: ['**/*.less'],
-    			dest: 'build/less',
-    			expand: true,
-    		},
+        copy: {
+            build: {
+                cwd: 'src',
+                src: ['**/*.less'],
+                dest: 'build/less',
+                expand: true
+            },
 
-    		release: {
-    			cwd: 'build',
-    			src: ['less/**/*.less', 'styleguide/*.*'],
-    			dest: 'release',
-    			expand : true
-    		},
+            release: {
+                cwd: 'build',
+                src: ['less/**/*.less', 'styleguide/*.*'],
+                dest: 'release',
+                expand: true
+            },
 
             lesshat: {
                 src: ['bower_components/lesshat/build/lesshat-prefixed.less'],
                 dest: 'build/less/mixins',
                 flatten: true,
-                expand : true
+                expand: true
             },
 
             styleguide: {
                 files: [
-                    { expand: true, flatten: true, src: [
-                        'build/pam-responsive.css',
-                        'src/styleguide/favicon.png',
-                        'bower_components/styledown-skins/dist/Default/styleguide.css',
-                        'bower_components/styledown-skins/dist/Default/styleguide.js'
-                    ], dest: 'build/styleguide' }
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: [
+                            'build/pam-responsive.css',
+                            'src/styleguide/favicon.png',
+                            'bower_components/styledown-skins/dist/Default/styleguide.css',
+                            'bower_components/styledown-skins/dist/Default/styleguide.js'
+                        ],
+                        dest: 'build/styleguide'
+                    }
                 ]
             }
-    	},
+        },
 
-
-    	// Concat
+        // Concat
         // ===================================================================
 
-    	concat: {
-    		build: {
-    			files: [
-    				{'build/less/core/base.less': [
-    					'bower_components/normalize-css/normalize.css',
-    					'build/less/core/base.less'
-    				]},
+        concat: {
+            build: {
+                files: [
+                    {
+                        'build/less/core/base.less': [
+                            'bower_components/normalize-css/normalize.css',
+                            'build/less/core/base.less'
+                        ]
+                    },
 
-                    {'build/less/core/forms-responsive.less': [
-                        'build/less/core/forms.less',
-                        'build/less/core/forms-r.less'
-                    ]},
+                    {
+                        'build/less/core/forms-responsive.less': [
+                            'build/less/core/forms.less',
+                            'build/less/core/forms-r.less'
+                        ]
+                    },
 
-                    {'build/less/core/grids-responsive.less': [
-                        'build/less/core/grids.less',
-                        'build/less/core/grids-r.less'
-                    ]}
-    			]
-    		},
+                    {
+                        'build/less/core/grids-responsive.less': [
+                            'build/less/core/grids.less',
+                            'build/less/core/grids-r.less'
+                        ]
+                    }
+                ]
+            },
 
-    		base: {
-    			files: {
-    				'build/less/core/base.less': [
-    					'build/less/core/font.less',
-    					'build/less/core/base.less'
-    				]
-    			}
-    		}
-    	},
+            base: {
+                files: {
+                    'build/less/core/base.less': [
+                        'build/less/core/font.less',
+                        'build/less/core/base.less'
+                    ]
+                }
+            }
+        },
 
-
-    	// LESS Config
+        // LESS Config
         // ===================================================================
 
-    	less: {
-    		development: {
-    			src: 'build/**/*.less',
-    			dest: 'build/',
-    			expand : true,
-    			flatten: true,
-    			ext: '.css'
-    		}
-    	},
+        less: {
+            development: {
+                src: 'build/**/*.less',
+                dest: 'build/',
+                expand: true,
+                flatten: true,
+                ext: '.css'
+            }
+        },
 
-
-    	// LESSLint
+        // LESSLint
         // ===================================================================
 
-    	lesslint: {
-    		options: {
-    			csslint: {
-    				csslintrc: '.csslintrc'
-    			}
-    		},
-    		core: ['build/less/core/*.less'],
-    		components: ['build/less/components/*.less']
-    	},
-
+        lesslint: {
+            options: {
+                csslint: {
+                    csslintrc: '.csslintrc'
+                }
+            },
+            core: ['build/less/core/*.less'],
+            components: ['build/less/components/*.less']
+        },
 
         // postcss
         // ===================================================================
@@ -150,124 +152,120 @@ module.exports = function (grunt) {
             }
         },
 
-    	// CSSMin
+        // CSSMin
         // ===================================================================
 
-    	cssmin: {
-    		options: {
-    			noAdvanced: true
-    		},
+        cssmin: {
+            options: {
+                noAdvanced: true
+            },
 
-    		files: {
-    			expand: true,
-    			src: 'build/*.css',
-    			ext: '-min.css'
-    		}
-    	},
+            files: {
+                expand: true,
+                src: 'build/*.css',
+                ext: '-min.css'
+            }
+        },
 
-
-    	// Compress
+        // Compress
         // ===================================================================
 
-    	compress: {
-    		release: {
-    			options: {
-    				archive: 'release/<%= bower.name %>-<%= bower.version %>.tar.gz'
-    			},
+        compress: {
+            release: {
+                options: {
+                    archive:
+                        'release/<%= bower.name %>-<%= bower.version %>.tar.gz'
+                },
 
-    			expand : true,
-    			flatten: true,
-    			src: 'build/pam-min.css'
-    		}
-    	},
+                expand: true,
+                flatten: true,
+                src: 'build/pam-min.css'
+            }
+        },
 
-
-    	// License
+        // License
         // ===================================================================
 
-    	license: {
-    		normalize: {
-    			options: {
-    				banner: [
-    					'/*!',
-    					'normalize.css v<%= bower.devDependencies["normalize-css"] %> | MIT License | git.io/normalize',
-    					'Copyright (c) Nicolas Gallagher and Jonathan Neal',
-    					'*/\n'
-    				].join('\n')
-    			},
+        license: {
+            normalize: {
+                options: {
+                    banner: [
+                        '/*!',
+                        'normalize.css v<%= bower.devDependencies["normalize-css"] %> | MIT License | git.io/normalize',
+                        'Copyright (c) Nicolas Gallagher and Jonathan Neal',
+                        '*/\n'
+                    ].join('\n')
+                },
 
-    			expand: true,
-    			cwd: 'build/less',
-    			src: ['core/base*.less', 'core/<%= pkg.name %>*.less']
-    		},
+                expand: true,
+                cwd: 'build/less',
+                src: ['core/base*.less', 'core/<%= pkg.name %>*.less']
+            },
 
-    		yahoo: {
-    			options: {
-    				banner: [
-    					'/*!',
-    					'Pure v<%= pkg.version %>',
-    					'Copyright 2014 Yahoo! Inc. All rights reserved.',
-    					'Licensed under the BSD License.',
-    					'https://github.com/yahoo/pure/blob/master/LICENSE.md',
-    					'*/\n'
-    				].join('\n')
-    			},
+            yahoo: {
+                options: {
+                    banner: [
+                        '/*!',
+                        'Pure v<%= pkg.version %>',
+                        'Copyright 2014 Yahoo! Inc. All rights reserved.',
+                        'Licensed under the BSD License.',
+                        'https://github.com/yahoo/pure/blob/master/LICENSE.md',
+                        '*/\n'
+                    ].join('\n')
+                },
 
-    			expand: true,
-    			src: ['build/less/core/base.less']
-    		},
+                expand: true,
+                src: ['build/less/core/base.less']
+            },
 
-    		pam: {
-    			options: {
-    				banner: [
-    					'/*!',
-    					'Pam v<%= bower.version %>',
-    					'Copyright 2014 Mr Green! Inc. All rights reserved.',
-    					'Licensed under the BSD License.',
-    					'https://[url]/LICENSE.md',
-    					'*/\n'
-    				].join('\n')
-    			},
+            pam: {
+                options: {
+                    banner: [
+                        '/*!',
+                        'Pam v<%= bower.version %>',
+                        'Copyright 2014 Mr Green! Inc. All rights reserved.',
+                        'Licensed under the BSD License.',
+                        'https://[url]/LICENSE.md',
+                        '*/\n'
+                    ].join('\n')
+                },
 
-    			expand: true,
-    			cwd: 'build/less',
-    			src: ['core/base*.less', 'core/<%= pkg.name %>*.less']
-    		}
-    	},
+                expand: true,
+                cwd: 'build/less',
+                src: ['core/base*.less', 'core/<%= pkg.name %>*.less']
+            }
+        },
 
-
-    	// Watch/Observe
+        // Watch/Observe
         // ===================================================================
 
-    	observe: {
-    		src: {
-    			files: 'src/**/*.less',
-    			tasks: ['build_bs'],
+        observe: {
+            src: {
+                files: 'src/**/*.less',
+                tasks: ['build_bs'],
 
-    			options: {
-    				interrupt: true
-    			}
-    		}
-    	},
+                options: {
+                    interrupt: true
+                }
+            }
+        },
 
-
-    	// BrowserSync
+        // BrowserSync
         // ===================================================================
 
-    	browserSync: {
-    		bsFiles: {
-    			src: ['build/*.css', 'src/components/*.html', 'src/core/*.html']
-    		},
-    		options: {
-    			server: {
-    				baseDir: "./",
-    				index: 'src/index.html'
-    			},
-    			//tunnel: "manualtests",
-    			watchTask: true
-    		}
-    	},
-
+        browserSync: {
+            bsFiles: {
+                src: ['build/*.css', 'src/components/*.html', 'src/core/*.html']
+            },
+            options: {
+                server: {
+                    baseDir: './',
+                    index: 'src/index.html'
+                },
+                //tunnel: "manualtests",
+                watchTask: true
+            }
+        },
 
         // Styledown
         // ===================================================================
@@ -275,20 +273,22 @@ module.exports = function (grunt) {
         styledown: {
             build: {
                 files: {
-                    'build/styleguide/index.html': ['src/core/*.less', 'src/components/*.less']
+                    'build/styleguide/index.html': [
+                        'src/core/*.less',
+                        'src/components/*.less'
+                    ]
                 },
                 options: {
                     title: 'PAM',
                     config: 'src/styleguide/config.md'
                 }
-            },
+            }
         }
     });
 
     // ===================================================================
     // Tasks
     // ===================================================================
-
 
     // Npm Tasks
     // ===================================================================
@@ -307,12 +307,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-stripmq');
     grunt.loadNpmTasks('grunt-styledown');
 
-
     // Local tasks
     // ===================================================================
 
     grunt.loadTasks('tasks/');
-
 
     // Register Tasks
     // ===================================================================
@@ -321,16 +319,16 @@ module.exports = function (grunt) {
     grunt.registerTask('import', ['bower_install']);
     grunt.registerTask('test', ['lesslint']);
     grunt.registerTask('build', [
-    	'clean:build',
-    	'copy:build',
+        'clean:build',
+        'copy:build',
         'copy:lesshat',
         'lesslint',
         'concat:build',
-    	'license',
-    	'concat:base',
-    	'less',
+        'license',
+        'concat:base',
+        'less',
         'postcss:dist',
-    	'cssmin',
+        'cssmin',
         'copy:styleguide',
         'styledown'
     ]);
@@ -349,21 +347,17 @@ module.exports = function (grunt) {
         'styledown'
     ]);
 
-    grunt.registerTask('build_styleguide', [
-        'copy:styleguide',
-        'styledown'
-    ]);
+    grunt.registerTask('build_styleguide', ['copy:styleguide', 'styledown']);
 
     // Makes the `watch` task run a build first.
     grunt.renameTask('watch', 'observe');
     grunt.registerTask('watch', ['build_bs', 'observe']);
-    grunt.registerTask('tests', ["browserSync", "watch"]);
+    grunt.registerTask('tests', ['browserSync', 'watch']);
 
     grunt.registerTask('release', [
-    	'default',
-    	'clean:release',
-    	'copy:release',
-    	'bower_json:release',
-    	'compress:release'
+        'default',
+        'clean:release',
+        'copy:release',
+        'bower_json:release'
     ]);
 };
