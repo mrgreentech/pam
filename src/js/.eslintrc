@@ -3,5 +3,10 @@
         "browser": true,
         "commonjs": false,
         "node": false
-    }
+    },
+    "extends": [
+        "eslint:recommended",
+        "prettier",
+        "plugin:compat/recommended"
+    ],
 }

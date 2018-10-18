@@ -2,10 +2,19 @@
   "name": "pam",
   "description": "PAM is a light, modular and flexible AMCSS library.",
   "version": "1.0.0",
-  "keywords": ["css", "less", "amcss", "styling", "ui", "web"],
+  "keywords": [
+    "css",
+    "less",
+    "amcss",
+    "styling",
+    "ui",
+    "web"
+  ],
   "homepage": "https://mrgreentech.github.io/pam/",
   "author": "Olle Harju <olle.harju@gmail.com>",
-  "contributors": ["The PAM Contributors (https://github.com/mrgreentech/pam/graphs/contributors)"],
+  "contributors": [
+    "The PAM Contributors (https://github.com/mrgreentech/pam/graphs/contributors)"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mrgreentech/pam.git"
@@ -40,6 +49,7 @@
     "del": "^3.0.0",
     "eslint": "^5.7.0",
     "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-compat": "^2.6.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^8.0.0",
     "gulp-banner": "^0.1.3",
@@ -74,9 +84,13 @@
     }
   },
   "lint-staged": {
-    "*.{js,less}": ["prettier --write", "git add"]
+    "*.{js,less}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "browserslist": [
+    "> 1%",
     "last 2 Chrome major versions",
     "last 2 Firefox major versions",
     "last 2 Edge major versions",
@@ -84,6 +98,7 @@
     "ie >= 11",
     "last 2 Android major versions",
     "last 2 ChromeAndroid major versions",
-    "last 3 iOS major versions"
+    "last 3 iOS major versions",
+    "not op_mini all"
   ]
 }
