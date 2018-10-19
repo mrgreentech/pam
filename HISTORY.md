@@ -1,6 +1,10 @@
 PAM Change History
 ===================
 
+0.12.1 (2018-10-19)
+-------------------
+* [!] Fixed  newline at eof for import files.
+
 0.12.0 (2016-05-26)
 -------------------
 * Updated grid component wit the -webkit-flex property value to support iOS 8.1-8.4.
