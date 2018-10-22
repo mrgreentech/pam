@@ -113,6 +113,12 @@
     .hook-table-td-th;
 }
 
+[pam-Table] td {
+    background-color: transparent;
+
+    .hook-table-td;
+}
+
 [pam-Table] td:first-child,
 [pam-Table] th:first-child {
     border-left-width: 0;
@@ -120,34 +126,20 @@
     .hook-table-td-th-first-child;
 }
 
-[pam-Table] td {
-    background-color: transparent;
-
-    .hook-table-td;
-}
-
-//  Modifier: Striped
-// ==================================================================
-
-[pam-Table~="striped"] tr:nth-child(2n) td {
-    background-color: @table-striped-odd-bg-color;
-
-    .hook-table-striped;
-}
-
-//  Modifier: Bordered
-// ==================================================================
-
-[pam-Table~="bordered"] td {
-    border-bottom: @table-border-bordered-width @table-border-bordered-style @table-border-bordered-color;
-
-    .hook-table-bordered;
-}
-
-[pam-Table~="bordered"] tbody > tr:last-child > td {
+[pam-Table] tbody > tr:last-child > td {
     border-bottom-width: 0;
+}
 
-    .hook-table-bordered-tbody-tr-last-child;
+/* stylelint-disable no-descending-specificity */
+
+//  Modifier: Center
+// ==================================================================
+
+[pam-Table~="center"] td,
+[pam-Table~="center"] th {
+    text-align: center;
+
+    .hook-table-center;
 }
 
 //  Modifier: Horizontal
@@ -159,12 +151,6 @@
     border-width: 0 0 @table-border-horizontal-width;
 
     .hook-table-horizontal-td-th;
-}
-
-[pam-Table~="horizontal"] tbody > tr:last-child > td {
-    border-bottom-width: 0;
-
-    .hook-table-horizontal-tbody-tr-last-child;
 }
 
 //  Modifier: Borderless
@@ -181,14 +167,22 @@
     border-left: none;
 }
 
-//  Modifier: Center
+//  Modifier: Bordered
 // ==================================================================
 
-[pam-Table~="center"] td,
-[pam-Table~="center"] th {
-    text-align: center;
+[pam-Table~="bordered"] td {
+    border-bottom: @table-border-bordered-width @table-border-bordered-style @table-border-bordered-color;
 
-    .hook-table-center;
+    .hook-table-bordered;
+}
+
+//  Modifier: Striped
+// ==================================================================
+
+[pam-Table~="striped"] tr:nth-child(2n) td {
+    background-color: @table-striped-odd-bg-color;
+
+    .hook-table-striped;
 }
 
 //  Modifier: Fluid
@@ -217,6 +211,8 @@
         .hook-table-td-th-bp-medium;
     }
 }
+
+/* stylelint-enable no-descending-specificity */
 
 //  Hooks
 // ==================================================================

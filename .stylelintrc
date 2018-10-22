@@ -2,8 +2,6 @@
     "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
     "plugins": ["stylelint-no-unsupported-browser-features"],
     "rules": {
-        "no-extra-semicolons": null,
-        "no-descending-specificity": null,
         "plugin/no-unsupported-browser-features": [
             true,
             {
