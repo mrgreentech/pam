@@ -38,16 +38,15 @@
     .hook-menu;
 }
 
-[pam-Menu] [pam-Menu-List],
-[pam-Menu] [pam-Menu-Item] {
-    position: relative;
-}
+//  Sub-object: List
+// ==========================================================================
 
 [pam-Menu] [pam-Menu-List] {
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
+    position: relative;
 
     .hook-menu-list;
 }
@@ -58,8 +57,27 @@
 [pam-Menu] [pam-Menu-Item] {
     margin: 0;
     padding: 0;
+    position: relative;
 
     .hook-menu-item;
+}
+
+//  Sub-object: Link
+// ==========================================================================
+
+[pam-Menu] [pam-Menu-Link] {
+    color: @menu-link-color;
+    padding: @space-8 @space-16;
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+
+    .hook-menu-link;
+}
+
+[pam-Menu] [pam-Menu-Link]:hover,
+[pam-Menu] [pam-Menu-Link]:focus {
+    background-color: @menu-link-hover-bg-color;
 }
 
 //  Sub-object: Item states
@@ -107,10 +125,6 @@
     .hook-menu-item-disabled-link;
 }
 
-[pam-Menu] [pam-Menu-Item~="disabled"] [pam-Menu-Link]:hover {
-    background-color: transparent;
-}
-
 [pam-Menu] [pam-Menu-Item~="selected"] [pam-Menu-Link],
 [pam-Menu] [pam-Menu-Item~="selected"] [pam-Menu-Link]:visited {
     color: @menu-selected-link-color;
@@ -118,22 +132,8 @@
     .hook-menu-item-selected-link;
 }
 
-//  Sub-object: Link
-// ==========================================================================
-
-[pam-Menu] [pam-Menu-Link] {
-    color: @menu-link-color;
-    padding: @space-8 @space-16;
-    display: block;
-    text-decoration: none;
-    white-space: nowrap;
-
-    .hook-menu-link;
-}
-
-[pam-Menu] [pam-Menu-Link]:hover,
-[pam-Menu] [pam-Menu-Link]:focus {
-    background-color: @menu-link-hover-bg-color;
+[pam-Menu] [pam-Menu-Item~="disabled"] [pam-Menu-Link]:hover {
+    background-color: transparent;
 }
 
 //  Sub-object: Heading
@@ -158,8 +158,8 @@
 
 [pam-Menu] [pam-Menu-Heading] {
     color: @menu-heading-color;
-    padding: @space-8 @space-16;
     display: block;
+    padding: @space-8 @space-16;
     text-decoration: none;
     white-space: nowrap;
 
@@ -402,8 +402,8 @@
     .hook-menu-vertical-children;
 }
 
-[pam-Menu] [pam-Menu-Allow-Hover]:hover > [pam-Menu-Children],
-[pam-Menu] [pam-Menu-Active] > [pam-Menu-Children] {
+[pam-Menu] [pam-Menu-Active] > [pam-Menu-Children],
+[pam-Menu] [pam-Menu-Allow-Hover]:hover > [pam-Menu-Children] {
     display: block;
     position: absolute;
 
