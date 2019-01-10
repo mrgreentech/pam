@@ -1,9 +1,28 @@
 # Folders
+bower_components/
+build/
+coverage/
+node_modules/
+skins/
 src/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Lock files
+package-lock.json
+yarn.lock
+
+# Sublime
+*.sublime-workspace
+*.sublime-project
+
+# Yarn
+.yarnclean
 
 # Files
 .*
 *.json
 *.js
-*.md
-yarn.lock
