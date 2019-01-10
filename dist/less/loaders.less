@@ -34,26 +34,24 @@
 //
 // Style guide: loaders.examples
 
-
 //  Variables
 // ==================================================================
 
-@circle-height:                 @space-24;
-@circle-width:                  @space-24;
-@circle-border-width:           0.2rem;
-@circle-border-color:           rgba(0, 0, 0, 0.2);
+@circle-height: @space-24;
+@circle-width: @space-24;
+@circle-border-width: 0.2rem;
+@circle-border-color: rgba(0, 0, 0, 0.2);
 @circle-border-indicator-color: @skin-darker;
 
-@pulse-background-color:        #3a3a3a;
-@pulse-height:                  @space-24;
-@pulse-margin:                  0 @space-16;
-@pulse-width:                   @space-base + 2;
-@pulse-animation-speed:         750ms;
-@pulse-animation-delay:         250ms;
+@pulse-background-color: #3a3a3a;
+@pulse-height: @space-24;
+@pulse-margin: 0 @space-16;
+@pulse-width: @space-base + 2;
+@pulse-animation-speed: 750ms;
+@pulse-animation-delay: 250ms;
 
-@pulse-small-bar-height:        @space-16;
-@pulse-small-bar-offset:        @space-12;
-
+@pulse-small-bar-height: @space-16;
+@pulse-small-bar-offset: @space-12;
 
 // ==================================================================
 //  Loader
@@ -122,7 +120,6 @@
     }
 }
 
-
 //  Modifier: Pulse
 // ==================================================================
 
@@ -139,7 +136,6 @@
 //
 // Style guide: loaders.pulse
 
-
 [pam-Loader~="pulse"] {
     animation: pulse @pulse-animation-speed infinite;
     animation-delay: @pulse-animation-delay;
@@ -152,7 +148,7 @@
     &::before {
         animation: pulse @pulse-animation-speed infinite;
         background: @pulse-background-color;
-        content: '';
+        content: "";
         display: block;
         height: @pulse-small-bar-height;
         left: -@pulse-small-bar-offset;
@@ -166,7 +162,7 @@
         animation: pulse @pulse-animation-speed infinite;
         animation-delay: 0.5s;
         background: @pulse-background-color;
-        content: '';
+        content: "";
         display: block;
         height: @pulse-small-bar-height;
         left: @pulse-small-bar-offset;
@@ -192,7 +188,7 @@
     }
 
     &::after {
-        height: @pulse-small-bar-height /2;
+        height: @pulse-small-bar-height / 2;
         left: @pulse-small-bar-offset / 2;
         width: @pulse-width / 2;
     }

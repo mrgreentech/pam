@@ -8,10 +8,25 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
 
+  <link rel="icon" type="image/png" href="kss-assets/img/favicon.png" />
   <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
   <link rel="stylesheet" href="kss-assets/css/pam.css">
 <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 
+
+  <script type="text/javascript">
+  var skinsData = [
+      {
+        path: "pam.css",
+        name: "default skin"
+      },
+      {
+        path: "mrg-skin.css",
+        name: "mrg skin"
+      },
+  ];
+  </script>
 </head>
 <body id="kss-node"  >
 
@@ -32,13 +47,13 @@
           <div pam-Menu sg-Nav>
               <ul pam-Menu-List>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/blob/master/CHANGELOG.md" pam-Menu-Link>Changelog</a>
+                    <a href="https://github.com/mrgreentech/pam/blob/master/CHANGELOG.md"  pam-Button="small">Changelog</a>
                   </li>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/issues" pam-Menu-Link>Issues</a>
+                    <a href="https://github.com/mrgreentech/pam/issues" pam-Button="small">Issues</a>
                   </li>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="small">Download</a>
+                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button=" primary small">Download</a>
                   </li>
               </ul>
           </div>
@@ -47,7 +62,7 @@
 </header>
 
 <main sg-main>
-  <div class="kss-sidebar kss-style">
+  <aside class="kss-sidebar kss-style">
     <header class="kss-header">
       <h1 class="kss-doc-title">Documentation</h1>
     </header>
@@ -59,82 +74,86 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-setup.html">
+            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Setup</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-about.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">About</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-base.html">
-            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Base</span>
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Base</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-grids.html">
-            <span class="kss-nav__ref">3</span><span class="kss-nav__name">Grids</span>
+            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Grids</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-typography.html">
-            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Typography</span>
+            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Typography</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" active>
           <a class="kss-nav__menu-link" href="section-forms.html">
-            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Forms</span>
+            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Forms</span>
           </a>
               <ul class="kss-nav__menu-child">
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-states">
-                    <span class="kss-nav__ref ">5.1</span
+                    <span class="kss-nav__ref ">7.1</span
                     ><span class="kss-nav__name">State</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-size">
-                    <span class="kss-nav__ref ">5.2</span
+                    <span class="kss-nav__ref ">7.2</span
                     ><span class="kss-nav__name">Size</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-width">
-                    <span class="kss-nav__ref ">5.3</span
+                    <span class="kss-nav__ref ">7.3</span
                     ><span class="kss-nav__name">Width</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-layout">
-                    <span class="kss-nav__ref ">5.4</span
+                    <span class="kss-nav__ref ">7.4</span
                     ><span class="kss-nav__name">Layout</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-message">
-                    <span class="kss-nav__ref ">5.5</span
+                    <span class="kss-nav__ref ">7.5</span
                     ><span class="kss-nav__name">Message</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-custom">
-                    <span class="kss-nav__ref ">5.6</span
+                    <span class="kss-nav__ref ">7.6</span
                     ><span class="kss-nav__name">Custom controls</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-traits">
-                    <span class="kss-nav__ref ">5.7</span
+                    <span class="kss-nav__ref ">7.7</span
                     ><span class="kss-nav__name">Traits</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-experimental">
-                    <span class="kss-nav__ref ">5.8</span
-                    ><span class="kss-nav__name">Experimental</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-deprecated">
-                    <span class="kss-nav__ref ">5.9</span
+                    <span class="kss-nav__ref ">7.8</span
                     ><span class="kss-nav__name">Deprecated</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-hooks">
-                    <span class="kss-nav__ref ">5.10</span
+                    <span class="kss-nav__ref ">7.9</span
                     ><span class="kss-nav__name">Hooks</span>
                   </a>
                 </li>
@@ -142,73 +161,73 @@
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-buttons.html">
-            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Buttons</span>
+            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Buttons</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-tables.html">
-            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Tables</span>
+            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Tables</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-menus.html">
-            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Menus</span>
+            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Menus</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-alert.html">
-            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Alert</span>
+            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Alert</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-divider.html">
-            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Divider</span>
+            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Divider</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-links.html">
-            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Link</span>
+            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Link</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-lists.html">
-            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Lists</span>
+            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Lists</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-tags.html">
-            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Tags</span>
+            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Tags</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-column.html">
-            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Column</span>
+            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Column</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Loaders</span>
+            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Loaders</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-overlay.html">
-            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Overlay</span>
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Overlay</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-traits.html">
-            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Traits</span>
+            <span class="kss-nav__ref">19</span><span class="kss-nav__name">Traits</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-mixins.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Mixins</span>
+            <span class="kss-nav__ref">20</span><span class="kss-nav__name">Mixins</span>
           </a>
         </li>
       </ul>
     </nav>
-  </div>
-  <article role="main" class="kss-main">
+  </aside>
+  <main role="main" class="kss-main">
 
       <div id="kssref-forms" class="kss-section kss-section--depth-1 ">
 
@@ -332,7 +351,7 @@
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked padded&quot;&gt;
+              <pre><code class="html">&lt;form pam-Form&#x3D;&quot;stacked padded&quot;&gt;
     &lt;div pam-Grid&gt;
         &lt;div pam-Unit&#x3D;&quot;1-1 medium:1-2&quot;&gt;
             &lt;fieldset pam-Fieldset&#x3D;&quot;column&quot;&gt;
@@ -378,6 +397,7 @@
 &lt;/form&gt;</code></pre>
             </details>
       </div>
+      <hr >
       <section id="kssref-forms-states" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -396,6 +416,7 @@ by using native or custom states.</p>
         </div>
 
       </section>
+      <hr >
       <section id="kssref-forms-states-native" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -517,11 +538,12 @@ to use native states with PAM forms.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
-     &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Input&quot; value&#x3D;&quot;[modifier class]&quot; [modifier class]&gt;
+              <pre><code class="html">&lt;form pam-Form&gt;
+     &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Input&quot; value&#x3D;&quot;[modifier attribute]&quot; [modifier attribute]&gt;
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-states-custom" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -630,11 +652,12 @@ to use native states with PAM forms.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
-     &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Input&quot; value&#x3D;&quot;[modifier class]&quot; pam-Form-State&#x3D;&quot;[modifier class]&quot;&gt;
+              <pre><code class="html">&lt;form pam-Form&gt;
+     &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Input&quot; value&#x3D;&quot;[modifier attribute]&quot; pam-Form-State&#x3D;&quot;[modifier attribute]&quot;&gt;
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-size" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -655,9 +678,9 @@ to use native states with PAM forms.</p>
 
             <div class="kss-modifier__example">
               <form pam-Form="stacked">
-    <input pam-Form-Size="large" type="text" id="password" placeholder="Large">
-    <input type="text" id="password" placeholder="Default">
-    <input pam-Form-Size="small" type="text" id="password" placeholder="Small">
+    <input pam-Form-Size="large" type="text" placeholder="Large">
+    <input type="text" placeholder="Default">
+    <input pam-Form-Size="small" type="text" placeholder="Small">
 </form>
               <div class="kss-modifier__example-footer"></div>
             </div>
@@ -718,13 +741,14 @@ to use native states with PAM forms.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
-    &lt;input pam-Form-Size&#x3D;&quot;large&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Large&quot;&gt;
-    &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Default&quot;&gt;
-    &lt;input pam-Form-Size&#x3D;&quot;small&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Small&quot;&gt;
+              <pre><code class="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
+    &lt;input pam-Form-Size&#x3D;&quot;large&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Large&quot;&gt;
+    &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Default&quot;&gt;
+    &lt;input pam-Form-Size&#x3D;&quot;small&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Small&quot;&gt;
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-width" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -746,11 +770,11 @@ to use native states with PAM forms.</p>
 
             <div class="kss-modifier__example">
               <form pam-Form="stacked">
-    <input pam-Form-Width="1-1" type="text" id="password" placeholder="1-1">
-    <input pam-Form-Width="2-3" type="text" id="password" placeholder="2-3">
-    <input pam-Form-Width="1-2" type="text" id="password" placeholder="1-2">
-    <input pam-Form-Width="1-3" type="text" id="password" placeholder="1-3">
-    <input pam-Form-Width="1-4" type="text" id="password" placeholder="1-4">
+    <input pam-Form-Width="1-1" type="text" placeholder="1-1">
+    <input pam-Form-Width="2-3" type="text" placeholder="2-3">
+    <input pam-Form-Width="1-2" type="text" placeholder="1-2">
+    <input pam-Form-Width="1-3" type="text" placeholder="1-3">
+    <input pam-Form-Width="1-4" type="text" placeholder="1-4">
 </form>
               <div class="kss-modifier__example-footer"></div>
             </div>
@@ -811,15 +835,16 @@ to use native states with PAM forms.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
-    &lt;input pam-Form-Width&#x3D;&quot;1-1&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;1-1&quot;&gt;
-    &lt;input pam-Form-Width&#x3D;&quot;2-3&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;2-3&quot;&gt;
-    &lt;input pam-Form-Width&#x3D;&quot;1-2&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;1-2&quot;&gt;
-    &lt;input pam-Form-Width&#x3D;&quot;1-3&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;1-3&quot;&gt;
-    &lt;input pam-Form-Width&#x3D;&quot;1-4&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;1-4&quot;&gt;
+              <pre><code class="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
+    &lt;input pam-Form-Width&#x3D;&quot;1-1&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;1-1&quot;&gt;
+    &lt;input pam-Form-Width&#x3D;&quot;2-3&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;2-3&quot;&gt;
+    &lt;input pam-Form-Width&#x3D;&quot;1-2&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;1-2&quot;&gt;
+    &lt;input pam-Form-Width&#x3D;&quot;1-3&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;1-3&quot;&gt;
+    &lt;input pam-Form-Width&#x3D;&quot;1-4&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;1-4&quot;&gt;
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-layout" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -837,6 +862,7 @@ to use native states with PAM forms.</p>
         </div>
 
       </section>
+      <hr >
       <section id="kssref-forms-layout-inline" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -920,13 +946,14 @@ to use native states with PAM forms.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+              <pre><code class="html">&lt;form pam-Form&gt;
     &lt;input type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Email&quot;&gt;
     &lt;input type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Password&quot;&gt;
     &lt;input type&#x3D;&quot;button&quot; pam-Button value&#x3D;&quot;Log in&quot;&gt;
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-layout-stacked" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -1012,7 +1039,7 @@ to use native states with PAM forms.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
+              <pre><code class="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
    &lt;label for&#x3D;&quot;email&quot;&gt;Email&lt;/label&gt;
     &lt;input type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Email&quot;&gt;
     &lt;label for&#x3D;&quot;password&quot;&gt;Password&lt;/label&gt;
@@ -1021,112 +1048,7 @@ to use native states with PAM forms.</p>
 &lt;/form&gt;</code></pre>
             </details>
       </section>
-      <section id="kssref-forms-layout-aligned" class="kss-section kss-section--depth-3 ">
-
-        <div class="kss-style">
-          <h3 class="kss-title kss-title--level-3">
-            <a class="kss-title__permalink" href="#kssref-forms-layout-aligned">
-              Aligned
-            </a>
-          </h3>
-
-            <div class="kss-description">
-              <p><code>pam-Form=&quot;aligned&quot;</code> sets up a aligned form with labels to the left of the input fields.</p>
-
-            </div>
-
-        </div>
-
-          <div class="kss-modifier__wrapper">
-
-            <div class="kss-modifier__example">
-              <form pam-Form="aligned">
-    <div pam-Fieldset>
-        <label for="email">Email</label>
-        <input type="email" id="password" placeholder="Email">
-    </div>
-    <div pam-Fieldset>
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Password">
-    </div>
-    <div pam-Fieldset="actions">
-        <input type="button" pam-Button="small" value="Log in">
-    </div>
-</form>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
-
-          </div>
-
-            <details class="kss-markup kss-style">
-              <summary>
-                  Markup
-                  <p class="kss-toolbar">
-                      <a href="#kssref-forms-layout-aligned" data-kss-fullscreen="kssref-forms-layout-aligned">
-                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
-                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                      </a>
-                      <a href="item-forms-layout-aligned.html" target="_blank">
-                        <span class="kss-toolbar__tooltip">Open in new window</span>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
-                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
-                        </svg>
-                      </a>
-                    <a href="#kssref-forms-layout-aligned" data-kss-guides="true">
-                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
-                      </svg>
-                    </a>
-                    <a href="#kssref-forms-layout-aligned" data-kss-markup="true">
-                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
-                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
-                      </svg>
-                    </a>
-                  </p>
-              </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;aligned&quot;&gt;
-    &lt;div pam-Fieldset&gt;
-        &lt;label for&#x3D;&quot;email&quot;&gt;Email&lt;/label&gt;
-        &lt;input type&#x3D;&quot;email&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Email&quot;&gt;
-    &lt;/div&gt;
-    &lt;div pam-Fieldset&gt;
-        &lt;label for&#x3D;&quot;password&quot;&gt;Password&lt;/label&gt;
-        &lt;input type&#x3D;&quot;password&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Password&quot;&gt;
-    &lt;/div&gt;
-    &lt;div pam-Fieldset&#x3D;&quot;actions&quot;&gt;
-        &lt;input type&#x3D;&quot;button&quot; pam-Button&#x3D;&quot;small&quot; value&#x3D;&quot;Log in&quot;&gt;
-    &lt;/div&gt;
-&lt;/form&gt;</code></pre>
-            </details>
-      </section>
+      <hr >
       <section id="kssref-forms-layout-grouped" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -1220,7 +1142,7 @@ to use native states with PAM forms.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+              <pre><code class="html">&lt;form pam-Form&gt;
     &lt;fieldset pam-Fieldset&#x3D;&quot;grouped&quot;&gt;
         &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Username&quot;&gt;
         &lt;input type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Email&quot;&gt;
@@ -1237,6 +1159,7 @@ to use native states with PAM forms.</p>
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-message" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -1255,6 +1178,7 @@ under or on the side of a form field.</p>
         </div>
 
       </section>
+      <hr >
       <section id="kssref-forms-message-block" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -1340,7 +1264,7 @@ under or on the side of a form field.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
+              <pre><code class="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
     &lt;fieldset&gt;
         &lt;label&gt;Username&lt;/label&gt;
         &lt;input type&#x3D;&quot;text&quot;&gt;
@@ -1349,6 +1273,7 @@ under or on the side of a form field.</p>
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-message-inline" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -1435,7 +1360,7 @@ value to <code>pam-Form-Message</code>.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+              <pre><code class="html">&lt;form pam-Form&gt;
     &lt;fieldset&gt;
         &lt;label&gt;Username&lt;/label&gt;
         &lt;input type&#x3D;&quot;text&quot;&gt;
@@ -1444,6 +1369,7 @@ value to <code>pam-Form-Message</code>.</p>
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-custom" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -1462,6 +1388,7 @@ and control over the form controls.</p>
         </div>
 
       </section>
+      <hr >
       <section id="kssref-forms-custom-inline" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -1564,7 +1491,7 @@ and control over the form controls.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+              <pre><code class="html">&lt;form pam-Form&gt;
     &lt;div pam-Form-Inline&gt;
         &lt;label for&#x3D;&quot;group-input&quot; pam-Form-Icon&gt;
             &lt;div sg-mock-icon&gt;&lt;/div&gt;
@@ -1590,6 +1517,7 @@ and control over the form controls.</p>
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-custom-lego" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -1601,7 +1529,7 @@ and control over the form controls.</p>
 
             <div class="kss-description">
               <p><code>pam-Form-Group=&quot;lego&quot;</code> extend form controls by adding icons, buttons, selects
- before or after text-based form controls as lego bricks.</p>
+before or after text-based form controls as lego bricks.</p>
 
             </div>
 
@@ -1619,10 +1547,10 @@ and control over the form controls.</p>
                 <option value="nissan">+1-284</option>
             </select>
         </div>
-        <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+        <input id="addon-lego-1" type="text" placeholder="One addon" pam-Form-Control>
     </div>
     <div pam-Form-Group="lego">
-        <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+        <input id="addon-lego-2" type="text" placeholder="One addon" pam-Form-Control>
         <div pam-Form-Group-Addon>
             <input type="button" pam-Button="small" value="send">
         </div>
@@ -1635,7 +1563,7 @@ and control over the form controls.</p>
                 <option value="nissan" selected>+1-284</option>
             </select>
         </div>
-            <input id="addon-lego" type="text" placeholder="Two addons" pam-Form-Control>
+            <input id="addon-lego-3" type="text" placeholder="Two addons" pam-Form-Control>
         <div pam-Form-Group-Addon>
             <input type="button" pam-Button="small" value="send">
         </div>
@@ -1700,7 +1628,7 @@ and control over the form controls.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+              <pre><code class="html">&lt;form pam-Form&gt;
     &lt;div pam-Form-Group&#x3D;&quot;lego&quot;&gt;
         &lt;div pam-Form-Group-Addon&gt;
             &lt;select&gt;
@@ -1709,10 +1637,10 @@ and control over the form controls.</p>
                 &lt;option value&#x3D;&quot;nissan&quot;&gt;+1-284&lt;/option&gt;
             &lt;/select&gt;
         &lt;/div&gt;
-        &lt;input id&#x3D;&quot;addon-lego&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;One addon&quot; pam-Form-Control&gt;
+        &lt;input id&#x3D;&quot;addon-lego-1&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;One addon&quot; pam-Form-Control&gt;
     &lt;/div&gt;
     &lt;div pam-Form-Group&#x3D;&quot;lego&quot;&gt;
-        &lt;input id&#x3D;&quot;addon-lego&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;One addon&quot; pam-Form-Control&gt;
+        &lt;input id&#x3D;&quot;addon-lego-2&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;One addon&quot; pam-Form-Control&gt;
         &lt;div pam-Form-Group-Addon&gt;
             &lt;input type&#x3D;&quot;button&quot; pam-Button&#x3D;&quot;small&quot; value&#x3D;&quot;send&quot;&gt;
         &lt;/div&gt;
@@ -1725,7 +1653,7 @@ and control over the form controls.</p>
                 &lt;option value&#x3D;&quot;nissan&quot; selected&gt;+1-284&lt;/option&gt;
             &lt;/select&gt;
         &lt;/div&gt;
-            &lt;input id&#x3D;&quot;addon-lego&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Two addons&quot; pam-Form-Control&gt;
+            &lt;input id&#x3D;&quot;addon-lego-3&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Two addons&quot; pam-Form-Control&gt;
         &lt;div pam-Form-Group-Addon&gt;
             &lt;input type&#x3D;&quot;button&quot; pam-Button&#x3D;&quot;small&quot; value&#x3D;&quot;send&quot;&gt;
         &lt;/div&gt;
@@ -1733,6 +1661,7 @@ and control over the form controls.</p>
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-custom-lego-block" class="kss-section kss-section--depth-4 ">
 
         <div class="kss-style">
@@ -1761,10 +1690,10 @@ and control over the form controls.</p>
                 <option value="nissan">+1-284</option>
             </select>
         </div>
-        <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+        <input id="addon-lego-block-1" type="text" placeholder="One addon" pam-Form-Control>
     </div>
     <div pam-Form-Group="lego block">
-        <input id="addon-lego" type="text" placeholder="One addon" pam-Form-Control>
+        <input id="addon-lego-block-2" type="text" placeholder="One addon" pam-Form-Control>
         <div pam-Form-Group-Addon>
             <input type="button" pam-Button="small" value="send">
         </div>
@@ -1777,7 +1706,7 @@ and control over the form controls.</p>
                 <option value="nissan" selected>+1-284</option>
             </select>
         </div>
-            <input id="addon-lego" type="text" placeholder="Two addons" pam-Form-Control>
+            <input id="addon-lego-block-3" type="text" placeholder="Two addons" pam-Form-Control>
         <div pam-Form-Group-Addon>
             <input type="button" pam-Button="small" value="send">
         </div>
@@ -1842,7 +1771,7 @@ and control over the form controls.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+              <pre><code class="html">&lt;form pam-Form&gt;
     &lt;div pam-Form-Group&#x3D;&quot;lego block&quot;&gt;
         &lt;div pam-Form-Group-Addon&gt;
             &lt;select&gt;
@@ -1851,10 +1780,10 @@ and control over the form controls.</p>
                 &lt;option value&#x3D;&quot;nissan&quot;&gt;+1-284&lt;/option&gt;
             &lt;/select&gt;
         &lt;/div&gt;
-        &lt;input id&#x3D;&quot;addon-lego&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;One addon&quot; pam-Form-Control&gt;
+        &lt;input id&#x3D;&quot;addon-lego-block-1&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;One addon&quot; pam-Form-Control&gt;
     &lt;/div&gt;
     &lt;div pam-Form-Group&#x3D;&quot;lego block&quot;&gt;
-        &lt;input id&#x3D;&quot;addon-lego&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;One addon&quot; pam-Form-Control&gt;
+        &lt;input id&#x3D;&quot;addon-lego-block-2&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;One addon&quot; pam-Form-Control&gt;
         &lt;div pam-Form-Group-Addon&gt;
             &lt;input type&#x3D;&quot;button&quot; pam-Button&#x3D;&quot;small&quot; value&#x3D;&quot;send&quot;&gt;
         &lt;/div&gt;
@@ -1867,7 +1796,7 @@ and control over the form controls.</p>
                 &lt;option value&#x3D;&quot;nissan&quot; selected&gt;+1-284&lt;/option&gt;
             &lt;/select&gt;
         &lt;/div&gt;
-            &lt;input id&#x3D;&quot;addon-lego&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Two addons&quot; pam-Form-Control&gt;
+            &lt;input id&#x3D;&quot;addon-lego-block-3&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Two addons&quot; pam-Form-Control&gt;
         &lt;div pam-Form-Group-Addon&gt;
             &lt;input type&#x3D;&quot;button&quot; pam-Button&#x3D;&quot;small&quot; value&#x3D;&quot;send&quot;&gt;
         &lt;/div&gt;
@@ -1875,6 +1804,7 @@ and control over the form controls.</p>
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-custom-select" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -1973,7 +1903,7 @@ and control over the form controls.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
+              <pre><code class="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
     &lt;label for&#x3D;&quot;select-native&quot;&gt;Native select&lt;/label&gt;
     &lt;select id&#x3D;&quot;select-native&quot;&gt;
         &lt;option value&#x3D;&quot;geek&quot;&gt;Geek&lt;/option&gt;
@@ -1995,6 +1925,7 @@ and control over the form controls.</p>
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-traits" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -2080,7 +2011,7 @@ to optimize and trim their behaviour when needed.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
+              <pre><code class="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
     &lt;label for&#x3D;&quot;input-borderless&quot;&gt;So borderless!&lt;/label&gt;
     &lt;input id&#x3D;&quot;input-borderless&quot; placeholder&#x3D;&quot;Borderless&quot; pam-Form-Control&#x3D;&quot;borderless&quot;&gt;
     &lt;label for&#x3D;&quot;input-fluid&quot;&gt;Fluid like water&lt;/label&gt;
@@ -2088,118 +2019,7 @@ to optimize and trim their behaviour when needed.</p>
 &lt;/form&gt;</code></pre>
             </details>
       </section>
-      <section id="kssref-forms-experimental" class="kss-section kss-section--depth-2 ">
-
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-forms-experimental">
-              Experimental
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>Following forms rulez are experimental, and has <strong>no offical browser support</strong>.</p>
-
-            </div>
-
-        </div>
-
-      </section>
-      <section id="kssref-forms-experimental-label" class="kss-section kss-section--depth-3 ">
-
-        <div class="kss-style">
-          <h3 class="kss-title kss-title--level-3">
-            <a class="kss-title__permalink" href="#kssref-forms-experimental-label">
-              Floating label
-            </a>
-          </h3>
-
-            <div class="kss-description">
-              <p><code>pam-Field</code> with <code>input</code> and <code>label</code> element creates a floating label composite.</p>
-<div pam-Alert="info">
-   Experimental: CSS only floating label, evaluating to
-   implement for evergreen browsers.
-</div>
-            </div>
-
-        </div>
-
-          <div class="kss-modifier__wrapper">
-
-            <div class="kss-modifier__example">
-              <form pam-Form>
-    <div pam-Field>
-        <input type="text" name="fullname" id="fullname" placeholder="Jon Doe">
-        <label for="fullname">Nickname</label>
-    </div>
-</form>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
-
-          </div>
-
-            <details class="kss-markup kss-style">
-              <summary>
-                  Markup
-                  <p class="kss-toolbar">
-                      <a href="#kssref-forms-experimental-label" data-kss-fullscreen="kssref-forms-experimental-label">
-                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
-                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                      </a>
-                      <a href="item-forms-experimental-label.html" target="_blank">
-                        <span class="kss-toolbar__tooltip">Open in new window</span>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
-                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
-                        </svg>
-                      </a>
-                    <a href="#kssref-forms-experimental-label" data-kss-guides="true">
-                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
-                      </svg>
-                    </a>
-                    <a href="#kssref-forms-experimental-label" data-kss-markup="true">
-                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
-                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
-                      </svg>
-                    </a>
-                  </p>
-              </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
-    &lt;div pam-Field&gt;
-        &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;fullname&quot; id&#x3D;&quot;fullname&quot; placeholder&#x3D;&quot;Jon Doe&quot;&gt;
-        &lt;label for&#x3D;&quot;fullname&quot;&gt;Nickname&lt;/label&gt;
-    &lt;/div&gt;
-&lt;/form&gt;</code></pre>
-            </details>
-      </section>
+      <hr >
       <section id="kssref-forms-deprecated" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -2217,6 +2037,7 @@ to optimize and trim their behaviour when needed.</p>
         </div>
 
       </section>
+      <hr >
       <section id="kssref-forms-deprecated-input-borderless" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -2302,12 +2123,13 @@ to optimize and trim their behaviour when needed.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
+              <pre><code class="html">&lt;form pam-Form&#x3D;&quot;stacked&quot;&gt;
     &lt;label for&#x3D;&quot;borderless&quot;&gt;Borderless input&lt;/label&gt;
     &lt;input id&#x3D;&quot;borderless&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Borderless&quot; pam-Input&#x3D;&quot;borderless&quot;&gt;
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-deprecated-input-icon" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -2397,7 +2219,7 @@ to optimize and trim their behaviour when needed.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
+              <pre><code class="html">&lt;form pam-Form&gt;
     &lt;div pam-Input-Icon&gt;
         &lt;label for&#x3D;&quot;icon&quot;&gt;
         &lt;img src&#x3D;&quot;http://placehold.it/24x24&quot;&gt;
@@ -2407,6 +2229,7 @@ to optimize and trim their behaviour when needed.</p>
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-deprecated-selectbox" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -2418,10 +2241,10 @@ to optimize and trim their behaviour when needed.</p>
 
             <div class="kss-description">
               <p><code>pam-Select-Box</code> turns of the platform native styling of select boxes
- and adds normalized styling for cross browser compatibility.</p>
+and adds normalized styling for cross browser compatibility.</p>
 <div pam-Alert="warning">
    Deprecated: Support for select box styling will be dropped
-   after PAM version 1.1. Use custom select instead <code>pam-Select</code>.
+   after PAM version 1.1. Use custom select instead `pam-Select`.
 </div>
             </div>
 
@@ -2555,8 +2378,8 @@ to optimize and trim their behaviour when needed.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form pam-Form&gt;
-    &lt;div pam-Select-Box&#x3D;&quot;[modifier class]&quot;&gt;
+              <pre><code class="html">&lt;form pam-Form&gt;
+    &lt;div pam-Select-Box&#x3D;&quot;[modifier attribute]&quot;&gt;
         &lt;select&gt;
             &lt;option value&#x3D;&quot;geek&quot;&gt;Geek&lt;/option&gt;
             &lt;option value&#x3D;&quot;nerd&quot;&gt;Nerd&lt;/option&gt;
@@ -2566,6 +2389,7 @@ to optimize and trim their behaviour when needed.</p>
 &lt;/form&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-forms-hooks" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -2593,7 +2417,6 @@ to optimize and trim their behaviour when needed.</p>
 <code>.hook-form-fieldset</code>
 <code>.hook-form-legend</code>
 <code>.hook-form-stacked</code>
-<code>.hook-form-aligned</code>
 <code>.hook-form-group</code>
 <code>.hook-form-input-icon</code>
 <code>.hook-form-input-group</code>
@@ -2611,19 +2434,21 @@ to optimize and trim their behaviour when needed.</p>
         </div>
 
       </section>
-  </article>
+      <hr >
+  </main>
 </main>
 <footer sg-footer></footer>
 
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
-<script src="kss-assets/scrollspy.js"></script>
-<script src="kss-assets/prettify.js"></script>
 <script src="kss-assets/kss-fullscreen.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
+<script src="kss-assets/js/highlight/highlight.pack.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
 <script>
-  prettyPrint();
+  hljs.initHighlightingOnLoad();
+
   var spy = new ScrollSpy('#kss-node', {
     nav: '.kss-nav__menu-child > li > a',
     className: 'is-in-viewport'
@@ -2641,9 +2466,11 @@ to optimize and trim their behaviour when needed.</p>
     detailsClass: 'kss-markup'
   });
 </script>
+<script src="kss-assets/js/animator.js"></script>
+<script src="kss-assets/js/skinSwitcher.js"></script>
+<script src="kss-assets/js/styleguide.js"></script>
 
 
 
-<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>
 </html>

@@ -3,8 +3,7 @@
 // Global variables to use with components and configuration.
 // ==================================================================
 
-
-// Skin
+// Skin colors
 // ==================================================================
 
 // Intention
@@ -15,78 +14,78 @@
 // feature - used to represent color of feature flow
 // text - used to represent colors of text and icons
 
-@skin-primary:        #008ed5;
-@skin-primary-light:  lighten(@skin-primary, 15%);
-@skin-primary-dark:   darken(@skin-primary, 15%);
-@skin-accent:         spin(@skin-primary, 180);
-@skin-feature:        #607d8b;
-@skin-divider:        #ddd;
+@skin-primary: #008ed5;
+@skin-primary-light: lighten(@skin-primary, 15%);
+@skin-primary-dark: darken(@skin-primary, 15%);
+@skin-accent: spin(@skin-primary, 180);
+@skin-feature: #607d8b;
+@skin-divider: #ddd;
 
 // Info colors
-@skin-info:           #50b2ce;
-@skin-success:        #4caf50;
-@skin-warn:           #e9ac5e;
-@skin-danger:         #f44336;
+@skin-info: #50b2ce;
+@skin-success: #4caf50;
+@skin-warn: #e9ac5e;
+@skin-danger: #f44336;
 
 // Base greyscales
-@skin-darker:         #212121;
-@skin-dark:           #757575;
-@skin-hint:           #bdbdbd;
-@skin-light:          #e0e0e0;
-@skin-lighter:        #f5f5f5;
+@skin-black: #000;
+@skin-darker: #212121;
+@skin-dark: #757575;
+@skin-hint: #bdbdbd;
+@skin-light: #e0e0e0;
+@skin-lighter: #f5f5f5;
+@skin-white: #fff;
 
 // Base values for text and icons
-@skin-text:           #fff;
-@skin-text-primary:   #444;
+@skin-text: #fff;
+@skin-text-primary: #444;
 @skin-text-secondary: #9f9f9f;
-@skin-text-darker:    @skin-darker;
-@skin-text-dark:      @skin-dark;
-@skin-text-hint:      @skin-hint;
-@skin-text-light:     @skin-light;
-@skin-text-lighter:   @skin-lighter;
-
+@skin-text-darker: @skin-darker;
+@skin-text-dark: @skin-dark;
+@skin-text-hint: @skin-hint;
+@skin-text-light: @skin-light;
+@skin-text-lighter: @skin-lighter;
 
 // Spacing
 // ==================================================================
 
-@space-base: 4px;
-@space-8:    @space-base * 2;
-@space-12:   @space-base * 3;
-@space-16:   @space-base * 4;
-@space-20:   @space-base * 5;
-@space-24:   @space-base * 6;
-@space-28:   @space-base * 7;
-@space-32:   @space-base * 8;
-@space-36:   @space-base * 9;
-@space-40:   @space-base * 10;
-@space-44:   @space-base * 11;
-@space-48:   @space-base * 12;
-@space-52:   @space-base * 13;
-@space-56:   @space-base * 14;
-@space-60:   @space-base * 15;
-@space-64:   @space-base * 16;
-@space-68:   @space-base * 17;
-@space-72:   @space-base * 18;
-@space-76:   @space-base * 19;
-@space-80:   @space-base * 20;
-@space-84:   @space-base * 21;
-@space-88:   @space-base * 22;
-@space-92:   @space-base * 23;
-@space-96:   @space-base * 24;
-@space-100:  @space-base * 25;
-@space-104:  @space-base * 26;
+@space-base: 4px; // Do not change this value
+@space-8: @space-base * 2;
+@space-12: @space-base * 3;
+@space-16: @space-base * 4;
+@space-20: @space-base * 5;
+@space-24: @space-base * 6;
+@space-28: @space-base * 7;
+@space-32: @space-base * 8;
+@space-36: @space-base * 9;
+@space-40: @space-base * 10;
+@space-44: @space-base * 11;
+@space-48: @space-base * 12;
+@space-52: @space-base * 13;
+@space-56: @space-base * 14;
+@space-60: @space-base * 15;
+@space-64: @space-base * 16;
+@space-68: @space-base * 17;
+@space-72: @space-base * 18;
+@space-76: @space-base * 19;
+@space-80: @space-base * 20;
+@space-84: @space-base * 21;
+@space-88: @space-base * 22;
+@space-92: @space-base * 23;
+@space-96: @space-base * 24;
+@space-100: @space-base * 25;
+@space-104: @space-base * 26;
 
-@space-x:    @space-base;
-@space-x2:   @space-x * 2;
-@space-x3:   @space-x * 3;
-@space-x4:   @space-x * 4;
-@space-x5:   @space-x * 5;
-@space-x6:   @space-x * 6;
-@space-x7:   @space-x * 7;
-@space-x8:   @space-x * 8;
-@space-x9:   @space-x * 9;
-@space-x10:  @space-x * 10;
-
+@space-x: @space-base;
+@space-x2: @space-x * 2;
+@space-x3: @space-x * 3;
+@space-x4: @space-x * 4;
+@space-x5: @space-x * 5;
+@space-x6: @space-x * 6;
+@space-x7: @space-x * 7;
+@space-x8: @space-x * 8;
+@space-x9: @space-x * 9;
+@space-x10: @space-x * 10;
 
 // Z-index topography
 // ==================================================================
@@ -99,72 +98,67 @@
 // .zindex('notification', @z-index-global);
 // output: z-index: 3;
 
-@z-index-global: '';
-
+@z-index-global: "";
 
 // Typography
 // ==================================================================
 
-@font-url:              'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700';
-@font-family:           'Roboto', sans-serif;
+@font-url: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700";
+@font-family: "Roboto", sans-serif;
 
-@font-size-base:        @space-16;
-@font-size-xxsmall:     0.6875rem; // 11px
-@font-size-xsmall:      0.75rem;   // 12px
-@font-size-small:       0.8125rem; // 13px
-@font-size-medium:      0.875rem;  // 14px
-@font-size-large:       1rem;      // 16px
-@font-size-larger:      1.25rem;   // 20px
-@font-size-xlarge:      1.5rem;    // 24px
-@font-size-xxlarge:     3.5rem;    // 56px
+@font-size-base: @space-16;
+@font-size-xxsmall: 0.6875rem; // 11px
+@font-size-xsmall: 0.75rem; // 12px
+@font-size-small: 0.8125rem; // 13px
+@font-size-medium: 0.875rem; // 14px
+@font-size-large: 1rem; // 16px
+@font-size-larger: 1.25rem; // 20px
+@font-size-xlarge: 1.5rem; // 24px
+@font-size-xxlarge: 3.5rem; // 56px
 
-@font-size-h1:          2.5rem;
-@font-size-h2:          2rem;
-@font-size-h3:          1.75rem;
-@font-size-h4:          1.5rem;
-@font-size-h5:          1.25rem;
-@font-size-h6:          1rem;
+@font-size-h1: 2.5rem;
+@font-size-h2: 2rem;
+@font-size-h3: 1.75rem;
+@font-size-h4: 1.5rem;
+@font-size-h5: 1.25rem;
+@font-size-h6: 1rem;
 
-@line-height-normal:    normal;
-@line-height-base:      1;
+@line-height-normal: normal;
+@line-height-base: 1;
 @line-height-secondary: 1.5;
 
-@font-weight-thin:      100;
-@font-weight-light:     300;
-@font-weight-normal:    400;
-@font-weight-medium:    500;
-@font-weight-bold:      700;
-
+@font-weight-thin: 100;
+@font-weight-light: 300;
+@font-weight-normal: 400;
+@font-weight-medium: 500;
+@font-weight-bold: 700;
 
 // Breakpoints
 // ==================================================================
 
-@breakpoint-small:  480px;
+@breakpoint-small: 480px;
 @breakpoint-medium: 768px;
-@breakpoint-large:  960px;
+@breakpoint-large: 960px;
 @breakpoint-xlarge: 1200px;
-
 
 // Border radius
 // ==================================================================
 
 @border-radius-small: 2px;
-@border-radius-base:  4px;
+@border-radius-base: 4px;
 @border-radius-large: 8px;
-
 
 // Opacity
 // ==================================================================
 
-@opacity-less:      0.8;
-@opacity-base:      0.6;
-@opacity-more:      0.4;
-
+@opacity-less: 0.8;
+@opacity-base: 0.6;
+@opacity-more: 0.4;
 
 // Transition
 // ==================================================================
 
 @transition-duration: 0.3s;
 @transition-property: all;
-@transition-timing:   ease-in-out;
-@transition-base:     @transition-property @transition-duration @transition-timing;
+@transition-timing: ease-in-out;
+@transition-base: @transition-property @transition-duration @transition-timing;

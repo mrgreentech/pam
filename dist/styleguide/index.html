@@ -8,10 +8,25 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
 
+  <link rel="icon" type="image/png" href="kss-assets/img/favicon.png" />
   <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
   <link rel="stylesheet" href="kss-assets/css/pam.css">
 <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 
+
+  <script type="text/javascript">
+  var skinsData = [
+      {
+        path: "pam.css",
+        name: "default skin"
+      },
+      {
+        path: "mrg-skin.css",
+        name: "mrg skin"
+      },
+  ];
+  </script>
 </head>
 <body id="kss-node"  sg-node="homepage">
 
@@ -32,13 +47,13 @@
           <div pam-Menu sg-Nav>
               <ul pam-Menu-List>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/blob/master/CHANGELOG.md" pam-Menu-Link>Changelog</a>
+                    <a href="https://github.com/mrgreentech/pam/blob/master/CHANGELOG.md"  pam-Button="small">Changelog</a>
                   </li>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/issues" pam-Menu-Link>Issues</a>
+                    <a href="https://github.com/mrgreentech/pam/issues" pam-Button="small">Issues</a>
                   </li>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="small">Download</a>
+                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button=" primary small">Download</a>
                   </li>
               </ul>
           </div>
@@ -56,17 +71,17 @@
                 src="kss-assets/img/logo.svg"
                 alt="PAM"
                 title="© 2016 Mr Green Tech All Rights Reserved"
-                sg-Hero-Img animated="bounceIn">
+                sg-Hero-Img animated="">
         </div>
         <h2 sg-Hero-Punchline pam-typography="headline">
             CSS with attitude
         </h2>
         <p pam-typography="headline">
-            It&#39;s skinny, bold and simply awesome.
+            It's skinny, bold and simply awesome.
         </p>
     </header>
     <div sg-Hero-Cta>
-        <a href="./section-getting-started.html" pam-Button="primary large">The docs</a>
+        <a href="./section-getting-started.html" pam-Button="primary large">Get started</a>
         <a href="https://github.com/mrgreentech/pam" pam-Button="primary outlined large">GitHub</a>
     </div>
     <footer>
@@ -87,13 +102,14 @@
 
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
-<script src="kss-assets/scrollspy.js"></script>
-<script src="kss-assets/prettify.js"></script>
 <script src="kss-assets/kss-fullscreen.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
+<script src="kss-assets/js/highlight/highlight.pack.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
 <script>
-  prettyPrint();
+  hljs.initHighlightingOnLoad();
+
   var spy = new ScrollSpy('#kss-node', {
     nav: '.kss-nav__menu-child > li > a',
     className: 'is-in-viewport'
@@ -111,9 +127,11 @@
     detailsClass: 'kss-markup'
   });
 </script>
+<script src="kss-assets/js/animator.js"></script>
+<script src="kss-assets/js/skinSwitcher.js"></script>
+<script src="kss-assets/js/styleguide.js"></script>
 
 
 
-<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>
 </html>

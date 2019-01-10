@@ -16,21 +16,19 @@
 //
 // Style guide: menus
 
-
 //  Variables
 // ==================================================================
 
-@menu-arrow-horizontal:    "\25BE";
-@menu-arrow-vertical:      "\25B8";
-@menu-children-color:      @skin-text;
-@menu-disabled-opacity:    @opacity-base;
-@menu-heading-color:       @skin-darker;
-@menu-link-color:          @skin-dark;
+@menu-arrow-horizontal: "\25BE";
+@menu-arrow-vertical: "\25B8";
+@menu-children-color: @skin-text;
+@menu-disabled-opacity: @opacity-base;
+@menu-heading-color: @skin-darker;
+@menu-link-color: @skin-dark;
 @menu-link-hover-bg-color: #ededed;
 @menu-selected-link-color: #000;
-@menu-seperator-bg-color:  @skin-hint;
+@menu-seperator-bg-color: @skin-hint;
 @menu-seperator-thickness: 1px;
-
 
 // ==================================================================
 // Menu
@@ -40,20 +38,18 @@
     .hook-menu;
 }
 
-[pam-Menu] [pam-Menu-List],
-[pam-Menu] [pam-Menu-Item] {
-    position: relative;
-}
+//  Sub-object: List
+// ==========================================================================
 
 [pam-Menu] [pam-Menu-List] {
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
+    position: relative;
 
     .hook-menu-list;
 }
-
 
 //  Sub-object: Item
 // ==========================================================================
@@ -61,10 +57,28 @@
 [pam-Menu] [pam-Menu-Item] {
     margin: 0;
     padding: 0;
+    position: relative;
 
     .hook-menu-item;
 }
 
+//  Sub-object: Link
+// ==========================================================================
+
+[pam-Menu] [pam-Menu-Link] {
+    color: @menu-link-color;
+    padding: @space-8 @space-16;
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+
+    .hook-menu-link;
+}
+
+[pam-Menu] [pam-Menu-Link]:hover,
+[pam-Menu] [pam-Menu-Link]:focus {
+    background-color: @menu-link-hover-bg-color;
+}
 
 //  Sub-object: Item states
 // ==========================================================================
@@ -111,10 +125,6 @@
     .hook-menu-item-disabled-link;
 }
 
-[pam-Menu] [pam-Menu-Item~="disabled"] [pam-Menu-Link]:hover {
-    background-color: transparent;
-}
-
 [pam-Menu] [pam-Menu-Item~="selected"] [pam-Menu-Link],
 [pam-Menu] [pam-Menu-Item~="selected"] [pam-Menu-Link]:visited {
     color: @menu-selected-link-color;
@@ -122,25 +132,9 @@
     .hook-menu-item-selected-link;
 }
 
-
-//  Sub-object: Link
-// ==========================================================================
-
-[pam-Menu] [pam-Menu-Link] {
-    color: @menu-link-color;
-    padding: @space-8 @space-16;
-    display: block;
-    text-decoration: none;
-    white-space: nowrap;
-
-    .hook-menu-link;
+[pam-Menu] [pam-Menu-Item~="disabled"] [pam-Menu-Link]:hover {
+    background-color: transparent;
 }
-
-[pam-Menu] [pam-Menu-Link]:hover,
-[pam-Menu] [pam-Menu-Link]:focus {
-    background-color: @menu-link-hover-bg-color;
-}
-
 
 //  Sub-object: Heading
 // ==========================================================================
@@ -164,14 +158,13 @@
 
 [pam-Menu] [pam-Menu-Heading] {
     color: @menu-heading-color;
-    padding: @space-8 @space-16;
     display: block;
+    padding: @space-8 @space-16;
     text-decoration: none;
     white-space: nowrap;
 
     .hook-menu-heading;
 }
-
 
 //  Modifier: fixed
 // ==================================================================
@@ -184,7 +177,6 @@
 
     .hook-menu-fixed;
 }
-
 
 //  Modifier: vertical
 // ==========================================================================
@@ -226,7 +218,6 @@
     .hook-menu-vertical-item;
 }
 
-
 //  Modifier: truncated
 // ==================================================================
 
@@ -252,7 +243,6 @@
 
     .hook-menu-truncated;
 }
-
 
 // Modifier: fill
 // ========================================================================
@@ -291,7 +281,6 @@
     .hook-menu-fill-item;
 }
 
-
 // Modifier: justified
 // ========================================================================
 
@@ -328,7 +317,6 @@
 
     .hook-menu-justified-item;
 }
-
 
 //  Submenu
 // ==========================================================================
@@ -414,8 +402,8 @@
     .hook-menu-vertical-children;
 }
 
-[pam-Menu] [pam-Menu-Allow-Hover]:hover > [pam-Menu-Children],
-[pam-Menu] [pam-Menu-Active] > [pam-Menu-Children] {
+[pam-Menu] [pam-Menu-Active] > [pam-Menu-Children],
+[pam-Menu] [pam-Menu-Allow-Hover]:hover > [pam-Menu-Children] {
     display: block;
     position: absolute;
 
@@ -435,7 +423,6 @@
 
     .hook-menu-vertical-has-children-link-after;
 }
-
 
 //  Scrollable
 // ==========================================================================
@@ -505,18 +492,11 @@
     .hook-menu-horizontal-scrollable;
 }
 
-[pam-Menu~="horizontal"][pam-Menu~="scrollable"]::-webkit-scrollbar {
-    display: none;
-
-    .hook-menu-horizontal-scrollable-scrollbar;
-}
-
 [pam-Menu~="horizontal"][pam-Menu~="scrollable"] [pam-Menu-List] [pam-Menu-Item] {
     display: inline-block;
 
     .hook-menu-horizontal-scrollable-list;
 }
-
 
 //  Sub-object: Separator
 // ==========================================================================
@@ -559,7 +539,6 @@
     .hook-menu-vertical-separator;
 }
 
-
 //  Hooks
 // ==========================================================================
 
@@ -576,7 +555,6 @@
 // `.hook-menu-heading`
 // `.hook-menu-horizontal-scrollable`
 // `.hook-menu-horizontal-scrollable-list`
-// `.hook-menu-horizontal-scrollable-scrollbar`
 // `.hook-menu-item`
 // `.hook-menu-item-active-link`
 // `.hook-menu-item-disabled`
@@ -603,36 +581,66 @@
 // Style guide: menus.hooks
 
 /* stylelint-disable block-no-empty */
-.hook-menu() {}
-.hook-menu-active-children() {}
-.hook-menu-children() {}
-.hook-menu-fill() {}
-.hook-menu-fill-item() {}
-.hook-menu-fill-list() {}
-.hook-menu-fixed() {}
-.hook-menu-has-children-link-after() {}
-.hook-menu-heading() {}
-.hook-menu-horizontal-scrollable() {}
-.hook-menu-horizontal-scrollable-list() {}
-.hook-menu-horizontal-scrollable-scrollbar() {}
-.hook-menu-item() {}
-.hook-menu-item-active-link() {}
-.hook-menu-item-disabled() {}
-.hook-menu-item-disabled-link() {}
-.hook-menu-item-selected-link() {}
-.hook-menu-justified() {}
-.hook-menu-justified-item() {}
-.hook-menu-justified-list() {}
-.hook-menu-link() {}
-.hook-menu-list() {}
-.hook-menu-scrollable() {}
-.hook-menu-scrollable-list() {}
-.hook-menu-separator() {}
-.hook-menu-truncated() {}
-.hook-menu-vertical() {}
-.hook-menu-vertical-children() {}
-.hook-menu-vertical-has-children-link-after() {}
-.hook-menu-vertical-item() {}
-.hook-menu-vertical-list() {}
-.hook-menu-vertical-separator() {}
+.hook-menu() {
+}
+.hook-menu-active-children() {
+}
+.hook-menu-children() {
+}
+.hook-menu-fill() {
+}
+.hook-menu-fill-item() {
+}
+.hook-menu-fill-list() {
+}
+.hook-menu-fixed() {
+}
+.hook-menu-has-children-link-after() {
+}
+.hook-menu-heading() {
+}
+.hook-menu-horizontal-scrollable() {
+}
+.hook-menu-horizontal-scrollable-list() {
+}
+.hook-menu-item() {
+}
+.hook-menu-item-active-link() {
+}
+.hook-menu-item-disabled() {
+}
+.hook-menu-item-disabled-link() {
+}
+.hook-menu-item-selected-link() {
+}
+.hook-menu-justified() {
+}
+.hook-menu-justified-item() {
+}
+.hook-menu-justified-list() {
+}
+.hook-menu-link() {
+}
+.hook-menu-list() {
+}
+.hook-menu-scrollable() {
+}
+.hook-menu-scrollable-list() {
+}
+.hook-menu-separator() {
+}
+.hook-menu-truncated() {
+}
+.hook-menu-vertical() {
+}
+.hook-menu-vertical-children() {
+}
+.hook-menu-vertical-has-children-link-after() {
+}
+.hook-menu-vertical-item() {
+}
+.hook-menu-vertical-list() {
+}
+.hook-menu-vertical-separator() {
+}
 /* stylelint-enable */

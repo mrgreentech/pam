@@ -8,10 +8,25 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
 
+  <link rel="icon" type="image/png" href="kss-assets/img/favicon.png" />
   <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
   <link rel="stylesheet" href="kss-assets/css/pam.css">
 <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 
+
+  <script type="text/javascript">
+  var skinsData = [
+      {
+        path: "pam.css",
+        name: "default skin"
+      },
+      {
+        path: "mrg-skin.css",
+        name: "mrg skin"
+      },
+  ];
+  </script>
 </head>
 <body id="kss-node" class="kss-fullscreen-mode" >
 
@@ -32,13 +47,13 @@
           <div pam-Menu sg-Nav>
               <ul pam-Menu-List>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/blob/master/CHANGELOG.md" pam-Menu-Link>Changelog</a>
+                    <a href="https://github.com/mrgreentech/pam/blob/master/CHANGELOG.md"  pam-Button="small">Changelog</a>
                   </li>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/issues" pam-Menu-Link>Issues</a>
+                    <a href="https://github.com/mrgreentech/pam/issues" pam-Button="small">Issues</a>
                   </li>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="small">Download</a>
+                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button=" primary small">Download</a>
                   </li>
               </ul>
           </div>
@@ -47,7 +62,7 @@
 </header>
 
 <main sg-main>
-  <div class="kss-sidebar kss-style">
+  <aside class="kss-sidebar kss-style">
     <header class="kss-header">
       <h1 class="kss-doc-title">Documentation</h1>
     </header>
@@ -59,65 +74,75 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-setup.html">
+            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Setup</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-about.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">About</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-base.html">
-            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Base</span>
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Base</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-grids.html">
-            <span class="kss-nav__ref">3</span><span class="kss-nav__name">Grids</span>
+            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Grids</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-typography.html">
-            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Typography</span>
+            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Typography</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-forms.html">
-            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Forms</span>
+            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Forms</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-buttons.html">
-            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Buttons</span>
+            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Buttons</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-tables.html">
-            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Tables</span>
+            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Tables</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-menus.html">
-            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Menus</span>
+            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Menus</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-alert.html">
-            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Alert</span>
+            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Alert</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" active>
           <a class="kss-nav__menu-link" href="section-divider.html">
-            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Divider</span>
+            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Divider</span>
           </a>
               <ul class="kss-nav__menu-child">
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-divider.html#kssref-divider-inset">
-                    <span class="kss-nav__ref ">10.1</span
+                    <span class="kss-nav__ref ">12.1</span
                     ><span class="kss-nav__name">Inset</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-divider.html#kssref-divider-transparent">
-                    <span class="kss-nav__ref ">10.2</span
+                    <span class="kss-nav__ref ">12.2</span
                     ><span class="kss-nav__name">Transparent</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-divider.html#kssref-divider-hooks">
-                    <span class="kss-nav__ref ">10.3</span
+                    <span class="kss-nav__ref ">12.3</span
                     ><span class="kss-nav__name">Hooks</span>
                   </a>
                 </li>
@@ -125,48 +150,48 @@
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-links.html">
-            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Link</span>
+            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Link</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-lists.html">
-            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Lists</span>
+            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Lists</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-tags.html">
-            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Tags</span>
+            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Tags</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-column.html">
-            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Column</span>
+            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Column</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Loaders</span>
+            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Loaders</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-overlay.html">
-            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Overlay</span>
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Overlay</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-traits.html">
-            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Traits</span>
+            <span class="kss-nav__ref">19</span><span class="kss-nav__name">Traits</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-mixins.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Mixins</span>
+            <span class="kss-nav__ref">20</span><span class="kss-nav__name">Mixins</span>
           </a>
         </li>
       </ul>
     </nav>
-  </div>
-  <article role="main" class="kss-main">
+  </aside>
+  <main role="main" class="kss-main">
 
       <div id="kssref-divider" class="kss-section kss-section--depth-1 is-fullscreen">
 
@@ -230,24 +255,26 @@ like sections, menu items etc.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;h1 pam-typography&#x3D;&quot;headline&quot;&gt;Title&lt;/h1&gt;
+              <pre><code class="html">&lt;h1 pam-typography&#x3D;&quot;headline&quot;&gt;Title&lt;/h1&gt;
     &lt;div pam-Divider&gt;&lt;/div&gt;
 &lt;h2 pam-typography&#x3D;&quot;subheader&quot;&gt;Subtitle&lt;/h2&gt;</code></pre>
             </details>
       </div>
-  </article>
+      <hr >
+  </main>
 </main>
 <footer sg-footer></footer>
 
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
-<script src="kss-assets/scrollspy.js"></script>
-<script src="kss-assets/prettify.js"></script>
 <script src="kss-assets/kss-fullscreen.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
+<script src="kss-assets/js/highlight/highlight.pack.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
 <script>
-  prettyPrint();
+  hljs.initHighlightingOnLoad();
+
   var spy = new ScrollSpy('#kss-node', {
     nav: '.kss-nav__menu-child > li > a',
     className: 'is-in-viewport'
@@ -265,9 +292,11 @@ like sections, menu items etc.</p>
     detailsClass: 'kss-markup'
   });
 </script>
+<script src="kss-assets/js/animator.js"></script>
+<script src="kss-assets/js/skinSwitcher.js"></script>
+<script src="kss-assets/js/styleguide.js"></script>
 
 
 
-<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>
 </html>

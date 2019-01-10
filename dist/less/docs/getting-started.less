@@ -1,0 +1,131 @@
+/*
+ Getting started
+
+ Welcome to **PAM**! Before you start there are some basics things that is recommended to give a thought. First off, how do you want to install PAM? If you want to customize PAM you need to decide to use your own build or the provided build process. The concepts of these thing are explained in this section and in the [setup][setup-link] section, lets get started.
+
+[setup-link]: /section-setup.html
+
+ Weight: 0
+
+ Style guide: getting-started
+*/
+
+/*
+ Installation
+
+ Following download options are available.
+
+ - Download source from [GitHub][master-download-link].
+ - Clone the repo to get all source files: `git clone https:github.com/mrgreentech/pam.git`
+ - Install with a package manager, PAM supports npm (`npm install pam`) and Bower (`bower install pam`). For use in a web project this is the <span pam-Tag="info">recommended</span> option.
+
+Now choose one of the compiled css files (`pam.css` or `pam.min.css`) in the *dist* folder and add it to the *head* section of your index file and yourt ready to go.
+
+```html
+<!-- PAM CSS -->
+<head>
+    <link rel="stylesheet" href="[your-path-to-pam]/[pam.css|pam.min.css]" />
+<head/>
+```
+
+ [master-download-link]: https:github.com/mrgreentech/pam/archive/master.zip
+
+ Weight: 0
+
+ Style guide: getting-started.installation
+*/
+
+/*
+ Source content
+
+The source of PAM contains all project files. In the root you will find all config, scaffolding and documentation files. In the `/src` folder there are Less and style guide sources and in the `/dist` folder Less sources have been compiled into CSS files accompanied by a `/less` and `/styleguide` folder.
+
+<table pam-Table="horizontal fluid">
+    <thead>
+        <tr>
+            <th>Folder</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>/src</code></td>
+            <td>Contains Less, style guide and static sources such as images.</td>
+        </tr>
+        <tr>
+            <td><code>/dist</code></td>
+            <td>Contains Less, compiled CSS and style guide of current release.</td>
+        </tr>
+    </tbody>
+</table>
+
+ Weight: 1
+
+ Style guide: getting-started.installation.source-content
+*/
+
+/*
+Build source
+
+To compile PAM use the commands below. `node`, `npm` and `git` are required.
+
+<span pam-Tag="info">Prerequisites</span> `node`, `npm` and `git`
+
+```sh
+# Install dependencies
+$ npm i
+
+# Build and compile source
+$ npm run build
+```
+
+ Weight: 2
+
+ Style guide: getting-started.installation.build-source
+*/
+
+/*
+Browser support
+
+PAM have been tested on all major browsers according to the table below.
+
+<table pam-table="bordered fluid center">
+    <thead>
+        <tr>
+            <th>
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/46.0.0/edge/edge.svg" alt="IE / Edge" width="24px" height="24px">
+                <br>IE / Edge
+            </th>
+            <th>
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/46.0.0/firefox/firefox.svg" alt="Firefox" width="24px" height="24px">
+                <br>Firefox
+            </th>
+            <th>
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/46.0.0/chrome/chrome.svg" alt="Chrome" width="24px" height="24px">
+                <br>Chrome
+            </th>
+            <th>
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/46.0.0/safari/safari.png" alt="Safari" width="24px" height="24px">
+                <br>Safari
+            </th>
+            <th>
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/46.0.0/safari-ios/safari-ios.svg" alt="iOS Safari" width="24px" height="24px">
+                <br>iOS Safari
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>IE11, Edge</td>
+            <td>Latest version</td>
+            <td>Latest version</td>
+            <td>Latest version</td>
+            <td>Latest version</td>
+        </tr>
+    </tbody>
+</table>
+
+ Weight: 3
+
+ Style guide: getting-started.browser-support
+*/

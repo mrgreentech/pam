@@ -8,10 +8,25 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
 
+  <link rel="icon" type="image/png" href="kss-assets/img/favicon.png" />
   <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
   <link rel="stylesheet" href="kss-assets/css/pam.css">
 <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 
+
+  <script type="text/javascript">
+  var skinsData = [
+      {
+        path: "pam.css",
+        name: "default skin"
+      },
+      {
+        path: "mrg-skin.css",
+        name: "mrg skin"
+      },
+  ];
+  </script>
 </head>
 <body id="kss-node"  >
 
@@ -32,13 +47,13 @@
           <div pam-Menu sg-Nav>
               <ul pam-Menu-List>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/blob/master/CHANGELOG.md" pam-Menu-Link>Changelog</a>
+                    <a href="https://github.com/mrgreentech/pam/blob/master/CHANGELOG.md"  pam-Button="small">Changelog</a>
                   </li>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/issues" pam-Menu-Link>Issues</a>
+                    <a href="https://github.com/mrgreentech/pam/issues" pam-Button="small">Issues</a>
                   </li>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="small">Download</a>
+                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button=" primary small">Download</a>
                   </li>
               </ul>
           </div>
@@ -47,7 +62,7 @@
 </header>
 
 <main sg-main>
-  <div class="kss-sidebar kss-style">
+  <aside class="kss-sidebar kss-style">
     <header class="kss-header">
       <h1 class="kss-doc-title">Documentation</h1>
     </header>
@@ -59,48 +74,58 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-setup.html">
+            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Setup</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-about.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">About</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-base.html">
-            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Base</span>
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Base</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" active>
           <a class="kss-nav__menu-link" href="section-grids.html">
-            <span class="kss-nav__ref">3</span><span class="kss-nav__name">Grids</span>
+            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Grids</span>
           </a>
               <ul class="kss-nav__menu-child">
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-grids.html#kssref-grids-fractions">
-                    <span class="kss-nav__ref ">3.1</span
+                    <span class="kss-nav__ref ">5.1</span
                     ><span class="kss-nav__name">Fractions</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-grids.html#kssref-grids-nested">
-                    <span class="kss-nav__ref ">3.2</span
+                    <span class="kss-nav__ref ">5.2</span
                     ><span class="kss-nav__name">Nested</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-grids.html#kssref-grids-adaptive">
-                    <span class="kss-nav__ref ">3.3</span
+                    <span class="kss-nav__ref ">5.3</span
                     ><span class="kss-nav__name">Adaptive</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-grids.html#kssref-grids-media">
-                    <span class="kss-nav__ref ">3.4</span
+                    <span class="kss-nav__ref ">5.4</span
                     ><span class="kss-nav__name">Media items</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-grids.html#kssref-grids-controls">
-                    <span class="kss-nav__ref ">3.5</span
+                    <span class="kss-nav__ref ">5.5</span
                     ><span class="kss-nav__name">Controls</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-grids.html#kssref-grids-hooks">
-                    <span class="kss-nav__ref ">3.6</span
+                    <span class="kss-nav__ref ">5.6</span
                     ><span class="kss-nav__name">Hooks</span>
                   </a>
                 </li>
@@ -108,83 +133,83 @@
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-typography.html">
-            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Typography</span>
+            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Typography</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-forms.html">
-            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Forms</span>
+            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Forms</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-buttons.html">
-            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Buttons</span>
+            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Buttons</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-tables.html">
-            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Tables</span>
+            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Tables</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-menus.html">
-            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Menus</span>
+            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Menus</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-alert.html">
-            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Alert</span>
+            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Alert</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-divider.html">
-            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Divider</span>
+            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Divider</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-links.html">
-            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Link</span>
+            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Link</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-lists.html">
-            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Lists</span>
+            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Lists</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-tags.html">
-            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Tags</span>
+            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Tags</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-column.html">
-            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Column</span>
+            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Column</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Loaders</span>
+            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Loaders</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-overlay.html">
-            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Overlay</span>
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Overlay</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-traits.html">
-            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Traits</span>
+            <span class="kss-nav__ref">19</span><span class="kss-nav__name">Traits</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-mixins.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Mixins</span>
+            <span class="kss-nav__ref">20</span><span class="kss-nav__name">Mixins</span>
           </a>
         </li>
       </ul>
     </nav>
-  </div>
-  <article role="main" class="kss-main">
+  </aside>
+  <main role="main" class="kss-main">
 
       <div id="kssref-grids" class="kss-section kss-section--depth-1 ">
 
@@ -216,31 +241,31 @@ details on how to use, have a look at the adaptive grids section.</p>
     <tbody>
         <tr>
             <td>none</td>
-            <td>pam-Unit=&quot;[size]&quot;</td>
+            <td>pam-Unit="[size]"</td>
             <td>Always</td>
             <td>None</td>
         </tr>
         <tr>
             <td>small</td>
-            <td>pam-Unit=&quot;small:[size]&quot;</td>
+            <td>pam-Unit="small:[size]"</td>
             <td>≥ 480px</td>
             <td>@media screen and (min-width: 480px)</td>
         </tr>
         <tr>
             <td>medium</td>
-            <td>pam-Unit=&quot;medium:[size]&quot;</td>
+            <td>pam-Unit="medium:[size]"</td>
             <td>≥ 768px</td>
             <td>@media screen and (min-width: 768px)</td>
         </tr>
         <tr>
             <td>large</td>
-            <td>pam-Unit=&quot;large:[size]&quot;</td>
+            <td>pam-Unit="large:[size]"</td>
             <td>≥ 960px</td>
             <td>@media screen and (min-width: 960px)</td>
         </tr>
         <tr>
             <td>xlarge</td>
-            <td>pam-Unit=&quot;xlarge:[size]&quot;</td>
+            <td>pam-Unit="xlarge:[size]"</td>
             <td>≥ 1200px</td>
             <td>@media screen and (min-width: 1200px)</td>
         </tr>
@@ -251,6 +276,7 @@ details on how to use, have a look at the adaptive grids section.</p>
         </div>
 
       </div>
+      <hr >
       <section id="kssref-grids-fractions" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -405,7 +431,7 @@ with <code>pam-Unit=&quot;[1-X]-X&quot;</code>.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div pam-Grid&gt;
+              <pre><code class="html">&lt;div pam-Grid&gt;
     &lt;div pam-Unit&#x3D;&quot;1-1&quot;&gt;
         &lt;div pam-Unit-Test&gt;1&lt;/div&gt;
     &lt;/div&gt;
@@ -482,6 +508,7 @@ with <code>pam-Unit=&quot;[1-X]-X&quot;</code>.</p>
 &lt;/div&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-grids-nested" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -589,7 +616,7 @@ with <code>pam-Unit=&quot;[1-X]-X&quot;</code>.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div pam-Grid&gt;
+              <pre><code class="html">&lt;div pam-Grid&gt;
     &lt;div pam-Unit&#x3D;&quot;1-2&quot;&gt;
         &lt;div pam-Unit-Test&gt;
         &lt;div pam-Grid&gt;
@@ -620,6 +647,7 @@ with <code>pam-Unit=&quot;[1-X]-X&quot;</code>.</p>
 &lt;/div&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-grids-adaptive" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -714,7 +742,7 @@ shrink to 25% on large-sized screens and above.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div pam-Grid&gt;
+              <pre><code class="html">&lt;div pam-Grid&gt;
     &lt;div pam-Unit&#x3D;&quot;1-1 small:1-2 large:1-4&quot;&gt;
         &lt;div pam-Unit-Test&gt;1 &amp;#10141; 2 &amp;#10141; 4&lt;/div&gt;
     &lt;/div&gt;
@@ -730,6 +758,7 @@ shrink to 25% on large-sized screens and above.</p>
 &lt;/div&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-grids-adaptive-landscape" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -820,7 +849,7 @@ additional landscape state. On a small device and in landscape the unit width wi
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div pam-Grid&gt;
+              <pre><code class="html">&lt;div pam-Grid&gt;
     &lt;div pam-Unit&#x3D;&quot;1-1 small:1-2 small:landscape:1-3&quot;&gt;
         &lt;div pam-Unit-Test&gt;1 &amp;#10141; 2 &amp;#10141; landscape 3&lt;/div&gt;
     &lt;/div&gt;
@@ -833,6 +862,7 @@ additional landscape state. On a small device and in landscape the unit width wi
 &lt;/div&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-grids-adaptive-nested" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -941,7 +971,7 @@ two units <code>pam-Unit=&quot;1-1 medium:1-2&quot;</code> that each contain a a
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div pam-Grid&gt;
+              <pre><code class="html">&lt;div pam-Grid&gt;
     &lt;div pam-Unit&#x3D;&quot;1-1 medium:1-2&quot;&gt;
         &lt;div pam-Unit-Test&gt;
             &lt;div pam-Grid&gt;
@@ -972,6 +1002,7 @@ two units <code>pam-Unit=&quot;1-1 medium:1-2&quot;</code> that each contain a a
 &lt;/div&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-grids-media" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -1064,7 +1095,7 @@ two units <code>pam-Unit=&quot;1-1 medium:1-2&quot;</code> that each contain a a
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div pam-Grid&gt;
+              <pre><code class="html">&lt;div pam-Grid&gt;
     &lt;div pam-Unit&#x3D;&quot;1-1 small:1-2 large:1-4&quot;&gt;
         &lt;img pam-Image src&#x3D;&quot;kss-assets/img/icon-60@3x.png&quot;&gt;
     &lt;/div&gt;
@@ -1080,6 +1111,7 @@ two units <code>pam-Unit=&quot;1-1 medium:1-2&quot;</code> that each contain a a
 &lt;/div&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-grids-controls" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -1101,6 +1133,7 @@ understand how it all works visit
         </div>
 
       </section>
+      <hr >
       <section id="kssref-grids-controls-direction" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -1191,7 +1224,7 @@ to control the direction of the grid.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div pam-Grid pam-Grid-Control&#x3D;&quot;direction:column&quot;&gt;
+              <pre><code class="html">&lt;div pam-Grid pam-Grid-Control&#x3D;&quot;direction:column&quot;&gt;
     &lt;div pam-Unit&#x3D;&quot;1-3&quot;&gt;
         &lt;div pam-Unit-Test&gt;Column 1&lt;/div&gt;
     &lt;/div&gt;
@@ -1204,6 +1237,7 @@ to control the direction of the grid.</p>
 &lt;/div&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-grids-controls-wrap" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -1294,7 +1328,7 @@ to control the wrapping of the grid.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div pam-Grid pam-Grid-Control&#x3D;&quot;wrap:nowrap&quot;&gt;
+              <pre><code class="html">&lt;div pam-Grid pam-Grid-Control&#x3D;&quot;wrap:nowrap&quot;&gt;
     &lt;div pam-Unit&#x3D;&quot;1-3&quot;&gt;
         &lt;div pam-Unit-Test&gt;Nowrap&lt;/div&gt;
     &lt;/div&gt;
@@ -1307,6 +1341,7 @@ to control the wrapping of the grid.</p>
 &lt;/div&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-grids-controls-justify" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -1401,7 +1436,7 @@ to justify content of a grid.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div pam-Grid pam-Grid-Control&#x3D;&quot;justify:start&quot; pam-skin&#x3D;&quot;lighter&quot;&gt;
+              <pre><code class="html">&lt;div pam-Grid pam-Grid-Control&#x3D;&quot;justify:start&quot; pam-skin&#x3D;&quot;lighter&quot;&gt;
     &lt;div pam-Unit&#x3D;&quot;1-3&quot;&gt;
         &lt;div pam-Unit-Test&gt;Start&lt;/div&gt;
     &lt;/div&gt;
@@ -1418,6 +1453,7 @@ to justify content of a grid.</p>
 &lt;/div&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-grids-controls-align" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -1527,7 +1563,7 @@ to align grid items along the cross axis on the current line.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div pam-Grid&gt;
+              <pre><code class="html">&lt;div pam-Grid&gt;
     &lt;div pam-Unit&#x3D;&quot;1-4&quot; pam-skin&#x3D;&quot;lighter&quot;&gt;
         &lt;div pam-Grid pam-Grid-Control&#x3D;&quot;align:start&quot; sg-Height&#x3D;&quot;150&quot;&gt;
             &lt;div pam-Unit&#x3D;&quot;1-1&quot;&gt;
@@ -1559,6 +1595,7 @@ to align grid items along the cross axis on the current line.</p>
 &lt;/div&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-grids-controls-align-content" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -1658,7 +1695,7 @@ to align flex containers lines within.</p>
                     </a>
                   </p>
               </summary>
-              <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div pam-Grid pam-Grid-Control&#x3D;&quot;align-content:space-between&quot; pam-skin&#x3D;&quot;lighter&quot; sg-Height&#x3D;&quot;150&quot;&gt;
+              <pre><code class="html">&lt;div pam-Grid pam-Grid-Control&#x3D;&quot;align-content:space-between&quot; pam-skin&#x3D;&quot;lighter&quot; sg-Height&#x3D;&quot;150&quot;&gt;
     &lt;div pam-Unit&#x3D;&quot;1-3&quot;&gt;
         &lt;div pam-Unit-Test&gt;Column 1&lt;/div&gt;
     &lt;/div&gt;
@@ -1680,6 +1717,7 @@ to align flex containers lines within.</p>
 &lt;/div&gt;</code></pre>
             </details>
       </section>
+      <hr >
       <section id="kssref-grids-hooks" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -1698,19 +1736,21 @@ to align flex containers lines within.</p>
         </div>
 
       </section>
-  </article>
+      <hr >
+  </main>
 </main>
 <footer sg-footer></footer>
 
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
-<script src="kss-assets/scrollspy.js"></script>
-<script src="kss-assets/prettify.js"></script>
 <script src="kss-assets/kss-fullscreen.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
+<script src="kss-assets/js/highlight/highlight.pack.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
 <script>
-  prettyPrint();
+  hljs.initHighlightingOnLoad();
+
   var spy = new ScrollSpy('#kss-node', {
     nav: '.kss-nav__menu-child > li > a',
     className: 'is-in-viewport'
@@ -1728,9 +1768,11 @@ to align flex containers lines within.</p>
     detailsClass: 'kss-markup'
   });
 </script>
+<script src="kss-assets/js/animator.js"></script>
+<script src="kss-assets/js/skinSwitcher.js"></script>
+<script src="kss-assets/js/styleguide.js"></script>
 
 
 
-<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>
 </html>

@@ -8,10 +8,25 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
 
+  <link rel="icon" type="image/png" href="kss-assets/img/favicon.png" />
   <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
   <link rel="stylesheet" href="kss-assets/css/pam.css">
 <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 
+
+  <script type="text/javascript">
+  var skinsData = [
+      {
+        path: "pam.css",
+        name: "default skin"
+      },
+      {
+        path: "mrg-skin.css",
+        name: "mrg skin"
+      },
+  ];
+  </script>
 </head>
 <body id="kss-node"  >
 
@@ -32,13 +47,13 @@
           <div pam-Menu sg-Nav>
               <ul pam-Menu-List>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/blob/master/CHANGELOG.md" pam-Menu-Link>Changelog</a>
+                    <a href="https://github.com/mrgreentech/pam/blob/master/CHANGELOG.md"  pam-Button="small">Changelog</a>
                   </li>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/issues" pam-Menu-Link>Issues</a>
+                    <a href="https://github.com/mrgreentech/pam/issues" pam-Button="small">Issues</a>
                   </li>
                   <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="small">Download</a>
+                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button=" primary small">Download</a>
                   </li>
               </ul>
           </div>
@@ -47,7 +62,7 @@
 </header>
 
 <main sg-main>
-  <div class="kss-sidebar kss-style">
+  <aside class="kss-sidebar kss-style">
     <header class="kss-header">
       <h1 class="kss-doc-title">Documentation</h1>
     </header>
@@ -65,108 +80,112 @@
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-getting-started.html#kssref-getting-started-introduction">
+                  <a class="kss-nav__menu-link" href="section-getting-started.html#kssref-getting-started-browser-support">
                     <span class="kss-nav__ref ">1.2</span
-                    ><span class="kss-nav__name">Introduction</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-getting-started.html#kssref-getting-started-use">
-                    <span class="kss-nav__ref ">1.3</span
-                    ><span class="kss-nav__name">Use</span>
+                    ><span class="kss-nav__name">Browser support</span>
                   </a>
                 </li>
               </ul>
         </li>
         <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-setup.html">
+            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Setup</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-about.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">About</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-base.html">
-            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Base</span>
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Base</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-grids.html">
-            <span class="kss-nav__ref">3</span><span class="kss-nav__name">Grids</span>
+            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Grids</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-typography.html">
-            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Typography</span>
+            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Typography</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-forms.html">
-            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Forms</span>
+            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Forms</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-buttons.html">
-            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Buttons</span>
+            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Buttons</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-tables.html">
-            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Tables</span>
+            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Tables</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-menus.html">
-            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Menus</span>
+            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Menus</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-alert.html">
-            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Alert</span>
+            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Alert</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-divider.html">
-            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Divider</span>
+            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Divider</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-links.html">
-            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Link</span>
+            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Link</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-lists.html">
-            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Lists</span>
+            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Lists</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-tags.html">
-            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Tags</span>
+            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Tags</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-column.html">
-            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Column</span>
+            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Column</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Loaders</span>
+            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Loaders</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-overlay.html">
-            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Overlay</span>
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Overlay</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-traits.html">
-            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Traits</span>
+            <span class="kss-nav__ref">19</span><span class="kss-nav__name">Traits</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-mixins.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Mixins</span>
+            <span class="kss-nav__ref">20</span><span class="kss-nav__name">Mixins</span>
           </a>
         </li>
       </ul>
     </nav>
-  </div>
-  <article role="main" class="kss-main">
+  </aside>
+  <main role="main" class="kss-main">
 
       <div id="kssref-getting-started" class="kss-section kss-section--depth-1 ">
 
@@ -178,13 +197,14 @@
           </h1>
 
             <div class="kss-description">
-              <p>Welcome to the CSS library with attitude!</p>
+              <p>Welcome to <strong>PAM</strong>! Before you start there are some basics things that is recommended to give a thought. First off, how do you want to install PAM? If you want to customize PAM you need to decide to use your own build or the provided build process. The concepts of these thing are explained in this section and in the <a href="/section-setup.html">setup</a> section, lets get started.</p>
 
             </div>
 
         </div>
 
       </div>
+      <hr >
       <section id="kssref-getting-started-installation" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -195,109 +215,151 @@
           </h2>
 
             <div class="kss-description">
-              <p>Available options:</p>
+              <p>Following download options are available.</p>
 <ul>
-<li><a href="https://github.com/mrgreentech/pam/archive/master.zip">Download from GitHub.</a></li>
-<li>Clone: <code>git clone https://github.com/mrgreentech/pam.git</code></li>
-<li>Bower: <code>bower install pam</code></li>
+<li>Download source from <a href="https:github.com/mrgreentech/pam/archive/master.zip">GitHub</a>.</li>
+<li>Clone the repo to get all source files: <code>git clone https:github.com/mrgreentech/pam.git</code></li>
+<li>Install with a package manager, PAM supports npm (<code>npm install pam</code>) and Bower (<code>bower install pam</code>). For use in a web project this is the <span pam-Tag="info">recommended</span> option.</li>
 </ul>
+<p>Now choose one of the compiled css files (<code>pam.css</code> or <code>pam.min.css</code>) in the <em>dist</em> folder and add it to the <em>head</em> section of your index file and yourt ready to go.</p>
+<pre class="hljs"><code class="language-html"><span class="hljs-comment">&lt;!-- PAM CSS --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[your-path-to-pam]/[pam.css|pam.min.css]"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>/&gt;</span>
+</code></pre>
 
             </div>
 
         </div>
 
       </section>
-      <section id="kssref-getting-started-introduction" class="kss-section kss-section--depth-2 ">
-
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-getting-started-introduction">
-              Introduction
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>PAM is a light and modular CSS library. Based and inspired by other great CSS stuff.</p>
-<ul>
-<li>Pure AMCSS semantics.</li>
-<li>LESS hooks for customization.</li>
-<li>Light weight: <strong>8.8KB minified + gzip</strong>.</li>
-</ul>
-
-            </div>
-
-        </div>
-
-      </section>
-      <section id="kssref-getting-started-use" class="kss-section kss-section--depth-2 ">
-
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-getting-started-use">
-              Use
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>Ok, so that was easy to install. Now lets use it. To get started use one of the the raw css files (pam.css or pam.min.css) in the <code>release</code> folder.</p>
-
-            </div>
-
-        </div>
-
-      </section>
-      <section id="kssref-getting-started-use-build" class="kss-section kss-section--depth-3 ">
+      <hr >
+      <section id="kssref-getting-started-installation-source-content" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
           <h3 class="kss-title kss-title--level-3">
-            <a class="kss-title__permalink" href="#kssref-getting-started-use-build">
-              Build
+            <a class="kss-title__permalink" href="#kssref-getting-started-installation-source-content">
+              Source content
             </a>
           </h3>
 
             <div class="kss-description">
-              <p><strong>Prerequisites</strong>: Node and npm</p>
-<ul>
-<li>First clone PAM: <code>git clone https://github.com/mrgreentech/pam.git</code></li>
-<li>Then <code>cd</code> to the PAM folder and install node modules: <code>npm i</code></li>
-<li>And finally run the build: <code>npm run build</code></li>
-</ul>
-
+              <p>The source of PAM contains all project files. In the root you will find all config, scaffolding and documentation files. In the <code>/src</code> folder there are Less and style guide sources and in the <code>/dist</code> folder Less sources have been compiled into CSS files accompanied by a <code>/less</code> and <code>/styleguide</code> folder.</p>
+<table pam-Table="horizontal fluid">
+   <thead>
+       <tr>
+           <th>Folder</th>
+           <th>Description</th>
+       </tr>
+   </thead>
+   <tbody>
+       <tr>
+           <td><code>/src</code></td>
+           <td>Contains Less, style guide and static sources such as images.</td>
+       </tr>
+       <tr>
+           <td><code>/dist</code></td>
+           <td>Contains Less, compiled CSS and style guide of current release.</td>
+       </tr>
+   </tbody>
+</table>
             </div>
 
         </div>
 
       </section>
-      <section id="kssref-getting-started-use-less" class="kss-section kss-section--depth-3 ">
+      <hr >
+      <section id="kssref-getting-started-installation-build-source" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
           <h3 class="kss-title kss-title--level-3">
-            <a class="kss-title__permalink" href="#kssref-getting-started-use-less">
-              LESS
+            <a class="kss-title__permalink" href="#kssref-getting-started-installation-build-source">
+              Build source
             </a>
           </h3>
 
             <div class="kss-description">
-              <p> PAM can be integrated in projects that use LESS as preprocessor. Import the main less file (<code>pam.less</code>) in the <code>release/less</code> folder to your projects main LESS file, and then your good to go.</p>
+              <p>To compile PAM use the commands below. <code>node</code>, <code>npm</code> and <code>git</code> are required.</p>
+<p><span pam-Tag="info">Prerequisites</span> <code>node</code>, <code>npm</code> and <code>git</code></p>
+<pre class="hljs"><code class="language-sh"><span class="hljs-comment"># Install dependencies</span>
+$ npm i
+
+<span class="hljs-comment"># Build and compile source</span>
+$ npm run build
+</code></pre>
 
             </div>
 
         </div>
 
       </section>
-  </article>
+      <hr >
+      <section id="kssref-getting-started-browser-support" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-getting-started-browser-support">
+              Browser support
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>PAM have been tested on all major browsers according to the table below.</p>
+<table pam-table="bordered fluid center">
+    <thead>
+        <tr>
+            <th>
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/46.0.0/edge/edge.svg" alt="IE / Edge" width="24px" height="24px">
+                <br>IE / Edge
+            </th>
+            <th>
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/46.0.0/firefox/firefox.svg" alt="Firefox" width="24px" height="24px">
+                <br>Firefox
+            </th>
+            <th>
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/46.0.0/chrome/chrome.svg" alt="Chrome" width="24px" height="24px">
+                <br>Chrome
+            </th>
+            <th>
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/46.0.0/safari/safari.png" alt="Safari" width="24px" height="24px">
+                <br>Safari
+            </th>
+            <th>
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/46.0.0/safari-ios/safari-ios.svg" alt="iOS Safari" width="24px" height="24px">
+                <br>iOS Safari
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>IE11, Edge</td>
+            <td>Latest version</td>
+            <td>Latest version</td>
+            <td>Latest version</td>
+            <td>Latest version</td>
+        </tr>
+    </tbody>
+</table>
+            </div>
+
+        </div>
+
+      </section>
+      <hr >
+  </main>
 </main>
 <footer sg-footer></footer>
 
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
-<script src="kss-assets/scrollspy.js"></script>
-<script src="kss-assets/prettify.js"></script>
 <script src="kss-assets/kss-fullscreen.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
+<script src="kss-assets/js/highlight/highlight.pack.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
 <script>
-  prettyPrint();
+  hljs.initHighlightingOnLoad();
+
   var spy = new ScrollSpy('#kss-node', {
     nav: '.kss-nav__menu-child > li > a',
     className: 'is-in-viewport'
@@ -315,9 +377,11 @@
     detailsClass: 'kss-markup'
   });
 </script>
+<script src="kss-assets/js/animator.js"></script>
+<script src="kss-assets/js/skinSwitcher.js"></script>
+<script src="kss-assets/js/styleguide.js"></script>
 
 
 
-<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>
 </html>

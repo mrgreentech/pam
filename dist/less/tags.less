@@ -12,31 +12,29 @@
 //
 // Style guide: tags
 
-
 //  Variables
 // ==================================================================
 
-@tag-background:            @skin-dark;
-@tag-border-radius:         @border-radius-base;
-@tag-color:                 @skin-text;
-@tag-font-size:             65%;
-@tag-font-weight:           @font-weight-bold;
-@tag-line-height:           @line-height-normal;
-@tag-padding-horizontal:    6px;
-@tag-padding-vertical:      3px;
-@tag-text-transform:        none;
+@tag-background: @skin-dark;
+@tag-border-radius: @border-radius-base;
+@tag-color: @skin-text;
+@tag-font-size: 65%;
+@tag-font-weight: @font-weight-bold;
+@tag-line-height: @line-height-normal;
+@tag-padding-horizontal: 6px;
+@tag-padding-vertical: 3px;
+@tag-text-transform: uppercase;
 
 @tag-rounded-border-radius: 500px;
-@tag-rounded-font-size:     65%;
-@tag-rounded-line-height:   @line-height-normal;
-@tag-rounded-min-width:     @space-16;
+@tag-rounded-font-size: 65%;
+@tag-rounded-line-height: @line-height-normal;
+@tag-rounded-min-width: @space-16;
 
-@tag-primary-background:    @skin-primary;
-@tag-success-background:    @skin-success;
-@tag-info-background:       @skin-info;
-@tag-danger-background:     @skin-danger;
-@tag-warn-background:       @skin-warn;
-
+@tag-primary-background: @skin-primary;
+@tag-success-background: @skin-success;
+@tag-info-background: @skin-info;
+@tag-danger-background: @skin-danger;
+@tag-warn-background: @skin-warn;
 
 // ==================================================================
 //  Tag
@@ -57,7 +55,6 @@
 
     .hook-tag;
 }
-
 
 //  Modifier: rounded
 // ==================================================================
@@ -85,7 +82,6 @@
 
     .hook-tag-rounded;
 }
-
 
 //  Modifier: Colors
 // ==================================================================
@@ -126,7 +122,6 @@
     background-color: @tag-danger-background;
 }
 
-
 //  Hooks
 // ==================================================================
 
@@ -140,6 +135,8 @@
 // Style guide: tags.hooks
 
 /* stylelint-disable block-no-empty */
-.hook-tag() {}
-.hook-tag-rounded() {}
+.hook-tag() {
+}
+.hook-tag-rounded() {
+}
 /* stylelint-enable */
