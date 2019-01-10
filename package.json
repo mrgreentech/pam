@@ -1,5 +1,5 @@
 {
-  "name": "pam",
+  "name": "pam-css",
   "description": "PAM is a light, modular and flexible AMCSS library.",
   "version": "1.0.0-beta.1",
   "keywords": [
@@ -11,7 +11,7 @@
     "web"
   ],
   "homepage": "https://mrgreentech.github.io/pam/",
-  "author": "Olle Harju <olle.harju@mrggroup.com>",
+  "author": "MRG Gametek",
   "contributors": [
     "The PAM Contributors (https://github.com/mrgreentech/pam/graphs/contributors)"
   ],
