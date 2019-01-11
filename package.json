@@ -1,7 +1,7 @@
 {
   "name": "pam-css",
   "description": "PAM is a light, modular and flexible AMCSS library.",
-  "version": "v1.0.0-beta.0",
+  "version": "1.0.0-beta.0",
   "keywords": [
     "css",
     "less",
