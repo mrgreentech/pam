@@ -1,7 +1,7 @@
 {
-  "name": "pam",
+  "name": "pam-css",
   "description": "PAM is a light, modular and flexible AMCSS library.",
-  "version": "1.0.0",
+  "version": "v1.0.0-beta.0",
   "keywords": [
     "css",
     "less",
@@ -11,7 +11,7 @@
     "web"
   ],
   "homepage": "https://mrgreentech.github.io/pam/",
-  "author": "Olle Harju <olle.harju@gmail.com>",
+  "author": "MRG Gametek",
   "contributors": [
     "The PAM Contributors (https://github.com/mrgreentech/pam/graphs/contributors)"
   ],
@@ -41,15 +41,15 @@
     "eslint:check": "eslint --print-config . | eslint-config-prettier-check"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
     "browser-sync": "^2.26.3",
     "del": "^3.0.0",
-    "eslint": "^5.7.0",
-    "eslint-config-prettier": "^3.1.0",
-    "eslint-plugin-compat": "^2.6.2",
+    "eslint": "^5.12.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-compat": "^2.6.3",
     "gulp": "^3.9.1",
     "gulp-babel": "^8.0.0",
     "gulp-banner": "^0.1.3",
@@ -62,16 +62,16 @@
     "gulp-replace": "^1.0.0",
     "gulp-sizereport": "^1.2.1",
     "gulp-util": "^3.0.8",
-    "husky": "^1.1.2",
+    "husky": "^1.3.1",
     "kss": "^3.0.0-beta.23",
     "less-plugin-autoprefix": "^2.0.0",
     "lint-staged": "^7.3.0",
-    "normalize.css": "^8.0.0",
-    "npm-run-all": "^4.1.3",
-    "onchange": "^5.0.2",
+    "normalize.css": "^8.0.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^5.2.0",
     "prettier": "1.14.3",
     "run-sequence": "^2.2.1",
-    "stylelint": "^9.6.0",
+    "stylelint": "^9.9.0",
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-no-unsupported-browser-features": "^3.0.2"

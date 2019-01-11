@@ -25,6 +25,10 @@
         path: "mrg-skin.css",
         name: "mrg skin"
       },
+      {
+        path: "redbet-skin.css",
+        name: "redbet skin"
+      },
   ];
   </script>
 </head>
@@ -189,17 +193,17 @@
     <span class="hljs-comment">&lt;!-- entry file --&gt;</span>
     my-skin.less
 
-    <span class="hljs-comment">&lt;!-- folder with one component per file --&gt;</span>
+    <span class="hljs-comment">&lt;!-- skin source folder --&gt;</span>
     my-skin/
-        <span class="hljs-comment">&lt;!-- imports all components in this folder --&gt;</span>
+        <span class="hljs-comment">&lt;!-- imports all custom stuff --&gt;</span>
         _custom.less
 
-        <span class="hljs-comment">&lt;!-- one file per component --&gt;</span>
+        <span class="hljs-comment">&lt;!-- one file -&gt; one component --&gt;</span>
         accordion.less
         alert.less
         ...
 </code></pre>
-<p>Skin entry point, <code>/skins/skin-theme.less</code>:</p>
+<p>Skin entry point, <code>/skins/my-skin.less</code>:</p>
 <pre class="hljs"><code class="language-less"><span class="hljs-comment">// PAM</span>
 <span class="hljs-keyword">@import</span> <span class="hljs-string">"../src/less/pam.less"</span>;
 

@@ -5,9 +5,9 @@
 
 PAM is a light and modular CSS library. Based and inspired by other great CSS stuff.
 
-*   Pure AMCSS semantics.
-*   LESS hooks for customization.
-*   Light weight: **8.8KB minified + gzip**.
+-   Pure AMCSS semantics.
+-   LESS hooks for customization.
+-   Light weight: **8.8KB minified + gzip**.
 
 [style-guide-link]: https://mrgreentech.github.io/pam/
 [travis-ci-link]: https://travis-ci.org/mrgreentech/pam/
@@ -15,21 +15,35 @@ PAM is a light and modular CSS library. Based and inspired by other great CSS st
 
 ## Installation
 
-Available options:
+[Download from GitHub][master-download-link] or use on of the following methods.
 
-*   [Download from GitHub.][master-download-link]
-*   Clone: `git clone https://github.com/mrgreentech/pam.git`
-*   Bower: `bower install pam`
+Clone
+
+```bash
+$ git clone https://github.com/mrgreentech/pam.git
+```
+
+npm
+
+```bash
+$ npm i pam-css
+```
+
+Bower
+
+```bash
+$ bower install pam
+```
 
 [master-download-link]: https://github.com/mrgreentech/pam/archive/master.zip
 
 ## Use
 
-Ok, so that was easy to install. Now let's use it. To get started use one of the the raw css files (pam.css or pam.min.css) in the `release` folder.
+Ok, so that was easy to install. Now let's use it. To get started use one of the the raw css files (pam.css or pam.min.css) in the `dist` folder.
 
 ### LESS
 
-PAM can be integrated in projects that use LESS as preprocessor. Import the main less file (`pam.less`) in the `release/less` folder to your projects main LESS file, and then your good to go.
+PAM can be integrated in projects that use LESS as preprocessor. Import the main less file (`pam.less`) in the `dist/less` folder to your projects main LESS file, and then your good to go.
 
 ## Build
 
@@ -44,24 +58,24 @@ $ npm run build
 
 ### Commands
 
-*   **build:** `npm run build`
+-   **build:** `npm run build`
 
     It starts by linting all the less files in the source with `stylelint`.
     After that gulp takes over and starts of by cleaning the build folders and copying the less source files to the build folder. Then files are concated and stamped with license banners. Now the less can be parsed to css which result in the `pam.css` file. The final step is to minify the css and then prepare the styleguide build by copying `pam.css` to the `styleguide` folder. Now it's time to build the styleguide and when that's done a file size report is shown in the console.
 
-*   **dev:** `npm run dev`
+-   **dev:** `npm run dev`
 
     This is the one to use for local development of PAM and it's kind of a mind bender. It starts of by doing a `build`, after that it runs browsersync and onchange in parallel. So that when a change in the `src` folder is done a build is triggered and when the files in the `build` folder is updated browsersync updates the browser with the changes.
 
-*   **dist:** `npm run dist`
+-   **dist:** `npm run dist`
 
     This is straight forward. Runs a build, cleans the dist folder and copies dist files from build folder.
 
-*   **test:** `npm test`
+-   **test:** `npm test`
 
     This simply runs a build since it contains all the steps that needs to be working.
 
--   **stylelint:check:** `stylelint:check`
+*   **stylelint:check:** `stylelint:check`
 
     Check if stylelint and prettier have any conflicts at the moment.
 
@@ -90,7 +104,7 @@ PAM 1.0 A.K.A [Legendary grasshopper][legendary-grasshopper-link] is in the maki
 
 #### 1.X
 
-*   Total rework of the 0.x pre-release.
+-   Total rework of the 0.x pre-release.
 
 For further information about history have a look at the [CHANGELOG][changelog-link].
 

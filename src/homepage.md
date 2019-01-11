@@ -22,7 +22,7 @@
         <div pam-Menu="vertical">
             <ul pam-Menu-List>
                 <li pam-Menu-Item>
-                    <span pam-Tag>Version [[version]]</span>
+                    <span pam-Tag="danger">Version [[version]]</span>
                 </li>
             </ul>
         </div>
