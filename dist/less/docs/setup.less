@@ -20,7 +20,7 @@ To include PAM in your project build, import (`pam.less`) or only the componens 
 // Custom styles, variables, hooks and mixins...
 ```
 
-[how-to-create-a-skin-link]: /section-setup.html#kssref-setup-create-skin
+[how-to-create-a-skin-link]: section-setup.html#kssref-setup-create-skin
 
  Weight: 1
 
@@ -131,18 +131,18 @@ skins/
     <!-- entry file -->
     my-skin.less
 
-    <!-- folder with one component per file -->
+    <!-- skin source folder -->
     my-skin/
-        <!-- imports all components in this folder -->
+        <!-- imports all custom stuff -->
         _custom.less
 
-        <!-- one file per component -->
+        <!-- one file -> one component -->
         accordion.less
         alert.less
         ...
 ```
 
-Skin entry point, `/skins/skin-theme.less`:
+Skin entry point, `/skins/my-skin.less`:
 
 ```less
 // PAM
