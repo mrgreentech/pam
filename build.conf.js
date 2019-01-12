@@ -19,7 +19,7 @@ module.exports = () => {
         pam: [
             "\n/*!",
             "Pam v<%= pkg.version %>",
-            "Copyright 2016 Mr Green & Co Technology All rights reserved.",
+            "Copyright 2016 MRG Gametek AB All rights reserved.",
             "Licensed under the BSD License.",
             "https://github.com/mrgreentech/pam/blob/master/LICENSE.md",
             "*/\n"

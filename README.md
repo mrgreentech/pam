@@ -1,45 +1,24 @@
-# [PAM][style-guide-link]
+# PAM
 
 [![Build Status](https://travis-ci.org/mrgreentech/pam.svg?branch=master)][travis-ci-link]
-![Bower version][bower-version-shield-link]
+![](https://img.shields.io/npm/v/pam-css.svg)
 
-PAM is a light and modular CSS library. Based and inspired by other great CSS stuff.
-
--   Pure AMCSS semantics.
--   LESS hooks for customization.
--   Light weight: **8.8KB minified + gzip**.
+> PAM is a light and modular CSS library. Based and inspired by the Attribute Modules for CSS methodology (AMCSS).
 
 [style-guide-link]: https://mrgreentech.github.io/pam/
 [travis-ci-link]: https://travis-ci.org/mrgreentech/pam/
-[bower-version-shield-link]: https://img.shields.io/bower/v/pam.svg
 
 ## Installation
 
-[Download from GitHub][master-download-link] or use on of the following methods.
-
-Clone
-
-```bash
-$ git clone https://github.com/mrgreentech/pam.git
-```
-
-npm
-
 ```bash
 $ npm i pam-css
-```
-
-Bower
-
-```bash
-$ bower install pam
 ```
 
 [master-download-link]: https://github.com/mrgreentech/pam/archive/master.zip
 
 ## Use
 
-Ok, so that was easy to install. Now let's use it. To get started use one of the the raw css files (pam.css or pam.min.css) in the `dist` folder.
+To get started use one of the the raw css files (pam.css or pam.min.css) in the `dist` folder.
 
 ### LESS
 
@@ -100,11 +79,7 @@ Head over to the PAM [style guide][style-guide-link] for documentation and examp
 
 ## History
 
-PAM 1.0 A.K.A [Legendary grasshopper][legendary-grasshopper-link] is in the making so stay tuned...
-
-#### 1.X
-
--   Total rework of the 0.x pre-release.
+PAM v1 ([Legendary grasshopper][legendary-grasshopper-link]) is in the making so stay tuned...
 
 For further information about history have a look at the [CHANGELOG][changelog-link].
 
@@ -113,7 +88,7 @@ For further information about history have a look at the [CHANGELOG][changelog-l
 
 ## License
 
-This software is free to use under the Mr Green & Co Technology AB BSD license.
+This software is free to use under the MRG Gametek AB BSD license.
 See the [license doc][license-link] for license and copyright information.
 
 [license-link]: ./LICENSE.md
