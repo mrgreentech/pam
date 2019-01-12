@@ -25,4 +25,4 @@ yarn.lock
 # Files
 .*
 *.json
-*.js
+/*.js
