@@ -10,11 +10,12 @@ const cleanCss = require("gulp-clean-css");
 const concat = require("gulp-concat");
 const del = require("del");
 const gulp = require("gulp");
+const gzip = require("gulp-gzip");
 const less = require("gulp-less");
 const lessPluginAutoprefix = require("less-plugin-autoprefix");
 const rename = require("gulp-rename");
-
-// const replace = require("gulp-replace");
+const replace = require("gulp-replace");
+const sizeReporter = require("gulp-sizereport");
 
 // const plugins = require("gulp-load-plugins")(config.plugins);
 
@@ -142,9 +143,6 @@ const rename = require("gulp-rename");
 //     return plugins.runSequence("copy-build", "concat-font", "less", "transpile-js", "minify", "copy-pam-to-sg");
 // });
 
-// // Default
-// gulp.task("default", ["build"]);
-
 function cleanBuild() {
     return del(config.build.base);
 }
@@ -169,12 +167,12 @@ function copyPamToSG() {
     return gulp.src([config.build.cssFile, config.build.cssSkinsGlob]).pipe(gulp.dest(config.build.styleguideCss));
 }
 
-// function replaceVersion() {
-//     return gulp
-//         .src(config.build.styleguideIndexFile)
-//         .pipe(replace("[[version]]", config.version))
-//         .pipe(gulp.dest(config.build.styleguide));
-// }
+function replaceVersion() {
+    return gulp
+        .src(config.build.styleguideIndexFile)
+        .pipe(replace("[[version]]", config.version))
+        .pipe(gulp.dest(config.build.styleguide));
+}
 
 function concatBase() {
     return gulp
@@ -213,7 +211,7 @@ function transpileJS() {
         .pipe(gulp.dest("build/styleguide/kss-assets/js/"));
 }
 
-// // Optimize
+// Optimize
 function minify() {
     return gulp
         .src(config.build.cssFile)
@@ -232,11 +230,35 @@ function minify() {
         .pipe(gulp.dest(config.build.base));
 }
 
+function compress() {
+    return gulp
+        .src(config.build.base + "/pam.min.css")
+        .pipe(gzip())
+        .pipe(gulp.dest(config.build.base));
+}
+
+function sizeReport() {
+    return gulp.src("./build/*").pipe(
+        sizeReporter({
+            gzip: true,
+            "*": {
+                maxSize: 20000
+            }
+        })
+    );
+}
+
+// Complex tasks
 const concatFiles = gulp.series(concatBase, concatFont);
 const build = gulp.series(cleanBuild, copyBuild, concatFiles, styles, transpileJS, minify, copyPamToSG);
+const buildDev = gulp.series(copyBuild, concatFiles, styles, transpileJS, minify, copyPamToSG);
 const dist = gulp.series(cleanDist, copyDist);
 
 // export tasks
+exports.sizeReport = sizeReport;
+exports.compress = compress;
+exports.replaceVersion = replaceVersion;
 exports.build = build;
+exports.buildDev = buildDev;
 exports.dist = dist;
 exports.default = build;
