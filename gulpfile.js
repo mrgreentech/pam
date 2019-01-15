@@ -1,13 +1,19 @@
 "use strict";
 
-// // Config
+// Config
 const config = require("./build.conf.js")();
 
-// // Modules
+// Modules
+const babel = require("gulp-babel");
 const banner = require("gulp-banner");
+const cleanCss = require("gulp-clean-css");
 const concat = require("gulp-concat");
 const del = require("del");
 const gulp = require("gulp");
+const less = require("gulp-less");
+const lessPluginAutoprefix = require("less-plugin-autoprefix");
+const rename = require("gulp-rename");
+
 // const replace = require("gulp-replace");
 
 // const plugins = require("gulp-load-plugins")(config.plugins);
@@ -159,9 +165,9 @@ function copyDist() {
     return gulp.src([config.build.baseGlob, "!build/**/*-skin.css"]).pipe(gulp.dest(config.dist.base));
 }
 
-// function copyPamToSG() {
-//     return gulp.src([config.build.cssFile, config.build.cssSkinsGlob]).pipe(gulp.dest(config.build.styleguideCss));
-// }
+function copyPamToSG() {
+    return gulp.src([config.build.cssFile, config.build.cssSkinsGlob]).pipe(gulp.dest(config.build.styleguideCss));
+}
 
 // function replaceVersion() {
 //     return gulp
@@ -189,8 +195,45 @@ function concatFont() {
         .pipe(gulp.dest(config.build.less));
 }
 
+function styles() {
+    return gulp
+        .src([config.build.lessFile, config.skin.lessFileGlob])
+        .pipe(
+            less({
+                plugins: [new lessPluginAutoprefix()]
+            })
+        )
+        .pipe(gulp.dest(config.build.base));
+}
+
+function transpileJS() {
+    return gulp
+        .src(["src/js/*.js"])
+        .pipe(babel())
+        .pipe(gulp.dest("build/styleguide/kss-assets/js/"));
+}
+
+// // Optimize
+function minify() {
+    return gulp
+        .src(config.build.cssFile)
+        .pipe(
+            cleanCss({
+                compatibility: "*",
+                format: "keep-breaks",
+                level: 2
+            })
+        )
+        .pipe(
+            rename({
+                suffix: ".min"
+            })
+        )
+        .pipe(gulp.dest(config.build.base));
+}
+
 const concatFiles = gulp.series(concatBase, concatFont);
-const build = gulp.series(cleanBuild, copyBuild, concatFiles);
+const build = gulp.series(cleanBuild, copyBuild, concatFiles, styles, transpileJS, minify, copyPamToSG);
 const dist = gulp.series(cleanDist, copyDist);
 
 // export tasks
