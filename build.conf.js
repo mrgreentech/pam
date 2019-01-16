@@ -48,7 +48,12 @@ module.exports = () => {
         banner: `${licenseBanner.pam}${licenseBanner.pure}${licenseBanner.normalize}`,
         src: {
             base: srcBase,
-            lessGlob: `${srcBase}less/**`
+            lessGlob: `${srcBase}less/**`,
+            glob: {
+                less: `${srcBase}less/**/*`,
+                js: `${srcBase}js/**/*`,
+                styleGuide: `${srcBase}styleguide/**/*`
+            }
         },
         build: {
             base: buildBase,
