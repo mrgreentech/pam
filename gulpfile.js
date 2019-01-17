@@ -78,22 +78,7 @@ function css() {
                 plugins: [new lessPluginAutoprefix()]
             })
         )
-        .pipe(gulp.dest(config.build.base));
-}
-
-function cssLint() {
-    return gulp.src("src/less/**/*.less").pipe(
-        stylelint({
-            failAfterError: true,
-            reporters: [{ formatter: "string", console: true }]
-        })
-    );
-}
-
-function cssMinify() {
-    return gulp
-        .src(config.build.cssFile)
-        .pipe(plumber())
+        .pipe(gulp.dest(config.build.base))
         .pipe(
             cleanCss({
                 compatibility: "*",
@@ -107,6 +92,15 @@ function cssMinify() {
             })
         )
         .pipe(gulp.dest(config.build.base));
+}
+
+function cssLint() {
+    return gulp.src("src/less/**/*.less").pipe(
+        stylelint({
+            failAfterError: true,
+            reporters: [{ formatter: "string", console: true }]
+        })
+    );
 }
 
 // Scripts
@@ -168,23 +162,15 @@ function serve(cb) {
     cb();
 }
 
-function serverReload(cb) {
-    server.reload();
-    cb();
-}
-
 // Watch
 function watchFiles() {
-    gulp.watch(
-        [config.src.glob.less, config.src.glob.js, config.src.glob.styleGuide],
-        gulp.series(buildDev, serverReload)
-    );
+    gulp.watch([config.src.glob.base], buildDev);
 }
 
 //  Complex tasks
 const watch = gulp.parallel(watchFiles, serve);
 const buildStyleGuide = gulp.series(copyPamToSG, styleguide, replaceVersion);
-const styles = gulp.series(cssLint, css, cssMinify);
+const styles = gulp.series(cssLint, css);
 const scripts = gulp.series(jsLint, js);
 const stylesAndScripts = gulp.parallel(styles, scripts);
 const concatFiles = gulp.series(concatBase, concatFont);

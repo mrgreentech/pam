@@ -50,6 +50,7 @@ module.exports = () => {
             base: srcBase,
             lessGlob: `${srcBase}less/**`,
             glob: {
+                base: `${srcBase}**/*`,
                 less: `${srcBase}less/**/*`,
                 js: `${srcBase}js/**/*`,
                 styleGuide: `${srcBase}styleguide/**/*`
