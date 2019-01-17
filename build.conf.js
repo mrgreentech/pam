@@ -46,19 +46,26 @@ module.exports = () => {
         supportedBrowsers: supportedBrowsers,
         plugins: plugins,
         banner: `${licenseBanner.pam}${licenseBanner.pure}${licenseBanner.normalize}`,
+        file: {
+            less: {
+                base: "base.less"
+            }
+        },
         src: {
             base: srcBase,
-            lessGlob: `${srcBase}less/**`,
-            glob: {
-                base: `${srcBase}**/*`,
-                less: `${srcBase}less/**/*`,
-                js: `${srcBase}js/**/*`,
-                styleGuide: `${srcBase}styleguide/**/*`
+            baseGlob: `${srcBase}**/*`,
+            js: {
+                glob: `${srcBase}js/**`
+            },
+            less: {
+                base: "base.less",
+                glob: `${srcBase}less/**`
             }
         },
         build: {
             base: buildBase,
             baseGlob: `${buildBase}**`,
+            rootGlob: `${buildBase}*`,
             cssFile: `${buildBase}pam.css`,
             cssMinFile: `${buildBase}pam.min.css`,
             cssSkinsGlob: `${buildBase}*-skin.css`,
@@ -69,6 +76,7 @@ module.exports = () => {
             lessGlob: `${buildBase}less/**`,
             styleguide: `${buildBase}styleguide/`,
             styleguideCss: `${buildBase}styleguide/kss-assets/css/`,
+            styleguideJs: `${buildBase}styleguide/kss-assets/js/`,
             styleguideIndexFile: `${buildBase}styleguide/index.html`
         },
         dist: {

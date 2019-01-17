@@ -35,7 +35,7 @@ function cleanDist() {
 
 // Copy
 function copyBuild() {
-    return gulp.src(config.src.lessGlob).pipe(gulp.dest(config.build.less));
+    return gulp.src(config.src.less.glob).pipe(gulp.dest(config.build.less));
 }
 
 function copyDist() {
@@ -51,7 +51,7 @@ function concatBase() {
     return gulp
         .src([config.node.normalize, config.build.lessFileBase])
         .pipe(plumber())
-        .pipe(concat("base.less"))
+        .pipe(concat(config.file.less.base))
         .pipe(
             banner(config.banner, {
                 pkg: config.pkg
@@ -64,7 +64,7 @@ function concatFont() {
     return gulp
         .src([config.build.lessFileFont, config.build.lessFileBase])
         .pipe(plumber())
-        .pipe(concat("base.less"))
+        .pipe(concat(config.file.less.base))
         .pipe(gulp.dest(config.build.less));
 }
 
@@ -95,7 +95,7 @@ function css() {
 }
 
 function cssLint() {
-    return gulp.src("src/less/**/*.less").pipe(
+    return gulp.src(config.src.less.glob).pipe(
         stylelint({
             failAfterError: true,
             reporters: [{ formatter: "string", console: true }]
@@ -106,15 +106,15 @@ function cssLint() {
 // Scripts
 function js() {
     return gulp
-        .src(["src/js/*.js"])
+        .src([config.src.js.glob])
         .pipe(plumber())
         .pipe(babel())
-        .pipe(gulp.dest("build/styleguide/kss-assets/js/"));
+        .pipe(gulp.dest(config.build.styleguideJs));
 }
 
 function jsLint() {
     return gulp
-        .src(["src/**/*.js", "gulpfile.js"])
+        .src([config.src.js.glob, "gulpfile.js"])
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
@@ -122,7 +122,7 @@ function jsLint() {
 
 function compress() {
     return gulp
-        .src(config.build.base + "/pam.min.css")
+        .src(config.build.cssMinFile)
         .pipe(plumber())
         .pipe(gzip())
         .pipe(gulp.dest(config.build.base));
@@ -144,7 +144,7 @@ function replaceVersion() {
 // Size report
 function sizeReport() {
     return gulp
-        .src("./build/*")
+        .src(config.build.rootGlob)
         .pipe(plumber())
         .pipe(
             sizeReporter({
@@ -164,7 +164,7 @@ function serve(cb) {
 
 // Watch
 function watchFiles() {
-    gulp.watch([config.src.glob.base], buildDev);
+    gulp.watch([config.src.baseGlob], buildDev);
 }
 
 //  Complex tasks
