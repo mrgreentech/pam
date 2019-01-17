@@ -2,8 +2,8 @@
 
 // Config
 const config = require("./build.conf.js")();
-const kssConfig = require("./kss-config.json");
 const browserSyncConfig = require("./bs-config.js");
+const kssConfig = require("./kss-config.json");
 
 // Modules
 const babel = require("gulp-babel");
@@ -14,15 +14,15 @@ const del = require("del");
 const eslint = require("gulp-eslint");
 const gulp = require("gulp");
 const gzip = require("gulp-gzip");
+const kss = require("kss");
 const less = require("gulp-less");
 const lessPluginAutoprefix = require("less-plugin-autoprefix");
 const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const replace = require("gulp-replace");
+const server = require("browser-sync").create();
 const sizeReporter = require("gulp-sizereport");
 const stylelint = require("gulp-stylelint");
-const kss = require("kss");
-const server = require("browser-sync").create();
 
 // Clean
 function cleanBuild() {
