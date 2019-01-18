@@ -26,30 +26,32 @@ const stylelint = require("gulp-stylelint");
 
 // Clean
 function cleanBuild() {
-    return del(config.build.base);
+    return del(config.paths.build.base);
 }
 
 function cleanDist() {
-    return del(config.dist.base);
+    return del(config.paths.dist.base);
 }
 
 // Copy
 function copyBuild() {
-    return gulp.src(config.src.less.glob).pipe(gulp.dest(config.build.less));
+    return gulp.src(config.src.less.glob).pipe(gulp.dest(config.paths.build.less));
 }
 
 function copyDist() {
-    return gulp.src([config.build.baseGlob, "!build/**/*-skin.css"]).pipe(gulp.dest(config.dist.base));
+    return gulp.src([config.paths.build.baseGlob, "!build/**/*-skin.css"]).pipe(gulp.dest(config.paths.dist.base));
 }
 
 function copyPamToSG() {
-    return gulp.src([config.build.cssFile, config.build.cssSkinsGlob]).pipe(gulp.dest(config.build.styleguideCss));
+    return gulp
+        .src([config.paths.build.cssFile, config.paths.build.cssSkinsGlob])
+        .pipe(gulp.dest(config.paths.build.styleguideCss));
 }
 
 // Concat
 function concatBase() {
     return gulp
-        .src([config.node.normalize, config.build.lessFileBase])
+        .src([config.node.normalize, config.paths.build.lessFileBase])
         .pipe(plumber())
         .pipe(concat(config.file.less.base))
         .pipe(
@@ -57,28 +59,28 @@ function concatBase() {
                 pkg: config.pkg
             })
         )
-        .pipe(gulp.dest(config.build.less));
+        .pipe(gulp.dest(config.paths.build.less));
 }
 
 function concatFont() {
     return gulp
-        .src([config.build.lessFileFont, config.build.lessFileBase])
+        .src([config.paths.build.lessFileFont, config.paths.build.lessFileBase])
         .pipe(plumber())
         .pipe(concat(config.file.less.base))
-        .pipe(gulp.dest(config.build.less));
+        .pipe(gulp.dest(config.paths.build.less));
 }
 
 // Styles
 function css() {
     return gulp
-        .src([config.build.lessFile, config.skin.lessFileGlob])
+        .src([config.paths.build.lessFile, config.skin.lessFileGlob])
         .pipe(plumber())
         .pipe(
             less({
                 plugins: [new lessPluginAutoprefix()]
             })
         )
-        .pipe(gulp.dest(config.build.base))
+        .pipe(gulp.dest(config.paths.build.base))
         .pipe(
             cleanCss({
                 compatibility: "*",
@@ -91,7 +93,7 @@ function css() {
                 suffix: ".min"
             })
         )
-        .pipe(gulp.dest(config.build.base));
+        .pipe(gulp.dest(config.paths.build.base));
 }
 
 function cssLint() {
@@ -109,7 +111,7 @@ function js() {
         .src([config.src.js.glob])
         .pipe(plumber())
         .pipe(babel())
-        .pipe(gulp.dest(config.build.styleguideJs));
+        .pipe(gulp.dest(config.paths.build.styleguideJs));
 }
 
 function jsLint() {
@@ -122,10 +124,10 @@ function jsLint() {
 
 function compress() {
     return gulp
-        .src(config.build.cssMinFile)
+        .src(config.paths.build.cssMinFile)
         .pipe(plumber())
         .pipe(gzip())
-        .pipe(gulp.dest(config.build.base));
+        .pipe(gulp.dest(config.paths.build.base));
 }
 
 // Style guide
@@ -135,16 +137,16 @@ function styleguide() {
 
 function replaceVersion() {
     return gulp
-        .src(config.build.styleguideIndexFile)
+        .src(config.paths.build.styleguideIndexFile)
         .pipe(plumber())
-        .pipe(replace("[[version]]", config.version))
-        .pipe(gulp.dest(config.build.styleguide));
+        .pipe(replace("{{version}}", config.version))
+        .pipe(gulp.dest(config.paths.build.styleguide));
 }
 
 // Size report
 function sizeReport() {
     return gulp
-        .src(config.build.rootGlob)
+        .src(config.paths.build.rootGlob)
         .pipe(plumber())
         .pipe(
             sizeReporter({

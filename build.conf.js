@@ -10,11 +10,6 @@ module.exports = () => {
     const srcBase = "./src/";
     const supportedBrowsers = pkg.browserslist;
 
-    const plugins = {
-        pattern: ["del", "less-*", "run-*"],
-        overridePattern: false
-    };
-
     let licenseBanner = {
         pam: [
             "\n/*!",
@@ -40,12 +35,54 @@ module.exports = () => {
         ].join("\n")
     };
 
+    const files = {
+        src: {
+            lessBase: "base.less"
+        }
+    };
+
+    const paths = {
+        src: {
+            rootGlob: `${srcBase}**/*`,
+            jsGlob: `${srcBase}js/**`,
+            lessGlob: `${srcBase}less/**`
+        },
+        build: {
+            base: buildBase,
+            baseGlob: `${buildBase}**`,
+            cssFile: `${buildBase}pam.css`,
+            cssMinFile: `${buildBase}pam.min.css`,
+            cssSkinsGlob: `${buildBase}*-skin.css`,
+            less: `${buildBase}less/`,
+            lessFile: `${buildBase}less/pam.less`,
+            lessFileBase: `${buildBase}less/base.less`,
+            lessFileFont: `${buildBase}less/font.less`,
+            lessGlob: `${buildBase}less/**`,
+            rootGlob: `${buildBase}*`,
+            styleguide: `${buildBase}styleguide/`,
+            styleguideCss: `${buildBase}styleguide/kss-assets/css/`,
+            styleguideIndexFile: `${buildBase}styleguide/index.html`,
+            styleguideJs: `${buildBase}styleguide/kss-assets/js/`
+        },
+        dist: {
+            base: distBase,
+            less: `${distBase}less/`,
+            styleGuide: `${distBase}styleguide/`
+        },
+        skin: {
+            base: skinsBase,
+            baseGlob: `${skinsBase}**`,
+            lessFileGlob: `${skinsBase}*-skin.less`
+        }
+    };
+
     return {
         version: version,
         pkg: pkg,
         supportedBrowsers: supportedBrowsers,
-        plugins: plugins,
         banner: `${licenseBanner.pam}${licenseBanner.pure}${licenseBanner.normalize}`,
+        files: files,
+        paths: paths,
         file: {
             less: {
                 base: "base.less"
