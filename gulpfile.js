@@ -1,18 +1,18 @@
 "use strict";
 
 // Config
-const config = require("./build.conf.js")();
+const { version, pkg, paths, files, banner } = require("./build.conf.js")();
 const browserSyncConfig = require("./bs-config.js");
 const kssConfig = require("./kss-config.json");
 
 // Modules
 const babel = require("gulp-babel");
-const banner = require("gulp-banner");
+const banners = require("gulp-banner");
 const cleanCss = require("gulp-clean-css");
 const concat = require("gulp-concat");
 const del = require("del");
 const eslint = require("gulp-eslint");
-const gulp = require("gulp");
+const { src, dest, series, parallel, watch } = require("gulp");
 const gzip = require("gulp-gzip");
 const kss = require("kss");
 const less = require("gulp-less");
@@ -26,61 +26,52 @@ const stylelint = require("gulp-stylelint");
 
 // Clean
 function cleanBuild() {
-    return del(config.paths.build.base);
+    return del(paths.build.base);
 }
 
 function cleanDist() {
-    return del(config.paths.dist.base);
+    return del(paths.dist.base);
 }
 
 // Copy
 function copyBuild() {
-    return gulp.src(config.paths.src.lessGlob).pipe(gulp.dest(config.paths.build.less));
+    return src(paths.src.lessGlob).pipe(dest(paths.build.less));
 }
 
 function copyDist() {
-    return gulp.src([config.paths.build.baseGlob, "!build/**/*-skin.css"]).pipe(gulp.dest(config.paths.dist.base));
+    return src([paths.build.baseGlob, "!build/**/*-skin.css"]).pipe(dest(paths.dist.base));
 }
 
-function copyPamToSG() {
-    return gulp
-        .src([config.paths.build.cssFile, config.paths.build.cssSkinsGlob])
-        .pipe(gulp.dest(config.paths.build.styleguideCss));
+function copyCssToSG() {
+    return src([paths.build.cssFile, paths.build.cssSkinsGlob]).pipe(dest(paths.build.styleguideCss));
 }
 
 // Concat
 function concatBase() {
-    return gulp
-        .src([config.paths.node.normalize, config.paths.build.lessFileBase])
+    return src([paths.node.normalize, paths.build.lessFileBase])
         .pipe(plumber())
-        .pipe(concat(config.files.src.lessBase))
-        .pipe(
-            banner(config.banner, {
-                pkg: config.pkg
-            })
-        )
-        .pipe(gulp.dest(config.paths.build.less));
+        .pipe(concat(files.src.lessBase))
+        .pipe(banners(banner, { pkg: pkg }))
+        .pipe(dest(paths.build.less));
 }
 
 function concatFont() {
-    return gulp
-        .src([config.paths.build.lessFileFont, config.paths.build.lessFileBase])
+    return src([paths.build.lessFileFont, paths.build.lessFileBase])
         .pipe(plumber())
-        .pipe(concat(config.files.src.lessBase))
-        .pipe(gulp.dest(config.paths.build.less));
+        .pipe(concat(files.src.lessBase))
+        .pipe(dest(paths.build.less));
 }
 
 // Styles
 function css() {
-    return gulp
-        .src([config.paths.build.lessFile, config.paths.skin.lessFileGlob])
+    return src([paths.build.lessFile, paths.skin.lessFileGlob])
         .pipe(plumber())
         .pipe(
             less({
                 plugins: [new lessPluginAutoprefix()]
             })
         )
-        .pipe(gulp.dest(config.paths.build.base))
+        .pipe(dest(paths.build.base))
         .pipe(
             cleanCss({
                 compatibility: "*",
@@ -93,11 +84,11 @@ function css() {
                 suffix: ".min"
             })
         )
-        .pipe(gulp.dest(config.paths.build.base));
+        .pipe(dest(paths.build.base));
 }
 
 function cssLint() {
-    return gulp.src(config.paths.src.lessGlob).pipe(
+    return src(paths.src.lessGlob).pipe(
         stylelint({
             failAfterError: true,
             reporters: [{ formatter: "string", console: true }]
@@ -107,27 +98,24 @@ function cssLint() {
 
 // Scripts
 function js() {
-    return gulp
-        .src([config.paths.src.jsGlob])
+    return src([paths.src.jsGlob])
         .pipe(plumber())
         .pipe(babel())
-        .pipe(gulp.dest(config.paths.build.styleguideJs));
+        .pipe(dest(paths.build.styleguideJs));
 }
 
 function jsLint() {
-    return gulp
-        .src([config.paths.src.jsGlob, "gulpfile.js"])
+    return src([paths.src.jsGlob, "gulpfile.js"])
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
 }
 
 function compress() {
-    return gulp
-        .src(config.paths.build.cssMinFile)
+    return src(paths.build.cssMinFile)
         .pipe(plumber())
         .pipe(gzip())
-        .pipe(gulp.dest(config.paths.build.base));
+        .pipe(dest(paths.build.base));
 }
 
 // Style guide
@@ -136,17 +124,15 @@ function styleguide() {
 }
 
 function replaceVersion() {
-    return gulp
-        .src(config.paths.build.styleguideIndexFile)
+    return src(paths.build.styleguideIndexFile)
         .pipe(plumber())
-        .pipe(replace("{{version}}", config.version))
-        .pipe(gulp.dest(config.paths.build.styleguide));
+        .pipe(replace("{{version}}", version))
+        .pipe(dest(paths.build.styleguide));
 }
 
 // Size report
 function sizeReport() {
-    return gulp
-        .src(config.paths.build.rootGlob)
+    return src(paths.build.rootGlob)
         .pipe(plumber())
         .pipe(
             sizeReporter({
@@ -166,20 +152,19 @@ function serve(cb) {
 
 // Watch
 function watchFiles() {
-    gulp.watch([config.paths.src.rootGlob], buildDev);
+    watch([paths.src.rootGlob], buildDev);
 }
 
 //  Complex tasks
-const watch = gulp.parallel(watchFiles, serve);
-const buildStyleGuide = gulp.series(copyPamToSG, styleguide, replaceVersion);
-const styles = gulp.series(cssLint, css);
-const scripts = gulp.series(jsLint, js);
-const stylesAndScripts = gulp.parallel(styles, scripts);
-const concatFiles = gulp.series(concatBase, concatFont);
-const build = gulp.series(cleanBuild, copyBuild, concatFiles, stylesAndScripts, buildStyleGuide, sizeReport);
-const buildDev = gulp.series(copyBuild, concatFiles, stylesAndScripts, buildStyleGuide);
-const dev = gulp.series(build, watch);
-const dist = gulp.series(gulp.parallel(cleanDist, build), copyDist);
+const concatFiles = series(concatBase, concatFont);
+const styles = series(cssLint, css);
+const scripts = series(jsLint, js);
+const stylesAndScripts = parallel(styles, scripts);
+const buildStyleguide = series(copyCssToSG, styleguide, replaceVersion);
+const build = series(cleanBuild, copyBuild, concatFiles, stylesAndScripts, buildStyleguide, sizeReport);
+const buildDev = series(copyBuild, concatFiles, stylesAndScripts, buildStyleguide);
+const dev = series(build, parallel(watchFiles, serve));
+const dist = series(parallel(cleanDist, build), copyDist);
 
 // export tasks
 exports.build = build;
