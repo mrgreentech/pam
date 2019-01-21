@@ -73,6 +73,9 @@ module.exports = () => {
             base: skinsBase,
             baseGlob: `${skinsBase}**`,
             lessFileGlob: `${skinsBase}*-skin.less`
+        },
+        node: {
+            normalize: "./node_modules/normalize.css/normalize.css"
         }
     };
 
@@ -82,52 +85,6 @@ module.exports = () => {
         supportedBrowsers: supportedBrowsers,
         banner: `${licenseBanner.pam}${licenseBanner.pure}${licenseBanner.normalize}`,
         files: files,
-        paths: paths,
-        file: {
-            less: {
-                base: "base.less"
-            }
-        },
-        src: {
-            base: srcBase,
-            baseGlob: `${srcBase}**/*`,
-            js: {
-                glob: `${srcBase}js/**`
-            },
-            less: {
-                base: "base.less",
-                glob: `${srcBase}less/**`
-            }
-        },
-        build: {
-            base: buildBase,
-            baseGlob: `${buildBase}**`,
-            rootGlob: `${buildBase}*`,
-            cssFile: `${buildBase}pam.css`,
-            cssMinFile: `${buildBase}pam.min.css`,
-            cssSkinsGlob: `${buildBase}*-skin.css`,
-            less: `${buildBase}less/`,
-            lessFile: `${buildBase}less/pam.less`,
-            lessFileBase: `${buildBase}less/base.less`,
-            lessFileFont: `${buildBase}less/font.less`,
-            lessGlob: `${buildBase}less/**`,
-            styleguide: `${buildBase}styleguide/`,
-            styleguideCss: `${buildBase}styleguide/kss-assets/css/`,
-            styleguideJs: `${buildBase}styleguide/kss-assets/js/`,
-            styleguideIndexFile: `${buildBase}styleguide/index.html`
-        },
-        dist: {
-            base: distBase,
-            less: `${distBase}less/`,
-            styleGuide: `${distBase}styleguide/`
-        },
-        skin: {
-            base: skinsBase,
-            baseGlob: `${skinsBase}**`,
-            lessFileGlob: `${skinsBase}*-skin.less`
-        },
-        node: {
-            normalize: "./node_modules/normalize.css/normalize.css"
-        }
+        paths: paths
     };
 };

@@ -35,7 +35,7 @@ function cleanDist() {
 
 // Copy
 function copyBuild() {
-    return gulp.src(config.src.less.glob).pipe(gulp.dest(config.paths.build.less));
+    return gulp.src(config.paths.src.lessGlob).pipe(gulp.dest(config.paths.build.less));
 }
 
 function copyDist() {
@@ -51,9 +51,9 @@ function copyPamToSG() {
 // Concat
 function concatBase() {
     return gulp
-        .src([config.node.normalize, config.paths.build.lessFileBase])
+        .src([config.paths.node.normalize, config.paths.build.lessFileBase])
         .pipe(plumber())
-        .pipe(concat(config.file.less.base))
+        .pipe(concat(config.files.src.lessBase))
         .pipe(
             banner(config.banner, {
                 pkg: config.pkg
@@ -66,14 +66,14 @@ function concatFont() {
     return gulp
         .src([config.paths.build.lessFileFont, config.paths.build.lessFileBase])
         .pipe(plumber())
-        .pipe(concat(config.file.less.base))
+        .pipe(concat(config.files.src.lessBase))
         .pipe(gulp.dest(config.paths.build.less));
 }
 
 // Styles
 function css() {
     return gulp
-        .src([config.paths.build.lessFile, config.skin.lessFileGlob])
+        .src([config.paths.build.lessFile, config.paths.skin.lessFileGlob])
         .pipe(plumber())
         .pipe(
             less({
@@ -97,7 +97,7 @@ function css() {
 }
 
 function cssLint() {
-    return gulp.src(config.src.less.glob).pipe(
+    return gulp.src(config.paths.src.lessGlob).pipe(
         stylelint({
             failAfterError: true,
             reporters: [{ formatter: "string", console: true }]
@@ -108,7 +108,7 @@ function cssLint() {
 // Scripts
 function js() {
     return gulp
-        .src([config.src.js.glob])
+        .src([config.paths.src.jsGlob])
         .pipe(plumber())
         .pipe(babel())
         .pipe(gulp.dest(config.paths.build.styleguideJs));
@@ -116,7 +116,7 @@ function js() {
 
 function jsLint() {
     return gulp
-        .src([config.src.js.glob, "gulpfile.js"])
+        .src([config.paths.src.jsGlob, "gulpfile.js"])
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
@@ -166,7 +166,7 @@ function serve(cb) {
 
 // Watch
 function watchFiles() {
-    gulp.watch([config.src.baseGlob], buildDev);
+    gulp.watch([config.paths.src.rootGlob], buildDev);
 }
 
 //  Complex tasks
