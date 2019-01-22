@@ -1,9 +1,7 @@
 "use strict";
 
 // Config
-const { version, pkg, paths, files, banner } = require("./build.conf.js")();
-const browserSyncConfig = require("./bs-config.js");
-const kssConfig = require("./kss-config.json");
+const { pkg, paths, files, banner, browserSyncConfig, kssConfig } = require("./build.conf.js")();
 
 // Modules
 const babel = require("gulp-babel");
@@ -126,7 +124,7 @@ function styleguide() {
 function replaceVersion() {
     return src(paths.build.styleguideIndexFile)
         .pipe(plumber())
-        .pipe(replace("{{version}}", version))
+        .pipe(replace("{{version}}", pkg.version))
         .pipe(dest(paths.build.styleguide));
 }
 

@@ -1,14 +1,15 @@
+const browserSyncConfig = require("./bs-config.js");
+const kssConfig = require("./kss-config.json");
 const pkg = require("./package.json");
 
 module.exports = () => {
     "use strict";
 
-    const version = `${pkg.version}`;
+    const browserslist = pkg.browserslist;
     const buildBase = "./build/";
     const distBase = "./dist/";
     const skinsBase = "./skins/";
     const srcBase = "./src/";
-    const supportedBrowsers = pkg.browserslist;
 
     let licenseBanner = {
         pam: [
@@ -80,11 +81,12 @@ module.exports = () => {
     };
 
     return {
-        version: version,
-        pkg: pkg,
-        supportedBrowsers: supportedBrowsers,
         banner: `${licenseBanner.pam}${licenseBanner.pure}${licenseBanner.normalize}`,
+        browserslist: browserslist,
+        browserSyncConfig: browserSyncConfig,
         files: files,
-        paths: paths
+        kssConfig: kssConfig,
+        paths: paths,
+        pkg: pkg
     };
 };
