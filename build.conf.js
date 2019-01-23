@@ -2,7 +2,7 @@ const browserSyncConfig = require("./bs-config.js");
 const kssConfig = require("./kss-config.json");
 const pkg = require("./package.json");
 
-module.exports = () => {
+const config = () => {
     "use strict";
 
     const browserslist = pkg.browserslist;
@@ -90,3 +90,5 @@ module.exports = () => {
         pkg: pkg
     };
 };
+
+module.exports = config();

@@ -1,7 +1,7 @@
 "use strict";
 
 // Config
-const { pkg, paths, files, banner, browserSyncConfig, kssConfig } = require("./build.conf.js")();
+const { pkg, paths, files, banner, browserSyncConfig, kssConfig } = require("./build.conf.js");
 
 // Modules
 const babel = require("gulp-babel");
