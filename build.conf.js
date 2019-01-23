@@ -1,19 +1,15 @@
+const browserSyncConfig = require("./bs-config.js");
+const kssConfig = require("./kss-config.json");
 const pkg = require("./package.json");
 
-module.exports = () => {
+const config = () => {
     "use strict";
 
-    const version = `${pkg.version}`;
+    const browserslist = pkg.browserslist;
     const buildBase = "./build/";
     const distBase = "./dist/";
     const skinsBase = "./skins/";
     const srcBase = "./src/";
-    const supportedBrowsers = pkg.browserslist;
-
-    const plugins = {
-        pattern: ["del", "less-*", "run-*"],
-        overridePattern: false
-    };
 
     let licenseBanner = {
         pam: [
@@ -40,14 +36,16 @@ module.exports = () => {
         ].join("\n")
     };
 
-    return {
-        version: version,
-        pkg: pkg,
-        supportedBrowsers: supportedBrowsers,
-        plugins: plugins,
-        banner: `${licenseBanner.pam}${licenseBanner.pure}${licenseBanner.normalize}`,
+    const files = {
         src: {
-            base: srcBase,
+            lessBase: "base.less"
+        }
+    };
+
+    const paths = {
+        src: {
+            rootGlob: `${srcBase}**/*`,
+            jsGlob: `${srcBase}js/**`,
             lessGlob: `${srcBase}less/**`
         },
         build: {
@@ -61,9 +59,11 @@ module.exports = () => {
             lessFileBase: `${buildBase}less/base.less`,
             lessFileFont: `${buildBase}less/font.less`,
             lessGlob: `${buildBase}less/**`,
+            rootGlob: `${buildBase}*`,
             styleguide: `${buildBase}styleguide/`,
             styleguideCss: `${buildBase}styleguide/kss-assets/css/`,
-            styleguideIndexFile: `${buildBase}styleguide/index.html`
+            styleguideIndexFile: `${buildBase}styleguide/index.html`,
+            styleguideJs: `${buildBase}styleguide/kss-assets/js/`
         },
         dist: {
             base: distBase,
@@ -79,4 +79,16 @@ module.exports = () => {
             normalize: "./node_modules/normalize.css/normalize.css"
         }
     };
+
+    return {
+        banner: `${licenseBanner.pam}${licenseBanner.pure}${licenseBanner.normalize}`,
+        browserslist: browserslist,
+        browserSyncConfig: browserSyncConfig,
+        files: files,
+        kssConfig: kssConfig,
+        paths: paths,
+        pkg: pkg
+    };
 };
+
+module.exports = config();

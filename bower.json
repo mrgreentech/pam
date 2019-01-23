@@ -1,0 +1,31 @@
+{
+  "name": "pam",
+  "description": "PAM is a light, modular and flexible AMCSS library.",
+  "main": "dist/pam.min.css",
+  "authors": [
+    "The PAM Authors"
+  ],
+  "keywords": [
+    "css",
+    "amcss",
+    "less"
+  ],
+  "license": "BSD",
+  "homepage": "https://mrgreentech.github.io/pam/",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "src",
+    "tasks",
+    "Gruntfile.js",
+    "HISTORY.md",
+    "LICENSE.md",
+    "package.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrgreentech/pam.git"
+  }
+}
