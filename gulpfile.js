@@ -94,6 +94,13 @@ function cssLint() {
     );
 }
 
+function compress() {
+    return src(paths.build.cssMinFile)
+        .pipe(plumber())
+        .pipe(gzip())
+        .pipe(dest(paths.build.base));
+}
+
 // Scripts
 function js() {
     return src([paths.src.jsGlob])
@@ -107,13 +114,6 @@ function jsLint() {
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
-}
-
-function compress() {
-    return src(paths.build.cssMinFile)
-        .pipe(plumber())
-        .pipe(gzip())
-        .pipe(dest(paths.build.base));
 }
 
 // Style guide
