@@ -23,7 +23,7 @@
 -   Added skinning support.
 -   Added spacing vars for the base multiplier times 25. `@space-[8...100]`
 -   Added validation states for `pam-Input`.
--   Migrated from grunt to npm scripts and gulp.
+-   Migrated from grunt to gulp 4.
 -   Migrated from styledown to KSS styleguide documentation.
 -   Refactored `pam-Theme` to `pam-skin` and added new colors and styleguide documentation.
 -   Refactored buttons and changed the default button to not indicate a specific behaviour.

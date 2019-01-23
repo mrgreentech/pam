@@ -42,12 +42,11 @@ $ npm run build
 
 -   **build:** `npm run build`
 
-    It starts by linting all the less files in the source with `stylelint`.
-    After that gulp takes over and starts of by cleaning the build folders and copying the less source files to the build folder. Then files are concated and stamped with license banners. Now the less can be parsed to css which result in the `pam.css` file. The final step is to minify the css and then prepare the styleguide build by copying `pam.css` to the `styleguide` folder. Now it's time to build the styleguide and when that's done a file size report is shown in the console.
+    Runs `gulp build` which first cleans the build folder and then copies the source files after that some files needs to be concatenated. Now it's time to lint, parse and optimize styles and scripts. The build process finishes of by building a style guide and a size report.
 
 -   **dev:** `npm run dev`
 
-    This is the one to use for local development of PAM and it's kind of a mind bender. It starts of by doing a `build`, after that it runs browsersync and onchange in parallel. So that when a change in the `src` folder is done a build is triggered and when the files in the `build` folder is updated browsersync updates the browser with the changes.
+    Use this for local development of PAM. It starts of by doing a `gulp dev`, after that it runs browsersync and watch in parallel. So that when a change in the `src` folder is done a dev build is triggered and when the files in the `build` folder is updated browsersync updates the browser with the changes.
 
 -   **dist:** `npm run dist`
 
@@ -55,11 +54,27 @@ $ npm run build
 
 -   **test:** `npm test`
 
-    This simply runs a build since it contains all the steps that needs to be working.
+    Simply runs a build since it contains all the steps that PAM needs to be working properly.
 
-*   **stylelint:check:** `stylelint:check`
+-   **lint:css** `npm run lint:css`
+
+    Runs stylelint.
+
+-   **lint:js** `npm run lint:css`
+
+    Runs eslint.
+
+-   **lint** `npm run lint`
+
+    Runs stylelint and eslint.
+
+-   **stylelint:check:** `npm run stylelint:check`
 
     Check if stylelint and prettier have any conflicts at the moment.
+
+-   **eslint:check:** `npm run eslint:check`
+
+    Check if eslint and prettier have any conflicts at the moment.
 
 ## Issues
 
