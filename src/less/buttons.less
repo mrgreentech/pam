@@ -49,31 +49,37 @@
 @button-primary-border-color: @skin-primary;
 @button-primary-color: @skin-text;
 @button-primary-hover-background: lighten(@button-primary-background, @button-lighten);
+@button-primary-active-background: darken(@button-primary-background, @button-darken);
 
 @button-secondary-background: @skin-darker;
 @button-secondary-border-color: @skin-darker;
 @button-secondary-color: @skin-text;
 @button-secondary-hover-background: lighten(@button-secondary-background, @button-lighten);
+@button-secondary-active-background: darken(@button-secondary-background, @button-darken);
 
 @button-info-background: @skin-info;
 @button-info-border-color: @skin-info;
 @button-info-color: @skin-text;
 @button-info-hover-background: lighten(@button-info-background, @button-lighten);
+@button-info-active-background: darken(@button-info-background, @button-darken);
 
 @button-success-background: @skin-success;
 @button-success-border-color: @skin-success;
 @button-success-color: @skin-text;
 @button-success-hover-background: lighten(@button-success-background, @button-lighten);
+@button-success-active-background: darken(@button-success-background, @button-darken);
 
 @button-warning-background: @skin-warn;
 @button-warning-border-color: @skin-warn;
 @button-warning-color: @skin-text;
 @button-warning-hover-background: lighten(@button-warning-background, @button-lighten);
+@button-warning-active-background: darken(@button-warning-background, @button-darken);
 
 @button-danger-background: @skin-danger;
 @button-danger-border-color: @skin-danger;
 @button-danger-color: @skin-text;
 @button-danger-hover-background: lighten(@button-danger-background, @button-lighten);
+@button-danger-active-background: darken(@button-danger-background, @button-darken);
 
 @button-large-font-size: @font-size-large;
 @button-large-line-height: 2.4;
@@ -268,7 +274,7 @@ a[pam-Button~="primary"] {
     }
 
     &:active {
-        background-color: darken(@button-primary-background, @button-darken);
+        background-color: @button-primary-active-background;
         color: @button-primary-color;
     }
 
@@ -295,7 +301,7 @@ a[pam-Button~="secondary"] {
     }
 
     &:active {
-        background-color: darken(@button-secondary-background, @button-darken);
+        background-color: @button-secondary-active-background;
     }
 
     &:visited {
@@ -364,7 +370,7 @@ a[pam-Button~="info"] {
     }
 
     &:active {
-        background-color: darken(@button-info-background, @button-darken);
+        background-color: @button-info-active-background;
     }
 
     &:visited {
@@ -390,7 +396,7 @@ a[pam-Button~="success"] {
     }
 
     &:active {
-        background-color: darken(@button-success-background, @button-darken);
+        background-color: @button-success-active-background;
     }
 
     &:visited {
@@ -416,7 +422,7 @@ a[pam-Button~="warning"] {
     }
 
     &:active {
-        background-color: darken(@button-warning-background, @button-darken);
+        background-color: @button-warning-active-background;
     }
 
     &:visited {
@@ -442,7 +448,7 @@ a[pam-Button~="danger"] {
     }
 
     &:active {
-        background-color: darken(@button-danger-background, @button-darken);
+        background-color: @button-danger-active-background;
     }
 
     &:visited {
