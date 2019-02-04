@@ -289,6 +289,13 @@
 //
 // Style guide: grids.media
 
+//  Variables
+// ==================================================================
+
+@grid-spacing: @space-8;
+@grid-spacing-large: @space-16;
+@grid-spacing-small: @space-base;
+
 // ==================================================================
 //  Grid
 // ==================================================================
@@ -526,6 +533,77 @@
 // Weight: 6
 //
 // Style guide: grids.controls
+
+// Spacing
+//
+// Use `pam-Grid-Control="space[-x|-y]:[large|small]"` to control the spacing of the grid.
+//
+//
+// **Modifier(s):**
+//
+//  * `space`: Add spacing to both x and y.
+//  * `space-x`: Add spacing to x.
+//  * `space-y`: Add spacing to y.
+//
+// **Variable(s):**
+//
+// * `@grid-spacing`: Default grid spacing size (default: 8px).
+// * `@grid-spacing-large`: Large grid spacing (default: 16px).
+// * `@grid-spacing-small`: Small grid spacing (default: 4px).
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="1-1">
+//         <div pam-Unit-Test>
+//             <div pam-Grid pam-Grid-Control="space">
+//                 <div pam-Unit="1-2">
+//                     <div pam-Unit-Test>Space</div>
+//                 </div>
+//                 <div pam-Unit="1-2">
+//                     <div pam-Unit-Test>Space</div>
+//                 </div>
+//                 <div pam-Unit="1-2">
+//                     <div pam-Unit-Test>Space</div>
+//                 </div>
+//                 <div pam-Unit="1-2">
+//                     <div pam-Unit-Test>Space</div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-1">
+//         <div pam-Unit-Test>
+//             <div pam-Grid pam-Grid-Control="space-x">
+//                 <div pam-Unit="1-2">
+//                     <div pam-Unit-Test>Space X</div>
+//                 </div>
+//                 <div pam-Unit="1-2">
+//                     <div pam-Unit-Test>Space X</div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-1">
+//         <div pam-Unit-Test>
+//             <div pam-Grid pam-Grid-Control="space-y">
+//                 <div pam-Unit="1-1">
+//                     <div pam-Unit-Test>Space Y</div>
+//                 </div>
+//                 <div pam-Unit="1-1">
+//                     <div pam-Unit-Test>Space Y</div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 0
+//
+// Style guide: grids.controls.spacing
+
+.grid-control-space();
+.grid-control-space(":large", @grid-spacing-large);
+.grid-control-space(":small", @grid-spacing-small);
 
 // Direction
 //
