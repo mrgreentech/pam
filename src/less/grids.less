@@ -293,6 +293,8 @@
 // ==================================================================
 
 @grid-spacing: @space-8;
+@grid-spacing-large: @space-16;
+@grid-spacing-small: @space-base;
 
 // ==================================================================
 //  Grid
@@ -534,7 +536,8 @@
 
 // Spacing
 //
-// Use `pam-Grid-Control="space[-x|-y]"` to control the spacing of the grid.
+// Use `pam-Grid-Control="space[-x|-y]:[large|small]"` to control the spacing of the grid.
+//
 //
 // **Modifier(s):**
 //
@@ -544,8 +547,9 @@
 //
 // **Variable(s):**
 //
-// * `@grid-spacing`: Used to set spacing size. Use this varible
-// for customization of grid spacing.
+// * `@grid-spacing`: Default grid spacing size (default: 8px).
+// * `@grid-spacing-large`: Large grid spacing (default: 16px).
+// * `@grid-spacing-small`: Small grid spacing (default: 4px).
 //
 // Markup:
 // <div pam-Grid>
@@ -597,23 +601,9 @@
 //
 // Style guide: grids.controls.spacing
 
-[pam-Grid][pam-Grid-Control~="space"],
-[pam-Grid][pam-Grid-Control~="space-x"] {
-    margin: 0 -@grid-spacing / 2;
-
-    & > [pam-Unit] {
-        padding: 0 @grid-spacing / 2;
-    }
-}
-
-[pam-Grid][pam-Grid-Control~="space"],
-[pam-Grid][pam-Grid-Control~="space-y"] {
-    margin-bottom: -@grid-spacing;
-
-    & > [pam-Unit] {
-        padding-bottom: @grid-spacing;
-    }
-}
+.grid-control-space();
+.grid-control-space(":large", @grid-spacing-large);
+.grid-control-space(":small", @grid-spacing-small);
 
 // Direction
 //
