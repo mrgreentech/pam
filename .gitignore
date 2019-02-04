@@ -14,8 +14,14 @@ npm-debug.log*
 package-lock.json
 yarn.lock
 
+# Mac OS X
+.DS_Store
+
 # Sublime
 *.sublime-workspace
+
+# VSCode
+.vscode
 
 # Yarn
 .yarnclean
