@@ -187,22 +187,33 @@
     .hook-typography-button;
 }
 
-// Paragraph Modifiers
+//  Alignment modifiers
+// ==================================================================
+
+// Alignment
 //
-// All typography tags support additional modifiers to set the paragraph behavior for that block.
+// Use `pam-typography="[left|center|right]"` to align content of a
+// typography block element.
 //
 // Markup:
-// <p pam-typography="headline center" pam-Typography-Text>Centered Headline</p>
+// <p pam-typography="headline left" pam-Typography-Text>Headline left</p>
+// <p pam-typography="headline center" pam-Typography-Text>Headline center</p>
+// <p pam-typography="headline right" pam-Typography-Text>Headline right</p>
 //
-// Weight: 5
+// Weight: 1
 //
-// Style guide: typography.paragraph-modifiers
+// Style guide: typography.alignment
 
-//  Paragraph Modifiers
-// ==================================================================
+[pam-typography~="left"] {
+    text-align: left;
+}
 
 [pam-typography~="center"] {
     text-align: center;
+}
+
+[pam-typography~="right"] {
+    text-align: right;
 }
 
 //  Deprecated typography
@@ -210,78 +221,16 @@
 
 // Deprecated
 //
-// These typography rulez will be deprecated in version **1.0.0+**.
+// These typography rulez will be deprecated in version **1.0.0**.
 //
-// <div pam-Alert="warning" role="alert">
-//    <strong>Deprecated:</strong> Styling for legacy typography types. Support will be dropped
-//    after PAM version 1.0+.
-// </div>
+// * `subheader`: Subheader
+// * `form`: Form
+// * `bodys:strong`: Body strong
+// * `small`: Small
 //
-// Markup:
-// <p pam-typography="subheader" pam-Typography-Text>Subheader</p>
-// <p pam-typography="form" pam-Typography-Text>Form</p>
-// <p pam-typography="body:strong" pam-Typography-Text>Body strong</p>
-// <p pam-typography="small" pam-Typography-Text>Small</p>
+// Weight: 2
 //
 // Style guide: typography.deprecated
-
-//  Variables
-
-@typography-subheader-font-size: @font-size-large;
-@typography-subheader-font-weight: @font-weight-light;
-@typography-subheader-line-height: @line-height-secondary;
-
-@typography-form-font-size: @font-size-medium;
-@typography-form-font-weight: @font-weight-light;
-@typography-form-line-height: @line-height-base;
-
-@typography-small-font-size: @font-size-xxsmall;
-@typography-small-font-weight: @font-weight-light;
-@typography-small-line-height: @line-height-base;
-
-//  Subheader [deprecated]
-// ==================================================================
-
-[pam-typography~="subheader"] {
-    font-size: @typography-subheader-font-size;
-    font-weight: @typography-subheader-font-weight;
-    line-height: @typography-subheader-line-height;
-
-    .hook-typography-subheader;
-}
-
-//  Form [deprecated]
-// ==================================================================
-
-[pam-typography~="form"] {
-    font-size: @typography-form-font-size;
-    font-weight: @typography-form-font-weight;
-    line-height: @typography-form-line-height;
-
-    .hook-typography-form;
-}
-
-//  Body strong [deprecated]
-// ==================================================================
-
-[pam-typography~="body:strong"] {
-    font-size: @typography-body-font-size;
-    font-weight: @font-weight-medium;
-    line-height: @typography-body-line-height;
-
-    .hook-typography-body-strong;
-}
-
-//  Small [deprecated]
-// ==================================================================
-
-[pam-typography~="small"] {
-    font-size: @typography-small-font-size;
-    font-weight: @typography-small-font-weight;
-    line-height: @typography-small-line-height;
-
-    .hook-typography-small;
-}
 
 //  Hooks
 // ==================================================================
@@ -305,6 +254,8 @@
 // `.hook-typography-subheading`
 // `.hook-typography-title`
 //
+// Weight: 5
+//
 // Style guide: typography.hooks
 
 /* stylelint-disable block-no-empty */
@@ -313,8 +264,6 @@
 .hook-typography-body-1() {
 }
 .hook-typography-body-2() {
-}
-.hook-typography-body-strong() {
 }
 .hook-typography-button() {
 }
@@ -328,13 +277,7 @@
 }
 .hook-typography-display-4() {
 }
-.hook-typography-form() {
-}
 .hook-typography-headline() {
-}
-.hook-typography-small() {
-}
-.hook-typography-subheader() {
 }
 .hook-typography-subheading() {
 }
