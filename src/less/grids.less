@@ -597,14 +597,7 @@
 //
 // Style guide: grids.controls.spacing
 
-[pam-Grid][pam-Grid-Control~="space"] {
-    margin: 0 -@grid-spacing / 2 -@grid-spacing;
-
-    & > [pam-Unit] {
-        padding: 0 @grid-spacing / 2 @grid-spacing;
-    }
-}
-
+[pam-Grid][pam-Grid-Control~="space"],
 [pam-Grid][pam-Grid-Control~="space-x"] {
     margin: 0 -@grid-spacing / 2;
 
@@ -613,6 +606,7 @@
     }
 }
 
+[pam-Grid][pam-Grid-Control~="space"],
 [pam-Grid][pam-Grid-Control~="space-y"] {
     margin-bottom: -@grid-spacing;
 
