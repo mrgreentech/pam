@@ -532,6 +532,95 @@
 //
 // Style guide: grids.controls
 
+// Spacing
+//
+// Use `pam-Grid-Control="space[-x|-y]"` to control the spacing of the grid.
+//
+// **Modifier(s):**
+//
+//  * `space`: Add spacing to both x and y.
+//  * `space-x`: Add spacing to x.
+//  * `space-y`: Add spacing to y.
+//
+// **Variable(s):**
+//
+// * `@grid-spacing`: Used to set spacing size. Use this varible
+// for customization of grid spacing.
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="1-1">
+//         <div pam-Unit-Test>
+//             <div pam-Grid pam-Grid-Control="space">
+//                 <div pam-Unit="1-2">
+//                     <div pam-Unit-Test>Space</div>
+//                 </div>
+//                 <div pam-Unit="1-2">
+//                     <div pam-Unit-Test>Space</div>
+//                 </div>
+//                 <div pam-Unit="1-2">
+//                     <div pam-Unit-Test>Space</div>
+//                 </div>
+//                 <div pam-Unit="1-2">
+//                     <div pam-Unit-Test>Space</div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-1">
+//         <div pam-Unit-Test>
+//             <div pam-Grid pam-Grid-Control="space-x">
+//                 <div pam-Unit="1-2">
+//                     <div pam-Unit-Test>Space X</div>
+//                 </div>
+//                 <div pam-Unit="1-2">
+//                     <div pam-Unit-Test>Space X</div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-1">
+//         <div pam-Unit-Test>
+//             <div pam-Grid pam-Grid-Control="space-y">
+//                 <div pam-Unit="1-1">
+//                     <div pam-Unit-Test>Space Y</div>
+//                 </div>
+//                 <div pam-Unit="1-1">
+//                     <div pam-Unit-Test>Space Y</div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 0
+//
+// Style guide: grids.controls.spacing
+
+[pam-Grid][pam-Grid-Control~="space"] {
+    margin: 0 -@grid-spacing / 2 -@grid-spacing;
+
+    & > [pam-Unit] {
+        padding: 0 @grid-spacing / 2 @grid-spacing;
+    }
+}
+
+[pam-Grid][pam-Grid-Control~="space-x"] {
+    margin: 0 -@grid-spacing / 2;
+
+    & > [pam-Unit] {
+        padding: 0 @grid-spacing / 2;
+    }
+}
+
+[pam-Grid][pam-Grid-Control~="space-y"] {
+    margin-bottom: -@grid-spacing;
+
+    & > [pam-Unit] {
+        padding-bottom: @grid-spacing;
+    }
+}
+
 // Direction
 //
 // Use `pam-Grid-Control="direction:[row|row-reverse|column|column-reverse]"`
@@ -568,57 +657,6 @@
 
 [pam-Grid][pam-Grid-Control~="direction:column-reverse"] {
     flex-direction: column-reverse;
-}
-
-// Spacing
-//
-// Use `pam-Grid-Control="[space-x|space-y]"`
-// to control the spacing of the grid.
-//
-// Spacing size can be customize by variable `@grid-spacing`.
-//
-// Markup:
-// <div pam-Grid pam-Grid-Control="space-x">
-//     <div pam-Unit="1-3">
-//         <div pam-Unit-Test>Space X</div>
-//     </div>
-//     <div pam-Unit="1-3">
-//         <div pam-Unit-Test>Space X</div>
-//     </div>
-//     <div pam-Unit="1-3">
-//         <div pam-Unit-Test>Space X</div>
-//     </div>
-// </div>
-// <div pam-Grid pam-Grid-Control="space-y">
-//     <div pam-Unit="1-1">
-//         <div pam-Unit-Test>Space Y</div>
-//     </div>
-//     <div pam-Unit="1-1">
-//         <div pam-Unit-Test>Space Y</div>
-//     </div>
-//     <div pam-Unit="1-1">
-//         <div pam-Unit-Test>Space Y</div>
-//     </div>
-// </div>
-//
-// Weight: 1
-//
-// Style guide: grids.controls.spacing
-
-[pam-Grid][pam-Grid-Control~="space-x"] {
-    margin: 0 -@grid-spacing / 2;
-
-    & > [pam-Unit] {
-        padding: 0 @grid-spacing / 2;
-    }
-}
-
-[pam-Grid][pam-Grid-Control~="space-y"] {
-    margin-bottom: -@grid-spacing;
-
-    & > [pam-Unit] {
-        padding-bottom: @grid-spacing;
-    }
 }
 
 // Wrap
