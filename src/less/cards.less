@@ -1,3 +1,22 @@
+// Cards
+//
+// Cards are surfaces that display content and actions on a single topic.
+// Elements, like text and images, should be placed on them in a way that
+// clearly indicates intention.
+//
+// Markup:
+// <div pam-Card="">
+//     <h3>Card</h3>
+//     <div pam-Card-Section="">Stuff</div>
+// </div>
+//
+// Weight: 6
+//
+// Style guide: cards
+
+//  Variables
+// ==================================================================
+
 @card-background: @skin-lighter;
 @card-border-radius: @border-radius-base;
 @card-padding: @space-12;
@@ -7,6 +26,10 @@
 @card-primary-background: @skin-primary-dark;
 @card-primary-color: @skin-text;
 @card-primary-shadow: @shadow-raised-high;
+
+// ==================================================================
+//  Button
+// ==================================================================
 
 [pam-Card] {
     background: @card-background;
@@ -43,6 +66,9 @@
     .hook-card();
 }
 
+//  Variations
+// ==================================================================
+
 [pam-Card~="primary"] {
     background: @card-primary-background;
     color: @card-primary-color;
@@ -75,7 +101,7 @@
 //
 // Weight: 1
 //
-// Style guide: buttons.hooks
+// Style guide: cards.hooks
 
 /* stylelint-disable block-no-empty */
 .hook-card() {
