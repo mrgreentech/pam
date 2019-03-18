@@ -17,10 +17,10 @@
 //  Variables
 // ==================================================================
 
-@card-background: @skin-lighter;
+@card-background: @skin-white;
 @card-border-radius: @border-radius-base;
-@card-padding: @space-12;
-@card-section-spacing: @space-12;
+@card-padding: @space-16;
+@card-section-spacing: @space-16;
 @card-shadow: @shadow-raised;
 
 @card-primary-background: @skin-primary-dark;
@@ -34,6 +34,8 @@
 [pam-Card] {
     background: @card-background;
     border-radius: @card-border-radius;
+    border: 1px solid darken(@card-background, 10%);
+    cursor: pointer;
     padding: @card-padding;
 
     [pam-Card-Section] {
