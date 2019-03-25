@@ -95,6 +95,11 @@ Head over to the PAM [style guide][style-guide-link] for documentation and examp
 4.  Push to the branch: `git push origin my-new-feature`
 5.  Submit a pull request
 
+### Building the styleguide
+
+1. `npm run dist`
+2. `npm run styleguide`
+
 ## History
 
 PAM v1 ([Legendary grasshopper][legendary-grasshopper-link]) is in the making so stay tuned...
