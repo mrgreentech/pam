@@ -6,8 +6,20 @@
 //
 // Markup:
 // <div pam-Card="">
-//     <h3>Card</h3>
-//     <div pam-Card-Section="">Stuff</div>
+//     <figure pam-Card-Media>
+//         <img src="https://www.fillmurray.com/350/200" pam-Card-Image="" />
+//     </figure>
+//     <header pam-Card-Header="">
+//         <h1 pam-Typography="title">Card supreme</h1>
+//         <h2 pam-Typography="subheading">By Chuck Norris</h2>
+//     </header>
+//     <section pam-Card-Content>Here goes some text!</section>
+//     <section pam-Card-Actions>
+//         <div>
+//             <button pam-Button="info flat small">Tomte</button>
+//             <button pam-Button="info flat small">Orvar</button>
+//         </div>
+//     </section>
 // </div>
 //
 // Weight: 6
@@ -22,6 +34,7 @@
 @card-padding: @space-16;
 @card-section-spacing: @space-16;
 @card-shadow: @shadow-raised;
+@card-shadow-raised: @shadow-raised-high;
 
 @card-primary-background: @skin-primary-dark;
 @card-primary-color: @skin-text;
@@ -32,11 +45,17 @@
 // ==================================================================
 
 [pam-Card] {
+    display: flex;
+    flex-direction: column;
     background: @card-background;
     border-radius: @card-border-radius;
-    border: 1px solid darken(@card-background, 10%);
+    box-shadow: @card-shadow;
+    max-width: 350px;
     cursor: pointer;
-    padding: @card-padding;
+
+    &:hover {
+        box-shadow: @card-shadow-raised;
+    }
 
     [pam-Card-Section] {
         &:not(:first-of-type) {
@@ -65,6 +84,41 @@
         .hook-card-section-fill();
     }
 
+    [pam-Card-Media] {
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: cover;
+        border-radius: 4px 4px 0 0;
+        height: 56.25%;
+
+        &::before {
+            // 16:9 format
+            content: "";
+            // display: block;
+            margin-top: 56.25%;
+        }
+
+        [pam-Card-Image] {
+            max-width: 100%;
+            border-radius: inherit;
+        }
+
+        [pam-Card-Media-Content] {
+            display: inline-flex;
+        }
+    }
+
+    [pam-Card-Header] {
+        padding: @card-padding;
+    }
+    [pam-Card-Content] {
+        padding: 0 @card-padding @card-padding / 2 @card-padding;
+    }
+
+    [pam-Card-Actions] {
+        padding: @card-padding / 2;
+    }
+
     .hook-card();
 }
 
@@ -79,7 +133,7 @@
 }
 
 [pam-Card~="raised"] {
-    box-shadow: @card-shadow;
+    box-shadow: @card-shadow-raised;
 
     .hook-card-raised();
 }
@@ -87,6 +141,10 @@
     box-shadow: @card-primary-shadow;
 
     .hook-card-primary-raised();
+}
+
+[pam-Card~="flat"] {
+    border: 1px solid darken(@card-background, 10%);
 }
 
 // Hooks
