@@ -5,22 +5,34 @@
 // clearly indicates intention.
 //
 // Markup:
-// <div pam-Card="">
-//     <figure pam-Card-Media>
-//         <img src="https://www.fillmurray.com/350/200" pam-Card-Image="" />
-//     </figure>
-//     <header pam-Card-Header="">
-//         <h1 pam-Typography="title">Card supreme</h1>
-//         <h2 pam-Typography="subheading">By Chuck Norris</h2>
-//     </header>
-//     <section pam-Card-Content>Here goes some text!</section>
+// <div pam-Card="{{modifier_class}}">
+//     <div pam-Card-Primary-Action>
+//         <figure pam-Card-Media>
+//             <img src="https://www.fillmurray.com/350/200" pam-Card-Image="" />
+//         </figure>
+//         <header pam-Card-Header="">
+//             <h1 pam-Typography="title">Bill Murray</h1>
+//             <p pam-Typography="caption">By Chuck Norris</p>
+//         </header>
+//         <section pam-Card-Content>Put some text here to summarize and describe what
+//         the card is all about.</section>
+//     </div>
 //     <section pam-Card-Actions>
 //         <div>
-//             <button pam-Button="info flat small">Tomte</button>
-//             <button pam-Button="info flat small">Orvar</button>
+//             <button pam-Button="primary flat">Action 1</button>
+//             <button pam-Button="primary flat">Action 2</button>
+//             <button pam-Button="circle flat">
+//                 <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
+//             </button>
+//             <button pam-Button="circle flat">
+//                 <img sg-mock-button-icon src="kss-assets/img/logo.svg" />
+//             </button>
 //         </div>
 //     </section>
 // </div>
+//
+// raised - Raises the card by applying a larger shadow.
+// flat - No shadow.
 //
 // Weight: 6
 //
@@ -35,13 +47,14 @@
 @card-section-spacing: @space-16;
 @card-shadow: @shadow-raised;
 @card-shadow-raised: @shadow-raised-high;
+@card-max-width: 350px;
 
 @card-primary-background: @skin-primary-dark;
 @card-primary-color: @skin-text;
 @card-primary-shadow: @shadow-raised-high;
 
 // ==================================================================
-//  Button
+//  Card
 // ==================================================================
 
 [pam-Card] {
@@ -50,11 +63,27 @@
     background: @card-background;
     border-radius: @card-border-radius;
     box-shadow: @card-shadow;
-    max-width: 350px;
+    max-width: @card-max-width;
     cursor: pointer;
 
-    &:hover {
-        box-shadow: @card-shadow-raised;
+    [pam-Card-Primary-Action] {
+        position: relative;
+
+        &::before {
+            background-color: #000;
+            content: "";
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        &:hover::before {
+            opacity: 0.08;
+        }
     }
 
     [pam-Card-Section] {
@@ -110,13 +139,28 @@
 
     [pam-Card-Header] {
         padding: @card-padding;
+
+        > * {
+            margin: 0;
+        }
     }
     [pam-Card-Content] {
+        font-size: @font-size-medium;
         padding: 0 @card-padding @card-padding / 2 @card-padding;
     }
 
     [pam-Card-Actions] {
-        padding: @card-padding / 2;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        min-height: 52px;
+        padding: @card-padding / 2 @card-padding / 4;
+
+        [pam-Button] {
+            min-width: initial;
+            padding-left: @card-padding / 2;
+            padding-right: @card-padding / 2;
+        }
     }
 
     .hook-card();
@@ -137,14 +181,10 @@
 
     .hook-card-raised();
 }
-[pam-Card~="raised"][pam-Card~="primary"] {
-    box-shadow: @card-primary-shadow;
-
-    .hook-card-primary-raised();
-}
 
 [pam-Card~="flat"] {
-    border: 1px solid darken(@card-background, 10%);
+    border: 1px solid darken(@card-background, 15%);
+    box-shadow: none;
 }
 
 // Hooks
@@ -155,7 +195,6 @@
 // `.hook-card`
 // `.hook-card-raised`
 // `.hook-card-primary`
-// `.hook-card-primary-raised`
 // `.hook-card-section`
 // `.hook-card-section-fill`
 //
