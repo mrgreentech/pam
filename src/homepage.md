@@ -19,12 +19,6 @@
         <a href="https://github.com/mrgreentech/pam" pam-Button="primary outlined large">GitHub</a>
     </div>
     <footer>
-        <div pam-Menu="vertical">
-            <ul pam-Menu-List>
-                <li pam-Menu-Item>
-                    <span pam-Tag="danger">Version {{version}}</span>
-                </li>
-            </ul>
-        </div>
+        <span pam-Tag="danger">Version {{version}}</span>
     </footer>
 </div>
