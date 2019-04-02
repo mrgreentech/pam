@@ -7,15 +7,37 @@
 // Markup:
 // <div pam-Card="{{modifier_class}}">
 //     <div pam-Card-Primary-Action>
-//         <figure pam-Card-Media>
-//             <img src="https://www.fillmurray.com/350/200" pam-Card-Image="" />
-//         </figure>
-//         <header pam-Card-Header="">
+//         <section pam-Card-Primary="">
+//             <h1 pam-Typography="title"> Card</h1>
+//             <p pam-Typography="body-1">Text to summarize and describe what the card is all about.</p>
+//         </section>
+//     </div>
+// </div>
+//
+// raised - Raises the card by applying a larger shadow.
+// flat - No shadow.
+//
+// Weight: 6
+//
+// Style guide: cards
+
+// Variations
+//
+// There are a couple of variations of cards that can be created.
+//
+// Markup:
+// <div pam-Card="">
+//     <div pam-Card-Primary-Action>
+//         <div pam-Card-Media>
+//             <img src="https://www.fillmurray.com/350/204" pam-Card-Image="" />
+//         </div>
+//         <section pam-Card-Primary="">
 //             <h1 pam-Typography="title">Bill Murray</h1>
-//             <p pam-Typography="caption">By Chuck Norris</p>
-//         </header>
-//         <section pam-Card-Content>Put some text here to summarize and describe what
-//         the card is all about.</section>
+//             <p pam-Typography="body-1">By Chuck Norris</p>
+//         </section>
+//         <section pam-Card-Secondary pam-Typography="body-1">
+//         Put some text here to summarize and describe what the card is all about.
+//         </section>
 //     </div>
 //     <section pam-Card-Actions>
 //         <div>
@@ -31,12 +53,9 @@
 //     </section>
 // </div>
 //
-// raised - Raises the card by applying a larger shadow.
-// flat - No shadow.
+// Weight: 1
 //
-// Weight: 6
-//
-// Style guide: cards
+// Style guide: cards.variations
 
 //  Variables
 // ==================================================================
@@ -58,13 +77,13 @@
 // ==================================================================
 
 [pam-Card] {
-    display: flex;
-    flex-direction: column;
     background: @card-background;
     border-radius: @card-border-radius;
     box-shadow: @card-shadow;
-    max-width: @card-max-width;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    max-width: @card-max-width;
 
     [pam-Card-Primary-Action] {
         position: relative;
@@ -114,6 +133,7 @@
     }
 
     [pam-Card-Media] {
+        position: relative;
         background-repeat: no-repeat;
         background-position: 50%;
         background-size: cover;
@@ -123,7 +143,6 @@
         &::before {
             // 16:9 format
             content: "";
-            // display: block;
             margin-top: 56.25%;
         }
 
@@ -137,14 +156,14 @@
         }
     }
 
-    [pam-Card-Header] {
+    [pam-Card-Primary] {
         padding: @card-padding;
 
         > * {
             margin: 0;
         }
     }
-    [pam-Card-Content] {
+    [pam-Card-Secondary] {
         font-size: @font-size-medium;
         padding: 0 @card-padding @card-padding / 2 @card-padding;
     }
@@ -198,7 +217,7 @@
 // `.hook-card-section`
 // `.hook-card-section-fill`
 //
-// Weight: 1
+// Weight: 6
 //
 // Style guide: cards.hooks
 
