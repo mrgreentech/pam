@@ -39,31 +39,30 @@
 
 @alert-primary-background: lighten(@skin-primary, 30%);
 @alert-primary-border: darken(@alert-primary-background, 5%);
-@alert-primary-color: darken(@alert-primary-background, 40%);
+@alert-primary-color: darken(@alert-primary-background, 50%);
 
 @alert-secondary-background: lighten(@skin-darker, 30%);
 @alert-secondary-border: darken(@alert-secondary-background, 5%);
-@alert-secondary-color: darken(@alert-secondary-background, 40%);
+@alert-secondary-color: darken(@alert-secondary-background, 50%);
 
 @alert-info-background: lighten(@skin-info, 30%);
 @alert-info-border: darken(@alert-info-background, 5%);
-@alert-info-color: darken(@alert-info-background, 40%);
+@alert-info-color: darken(@alert-info-background, 50%);
 
 @alert-success-background: lighten(@skin-success, 30%);
 @alert-success-border: darken(@alert-success-background, 5%);
-@alert-success-color: darken(@alert-success-background, 40%);
+@alert-success-color: darken(@alert-success-background, 50%);
 
 @alert-warning-background: lighten(@skin-warn, 30%);
 @alert-warning-border: darken(@alert-warning-background, 5%);
-@alert-warning-color: darken(@alert-warning-background, 40%);
+@alert-warning-color: darken(@alert-warning-background, 50%);
 
 @alert-danger-background: lighten(@skin-danger, 30%);
 @alert-danger-border: darken(@alert-danger-background, 5%);
-@alert-danger-color: darken(@alert-danger-background, 40%);
+@alert-danger-color: darken(@alert-danger-background, 50%);
 
-@alert-callout-background: @skin-text;
-@alert-callout-border-left-width: @space-base;
-@alert-callout-border-width: 1px 1px 1px @alert-callout-border-left-width;
+@alert-outlined-background: @skin-text;
+
 @alert-link-font-weight: @font-weight-bold;
 
 @alert-large-padding: @space-20;
@@ -75,7 +74,7 @@
 [pam-Alert] {
     background: @alert-background;
     border-radius: @alert-border-radius;
-    border: 0 solid @alert-border-color;
+    border: 1px solid @alert-border-color;
     border-left-width: @alert-border-left-width;
     color: @alert-color;
     display: block;
@@ -170,98 +169,53 @@
     .hook-alert-danger;
 }
 
-//  Modifier: callout
+//  Modifier: outlined
 // ==================================================================
 
-// Callout
+// Outlined
 //
 // This variation of alerts has a more emphasized styling and is a alternative way
 // to draw attention to information.
 //
 // Markup:
-// <div pam-Alert="callout {{modifier_class}}">
+// <div pam-Alert="outlined">
 //     <h1>Title</h1>
-//     <p>Callout message</p>
+//     <p>outlined message</p>
 // </div>
-//
-// primary - This is primary callout.
-// secondary - This is secondary callout.
-// info - This is not important information, carry on.
-// success - Something was successfully done!
-// warning - Yes, this is something to pay attention to!
-// danger - That went sideways!
 //
 // Weight: 1
 //
-// Style guide: alert.callout
+// Style guide: alert.outlined
 
-[pam-Alert~="callout"] {
-    background-color: @alert-callout-background;
-    border-color: @alert-border-color;
-    border-width: @alert-callout-border-width;
-    color: @alert-color;
+[pam-Alert~="outlined"] {
+    background-color: @alert-outlined-background;
 
-    .hook-alert-callout;
+    .hook-alert-outlined;
 }
 
-[pam-Alert~="callout"][pam-Alert~="primary"] {
-    border-left-color: @alert-primary-color;
+//  Modifier: simple
+// ==================================================================
 
-    > :first-child:not(p) {
-        color: @alert-primary-color;
-    }
+// Simple
+//
+// A simple alert has most of it properties normalized, such as border-radius and border.
+// Can be used as a alert in designs for small screen and devices.
+//
+// Markup:
+// <div pam-Alert="simple">
+//     <h1>Title</h1>
+//     <p>outlined message</p>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: alert.simple
 
-    .hook-alert-callout-primary;
-}
+[pam-Alert~="simple"] {
+    border-radius: 0;
+    border: none;
 
-[pam-Alert~="callout"][pam-Alert~="secondary"] {
-    border-left-color: @alert-secondary-color;
-
-    > :first-child:not(p) {
-        color: @alert-secondary-color;
-    }
-
-    .hook-alert-callout-secondary;
-}
-
-[pam-Alert~="callout"][pam-Alert~="info"] {
-    border-left-color: @alert-info-color;
-
-    > :first-child:not(p) {
-        color: @alert-info-color;
-    }
-
-    .hook-alert-callout-info;
-}
-
-[pam-Alert~="callout"][pam-Alert~="success"] {
-    border-left-color: @alert-success-color;
-
-    > :first-child:not(p) {
-        color: @alert-success-color;
-    }
-
-    .hook-alert-callout-success;
-}
-
-[pam-Alert~="callout"][pam-Alert~="warning"] {
-    border-left-color: @alert-warning-color;
-
-    > :first-child:not(p) {
-        color: @alert-warning-color;
-    }
-
-    .hook-alert-callout-warning;
-}
-
-[pam-Alert~="callout"][pam-Alert~="danger"] {
-    border-left-color: @alert-danger-color;
-
-    > :first-child:not(p) {
-        color: @alert-danger-color;
-    }
-
-    .hook-alert-callout-danger;
+    .hook-alert-simple;
 }
 
 //  Sub-Object: pam-Alert-Link
@@ -363,18 +317,13 @@
 // Hooks
 //
 // `.hook-alert`
-// `.hook-alert-callout`
-// `.hook-alert-callout-danger`
-// `.hook-alert-callout-info`
-// `.hook-alert-callout-primary`
-// `.hook-alert-callout-secondary`
-// `.hook-alert-callout-success`
-// `.hook-alert-callout-warning`
 // `.hook-alert-danger`
 // `.hook-alert-info`
 // `.hook-alert-link`
+// `.hook-alert-outlined`
 // `.hook-alert-primary`
 // `.hook-alert-secondary`
+// `.hook-alert-simple`
 // `.hook-alert-success`
 // `.hook-alert-warning`
 //
@@ -385,29 +334,19 @@
 /* stylelint-disable block-no-empty */
 .hook-alert() {
 }
-.hook-alert-callout() {
-}
-.hook-alert-callout-danger() {
-}
-.hook-alert-callout-info() {
-}
-.hook-alert-callout-primary() {
-}
-.hook-alert-callout-secondary() {
-}
-.hook-alert-callout-success() {
-}
-.hook-alert-callout-warning() {
-}
 .hook-alert-danger() {
 }
 .hook-alert-info() {
 }
 .hook-alert-link() {
 }
+.hook-alert-outlined() {
+}
 .hook-alert-primary() {
 }
 .hook-alert-secondary() {
+}
+.hook-alert-simple() {
 }
 .hook-alert-success() {
 }
