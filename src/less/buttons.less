@@ -109,7 +109,7 @@
 
 @button-circle-border-radius: 50%;
 @button-circle-large-size: @space-56;
-@button-circle-line-height: @line-height-normal;
+@button-circle-line-height: @line-height-secondary;
 @button-circle-padding: 0;
 @button-circle-size: @space-40;
 @button-circle-small-size: @space-32;
@@ -702,6 +702,10 @@ a[pam-Button~="circle"] {
     position: relative;
     vertical-align: middle;
     width: @button-circle-size;
+
+    i.material-icons {
+        line-height: @button-circle-line-height;
+    }
 
     .hook-button-circle;
 }
