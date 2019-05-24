@@ -1,8 +1,9 @@
 // Cards
 //
-// Cards are elements that display content and actions on a single context.
-// Elements, like text and images, should be used in a way that
-// clearly indicates intention.
+// Elements that display content and actions on a single context can be called cards.
+// Text and images, should be used in a way that clearly indicates intention.
+// Content can be ordered in different ways and the card it self can have different
+// states.
 //
 // Markup:
 // <div pam-Card="{{modifier_class}}">
@@ -44,6 +45,10 @@
 @card-media-content-color: @skin-white;
 @card-media-content-alignment: flex-end;
 
+@card-transition-duration: @transition-duration;
+@card-transition-property: all;
+@card-transition-timing: ease;
+
 // ==================================================================
 //  Card
 // ==================================================================
@@ -55,7 +60,7 @@
 // Markup:
 // <div pam-Card>
 //     <section pam-Card-Primary-Action>
-//         <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/201");'>
+//         <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/200");'>
 //         </div>
 //         <div pam-Card-Primary>
 //             <h1 pam-Typography="title">Bill Murray</h1>
@@ -91,7 +96,7 @@
 // Markup:
 // <div pam-Card>
 //     <section pam-Card-Primary-Action>
-//         <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/204");'>
+//         <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/200");'>
 //             <div pam-Card-Media-Content>
 //         <div pam-Card-Primary>
 //             <h1 pam-Typography="title">Bill Murray</h1>
@@ -133,7 +138,7 @@
 //             <h1 pam-Typography="title">Bill Murray</h1>
 //             <p pam-Typography="body-1">By Chuck Norris</p>
 //         </div>
-//         <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/203");'>
+//         <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/200");'>
 //         </div>
 //         <div pam-Card-Secondary pam-Typography="body-1">
 //             Put some text here to summarize and describe what the card is all about.
@@ -166,6 +171,7 @@
     display: flex;
     flex-direction: column;
     max-width: @card-max-width;
+    transition: @card-transition-property @card-transition-duration @card-transition-timing;
 
     [pam-Card-Primary-Action] {
         position: relative;
@@ -197,6 +203,7 @@
         background-size: cover;
         border-radius: @card-media-border-radius;
         position: relative;
+        margin: 0 -1px;
 
         &::before {
             content: "";
