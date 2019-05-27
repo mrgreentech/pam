@@ -42,6 +42,7 @@
 // ==========================================================================
 
 [pam-Menu] [pam-Menu-List] {
+    align-items: baseline;
     display: flex;
     list-style: none;
     margin: 0;
@@ -218,15 +219,15 @@
     .hook-menu-vertical-item;
 }
 
-//  Modifier: truncated
+//  Modifier: Inline
 // ==================================================================
 
-// Truncated
+// Inline
 //
-// Collapse the menu width to the widest menu item.
+// Collapse the menu width to an inline element.
 //
 // Markup:
-// <div pam-Menu="vertical truncated">
+// <div pam-Menu="vertical inline">
 //     <ul pam-Menu-List>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
@@ -236,12 +237,38 @@
 //
 // Weight: 2
 //
-// Style guide: menus.truncated
+// Style guide: menus.inline
 
-[pam-Menu~="truncated"] {
+[pam-Menu~="inline"] {
     display: inline-flex;
 
-    .hook-menu-truncated;
+    .hook-menu-inline;
+}
+
+//  Modifier: fluid
+// ==================================================================
+
+// Fluid
+//
+// This makes the menu follow the parent element width.
+//
+// Markup:
+// <div pam-Menu="vertical fluid">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 2
+//
+// Style guide: menus.fluid
+
+[pam-Menu~="fluid"] [pam-Menu-List] {
+    align-items: initial;
+
+    .hook-menu-fluid;
 }
 
 // Modifier: fill
@@ -331,11 +358,11 @@
 
 // Vertical
 //
-// A vertical submenu is enabled with the truncated menu type and
+// A vertical submenu is enabled with the `inline` menu type and
 // `pam-Menu-Has-Children` attribute.
 //
 // Markup:
-// <div pam-Menu="vertical truncated">
+// <div pam-Menu="vertical inline">
 //     <ul pam-Menu-List>
 //         <li pam-Menu-Item>
 //             <a href="#" pam-Menu-Link>Home</a>
@@ -506,7 +533,7 @@
 // To add a menu separator use the `pam-Menu-Separator` attribute in a li element. It works the same for horizontal menus.
 //
 // Markup:
-// <div pam-Menu="vertical truncated">
+// <div pam-Menu="vertical inline">
 //     <ul pam-Menu-List>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
 //         <li pam-Menu-Separator></li>
@@ -551,6 +578,7 @@
 // `.hook-menu-fill-item`
 // `.hook-menu-fill-list`
 // `.hook-menu-fixed`
+// `.hook-menu-fluid`
 // `.hook-menu-has-children-link-after`
 // `.hook-menu-heading`
 // `.hook-menu-horizontal-scrollable`
@@ -568,7 +596,7 @@
 // `.hook-menu-scrollable`
 // `.hook-menu-scrollable-list`
 // `.hook-menu-separator`
-// `.hook-menu-truncated`
+// `.hook-menu-inline`
 // `.hook-menu-vertical`
 // `.hook-menu-vertical-children`
 // `.hook-menu-vertical-has-children-link-after`
@@ -594,6 +622,8 @@
 .hook-menu-fill-list() {
 }
 .hook-menu-fixed() {
+}
+.hook-menu-fluid() {
 }
 .hook-menu-has-children-link-after() {
 }
@@ -629,7 +659,7 @@
 }
 .hook-menu-separator() {
 }
-.hook-menu-truncated() {
+.hook-menu-inline() {
 }
 .hook-menu-vertical() {
 }

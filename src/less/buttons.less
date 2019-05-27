@@ -35,7 +35,7 @@
 @button-line-height: 1.7;
 @button-margin: @space-base;
 @button-min-height: @space-40 + 1;
-@button-min-width: @space-88;
+@button-min-width: @space-80;
 @button-padding-horizontal: @space-16;
 @button-padding-vertical: @space-8;
 @button-padding: @button-padding-vertical @button-padding-horizontal;
@@ -85,13 +85,13 @@
 @button-large-line-height: 2.4;
 @button-large-min-height: @space-56;
 @button-large-padding: @space-8 @space-16;
-@button-large-min-width: @space-104;
+@button-large-min-width: @space-96;
 
 @button-small-font-size: 0.75rem;
 @button-small-line-height: 1.4;
 @button-small-min-height: @space-32;
 @button-small-padding: @space-base @space-16;
-@button-small-min-width: @space-80;
+@button-small-min-width: @space-72;
 
 @button-link-background: transparent;
 @button-link-border: none;
@@ -109,7 +109,7 @@
 
 @button-circle-border-radius: 50%;
 @button-circle-large-size: @space-56;
-@button-circle-line-height: @line-height-normal;
+@button-circle-line-height: @line-height-secondary;
 @button-circle-padding: 0;
 @button-circle-size: @space-40;
 @button-circle-small-size: @space-32;
@@ -702,6 +702,10 @@ a[pam-Button~="circle"] {
     position: relative;
     vertical-align: middle;
     width: @button-circle-size;
+
+    i.material-icons {
+        line-height: @button-circle-line-height;
+    }
 
     .hook-button-circle;
 }

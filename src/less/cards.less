@@ -1,0 +1,345 @@
+// Cards
+//
+// Elements that display content and actions on a single context can be called cards.
+// Text and images, should be used in a way that clearly indicates intention.
+// Content can be ordered in different ways and the card it self can have different
+// states.
+//
+// Markup:
+// <div pam-Card="{{modifier_class}}">
+//     <section pam-Card-Primary-Action>
+//         <div pam-Card-Primary>
+//             <h1 pam-Typography="title"> Card</h1>
+//             <p pam-Typography="body-1">
+//              Text to summarize and describe what the card is all about.
+//             </p>
+//         </div>
+//     </section>
+// </div>
+//
+// raised - Raises the card by applying a larger shadow.
+// flat - No shadow.
+//
+// Weight: 6
+//
+// Style guide: cards
+
+//  Variables
+// ==================================================================
+
+@card-background: @skin-white;
+@card-border-radius: @border-radius-base;
+@card-max-width: 350px;
+@card-padding: @space-16;
+@card-shadow-raised: @shadow-raised-high;
+@card-shadow: @shadow-raised;
+
+@card-secondary-font: @font-size-medium;
+@card-secondary-padding: 0 @card-padding @card-padding / 2 @card-padding;
+
+@card-primary-action-opacity: 0.08;
+
+@card-media-border-radius: @card-border-radius @card-border-radius 0 0;
+@card-media-16-9: 56.25%;
+
+@card-media-content-color: @skin-white;
+@card-media-content-alignment: flex-end;
+
+@card-transition-duration: @transition-duration;
+@card-transition-property: all;
+@card-transition-timing: ease;
+
+// ==================================================================
+//  Card
+// ==================================================================
+
+// Basic
+//
+// A basic card
+//
+// Markup:
+// <div pam-Card>
+//     <section pam-Card-Primary-Action>
+//         <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/200");'>
+//         </div>
+//         <div pam-Card-Primary>
+//             <h1 pam-Typography="title">Bill Murray</h1>
+//             <p pam-Typography="body-1">By Chuck Norris</p>
+//         </div>
+//         <div pam-Card-Secondary pam-Typography="body-1">
+//         Put some text here to summarize and describe what the card is all about.
+//         </div>
+//     </section>
+//     <section pam-Card-Actions>
+//         <div pam-Card-Action-Buttons>
+//             <button pam-Button="primary flat">Action 1</button>
+//             <button pam-Button="primary flat">Action 2</button>
+//         </div>
+//         <div pam-Card-Action-Icons>
+//             <button pam-Button="circle flat">
+//                 <i class="material-icons">share</i>
+//             </button>
+//             <button pam-Button="circle flat">
+//                 <i class="material-icons">more_vert</i>
+//             </button>
+//     </section>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: cards.basic
+
+// Media
+//
+// Card with text over media.
+//
+// Markup:
+// <div pam-Card>
+//     <section pam-Card-Primary-Action>
+//         <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/200");'>
+//             <div pam-Card-Media-Content>
+//         <div pam-Card-Primary>
+//             <h1 pam-Typography="title">Bill Murray</h1>
+//             <p pam-Typography="body-1">By Chuck Norris</p>
+//         </div>
+//             </div>
+//         </div>
+//         <div pam-Card-Secondary pam-Typography="body-1">
+//             Put some text here to summarize and describe what the card is all about.
+//         </div>
+//     </section>
+//     <section pam-Card-Actions>
+//         <div pam-Card-Action-Buttons>
+//             <button pam-Button="primary flat">Action 1</button>
+//             <button pam-Button="primary flat">Action 2</button>
+//         </div>
+//         <div pam-Card-Action-Icons>
+//             <button pam-Button="circle flat">
+//                 <i class="material-icons">share</i>
+//             </button>
+//             <button pam-Button="circle flat">
+//                 <i class="material-icons">more_vert</i>
+//             </button>
+//     </section>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: cards.media
+
+// Header
+//
+// Card with header.
+//
+// Markup:
+// <div pam-Card>
+//     <section pam-Card-Primary-Action>
+//         <div pam-Card-Primary>
+//             <h1 pam-Typography="title">Bill Murray</h1>
+//             <p pam-Typography="body-1">By Chuck Norris</p>
+//         </div>
+//         <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/200");'>
+//         </div>
+//         <div pam-Card-Secondary pam-Typography="body-1">
+//             Put some text here to summarize and describe what the card is all about.
+//         </div>
+//     </section>
+//     <section pam-Card-Actions>
+//         <div pam-Card-Action-Buttons>
+//             <button pam-Button="primary flat">Action 1</button>
+//             <button pam-Button="primary flat">Action 2</button>
+//         </div>
+//         <div pam-Card-Action-Icons>
+//             <button pam-Button="circle flat">
+//                 <i class="material-icons">share</i>
+//             </button>
+//             <button pam-Button="circle flat">
+//                 <i class="material-icons">more_vert</i>
+//             </button>
+//     </section>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: cards.header
+
+[pam-Card] {
+    background: @card-background;
+    border-radius: @card-border-radius;
+    box-shadow: @card-shadow;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    max-width: @card-max-width;
+    transition: @card-transition-property @card-transition-duration @card-transition-timing;
+
+    [pam-Card-Primary-Action] {
+        position: relative;
+
+        &::before {
+            background-color: #000;
+            content: "";
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: block;
+            z-index: 1;
+        }
+
+        &:hover::before {
+            opacity: @card-primary-action-opacity;
+        }
+
+        .hook-card-primary-action();
+    }
+
+    [pam-Card-Media] {
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: @card-media-border-radius;
+        position: relative;
+        margin: 0 -1px;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            margin-top: @card-media-16-9;
+        }
+
+        [pam-Card-Media-Content] {
+            align-items: @card-media-content-alignment;
+            bottom: 0;
+            color: @card-media-content-color;
+            display: flex;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            .hook-card-media-content();
+        }
+
+        .hook-card-media();
+    }
+
+    [pam-Card-Primary] {
+        padding: @card-padding;
+
+        > * {
+            margin: 0;
+        }
+
+        .hook-card-primary();
+    }
+
+    [pam-Card-Secondary] {
+        font-size: @card-secondary-font;
+        padding: @card-secondary-padding;
+
+        .hook-card-secondary();
+    }
+
+    [pam-Card-Media] + [pam-Card-Secondary] {
+        padding-top: @card-padding;
+    }
+
+    [pam-Card-Primary] + [pam-Card-Media] {
+        border-radius: 0;
+    }
+
+    [pam-Card-Actions] {
+        display: flex;
+        padding: @card-padding / 2 @card-padding / 4;
+
+        [pam-Card-Action-Buttons] {
+            display: flex;
+
+            [pam-Button] {
+                min-width: initial;
+                padding-left: @card-padding / 2;
+                padding-right: @card-padding / 2;
+            }
+
+            .hook-card-action-buttons();
+        }
+
+        [pam-Card-Action-Icons] {
+            display: flex;
+            flex-grow: 1;
+            justify-content: flex-end;
+
+            .hook-card-action-icons();
+        }
+
+        .hook-card-actions();
+    }
+
+    .hook-card();
+}
+
+//  Modifiers
+// ==================================================================
+
+[pam-Card~="raised"] {
+    box-shadow: @card-shadow-raised;
+
+    .hook-card-raised();
+}
+
+[pam-Card~="flat"] {
+    border: 1px solid darken(@card-background, 15%);
+    box-shadow: none;
+
+    .hook-card-flat();
+}
+
+// Hooks
+// ==================================================================
+
+// Hooks
+//
+// `.hook-card`
+// `.hook-card-action-buttons`
+// `.hook-card-action-icons`
+// `.hook-card-actions`
+// `.hook-card-flat`
+// `.hook-card-media-content`
+// `.hook-card-media`
+// `.hook-card-primary-action`
+// `.hook-card-primary`
+// `.hook-card-raised`
+// `.hook-card-secondary`
+//
+// Weight: 6
+//
+// Style guide: cards.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-card() {
+}
+.hook-card-action-buttons() {
+}
+.hook-card-action-icons() {
+}
+.hook-card-actions() {
+}
+.hook-card-flat() {
+}
+.hook-card-media-content() {
+}
+.hook-card-media() {
+}
+.hook-card-primary() {
+}
+.hook-card-primary-action() {
+}
+.hook-card-raised() {
+}
+.hook-card-secondary() {
+}
+/* stylelint-enable */
