@@ -171,7 +171,6 @@
     display: flex;
     flex-direction: column;
     max-width: @card-max-width;
-    transition: @card-transition-property @card-transition-duration @card-transition-timing;
 
     [pam-Card-Primary-Action] {
         position: relative;
@@ -179,14 +178,15 @@
         &::before {
             background-color: #000;
             content: "";
+            display: block;
             height: 100%;
             left: 0;
             opacity: 0;
             pointer-events: none;
             position: absolute;
             top: 0;
+            transition: @card-transition-property @card-transition-duration @card-transition-timing;
             width: 100%;
-            display: block;
             z-index: 1;
         }
 
