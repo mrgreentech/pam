@@ -3,11 +3,10 @@
 // There are 11 contextual typography styles to choose from which can be mixed to suit a large number of text layouts. These styles mimics the [material design typography styles](https://material.google.com/style/typography.html). This means that the default typeface is **Roboto** and the script type is English and English-like (Latin, Greek, and Cyrillic).
 //
 // Markup:
-// <p pam-typography="display-4" pam-Typography-Text>Display 4</p>
-// <p pam-typography="display-3" pam-Typography-Text>Display 3</p>
-// <p pam-typography="display-2" pam-Typography-Text>Display 2</p>
-// <p pam-typography="display-1" pam-Typography-Text>Display 1</p>
-// <p pam-typography="headline" pam-Typography-Text>Headline</p>
+// <p pam-typography="h1" pam-Typography-Text>H1</p>
+// <p pam-typography="h2" pam-Typography-Text>H2</p>
+// <p pam-typography="h3" pam-Typography-Text>H3</p>
+// <p pam-typography="h4" pam-Typography-Text>H4</p>
 // <p pam-typography="title" pam-Typography-Text>Title</p>
 // <p pam-typography="subheading" pam-Typography-Text>Subheading</p>
 // <p pam-typography="body-2" pam-Typography-Text>Body 2</p>
@@ -24,29 +23,29 @@
 
 @typography-font-family: @font-family;
 
-@typography-display-4-font-size: 7rem;
-@typography-display-4-font-weight: @font-weight-light;
-@typography-display-4-line-height: @line-height-base;
+@typography-h1-font-size: @font-size-colossal;
+@typography-h1-font-weight: @font-weight-normal;
+@typography-h1-line-height: @line-height-base;
 
-@typography-display-3-font-size: @font-size-xxlarge;
-@typography-display-3-font-weight: @font-weight-normal;
-@typography-display-3-line-height: @line-height-base;
+@typography-h2-font-size: @font-size-enormous;
+@typography-h2-font-weight: @font-weight-normal;
+@typography-h2-line-height: @line-height-base;
 
-@typography-display-2-font-size: 2.8125rem;
-@typography-display-2-font-weight: @font-weight-normal;
-@typography-display-2-line-height: @line-height-base;
+@typography-h3-font-size: @font-size-xxxlarge;
+@typography-h3-font-weight: @font-weight-normal;
+@typography-h3-line-height: @line-height-base;
 
-@typography-display-font-size: 2.125rem;
-@typography-display-font-weight: @font-weight-normal;
-@typography-display-line-height: @line-height-base;
+@typography-h4-font-size: @font-size-xxlarge;
+@typography-h4-font-weight: @font-weight-light;
+@typography-h4-line-height: @line-height-base;
 
-@typography-headline-font-size: @font-size-xlarge;
-@typography-headline-font-weight: @font-weight-normal;
-@typography-headline-line-height: @line-height-secondary;
+@typography-subtitle-1-font-size: @font-size-large;
+@typography-subtitle-1-font-weight: @font-weight-normal;
+@typography-subtitle-1-line-height: @line-height-secondary;
 
-@typography-title-font-size: @font-size-larger;
-@typography-title-font-weight: @font-weight-medium;
-@typography-title-line-height: @line-height-secondary;
+@typography-subtitle-2-font-size: @font-size-medium;
+@typography-subtitle-2-font-weight: @font-weight-medium;
+@typography-subtitle-2-line-height: @line-height-secondary;
 
 @typography-subheading-font-size: @font-size-large;
 @typography-subheading-font-weight: @font-weight-normal;
@@ -78,73 +77,64 @@
     .hook-typography;
 }
 
-//  Display
+//  h// ==================================================================
+
+[pam-typography~="h1"] {
+    font-size: @typography-h1-font-size;
+    font-weight: @typography-h1-font-weight;
+    line-height: @typography-h1-line-height;
+
+    .hook-typography-h1;
+}
+
+[pam-typography~="h2"] {
+    font-size: @typography-h2-font-size;
+    font-weight: @typography-h2-font-weight;
+    line-height: @typography-h2-line-height;
+
+    .hook-typography-h2;
+}
+
+[pam-typography~="h3"] {
+    font-size: @typography-h3-font-size;
+    font-weight: @typography-h3-font-weight;
+    line-height: @typography-h3-line-height;
+
+    .hook-typography-h3;
+}
+
+[pam-typography~="h4"] {
+    font-size: @typography-h4-font-size;
+    font-weight: @typography-h4-font-weight;
+    line-height: @typography-h4-line-height;
+
+    .hook-typography-h4;
+}
+
+//  subtitle-1
 // ==================================================================
 
-[pam-typography~="display-1"] {
-    font-size: @typography-display-font-size;
-    font-weight: @typography-display-font-weight;
-    line-height: @typography-display-line-height;
+[pam-typography~="subtitle-1"] {
+    font-size: @typography-subtitle-1-font-size;
+    font-weight: @typography-subtitle-1-font-weight;
+    line-height: @typography-subtitle-1-line-height;
 
-    .hook-typography-display-1;
-}
-
-[pam-typography~="display-2"] {
-    font-size: @typography-display-2-font-size;
-    font-weight: @typography-display-2-font-weight;
-    line-height: @typography-display-2-line-height;
-
-    .hook-typography-display-2;
-}
-
-[pam-typography~="display-3"] {
-    font-size: @typography-display-3-font-size;
-    font-weight: @typography-display-3-font-weight;
-    line-height: @typography-display-3-line-height;
-
-    .hook-typography-display-3;
-}
-
-[pam-typography~="display-4"] {
-    font-size: @typography-display-4-font-size;
-    font-weight: @typography-display-4-font-weight;
-    line-height: @typography-display-4-line-height;
-
-    .hook-typography-display-4;
-}
-
-//  Headline
-// ==================================================================
-
-[pam-typography~="headline"] {
-    font-size: @typography-headline-font-size;
-    font-weight: @typography-headline-font-weight;
-    line-height: @typography-headline-line-height;
-
-    .hook-typography-headline;
+    .hook-typography-subtitle-1;
 }
 
 //  Title
 // ==================================================================
 
-[pam-typography~="title"] {
-    font-size: @typography-title-font-size;
-    font-weight: @typography-title-font-weight;
-    line-height: @typography-title-line-height;
+[pam-typography~="subtitle-2"] {
+    font-size: @typography-subtitle-2-font-size;
+    font-weight: @typography-subtitle-2-font-weight;
+    line-height: @typography-subtitle-2-line-height;
 
-    .hook-typography-title;
+    .hook-typography-subtitle-2;
 }
 
 //  Subheading
 // ==================================================================
-
-[pam-typography~="subheading"] {
-    font-size: @typography-subheading-font-size;
-    font-weight: @typography-subheading-font-weight;
-    line-height: @typography-subheading-line-height;
-
-    .hook-typography-subheading;
-}
 
 //  Body
 // ==================================================================
@@ -196,9 +186,9 @@
 // typography block element.
 //
 // Markup:
-// <p pam-typography="headline left" pam-Typography-Text>Headline left</p>
-// <p pam-typography="headline center" pam-Typography-Text>Headline center</p>
-// <p pam-typography="headline right" pam-Typography-Text>Headline right</p>
+// <p pam-typography="subtitle-1 left" pam-Typography-Text>subtitle-1 left</p>
+// <p pam-typography="subtitle-1 center" pam-Typography-Text>subtitle-1 center</p>
+// <p pam-typography="subtitle-1 right" pam-Typography-Text>subtitle-1 right</p>
 //
 // Weight: 1
 //
@@ -242,11 +232,11 @@
 // `.hook-typography-body-2`
 // `.hook-typography-button`
 // `.hook-typography-caption`
-// `.hook-typography-display-1`
-// `.hook-typography-display-2`
-// `.hook-typography-display-3`
-// `.hook-typography-display-4`
-// `.hook-typography-headline`
+// `.hook-typography-h1`
+// `.hook-typography-h2`
+// `.hook-typography-h3`
+// `.hook-typography-h4`
+// `.hook-typography-subtitle-1`
 // `.hook-typography-subheading`
 // `.hook-typography-title`
 //
@@ -265,18 +255,16 @@
 }
 .hook-typography-caption() {
 }
-.hook-typography-display-1() {
+.hook-typography-h1() {
 }
-.hook-typography-display-2() {
+.hook-typography-h2() {
 }
-.hook-typography-display-3() {
+.hook-typography-h3() {
 }
-.hook-typography-display-4() {
+.hook-typography-h4() {
 }
-.hook-typography-headline() {
+.hook-typography-subtitle-1() {
 }
-.hook-typography-subheading() {
-}
-.hook-typography-title() {
+.hook-typography-subtitle-2() {
 }
 /* stylelint-enable */
