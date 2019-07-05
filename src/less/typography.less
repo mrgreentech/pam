@@ -7,12 +7,15 @@
 // <p pam-typography="h2" pam-Typography-Text>H2</p>
 // <p pam-typography="h3" pam-Typography-Text>H3</p>
 // <p pam-typography="h4" pam-Typography-Text>H4</p>
-// <p pam-typography="title" pam-Typography-Text>Title</p>
-// <p pam-typography="subheading" pam-Typography-Text>Subheading</p>
-// <p pam-typography="body-2" pam-Typography-Text>Body 2</p>
+// <p pam-typography="h5" pam-Typography-Text>H5</p>
+// <p pam-typography="h6" pam-Typography-Text>H6</p>
+// <p pam-typography="subtitle-1" pam-Typography-Text>Subtitle 1</p>
+// <p pam-typography="subtitle-2" pam-Typography-Text>Subtitle 2</p>
 // <p pam-typography="body-1" pam-Typography-Text>Body 1</p>
-// <p pam-typography="caption" pam-Typography-Text>Caption</p>
+// <p pam-typography="body-2" pam-Typography-Text>Body 2</p>
 // <p pam-typography="button" pam-Typography-Text>Button</p>
+// <p pam-typography="caption" pam-Typography-Text>Caption</p>
+// <p pam-typography="overline" pam-Typography-Text>Overline</p>
 //
 // Weight: 3
 //
@@ -39,6 +42,14 @@
 @typography-h4-font-weight: @font-weight-light;
 @typography-h4-line-height: @line-height-base;
 
+@typography-h5-font-size: @font-size-xlarge;
+@typography-h5-font-weight: @font-weight-light;
+@typography-h5-line-height: @line-height-base;
+
+@typography-h6-font-size: @font-size-larger;
+@typography-h6-font-weight: @font-weight-light;
+@typography-h6-line-height: @line-height-base;
+
 @typography-subtitle-1-font-size: @font-size-large;
 @typography-subtitle-1-font-weight: @font-weight-normal;
 @typography-subtitle-1-line-height: @line-height-secondary;
@@ -47,25 +58,25 @@
 @typography-subtitle-2-font-weight: @font-weight-medium;
 @typography-subtitle-2-line-height: @line-height-secondary;
 
-@typography-subheading-font-size: @font-size-large;
-@typography-subheading-font-weight: @font-weight-normal;
-@typography-subheading-line-height: @line-height-secondary;
+@typography-body-1-font-size: @font-size-medium;
+@typography-body-1-font-weight: @font-weight-normal;
+@typography-body-1-line-height: @line-height-secondary;
 
 @typography-body-2-font-size: @font-size-medium;
 @typography-body-2-font-weight: @font-weight-medium;
 @typography-body-2-line-height: @line-height-secondary;
 
-@typography-body-font-size: @font-size-medium;
-@typography-body-font-weight: @font-weight-normal;
-@typography-body-line-height: @line-height-secondary;
+@typography-button-font-size: @font-size-medium;
+@typography-button-font-weight: @font-weight-medium;
+@typography-button-line-height: @line-height-secondary;
 
 @typography-caption-font-size: @font-size-xsmall;
 @typography-caption-font-weight: @font-weight-normal;
 @typography-caption-line-height: @line-height-secondary;
 
-@typography-button-font-size: @font-size-medium;
-@typography-button-font-weight: @font-weight-medium;
-@typography-button-line-height: @line-height-secondary;
+@typography-overline-font-size: @font-size-xxsmall;
+@typography-overline-font-weight: @font-weight-normal;
+@typography-overline-line-height: @line-height-secondary;
 
 // ==================================================================
 //  Typography
@@ -77,7 +88,8 @@
     .hook-typography;
 }
 
-//  h// ==================================================================
+//  Headlines
+// ==================================================================
 
 [pam-typography~="h1"] {
     font-size: @typography-h1-font-size;
@@ -111,7 +123,23 @@
     .hook-typography-h4;
 }
 
-//  subtitle-1
+[pam-typography~="h5"] {
+    font-size: @typography-h5-font-size;
+    font-weight: @typography-h5-font-weight;
+    line-height: @typography-h5-line-height;
+
+    .hook-typography-h5;
+}
+
+[pam-typography~="h6"] {
+    font-size: @typography-h6-font-size;
+    font-weight: @typography-h6-font-weight;
+    line-height: @typography-h6-line-height;
+
+    .hook-typography-h6;
+}
+
+//  Subtitle 1
 // ==================================================================
 
 [pam-typography~="subtitle-1"] {
@@ -122,7 +150,7 @@
     .hook-typography-subtitle-1;
 }
 
-//  Title
+//  Subtitle 2
 // ==================================================================
 
 [pam-typography~="subtitle-2"] {
@@ -133,16 +161,13 @@
     .hook-typography-subtitle-2;
 }
 
-//  Subheading
-// ==================================================================
-
 //  Body
 // ==================================================================
 
 [pam-typography~="body-1"] {
-    font-size: @typography-body-font-size;
-    font-weight: @typography-body-font-weight;
-    line-height: @typography-body-line-height;
+    font-size: @typography-body-1-font-size;
+    font-weight: @typography-body-1-font-weight;
+    line-height: @typography-body-1-line-height;
 
     .hook-typography-body-1;
 }
@@ -177,6 +202,17 @@
     .hook-typography-button;
 }
 
+//  Overline
+// ==================================================================
+
+[pam-typography~="overline"] {
+    font-size: @typography-overline-font-size;
+    font-weight: @typography-overline-font-weight;
+    line-height: @typography-overline-line-height;
+
+    .hook-typography-overline;
+}
+
 //  Alignment modifiers
 // ==================================================================
 
@@ -206,39 +242,25 @@
     text-align: right;
 }
 
-//  Deprecated typography
-// ==================================================================
-
-// Deprecated
-//
-// These typography rulez will be deprecated in version **1.0.0**.
-//
-// * `subheader`: Subheader
-// * `form`: Form
-// * `bodys:strong`: Body strong
-// * `small`: Small
-//
-// Weight: 2
-//
-// Style guide: typography.deprecated
-
 //  Hooks
 // ==================================================================
 
 // Hooks
 //
 // `.hook-typography`
-// `.hook-typography-body`
+// `.hook-typography-body-1`
 // `.hook-typography-body-2`
 // `.hook-typography-button`
 // `.hook-typography-caption`
+// `.hook-typography-overline`
 // `.hook-typography-h1`
 // `.hook-typography-h2`
 // `.hook-typography-h3`
 // `.hook-typography-h4`
+// `.hook-typography-h5`
+// `.hook-typography-h6`
 // `.hook-typography-subtitle-1`
-// `.hook-typography-subheading`
-// `.hook-typography-title`
+// `.hook-typography-subtitle-2`
 //
 // Weight: 5
 //
@@ -255,6 +277,8 @@
 }
 .hook-typography-caption() {
 }
+.hook-typography-overline() {
+}
 .hook-typography-h1() {
 }
 .hook-typography-h2() {
@@ -262,6 +286,10 @@
 .hook-typography-h3() {
 }
 .hook-typography-h4() {
+}
+.hook-typography-h5() {
+}
+.hook-typography-h6() {
 }
 .hook-typography-subtitle-1() {
 }
