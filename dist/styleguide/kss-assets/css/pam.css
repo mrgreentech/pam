@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
 /*!
 Pam v1.0.0-beta.3
 Copyright 2016 MRG Gametek AB All rights reserved.
@@ -3132,60 +3132,85 @@ a[pam-Button~="text:secondary"] {
 [pam-typography] {
   font-family: "Roboto", sans-serif;
 }
-[pam-typography~="display-1"] {
+[pam-typography~="h1"] {
+  font-size: 6rem;
+  font-weight: 300;
+  letter-spacing: -0.016em;
+  line-height: 6rem;
+}
+[pam-typography~="h2"] {
+  font-size: 3.75rem;
+  font-weight: 300;
+  letter-spacing: -0.008em;
+  line-height: 3.75rem;
+}
+[pam-typography~="h3"] {
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 3.125rem;
+}
+[pam-typography~="h4"] {
   font-size: 2.125rem;
   font-weight: 400;
-  line-height: 1;
+  letter-spacing: normal;
+  line-height: 2.5rem;
 }
-[pam-typography~="display-2"] {
-  font-size: 2.8125rem;
-  font-weight: 400;
-  line-height: 1;
-}
-[pam-typography~="display-3"] {
-  font-size: 3.5rem;
-  font-weight: 400;
-  line-height: 1;
-}
-[pam-typography~="display-4"] {
-  font-size: 7rem;
-  font-weight: 300;
-  line-height: 1;
-}
-[pam-typography~="headline"] {
+[pam-typography~="h5"] {
   font-size: 1.5rem;
   font-weight: 400;
-  line-height: 1.5;
+  letter-spacing: normal;
+  line-height: 2rem;
 }
-[pam-typography~="title"] {
+[pam-typography~="h6"] {
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 1.5;
+  letter-spacing: normal;
+  line-height: 1;
 }
-[pam-typography~="subheading"] {
+[pam-typography~="subtitle-1"] {
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  letter-spacing: 0.009em;
+  line-height: 1.75rem;
+}
+[pam-typography~="subtitle-2"] {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.007em;
+  line-height: 1.375rem;
 }
 [pam-typography~="body-1"] {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  letter-spacing: 0.03125em;
+  line-height: 1.5rem;
 }
 [pam-typography~="body-2"] {
   font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.5;
-}
-[pam-typography~="caption"] {
-  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 1.5;
+  letter-spacing: 0.0178em;
+  line-height: 1.25rem;
 }
 [pam-typography~="button"] {
   font-size: 0.875rem;
   font-weight: 500;
-  line-height: 1.5;
+  letter-spacing: 0.0892em;
+  line-height: 2.25rem;
+  text-transform: uppercase;
+}
+[pam-typography~="caption"] {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.0333em;
+  line-height: 1.25rem;
+}
+[pam-typography~="overline"] {
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.1667em;
+  line-height: 2rem;
+  text-transform: uppercase;
 }
 [pam-typography~="left"] {
   text-align: left;
@@ -3581,7 +3606,7 @@ a[pam-Link]:hover {
   color: #fff;
   display: inline-block;
   font-size: 65%;
-  font-weight: 700;
+  font-weight: 500;
   line-height: normal;
   padding: 3px 6px;
   text-align: center;

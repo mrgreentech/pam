@@ -103,14 +103,8 @@
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-typography.html#kssref-typography-deprecated">
-                    <span class="kss-nav__ref ">6.2</span
-                    ><span class="kss-nav__name">Deprecated</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-typography.html#kssref-typography-hooks">
-                    <span class="kss-nav__ref ">6.3</span
+                    <span class="kss-nav__ref ">6.2</span
                     ><span class="kss-nav__name">Hooks</span>
                   </a>
                 </li>
@@ -206,7 +200,7 @@
           </h1>
 
             <div class="kss-description">
-              <p>There are 11 contextual typography styles to choose from which can be mixed to suit a large number of text layouts. These styles mimics the <a href="https://material.google.com/style/typography.html">material design typography styles</a>. This means that the default typeface is <strong>Roboto</strong> and the script type is English and English-like (Latin, Greek, and Cyrillic).</p>
+              <p>There are 13 contextual typography styles to choose from which can be mixed to suit a large number of layouts. These styles mimic the <a href="https://material.google.com/style/typography.html">material design typography styles</a>. This means that the default typeface is <strong>Roboto</strong> and the script type is English and English-like (Latin, Greek, and Cyrillic).</p>
 
             </div>
 
@@ -215,17 +209,25 @@
           <div class="kss-modifier__wrapper">
 
             <div class="kss-modifier__example">
-              <p pam-typography="display-4" pam-Typography-Text>Display 4</p>
-<p pam-typography="display-3" pam-Typography-Text>Display 3</p>
-<p pam-typography="display-2" pam-Typography-Text>Display 2</p>
-<p pam-typography="display-1" pam-Typography-Text>Display 1</p>
-<p pam-typography="headline" pam-Typography-Text>Headline</p>
-<p pam-typography="title" pam-Typography-Text>Title</p>
-<p pam-typography="subheading" pam-Typography-Text>Subheading</p>
-<p pam-typography="body-2" pam-Typography-Text>Body 2</p>
-<p pam-typography="body-1" pam-Typography-Text>Body 1</p>
-<p pam-typography="caption" pam-Typography-Text>Caption</p>
-<p pam-typography="button" pam-Typography-Text>Button</p>
+              <h1 pam-typography="h1">Headline 1</h1>
+<h2 pam-typography="h2">Headline 2</h2>
+<h3 pam-typography="h3">Headline 3</h3>
+<h4 pam-typography="h4">Headline 4</h4>
+<h5 pam-typography="h5">Headline 5</h5>
+<h6 pam-typography="h6">Headline 6</h6>
+<h6 pam-typography="subtitle-1">Subtitle 1</h6>
+<h6 pam-typography="subtitle-2">Subtitle 2</h6>
+<p pam-typography="body-1">Body 1. Lorem Ipsum
+is the single greatest threat. We are not - we are not keeping
+up with other websites. Lorem Ipsum best not make any
+more threats to your website.</p>
+<p pam-typography="body-2">Body 2.When other
+websites give you text, they’re not sending the best. They’re
+not sending you, they’re sending words that have lots of
+problems and they’re bringing those problems to us.</p>
+<div><span pam-typography="button">Button</span></div>
+<div><span pam-typography="caption">Caption</span></div>
+<div><span pam-typography="overline">Overline</span></div>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
@@ -265,17 +267,25 @@
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;p pam-typography&#x3D;&quot;display-4&quot; pam-Typography-Text&gt;Display 4&lt;/p&gt;
-&lt;p pam-typography&#x3D;&quot;display-3&quot; pam-Typography-Text&gt;Display 3&lt;/p&gt;
-&lt;p pam-typography&#x3D;&quot;display-2&quot; pam-Typography-Text&gt;Display 2&lt;/p&gt;
-&lt;p pam-typography&#x3D;&quot;display-1&quot; pam-Typography-Text&gt;Display 1&lt;/p&gt;
-&lt;p pam-typography&#x3D;&quot;headline&quot; pam-Typography-Text&gt;Headline&lt;/p&gt;
-&lt;p pam-typography&#x3D;&quot;title&quot; pam-Typography-Text&gt;Title&lt;/p&gt;
-&lt;p pam-typography&#x3D;&quot;subheading&quot; pam-Typography-Text&gt;Subheading&lt;/p&gt;
-&lt;p pam-typography&#x3D;&quot;body-2&quot; pam-Typography-Text&gt;Body 2&lt;/p&gt;
-&lt;p pam-typography&#x3D;&quot;body-1&quot; pam-Typography-Text&gt;Body 1&lt;/p&gt;
-&lt;p pam-typography&#x3D;&quot;caption&quot; pam-Typography-Text&gt;Caption&lt;/p&gt;
-&lt;p pam-typography&#x3D;&quot;button&quot; pam-Typography-Text&gt;Button&lt;/p&gt;</code></pre>
+              <pre><code class="html">&lt;h1 pam-typography&#x3D;&quot;h1&quot;&gt;Headline 1&lt;/h1&gt;
+&lt;h2 pam-typography&#x3D;&quot;h2&quot;&gt;Headline 2&lt;/h2&gt;
+&lt;h3 pam-typography&#x3D;&quot;h3&quot;&gt;Headline 3&lt;/h3&gt;
+&lt;h4 pam-typography&#x3D;&quot;h4&quot;&gt;Headline 4&lt;/h4&gt;
+&lt;h5 pam-typography&#x3D;&quot;h5&quot;&gt;Headline 5&lt;/h5&gt;
+&lt;h6 pam-typography&#x3D;&quot;h6&quot;&gt;Headline 6&lt;/h6&gt;
+&lt;h6 pam-typography&#x3D;&quot;subtitle-1&quot;&gt;Subtitle 1&lt;/h6&gt;
+&lt;h6 pam-typography&#x3D;&quot;subtitle-2&quot;&gt;Subtitle 2&lt;/h6&gt;
+&lt;p pam-typography&#x3D;&quot;body-1&quot;&gt;Body 1. Lorem Ipsum
+is the single greatest threat. We are not - we are not keeping
+up with other websites. Lorem Ipsum best not make any
+more threats to your website.&lt;/p&gt;
+&lt;p pam-typography&#x3D;&quot;body-2&quot;&gt;Body 2.When other
+websites give you text, they’re not sending the best. They’re
+not sending you, they’re sending words that have lots of
+problems and they’re bringing those problems to us.&lt;/p&gt;
+&lt;div&gt;&lt;span pam-typography&#x3D;&quot;button&quot;&gt;Button&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span pam-typography&#x3D;&quot;caption&quot;&gt;Caption&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span pam-typography&#x3D;&quot;overline&quot;&gt;Overline&lt;/span&gt;&lt;/div&gt;</code></pre>
             </details>
       </div>
       <hr >

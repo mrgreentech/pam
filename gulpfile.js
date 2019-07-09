@@ -53,13 +53,6 @@ function concatBase() {
         .pipe(dest(paths.build.less));
 }
 
-function concatFont() {
-    return src([paths.build.lessFileFont, paths.build.lessFileBase])
-        .pipe(plumber())
-        .pipe(concat(files.src.lessBase))
-        .pipe(dest(paths.build.less));
-}
-
 // Styles
 function css() {
     return src([paths.build.lessFile, paths.skin.lessFileGlob])
@@ -154,17 +147,16 @@ function watchFiles() {
 }
 
 //  Complex tasks
-const concatFiles = series(concatBase, concatFont);
 const styles = series(cssLint, css);
 const scripts = series(jsLint, js);
 const stylesAndScripts = parallel(styles, scripts);
 const buildStyleguide = series(copyCssToSG, styleguide, replaceVersion);
-const build = series(cleanBuild, copyBuild, concatFiles, stylesAndScripts, buildStyleguide, sizeReport);
-const buildDev = series(copyBuild, concatFiles, stylesAndScripts, buildStyleguide);
+const build = series(cleanBuild, copyBuild, concatBase, stylesAndScripts, buildStyleguide, sizeReport);
+const buildDev = series(copyBuild, concatBase, stylesAndScripts, buildStyleguide);
 const dev = series(build, parallel(watchFiles, serve));
 const dist = series(parallel(cleanDist, build), copyDist);
 
-// export tasks
+// Export tasks
 exports.build = build;
 exports.compress = compress;
 exports.cssLint = cssLint;
