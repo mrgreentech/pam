@@ -1,11 +1,50 @@
 // Skin
 //
-// A set of colors that is used as base in all PAM components.
-// They all have their specific contextual intention and usage.
+// PAMs skin system helps in the implementation of a color theme for your brand or style.
+// The primary and secondary colors and variations creates a skin which has accessible
+// text and straight forward UI surfaces. The skin system follows [material designs
+// color system](https://material.io/design/color/the-color-system.html). For more
+// info head over to material design and learn how to tthink about the color system.
 //
-// Weight: 1
+// Weight: 5
 //
-// Style guide: traits.skin
+// Style guide: skin
+
+//  Variables
+// ==================================================================
+
+@skin-primary-new: @skin-primary;
+@skin-primary-light: @skin-primary;
+@skin-primary-dark: @skin-primary;
+
+@skin-secondary: @skin-primary;
+@skin-secondary-light: @skin-primary;
+@skin-secondary-dark: @skin-primary;
+
+@skin-background: @skin-primary;
+@skin-surface: @skin-primary;
+@skin-error: @skin-primary;
+
+@skin-on-primary: @skin-primary;
+@skin-on-secondary: @skin-primary;
+@skin-on-background: @skin-primary;
+@skin-on-surface: @skin-primary;
+@skin-on-error: @skin-primary;
+
+@skin-primary-bg: @skin-primary;
+@skin-secondary-bg: @skin-primary;
+
+@skin-text-primary-on-light: @skin-primary;
+@skin-text-secondary-on-light: @skin-primary;
+@skin-text-hint-on-light: @skin-primary;
+@skin-text-disabled-on-light: @skin-primary;
+@skin-text-icon-on-light: @skin-primary;
+
+@skin-text-primary-on-dark: @skin-primary;
+@skin-text-secondary-on-dark: @skin-primary;
+@skin-text-hint-on-dark: @skin-primary;
+@skin-text-disabled-on-dark: @skin-primary;
+@skin-text-icon-on-dark: @skin-primary;
 
 // ==================================================================
 //  Skin
@@ -40,7 +79,7 @@
 //
 // Weight: 1
 //
-// Style guide: traits.skin.primary
+// Style guide: skin.primary
 
 [pam-Skin~="primary"] {
     background-color: @skin-primary;
@@ -91,7 +130,7 @@
 //
 // Weight: 3
 //
-// Style guide: traits.skin.information
+// Style guide: skin.information
 
 [pam-Skin~="info"] {
     background-color: @skin-info;
@@ -137,7 +176,7 @@
 //
 // Weight: 4
 //
-// Style guide: traits.skin.greyscales
+// Style guide: skin.greyscales
 
 [pam-Skin~="light"] {
     background-color: @skin-light;
@@ -198,7 +237,7 @@
 //
 // Weight: 5
 //
-// Style guide: traits.skin.text
+// Style guide: skin.text
 
 [pam-Skin~="text"] {
     color: @skin-text;
