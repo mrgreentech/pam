@@ -10,6 +10,7 @@
 .kss-style kbd,
 .kss-style samp {
     font-family: "Roboto", sans-serif;
+    color: #000;
 }
 
 .kss-style pre,
@@ -51,7 +52,7 @@
 }
 
 #kss-node .kss-nav__menu-link {
-    color: #444;
+    color: #000;
     font-weight: 300;
     transition: font-weight 0.4s;
 }
@@ -456,6 +457,19 @@ section.sg-block.sg-section-hooks code {
     width: 200px;
     height: 150px;
     border: 1px solid #666;
+}
+
+[grid-space] {
+    margin-bottom: 48px;
+}
+
+[grid-block] {
+    padding: 16px;
+    height: 100px;
+}
+
+[grid-block~="large"] {
+    height: 180px;
 }
 
 [pam-Skin-Test] {

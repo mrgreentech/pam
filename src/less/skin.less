@@ -6,6 +6,77 @@
 // color system](https://material.io/design/color/the-color-system.html). For more
 // info head over to material design and learn how to tthink about the color system.
 //
+// <div pam-Grid pam-Grid-Control="space-x">
+//     <div pam-Unit="1-1 medium:1-2">
+//         <div pam-Grid>
+//             <div pam-Unit="1-1">
+//                 <div grid-block="large" pam-skin="primary">Primary</div>
+//             </div>
+//             <div pam-Unit="1-2">
+//                 <div grid-block pam-skin="primary:light">Primary light</div>
+//             </div>
+//             <div pam-Unit="1-2">
+//                 <div grid-block pam-skin="primary:dark">Primary dark</div>
+//             </div>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-1 medium:1-2">
+//         <div pam-Grid>
+//             <div pam-Unit="1-1">
+//                 <div grid-block="large" pam-skin="secondary">Secondary</div>
+//             </div>
+//             <div pam-Unit="1-2">
+//                 <div grid-block pam-skin="secondary:light">Secondary light</div>
+//             </div>
+//             <div pam-Unit="1-2">
+//                 <div grid-block pam-skin="secondary:dark">Secondary dark</div>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// <div grid-space></div>
+//
+// <div pam-Grid>
+//             <div pam-Unit="1-3">
+//                 <div grid-block pam-skin="background">Background</div>
+//             </div>
+//             <div pam-Unit="1-3">
+//                 <div grid-block pam-skin="surface">Surface</div>
+//             </div>
+//             <div pam-Unit="1-3">
+//                 <div grid-block pam-skin="error">Error</div>
+//             </div>
+// </div>
+//
+// <div grid-space></div>
+//
+// <div pam-Grid>
+//     <div pam-Unit="1-1 medium:1-1">
+//         <div pam-Grid>
+//             <div pam-Unit="1-2">
+//                 <div grid-block pam-skin="on:primary white-bg">On primary</div>
+//             </div>
+//             <div pam-Unit="1-2">
+//                 <div grid-block pam-skin="on:secondary white-bg">On secondary</div>
+//             </div>
+//             <div pam-Unit="1-1">
+//                 <div pam-Grid>
+//                     <div pam-Unit="1-3">
+//                         <div grid-block pam-skin="on:background white-bg">On Background</div>
+//                     </div>
+//                     <div pam-Unit="1-3">
+//                         <div grid-block pam-skin="on:surface white:bg">On Surface</div>
+//                     </div>
+//                     <div pam-Unit="1-3">
+//                         <div grid-block pam-skin="on:error black:bg">On Error</div>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
 // Weight: 5
 //
 // Style guide: skin
@@ -13,38 +84,48 @@
 //  Variables
 // ==================================================================
 
-@skin-primary-new: @skin-primary;
-@skin-primary-light: @skin-primary;
-@skin-primary-dark: @skin-primary;
+// @skin-primary-new: @skin-primary;
+// @skin-primary-light: @skin-primary;
+// @skin-primary-dark: @skin-primary;
 
-@skin-secondary: @skin-primary;
-@skin-secondary-light: @skin-primary;
-@skin-secondary-dark: @skin-primary;
+// @skin-secondary: @skin-primary;
+// @skin-secondary-light: @skin-primary;
+// @skin-secondary-dark: @skin-primary;
 
-@skin-background: @skin-primary;
-@skin-surface: @skin-primary;
-@skin-error: @skin-primary;
+// @skin-background: @skin-primary;
+// @skin-surface: @skin-primary;
+// @skin-error: @skin-primary;
 
-@skin-on-primary: @skin-primary;
-@skin-on-secondary: @skin-primary;
-@skin-on-background: @skin-primary;
-@skin-on-surface: @skin-primary;
-@skin-on-error: @skin-primary;
+@skin-on-primary: @skin-black;
+@skin-on-secondary: @skin-black;
+@skin-on-background: @skin-black;
+@skin-on-surface: @skin-black;
+@skin-on-error: @skin-white;
 
-@skin-primary-bg: @skin-primary;
-@skin-secondary-bg: @skin-primary;
+// @skin-primary-bg: @skin-primary;
+// @skin-secondary-bg: @skin-primary;
 
-@skin-text-primary-on-light: @skin-primary;
-@skin-text-secondary-on-light: @skin-primary;
-@skin-text-hint-on-light: @skin-primary;
-@skin-text-disabled-on-light: @skin-primary;
-@skin-text-icon-on-light: @skin-primary;
+// @skin-text-primary-on-light: @skin-primary;
+// @skin-text-secondary-on-light: @skin-primary;
+// @skin-text-hint-on-light: @skin-primary;
+// @skin-text-disabled-on-light: @skin-primary;
+// @skin-text-icon-on-light: @skin-primary;
 
-@skin-text-primary-on-dark: @skin-primary;
-@skin-text-secondary-on-dark: @skin-primary;
-@skin-text-hint-on-dark: @skin-primary;
-@skin-text-disabled-on-dark: @skin-primary;
-@skin-text-icon-on-dark: @skin-primary;
+// @skin-text-primary-on-dark: @skin-primary;
+// @skin-text-secondary-on-dark: @skin-primary;
+// @skin-text-hint-on-dark: @skin-primary;
+// @skin-text-disabled-on-dark: @skin-primary;
+// @skin-text-icon-on-dark: @skin-primary;
+
+// Info colors
+// @skin-info: #50b2ce;
+// @skin-success: #4caf50;
+// @skin-warn: #e9ac5e;
+// @skin-danger: #f44336;
+
+// Skin black and white
+// @skin-black: #000;
+// @skin-white: #fff;
 
 // ==================================================================
 //  Skin
@@ -91,6 +172,61 @@
 
 [pam-Skin~="primary:dark"] {
     background-color: @skin-primary-dark;
+}
+
+[pam-Skin~="secondary"] {
+    background-color: @skin-secondary;
+}
+
+[pam-Skin~="secondary:light"] {
+    background-color: @skin-secondary-light;
+}
+
+[pam-Skin~="secondary:dark"] {
+    background-color: @skin-secondary-dark;
+}
+
+[pam-Skin~="background"] {
+    background-color: @skin-background;
+}
+
+[pam-Skin~="surface"] {
+    background-color: @skin-surface;
+}
+
+[pam-Skin~="error"] {
+    background-color: @skin-error;
+}
+
+[pam-Skin~="on:primary"] {
+    color: @skin-on-primary;
+}
+
+//  On colors
+// ==================================================================
+
+[pam-Skin~="on:secondary"] {
+    color: @skin-on-secondary;
+}
+
+[pam-Skin~="on:background"] {
+    color: @skin-on-background;
+}
+
+[pam-Skin~="on:surface"] {
+    color: @skin-on-surface;
+}
+
+[pam-Skin~="on:error"] {
+    color: @skin-on-error;
+}
+
+[pam-Skin~="white:bg"] {
+    background-color: @skin-white;
+}
+
+[pam-Skin~="black:bg"] {
+    background-color: @skin-black;
 }
 
 [pam-Skin~="accent"] {
