@@ -9,4 +9,7 @@
         "prettier",
         "plugin:compat/recommended"
     ],
+    "rules": {
+        "compat/compat": "warn"
+    }
 }

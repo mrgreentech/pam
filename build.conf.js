@@ -55,7 +55,7 @@ const config = () => {
             cssMinFile: `${buildBase}pam.min.css`,
             cssSkinsGlob: `${buildBase}*-skin.css`,
             less: `${buildBase}less/`,
-            lessFile: `${buildBase}less/pam.less`,
+            lessFile: `${buildBase}less/pam*.less`,
             lessFileBase: `${buildBase}less/base.less`,
             lessFileFont: `${buildBase}less/font.less`,
             lessGlob: `${buildBase}less/**`,

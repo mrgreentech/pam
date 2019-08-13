@@ -8,6 +8,7 @@
 -   Added `pam-Loader` component.
 -   Added `pam-Overlay` component.
 -   Added `pam-Tag` component.
+-   Added `pam-Card` component.
 -   Added browserlist config.
 -   Added button color modifiers.
 -   Added commitlint.
