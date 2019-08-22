@@ -1,14 +1,12 @@
 module.exports = (objVars, docName = "variables") => {
-    // console.log(createTableRows(objVars));
-
     function createTableRows(objVars) {
-        const tableRows = [];
-
-        Object.keys(objVars).forEach(item => {
-            tableRows.push(tableRowTemplate(item, objVars[item]));
+        return Object.entries(objVars).map(([item, value]) => {
+            return tableRowTemplate(item, value);
         });
 
-        return tableRows;
+        // return Object.keys(objVars).map(item => {
+        //     return tableRowTemplate(item, objVars[item]);
+        // });
     }
 
     function tableTemplate(arrRows) {
@@ -22,7 +20,7 @@ module.exports = (objVars, docName = "variables") => {
 // <table pam-Table="bordered fluid">
 //     <thead>
 //         <tr>
-//             <th>Variable</th>
+//             <th>Name</th>
 //             <th>Value</th>
 //         </tr>
 //     </thead>
@@ -39,8 +37,8 @@ ${rows}
 
     function tableRowTemplate(key, value) {
         return `//          <tr>
-//            <td><code>${key}</code></td>
-//            <td>${value}</td>
+//            <td>${key}</td>
+//            <td><code>${value}</code></td>
 //        </tr>`;
     }
 

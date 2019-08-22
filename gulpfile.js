@@ -22,9 +22,10 @@ const server = require("browser-sync").create();
 const sizeReporter = require("gulp-sizereport");
 const stylelint = require("gulp-stylelint");
 
-const through2 = require("through2");
-const lessVarsToJs = require("less-vars-to-js");
-const docTemplateVars = require("./scripts/docTemplateVars.js");
+// const through2 = require("through2");
+// const lessVarsToJs = require("less-vars-to-js");
+// const docTemplateVars = require("./scripts/docTemplateVars.js");
+const lessVarsToSG = require("./scripts/lessVarsToSG.js");
 
 // Clean
 function cleanBuild() {
@@ -151,34 +152,9 @@ function watchFiles() {
 }
 
 function variablesDocs() {
-    return src("src/less/*.less")
-        .pipe(
-            through2.obj(function(file, _, cb) {
-                if (file.isBuffer()) {
-                    const replaceFrom = /\/\/ <+(?=variables)(.*)>/gi;
-                    let replaceTo = "<REPLACED>";
-                    // Get less variables
-                    const variables = lessVarsToJs(file.contents.toString(), {});
-
-                    let contents = String(file.contents);
-                    let docConf = contents.match(/<+(?=variables)(.*)>/gi);
-                    let docName = docConf ? docConf[0].substring(1, docConf[0].length - 1).split("|")[1] : "";
-                    let styleGuideIndex = docName ? docName : file.stem + ".variables";
-                    // console.log(styleGuideIndex);
-
-                    if (replaceFrom.test(contents)) {
-                        replaceTo = docTemplateVars(variables, styleGuideIndex);
-                        contents = contents.replace(replaceFrom, replaceTo);
-                    }
-
-                    file.contents = new Buffer.from(contents);
-
-                    // console.log(docTemplateVars(variables));
-                }
-                cb(null, file);
-            })
-        )
-        .pipe(dest("build/less/"));
+    return src(paths.src.lessGlob)
+        .pipe(lessVarsToSG())
+        .pipe(dest(paths.build.less));
 }
 
 //  Complex tasks
