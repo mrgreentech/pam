@@ -4,28 +4,24 @@
 const { pkg, paths, files, banner, browserSyncConfig, kssConfig } = require("./build.conf.js");
 
 // Modules
+const { src, dest, series, parallel, watch } = require("gulp");
 const babel = require("gulp-babel");
 const banners = require("gulp-banner");
 const cleanCss = require("gulp-clean-css");
 const concat = require("gulp-concat");
 const del = require("del");
 const eslint = require("gulp-eslint");
-const { src, dest, series, parallel, watch } = require("gulp");
 const gzip = require("gulp-gzip");
 const kss = require("kss");
 const less = require("gulp-less");
 const lessPluginAutoprefix = require("less-plugin-autoprefix");
+const lessVarsToSG = require("./scripts/lessVarsToSG.js");
 const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const replace = require("gulp-replace");
 const server = require("browser-sync").create();
 const sizeReporter = require("gulp-sizereport");
 const stylelint = require("gulp-stylelint");
-
-// const through2 = require("through2");
-// const lessVarsToJs = require("less-vars-to-js");
-// const docTemplateVars = require("./scripts/docTemplateVars.js");
-const lessVarsToSG = require("./scripts/lessVarsToSG.js");
 
 // Clean
 function cleanBuild() {

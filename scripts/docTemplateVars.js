@@ -1,15 +1,5 @@
-module.exports = (objVars, docName = "variables") => {
-    function createTableRows(objVars) {
-        return Object.entries(objVars).map(([item, value]) => {
-            return tableRowTemplate(item, value);
-        });
-
-        // return Object.keys(objVars).map(item => {
-        //     return tableRowTemplate(item, objVars[item]);
-        // });
-    }
-
-    function tableTemplate(arrRows) {
+module.exports = (lessVariables, docIndex = "variables") => {
+    function tableTemplate(arrRows, index) {
         const rows = arrRows.join("\n");
         return `
 // Variables
@@ -17,7 +7,7 @@ module.exports = (objVars, docName = "variables") => {
 // These are all the component specific variables that can be
 // used for customization.
 //
-// <table pam-Table="bordered fluid">
+// <table pam-Table="horizontal">
 //     <thead>
 //         <tr>
 //             <th>Name</th>
@@ -31,16 +21,22 @@ ${rows}
 //
 // Weight: 20
 //
-// Style guide: ${docName}
+// Style guide: ${index}
  `;
     }
 
-    function tableRowTemplate(key, value) {
+    function tableRowTemplate(name, value) {
         return `//          <tr>
-//            <td>${key}</td>
+//            <td>${name}</td>
 //            <td><code>${value}</code></td>
 //        </tr>`;
     }
 
-    return tableTemplate(createTableRows(objVars));
+    function buildTableRows(objVars) {
+        return Object.entries(objVars).map(([name, value]) => {
+            return tableRowTemplate(name, value);
+        });
+    }
+
+    return tableTemplate(buildTableRows(lessVariables), docIndex);
 };
