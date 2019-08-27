@@ -164,7 +164,6 @@ const dev = series(build, parallel(watchFiles, serve));
 const dist = series(parallel(cleanDist, build), copyDist);
 
 // Export tasks
-exports.test = variablesDocs;
 exports.build = build;
 exports.compress = compress;
 exports.cssLint = cssLint;
