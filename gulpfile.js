@@ -54,6 +54,13 @@ function concatBase() {
         .pipe(dest(paths.build.less));
 }
 
+// Add variables documentation
+function variablesDocs() {
+    return src(paths.src.lessGlob)
+        .pipe(lessVarsToSG())
+        .pipe(dest(paths.build.less));
+}
+
 // Styles
 function css() {
     return src([paths.build.lessFile, paths.skin.lessFileGlob])
@@ -145,12 +152,6 @@ function serve(cb) {
 // Watch
 function watchFiles() {
     watch([paths.src.rootGlob], buildDev);
-}
-
-function variablesDocs() {
-    return src(paths.src.lessGlob)
-        .pipe(lessVarsToSG())
-        .pipe(dest(paths.build.less));
 }
 
 //  Complex tasks

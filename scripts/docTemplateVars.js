@@ -1,4 +1,16 @@
+/**
+ * Creates a KSS valid documentation template for less variables.
+ * @param  {object} lessVariables
+ * @param  {string} docIndex
+ * @return {string}
+ */
 module.exports = (lessVariables, docIndex = "variables") => {
+    /**
+     * Style guide variables documentation template.
+     * @param  {Array} arrRows
+     * @param  {string} index
+     * @return {string}
+     */
     function tableTemplate(arrRows, index) {
         const rows = arrRows.join("\n");
         return `
@@ -25,6 +37,12 @@ ${rows}
  `;
     }
 
+    /**
+     * Variables table row template.
+     * @param  {string} name
+     * @param  {string} value
+     * @return {string}
+     */
     function tableRowTemplate(name, value) {
         return `//          <tr>
 //            <td>${name}</td>
@@ -32,6 +50,11 @@ ${rows}
 //        </tr>`;
     }
 
+    /**
+     * Build and parse the variables table rows.
+     * @param  {Object} objVars
+     * @return {Array}
+     */
     function buildTableRows(objVars) {
         return Object.entries(objVars).map(([name, value]) => {
             return tableRowTemplate(name, value);
