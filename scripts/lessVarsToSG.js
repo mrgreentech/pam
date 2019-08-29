@@ -4,7 +4,6 @@ const PluginError = require("plugin-error");
 const through = require("through2");
 
 /**
- * PLUGIN_NAME is the name of the plugin
  * @constant
  * @type {string}
  */
@@ -17,7 +16,6 @@ const PLUGIN_NAME = "gulp-lessVarsToSG";
 module.exports = () => {
     return through.obj((file, _, cb) => {
         /**
-         * if stream type is null
          * @param  {boolean} file.isNull()
          * @return {function}
          */
@@ -26,7 +24,6 @@ module.exports = () => {
         }
 
         /**
-         * if stream type is stream
          * @param  {boolean} file.isStream()
          * @return {object}
          */
@@ -41,7 +38,6 @@ module.exports = () => {
         const replaceFrom = /\/\/ <+(?=variables)(.*)>/gi;
 
         /**
-         * if stream type is buffert
          * @param  {boolean} file.isBuffer()
          * @return {object}
          */
