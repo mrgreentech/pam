@@ -231,6 +231,7 @@ h3.kss-title {
         box-shadow: none;
         height: calc(100vh - 85px);
         padding: 0 40px;
+        text-transform: uppercase;
     }
 
     #kss-node .kss-nav__menu-item[active] {

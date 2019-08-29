@@ -4,17 +4,18 @@
 const { pkg, paths, files, banner, browserSyncConfig, kssConfig } = require("./build.conf.js");
 
 // Modules
+const { src, dest, series, parallel, watch } = require("gulp");
 const babel = require("gulp-babel");
 const banners = require("gulp-banner");
 const cleanCss = require("gulp-clean-css");
 const concat = require("gulp-concat");
 const del = require("del");
 const eslint = require("gulp-eslint");
-const { src, dest, series, parallel, watch } = require("gulp");
 const gzip = require("gulp-gzip");
 const kss = require("kss");
 const less = require("gulp-less");
 const lessPluginAutoprefix = require("less-plugin-autoprefix");
+const lessVarsToSG = require("./scripts/lessVarsToSG.js");
 const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const replace = require("gulp-replace");
@@ -50,6 +51,13 @@ function concatBase() {
         .pipe(plumber())
         .pipe(concat(files.src.lessBase))
         .pipe(banners(banner, { pkg: pkg }))
+        .pipe(dest(paths.build.less));
+}
+
+// Add variables documentation
+function variablesDocs() {
+    return src(paths.src.lessGlob)
+        .pipe(lessVarsToSG())
         .pipe(dest(paths.build.less));
 }
 
@@ -151,8 +159,8 @@ const styles = series(cssLint, css);
 const scripts = series(jsLint, js);
 const stylesAndScripts = parallel(styles, scripts);
 const buildStyleguide = series(copyCssToSG, styleguide, replaceVersion);
-const build = series(cleanBuild, copyBuild, concatBase, stylesAndScripts, buildStyleguide, sizeReport);
-const buildDev = series(copyBuild, concatBase, stylesAndScripts, buildStyleguide);
+const build = series(cleanBuild, copyBuild, concatBase, variablesDocs, stylesAndScripts, buildStyleguide, sizeReport);
+const buildDev = series(copyBuild, concatBase, variablesDocs, stylesAndScripts, buildStyleguide);
 const dev = series(build, parallel(watchFiles, serve));
 const dist = series(parallel(cleanDist, build), copyDist);
 

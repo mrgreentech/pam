@@ -9,6 +9,7 @@
 -   Added `pam-Overlay` component.
 -   Added `pam-Tag` component.
 -   Added `pam-Card` component.
+-   Added dynamic variable documentation to the style guide.
 -   Added browserlist config.
 -   Added button color modifiers.
 -   Added commitlint.
