@@ -1,13 +1,13 @@
 {
-  "//": "The source and destination paths are relative to this file.",
-  "source": ["src/"],
-  "destination": "build/styleguide",
-  "builder": "src/styleguide/",
-  "placeholder": "[modifier attribute]",
+    "//": "The source and destination paths are relative to this file.",
+    "source": ["src/styleguide/", "build/less/"],
+    "destination": "build/styleguide",
+    "builder": "src/styleguide/",
+    "placeholder": "[modifier attribute]",
 
-  "//": "The css and js paths are URLs relative to the generated style guide.",
-  "css": ["kss-assets/css/pam.css", "kss-assets/css/styleguide-custom.css"],
-  "js": ["kss-assets/js/animator.js", "kss-assets/js/skinSwitcher.js", "kss-assets/js/styleguide.js"],
-  "title": "PAM",
-  "nav-depth": 2
+    "//": "The css and js paths are URLs relative to the generated style guide.",
+    "css": ["kss-assets/css/pam.css", "kss-assets/css/styleguide-custom.css"],
+    "js": ["kss-assets/js/animator.js", "kss-assets/js/skinSwitcher.js", "kss-assets/js/styleguide.js"],
+    "title": "PAM",
+    "nav-depth": 2
 }
