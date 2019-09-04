@@ -10,83 +10,78 @@
 //     <div pam-Unit="1-1 medium:1-2">
 //         <div pam-Grid>
 //             <div pam-Unit="1-1">
-//                 <div grid-block="large" pam-skin="primary">Primary</div>
+//                 <p>Primary</p>
+//                 <div grid-block="large" pam-skin="primary">
+//                     <span pam-skin="on:primary">Text on primary</span>
+//                 </div>
 //             </div>
 //             <div pam-Unit="1-2">
-//                 <div grid-block pam-skin="primary:light">Primary light</div>
+//                 <div grid-block pam-skin="primary:light">
+//                    <span pam-skin="on:primary:light">Text on primary light</span>
+//                 </div>
 //             </div>
 //             <div pam-Unit="1-2">
-//                 <div grid-block pam-skin="primary:dark">Primary dark</div>
+//                 <div grid-block pam-skin="primary:dark">
+//                    <span pam-skin="on:primary:dark">Text on primary dark</span>
+//                 </div>
 //             </div>
 //         </div>
 //     </div>
 //     <div pam-Unit="1-1 medium:1-2">
 //         <div pam-Grid>
 //             <div pam-Unit="1-1">
-//                 <div grid-block="large" pam-skin="secondary">Secondary</div>
+//                 <p>Secondary</p>
+//                 <div grid-block="large" pam-skin="secondary">
+//                     <span pam-skin="on:secondary">Text on secondary</span>
+//                 </div>
 //             </div>
 //             <div pam-Unit="1-2">
-//                 <div grid-block pam-skin="secondary:light">Secondary light</div>
+//                 <div grid-block pam-skin="secondary:light">
+//                    <span pam-skin="on:secondary:light">Text on secondary light</span>
+//                 </div>
 //             </div>
 //             <div pam-Unit="1-2">
-//                 <div grid-block pam-skin="secondary:dark">Secondary dark</div>
-//             </div>
-//         </div>
-//     </div>
-// </div>
-//
-// <div grid-space></div>
-//
-// <div pam-Grid>
-//             <div pam-Unit="1-3">
-//                 <div grid-block pam-skin="background">Background</div>
-//             </div>
-//             <div pam-Unit="1-3">
-//                 <div grid-block pam-skin="surface">Surface</div>
-//             </div>
-//             <div pam-Unit="1-3">
-//                 <div grid-block pam-skin="error">Error</div>
-//             </div>
-// </div>
-//
-// <div grid-space></div>
-//
-// <div pam-Grid>
-//     <div pam-Unit="1-1 medium:1-1">
-//         <div pam-Grid>
-//             <div pam-Unit="1-2">
-//                 <div grid-block pam-skin="on:primary white-bg">On primary</div>
-//             </div>
-//             <div pam-Unit="1-2">
-//                 <div grid-block pam-skin="on:secondary white-bg">On secondary</div>
-//             </div>
-//             <div pam-Unit="1-1">
-//                 <div pam-Grid>
-//                     <div pam-Unit="1-3">
-//                         <div grid-block pam-skin="on:background white-bg">On Background</div>
-//                     </div>
-//                     <div pam-Unit="1-3">
-//                         <div grid-block pam-skin="on:surface white:bg">On Surface</div>
-//                     </div>
-//                     <div pam-Unit="1-3">
-//                         <div grid-block pam-skin="on:error black:bg">On Error</div>
-//                     </div>
+//                 <div grid-block pam-skin="secondary:dark">
+//                    <span pam-skin="on:secondary:dark">Text on secondary light</span>
 //                 </div>
 //             </div>
 //         </div>
 //     </div>
 // </div>
 //
-// Weight: 5
+// <div grid-space></div>
+//
+// <div pam-Grid>
+//             <div pam-Unit="1-3">
+//                 <p>Background</p>
+//                 <div grid-block pam-skin="background">
+//                     <span pam-skin="on:background">Text on background</span>
+//                 </div>
+//             </div>
+//             <div pam-Unit="1-3">
+//                 <p>Surface</p>
+//                 <div grid-block pam-skin="surface">
+//                     <span pam-skin="on:surface">Text on surface</span>
+//                 </div>
+//             </div>
+//             <div pam-Unit="1-3">
+//                 <p>Error</p>
+//                 <div grid-block pam-skin="error">
+//                     <span pam-skin="on:error">Text on error</span>
+//                 </div>
+//             </div>
+// </div>
+//
+// Weight: 2
 //
 // Style guide: skin
 
 //  Variables
 // ==================================================================
 
-// @skin-primary-new: @skin-primary;
-// @skin-primary-light: @skin-primary;
-// @skin-primary-dark: @skin-primary;
+@skin-primary: #81b2c7;
+@skin-primary-light: lighten(@skin-primary, 15%);
+@skin-primary-dark: darken(@skin-primary, 15%);
 
 // @skin-secondary: @skin-primary;
 // @skin-secondary-light: @skin-primary;
@@ -96,11 +91,17 @@
 // @skin-surface: @skin-primary;
 // @skin-error: @skin-primary;
 
-@skin-on-primary: @skin-black;
-@skin-on-secondary: @skin-black;
-@skin-on-background: @skin-black;
-@skin-on-surface: @skin-black;
-@skin-on-error: @skin-white;
+@skin-on-primary: contrast(@skin-primary);
+@skin-on-primary-light: contrast(@skin-primary-light);
+@skin-on-primary-dark: contrast(@skin-primary-dark);
+
+@skin-on-secondary: contrast(@skin-secondary);
+@skin-on-secondary-light: contrast(@skin-secondary-light);
+@skin-on-secondary-dark: contrast(@skin-secondary-dark);
+
+@skin-on-background: contrast(@skin-background);
+@skin-on-surface: contrast(@skin-surface);
+@skin-on-error: contrast(@skin-error);
 
 // @skin-primary-bg: @skin-primary;
 // @skin-secondary-bg: @skin-primary;
@@ -139,22 +140,22 @@
 // Markup:
 // <div pam-Grid>
 //     <div pam-Unit="1-1 medium:1-3">
-//         <div pam-Skin-Test pam-skin="primary:light">@skin-primary-light</div>
+//         <div pam-Skin-Test pam-skin="primary">@skin-primary</div>
 //     </div>
 //     <div pam-Unit="1-1 medium:1-3">
-//         <div pam-Skin-Test pam-skin="primary">@skin-primary</div>
+//         <div pam-Skin-Test pam-skin="primary:light">@skin-primary-light</div>
 //     </div>
 //     <div pam-Unit="1-1 medium:1-3">
 //         <div pam-Skin-Test pam-skin="primary:dark">@skin-primary-dark</div>
 //     </div>
 //     <div pam-Unit="1-1 medium:1-3">
-//         <div pam-Skin-Test pam-skin="accent">@skin-accent</div>
+//         <div pam-Skin-Test pam-skin="secondary">@skin-secondary</div>
 //     </div>
 //     <div pam-Unit="1-1 medium:1-3">
-//         <div pam-Skin-Test pam-skin="feature">@skin-feature</div>
+//         <div pam-Skin-Test pam-skin="secondary:light">@skin-secondary-light</div>
 //     </div>
 //     <div pam-Unit="1-1 medium:1-3">
-//         <div pam-Skin-Test pam-skin="divider">@skin-divider</div>
+//         <div pam-Skin-Test pam-skin="secondary:dark">@skin-secondary-dark</div>
 //     </div>
 // </div>
 //
@@ -198,15 +199,31 @@
     background-color: @skin-error;
 }
 
+//  On colors
+// ==================================================================
+
 [pam-Skin~="on:primary"] {
     color: @skin-on-primary;
 }
 
-//  On colors
-// ==================================================================
+[pam-Skin~="on:primary:light"] {
+    color: @skin-on-primary-light;
+}
+
+[pam-Skin~="on:primary:dark"] {
+    color: @skin-on-primary-dark;
+}
 
 [pam-Skin~="on:secondary"] {
     color: @skin-on-secondary;
+}
+
+[pam-Skin~="on:secondary:light"] {
+    color: @skin-on-secondary-light;
+}
+
+[pam-Skin~="on:secondary:dark"] {
+    color: @skin-on-secondary-dark;
 }
 
 [pam-Skin~="on:background"] {
@@ -227,18 +244,6 @@
 
 [pam-Skin~="black:bg"] {
     background-color: @skin-black;
-}
-
-[pam-Skin~="accent"] {
-    background-color: @skin-accent;
-}
-
-[pam-Skin~="feature"] {
-    background-color: @skin-feature;
-}
-
-[pam-Skin~="divider"] {
-    background-color: @skin-divider;
 }
 
 //  Information
