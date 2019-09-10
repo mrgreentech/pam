@@ -6,14 +6,13 @@
 // Skin colors
 // ==================================================================
 
-// Intention
-// primary - used to represent primary interface elements for a user
-// secondary - used to represent secondary interface elements for a user
-// warn - used to represent interface elements that the user should be careful of
-// success - used to represent a successful action
-// text - used to represent colors of text and icons
+// Primary - used to represent primary interface elements for a user
+@skin-primary: #546e7a;
+@skin-primary-light: lighten(@skin-primary, 15%);
+@skin-primary-dark: darken(@skin-primary, 15%);
 
-@skin-secondary: #98a5a3;
+// Secondary - used to represent secondary interface elements for a user
+@skin-secondary: #90a4ae;
 @skin-secondary-light: lighten(@skin-secondary, 15%);
 @skin-secondary-dark: darken(@skin-secondary, 15%);
 
@@ -21,30 +20,42 @@
 @skin-surface: @skin-gray-300;
 @skin-error: #f44336;
 
-// Info colors
-@skin-info: #50b2ce;
-@skin-success: #4caf50;
-@skin-warn: #e9ac5e;
-@skin-danger: #f44336;
+@skin-on-primary: contrast(@skin-primary);
+@skin-on-primary-light: contrast(@skin-primary-light);
+@skin-on-primary-dark: contrast(@skin-primary-dark);
 
-// Base greyscales
+@skin-on-secondary: contrast(@skin-secondary);
+@skin-on-secondary-light: contrast(@skin-secondary-light);
+@skin-on-secondary-dark: contrast(@skin-secondary-dark);
+
+@skin-on-background: contrast(@skin-background);
+@skin-on-surface: contrast(@skin-surface);
+@skin-on-error: contrast(@skin-error);
+
+// Background
+@skin-primary-bg: @skin-white;
+@skin-secondary-bg: @skin-black;
+
+// Skin black and white
 @skin-black: #000;
-@skin-darker: #212121;
-@skin-dark: #757575;
-@skin-hint: #bdbdbd;
-@skin-light: #e0e0e0;
-@skin-lighter: #f5f5f5;
 @skin-white: #fff;
 
-// Base values for text and icons
-@skin-text: #fff;
-@skin-text-primary: #444;
-@skin-text-secondary: #9f9f9f;
-@skin-text-darker: @skin-darker;
-@skin-text-dark: @skin-dark;
-@skin-text-hint: @skin-hint;
-@skin-text-light: @skin-light;
-@skin-text-lighter: @skin-lighter;
+// Border
+@skin-border-primary: @skin-gray-400;
+@skin-border-secondary: @skin-gray-500;
+
+// Text
+@skin-text-primary-on-light: @skin-black;
+@skin-text-secondary-on-light: @skin-gray-700;
+@skin-text-hint-on-light: @skin-gray-500;
+@skin-text-disabled-on-light: @skin-gray-400;
+@skin-text-icon-on-light: @skin-black;
+
+@skin-text-primary-on-dark: @skin-white;
+@skin-text-secondary-on-dark: @skin-gray-200;
+@skin-text-hint-on-dark: @skin-gray-400;
+@skin-text-disabled-on-dark: @skin-gray-500;
+@skin-text-icon-on-dark: @skin-white;
 
 // Skin gray
 @skin-gray-50: #fafafa;
@@ -57,6 +68,15 @@
 @skin-gray-700: #616161;
 @skin-gray-800: #424242;
 @skin-gray-900: #212121;
+
+// Info colors
+// Warn - used to represent interface elements that the user should be careful of
+// Text - used to represent colors of text and icons
+// Success - used to represent a successful action
+@skin-info: #50b2ce;
+@skin-success: #4caf50;
+@skin-warn: #e9ac5e;
+@skin-danger: #f44336;
 
 // Spacing
 // ==================================================================

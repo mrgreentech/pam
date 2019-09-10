@@ -21,13 +21,13 @@
 
 @menu-arrow-horizontal: "\25BE";
 @menu-arrow-vertical: "\25B8";
-@menu-children-color: @skin-text;
+@menu-children-bg-color: @skin-background;
 @menu-disabled-opacity: @opacity-base;
-@menu-heading-color: @skin-darker;
-@menu-link-color: @skin-dark;
-@menu-link-hover-bg-color: #ededed;
-@menu-selected-link-color: #000;
-@menu-seperator-bg-color: @skin-hint;
+@menu-heading-color: @skin-gray-900;
+@menu-link-color: @skin-gray-600;
+@menu-link-hover-bg-color: @skin-gray-300;
+@menu-selected-link-color: @skin-black;
+@menu-seperator-bg-color: @skin-border-primary;
 @menu-seperator-thickness: 1px;
 
 // ==================================================================
@@ -410,7 +410,7 @@
 }
 
 [pam-Menu] [pam-Menu-Children] {
-    background-color: @menu-children-color;
+    background-color: @menu-children-bg-color;
     display: none;
     left: 0;
     margin: 0;

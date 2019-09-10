@@ -59,15 +59,15 @@
 @form-border-radius: @border-radius-base;
 @form-border-style: solid;
 @form-border-width: 1px;
-@form-border: @skin-light;
-@form-color: @skin-text-primary;
+@form-border: @skin-border-primary;
+@form-color: @skin-text-primary-on-light;
 @form-font-size: @font-size-large;
 @form-line-height: @line-height-base;
 @form-margin: 0 0 @space-8;
 @form-padding-horizontal: @space-8;
 @form-padding-vertical: @space-8;
 @form-padding: @space-8;
-@form-placeholder-color: @skin-text-secondary;
+@form-placeholder-color: @skin-text-secondary-on-light;
 @form-tap-highlight-color: rgba(0, 0, 0, 0);
 @form-transition-duration: @transition-duration;
 @form-transition-property: border;
@@ -156,7 +156,7 @@
 [pam-Form] select[disabled],
 [pam-Form] textarea[disabled] {
     cursor: not-allowed;
-    color: @skin-text-secondary;
+    color: @skin-text-disabled-on-light;
 
     .hook-form-disabled;
 }
@@ -167,7 +167,7 @@
 [pam-Form] input[readonly],
 [pam-Form] select[readonly],
 [pam-Form] textarea[readonly] {
-    color: @skin-text-primary;
+    color: @skin-text-disabled-on-light;
     border-color: @form-border;
 
     .hook-form-readonly;
@@ -176,7 +176,7 @@
 [pam-Form] input[readonly]:focus,
 [pam-Form] select[readonly]:focus,
 [pam-Form] textarea[readonly]:focus {
-    color: @skin-text-secondary;
+    color: @skin-text-disabled-on-light;
     border-color: @form-border;
 
     .hook-form-readonly-focus;
@@ -602,7 +602,7 @@
 //
 // Style guide: forms.message.inline
 
-@form-message-color: @skin-text-primary;
+@form-message-color: @skin-text-primary-on-light;
 @form-message-display: block;
 @form-message-font-size: @font-size-xsmall;
 
@@ -1010,7 +1010,7 @@
     background-color: @form-select-custom-background-color;
     background-repeat: @form-select-custom-background-repeat;
     background-size: @form-select-custom-background-size;
-    color: @skin-text-primary;
+    color: @skin-text-primary-on-light;
     display: @form-select-custom-display;
     max-width: @form-select-custom-max-width;
     padding-right: @form-select-custom-padding-right;
@@ -1045,7 +1045,7 @@
 
 @form-control-borderless-border-color-focus: transparent;
 @form-control-borderless-border-color: transparent;
-@form-control-borderless-focus-box-shadow: 0 1px 3px @skin-dark;
+@form-control-borderless-focus-box-shadow: 0 1px 3px @skin-gray-600;
 @form-control-borderless-transition: box-shadow 0.3s ease;
 
 @form-control-fluid-width: 100%;
@@ -1062,7 +1062,7 @@
 
 [pam-Form] [pam-Form-Control~="borderless"]:focus {
     border-color: @form-control-borderless-border-color-focus;
-    box-shadow: 0 1px 3px @skin-dark;
+    box-shadow: @form-control-borderless-focus-box-shadow;
 }
 
 [pam-Form] [pam-Form-Control~="fluid"] {

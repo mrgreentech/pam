@@ -17,13 +17,13 @@
 //  Variables
 // ==================================================================
 
-@button-background: @skin-text;
-@button-border-color: @skin-hint;
+@button-background: @skin-white;
+@button-border-color: @skin-border-primary;
 @button-border-radius: @border-radius-base;
 @button-border-style: solid;
 @button-border-width: 1px;
 @button-border: @button-border-width @button-border-style @button-border-color;
-@button-color: @skin-text-primary;
+@button-color: @skin-text-primary-on-light;
 @button-darken: 7%;
 @button-decoration: none;
 @button-disabled-opacity: 0.4;
@@ -47,37 +47,37 @@
 
 @button-primary-background: @skin-primary;
 @button-primary-border-color: @skin-primary;
-@button-primary-color: @skin-text;
+@button-primary-color: @skin-text-primary-on-dark;
 @button-primary-hover-background: lighten(@button-primary-background, @button-lighten);
 @button-primary-active-background: darken(@button-primary-background, @button-darken);
 
-@button-secondary-background: @skin-darker;
-@button-secondary-border-color: @skin-darker;
-@button-secondary-color: @skin-text;
+@button-secondary-background: @skin-secondary;
+@button-secondary-border-color: @skin-secondary;
+@button-secondary-color: @skin-text-primary-on-dark;
 @button-secondary-hover-background: lighten(@button-secondary-background, @button-lighten);
 @button-secondary-active-background: darken(@button-secondary-background, @button-darken);
 
 @button-info-background: @skin-info;
 @button-info-border-color: @skin-info;
-@button-info-color: @skin-text;
+@button-info-color: @skin-text-primary-on-dark;
 @button-info-hover-background: lighten(@button-info-background, @button-lighten);
 @button-info-active-background: darken(@button-info-background, @button-darken);
 
 @button-success-background: @skin-success;
 @button-success-border-color: @skin-success;
-@button-success-color: @skin-text;
+@button-success-color: @skin-text-primary-on-dark;
 @button-success-hover-background: lighten(@button-success-background, @button-lighten);
 @button-success-active-background: darken(@button-success-background, @button-darken);
 
 @button-warning-background: @skin-warn;
 @button-warning-border-color: @skin-warn;
-@button-warning-color: @skin-text;
+@button-warning-color: @skin-text-primary-on-dark;
 @button-warning-hover-background: lighten(@button-warning-background, @button-lighten);
 @button-warning-active-background: darken(@button-warning-background, @button-darken);
 
 @button-danger-background: @skin-danger;
 @button-danger-border-color: @skin-danger;
-@button-danger-color: @skin-text;
+@button-danger-color: @skin-text-primary-on-dark;
 @button-danger-hover-background: lighten(@button-danger-background, @button-lighten);
 @button-danger-active-background: darken(@button-danger-background, @button-darken);
 
@@ -574,7 +574,7 @@ a[pam-Button~="raised"] {
 a[pam-Button~="flat"] {
     background-color: transparent;
     border-color: transparent;
-    color: @skin-text-primary;
+    color: @skin-black;
 
     &:hover,
     &:focus {
@@ -869,52 +869,6 @@ a[pam-Button~="round"] {
     z-index: 0;
 
     .hook-button-round;
-}
-
-// Text (Deprecated)
-// ==================================================================
-
-// Text
-//
-// The text button trait `[pam-Button="text"]` can be used to adjust
-// the color of a button text.
-//
-// <div pam-Alert="warning">
-//     <header pam-Alert-Heading>
-//         Deprecated: Text trait buttons
-//     </header>
-//     <p>
-//         Support will be dropped after PAM version 1.1.x.
-//         Use the <strong>pam-skin="text"</strong> trait instead.
-//     </p>
-// </div>
-//
-// Markup:
-// <button pam-Button="text">Button element</button>
-// <button pam-Button="text:primary">Button element</button>
-// <button pam-Button="text:secondary">Button element</button>
-//
-// Style guide: buttons.deprecated.text
-
-[pam-Button~="text"],
-a[pam-Button~="text"] {
-    color: @skin-text;
-
-    .hook-button-text;
-}
-
-[pam-Button~="text:primary"],
-a[pam-Button~="text:primary"] {
-    color: @skin-text-primary;
-
-    .hook-button-text-primary;
-}
-
-[pam-Button~="text:secondary"],
-a[pam-Button~="text:secondary"] {
-    color: @skin-text-secondary;
-
-    .hook-button-text-secondary;
 }
 
 // Button mixins
