@@ -72,6 +72,29 @@
 //             </div>
 // </div>
 //
+// <div grid-space></div>
+//
+// <div pam-Grid>
+//             <div pam-Unit="1-3">
+//                 <p>Info</p>
+//                 <div grid-block pam-skin="info">
+//                     <span pam-skin="on:info">Text on info</span>
+//                 </div>
+//             </div>
+//             <div pam-Unit="1-3">
+//                 <p>Success</p>
+//                 <div grid-block pam-skin="success">
+//                     <span pam-skin="on:success">Text on success</span>
+//                 </div>
+//             </div>
+//             <div pam-Unit="1-3">
+//                 <p>Warning</p>
+//                 <div grid-block pam-skin="warning">
+//                     <span pam-skin="on:warning">Text on warning</span>
+//                 </div>
+//             </div>
+// </div>
+//
 // Weight: 2
 //
 // Style guide: skin
@@ -83,30 +106,30 @@
 //  Skin
 // ==================================================================
 
-// Primary
+// Primary and secondary
 //
 // Colors used to represent primary and complementary interface
 // elements.
 //
 // Markup:
 // <div pam-Grid>
-//     <div pam-Unit="1-1 medium:1-3">
-//         <div pam-Skin-Test pam-skin="primary">@skin-primary</div>
+//     <div pam-Unit="1-3">
+//         <p>Background</p>
+//         <div grid-block pam-skin="primary">
+//             <span pam-skin="on:primary">On primary</span>
+//         </div>
 //     </div>
-//     <div pam-Unit="1-1 medium:1-3">
-//         <div pam-Skin-Test pam-skin="primary:light">@skin-primary-light</div>
+//     <div pam-Unit="1-3">
+//         <p>Background</p>
+//         <div grid-block pam-skin="primary:light">
+//             <span pam-skin="on:primary:light">On primary light</span>
+//         </div>
 //     </div>
-//     <div pam-Unit="1-1 medium:1-3">
-//         <div pam-Skin-Test pam-skin="primary:dark">@skin-primary-dark</div>
-//     </div>
-//     <div pam-Unit="1-1 medium:1-3">
-//         <div pam-Skin-Test pam-skin="secondary">@skin-secondary</div>
-//     </div>
-//     <div pam-Unit="1-1 medium:1-3">
-//         <div pam-Skin-Test pam-skin="secondary:light">@skin-secondary-light</div>
-//     </div>
-//     <div pam-Unit="1-1 medium:1-3">
-//         <div pam-Skin-Test pam-skin="secondary:dark">@skin-secondary-dark</div>
+//     <div pam-Unit="1-3">
+//         <p>Background</p>
+//         <div grid-block pam-skin="primary:dark">
+//             <span pam-skin="on:primary:dark">On primary dark</span>
+//         </div>
 //     </div>
 // </div>
 //
@@ -150,6 +173,22 @@
     background-color: @skin-error;
 }
 
+[pam-Skin~="info"] {
+    background-color: @skin-info;
+}
+
+[pam-Skin~="success"] {
+    background-color: @skin-success;
+}
+
+[pam-Skin~="warning"] {
+    background-color: @skin-warn;
+}
+
+[pam-Skin~="danger"] {
+    background-color: @skin-danger;
+}
+
 //  On colors
 // ==================================================================
 
@@ -189,6 +228,18 @@
     color: @skin-on-error;
 }
 
+[pam-Skin~="on:info"] {
+    color: @skin-on-info;
+}
+
+[pam-Skin~="on:success"] {
+    color: @skin-on-success;
+}
+
+[pam-Skin~="on:warning"] {
+    color: @skin-on-warning;
+}
+
 [pam-Skin~="white:bg"] {
     background-color: @skin-white;
 }
@@ -224,21 +275,21 @@
 //
 // Style guide: skin.information
 
-[pam-Skin~="info"] {
-    background-color: @skin-info;
-}
+// [pam-Skin~="info"] {
+//     background-color: @skin-info;
+// }
 
-[pam-Skin~="success"] {
-    background-color: @skin-success;
-}
+// [pam-Skin~="success"] {
+//     background-color: @skin-success;
+// }
 
-[pam-Skin~="warn"] {
-    background-color: @skin-warn;
-}
+// [pam-Skin~="warn"] {
+//     background-color: @skin-warn;
+// }
 
-[pam-Skin~="danger"] {
-    background-color: @skin-danger;
-}
+// [pam-Skin~="danger"] {
+//     background-color: @skin-danger;
+// }
 
 //  Greyscales
 // ==================================================================
@@ -288,77 +339,4 @@
 
 // [pam-Skin~="darker"] {
 //     background-color: @skin-darker;
-// }
-
-//  Text
-// ==================================================================
-
-// Text
-//
-// Colors used to represent text interface elements
-//
-// Markup:
-// <div pam-Grid>
-//     <div pam-Unit="1-1 medium:1-4">
-//         <div pam-Skin-Test="text:light" pam-skin="text">@skin-text</div>
-//     </div>
-//     <div pam-Unit="1-1 medium:1-4">
-//         <div pam-Skin-Test="text:light" pam-skin="text text:hint">@skin-text-hint</div>
-//     </div>
-//     <div pam-Unit="1-1 medium:1-4">
-//         <div pam-Skin-Test="text:light" pam-skin="text text:light">@skin-text-light</div>
-//     </div>
-//     <div pam-Unit="1-1 medium:1-4">
-//         <div pam-Skin-Test="text:light" pam-skin="text text:lighter">@skin-text-lighter</div>
-//     </div>
-// </div>
-// <div pam-Grid>
-//     <div pam-Unit="1-1 medium:1-4">
-//         <div pam-Skin-Test="text" pam-skin="text:primary">@skin-text-primary</div>
-//     </div>
-//     <div pam-Unit="1-1 medium:1-4">
-//         <div pam-Skin-Test="text" pam-skin="text:secondary">@skin-text-secondary</div>
-//     </div>
-//     <div pam-Unit="1-1 medium:1-4">
-//         <div pam-Skin-Test="text" pam-skin="text:darker">@skin-text-darker</div>
-//     </div>
-//     <div pam-Unit="1-1 medium:1-4">
-//         <div pam-Skin-Test="text" pam-skin="text:dark">@skin-dark</div>
-//     </div>
-// </div>
-//
-// Weight: 5
-//
-// Style guide: skin.text
-
-// [pam-Skin~="text"] {
-//     color: @skin-text;
-// }
-
-// [pam-Skin~="text:primary"] {
-//     color: @skin-text-primary;
-// }
-
-// [pam-Skin~="text:secondary"] {
-//     color: @skin-text-secondary;
-// }
-
-// [pam-Skin~="text:darker"] {
-//     color: @skin-text-darker;
-// }
-
-// [pam-Skin~="text:dark"] {
-//     color: @skin-text-dark;
-// }
-
-// [pam-Skin~="text:hint"] {
-//     color: @skin-text-hint;
-// }
-
-// [pam-Skin~="text:light"] {
-//     color: @skin-text-light;
-// }
-
-// [pam-Skin~="text:lighter"] {
-//     color: @skin-text-lighter;
 // }

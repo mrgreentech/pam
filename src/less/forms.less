@@ -59,7 +59,7 @@
 @form-border-radius: @border-radius-base;
 @form-border-style: solid;
 @form-border-width: 1px;
-@form-border: @skin-border-primary;
+@form-border-color: @skin-border-primary;
 @form-color: @skin-text-primary-on-light;
 @form-font-size: @font-size-large;
 @form-line-height: @line-height-base;
@@ -73,8 +73,9 @@
 @form-transition-property: border;
 @form-transition-timing: ease;
 
-@form-focus-color: darken(@form-border, 30%);
-@form-focus-border: darken(@form-border, 30%);
+@form-focus-border-color: @skin-info;
+@form-focus-border-width: 2px;
+@form-focus-color: darken(@form-border-color, 30%);
 
 @form-legend-width: 100%;
 @form-legend-padding: @space-8 0;
@@ -95,7 +96,7 @@
 [pam-Form] textarea {
     background-color: @form-background;
     border-radius: @form-border-radius;
-    border: @form-border-width @form-border-style @form-border;
+    border: @form-border-width @form-border-style @form-border-color;
     color: @form-color;
     display: inline-block;
     font-family: inherit;
@@ -132,7 +133,7 @@
 [pam-Form] select:focus,
 [pam-Form] textarea:focus {
     outline: 0;
-    border: @form-border-width @form-border-style @form-focus-border;
+    border: @form-focus-border-width @form-border-style @form-focus-border-color;
 
     .hook-form-focus;
 }
@@ -168,7 +169,7 @@
 [pam-Form] select[readonly],
 [pam-Form] textarea[readonly] {
     color: @skin-text-disabled-on-light;
-    border-color: @form-border;
+    border-color: @form-border-color;
 
     .hook-form-readonly;
 }
@@ -177,7 +178,7 @@
 [pam-Form] select[readonly]:focus,
 [pam-Form] textarea[readonly]:focus {
     color: @skin-text-disabled-on-light;
-    border-color: @form-border;
+    border-color: @form-border-color;
 
     .hook-form-readonly-focus;
 }
@@ -817,10 +818,10 @@
 @form-group-lego-addon-white-space: nowrap;
 
 @form-group-lego-addon-first-all-border-right-color: transparent;
-@form-group-lego-addon-first-all-focus-border-right-color: @form-focus-border;
+@form-group-lego-addon-first-all-focus-border-right-color: @form-focus-border-color;
 
 @form-group-lego-addon-last-all-border-left-color: transparent;
-@form-group-lego-addon-last-all-focus-border-left-color: @form-focus-border;
+@form-group-lego-addon-last-all-focus-border-left-color: @form-focus-border-color;
 
 @form-group-lego-control-focus-zindex: 3;
 @form-group-lego-control-margin-bottom: 0;
