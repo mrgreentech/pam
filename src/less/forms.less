@@ -189,7 +189,7 @@
 [pam-Form] input:focus:invalid,
 [pam-Form] textarea:focus:invalid,
 [pam-Form] select:focus:invalid {
-    border-color: @form-danger-color;
+    border-color: @form-error-color;
 
     .hook-form-focus-invalid;
 }
@@ -197,7 +197,7 @@
 [pam-Form] input:focus:invalid:focus,
 [pam-Form] textarea:focus:invalid:focus,
 [pam-Form] select:focus:invalid:focus {
-    border-color: @form-danger-color;
+    border-color: @form-error-color;
 
     .hook-form-focus-invalid-focus;
 }
@@ -205,7 +205,7 @@
 [pam-Form] input[type="file"]:focus:invalid:focus,
 [pam-Form] input[type="radio"]:focus:invalid:focus,
 [pam-Form] input[type="checkbox"]:focus:invalid:focus {
-    outline-color: @form-danger-color;
+    outline-color: @form-error-color;
 
     .hook-form-focus-invalid-focus;
 }
@@ -308,7 +308,7 @@
 
 // Custom
 //
-// Use the `pam-Form-State` to apply custom form states `success` or `danger`.
+// Use the `pam-Form-State` to apply custom form states `success` or `error`.
 //
 // Markup:
 // <form pam-Form>
@@ -316,7 +316,7 @@
 // </form>
 //
 // success - attribute marks a success state for the input.
-// danger - attribute marks a error state for the input.
+// error - attribute marks a error state for the input.
 //
 // Weight: 2
 //
@@ -326,9 +326,9 @@
 @form-success-border: @skin-success;
 @form-success-color: @skin-success;
 
-@form-danger-background: lighten(@skin-danger, 40%);
-@form-danger-border: @skin-danger;
-@form-danger-color: @skin-danger;
+@form-error-background: lighten(@skin-error, 40%);
+@form-error-border: @skin-error;
+@form-error-color: @skin-error;
 
 // ------------------------------------------------------------------
 
@@ -345,17 +345,17 @@
     .hook-form-state-success;
 }
 
-[pam-Form] input[pam-Form-State~="danger"],
-[pam-Form] input[pam-Form-State~="danger"]:focus,
-[pam-Form] select[pam-Form-State~="danger"],
-[pam-Form] select[pam-Form-State~="danger"]:focus,
-[pam-Form] textarea[pam-Form-State~="danger"],
-[pam-Form] textarea[pam-Form-State~="danger"]:focus {
-    background-color: @form-danger-background;
-    border: @form-border-width @form-border-style @form-danger-border;
-    color: @form-danger-color;
+[pam-Form] input[pam-Form-State~="error"],
+[pam-Form] input[pam-Form-State~="error"]:focus,
+[pam-Form] select[pam-Form-State~="error"],
+[pam-Form] select[pam-Form-State~="error"]:focus,
+[pam-Form] textarea[pam-Form-State~="error"],
+[pam-Form] textarea[pam-Form-State~="error"]:focus {
+    background-color: @form-error-background;
+    border: @form-border-width @form-border-style @form-error-border;
+    color: @form-error-color;
 
-    .hook-form-state-danger;
+    .hook-form-state-error;
 }
 
 // Sub-modifier: Size
@@ -1331,7 +1331,7 @@
 // `.hook-form-message`
 // `.hook-form-message-inline`
 // `.hook-form-state-success`
-// `.hook-form-state-danger`
+// `.hook-form-state-error`
 // `.hook-form-size-large`
 // `.hook-form-size-small`
 // `.hook-form-field-inline`
@@ -1389,7 +1389,7 @@
 }
 .hook-form-state-success() {
 }
-.hook-form-state-danger() {
+.hook-form-state-error() {
 }
 .hook-form-size-large() {
 }

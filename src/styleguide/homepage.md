@@ -19,6 +19,6 @@
         <a href="https://github.com/mrgreentech/pam" pam-Button="primary outlined large">GitHub</a>
     </div>
     <footer>
-        <span pam-Tag="danger">Version {{version}}</span>
+        <span pam-Tag="error">Version {{version}}</span>
     </footer>
 </div>

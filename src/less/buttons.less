@@ -75,11 +75,11 @@
 @button-warning-hover-background: lighten(@button-warning-background, @button-lighten);
 @button-warning-active-background: darken(@button-warning-background, @button-darken);
 
-@button-danger-background: @skin-danger;
-@button-danger-border-color: @skin-danger;
-@button-danger-color: @skin-text-primary-on-dark;
-@button-danger-hover-background: lighten(@button-danger-background, @button-lighten);
-@button-danger-active-background: darken(@button-danger-background, @button-darken);
+@button-error-background: @skin-error;
+@button-error-border-color: @skin-error;
+@button-error-color: @skin-text-primary-on-dark;
+@button-error-hover-background: lighten(@button-error-background, @button-lighten);
+@button-error-active-background: darken(@button-error-background, @button-darken);
 
 @button-large-font-size: @font-size-large;
 @button-large-line-height: 2.4;
@@ -253,7 +253,7 @@ a[pam-Button~="hidden"] {
 // <button pam-Button="info outlined">Info</button>
 // <button pam-Button="success outlined">Success</button>
 // <button pam-Button="warning outlined">Warning</button>
-// <button pam-Button="danger outlined">Danger</button>
+// <button pam-Button="error outlined">error</button>
 //
 // Weight: 3
 //
@@ -350,7 +350,7 @@ a[pam-Button~="link"] {
 // <button pam-Button="info">Info</button>
 // <button pam-Button="success">Success</button>
 // <button pam-Button="warning">Warning</button>
-// <button pam-Button="danger">Danger</button>
+// <button pam-Button="error">error</button>
 //
 // Weight: 2
 //
@@ -434,30 +434,30 @@ a[pam-Button~="warning"] {
     .hook-button-warning;
 }
 
-// danger
+// error
 
-[pam-Button~="danger"],
-a[pam-Button~="danger"] {
-    background-color: @button-danger-background;
-    border-color: @button-danger-border-color;
-    color: @button-danger-color;
+[pam-Button~="error"],
+a[pam-Button~="error"] {
+    background-color: @button-error-background;
+    border-color: @button-error-border-color;
+    color: @button-error-color;
 
     &:hover,
     &:focus {
-        background-color: @button-danger-hover-background;
+        background-color: @button-error-hover-background;
     }
 
     &:active {
-        background-color: @button-danger-active-background;
+        background-color: @button-error-active-background;
     }
 
     &:visited {
-        color: @button-danger-color;
+        color: @button-error-color;
     }
 
-    .button-outlined (@button-danger-background, @button-danger-color, @button-darken);
+    .button-outlined (@button-error-background, @button-error-color, @button-darken);
 
-    .hook-button-danger;
+    .hook-button-error;
 }
 
 // Size modifiers
@@ -613,9 +613,9 @@ a[pam-Button~="flat"][pam-Button~="warning"] {
     color: @button-warning-background;
 }
 
-[pam-Button~="flat"][pam-Button~="danger"],
-a[pam-Button~="flat"][pam-Button~="danger"] {
-    color: @button-danger-background;
+[pam-Button~="flat"][pam-Button~="error"],
+a[pam-Button~="flat"][pam-Button~="error"] {
+    color: @button-error-background;
 }
 
 // Modifier: fluid
@@ -678,13 +678,13 @@ a[pam-Button~="rounded"] {
 //
 // Markup:
 // <button pam-Button="circle">
-//    <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
+//     <i class="material-icons">add</i>
 // </button>
 // <button pam-Button="circle raised">
-//    <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
+//     <i class="material-icons">add</i>
 // </button>
 // <button pam-Button="circle flat">
-//    <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
+//     <i class="material-icons">add</i>
 // </button>
 //
 // Weight: 8
@@ -694,7 +694,9 @@ a[pam-Button~="rounded"] {
 [pam-Button~="circle"],
 a[pam-Button~="circle"] {
     border-radius: @button-circle-border-radius;
+    display: inline-flex;
     height: @button-circle-size;
+    justify-content: center;
     line-height: @button-circle-line-height;
     min-width: @button-circle-size;
     overflow: hidden;
@@ -702,10 +704,6 @@ a[pam-Button~="circle"] {
     position: relative;
     vertical-align: middle;
     width: @button-circle-size;
-
-    i.material-icons {
-        line-height: @button-circle-line-height;
-    }
 
     .hook-button-circle;
 }
@@ -872,7 +870,7 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 // `.hook-button`
 // `.hook-button-active`
 // `.hook-button-circle`
-// `.hook-button-danger`
+// `.hook-button-error`
 // `.hook-button-disabled`
 // `.hook-button-flat`
 // `.hook-button-fluid`
@@ -905,7 +903,7 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 }
 .hook-button-circle() {
 }
-.hook-button-danger() {
+.hook-button-error() {
 }
 .hook-button-disabled() {
 }
