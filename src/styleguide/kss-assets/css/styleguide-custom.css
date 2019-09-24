@@ -475,12 +475,24 @@ section.sg-block.sg-section-hooks code {
 }
 
 [grid-block] {
+    align-items: center;
+    display: flex;
     padding: 16px;
+}
+
+[grid-block~="fixed"] {
+    align-items: center;
+    display: flex;
     height: 100px;
+    justify-content: center;
 }
 
 [grid-block~="large"] {
     height: 180px;
+}
+
+[grid-block~="small"] {
+    height: 56px;
 }
 
 [pam-Skin-Test] {

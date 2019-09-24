@@ -823,54 +823,6 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 //
 // Style guide: buttons.group.size
 
-// Deprecated
-// ==================================================================
-
-// Deprecated
-//
-// Following button rulez will be deprecated in version 1.1.0.
-//
-// Weight: 9
-//
-// Style guide: buttons.deprecated
-
-// Round (Deprecated)
-// ==================================================================
-
-// Round
-//
-// Round button to be used with icons and a direct contextual action.
-//
-// <div pam-Alert="warning">
-//     <header pam-Alert-Heading>
-//         Deprecated: Legacy round button
-//     </header>
-//     <p>
-//         Support will be dropped after PAM version 1.1.x.
-//         Use the <strong>fab buttons</strong> instead.
-//     </p>
-// </div>
-//
-// Markup:
-// <button pam-Button="round">
-//    <img pam-Icon src="kss-assets/img/plus.svg" />
-// </button>
-//
-// Style guide: buttons.deprecated.round
-
-[pam-Button~="round"],
-a[pam-Button~="round"] {
-    border-radius: 50%;
-    box-shadow: none;
-    height: @space-56;
-    padding: 0;
-    position: relative;
-    width: @space-56;
-    z-index: 0;
-
-    .hook-button-round;
-}
-
 // Button mixins
 // ==================================================================
 
