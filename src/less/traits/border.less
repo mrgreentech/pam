@@ -1,0 +1,134 @@
+// Border
+//
+// Control of border color with `pam-border` trait.
+//
+// Markup:
+// <div pam-Grid pam-Grid-Control="space">
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="primary" grid-block>
+//             <span>Primary</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="primary:light" grid-block>
+//             <span>Primary light</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="primary:dark" grid-block>
+//             <span>Primary dark</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="secondary" grid-block>
+//             <span>Secondary</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="secondary:light" grid-block>
+//             <span>Secondary light</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="secondary:dark" grid-block>
+//             <span>Secondary dark</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="info" grid-block>
+//             <span>Info</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="success" grid-block>
+//             <span>Success</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="warning" grid-block>
+//             <span>Warning</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="error" grid-block>
+//             <span>error</span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 5
+//
+// Style guide: traits.border
+
+//  Border
+// ==================================================================
+
+[pam-border] {
+    border: 1px solid @skin-border-primary;
+}
+
+// Modifier: color
+// ==================================================================
+
+[pam-border~="primary"] {
+    border-color: @skin-primary !important;
+}
+
+[pam-border~="primary:light"] {
+    border-color: @skin-primary-light !important;
+}
+
+[pam-border~="primary:dark"] {
+    border-color: @skin-primary-dark !important;
+}
+
+[pam-border~="secondary"] {
+    border-color: @skin-secondary !important;
+}
+
+[pam-border~="secondary:light"] {
+    border-color: @skin-secondary-light !important;
+}
+
+[pam-border~="secondary:dark"] {
+    border-color: @skin-secondary-dark !important;
+}
+
+[pam-border~="background"] {
+    border-color: @skin-background !important;
+}
+
+[pam-border~="surface"] {
+    border-color: @skin-surface !important;
+}
+
+[pam-border~="error"] {
+    border-color: @skin-error !important;
+}
+
+[pam-border~="info"] {
+    border-color: @skin-info !important;
+}
+
+[pam-border~="success"] {
+    border-color: @skin-success !important;
+}
+
+[pam-border~="warning"] {
+    border-color: @skin-warning !important;
+}
+
+// Modifier: radius
+// ==================================================================
+
+[pam-border~="radius"] {
+    border-radius: @border-radius-base;
+}
+
+[pam-border~="radius:small"] {
+    border-radius: @border-radius-small;
+}
+
+[pam-border~="radius:large"] {
+    border-radius: @border-radius-large;
+}
