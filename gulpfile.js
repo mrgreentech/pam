@@ -159,8 +159,8 @@ const styles = series(cssLint, css);
 const scripts = series(jsLint, js);
 const stylesAndScripts = parallel(styles, scripts);
 const buildStyleguide = series(copyCssToSG, styleguide, replaceVersion);
-const build = series(cleanBuild, copyBuild, concatBase, variablesDocs, stylesAndScripts, buildStyleguide, sizeReport);
-const buildDev = series(copyBuild, concatBase, variablesDocs, stylesAndScripts, buildStyleguide);
+const build = series(cleanBuild, copyBuild, variablesDocs, concatBase, stylesAndScripts, buildStyleguide, sizeReport);
+const buildDev = series(copyBuild, variablesDocs, concatBase, stylesAndScripts, buildStyleguide);
 const dev = series(build, parallel(watchFiles, serve));
 const dist = series(parallel(cleanDist, build), copyDist);
 
