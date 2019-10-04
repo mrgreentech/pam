@@ -105,67 +105,66 @@
 
 // Background
 //
-// Skin colors as background. Used to represent interface
-// elements backgrounds.
+// Skin colors as background.
 //
 // Markup:
 // <div pam-Grid>
-//     <div pam-Unit="1-3">
+//     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-skin="primary" grid-block="fixed small">
 //             <span pam-skin="on:primary">Primary</span>
 //         </div>
 //     </div>
-//     <div pam-Unit="1-3">
+//     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-skin="primary:light" grid-block="fixed small">
 //             <span pam-skin="on:primary:light">Primary light</span>
 //         </div>
 //     </div>
-//     <div pam-Unit="1-3">
+//     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-skin="primary:dark" grid-block="fixed small">
 //             <span pam-skin="on:primary:dark">Primary dark</span>
 //         </div>
 //     </div>
-//     <div pam-Unit="1-3">
+//     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-skin="secondary" grid-block="fixed small">
 //             <span pam-skin="on:secondary">Secondary</span>
 //         </div>
 //     </div>
-//     <div pam-Unit="1-3">
+//     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-skin="secondary:light" grid-block="fixed small">
 //             <span pam-skin="on:secondary:light">Secondary light</span>
 //         </div>
 //     </div>
-//     <div pam-Unit="1-3">
+//     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-skin="secondary:dark" grid-block="fixed small">
 //             <span pam-skin="on:secondary:dark">Secondary dark</span>
 //         </div>
 //     </div>
-//     <div pam-Unit="1-3">
+//     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-skin="background" grid-block="fixed small">
 //             <span pam-skin="on:background">Background</span>
 //         </div>
 //     </div>
-//     <div pam-Unit="1-3">
+//     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-skin="surface" grid-block="fixed small">
 //             <span pam-skin="on:surface">Surface</span>
 //         </div>
 //     </div>
-//     <div pam-Unit="1-3">
+//     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-skin="error" grid-block="fixed small">
 //             <span pam-skin="on:error">Error</span>
 //         </div>
 //     </div>
-//     <div pam-Unit="1-3">
+//     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-skin="info" grid-block="fixed small">
 //             <span pam-skin="on:info">Info</span>
 //         </div>
 //     </div>
-//     <div pam-Unit="1-3">
+//     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-skin="success" grid-block="fixed small">
 //             <span pam-skin="on:success">Success</span>
 //         </div>
 //     </div>
-//     <div pam-Unit="1-3">
+//     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-skin="warning" grid-block="fixed small">
 //             <span pam-skin="on:warning">Warning</span>
 //         </div>
@@ -174,7 +173,7 @@
 //
 // Weight: 1
 //
-// Style guide: skin.primary
+// Style guide: skin.background
 
 [pam-Skin~="primary"] {
     background-color: @skin-primary !important;
@@ -221,11 +220,65 @@
 }
 
 [pam-Skin~="warning"] {
-    background-color: @skin-warning !important;
+    background-color: @skin-warn !important;
 }
 
-//  Background
-// ==================================================================
+// Gray
+//
+// Skin gray color palette as background.
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:50" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:light">Gray 50</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:100" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:light">Gray 100</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:200" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:light">Gray 200</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:300" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:light">Gray 300</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:400" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:light">Gray 400</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:500" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:dark">Gray 500</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:600" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:dark">Gray 600</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:700" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:dark">Gray 700</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:800" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:dark">Gray 800</span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: skin.background.gray
 
 [pam-Skin~="bg:white"] {
     background-color: @skin-white !important;
@@ -385,7 +438,7 @@
 }
 
 [pam-Skin~="warning:text"] {
-    color: @skin-warning !important;
+    color: @skin-warn !important;
 }
 
 //  On colors
@@ -438,6 +491,8 @@
 [pam-Skin~="on:warning"] {
     color: @skin-on-warning !important;
 }
+
+// ------------------------------------------------------------------
 
 // Background
 //
@@ -495,6 +550,8 @@
     color: @skin-text-icon-on-background !important;
 }
 
+// ------------------------------------------------------------------
+
 // Light background
 //
 // Text on light background
@@ -550,6 +607,8 @@
 [pam-Skin~="text:icon:on:light"] {
     color: @skin-text-icon-on-light !important;
 }
+
+// ------------------------------------------------------------------
 
 // Dark background
 //

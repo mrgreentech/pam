@@ -1,6 +1,24 @@
 // Border
 //
-// Control of border color with `pam-border` trait.
+// Control border color and radius by using the `pam-border` trait.
+//
+// Weight: 5
+//
+// Style guide: traits.border
+
+//  Border
+// ==================================================================
+
+[pam-border] {
+    border: @border-width-base @border-style @skin-border-primary;
+}
+
+// Modifier: color
+// ==================================================================
+
+// Color
+//
+// Control the border color with `pam-border`.
 //
 // Markup:
 // <div pam-Grid pam-Grid-Control="space">
@@ -56,19 +74,9 @@
 //     </div>
 // </div>
 //
-// Weight: 5
+// Weight: 1
 //
-// Style guide: traits.border
-
-//  Border
-// ==================================================================
-
-[pam-border] {
-    border: 1px solid @skin-border-primary;
-}
-
-// Modifier: color
-// ==================================================================
+// Style guide: traits.border.color
 
 [pam-border~="primary"] {
     border-color: @skin-primary !important;
@@ -121,6 +129,38 @@
 // Modifier: radius
 // ==================================================================
 
+// Radius
+//
+// Control border radius with `pam-border="radius"` trait.
+//
+// Markup:
+// <div pam-Grid pam-Grid-Control="space">
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="radius:small" grid-block>
+//             <span>Small</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="radius" grid-block>
+//             <span>Default</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="radius:large" grid-block>
+//             <span>Large</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="radius:rounded" grid-block>
+//             <span>Rounded</span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: traits.border.radius
+
 [pam-border~="radius"] {
     border-radius: @border-radius-base;
 }
@@ -131,4 +171,46 @@
 
 [pam-border~="radius:large"] {
     border-radius: @border-radius-large;
+}
+
+[pam-border~="radius:rounded"] {
+    border-radius: @border-radius-rounded;
+}
+
+// Modifier: radius
+// ==================================================================
+
+// Radius
+//
+// Control border width with `pam-border="width"`.
+//
+// Markup:
+// <div pam-Grid pam-Grid-Control="space">
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="" grid-block>
+//             <span>Default</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="width:small" grid-block>
+//             <span>Small</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div pam-border="width:large" grid-block>
+//             <span>Large</span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: traits.border.width
+
+[pam-border~="width:small"] {
+    border-width: @border-width-small;
+}
+
+[pam-border~="width:large"] {
+    border-width: @border-width-large;
 }
