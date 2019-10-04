@@ -60,6 +60,8 @@
 @table-head-bg-color: @skin-background;
 @table-head-border-bottom: @table-border-width @table-border-style @table-border-color;
 
+@table-th-font-weight: @font-weight-medium;
+
 @table-striped-odd-bg-color: @skin-gray-200;
 
 @table-border-bordered-color: @table-border-color;
@@ -94,15 +96,15 @@
 [pam-Table] thead {
     background-color: @table-head-bg-color;
     border-bottom: @table-head-border-bottom;
-    text-transform: uppercase;
     text-align: left;
+    text-transform: uppercase;
     vertical-align: bottom;
 
     .hook-table-thead;
 }
 
-[pam-Table] td,
-[pam-Table] th {
+[pam-Table] th,
+[pam-Table] td {
     border-left: @table-border-width @table-border-style @table-border-color;
     border-width: 0 0 0 @table-border-width;
     font-size: inherit;
@@ -111,6 +113,12 @@
     padding: @table-padding;
 
     .hook-table-td-th;
+}
+
+[pam-Table] th {
+    font-weight: @table-th-font-weight;
+
+    .hook-table-th;
 }
 
 [pam-Table] td {
@@ -224,6 +232,7 @@
 // `.hook-table-caption-bp-medium`
 // `.hook-table-odd-td`
 // `.hook-table-td`
+// `.hook-table-th`
 // `.hook-table-td-th`
 // `.hook-table-td-th-bp-medium`
 // `.hook-table-td-th-first-child`
@@ -249,6 +258,8 @@
 .hook-table-odd-td() {
 }
 .hook-table-td() {
+}
+.hook-table-th() {
 }
 .hook-table-td-th() {
 }

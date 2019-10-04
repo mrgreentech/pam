@@ -328,6 +328,127 @@
     background-color: @skin-gray-900 !important;
 }
 
+//  On colors
+// ==================================================================
+
+// On colors
+//
+// The on colors refers to color elements that are placed on top of
+// surfaces that for example use primary, secondary and surface color.
+// On colors are applied to text, icons and borders.
+// The default colors are #FFFFFF and #000000.
+//
+// <table pam-Table="bordered">
+//     <thead>
+//         <tr>
+//             <th>CSS Attribute</th>
+//             <th>Description</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//         <tr>
+//             <td><code>Skin="on:primary"</code></td>
+//             <td>Set text color to the on:primary color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:primary:light"</code></td>
+//             <td>Set text color to the on:primary:light color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:primary:dark"</code></td>
+//             <td>Set text color to the on:primary:dark color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:secondary"</code></td>
+//             <td>Set text color to the on:secondary color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:secondary:light"</code></td>
+//             <td>Set text color to the on:secondary:light color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:secondary:dark"</code></td>
+//             <td>Set text color to the on:secondary:dark color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:background"</code></td>
+//             <td>Set text color to the on:background color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:surface"</code></td>
+//             <td>Set text color to the on:surface color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:error"</code></td>
+//             <td>Set text color to the on:error color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:info"</code></td>
+//             <td>Set text color to the on:info color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:success"</code></td>
+//             <td>Set text color to the on:success color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:warning"</code></td>
+//             <td>Set text color to the on:warning color</td>
+//         </tr>
+//     </tbody>
+// </table>
+//
+// Weight: 4
+//
+// Style guide: skin.on-colors
+
+[pam-Skin~="on:primary"] {
+    color: @skin-on-primary !important;
+}
+
+[pam-Skin~="on:primary:light"] {
+    color: @skin-on-primary-light !important;
+}
+
+[pam-Skin~="on:primary:dark"] {
+    color: @skin-on-primary-dark !important;
+}
+
+[pam-Skin~="on:secondary"] {
+    color: @skin-on-secondary !important;
+}
+
+[pam-Skin~="on:secondary:light"] {
+    color: @skin-on-secondary-light !important;
+}
+
+[pam-Skin~="on:secondary:dark"] {
+    color: @skin-on-secondary-dark !important;
+}
+
+[pam-Skin~="on:background"] {
+    color: @skin-on-background !important;
+}
+
+[pam-Skin~="on:surface"] {
+    color: @skin-on-surface !important;
+}
+
+[pam-Skin~="on:error"] {
+    color: @skin-on-error !important;
+}
+
+[pam-Skin~="on:info"] {
+    color: @skin-on-info !important;
+}
+
+[pam-Skin~="on:success"] {
+    color: @skin-on-success !important;
+}
+
+[pam-Skin~="on:warning"] {
+    color: @skin-on-warning !important;
+}
+
 //  Text
 // ==================================================================
 
@@ -389,7 +510,7 @@
 //     </div>
 // </div>
 //
-// Weight: 4
+// Weight: 5
 //
 // Style guide: skin.text
 
@@ -439,57 +560,6 @@
 
 [pam-Skin~="warning:text"] {
     color: @skin-warn !important;
-}
-
-//  On colors
-// ==================================================================
-
-[pam-Skin~="on:primary"] {
-    color: @skin-on-primary !important;
-}
-
-[pam-Skin~="on:primary:light"] {
-    color: @skin-on-primary-light !important;
-}
-
-[pam-Skin~="on:primary:dark"] {
-    color: @skin-on-primary-dark !important;
-}
-
-[pam-Skin~="on:secondary"] {
-    color: @skin-on-secondary !important;
-}
-
-[pam-Skin~="on:secondary:light"] {
-    color: @skin-on-secondary-light !important;
-}
-
-[pam-Skin~="on:secondary:dark"] {
-    color: @skin-on-secondary-dark !important;
-}
-
-[pam-Skin~="on:background"] {
-    color: @skin-on-background !important;
-}
-
-[pam-Skin~="on:surface"] {
-    color: @skin-on-surface !important;
-}
-
-[pam-Skin~="on:error"] {
-    color: @skin-on-error !important;
-}
-
-[pam-Skin~="on:info"] {
-    color: @skin-on-info !important;
-}
-
-[pam-Skin~="on:success"] {
-    color: @skin-on-success !important;
-}
-
-[pam-Skin~="on:warning"] {
-    color: @skin-on-warning !important;
 }
 
 // ------------------------------------------------------------------
