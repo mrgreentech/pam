@@ -3,21 +3,112 @@
 // For control of margin and padding spacing use the `pam-space` trait.
 //
 // Markup:
-// <div pam-Button pam-space="margin:none">Button</div>
+// <span pam-space="p" pam-border>Padding x</span>
+// <span pam-space="p:2" pam-border>Padding x2</span>
+// <span pam-space="p:3" pam-border>Padding x3</span>
 //
 // Weight: 4
 //
 // Style guide: traits.space
 
+//  Space
+// ==================================================================
+
 [pam-space~="none"] {
-    margin: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+//  Margin
+// ==================================================================
+
+[pam-space~="m:none"] {
+    margin: 0 !important;
+}
+
+[pam-space~="m:y:none"] {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+[pam-space~="m:x:none"] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+[pam-space~="m:y:auto"] {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+
+[pam-space~="m:x:auto"] {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+[pam-space~="m"] {
+    margin: @space-x;
+}
+
+[pam-space~="m:2"] {
+    margin: @space-x2;
+}
+
+[pam-space~="m:3"] {
+    margin: @space-x3;
+}
+
+[pam-space~="m:4"] {
+    margin: @space-x4;
+}
+
+[pam-space~="m:5"] {
+    margin: @space-x5;
+}
+
+//  Padding
+// ==================================================================
+
+[pam-space~="p:none"] {
     padding: 0;
 }
 
-[pam-space~="margin:none"] {
-    margin: 0;
+[pam-space~="p:y:none"] {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-[pam-space~="padding:none"] {
-    margin: 0;
+[pam-space~="p:x:none"] {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+[pam-space~="p:y:auto"] {
+    padding-top: auto;
+    padding-bottom: auto;
+}
+
+[pam-space~="p:x:auto"] {
+    padding-left: auto;
+    padding-right: auto;
+}
+
+[pam-space~="p"] {
+    padding: @space-x;
+}
+
+[pam-space~="p:2"] {
+    padding: @space-x2;
+}
+
+[pam-space~="p:3"] {
+    padding: @space-x3;
+}
+
+[pam-space~="p:4"] {
+    padding: @space-x4;
+}
+
+[pam-space~="p:5"] {
+    padding: @space-x5;
 }
