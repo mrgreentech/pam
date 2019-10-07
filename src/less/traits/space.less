@@ -46,25 +46,11 @@
     margin-right: auto !important;
 }
 
-[pam-space~="m"] {
-    margin: @space-x;
-}
-
-[pam-space~="m:2"] {
-    margin: @space-x2;
-}
-
-[pam-space~="m:3"] {
-    margin: @space-x3;
-}
-
-[pam-space~="m:4"] {
-    margin: @space-x4;
-}
-
-[pam-space~="m:5"] {
-    margin: @space-x5;
-}
+.spacing(margin, "m", 1, 5);
+.spacing(margin-top, "m:t", 1, 5);
+.spacing(margin-right, "m:r", 1, 5);
+.spacing(margin-bottom, "m:b", 1, 5);
+.spacing(margin-left, "m:l", 1, 5);
 
 //  Padding
 // ==================================================================
@@ -93,22 +79,45 @@
     padding-right: auto;
 }
 
-[pam-space~="p"] {
-    padding: @space-x;
+.spacing(padding, "p", 1, 5);
+.spacing(padding-top, "p:t", 1, 5);
+.spacing(padding-right, "p:r", 1, 5);
+.spacing(padding-bottom, "p:b", 1, 5);
+.spacing(padding-left, "p:l", 1, 5);
+
+// spacing(@spaceType, @startIndex: 1, @prefix: "", @spaces)
+//
+// Generate a given number of spaces of a specific space type
+//
+// @columns - Number of columns.
+// @startIndex = 1 - What number to start on.
+// @prefix = '' - Attribute value prefix.
+//
+// Style guide: mixins.spacing
+
+.spacing(@spaceType, @spacePrefix: "", @startIndex: 1, @spaces) when (@startIndex =< @spaces) {
+    @selValue: if((@startIndex <= 1), "@{spacePrefix}", "@{spacePrefix}:@{startIndex}");
+
+    [pam-space~="@{selValue}"] {
+        @temp: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
+
+        @{spaceType}: @@temp;
+    }
+
+    .spacing(@spaceType, @spacePrefix, (@startIndex + 1), @spaces);
 }
 
-[pam-space~="p:2"] {
-    padding: @space-x2;
-}
+// .spacing-x(@spaceType, @spacePrefix: "", @startIndex: 1, @spaces) when (@startIndex =< @spaces) {
+//     @selValue: if((@startIndex <= 1), "@{spacePrefix}", "@{spacePrefix}:@{startIndex}");
 
-[pam-space~="p:3"] {
-    padding: @space-x3;
-}
+//     @spaceTypeLeft: @;
 
-[pam-space~="p:4"] {
-    padding: @space-x4;
-}
+//     [pam-space~="@{selValue}"] {
+//         @temp: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
 
-[pam-space~="p:5"] {
-    padding: @space-x5;
-}
+//         @{spaceTypeLeft}: @@temp;
+//         @{spaceTypeRight}: @@temp;
+//     }
+
+//     .spacing-x(@spaceType, @spacePrefix, (@startIndex + 1), @spaces);
+// }
