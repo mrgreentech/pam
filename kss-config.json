@@ -6,7 +6,7 @@
     "placeholder": "[modifier attribute]",
 
     "//": "The css and js paths are URLs relative to the generated style guide.",
-    "css": ["kss-assets/css/pam.css", "kss-assets/css/styleguide-custom.css"],
+    "css": ["kss-assets/css/styleguide-custom.css", "kss-assets/css/pam.css"],
     "js": ["kss-assets/js/animator.js", "kss-assets/js/skinSwitcher.js", "kss-assets/js/styleguide.js"],
     "title": "PAM",
     "nav-depth": 2

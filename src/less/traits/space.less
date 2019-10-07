@@ -1,11 +1,47 @@
 // Space
 //
-// For control of margin and padding spacing use the `pam-space` trait.
+// Control margin and padding with the `space` trait.
 //
-// Markup:
-// <span pam-space="p" pam-border>Padding x</span>
-// <span pam-space="p:2" pam-border>Padding x2</span>
-// <span pam-space="p:3" pam-border>Padding x3</span>
+// The space trait follows the format `{type}:{sides}:{size}`.
+//
+// Space _type:_
+//
+// <ul>
+//     <li>m - margin</li>
+//     <li>p - padding</li>
+// </ul>
+//
+// Space sides:
+//
+// <ul>
+//     <li><code>t</code> - <code>margin-top</code> or <code>padding-top</code></li>
+//     <li><code>b</code> - <code>margin-bottom</code> or <code>padding-bottom</code></li>
+//     <li><code>l</code> - <code>margin-left</code> or <code>padding-left</code></li>
+//     <li><code>r</code> - <code>margin-right</code> or <code>padding-right</code></li>
+//     <li><code>x</code> - set both <code>left</code> and <code>right</code></li>
+//     <li><code>y</code> - set both <code>top</code> and <code>bottom</code></li>
+//     <li>blank - set <code>margin</code> or <code>padding</code> on all sides</li>
+// </ul>
+//
+// ### Examples
+//
+// ```html
+// <!-- PADDING ON ALL SIDES -->
+// <div pam-space="p">Padding on all sides</div>
+//
+// <!-- PADDING ON TWO SIDES -->
+// <div pam-space="p:x">Padding on left and right side</div>
+//
+// <!-- PADDING SIZE -->
+// <div pam-space="p:2">Padding on all sides with size 2</div>
+// <div pam-space="p:l:2">Padding on left and right side with size 2</div>
+//
+// <!-- AUTO -->
+// <div pam-space="m:auto">Margin auto on all sides</div>
+//
+// <!-- NONE -->
+// <div pam-space="m:none">Margin 0 on all sides</div>
+// ```
 //
 // Weight: 4
 //
@@ -23,17 +59,27 @@
 // ==================================================================
 
 [pam-space~="m:none"] {
-    margin: 0 !important;
+    margin: 0;
 }
 
+[pam-space~="m:auto"] {
+    margin: auto !important;
+}
+
+.spacing(margin, "m", 5, 1);
+.spacing(margin-top, "m:t", 5, 1);
+.spacing(margin-right, "m:r", 5, 1);
+.spacing(margin-bottom, "m:b", 5, 1);
+.spacing(margin-left, "m:l", 5, 1);
+
 [pam-space~="m:y:none"] {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 [pam-space~="m:x:none"] {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 [pam-space~="m:y:auto"] {
@@ -46,11 +92,8 @@
     margin-right: auto !important;
 }
 
-.spacing(margin, "m", 1, 5);
-.spacing(margin-top, "m:t", 1, 5);
-.spacing(margin-right, "m:r", 1, 5);
-.spacing(margin-bottom, "m:b", 1, 5);
-.spacing(margin-left, "m:l", 1, 5);
+.spacing-x(margin, "m:x", 5, 1);
+.spacing-y(margin, "m:y", 5, 1);
 
 //  Padding
 // ==================================================================
@@ -58,6 +101,12 @@
 [pam-space~="p:none"] {
     padding: 0;
 }
+
+.spacing(padding, "p", 5, 1);
+.spacing(padding-top, "p:t", 5, 1);
+.spacing(padding-right, "p:r", 5, 1);
+.spacing(padding-bottom, "p:b", 5, 1);
+.spacing(padding-left, "p:l", 5, 1);
 
 [pam-space~="p:y:none"] {
     padding-top: 0;
@@ -69,55 +118,5 @@
     padding-right: 0;
 }
 
-[pam-space~="p:y:auto"] {
-    padding-top: auto;
-    padding-bottom: auto;
-}
-
-[pam-space~="p:x:auto"] {
-    padding-left: auto;
-    padding-right: auto;
-}
-
-.spacing(padding, "p", 1, 5);
-.spacing(padding-top, "p:t", 1, 5);
-.spacing(padding-right, "p:r", 1, 5);
-.spacing(padding-bottom, "p:b", 1, 5);
-.spacing(padding-left, "p:l", 1, 5);
-
-// spacing(@spaceType, @startIndex: 1, @prefix: "", @spaces)
-//
-// Generate a given number of spaces of a specific space type
-//
-// @columns - Number of columns.
-// @startIndex = 1 - What number to start on.
-// @prefix = '' - Attribute value prefix.
-//
-// Style guide: mixins.spacing
-
-.spacing(@spaceType, @spacePrefix: "", @startIndex: 1, @spaces) when (@startIndex =< @spaces) {
-    @selValue: if((@startIndex <= 1), "@{spacePrefix}", "@{spacePrefix}:@{startIndex}");
-
-    [pam-space~="@{selValue}"] {
-        @temp: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
-
-        @{spaceType}: @@temp;
-    }
-
-    .spacing(@spaceType, @spacePrefix, (@startIndex + 1), @spaces);
-}
-
-// .spacing-x(@spaceType, @spacePrefix: "", @startIndex: 1, @spaces) when (@startIndex =< @spaces) {
-//     @selValue: if((@startIndex <= 1), "@{spacePrefix}", "@{spacePrefix}:@{startIndex}");
-
-//     @spaceTypeLeft: @;
-
-//     [pam-space~="@{selValue}"] {
-//         @temp: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
-
-//         @{spaceTypeLeft}: @@temp;
-//         @{spaceTypeRight}: @@temp;
-//     }
-
-//     .spacing-x(@spaceType, @spacePrefix, (@startIndex + 1), @spaces);
-// }
+.spacing-x(padding, "p:x", 5, 1);
+.spacing-y(padding, "p:y", 5, 1);

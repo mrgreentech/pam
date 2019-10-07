@@ -4,15 +4,12 @@
             <img
                 src="kss-assets/img/logo.svg"
                 alt="PAM"
-                title="© 2016 Mr Green Tech All Rights Reserved"
+                title="© 2016 WH GameTek All Rights Reserved"
                 sg-Hero-Img animated="">
         </div>
-        <h2 sg-Hero-Punchline pam-typography="headline">
-            CSS with attitude
-        </h2>
-        <p pam-typography="headline">
-            It's skinny, bold and simply awesome.
-        </p>
+        <h5 pam-typography="h5">
+            A light, modular and extandable AMCSS library
+        </h5>
     </header>
     <div sg-Hero-Cta>
         <a href="./section-getting-started.html" pam-Button="primary large">Get started</a>

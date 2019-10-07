@@ -1,0 +1,53 @@
+// spacing(@spaceType, @startIndex: 1, @prefix: "", @spaces)
+//
+// Generate a given number of spaces of a specific space type
+//
+// @columns - Number of columns.
+// @startIndex = 1 - What number to start on.
+// @prefix = '' - Attribute value prefix.
+//
+// Style guide: mixins.spacing
+
+.spacing(@type, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
+    @selValue: if((@startIndex <= 1), "@{prefix}", "@{prefix}:@{startIndex}");
+
+    [pam-space~="@{selValue}"] {
+        @temp: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
+
+        @{type}: @@temp;
+    }
+
+    .spacing(@type, @prefix, @spaces, (@startIndex + 1));
+}
+
+.spacing-x(@type, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
+    @selValue: if((@startIndex <= 1), "@{prefix}", "@{prefix}:@{startIndex}");
+
+    @typeLeft: if((@type = margin), margin-left, padding-left);
+    @typeRight: if((@type = margin), margin-right, padding-right);
+
+    [pam-space~="@{selValue}"] {
+        @temp: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
+
+        @{typeLeft}: @@temp;
+        @{typeRight}: @@temp;
+    }
+
+    .spacing-x(@type, @prefix, @spaces, (@startIndex + 1));
+}
+
+.spacing-y(@type, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
+    @selValue: if((@startIndex <= 1), "@{prefix}", "@{prefix}:@{startIndex}");
+
+    @typeTop: if((@type = margin), margin-top, padding-top);
+    @typeBottom: if((@type = margin), margin-bottom, padding-bottom);
+
+    [pam-space~="@{selValue}"] {
+        @temp: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
+
+        @{typeTop}: @@temp;
+        @{typeBottom}: @@temp;
+    }
+
+    .spacing-y(@type, @prefix, @spaces, (@startIndex + 1));
+}

@@ -377,7 +377,7 @@ h3.kss-title {
 [sg-Hero] header,
 [sg-Hero] > div,
 [sg-Hero] footer {
-    max-width: 768px;
+    max-width: 480px;
     margin: 2em auto;
 }
 
