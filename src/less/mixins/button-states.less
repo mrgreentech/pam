@@ -1,0 +1,34 @@
+// .button-states(@bg-color, @text-color)
+//
+// Generates `hover`, focus, active and visited states for a button.
+//
+// @bg-color - Base color for the states.
+// @text color - Color for visited state.
+//
+// Style guide: mixins.button-states
+
+.button-states (@bg-color, @text-color, @h-tint: 10, @f-tint: 20, @a-tint: 30) {
+    @hover-color: tint(@bg-color, @h-tint);
+    @focus-color: tint(@bg-color, @f-tint);
+    @active-color: tint(@bg-color, @a-tint);
+    @visited-color: @text-color;
+
+    &:hover {
+        background-color: @hover-color;
+        border-color: @hover-color;
+    }
+
+    &:focus {
+        background-color: @focus-color;
+        border-color: @focus-color;
+    }
+
+    &:active {
+        background-color: @active-color;
+        border-color: @active-color;
+    }
+
+    &:visited {
+        color: @visited-color;
+    }
+}
