@@ -17,39 +17,34 @@
 //  Variables
 // ==================================================================
 
-@button-background: @skin-white;
-@button-border-color: @skin-border-primary;
+@button-background: @skin-primary;
+@button-border-color: @skin-primary;
 @button-border-radius: @border-radius-base;
 @button-border-style: solid;
 @button-border-width: 1px;
 @button-border: @button-border-width @button-border-style @button-border-color;
-@button-color: @skin-text-primary-on-light;
-@button-darken: 7%;
+@button-color: @skin-on-primary;
+@button-darken: 10%;
 @button-decoration: none;
 @button-disabled-opacity: 0.4;
 @button-font-family: inherit;
 @button-font-size: @font-size-medium;
 @button-font-weight: @font-weight-medium;
-@button-hover-background: darken(@button-background, @button-darken);
-@button-lighten: 7%;
-@button-line-height: 1.7;
+@button-hover-background: fade(@button-background, 90%);
+@button-focus-background: fade(@button-background, 75%);
+@button-active-background: fade(@button-background, 60%);
+@button-lighten: 10%;
+@button-line-height: 2.25rem;
 @button-margin: @space-base;
-@button-min-height: @space-40 + 1;
-@button-min-width: @space-80;
+@button-height: @space-36;
 @button-padding-horizontal: @space-16;
-@button-padding-vertical: @space-8;
+@button-padding-vertical: 0;
 @button-padding: @button-padding-vertical @button-padding-horizontal;
 @button-text-transform: uppercase;
 @button-transition-duration: @transition-duration;
 @button-transition-property: background-color;
 @button-transition-timing: ease;
 @button-white-space: normal;
-
-@button-primary-background: @skin-primary;
-@button-primary-border-color: @skin-primary;
-@button-primary-color: @skin-on-primary;
-@button-primary-hover-background: lighten(@button-primary-background, @button-lighten);
-@button-primary-active-background: darken(@button-primary-background, @button-darken);
 
 @button-secondary-background: @skin-secondary;
 @button-secondary-border-color: @skin-secondary;
@@ -81,17 +76,20 @@
 @button-error-hover-background: lighten(@button-error-background, @button-lighten);
 @button-error-active-background: darken(@button-error-background, @button-darken);
 
+@button-flat-active-background: fade(@button-flat-color, 30%);
+@button-flat-color: @skin-primary;
+@button-flat-focus-background: fade(@button-flat-color, 20%);
+@button-flat-hover-background: fade(@button-flat-color, 10%);
+
 @button-large-font-size: @font-size-large;
-@button-large-line-height: 2.4;
-@button-large-min-height: @space-56;
-@button-large-padding: @space-8 @space-16;
-@button-large-min-width: @space-96;
+@button-large-line-height: 3.4rem;
+@button-large-height: @space-56;
+@button-large-padding: 0 @space-24;
 
 @button-small-font-size: 0.75rem;
 @button-small-line-height: 1.4;
-@button-small-min-height: @space-32;
-@button-small-padding: @space-base @space-16;
-@button-small-min-width: @space-72;
+@button-small-height: @space-32;
+@button-small-padding: 0 @space-16;
 
 @button-link-background: transparent;
 @button-link-border: none;
@@ -134,8 +132,7 @@ a[pam-Button] {
     font-weight: @button-font-weight;
     line-height: @button-line-height;
     margin: @button-margin;
-    min-height: @button-min-height;
-    min-width: @button-min-width;
+    height: @button-height;
     padding: @button-padding;
     position: relative;
     text-align: center;
@@ -148,40 +145,35 @@ a[pam-Button] {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-user-drag: none;
 
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+
+    &:hover {
+        background-color: @button-hover-background;
+
+        .hook-button-hover;
+    }
+
+    &:focus {
+        background-color: @button-focus-background;
+        outline: 0;
+    }
+
+    &:active {
+        background-color: @button-active-background;
+
+        .hook-button-active;
+    }
+
+    &:visited {
+        color: @button-color;
+    }
+
+    .button-outlined (@button-background, @button-color, @button-darken);
+
     .hook-button;
-}
-
-[pam-Button]::-moz-focus-inner,
-a[pam-Button]::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-}
-
-[pam-Button]:hover,
-a[pam-Button]:hover,
-[pam-Button]:focus,
-a[pam-Button]:focus {
-    background-color: @button-hover-background;
-
-    .hook-button-hover;
-}
-
-[pam-Button~="active"],
-[pam-Button]:active,
-a[pam-Button]:active {
-    background-color: darken(@button-hover-background, @button-darken);
-
-    .hook-button-active;
-}
-
-[pam-Button]:focus,
-a[pam-Button]:focus {
-    outline: 0;
-}
-
-[pam-Button]:visited,
-a[pam-Button]:visited {
-    color: @button-color;
 }
 
 // Modifiers: States
@@ -228,27 +220,12 @@ a[pam-Button~="hidden"] {
 //  Variations
 // ==================================================================
 
-// Variations
-//
-// To differentiate what type of action a button has in a
-// set of buttons use `primary` or `secondary`.
-//
-// Markup:
-// <button pam-Button="">Default</button>
-// <button pam-Button="primary">Primary</button>
-// <button pam-Button="secondary">Secondary</button>
-// <button pam-Button="link">Link</button>
-//
-// Weight: 1
-//
-// Style guide: buttons.variations
-
 // Outlined
 //
 // The inverse of filled buttons is outlined buttons.
 //
 // Markup:
-// <button pam-Button="primary outlined">Primary</button>
+// <button pam-Button="outlined">Primary</button>
 // <button pam-Button="secondary outlined">Secondary</button>
 // <button pam-Button="info outlined">Info</button>
 // <button pam-Button="success outlined">Success</button>
@@ -259,38 +236,12 @@ a[pam-Button~="hidden"] {
 //
 // Style guide: buttons.outlined
 
-//  primary
-
-[pam-Button~="primary"],
-a[pam-Button~="primary"] {
-    background-color: @button-primary-background;
-    border-color: @button-primary-border-color;
-    color: @button-primary-color;
-
-    &:hover,
-    &:focus {
-        background-color: @button-primary-hover-background;
-        color: @button-primary-color;
-    }
-
-    &:active {
-        background-color: @button-primary-active-background;
-        color: @button-primary-color;
-    }
-
-    &:visited {
-        color: @button-primary-color;
-    }
-
-    .button-outlined (@button-primary-background, @button-primary-color, @button-darken);
-
-    .hook-button-primary;
-}
-
 //  secondary
 
 [pam-Button~="secondary"],
-a[pam-Button~="secondary"] {
+a[pam-Button~="secondary"],
+[pam-Button~="fab"],
+a[pam-Button~="fab"] {
     background-color: @button-secondary-background;
     border-color: @button-secondary-border-color;
     color: @button-secondary-color;
@@ -347,6 +298,9 @@ a[pam-Button~="link"] {
 // of it's action.
 //
 // Markup:
+// <button pam-Button="">Primary</button>
+// <button pam-Button="secondary">Secondary</button>
+// <button pam-Button="link">Link</button>
 // <button pam-Button="info">Info</button>
 // <button pam-Button="success">Success</button>
 // <button pam-Button="warning">Warning</button>
@@ -474,21 +428,21 @@ a[pam-Button~="error"] {
 //         <button pam-Button="large">Large</button>
 //         <button pam-Button="large flat">Large</button>
 //         <button pam-Button="circle large">
-//             <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
+//             <i class="material-icons">add</i>
 //         </button>
 //     </div>
 //     <div>
 //         <button pam-Button>Default</button>
 //         <button pam-Button="flat">Default</button>
 //         <button pam-Button="circle">
-//             <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
+//             <i class="material-icons">add</i>
 //         </button>
 //     </div>
 //     <div>
 //         <button pam-Button="small">Small</button>
 //         <button pam-Button="flat small">Small</button>
 //         <button pam-Button="circle small">
-//             <img sg-mock-button-icon src="kss-assets/img/plus.svg" />
+//             <i class="material-icons">add</i>
 //         </button>
 //     </div>
 // </div>
@@ -505,8 +459,7 @@ a[pam-Button~="error"] {
 a[pam-Button~="large"] {
     font-size: @button-large-font-size;
     line-height: @button-large-line-height;
-    min-height: @button-large-min-height;
-    min-width: @button-large-min-width;
+    height: @button-large-height;
     padding: @button-large-padding;
 
     .hook-button-large;
@@ -520,8 +473,7 @@ a[pam-Button~="large"] {
 a[pam-Button~="small"] {
     font-size: @button-small-font-size;
     line-height: @button-small-line-height;
-    min-height: @button-small-min-height;
-    min-width: @button-small-min-width;
+    height: @button-small-height;
     padding: @button-small-padding;
 
     .hook-button-small;
@@ -536,8 +488,8 @@ a[pam-Button~="small"] {
 // They emphasize functions on busy or wide spaces.
 //
 // Markup:
-// <button pam-Button="raised">Default</button>
-// <button pam-Button="raised primary">Primary</button>
+// <button pam-Button="raised">Primary</button>
+// <button pam-Button="secondary raised">Secondary</button>
 //
 // Weight: 5
 //
@@ -563,8 +515,8 @@ a[pam-Button~="raised"] {
 // Flat buttons do not lift and can be used in tooolbars and dialogs.
 //
 // Markup:
-// <button pam-Button="flat">Default</button>
-// <button pam-Button="flat primary">Primary</button>
+// <button pam-Button="flat">Primary</button>
+// <button pam-Button="secondary flat">Secondary</button>
 //
 // Weight: 6
 //
@@ -574,23 +526,25 @@ a[pam-Button~="raised"] {
 a[pam-Button~="flat"] {
     background-color: transparent;
     border-color: transparent;
-    color: @skin-black;
+    color: @button-flat-color;
 
-    &:hover,
+    &:hover {
+        background-color: @button-flat-hover-background;
+    }
+
     &:focus {
-        background-color: @button-hover-background;
+        background-color: @button-flat-focus-background;
     }
 
     &:active {
-        background-color: darken(@button-hover-background, @button-darken);
+        background-color: @button-flat-active-background;
+    }
+
+    &:visited {
+        color: @button-flat-color;
     }
 
     .hook-button-flat;
-}
-
-[pam-Button~="flat"][pam-Button~="primary"],
-a[pam-Button~="flat"][pam-Button~="primary"] {
-    color: @button-primary-background;
 }
 
 [pam-Button~="flat"][pam-Button~="secondary"],
@@ -626,8 +580,8 @@ a[pam-Button~="flat"][pam-Button~="error"] {
 // Fluid block level buttons span the full width of a parent.
 //
 // Markup:
-// <button pam-Button="fluid">Default</button>
-// <button pam-Button="primary fluid">Primary</button>
+// <button pam-Button="fluid">Primary</button>
+// <button pam-Button="secondary fluid">Secondary</button>
 //
 // Weight: 7
 //
@@ -654,8 +608,8 @@ a[pam-Button~="fluid"] {
 // To get your buttons rounded just add the `rounded` modifier.
 //
 // Markup:
-// <button pam-Button="rounded">Default</button>
-// <button pam-Button="primary rounded">Primary</button>
+// <button pam-Button="rounded">Primary</button>
+// <button pam-Button="secondary rounded">Secondary</button>
 //
 // Weight: 7
 //
@@ -677,13 +631,13 @@ a[pam-Button~="rounded"] {
 // floating above other elements.
 //
 // Markup:
-// <button pam-Button="circle">
+// <button pam-Button="fab circle">
 //     <i class="material-icons">add</i>
 // </button>
-// <button pam-Button="circle raised">
+// <button pam-Button="fab circle raised">
 //     <i class="material-icons">add</i>
 // </button>
-// <button pam-Button="circle flat">
+// <button pam-Button="fab circle flat">
 //     <i class="material-icons">add</i>
 // </button>
 //
@@ -836,7 +790,7 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 
 .button-outlined (@color-1, @color-2, @darken) {
     &[pam-Button~="outlined"] {
-        background: transparent;
+        background-color: transparent;
         color: @color-1;
         transition-property: color, border-color, background-color;
 
@@ -880,16 +834,12 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 // `.hook-button-info`
 // `.hook-button-large`
 // `.hook-button-link`
-// `.hook-button-primary`
 // `.hook-button-raised`
 // `.hook-button-round`
 // `.hook-button-rounded`
 // `.hook-button-secondary`
 // `.hook-button-small`
 // `.hook-button-success`
-// `.hook-button-text`
-// `.hook-button-text-primary`
-// `.hook-button-text-secondary`
 // `.hook-button-warning`
 //
 // Weight: 10
@@ -923,8 +873,6 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 }
 .hook-button-link() {
 }
-.hook-button-primary() {
-}
 .hook-button-raised() {
 }
 .hook-button-round() {
@@ -936,12 +884,6 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 .hook-button-small() {
 }
 .hook-button-success() {
-}
-.hook-button-text() {
-}
-.hook-button-text-primary() {
-}
-.hook-button-text-secondary() {
 }
 .hook-button-warning() {
 }
