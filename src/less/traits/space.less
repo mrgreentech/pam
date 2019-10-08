@@ -1,46 +1,40 @@
 // Space
 //
-// Control margin and padding with the `space` trait.
+// Control margin and padding with the `space` trait which
+// follows the format `{type}:{side}:{size}`
 //
-// The space trait follows the format `{type}:{sides}:{size}`.
+// * type - `{p = padding | m = margin}`,
+// * side - `{t = top | r = right | b = bottom | l = left}`
+// * size - `{1-5 = 1-5 x default space}`
 //
-// Space _type:_
+// Special cases:
 //
-// <ul>
-//     <li>m - margin</li>
-//     <li>p - padding</li>
-// </ul>
+// * type - `{none = 0 on all sides}`,
+// * side - `{x = left and right | y = top and bottom}`
+// * size - `{none = 0 | auto = set margin to auto}`
 //
-// Space sides:
-//
-// <ul>
-//     <li><code>t</code> - <code>margin-top</code> or <code>padding-top</code></li>
-//     <li><code>b</code> - <code>margin-bottom</code> or <code>padding-bottom</code></li>
-//     <li><code>l</code> - <code>margin-left</code> or <code>padding-left</code></li>
-//     <li><code>r</code> - <code>margin-right</code> or <code>padding-right</code></li>
-//     <li><code>x</code> - set both <code>left</code> and <code>right</code></li>
-//     <li><code>y</code> - set both <code>top</code> and <code>bottom</code></li>
-//     <li>blank - set <code>margin</code> or <code>padding</code> on all sides</li>
-// </ul>
-//
-// ### Examples
+// ### Documentation
 //
 // ```html
-// <!-- PADDING ON ALL SIDES -->
+// <!-- SPACING ON ALL SIDES (p = padding, m = margin) -->
 // <div pam-space="p">Padding on all sides</div>
 //
-// <!-- PADDING ON TWO SIDES -->
+// <!-- SPACING ON TWO SIDES (x = lef and right, y = top and bottom) -->
 // <div pam-space="p:x">Padding on left and right side</div>
 //
-// <!-- PADDING SIZE -->
-// <div pam-space="p:2">Padding on all sides with size 2</div>
-// <div pam-space="p:l:2">Padding on left and right side with size 2</div>
+// <!-- SPACING ON ONE SIDE (t = top, r = right, b = bottom, l = left) -->
+// <div pam-space="p:t">Padding on the top side</div>
+//
+// <!-- SPACING SIZE (blank = default, {2-5} = 2 x default) -->
+// <div pam-space="p:none">Padding 0 on all sides</div>
+// <div pam-space="p:2">Size 2 padding on all sides</div>
+// <div pam-space="p:l:2">Size 2 padding on left side</div>
 //
 // <!-- AUTO -->
-// <div pam-space="m:auto">Margin auto on all sides</div>
+// <div pam-space="m:auto">Margin auto on left and right side</div>
 //
 // <!-- NONE -->
-// <div pam-space="m:none">Margin 0 on all sides</div>
+// <div pam-space="m:none">Margin 0 on left and right side</div>
 // ```
 //
 // Weight: 4

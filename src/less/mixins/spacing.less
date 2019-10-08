@@ -1,53 +1,87 @@
-// spacing(@spaceType, @startIndex: 1, @prefix: "", @spaces)
+// spacing(@property, @prefix, @spaces, @startIndex)
 //
-// Generate a given number of spaces of a specific space type
+// Generate a given number of spaces of a specific space type.
 //
-// @columns - Number of columns.
-// @startIndex = 1 - What number to start on.
-// @prefix = '' - Attribute value prefix.
+// @property - Use margin or padding.
+// @prefix = '' - Space attribute value prefix.
+// @spaces - Number of spaces sizes to generate.
+// @startIndex = 1 - What size to start on.
 //
 // Style guide: mixins.spacing
 
-.spacing(@type, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
-    @selValue: if((@startIndex <= 1), "@{prefix}", "@{prefix}:@{startIndex}");
+//  Spacing
+// ==================================================================
 
-    [pam-space~="@{selValue}"] {
-        @temp: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
+.spacing(@property, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
+    @selectorValue: if((@startIndex <= 1), "@{prefix}", "@{prefix}:@{startIndex}");
 
-        @{type}: @@temp;
+    [pam-space~="@{selectorValue}"] {
+        @propertyValue: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
+
+        @{property}: @@propertyValue;
     }
 
-    .spacing(@type, @prefix, @spaces, (@startIndex + 1));
+    .spacing(@property, @prefix, @spaces, (@startIndex + 1));
 }
 
-.spacing-x(@type, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
-    @selValue: if((@startIndex <= 1), "@{prefix}", "@{prefix}:@{startIndex}");
+//  Spacing-x
+// ==================================================================
 
-    @typeLeft: if((@type = margin), margin-left, padding-left);
-    @typeRight: if((@type = margin), margin-right, padding-right);
+// spacing-x(@property, @prefix, @spaces, @startIndex)
+//
+// Generate a given number of spaces for the
+// x axis (left and right).
+//
+// @property - Use margin or padding.
+// @prefix = '' - Space attribute value prefix. Format `{p|m}:{x}`
+// @spaces - Number of spaces sizes to generate.
+// @startIndex = 1 - What size to start on.
+//
+// Style guide: mixins.spacing.spacing-x
 
-    [pam-space~="@{selValue}"] {
-        @temp: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
+.spacing-x(@property, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
+    @selectorValue: if((@startIndex <= 1), "@{prefix}", "@{prefix}:@{startIndex}");
 
-        @{typeLeft}: @@temp;
-        @{typeRight}: @@temp;
+    @propertyLeft: if((@property = margin), margin-left, padding-left);
+    @propertyRight: if((@property = margin), margin-right, padding-right);
+
+    [pam-space~="@{selectorValue}"] {
+        @propertyValue: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
+
+        @{propertyLeft}: @@propertyValue;
+        @{propertyRight}: @@propertyValue;
     }
 
-    .spacing-x(@type, @prefix, @spaces, (@startIndex + 1));
+    .spacing-x(@property, @prefix, @spaces, (@startIndex + 1));
 }
 
-.spacing-y(@type, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
-    @selValue: if((@startIndex <= 1), "@{prefix}", "@{prefix}:@{startIndex}");
+//  Spacing-y
+// ==================================================================
 
-    @typeTop: if((@type = margin), margin-top, padding-top);
-    @typeBottom: if((@type = margin), margin-bottom, padding-bottom);
+// spacing-y(@property, @prefix, @spaces, @startIndex)
+//
+// Generate a given number of spaces for the
+// y axis (top and bottom).
+//
+// @property - Use margin or padding.
+// @prefix = '' - Space attribute value prefix. Format `{p|m}:{x}`
+// @spaces - Number of spaces sizes to generate.
+// @startIndex = 1 - What size to start on.
+//
+// Style guide: mixins.spacing.spacing-y
 
-    [pam-space~="@{selValue}"] {
-        @temp: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
+.spacing-y(@property, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
+    @selectorValue: if((@startIndex <= 1), "@{prefix}", "@{prefix}:@{startIndex}");
 
-        @{typeTop}: @@temp;
-        @{typeBottom}: @@temp;
+    @propertyTop: if((@property = margin), margin-top, padding-top);
+    @propertyBottom: if((@property = margin), margin-bottom, padding-bottom);
+
+    [pam-space~="@{selectorValue}"] {
+        @propertyValue: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
+
+        @{propertyTop}: @@propertyValue;
+        @{propertyBottom}: @@propertyValue;
     }
 
-    .spacing-y(@type, @prefix, @spaces, (@startIndex + 1));
+    .spacing-y(@property, @prefix, @spaces, (@startIndex + 1));
 }
