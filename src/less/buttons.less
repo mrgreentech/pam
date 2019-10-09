@@ -35,14 +35,15 @@
 @button-font-weight: @font-weight-medium;
 @button-lighten: 10%;
 @button-line-height: 2.25rem;
-@button-margin: @space-base;
+@button-margin: 0 0 0 @space-base;
+@button-min-width: @space-64;
 @button-height: @space-36;
 @button-padding-horizontal: @space-16;
 @button-padding-vertical: 0;
 @button-padding: @button-padding-vertical @button-padding-horizontal;
 @button-text-transform: uppercase;
 @button-transition-duration: @transition-duration;
-@button-transition-property: background-color;
+@button-transition-property: background-color, border-color, box-shadow;
 @button-transition-timing: ease;
 @button-white-space: normal;
 
@@ -69,12 +70,12 @@
 @button-flat-color: @skin-primary;
 
 @button-large-font-size: @font-size-large;
-@button-large-line-height: 3.4rem;
-@button-large-height: @space-56;
-@button-large-padding: 0 @space-24;
+@button-large-line-height: 3rem;
+@button-large-height: @space-48;
+@button-large-padding: 0 @space-16;
 
 @button-small-font-size: 0.75rem;
-@button-small-line-height: 1.4;
+@button-small-line-height: 2rem;
 @button-small-height: @space-32;
 @button-small-padding: 0 @space-16;
 
@@ -93,18 +94,43 @@
 @button-rounded-border-radius: @border-radius-rounded;
 
 @button-circle-border-radius: 50%;
-@button-circle-large-size: @space-56;
 @button-circle-line-height: @line-height-secondary;
 @button-circle-padding: 0;
+@button-circle-large-size: @space-48;
 @button-circle-size: @space-36;
 @button-circle-small-size: @space-32;
 
-@button-raised-box-shadow: @shadow-raised;
-@button-raised-active-box-shadow: @shadow-raised-high;
+@button-raised-box-shadow: @shadow-z2;
+@button-raised-active-box-shadow: @shadow-z8;
+
+@button-icon-size: @space-20 - 2;
+@button-icon-size-large: @space-20;
+@button-icon-margin: 0 @space-8 0 0;
 
 // ==================================================================
 //  Button
 // ==================================================================
+
+// Variations
+//
+// There are a number of variation of buttons that can be used to
+// vary the emphasis on the button action.
+//
+// Markup:
+// <div pam-Button="{{modifier_class}}">Button</div>
+// <button pam-Button="{{modifier_class}} icon">
+//     <i class="material-icons" pam-Button-Icon>android</i>
+//     <span>Icon</span>
+// </button>
+//
+// flat - These buttons are used for low-emphasis actions. For example on cards and dialogs.
+// raised - Increase emphasis by raising the button.
+// outlined - For medium-emphasis use the outlined button.
+// rounded - Variation of the default button style.
+//
+// Weight: 1
+//
+// Style guide: buttons.variations
 
 [pam-Button],
 a[pam-Button] {
@@ -119,7 +145,8 @@ a[pam-Button] {
     font-weight: @button-font-weight;
     height: @button-height;
     line-height: @button-line-height;
-    margin: @button-margin;
+    margin: 0;
+    min-width: @button-min-width;
     outline: 0;
     padding: @button-padding;
     position: relative;
@@ -130,6 +157,7 @@ a[pam-Button] {
     user-select: none;
     vertical-align: top;
     white-space: @button-white-space;
+    -webkit-appearance: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-user-drag: none;
 
@@ -144,6 +172,13 @@ a[pam-Button] {
 
     .hook-button;
 }
+
+/* stylelint-disable no-descending-specificity */
+* + [pam-Button],
+* + a[pam-Button] {
+    margin: @button-margin;
+}
+/* stylelint-enable no-descending-specificity */
 
 // Modifier: disabled
 // ==================================================================
@@ -171,26 +206,7 @@ a[pam-Button~="hidden"] {
     .hook-button-hidden;
 }
 
-//  Variations
-// ==================================================================
-
-// Outlined
-//
-// The inverse of filled buttons is outlined buttons.
-//
-// Markup:
-// <button pam-Button="outlined">Primary</button>
-// <button pam-Button="secondary outlined">Secondary</button>
-// <button pam-Button="info outlined">Info</button>
-// <button pam-Button="success outlined">Success</button>
-// <button pam-Button="warning outlined">Warning</button>
-// <button pam-Button="error outlined">error</button>
-//
-// Weight: 3
-//
-// Style guide: buttons.outlined
-
-// Modifier: Colors
+// Modifiers: Color
 // ==================================================================
 
 // Colors
@@ -290,19 +306,6 @@ a[pam-Button~="error"] {
 //  Modifier: flat
 // ==================================================================
 
-// Flat
-//
-// Flat buttons do not lift and can be used in tooolbars and dialogs.
-//
-// Markup:
-// <button pam-Button="flat">Primary</button>
-// <button pam-Button="secondary flat">Secondary</button>
-// <button pam-Button="info flat">Secondary</button>
-//
-// Weight: 4
-//
-// Style guide: buttons.flat
-
 [pam-Button~="flat"],
 a[pam-Button~="flat"] {
     background-color: transparent;
@@ -381,6 +384,20 @@ a[pam-Button~="link"] {
     .hook-button-link;
 }
 
+// Sub-object: icon
+// ==================================================================
+
+i[pam-Button-Icon] {
+    display: inline-block;
+    font-size: @button-icon-size;
+    height: @button-icon-size;
+    margin: @button-icon-margin;
+    vertical-align: sub;
+    width: @button-icon-size;
+
+    .hook-button-icon;
+}
+
 // Modifiers: size
 // ==================================================================
 
@@ -393,35 +410,42 @@ a[pam-Button~="link"] {
 // <div sg-Stack>
 //     <div>
 //         <button pam-Button="large">Large</button>
-//         <button pam-Button="large flat">Large</button>
+//         <button pam-Button="large">
+//             <i class="material-icons" pam-Button-Icon>android</i>
+//             <span>Icon</span>
+//         </button>
 //         <button pam-Button="circle large">
 //             <i class="material-icons">add</i>
 //         </button>
 //     </div>
 //     <div>
-//         <button pam-Button>Default</button>
-//         <button pam-Button="flat">Default</button>
-//         <button pam-Button="circle">
+//         <button pam-Button="">Default</button>
+//         <button pam-Button="">
+//             <i class="material-icons" pam-Button-Icon>android</i>
+//             <span>Icon</span>
+//         </button>
+//         <button pam-Button="circle ">
 //             <i class="material-icons">add</i>
 //         </button>
 //     </div>
 //     <div>
-//         <button pam-Button="small">Small</button>
-//         <button pam-Button="flat small">Small</button>
+//         <button pam-Button="small">small</button>
+//         <button pam-Button="small">
+//             <i class="material-icons" pam-Button-Icon>android</i>
+//             <span>Icon</span>
+//         </button>
 //         <button pam-Button="circle small">
 //             <i class="material-icons">add</i>
 //         </button>
 //     </div>
 // </div>
 //
-// Weight: 4
+// Weight: 5
 //
 // Style guide: buttons.size
 
 // large
 
-[pam-Button-Group~="large"] > [pam-Button],
-[pam-Button-Group~="large"] > a[pam-Button],
 [pam-Button~="large"],
 a[pam-Button~="large"] {
     font-size: @button-large-font-size;
@@ -429,7 +453,23 @@ a[pam-Button~="large"] {
     height: @button-large-height;
     padding: @button-large-padding;
 
+    i[pam-Button-Icon] {
+        font-size: @button-icon-size-large;
+        height: @button-icon-size-large;
+        width: @button-icon-size-large;
+    }
+
     .hook-button-large;
+}
+
+[pam-Button-Group~="large"] > [pam-Button],
+[pam-Button-Group~="large"] > a[pam-Button] {
+    font-size: @button-large-font-size;
+    line-height: @button-large-line-height;
+    height: @button-large-height;
+    padding: @button-large-padding;
+
+    .hook-button-group-large;
 }
 
 // small
@@ -448,19 +488,6 @@ a[pam-Button~="small"] {
 
 //  Modifier: raised
 // ==================================================================
-
-// Raised
-//
-// Raised buttons add dimension to mostly flat layouts.
-// They emphasize functions on busy or wide spaces.
-//
-// Markup:
-// <button pam-Button="raised">Primary</button>
-// <button pam-Button="secondary raised">Secondary</button>
-//
-// Weight: 5
-//
-// Style guide: buttons.raised
 
 [pam-Button~="raised"],
 a[pam-Button~="raised"] {
@@ -489,33 +516,21 @@ a[pam-Button~="raised"] {
 //
 // Style guide: buttons.fluid
 
+* + [pam-Button~="fluid"],
+* + a[pam-Button~="fluid"] {
+    margin: @space-base 0 0;
+}
+
 [pam-Button~="fluid"],
 a[pam-Button~="fluid"] {
     display: block;
-    margin-bottom: @button-fluid-margin-bottom;
     width: @button-fluid-width;
-
-    &:last-child {
-        margin: 0;
-    }
 
     .hook-button-fluid;
 }
 
 // Modifier: rounded
 // ==================================================================
-
-// Rounded
-//
-// To get your buttons rounded just add the `rounded` modifier.
-//
-// Markup:
-// <button pam-Button="rounded">Primary</button>
-// <button pam-Button="secondary rounded">Secondary</button>
-//
-// Weight: 7
-//
-// Style guide: buttons.rounded
 
 [pam-Button~="rounded"],
 a[pam-Button~="rounded"] {
@@ -527,25 +542,44 @@ a[pam-Button~="rounded"] {
 //  Modifier: circle
 // ==================================================================
 
-// Fab
+// Circle
 //
-// A floating action button is used for contextual action
-// floating above other elements.
+// To create a circle button use the `circle` modifier. Circles are
+// made to only contain icons.
 //
 // Markup:
-// <button pam-Button="fab circle">
+// <button pam-Button="circle">
 //     <i class="material-icons">add</i>
 // </button>
-// <button pam-Button="fab circle raised">
+// <button pam-Button="circle raised">
 //     <i class="material-icons">add</i>
 // </button>
-// <button pam-Button="fab circle flat">
+// <button pam-Button="circle outlined">
+//     <i class="material-icons">add</i>
+// </button>
+// <button pam-Button="circle flat">
 //     <i class="material-icons">add</i>
 // </button>
 //
-// Weight: 8
+// Weight: 5
 //
-// Style guide: buttons.fab
+// Style guide: buttons.circle
+
+// Fab
+//
+// A floating action button is used for the primary action
+// in an application floating above other elements.
+// A basic `fab` is created by combining the `fab`,
+// `circle`, `raised` and `large` modifiers.
+//
+// Markup:
+// <button pam-Button="fab circle raised large">
+//     <i class="material-icons">add</i>
+// </button>
+//
+// Weight: 1
+//
+// Style guide: buttons.circle.fab
 
 [pam-Button~="circle"],
 a[pam-Button~="circle"] {
@@ -689,7 +723,9 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 // `.hook-button-flat`
 // `.hook-button-fluid`
 // `.hook-button-group`
+// `.hook-button-group-large`
 // `.hook-button-hidden`
+// `.hook-button-icon`
 // `.hook-button-info`
 // `.hook-button-large`
 // `.hook-button-link`
@@ -720,7 +756,11 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 }
 .hook-button-group() {
 }
+.hook-button-group-large() {
+}
 .hook-button-hidden() {
+}
+.hook-button-icon() {
 }
 .hook-button-info() {
 }

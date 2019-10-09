@@ -2,10 +2,11 @@
 //
 // Control border color and radius by using the `pam-border` trait.
 //
-// Weight: 5
+// Weight: 2
 //
 // Style guide: traits.border
 
+// ==================================================================
 //  Border
 // ==================================================================
 
@@ -77,6 +78,10 @@
 // Weight: 1
 //
 // Style guide: traits.border.color
+
+[pam-border~="transparent"] {
+    border-color: transparent !important;
+}
 
 [pam-border~="primary"] {
     border-color: @skin-primary !important;
