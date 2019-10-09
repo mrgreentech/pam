@@ -50,10 +50,15 @@
 //  Variables
 // ==================================================================
 
-@table-border-color: @skin-border-primary;
+@table-border-color: rgba(0, 0, 0, 0.12);
 @table-border-style: solid;
 @table-border-width: 1px;
 @table-color: @skin-text-primary-on-light;
+@table-font-size: 0.875rem;
+@table-font-weight: @font-weight-normal;
+@table-hover-bg-color: rgba(0, 0, 0, 0.04);
+@table-letter-spacing: 0.018em;
+@table-line-height: 1.25rem;
 @table-padding-bp-medium: @space-16;
 @table-padding: @space-8;
 
@@ -79,6 +84,7 @@
 [pam-Table] {
     border-collapse: collapse;
     border-spacing: 0;
+    border: @table-border-width @table-border-style @table-border-color;
     color: @table-color;
     empty-cells: show;
 
@@ -97,17 +103,25 @@
     background-color: @table-head-bg-color;
     border-bottom: @table-head-border-bottom;
     text-align: left;
-    text-transform: uppercase;
     vertical-align: bottom;
 
     .hook-table-thead;
+}
+
+[pam-Table] tbody > tr {
+    &:hover {
+        background-color: @table-hover-bg-color;
+    }
 }
 
 [pam-Table] th,
 [pam-Table] td {
     border-left: @table-border-width @table-border-style @table-border-color;
     border-width: 0 0 0 @table-border-width;
-    font-size: inherit;
+    font-size: @table-font-size;
+    font-weight: @table-font-weight;
+    letter-spacing: @table-letter-spacing;
+    line-height: @table-line-height;
     margin: 0;
     overflow: visible;
     padding: @table-padding;
