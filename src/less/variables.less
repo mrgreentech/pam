@@ -208,10 +208,12 @@
 // Transition
 // ==================================================================
 
-@transition-duration: 0.3s;
+@transition-duration-default: 0.2s;
+@transition-duration-slower: 0.3s;
+@transition-duration-slowest: 0.4s;
 @transition-property: all;
 @transition-timing: ease-in-out;
-@transition-base: @transition-property @transition-duration @transition-timing;
+@transition-base: @transition-property @transition-duration-default @transition-timing;
 
 // Shadows
 // ==================================================================
