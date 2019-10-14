@@ -41,7 +41,7 @@
 @circle-width: @space-24;
 @circle-border-width: 0.2rem;
 @circle-border-color: rgba(0, 0, 0, 0.2);
-@circle-border-indicator-color: @skin-darker;
+@circle-border-indicator-color: @skin-gray-900;
 
 @pulse-background-color: #3a3a3a;
 @pulse-height: @space-24;
@@ -49,6 +49,7 @@
 @pulse-width: @space-base + 2;
 @pulse-animation-speed: 750ms;
 @pulse-animation-delay: 250ms;
+@pulse-animation-bg: @skin-gray-300;
 
 @pulse-small-bar-height: @space-16;
 @pulse-small-bar-offset: @space-12;
@@ -217,7 +218,7 @@
 
 @keyframes pulse {
     50% {
-        background: @skin-light;
+        background: @pulse-animation-bg;
     }
 }
 

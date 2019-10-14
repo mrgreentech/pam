@@ -1,0 +1,20 @@
+// .shadows(@quantity, @prefix, @startIndex)
+//
+// Generate number of requested shadows starting from
+// a given number and adds a prefixed value.
+//
+// @quantity - Number of shadows.
+// @prefix = 'z' - Attribute value prefix.
+// @startIndex = 1 - What number to start on.
+//
+// Style guide: mixins.shadows
+
+.shadows(@quantity, @prefix: "z", @startIndex: 1) when (@startIndex =< @quantity) {
+    [pam-shadow~="@{prefix}@{startIndex}"] {
+        @shadow: "shadow-@{prefix}@{startIndex}";
+
+        box-shadow: @@shadow;
+    }
+
+    .shadows(@quantity, @prefix, (@startIndex + 1));
+}

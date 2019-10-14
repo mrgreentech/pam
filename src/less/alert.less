@@ -15,7 +15,7 @@
 // info - This is not important but may need your attention.
 // success - Congratulations! You have successfully done something.
 // warning - Wow! You better take a look this needs your attention!
-// danger - Oh no! That did no go so well get another pair of glasses and try again.
+// error - Oh no! That did no go so well get another pair of glasses and try again.
 //
 // Weight: 9
 //
@@ -24,13 +24,13 @@
 // Variables
 // ==================================================================
 
-@alert-background: @skin-lighter;
+@alert-background: @skin-background;
 @alert-border-color: darken(@alert-background, 5%);
 @alert-border-left-width: @space-base;
 @alert-border-radius: @border-radius-base;
 @alert-border-width: 1px;
 @alert-border: 0 solid @alert-border-color;
-@alert-color: @skin-text-primary;
+@alert-color: @skin-on-background;
 @alert-line-height: @line-height-base;
 @alert-margin-vertical: @space-16;
 @alert-padding: @space-16;
@@ -41,7 +41,7 @@
 @alert-primary-border: darken(@alert-primary-background, 5%);
 @alert-primary-color: darken(@alert-primary-background, 50%);
 
-@alert-secondary-background: lighten(@skin-darker, 30%);
+@alert-secondary-background: lighten(@skin-secondary, 30%);
 @alert-secondary-border: darken(@alert-secondary-background, 5%);
 @alert-secondary-color: darken(@alert-secondary-background, 50%);
 
@@ -57,13 +57,13 @@
 @alert-warning-border: darken(@alert-warning-background, 5%);
 @alert-warning-color: darken(@alert-warning-background, 50%);
 
-@alert-danger-background: lighten(@skin-danger, 30%);
-@alert-danger-border: darken(@alert-danger-background, 5%);
-@alert-danger-color: darken(@alert-danger-background, 50%);
+@alert-error-background: lighten(@skin-error, 30%);
+@alert-error-border: darken(@alert-error-background, 5%);
+@alert-error-color: darken(@alert-error-background, 50%);
 
-@alert-outlined-background: @skin-text;
+@alert-outlined-background: @skin-primary-bg;
 
-@alert-link-font-weight: @font-weight-bold;
+@alert-link-font-weight: @font-weight-medium;
 
 @alert-large-padding: @space-20;
 
@@ -158,15 +158,15 @@
     .hook-alert-warning;
 }
 
-//  Modifier: danger
+//  Modifier: error
 // ==================================================================
 
-[pam-Alert~="danger"] {
-    background-color: @alert-danger-background;
-    border-color: @alert-danger-border;
-    color: @alert-danger-color;
+[pam-Alert~="error"] {
+    background-color: @alert-error-background;
+    border-color: @alert-error-border;
+    color: @alert-error-color;
 
-    .hook-alert-danger;
+    .hook-alert-error;
 }
 
 //  Modifier: outlined
@@ -317,7 +317,7 @@
 // Hooks
 //
 // `.hook-alert`
-// `.hook-alert-danger`
+// `.hook-alert-error`
 // `.hook-alert-info`
 // `.hook-alert-link`
 // `.hook-alert-outlined`
@@ -334,7 +334,7 @@
 /* stylelint-disable block-no-empty */
 .hook-alert() {
 }
-.hook-alert-danger() {
+.hook-alert-error() {
 }
 .hook-alert-info() {
 }

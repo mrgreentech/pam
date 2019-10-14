@@ -6,45 +6,86 @@
 // Skin colors
 // ==================================================================
 
-// Intention
-// primary - used to represent primary interface elements for a user
-// accent - used to represent secondary interface elements for a user
-// warn - used to represent interface elements that the user should be careful of
-// success - used to represent a successful action
-// feature - used to represent color of feature flow
-// text - used to represent colors of text and icons
-
-@skin-primary: #008ed5;
+// Primary - used to represent primary interface elements for a user
+@skin-primary: #546e7a;
 @skin-primary-light: lighten(@skin-primary, 15%);
 @skin-primary-dark: darken(@skin-primary, 15%);
-@skin-accent: spin(@skin-primary, 180);
-@skin-feature: #607d8b;
-@skin-divider: #ddd;
+
+// Secondary - used to represent secondary interface elements for a user
+@skin-secondary: #90a4ae;
+@skin-secondary-light: lighten(@skin-secondary, 15%);
+@skin-secondary-dark: darken(@skin-secondary, 15%);
+
+@skin-background: @skin-gray-50;
+@skin-surface: mix(@skin-white, @skin-primary, 95%);
+@skin-error: #f44336;
 
 // Info colors
+// Warn - used to represent interface elements that the user should be careful of
+// Text - used to represent colors of text and icons
+// Success - used to represent a successful action
 @skin-info: #50b2ce;
-@skin-success: #4caf50;
+@skin-success: #36a73b;
+@skin-warning: #e9ac5e;
 @skin-warn: #e9ac5e;
-@skin-danger: #f44336;
 
-// Base greyscales
+@skin-on-primary: contrast(@skin-primary);
+@skin-on-primary-light: contrast(@skin-primary-light);
+@skin-on-primary-dark: contrast(@skin-primary-dark);
+
+@skin-on-secondary: contrast(@skin-secondary);
+@skin-on-secondary-light: contrast(@skin-secondary-light);
+@skin-on-secondary-dark: contrast(@skin-secondary-dark);
+
+@skin-on-background: contrast(@skin-background);
+@skin-on-surface: contrast(@skin-surface);
+@skin-on-error: contrast(@skin-error);
+
+@skin-on-info: contrast(@skin-info);
+@skin-on-success: contrast(@skin-success);
+@skin-on-warning: contrast(@skin-warning);
+
+// Background
+@skin-primary-bg: @skin-white;
+@skin-secondary-bg: @skin-black;
+
+// Text
+@skin-text-primary-on-background: @skin-black;
+@skin-text-secondary-on-background: @skin-gray-700;
+@skin-text-hint-on-background: @skin-gray-500;
+@skin-text-disabled-on-background: @skin-gray-400;
+@skin-text-icon-on-background: @skin-gray-700;
+
+@skin-text-primary-on-light: @skin-black;
+@skin-text-secondary-on-light: @skin-gray-700;
+@skin-text-hint-on-light: @skin-gray-500;
+@skin-text-disabled-on-light: @skin-gray-400;
+@skin-text-icon-on-light: @skin-gray-700;
+
+@skin-text-primary-on-dark: @skin-white;
+@skin-text-secondary-on-dark: @skin-gray-200;
+@skin-text-hint-on-dark: @skin-gray-400;
+@skin-text-disabled-on-dark: @skin-gray-500;
+@skin-text-icon-on-dark: @skin-white;
+
+// Border
+@skin-border-primary: @skin-gray-400;
+
+// Skin black and white
 @skin-black: #000;
-@skin-darker: #212121;
-@skin-dark: #757575;
-@skin-hint: #bdbdbd;
-@skin-light: #e0e0e0;
-@skin-lighter: #f5f5f5;
 @skin-white: #fff;
 
-// Base values for text and icons
-@skin-text: #fff;
-@skin-text-primary: #444;
-@skin-text-secondary: #9f9f9f;
-@skin-text-darker: @skin-darker;
-@skin-text-dark: @skin-dark;
-@skin-text-hint: @skin-hint;
-@skin-text-light: @skin-light;
-@skin-text-lighter: @skin-lighter;
+// Skin gray
+@skin-gray-50: #fafafa;
+@skin-gray-100: #f5f5f5;
+@skin-gray-200: #eee;
+@skin-gray-300: #e0e0e0;
+@skin-gray-400: #bdbdbd;
+@skin-gray-500: #9e9e9e;
+@skin-gray-600: #757575;
+@skin-gray-700: #616161;
+@skin-gray-800: #424242;
+@skin-gray-900: #212121;
 
 // Spacing
 // ==================================================================
@@ -77,6 +118,7 @@
 @space-104: @space-base * 26;
 
 @space-x: @space-base;
+@space-x1: @space-base;
 @space-x2: @space-x * 2;
 @space-x3: @space-x * 3;
 @space-x4: @space-x * 4;
@@ -130,11 +172,9 @@
 @line-height-base: 1;
 @line-height-secondary: 1.5;
 
-@font-weight-thin: 100;
 @font-weight-light: 300;
 @font-weight-normal: 400;
 @font-weight-medium: 500;
-@font-weight-bold: 700;
 
 // Breakpoints
 // ==================================================================
@@ -144,12 +184,19 @@
 @breakpoint-large: 960px;
 @breakpoint-xlarge: 1200px;
 
-// Border radius
+// Border
 // ==================================================================
 
+@border-radius-base: @space-base;
+@border-radius-large: @space-8;
+@border-radius-rounded: 50px;
 @border-radius-small: 2px;
-@border-radius-base: 4px;
-@border-radius-large: 8px;
+
+@border-style: solid;
+
+@border-width-base: 1px;
+@border-width-small: 2px;
+@border-width-large: @space-base;
 
 // Opacity
 // ==================================================================
@@ -161,16 +208,33 @@
 // Transition
 // ==================================================================
 
-@transition-duration: 0.3s;
+@transition-duration-default: 0.2s;
+@transition-duration-slower: 0.3s;
+@transition-duration-slowest: 0.4s;
 @transition-property: all;
 @transition-timing: ease-in-out;
-@transition-base: @transition-property @transition-duration @transition-timing;
+@transition-base: @transition-property @transition-duration-default @transition-timing;
 
 // Shadows
 // ==================================================================
 
-@shadow-raised: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-@shadow-raised-high: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-@shadow-raised-higher: 0 8px 11px rgba(0, 0, 0, 0.16), 0 8px 11px rgba(0, 0, 0, 0.23);
+@shadow-z0: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12);
+@shadow-z1: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+@shadow-z2: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+@shadow-z3: 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+@shadow-z4: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+@shadow-z5: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12);
+@shadow-z6: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+@shadow-z7: 0 4px 5px -2px rgba(0, 0, 0, 0.2), 0 7px 10px 1px rgba(0, 0, 0, 0.14), 0 2px 16px 1px rgba(0, 0, 0, 0.12);
+@shadow-z8: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+
+@shadow-z9: 0 5px 6px -3px rgba(0, 0, 0, 0.2), 0 9px 12px 1px rgba(0, 0, 0, 0.14), 0 3px 16px 2px rgba(0, 0, 0, 0.12);
+@shadow-z10: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
+@shadow-z11: 0 6px 7px -4px rgba(0, 0, 0, 0.2), 0 11px 15px 1px rgba(0, 0, 0, 0.14), 0 4px 20px 3px rgba(0, 0, 0, 0.12);
+@shadow-z12: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12);
+@shadow-z13: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12);
+@shadow-z14: 0 7px 9px -4px rgba(0, 0, 0, 0.2), 0 14px 21px 2px rgba(0, 0, 0, 0.14), 0 5px 26px 4px rgba(0, 0, 0, 0.12);
+@shadow-z15: 0 8px 9px -5px rgba(0, 0, 0, 0.2), 0 15px 22px 2px rgba(0, 0, 0, 0.14), 0 6px 28px 5px rgba(0, 0, 0, 0.12);
+@shadow-z16: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
 
 // <VARIABLES|general.variables>

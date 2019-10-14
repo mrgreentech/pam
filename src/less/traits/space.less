@@ -1,23 +1,116 @@
 // Space
 //
-// For control of margin and padding spacing use the `pam-space` trait.
+// Control margin and padding with the `space` trait which
+// follows the format `{type}:{side}:{size}`
 //
-// Markup:
-// <div pam-Button pam-space="margin:none">Button</div>
+// * type - `{p = padding | m = margin}`,
+// * side - `{t = top | r = right | b = bottom | l = left}`
+// * size - `{2-5 = 2-5 x default space}`
 //
-// Weight: 4
+// Special cases:
+//
+// * type - `{none = 0 on all sides}`,
+// * side - `{x = left and right | y = top and bottom}`
+// * size - `{none = 0 | auto = set margin to auto}`
+//
+// ### Documentation
+//
+// ```html
+// <!-- SPACING ON ALL SIDES (p = padding, m = margin) -->
+// <div pam-space="p">Padding on all sides</div>
+//
+// <!-- SPACING ON TWO SIDES (x = lef and right, y = top and bottom) -->
+// <div pam-space="p:x">Padding on left and right side</div>
+//
+// <!-- SPACING ON ONE SIDE (t = top, r = right, b = bottom, l = left) -->
+// <div pam-space="p:t">Padding on the top side</div>
+//
+// <!-- SPACING SIZE (blank = default, {2-5} = 2 x default) -->
+// <div pam-space="p:none">Padding 0 on all sides</div>
+// <div pam-space="p:2">Size 2 padding on all sides</div>
+// <div pam-space="p:l:2">Size 2 padding on left side</div>
+//
+// <!-- AUTO -->
+// <div pam-space="m:auto">Margin auto on left and right side</div>
+//
+// <!-- NONE -->
+// <div pam-space="m:none">Margin 0 on left and right side</div>
+// ```
+//
+// Weight: 3
 //
 // Style guide: traits.space
 
+//  Space
+// ==================================================================
+
 [pam-space~="none"] {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+//  Margin
+// ==================================================================
+
+[pam-space~="m:none"] {
     margin: 0;
+}
+
+[pam-space~="m:auto"] {
+    margin: auto !important;
+}
+
+.spacing(margin, "m", 5, 1);
+.spacing(margin-top, "m:t", 5, 1);
+.spacing(margin-right, "m:r", 5, 1);
+.spacing(margin-bottom, "m:b", 5, 1);
+.spacing(margin-left, "m:l", 5, 1);
+
+[pam-space~="m:y:none"] {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+[pam-space~="m:x:none"] {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+[pam-space~="m:y:auto"] {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+
+[pam-space~="m:x:auto"] {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.spacing-x(margin, "m:x", 5, 1);
+.spacing-y(margin, "m:y", 5, 1);
+
+//  Padding
+// ==================================================================
+
+[pam-space~="p:none"] {
     padding: 0;
 }
 
-[pam-space~="margin:none"] {
-    margin: 0;
+.spacing(padding, "p", 5, 1);
+.spacing(padding-top, "p:t", 5, 1);
+.spacing(padding-right, "p:r", 5, 1);
+.spacing(padding-bottom, "p:b", 5, 1);
+.spacing(padding-left, "p:l", 5, 1);
+
+[pam-space~="p:y:none"] {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-[pam-space~="padding:none"] {
-    margin: 0;
+[pam-space~="p:x:none"] {
+    padding-left: 0;
+    padding-right: 0;
 }
+
+.spacing-x(padding, "p:x", 5, 1);
+.spacing-y(padding, "p:y", 5, 1);

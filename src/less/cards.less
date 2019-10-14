@@ -27,12 +27,12 @@
 //  Variables
 // ==================================================================
 
-@card-background: @skin-white;
+@card-background-color: @skin-surface;
 @card-border-radius: @border-radius-base;
 @card-max-width: 350px;
 @card-padding: @space-16;
-@card-shadow-raised: @shadow-raised-high;
-@card-shadow: @shadow-raised;
+@card-shadow-raised: @shadow-z8;
+@card-shadow: @shadow-z1;
 
 @card-secondary-font: @font-size-medium;
 @card-secondary-padding: 0 @card-padding @card-padding / 2 @card-padding;
@@ -45,7 +45,7 @@
 @card-media-content-color: @skin-white;
 @card-media-content-alignment: flex-end;
 
-@card-transition-duration: @transition-duration;
+@card-transition-duration: @transition-duration-default;
 @card-transition-property: all;
 @card-transition-timing: ease;
 
@@ -60,10 +60,10 @@
 // Markup:
 // <div pam-Card>
 //     <section pam-Card-Primary-Action>
-//         <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/200");'>
+//         <div pam-Card-Media style='background-image: url("https://placekeanu.com/350/200");'>
 //         </div>
 //         <div pam-Card-Primary>
-//             <h1 pam-Typography="title">Bill Murray</h1>
+//             <h1 pam-Typography="title">Keanu Reeves</h1>
 //             <p pam-Typography="body-1">By Chuck Norris</p>
 //         </div>
 //         <div pam-Card-Secondary pam-Typography="body-1">
@@ -72,8 +72,8 @@
 //     </section>
 //     <section pam-Card-Actions>
 //         <div pam-Card-Action-Buttons>
-//             <button pam-Button="primary flat">Action 1</button>
-//             <button pam-Button="primary flat">Action 2</button>
+//             <button pam-Button="flat">Action 1</button>
+//             <button pam-Button="flat">Action 2</button>
 //         </div>
 //         <div pam-Card-Action-Icons>
 //             <button pam-Button="circle flat">
@@ -96,10 +96,10 @@
 // Markup:
 // <div pam-Card>
 //     <section pam-Card-Primary-Action>
-//         <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/200");'>
+//         <div pam-Card-Media style='background-image: url("https://placekeanu.com/350/200");'>
 //             <div pam-Card-Media-Content>
 //         <div pam-Card-Primary>
-//             <h1 pam-Typography="title">Bill Murray</h1>
+//             <h1 pam-Typography="title">Keanu Reeves</h1>
 //             <p pam-Typography="body-1">By Chuck Norris</p>
 //         </div>
 //             </div>
@@ -110,8 +110,8 @@
 //     </section>
 //     <section pam-Card-Actions>
 //         <div pam-Card-Action-Buttons>
-//             <button pam-Button="primary flat">Action 1</button>
-//             <button pam-Button="primary flat">Action 2</button>
+//             <button pam-Button="flat">Action 1</button>
+//             <button pam-Button="flat">Action 2</button>
 //         </div>
 //         <div pam-Card-Action-Icons>
 //             <button pam-Button="circle flat">
@@ -135,10 +135,10 @@
 // <div pam-Card>
 //     <section pam-Card-Primary-Action>
 //         <div pam-Card-Primary>
-//             <h1 pam-Typography="title">Bill Murray</h1>
+//             <h1 pam-Typography="title">Keanu Reeves</h1>
 //             <p pam-Typography="body-1">By Chuck Norris</p>
 //         </div>
-//         <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/200");'>
+//         <div pam-Card-Media style='background-image: url("https://placekeanu.com/350/200");'>
 //         </div>
 //         <div pam-Card-Secondary pam-Typography="body-1">
 //             Put some text here to summarize and describe what the card is all about.
@@ -146,8 +146,8 @@
 //     </section>
 //     <section pam-Card-Actions>
 //         <div pam-Card-Action-Buttons>
-//             <button pam-Button="primary flat">Action 1</button>
-//             <button pam-Button="primary flat">Action 2</button>
+//             <button pam-Button="flat">Action 1</button>
+//             <button pam-Button="flat">Action 2</button>
 //         </div>
 //         <div pam-Card-Action-Icons>
 //             <button pam-Button="circle flat">
@@ -164,7 +164,7 @@
 // Style guide: cards.header
 
 [pam-Card] {
-    background: @card-background;
+    background: @card-background-color;
     border-radius: @card-border-radius;
     box-shadow: @card-shadow;
     cursor: pointer;
@@ -292,7 +292,7 @@
 }
 
 [pam-Card~="flat"] {
-    border: 1px solid darken(@card-background, 15%);
+    border: 1px solid darken(@card-background-color, 15%);
     box-shadow: none;
 
     .hook-card-flat();

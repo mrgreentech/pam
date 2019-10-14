@@ -9,7 +9,7 @@
 //             <fieldset pam-Fieldset="column">
 //                 <legend>Text and select</legend>
 //                 <label for="input-name">Name</label>
-//                 <input id="input-name" type="text" placeholder="What is it?" pam-Form-Control="fluid">
+//                 <input id="input-name" type="text" placeholder="What is it?" pam-Form-Control="fluid" pam-skin="on:primary">
 //                 <label for="input-email">Email</label>
 //                 <input id="input-email" type="email" placeholder="Spam time" pam-Form-Control="fluid">
 //                 <label for="input-password">Password</label>
@@ -59,22 +59,25 @@
 @form-border-radius: @border-radius-base;
 @form-border-style: solid;
 @form-border-width: 1px;
-@form-border: @skin-light;
-@form-color: @skin-text-primary;
+@form-border-color: @skin-border-primary;
+@form-color: @skin-text-primary-on-light;
 @form-font-size: @font-size-large;
 @form-line-height: @line-height-base;
 @form-margin: 0 0 @space-8;
 @form-padding-horizontal: @space-8;
 @form-padding-vertical: @space-8;
 @form-padding: @space-8;
-@form-placeholder-color: @skin-text-secondary;
+@form-placeholder-color: @skin-text-secondary-on-light;
 @form-tap-highlight-color: rgba(0, 0, 0, 0);
-@form-transition-duration: @transition-duration;
+@form-transition-duration: @transition-duration-default;
 @form-transition-property: border;
 @form-transition-timing: ease;
 
-@form-focus-color: darken(@form-border, 30%);
-@form-focus-border: darken(@form-border, 30%);
+@form-focus-border-color: @skin-primary;
+@form-focus-border-width: 1px;
+
+@form-hover-border-color: darken(@form-border-color, 30%);
+@form-hover-border-width: 1px;
 
 @form-legend-width: 100%;
 @form-legend-padding: @space-8 0;
@@ -95,7 +98,7 @@
 [pam-Form] textarea {
     background-color: @form-background;
     border-radius: @form-border-radius;
-    border: @form-border-width @form-border-style @form-border;
+    border: @form-border-width @form-border-style @form-border-color;
     color: @form-color;
     display: inline-block;
     font-family: inherit;
@@ -116,25 +119,27 @@
     height: auto;
 }
 
-[pam-Form] input[type="checkbox"],
-[pam-Form] input[type="radio"] {
-    height: auto;
-    margin: 0;
-}
-
-// Limited support for this type.
-[pam-Form] input[type="color"] {
-    height: @space-40;
-    padding: @space-base;
-}
-
 [pam-Form] input:focus,
 [pam-Form] select:focus,
 [pam-Form] textarea:focus {
     outline: 0;
-    border: @form-border-width @form-border-style @form-focus-border;
+    border: @form-focus-border-width @form-border-style @form-focus-border-color;
 
     .hook-form-focus;
+}
+
+[pam-Form] input:hover,
+[pam-Form] select:hover,
+[pam-Form] textarea:hover {
+    border: @form-hover-border-width @form-border-style @form-hover-border-color;
+
+    .hook-form-hover;
+}
+
+[pam-Form] input[type="checkbox"],
+[pam-Form] input[type="radio"] {
+    height: auto;
+    margin: 0;
 }
 
 [pam-Form] input[type="file"]:focus,
@@ -143,8 +148,14 @@
     // Keep them native...
 }
 
+// Limited support for this type.
+[pam-Form] input[type="color"] {
+    height: @space-40;
+    padding: @space-base;
+}
+
 [pam-Form] input[type="color"]:focus {
-    border-color: @skin-divider;
+    border-color: @form-border-color;
 }
 
 /* stylelint-disable no-descending-specificity */
@@ -156,7 +167,7 @@
 [pam-Form] select[disabled],
 [pam-Form] textarea[disabled] {
     cursor: not-allowed;
-    color: @skin-text-secondary;
+    color: @skin-text-disabled-on-light;
 
     .hook-form-disabled;
 }
@@ -167,8 +178,8 @@
 [pam-Form] input[readonly],
 [pam-Form] select[readonly],
 [pam-Form] textarea[readonly] {
-    color: @skin-text-primary;
-    border-color: @form-border;
+    color: @skin-text-disabled-on-light;
+    border-color: @form-border-color;
 
     .hook-form-readonly;
 }
@@ -176,8 +187,8 @@
 [pam-Form] input[readonly]:focus,
 [pam-Form] select[readonly]:focus,
 [pam-Form] textarea[readonly]:focus {
-    color: @skin-text-secondary;
-    border-color: @form-border;
+    color: @skin-text-disabled-on-light;
+    border-color: @form-border-color;
 
     .hook-form-readonly-focus;
 }
@@ -188,7 +199,7 @@
 [pam-Form] input:focus:invalid,
 [pam-Form] textarea:focus:invalid,
 [pam-Form] select:focus:invalid {
-    border-color: @form-danger-color;
+    border-color: @form-error-color;
 
     .hook-form-focus-invalid;
 }
@@ -196,7 +207,7 @@
 [pam-Form] input:focus:invalid:focus,
 [pam-Form] textarea:focus:invalid:focus,
 [pam-Form] select:focus:invalid:focus {
-    border-color: @form-danger-color;
+    border-color: @form-error-color;
 
     .hook-form-focus-invalid-focus;
 }
@@ -204,7 +215,7 @@
 [pam-Form] input[type="file"]:focus:invalid:focus,
 [pam-Form] input[type="radio"]:focus:invalid:focus,
 [pam-Form] input[type="checkbox"]:focus:invalid:focus {
-    outline-color: @form-danger-color;
+    outline-color: @form-error-color;
 
     .hook-form-focus-invalid-focus;
 }
@@ -307,7 +318,7 @@
 
 // Custom
 //
-// Use the `pam-Form-State` to apply custom form states `success` or `danger`.
+// Use the `pam-Form-State` to apply custom form states `success` or `error`.
 //
 // Markup:
 // <form pam-Form>
@@ -315,7 +326,7 @@
 // </form>
 //
 // success - attribute marks a success state for the input.
-// danger - attribute marks a error state for the input.
+// error - attribute marks a error state for the input.
 //
 // Weight: 2
 //
@@ -325,9 +336,9 @@
 @form-success-border: @skin-success;
 @form-success-color: @skin-success;
 
-@form-danger-background: lighten(@skin-danger, 40%);
-@form-danger-border: @skin-danger;
-@form-danger-color: @skin-danger;
+@form-error-background: lighten(@skin-error, 40%);
+@form-error-border: @skin-error;
+@form-error-color: @skin-error;
 
 // ------------------------------------------------------------------
 
@@ -344,17 +355,17 @@
     .hook-form-state-success;
 }
 
-[pam-Form] input[pam-Form-State~="danger"],
-[pam-Form] input[pam-Form-State~="danger"]:focus,
-[pam-Form] select[pam-Form-State~="danger"],
-[pam-Form] select[pam-Form-State~="danger"]:focus,
-[pam-Form] textarea[pam-Form-State~="danger"],
-[pam-Form] textarea[pam-Form-State~="danger"]:focus {
-    background-color: @form-danger-background;
-    border: @form-border-width @form-border-style @form-danger-border;
-    color: @form-danger-color;
+[pam-Form] input[pam-Form-State~="error"],
+[pam-Form] input[pam-Form-State~="error"]:focus,
+[pam-Form] select[pam-Form-State~="error"],
+[pam-Form] select[pam-Form-State~="error"]:focus,
+[pam-Form] textarea[pam-Form-State~="error"],
+[pam-Form] textarea[pam-Form-State~="error"]:focus {
+    background-color: @form-error-background;
+    border: @form-border-width @form-border-style @form-error-border;
+    color: @form-error-color;
 
-    .hook-form-state-danger;
+    .hook-form-state-error;
 }
 
 // Sub-modifier: Size
@@ -602,7 +613,7 @@
 //
 // Style guide: forms.message.inline
 
-@form-message-color: @skin-text-primary;
+@form-message-color: @skin-text-primary-on-light;
 @form-message-display: block;
 @form-message-font-size: @font-size-xsmall;
 
@@ -817,10 +828,10 @@
 @form-group-lego-addon-white-space: nowrap;
 
 @form-group-lego-addon-first-all-border-right-color: transparent;
-@form-group-lego-addon-first-all-focus-border-right-color: @form-focus-border;
+@form-group-lego-addon-first-all-focus-border-right-color: @form-focus-border-color;
 
 @form-group-lego-addon-last-all-border-left-color: transparent;
-@form-group-lego-addon-last-all-focus-border-left-color: @form-focus-border;
+@form-group-lego-addon-last-all-focus-border-left-color: @form-focus-border-color;
 
 @form-group-lego-control-focus-zindex: 3;
 @form-group-lego-control-margin-bottom: 0;
@@ -1010,7 +1021,7 @@
     background-color: @form-select-custom-background-color;
     background-repeat: @form-select-custom-background-repeat;
     background-size: @form-select-custom-background-size;
-    color: @skin-text-primary;
+    color: @skin-text-primary-on-light;
     display: @form-select-custom-display;
     max-width: @form-select-custom-max-width;
     padding-right: @form-select-custom-padding-right;
@@ -1045,7 +1056,7 @@
 
 @form-control-borderless-border-color-focus: transparent;
 @form-control-borderless-border-color: transparent;
-@form-control-borderless-focus-box-shadow: 0 1px 3px @skin-dark;
+@form-control-borderless-focus-box-shadow: 0 1px 3px @skin-gray-600;
 @form-control-borderless-transition: box-shadow 0.3s ease;
 
 @form-control-fluid-width: 100%;
@@ -1062,7 +1073,7 @@
 
 [pam-Form] [pam-Form-Control~="borderless"]:focus {
     border-color: @form-control-borderless-border-color-focus;
-    box-shadow: 0 1px 3px @skin-dark;
+    box-shadow: @form-control-borderless-focus-box-shadow;
 }
 
 [pam-Form] [pam-Form-Control~="fluid"] {
@@ -1088,192 +1099,6 @@
         fieldset {
             padding: @form-control-padded-medium-screen-size-padding;
         }
-    }
-}
-
-// Deprecated
-// ==================================================================
-
-// Deprecated
-//
-// Following form rulez will be deprecated in version 1.1.0.
-//
-// Weight: 27
-//
-// Style guide: forms.deprecated
-
-// Input icon
-// ==================================================================
-
-// Input icon
-//
-// `pam-Input-Icon` enables icons to be used with a input.
-//
-//<div pam-Alert="warning">
-//    Deprecated: Styling for legacy input icons. Support will be dropped
-//    after PAM version 1.1.
-// </div>
-//
-// Markup:
-// <form pam-Form>
-//     <div pam-Input-Icon>
-//         <label for="icon">
-//         <img src="http://placehold.it/24x24">
-//         </label>
-//         <input id="icon" type="text" placeholder="Icon">
-//     </div>
-// </form>
-//
-// Style guide: forms.deprecated.input-icon
-
-[pam-Form] [pam-Input-Icon],
-[pam-Form] [pam-Select-Icon] {
-    position: relative;
-
-    label {
-        background: transparent;
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin: 0;
-        width: @space-72;
-    }
-
-    input,
-    > select {
-        display: block;
-        padding-left: @space-72;
-        width: 100%;
-    }
-
-    .hook-form-input-icon;
-}
-
-// Input borderless
-// ==================================================================
-
-// Input borderless
-//
-// `pam-Input="borderless"` removes the form field border.
-//
-// <div pam-Alert="warning">
-//    Deprecated: Styling for borderless legacy form fields. Support will be dropped
-//    after PAM version 1.1.
-// </div>
-//
-// Markup:
-// <form pam-Form="stacked">
-//     <label for="borderless">Borderless input</label>
-//     <input id="borderless" type="text" placeholder="Borderless" pam-Input="borderless">
-// </form>
-//
-// Style guide: forms.deprecated.input-borderless
-
-[pam-Form] input[pam-Input~="borderless"],
-[pam-Form] select[pam-Input~="borderless"],
-[pam-Form] textarea[pam-Input~="borderless"] {
-    border: none;
-
-    .hook-form-input-borderless;
-}
-
-[pam-Form] input[pam-Input~="borderless"]:focus {
-    outline: 0;
-    border: transparent;
-
-    .hook-form-input-borderless-focus;
-}
-
-// Sub-object: Select box
-// ==================================================================
-
-// Select box
-//
-// `pam-Select-Box` turns of the platform native styling of select boxes
-//  and adds normalized styling for cross browser compatibility.
-//
-// <div pam-Alert="warning">
-//    Deprecated: Support for select box styling will be dropped
-//    after PAM version 1.1. Use custom select instead `pam-Select`.
-// </div>
-//
-// Markup:
-// <form pam-Form>
-//     <div pam-Select-Box="{{modifier_class}}">
-//         <select>
-//             <option value="geek">Geek</option>
-//             <option value="nerd">Nerd</option>
-//             <option value="dork">Dork</option>
-//         </select>
-//     </div>
-// </form>
-//
-// multiple - enables the multi select box.
-// fluid - enables a select box with fluid width.
-// borderless - removes the select box borders.
-//
-// Style guide: forms.deprecated.selectbox
-
-[pam-Form] [pam-Select-Box] {
-    background: @form-background;
-    display: inline-block;
-    font-size: @form-font-size;
-    line-height: @form-line-height;
-    margin: 0 0 @space-8 0;
-    position: relative;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
-    .hook-select-box;
-
-    select {
-        appearance: none;
-        background: transparent;
-        background-image: none;
-        box-shadow: none;
-        margin: 0;
-        padding: @form-padding-vertical @form-padding-horizontal;
-        padding-right: 24px;
-
-        &::-ms-expand {
-            display: none;
-        }
-
-        &:focus {
-            outline: none;
-        }
-    }
-
-    &::after {
-        content: " ▾";
-        position: absolute;
-        right: @space-base;
-        top: @space-8;
-    }
-}
-
-// Sub-modifier: Select box multiple
-
-[pam-Form] [pam-Select-Box~="multiple"] {
-    &::after {
-        content: " ";
-    }
-}
-
-// Sub-modifier: Select box fluid
-
-[pam-Form] [pam-Select-Box~="fluid"] {
-    width: 100%;
-
-    select {
-        width: 100%;
-    }
-}
-
-// Sub-modifier: Select box borderless
-
-[pam-Form] [pam-Select-Box~="borderless"] {
-    select {
-        border: 0;
     }
 }
 
@@ -1309,12 +1134,11 @@
 // `.hook-form`
 // `.hook-form-focus`
 // `.hook-form-disabled`
+// `.hook-form-hover`
 // `.hook-form-readonly`
 // `.hook-form-readonly-focus`
 // `.hook-form-focus-invalid`
 // `.hook-form-focus-invalid-focus`
-// `.hook-form-input-borderless`
-// `.hook-form-input-borderless-focus`
 // `.hook-form-select`
 // `.hook-form-select-multiple`
 // `.hook-form-select-focus`
@@ -1324,13 +1148,11 @@
 // `.hook-form-legend`
 // `.hook-form-stacked`
 // `.hook-form-group`
-// `.hook-form-input-icon`
 // `.hook-form-input-group`
-// `.hook-select-box`
 // `.hook-form-message`
 // `.hook-form-message-inline`
 // `.hook-form-state-success`
-// `.hook-form-state-danger`
+// `.hook-form-state-error`
 // `.hook-form-size-large`
 // `.hook-form-size-small`
 // `.hook-form-field-inline`
@@ -1346,6 +1168,8 @@
 }
 .hook-form-disabled() {
 }
+.hook-form-hover() {
+}
 .hook-form-readonly() {
 }
 .hook-form-readonly-focus() {
@@ -1353,10 +1177,6 @@
 .hook-form-focus-invalid() {
 }
 .hook-form-focus-invalid-focus() {
-}
-.hook-form-input-borderless() {
-}
-.hook-form-input-borderless-focus() {
 }
 .hook-form-select() {
 }
@@ -1376,11 +1196,7 @@
 }
 .hook-form-group() {
 }
-.hook-form-input-icon() {
-}
 .hook-form-input-group() {
-}
-.hook-select-box() {
 }
 .hook-form-message() {
 }
@@ -1388,7 +1204,7 @@
 }
 .hook-form-state-success() {
 }
-.hook-form-state-danger() {
+.hook-form-state-error() {
 }
 .hook-form-size-large() {
 }

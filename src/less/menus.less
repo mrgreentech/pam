@@ -21,29 +21,57 @@
 
 @menu-arrow-horizontal: "\25BE";
 @menu-arrow-vertical: "\25B8";
-@menu-children-color: @skin-text;
+@menu-bg: transparent;
+@menu-color: @skin-gray-600;
 @menu-disabled-opacity: @opacity-base;
-@menu-heading-color: @skin-darker;
-@menu-link-color: @skin-dark;
-@menu-link-hover-bg-color: #ededed;
-@menu-selected-link-color: #000;
-@menu-seperator-bg-color: @skin-hint;
-@menu-seperator-thickness: 1px;
+@menu-font-letter-spacing: 0.09em;
+@menu-font-size: @font-size-medium;
+@menu-font-weight: @font-weight-medium;
+@menu-height: @space-48;
+@menu-line-height: 3rem;
+
+@menu-heading-color: @skin-black;
+@menu-heading-font-weight: @font-weight-medium;
+@menu-heading-height: @menu-height;
+@menu-heading-padding: @menu-link-padding;
+
+@menu-divider-bg-color: @skin-border-primary;
+@menu-divider-margin: 0 @space-8;
+@menu-divider-thickness: 1px;
+@menu-vertical-divider-margin: @space-8;
+
+@menu-link-active-color: @skin-black;
+@menu-link-color: @menu-color;
+@menu-link-focus-bg-color: fade(@skin-primary, 15);
+@menu-link-focus-color: @skin-primary;
+@menu-link-height: @menu-height;
+@menu-link-hover-bg-color: fade(@skin-primary, 5);
+@menu-link-justify-content: center;
+@menu-link-line-height: @menu-line-height;
+@menu-link-padding: 0 @space-20;
+
+@menu-children-bg-color: @skin-background;
+@menu-children-link-after-padding: @space-8;
+
+@menu-transition-duration: @transition-duration-default;
+@menu-transition-property: background-color;
+@menu-transition-timing: linear;
 
 // ==================================================================
 // Menu
 // ==================================================================
 
 [pam-Menu] {
+    background-color: @menu-bg;
+
     .hook-menu;
 }
 
 //  Sub-object: List
-// ==========================================================================
+// ==================================================================
 
 [pam-Menu] [pam-Menu-List] {
-    align-items: baseline;
-    display: flex;
+    display: inline-flex;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -53,46 +81,75 @@
 }
 
 //  Sub-object: Item
-// ==========================================================================
+// ==================================================================
+/* stylelint-disable no-descending-specificity */
 
-[pam-Menu] [pam-Menu-Item] {
+[pam-Menu] [pam-Menu-Item],
+[pam-Menu] [pam-Menu-Heading] {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    font-size: @menu-font-size;
+    font-weight: @menu-font-weight;
+    height: @menu-height;
+    justify-content: center;
+    letter-spacing: @menu-font-letter-spacing;
+    line-height: @menu-line-height;
     margin: 0;
+    outline: none;
     padding: 0;
     position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    -webkit-appearance: none;
 
     .hook-menu-item;
 }
 
 //  Sub-object: Link
-// ==========================================================================
+// ==================================================================
 
 [pam-Menu] [pam-Menu-Link] {
     color: @menu-link-color;
-    padding: @space-8 @space-16;
-    display: block;
+    display: inline-flex;
+    height: 100%;
+    justify-content: @menu-link-justify-content;
+    line-height: @menu-link-line-height;
+    outline: 0;
+    padding: @menu-link-padding;
     text-decoration: none;
+    transition-duration: @menu-transition-duration;
+    transition-property: @menu-transition-property;
+    transition-timing-function: @menu-transition-timing;
     white-space: nowrap;
+    width: 100%;
 
     .hook-menu-link;
 }
 
-[pam-Menu] [pam-Menu-Link]:hover,
-[pam-Menu] [pam-Menu-Link]:focus {
+[pam-Menu] [pam-Menu-Link]:hover {
     background-color: @menu-link-hover-bg-color;
 }
 
+[pam-Menu] [pam-Menu-Link]:active,
+[pam-Menu] [pam-Menu-Link]:focus {
+    background-color: @menu-link-focus-bg-color;
+    color: @menu-link-focus-color;
+}
+
 //  Sub-object: Item states
-// ==========================================================================
+// ==================================================================
 
 // States
 //
-// `pam-Menu-Item` has states `active`, `selected` and `disabled` to
-// adjust menu items to different contexts.
+// `pam-Menu-Item` has two states `active` and `disabled`.
 //
 // Markup:
 // <div pam-Menu="horizontal">
 //     <ul pam-Menu-List>
-//         <li pam-Menu-Item="selected">
+//         <li pam-Menu-Item="active">
 //             <a href="#" pam-Menu-Link>Home</a>
 //         </li>
 //         <li pam-Menu-Item>
@@ -108,14 +165,9 @@
 //
 // Style guide: menus.states
 
-[pam-Menu] [pam-Menu-Item~="active"] > [pam-Menu-Link] {
-    background-color: @menu-link-hover-bg-color;
-
-    .hook-menu-item-active-link;
-}
-
 [pam-Menu] [pam-Menu-Item~="disabled"] {
     opacity: @menu-disabled-opacity;
+    background-color: transparent;
 
     .hook-menu-item-disabled;
 }
@@ -123,29 +175,37 @@
 [pam-Menu] [pam-Menu-Item~="disabled"] [pam-Menu-Link] {
     cursor: not-allowed;
 
+    &:active,
+    &:focus,
+    &:hover,
+    &:visited {
+        background-color: transparent;
+    }
+
     .hook-menu-item-disabled-link;
 }
 
-[pam-Menu] [pam-Menu-Item~="selected"] [pam-Menu-Link],
-[pam-Menu] [pam-Menu-Item~="selected"] [pam-Menu-Link]:visited {
-    color: @menu-selected-link-color;
+[pam-Menu] [pam-Menu-Item~="active"] [pam-Menu-Link],
+[pam-Menu] [pam-Menu-Item~="active"] [pam-Menu-Link]:visited {
+    color: @menu-link-active-color;
 
-    .hook-menu-item-selected-link;
+    .hook-menu-item-active-link;
 }
 
-[pam-Menu] [pam-Menu-Item~="disabled"] [pam-Menu-Link]:hover {
-    background-color: transparent;
+[pam-Menu] [pam-Menu-Item~="active"] [pam-Menu-Link] {
+    background-color: @menu-link-focus-bg-color;
+    color: @menu-link-focus-color;
 }
 
 //  Sub-object: Heading
-// ==========================================================================
+// ==================================================================
 
 // Heading
 //
 // `pam-Menu-Heading` is used to add a heading to menus.
 //
 // Markup:
-// <div pam-Menu="vertical">
+// <div pam-Menu="">
 //     <a href="#" pam-Menu-Heading>Menu title</a>
 //     <ul pam-Menu-List>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
@@ -159,16 +219,20 @@
 
 [pam-Menu] [pam-Menu-Heading] {
     color: @menu-heading-color;
-    display: block;
-    padding: @space-8 @space-16;
+    display: inline-flex;
+    font-weight: @menu-heading-font-weight;
+    padding: @menu-heading-padding;
     text-decoration: none;
     white-space: nowrap;
+    line-height: @menu-heading-height;
 
     .hook-menu-heading;
 }
 
 //  Modifier: fixed
 // ==================================================================
+
+// TODO: Should be replaced by postion trait;
 
 [pam-Menu~="fixed"] {
     left: 0;
@@ -180,7 +244,7 @@
 }
 
 //  Modifier: vertical
-// ==========================================================================
+// ==================================================================
 
 // Vertical
 //
@@ -204,45 +268,23 @@
 }
 
 [pam-Menu~="vertical"] [pam-Menu-List] {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
 
     .hook-menu-vertical-list;
 }
 
-[pam-Menu~="vertical"] [pam-Menu-Item],
+[pam-Menu~="vertical"] [pam-Menu-Item] {
+    width: 100%;
+}
+
 [pam-Menu~="vertical"] [pam-Menu-Heading],
-[pam-Menu~="vertical"] [pam-Menu-Separator] {
-    display: inline-block;
+[pam-Menu~="vertical"] [pam-Menu-Divider] {
+    display: flex;
+    justify-content: flex-start;
     vertical-align: middle;
 
     .hook-menu-vertical-item;
-}
-
-//  Modifier: Inline
-// ==================================================================
-
-// Inline
-//
-// Collapse the menu width to an inline element.
-//
-// Markup:
-// <div pam-Menu="vertical inline">
-//     <ul pam-Menu-List>
-//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
-//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
-//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
-//     </ul>
-// </div>
-//
-// Weight: 2
-//
-// Style guide: menus.inline
-
-[pam-Menu~="inline"] {
-    display: inline-flex;
-
-    .hook-menu-inline;
 }
 
 //  Modifier: fluid
@@ -265,8 +307,10 @@
 //
 // Style guide: menus.fluid
 
-[pam-Menu~="fluid"] [pam-Menu-List] {
-    align-items: initial;
+[pam-Menu~="fluid"] [pam-Menu-List],
+[pam-Menu~="fill"] [pam-Menu-List],
+[pam-Menu~="justified"] [pam-Menu-List] {
+    display: flex;
 
     .hook-menu-fluid;
 }
@@ -301,7 +345,7 @@
 
 [pam-Menu~="fill"] [pam-Menu-Item],
 [pam-Menu~="fill"] [pam-Menu-Heading],
-[pam-Menu~="fill"] [pam-Menu-Separator] {
+[pam-Menu~="fill"] [pam-Menu-Divider] {
     flex: 1 1 auto;
     text-align: center;
 
@@ -338,7 +382,7 @@
 
 [pam-Menu~="justified"] [pam-Menu-Item],
 [pam-Menu~="justified"] [pam-Menu-Heading],
-[pam-Menu~="justified"] [pam-Menu-Separator] {
+[pam-Menu~="justified"] [pam-Menu-Divider] {
     flex: 1 1 100%;
     text-align: center;
 
@@ -346,11 +390,11 @@
 }
 
 //  Submenu
-// ==========================================================================
+// ==================================================================
 
-// Sub
+// Submenu
 //
-// To enable a dropdown use `pam-Menu-Item` and `pam-Menu-Has-Children` this can be used with `limited`and  `horizontal`menu types.
+// To enable a dropdowns use `pam-Menu-Item` and `pam-Menu-Has-Children` this can be used with `vertical`and `horizontal`menu types.
 //
 // Weight: 5
 //
@@ -358,8 +402,7 @@
 
 // Vertical
 //
-// A vertical submenu is enabled with the `inline` menu type and
-// `pam-Menu-Has-Children` attribute.
+// For a vertical submenu use the vertical menu with `pam-Menu-Has-Children`.
 //
 // Markup:
 // <div pam-Menu="vertical inline">
@@ -410,13 +453,14 @@
 }
 
 [pam-Menu] [pam-Menu-Children] {
-    background-color: @menu-children-color;
+    background-color: @menu-children-bg-color;
     display: none;
     left: 0;
     margin: 0;
     padding: 0;
     position: absolute;
-    top: auto;
+    top: 100%;
+    width: 100%;
     z-index: 3;
 
     .hook-menu-children;
@@ -440,7 +484,7 @@
 [pam-Menu] [pam-Menu-Has-Children] > [pam-Menu-Link]::after {
     content: @menu-arrow-horizontal;
     font-size: small;
-    padding-left: @space-8;
+    padding-left: @menu-children-link-after-padding;
 
     .hook-menu-has-children-link-after;
 }
@@ -452,7 +496,7 @@
 }
 
 //  Scrollable
-// ==========================================================================
+// ==================================================================
 
 // Scrollable
 //
@@ -511,7 +555,6 @@
 [pam-Menu~="horizontal"][pam-Menu~="scrollable"] {
     overflow-x: auto;
     overflow-y: hidden;
-    padding: @space-8 0;
     white-space: nowrap;
     -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
@@ -525,21 +568,21 @@
     .hook-menu-horizontal-scrollable-list;
 }
 
-//  Sub-object: Separator
-// ==========================================================================
+//  Sub-object: divider
+// ==================================================================
 
-// Separator
+// Divider
 //
-// To add a menu separator use the `pam-Menu-Separator` attribute in a li element. It works the same for horizontal menus.
+// To add a menu divider use the `pam-Menu-Divider` attribute in a li element. It works the same for vertical menus.
 //
 // Markup:
-// <div pam-Menu="vertical inline">
+// <div pam-Menu="">
 //     <ul pam-Menu-List>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
-//         <li pam-Menu-Separator></li>
+//         <li pam-Menu-Divider></li>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>JavaScript</a></li>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>C++</a></li>
-//         <li pam-Menu-Separator></li>
+//         <li pam-Menu-Divider></li>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Smalltalk</a></li>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Cobol</a></li>
 //     </ul>
@@ -547,27 +590,27 @@
 //
 // Weight: 8
 //
-// Style guide: menus.seperator
+// Style guide: menus.divider
 
-[pam-Menu] [pam-Menu-Separator] {
-    background-color: @menu-seperator-bg-color;
+[pam-Menu] [pam-Menu-Divider] {
+    background-color: @menu-divider-bg-color;
     height: auto;
-    margin: 0 @space-base;
-    width: @menu-seperator-thickness;
+    margin: @menu-divider-margin;
+    width: @menu-divider-thickness;
 
-    .hook-menu-separator;
+    .hook-menu-divider;
 }
 
-[pam-Menu~="vertical"] [pam-Menu-Separator] {
-    height: @menu-seperator-thickness;
-    margin: @space-base 0;
-    width: auto;
+[pam-Menu~="vertical"] [pam-Menu-Divider] {
+    height: @menu-divider-thickness;
+    margin: @menu-vertical-divider-margin;
+    width: 100%;
 
-    .hook-menu-vertical-separator;
+    .hook-menu-vertical-divider;
 }
 
 //  Hooks
-// ==========================================================================
+// ==================================================================
 
 // Hooks
 //
@@ -587,7 +630,7 @@
 // `.hook-menu-item-active-link`
 // `.hook-menu-item-disabled`
 // `.hook-menu-item-disabled-link`
-// `.hook-menu-item-selected-link`
+// `.hook-menu-item-active-link`
 // `.hook-menu-justified`
 // `.hook-menu-justified-item`
 // `.hook-menu-justified-list`
@@ -595,14 +638,13 @@
 // `.hook-menu-list`
 // `.hook-menu-scrollable`
 // `.hook-menu-scrollable-list`
-// `.hook-menu-separator`
-// `.hook-menu-inline`
+// `.hook-menu-divider`
 // `.hook-menu-vertical`
 // `.hook-menu-vertical-children`
 // `.hook-menu-vertical-has-children-link-after`
 // `.hook-menu-vertical-item`
 // `.hook-menu-vertical-list`
-// `.hook-menu-vertical-separator`
+// `.hook-menu-vertical-divider`
 //
 // Weight: 10
 //
@@ -641,8 +683,6 @@
 }
 .hook-menu-item-disabled-link() {
 }
-.hook-menu-item-selected-link() {
-}
 .hook-menu-justified() {
 }
 .hook-menu-justified-item() {
@@ -657,9 +697,7 @@
 }
 .hook-menu-scrollable-list() {
 }
-.hook-menu-separator() {
-}
-.hook-menu-inline() {
+.hook-menu-divider() {
 }
 .hook-menu-vertical() {
 }
@@ -671,7 +709,7 @@
 }
 .hook-menu-vertical-list() {
 }
-.hook-menu-vertical-separator() {
+.hook-menu-vertical-divider() {
 }
 /* stylelint-enable */
 

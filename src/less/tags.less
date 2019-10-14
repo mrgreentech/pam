@@ -15,16 +15,15 @@
 //  Variables
 // ==================================================================
 
-@tag-background: @skin-dark;
+@tag-background: @skin-gray-600;
 @tag-border-radius: @border-radius-base;
-@tag-color: @skin-text;
+@tag-color: contrast(@tag-background);
 @tag-font-size: 65%;
 @tag-font-weight: @font-weight-medium;
 @tag-line-height: @line-height-normal;
 @tag-padding-horizontal: 6px;
 @tag-padding-vertical: 3px;
 @tag-text-transform: uppercase;
-@tag-martins-var: uppercase;
 
 @tag-rounded-border-radius: 500px;
 @tag-rounded-font-size: 65%;
@@ -34,7 +33,7 @@
 @tag-primary-background: @skin-primary;
 @tag-success-background: @skin-success;
 @tag-info-background: @skin-info;
-@tag-danger-background: @skin-danger;
+@tag-error-background: @skin-error;
 @tag-warn-background: @skin-warn;
 
 // ==================================================================
@@ -97,7 +96,7 @@
 // <span pam-Tag="success">Success</span>
 // <span pam-Tag="info">Info</span>
 // <span pam-Tag="warn">warn</span>
-// <span pam-Tag="danger">danger</span>
+// <span pam-Tag="error">error</span>
 //
 //  Weight: 2
 //
@@ -119,8 +118,8 @@
     background-color: @tag-warn-background;
 }
 
-[pam-Tag~="danger"] {
-    background-color: @tag-danger-background;
+[pam-Tag~="error"] {
+    background-color: @tag-error-background;
 }
 
 //  Hooks
