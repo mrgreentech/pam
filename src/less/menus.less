@@ -21,26 +21,40 @@
 
 @menu-arrow-horizontal: "\25BE";
 @menu-arrow-vertical: "\25B8";
-@menu-bg: none;
-@menu-children-bg-color: @skin-background;
+@menu-bg: transparent;
 @menu-color: @skin-gray-600;
 @menu-disabled-opacity: @opacity-base;
 @menu-font-letter-spacing: 0.09em;
 @menu-font-size: @font-size-medium;
 @menu-font-weight: @font-weight-medium;
-@menu-heading-color: @skin-black;
 @menu-height: @space-48;
-@menu-line-height: 2.25rem;
-@menu-selected-link-color: @skin-black;
-@menu-seperator-bg-color: @skin-border-primary;
-@menu-seperator-thickness: 1px;
+@menu-line-height: 3rem;
 
+@menu-heading-color: @skin-black;
+@menu-heading-font-weight: @font-weight-medium;
+@menu-heading-height: @menu-height;
+@menu-heading-padding: @menu-link-padding;
+
+@menu-divider-bg-color: @skin-border-primary;
+@menu-divider-margin: 0 @space-8;
+@menu-divider-thickness: 1px;
+@menu-vertical-divider-margin: @space-8;
+
+@menu-link-active-color: @skin-black;
 @menu-link-color: @menu-color;
 @menu-link-focus-bg-color: fade(@skin-primary, 15);
+@menu-link-focus-color: @skin-primary;
+@menu-link-height: @menu-height;
 @menu-link-hover-bg-color: fade(@skin-primary, 5);
+@menu-link-justify-content: center;
+@menu-link-line-height: @menu-line-height;
+@menu-link-padding: 0 @space-20;
+
+@menu-children-bg-color: @skin-background;
+@menu-children-link-after-padding: @space-8;
 
 @menu-transition-duration: @transition-duration-default;
-@menu-transition-property: background-color, border-color;
+@menu-transition-property: background-color;
 @menu-transition-timing: linear;
 
 // ==================================================================
@@ -54,7 +68,7 @@
 }
 
 //  Sub-object: List
-// ==========================================================================
+// ==================================================================
 
 [pam-Menu] [pam-Menu-List] {
     display: inline-flex;
@@ -67,7 +81,7 @@
 }
 
 //  Sub-object: Item
-// ==========================================================================
+// ==================================================================
 /* stylelint-disable no-descending-specificity */
 
 [pam-Menu] [pam-Menu-Item],
@@ -95,17 +109,16 @@
 }
 
 //  Sub-object: Link
-// ==========================================================================
+// ==================================================================
 
 [pam-Menu] [pam-Menu-Link] {
-    border-bottom: 2px solid transparent;
     color: @menu-link-color;
     display: inline-flex;
     height: 100%;
-    justify-content: center;
-    line-height: @space-48;
+    justify-content: @menu-link-justify-content;
+    line-height: @menu-link-line-height;
     outline: 0;
-    padding: 0 @space-20;
+    padding: @menu-link-padding;
     text-decoration: none;
     transition-duration: @menu-transition-duration;
     transition-property: @menu-transition-property;
@@ -123,21 +136,20 @@
 [pam-Menu] [pam-Menu-Link]:active,
 [pam-Menu] [pam-Menu-Link]:focus {
     background-color: @menu-link-focus-bg-color;
-    border-bottom-color: @skin-primary;
-    color: @skin-primary;
+    color: @menu-link-focus-color;
 }
 
 //  Sub-object: Item states
-// ==========================================================================
+// ==================================================================
 
 // States
 //
-// `pam-Menu-Item` has two states `selected` and `disabled`.
+// `pam-Menu-Item` has two states `active` and `disabled`.
 //
 // Markup:
 // <div pam-Menu="horizontal">
 //     <ul pam-Menu-List>
-//         <li pam-Menu-Item="selected">
+//         <li pam-Menu-Item="active">
 //             <a href="#" pam-Menu-Link>Home</a>
 //         </li>
 //         <li pam-Menu-Item>
@@ -167,28 +179,26 @@
     &:focus,
     &:hover,
     &:visited {
-        border: none;
         background-color: transparent;
     }
 
     .hook-menu-item-disabled-link;
 }
 
-[pam-Menu] [pam-Menu-Item~="selected"] [pam-Menu-Link],
-[pam-Menu] [pam-Menu-Item~="selected"] [pam-Menu-Link]:visited {
-    color: @menu-selected-link-color;
+[pam-Menu] [pam-Menu-Item~="active"] [pam-Menu-Link],
+[pam-Menu] [pam-Menu-Item~="active"] [pam-Menu-Link]:visited {
+    color: @menu-link-active-color;
 
-    .hook-menu-item-selected-link;
+    .hook-menu-item-active-link;
 }
 
-[pam-Menu] [pam-Menu-Item~="selected"] [pam-Menu-Link] {
+[pam-Menu] [pam-Menu-Item~="active"] [pam-Menu-Link] {
     background-color: @menu-link-focus-bg-color;
-    color: @skin-primary;
-    border-bottom: 2px solid @skin-primary;
+    color: @menu-link-focus-color;
 }
 
 //  Sub-object: Heading
-// ==========================================================================
+// ==================================================================
 
 // Heading
 //
@@ -210,17 +220,19 @@
 [pam-Menu] [pam-Menu-Heading] {
     color: @menu-heading-color;
     display: inline-flex;
-    font-weight: @font-weight-medium;
-    padding: 0 @space-20;
+    font-weight: @menu-heading-font-weight;
+    padding: @menu-heading-padding;
     text-decoration: none;
     white-space: nowrap;
-    line-height: @space-48;
+    line-height: @menu-heading-height;
 
     .hook-menu-heading;
 }
 
 //  Modifier: fixed
 // ==================================================================
+
+// TODO: Should be replaced by postion trait;
 
 [pam-Menu~="fixed"] {
     left: 0;
@@ -232,7 +244,7 @@
 }
 
 //  Modifier: vertical
-// ==========================================================================
+// ==================================================================
 
 // Vertical
 //
@@ -267,7 +279,7 @@
 }
 
 [pam-Menu~="vertical"] [pam-Menu-Heading],
-[pam-Menu~="vertical"] [pam-Menu-Separator] {
+[pam-Menu~="vertical"] [pam-Menu-Divider] {
     display: flex;
     justify-content: flex-start;
     vertical-align: middle;
@@ -333,7 +345,7 @@
 
 [pam-Menu~="fill"] [pam-Menu-Item],
 [pam-Menu~="fill"] [pam-Menu-Heading],
-[pam-Menu~="fill"] [pam-Menu-Separator] {
+[pam-Menu~="fill"] [pam-Menu-Divider] {
     flex: 1 1 auto;
     text-align: center;
 
@@ -370,7 +382,7 @@
 
 [pam-Menu~="justified"] [pam-Menu-Item],
 [pam-Menu~="justified"] [pam-Menu-Heading],
-[pam-Menu~="justified"] [pam-Menu-Separator] {
+[pam-Menu~="justified"] [pam-Menu-Divider] {
     flex: 1 1 100%;
     text-align: center;
 
@@ -378,7 +390,7 @@
 }
 
 //  Submenu
-// ==========================================================================
+// ==================================================================
 
 // Submenu
 //
@@ -472,7 +484,7 @@
 [pam-Menu] [pam-Menu-Has-Children] > [pam-Menu-Link]::after {
     content: @menu-arrow-horizontal;
     font-size: small;
-    padding-left: @space-8;
+    padding-left: @menu-children-link-after-padding;
 
     .hook-menu-has-children-link-after;
 }
@@ -484,7 +496,7 @@
 }
 
 //  Scrollable
-// ==========================================================================
+// ==================================================================
 
 // Scrollable
 //
@@ -543,7 +555,6 @@
 [pam-Menu~="horizontal"][pam-Menu~="scrollable"] {
     overflow-x: auto;
     overflow-y: hidden;
-    padding: @space-8 0;
     white-space: nowrap;
     -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
@@ -557,21 +568,21 @@
     .hook-menu-horizontal-scrollable-list;
 }
 
-//  Sub-object: Separator
-// ==========================================================================
+//  Sub-object: divider
+// ==================================================================
 
-// Separator
+// Divider
 //
-// To add a menu separator use the `pam-Menu-Separator` attribute in a li element. It works the same for vertical menus.
+// To add a menu divider use the `pam-Menu-Divider` attribute in a li element. It works the same for vertical menus.
 //
 // Markup:
 // <div pam-Menu="">
 //     <ul pam-Menu-List>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
-//         <li pam-Menu-Separator></li>
+//         <li pam-Menu-Divider></li>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>JavaScript</a></li>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>C++</a></li>
-//         <li pam-Menu-Separator></li>
+//         <li pam-Menu-Divider></li>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Smalltalk</a></li>
 //         <li pam-Menu-Item><a href="#" pam-Menu-Link>Cobol</a></li>
 //     </ul>
@@ -579,27 +590,27 @@
 //
 // Weight: 8
 //
-// Style guide: menus.seperator
+// Style guide: menus.divider
 
-[pam-Menu] [pam-Menu-Separator] {
-    background-color: @menu-seperator-bg-color;
+[pam-Menu] [pam-Menu-Divider] {
+    background-color: @menu-divider-bg-color;
     height: auto;
-    margin: 0 @space-8;
-    width: @menu-seperator-thickness;
+    margin: @menu-divider-margin;
+    width: @menu-divider-thickness;
 
-    .hook-menu-separator;
+    .hook-menu-divider;
 }
 
-[pam-Menu~="vertical"] [pam-Menu-Separator] {
-    height: @menu-seperator-thickness;
-    margin: @space-8;
+[pam-Menu~="vertical"] [pam-Menu-Divider] {
+    height: @menu-divider-thickness;
+    margin: @menu-vertical-divider-margin;
     width: 100%;
 
-    .hook-menu-vertical-separator;
+    .hook-menu-vertical-divider;
 }
 
 //  Hooks
-// ==========================================================================
+// ==================================================================
 
 // Hooks
 //
@@ -619,7 +630,7 @@
 // `.hook-menu-item-active-link`
 // `.hook-menu-item-disabled`
 // `.hook-menu-item-disabled-link`
-// `.hook-menu-item-selected-link`
+// `.hook-menu-item-active-link`
 // `.hook-menu-justified`
 // `.hook-menu-justified-item`
 // `.hook-menu-justified-list`
@@ -627,13 +638,13 @@
 // `.hook-menu-list`
 // `.hook-menu-scrollable`
 // `.hook-menu-scrollable-list`
-// `.hook-menu-separator`
+// `.hook-menu-divider`
 // `.hook-menu-vertical`
 // `.hook-menu-vertical-children`
 // `.hook-menu-vertical-has-children-link-after`
 // `.hook-menu-vertical-item`
 // `.hook-menu-vertical-list`
-// `.hook-menu-vertical-separator`
+// `.hook-menu-vertical-divider`
 //
 // Weight: 10
 //
@@ -672,8 +683,6 @@
 }
 .hook-menu-item-disabled-link() {
 }
-.hook-menu-item-selected-link() {
-}
 .hook-menu-justified() {
 }
 .hook-menu-justified-item() {
@@ -688,7 +697,7 @@
 }
 .hook-menu-scrollable-list() {
 }
-.hook-menu-separator() {
+.hook-menu-divider() {
 }
 .hook-menu-vertical() {
 }
@@ -700,7 +709,7 @@
 }
 .hook-menu-vertical-list() {
 }
-.hook-menu-vertical-separator() {
+.hook-menu-vertical-divider() {
 }
 /* stylelint-enable */
 
