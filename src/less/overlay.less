@@ -1,16 +1,18 @@
 // Overlay
 //
-// Create an element overlay, which can be used as a cover
-// with information, call to action buttons or a loader.
+// Create an element overlay, which can be used as a partial or full cover. The [position trait][position-link] is used to set the location of the overlay.
 //
 // Markup:
-// <div pam-Alert pam-Overlay-Wrapper>
-//     <h1 pam-Alert-Heading>Title</h1>
-//     <p>Callout message</p>
-//     <div pam-Overlay>
-//         <div pam-Loader="pulse"></div>
+// <div pam-Grid>
+//     <div pam-Unit="2-3">
+//         <img pam-image src="kss-assets/img/photo-position.jpg" alt="Joanna Kosinska">
+//         <div pam-position="absolute center" pam-overlay="" pam-skin="text:primary:on:dark">
+//             Deserunt dolore. Explicabo exercitation. In explicabo consequat. Autem fugit, numquam so rem. Proident. Ad magnam, or quia nor inventore nostrud.
+//         </div>
 //     </div>
 // </div>
+//
+// [position-link]: ./section-traits.html#kssref-traits-position
 //
 // Weight: 16
 //
@@ -19,32 +21,28 @@
 //  Variables
 // ==================================================================
 
-@overlay-border-radius: @border-radius-base;
-@overlay-opacity: @opacity-base;
-@overlay-padding: @space-16;
+@overlay-dark: fade(@skin-black, 60);
+@overlay-light: fade(@skin-white, 80);
+@overlay-on-dark: contrast(@overlay-dark);
+@overlay-on-light: contrast(@overlay-light);
+@overlay-padding: @space-20;
 
 // ==================================================================
 //  Overlay
 // ==================================================================
 
-[pam-Overlay-Wrapper] {
-    position: relative;
+[pam-Overlay] {
+    padding: @overlay-padding;
 }
 
-[pam-Overlay] {
-    align-items: center;
-    background: rgba(0, 0, 0, @overlay-opacity);
-    border-radius: @overlay-border-radius;
-    display: inline-flex;
-    height: 100%;
-    justify-content: center;
-    left: 0;
-    line-height: 1;
-    padding: @overlay-padding;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 100%;
+[pam-Overlay~="light"] {
+    background: @overlay-light;
+    color: @overlay-on-light;
+}
+
+[pam-Overlay~="dark"] {
+    background: @overlay-dark;
+    color: @overlay-on-dark;
 }
 
 // <VARIABLES>

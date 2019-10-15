@@ -5,7 +5,7 @@
         "plugin/no-unsupported-browser-features": [
             true,
             {
-                "ignore": ["outline", "css3-cursors", "css-initial-value", "multicolumn", "css-appearance", "flexbox", "user-select-none"],
+                "ignore": ["outline", "css3-cursors", "css-initial-value", "multicolumn", "css-appearance", "flexbox", "user-select-none", "css-sticky"],
                 "severity": "warning"
             }
         ]
