@@ -5,9 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
 ## 1.0.0 - 2019-XX-XX
 
-### :grin: Added
+### :metal: Added
 
 -   `pam-Alert` component.
 -   `pam-Column` component.
@@ -33,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   spacing vars for the base multiplier times 25. `@space-[8...100]`
 -   validation states for `pam-Input`.
 
-### :metal: Updated
+### :construction: Changed
 
 -   from grunt to gulp 4.
 -   from styledown to KSS styleguide documentation.
@@ -43,7 +45,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   pam-Form and added new variables.
 -   typography.
 
-### :sob: Removed
+### :warning: Removed
 
 -   `pam-Button="round"`.
 -   `pam-Button="text"`.
@@ -54,131 +56,203 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   styledown.
 -   typography subheader, form, body, strong, small.
 
-## 0.12.0 - 2016-05-26
+## [0.12.0] - 2016-05-26
 
--   Updated grid component wit the -webkit-flex property value to support iOS 8.1-8.4.
--   Removed all star hacks and grid styling support for ie8.
--   Updated autoprefixer to support 3 latest browser versions instead of 2.
+### :construction: Changed
+
+-   Grid component with the -webkit-flex property value to support iOS 8.1-8.4.
+-   Autoprefixer to support 3 latest browser versions instead of 2.
+
+### :warning: Removed
+
+-   All star hacks and grid styling support for ie8.
 
 ## 0.11.2 - 2016-05-05
 
--   Added `flex-flow` property to grid component to fix Firefox wrapping issues for flexbox elements.
+### :metal: Added
+
+-   `flex-flow` property to grid component to fix Firefox wrapping issues for flexbox elements.
 
 ## 0.11.1 - 2016-02-24
 
--   Added git repo url to bower.json.
+### :metal: Added
+
+-   Git repo url to bower.json.
 
 ## 0.11.0 - 2015-11-09
 
--   Updated pam-Select-Box with the `select::-ms-expand` which removes the select arrow for IE.
--   Added pam-Divider component.
--   Added postCSS task with autoprefix plugin.
--   global radius variable `@border-radius-base`.
--   border-radius variable for inputs `@form-border-radius`.
+### :metal: Added
+
+-   Attribute to control font color in buttons `pam-Button="text:[primary|secondary]"`.
+-   pam-Divider component.
+-   postCSS task with autoprefix plugin.
 -   border-radius variable for buttons `@button-border-radius`.
--   Changed focus and hover styles for buttons.
--   Added attribute to control font color in buttons `pam-Button="text:[primary|secondary]"`.
--   Updated styleguide documentation for lists, hooks, inputs, buttons and divider.
+-   border-radius variable for inputs `@form-border-radius`.
+
+### :construction: Changed
+
+-   Focus and hover styles for buttons.
+-   global radius variable `@border-radius-base`.
+-   pam-Select-Box with the `select::-ms-expand` which removes the select arrow for IE.
+-   Stylesguide documentation for lists, hooks, inputs, buttons and divider.
 
 ## 0.10.0 - 2015-10-12
 
--   Implemented styleguide skin with a indexed menu.
--   Added favicon for stylguide.
+### :metal: Added
+
+-   Style guide skin with a indexed menu.
+-   Favicon for stylguide.
 
 ## 0.9.1 - 2015-08-13
 
--   Implemented use of font-family variable.
--   Removed uppercase text-transforms.
+### :metal: Added
+
+-   Font-family variable.
+
+### :construction: Changed
+
 -   Updated typography trait with variables and hooks.
+
+### :warning: Removed
+
+-   Upercase text-transforms.
 
 ## 0.9.0 - 2015-06-11
 
--   Buttons update with text selectors and new variables.
--   Theme trait selector has moved into its own core file.
--   Grid units default font-family have been set to Roboto.
--   Added borderless input type (pam-Input="borderless").
--   Fixed styleguide documentation for pam-Select-Box.
--   Added borderless input hook.
--   Updated pam-Input-Icon spacing according to material design.
--   Added hook and selectors for placeholder styling.
--   Implemented PAM variables for pam-Lists, pam-Item and pam-Tiles.
+### :metal: Added
+
+-   Borderless input hook.
+-   Borderless input type (pam-Input="borderless").
+-   Hook and selectors for placeholder styling.
+
+### :construction: Changed
+
 -   Adjusted list, item and tiles spaces.
+-   Buttons update with text selectors and new variables.
+-   Fixed styleguide documentation for pam-Select-Box.
+-   Grid units default font-family have been set to Roboto.
+-   Implemented PAM variables for pam-Lists, pam-Item and pam-Tiles.
+-   Theme trait selector has moved into its own core file.
 -   Update styleguide documentation with pam-Lists, pam-Item and pam-Tiles.
 -   Updated PAM utility with pam-util="hidden" and pam-util="group".
+-   Updated pam-Input-Icon spacing according to material design.
 
 ## 0.8.0 - 2015-05-06
 
--   Added support for landscape orientation in grid units.
+### :metal: Added
+
+-   Support for landscape orientation in grid units.
 
 ## 0.7.0 - 2015-04-30
 
--   Added trait for theming (pam-theme).
+### :metal: Added
+
+-   Trait for theming (pam-theme).
 
 ## 0.6.0 - 2015-04-28
 
--   Added trait for default typographies (pam-typography).
+### :metal: Added
+
+-   Trait for default typographies (pam-typography).
 
 ## 0.5.0 - 2015-04-22
 
--   Added menus styleguide documentation.
--   PAM has been extended with a round button.
+### :metal: Added
+
+-   Menus styleguide documentation.
+-   Round button.
+
+### :construction: Changed
+
 -   Updated styleguide documentation for hooks styling.
 -   Updated pam-Form styleguide documentation.
 
 ## 0.4.3 - 2015-04-16
 
--   Added styleguide documentation for grids.
--   Included the responsive pam css in the styleguide build.
+### :metal: Added
+
+-   Style guide documentation for grids.
+-   Included the responsive pam css in the style guide build.
 
 ## 0.4.2 - 2015-04-15
 
+### :metal: Added
+
+-   Grunt-cli as prerequisite in README "Build from source"
+
+### :construction: Changed
+
 -   Updated path for pam.css in styleguide config
--   Added grunt-cli as prerequisite in README "Build from source"
 
 ## 0.4.1 - 2015-03-31
 
--   [!] Import Roboto font from https instead of http.
+### :metal: Added
+
 -   Added thin (100) and light (300) to Roboto font family.
+
+### :construction: Changed
+
+-   Import Roboto font from https instead of http.
 
 ## 0.4.0 - 2015-03-28
 
--   [!] The less release package has been moved from `/release` to `/release/less`.
--   [!] The task `grunt manual_tests` has been renamed to `grunt tests`.
--   Added styledown and styleguide automation.
+### :metal: Added
+
+-   :metal: Added styledown and styleguide automation.
+
+### :construction: Changed
+
+-   The less release package has been moved from `/release` to `/release/less`.
+-   The task `grunt manual_tests` has been renamed to `grunt tests`.
 -   Fixed a misnamed form hook.
 
 ## 0.3.0 - 2015-03-19
 
--   Added variables for skin, layout, topography, typography and breakpoints.
+### :metal: Added
+
+-   Variables for skin, layout, topography, typography and breakpoints.
+
+### :construction: Changed
+
 -   Updated browser-sync to 2.0.0.
 
 ## 0.2.0 - 2015-03-17
 
--   Implemented lesshat mixin library.
+### :metal: Added
+
+-   lesshat mixin library.
+
+### :construction: Changed
+
 -   Updated component hooks.
 -   Minimized complexity of file structure.
 -   Updated folder structure.
 
 ## 0.1.0 - 2015-03-13
 
--   Added pam-Select-Box to forms component.
+### :metal: Added
+
+-   pam-Select-Box to forms component.
+
+### :construction: Changed
+
 -   Adjusted pam-Input-Icon padding.
 
 ## 0.0.4 - 2015-03-09
 
--   [!] Replaced Pure grids with PAM grids.
--   [!] Replaced Pure tables with PAM tables.
--   [!] Replaced Pure menus with PAM menus.
--   Added PAM lists.
+### :construction: Changed
+
+-   PAM grids.
+-   PAM lists.
 -   Updated documentation.
 
 ## 0.0.2 - 2015-02-25
 
-### Added
+### :metal: Added
 
 -   LESS in build flow.
 
-### Changed
+### :construction: Changed
 
 -   Pure forms with PAM forms.
 -   Pure buttons with PAM buttons.
@@ -187,3 +261,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 0.0.1 - 2014-12-18
 
 -   Initial commit.
+
+[unreleased]: https://github.com/mrgreentech/pam/compare/v1.0.0...HEAD
+[0.12.0]: https://github.com/mrgreentech/pam/compare/v0.12.1..v0.12.0
