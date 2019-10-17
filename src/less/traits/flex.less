@@ -1,0 +1,159 @@
+// Flex
+//
+// The Flex trait helps with building layouts by utilizing css flex-box.
+//
+//
+// * type - `{ inline }`
+//
+// Markup:
+// <div pam-flex="">
+//     <div pam-Card pam-space="p:4 m:r:2">Flex</div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: traits.flex
+
+// ==================================================================
+//  Flex
+// ==================================================================
+
+[pam-flex] {
+    display: flex;
+}
+
+[pam-flex~="inline"] {
+    display: inline-flex;
+}
+
+//  Horizontal modifiers
+// ==================================================================
+
+// Horizontal
+//
+// The Flex trait helps with building layouts by utilizing css flex-box.
+//
+//
+// * type - `{left | right | between | around}`
+//
+// Markup:
+// <div pam-flex="around">
+//     <div pam-Card pam-space="p:4 m:r:2">Item 1</div>
+//     <div pam-Card pam-space="p:4 m:r:2">Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2">Item 3</div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: traits.flex.horizontal
+
+[pam-flex~="left"] {
+    justify-content: flex-start;
+}
+
+[pam-flex~="center"] {
+    justify-content: center;
+}
+
+[pam-flex~="right"] {
+    justify-content: flex-end;
+}
+
+[pam-flex~="between"] {
+    justify-content: space-between;
+}
+
+[pam-flex~="around"] {
+    justify-content: space-around;
+}
+
+//  Vertical modifiers
+// ==================================================================
+
+[pam-flex~="stretch"] {
+    align-items: stretch;
+}
+
+[pam-flex~="top"] {
+    align-items: flex-start;
+}
+
+[pam-flex~="middle"] {
+    align-items: center;
+}
+
+[pam-flex~="bottom"] {
+    align-items: flex-end;
+}
+
+//  Direction modifiers
+// ==================================================================
+
+[pam-flex~="row"] {
+    flex-direction: row;
+}
+
+[pam-flex~="row-reverse"] {
+    flex-direction: row-reverse;
+}
+
+[pam-flex~="column"] {
+    flex-direction: column;
+}
+
+[pam-flex~="column-reverse"] {
+    flex-direction: column-reverse;
+}
+
+//  Wrap modifiers
+// ==================================================================
+
+[pam-flex="nowrap"] {
+    flex-wrap: nowrap;
+}
+
+[pam-flex="wrap"] {
+    flex-wrap: wrap;
+}
+
+[pam-flex="wrap:reverse"] {
+    flex-wrap: wrap-reverse;
+}
+
+//  Wrap alignment modifiers
+// ==================================================================
+
+[pam-flex~="wrap:stretch"] {
+    align-content: stretch;
+}
+
+[pam-flex~="wrap:top"] {
+    align-content: flex-start;
+}
+
+[pam-flex~="wrap:middle"] {
+    align-content: center;
+}
+
+[pam-flex~="wrap:bottom"] {
+    align-content: flex-end;
+}
+
+[pam-flex~="wrap:between"] {
+    align-content: space-between;
+}
+
+[pam-flex~="wrap:around"] {
+    align-content: space-around;
+}
+
+//  Order modifiers
+// ==================================================================
+
+[pam-flex~="first"] {
+    order: -1;
+}
+
+[pam-flex~="last"] {
+    order: 99;
+}
