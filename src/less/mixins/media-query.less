@@ -1,0 +1,27 @@
+// .media-query(@minWidth; @rules)
+//
+// Handles z-index contextual by retrieving the elements position from a
+// element list and returns the positon as a z-index value.
+//
+// Wrap a media query around a selector context with provided
+// rules.
+//
+//```less
+//  // Example
+//  body {
+//      .media-query(640px, {
+//          display: none;
+//      });
+//  }
+//```
+//
+// @minWidth - Breakpoint min-width.
+// @rules - What rules to apply to the media query.
+//
+// Style guide: mixins.media-query
+
+.media-query(@minWidth; @rules) {
+    @media screen and (min-width: @minWidth) {
+        @rules();
+    }
+}
