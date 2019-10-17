@@ -23,23 +23,7 @@
     position: static;
 }
 
-[pam-position~="relative"] {
-    position: relative !important;
-}
-
-[pam-position~="absolute"] {
-    position: absolute !important;
-}
-
-[pam-position~="fixed"] {
-    position: fixed !important;
-}
-
-[pam-position~="sticky"] {
-    position: sticky !important;
-}
-
-//  Location
+//  Location modifier
 // ==================================================================
 
 // Location
@@ -62,22 +46,21 @@
 //
 // Style guide: traits.position.location
 
-// Cover
-//
-// To make a position element cover its parent element use the `cover`
-// location poperty.
-//
-// Markup:
-// <div pam-Grid>
-//     <div pam-Unit="2-3">
-//         <img pam-image src="kss-assets/img/photo-position.jpg" alt="Joanna Kosinska">
-//         <div pam-position="absolute cover" pam-overlay="light" pam-flex="center middle">Cover</div>
-//     </div>
-// </div>
-//
-// Weight: 1
-//
-// Style guide: traits.position.location.cover
+[pam-position~="relative"] {
+    position: relative !important;
+}
+
+[pam-position~="absolute"] {
+    position: absolute !important;
+}
+
+[pam-position~="fixed"] {
+    position: fixed !important;
+}
+
+[pam-position~="sticky"] {
+    position: sticky !important;
+}
 
 [pam-position~="top"] {
     top: 0;
@@ -103,7 +86,7 @@
     left: 0;
 }
 
-//  Explicit locations
+//  Explicit location modifier
 // ==================================================================
 
 // Explicit locations
@@ -191,23 +174,26 @@
     bottom: 0;
 }
 
+// Cover
+//
+// To make a position element cover its parent element use the `cover`
+// location poperty.
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="2-3">
+//         <img pam-image src="kss-assets/img/photo-position.jpg" alt="Joanna Kosinska">
+//         <div pam-position="absolute cover" pam-overlay="light" pam-flex="center middle">Cover</div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: traits.position.location.cover
+
 [pam-position~="cover"] {
     bottom: 0;
     left: 0;
     right: 0;
     top: 0;
-}
-
-// TODO: Add flex trait
-
-[pam-flex] {
-    display: flex;
-}
-
-[pam-flex~="middle"] {
-    align-items: center;
-}
-
-[pam-flex~="center"] {
-    justify-content: center;
 }
