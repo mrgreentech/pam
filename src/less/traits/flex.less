@@ -1,14 +1,20 @@
 // Flex
 //
-// The Flex trait helps with building layouts by utilizing css flex-box.
+// The Flex trait helps with building layouts by utilizing
+// the css flexbox. It's also used to control component
+// layouts such as `Grid`, `Lists` and `Menus`.
 //
-//
-// * type - `{ inline }`
+// By default the flex trait is set to `display: flex;`.
+// To lay out inline items and their children as flexboxes use the `inline` modifier.
 //
 // Markup:
-// <div pam-flex="">
-//     <div pam-Card pam-space="p:4 m:r:2">Flex</div>
+// <div pam-flex="{{modifier_class}}">
+//     <div pam-Card pam-space="p:4 m:r:2"> Item 1</div>
+//     <div pam-Card pam-space="p:4 m:r:2"> Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2">Item 3</div>
 // </div>
+//
+// inline - Set display value to inline-flex to lay out inline items as flexboxes.
 //
 // Weight: 1
 //
@@ -26,26 +32,29 @@
     display: inline-flex;
 }
 
-//  Horizontal modifiers
+//  Main axis modifiers
 // ==================================================================
 
-// Horizontal
+// Main axis
 //
-// The Flex trait helps with building layouts by utilizing css flex-box.
+// Control the main axis space and alignment of flex items by using `{ left | right | between | around }` modifiers. Default behaviour is the sames as `left`.
 //
-//
-// * type - `{left | right | between | around}`
 //
 // Markup:
-// <div pam-flex="around">
+// <div pam-flex="{{modifier_class}}">
 //     <div pam-Card pam-space="p:4 m:r:2">Item 1</div>
 //     <div pam-Card pam-space="p:4 m:r:2">Item 2</div>
 //     <div pam-Card pam-space="p:4 m:r:2">Item 3</div>
 // </div>
 //
+// around - Spread items evenly both by position and space.
+// between - Spread items evenly by position across the axis.
+// left - Align items at the start.
+// right - Align items at the end.
+//
 // Weight: 1
 //
-// Style guide: traits.flex.horizontal
+// Style guide: traits.flex.main-axis
 
 [pam-flex~="left"] {
     justify-content: flex-start;
@@ -67,8 +76,34 @@
     justify-content: space-around;
 }
 
-//  Vertical modifiers
+//  Cross axis modifiers
 // ==================================================================
+
+// Cross axis
+//
+// Control the cross axis placement of flex items by using
+// `{ bottom | middle | stretch | top }` modifiers.
+// Default behaviour is the same as `stretch`.
+//
+// Markup:
+// <div pam-flex="{{modifier_class}}">
+//     <div pam-Card pam-space="p:4 m:r:2">
+//         <span pam-typography="body-1">Item 1</span>
+//         <span pam-typography="body-2">More height</span>
+//         <span pam-typography="body-2">than the others.</span>
+//     </div>
+//     <div pam-Card pam-space="p:4 m:r:2"> Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2">Item 3</div>
+// </div>
+//
+// bottom - Align  items to the bottom.
+// middle - Center  items along the cross axis.
+// stretch -Items fill the height of their parent.
+// top - Align items to the top.
+//
+// Weight: 2
+//
+// Style guide: traits.flex.cross-axis
 
 [pam-flex~="stretch"] {
     align-items: stretch;
@@ -89,11 +124,32 @@
 //  Direction modifiers
 // ==================================================================
 
+// Direction
+//
+// Control the direction the main axis runs in with the
+// `{ row | column }` direction modifiers. By default it's set to `row`.
+//
+// Markup:
+// <div pam-flex="{{modifier_class}}">
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+// </div>
+//
+// column - Lay out items in a column.
+// column%3Areverse - lay out items in a column from right to left.
+// row - Lay out items in a row.
+// row%3Areverse - lay out items in a row from right to left.
+//
+// Weight: 3
+//
+// Style guide: traits.flex.direction
+
 [pam-flex~="row"] {
     flex-direction: row;
 }
 
-[pam-flex~="row-reverse"] {
+[pam-flex~="row:reverse"] {
     flex-direction: row-reverse;
 }
 
@@ -101,22 +157,22 @@
     flex-direction: column;
 }
 
-[pam-flex~="column-reverse"] {
+[pam-flex~="column:reverse"] {
     flex-direction: column-reverse;
 }
 
 //  Wrap modifiers
 // ==================================================================
 
-[pam-flex="nowrap"] {
+[pam-flex~="nowrap"] {
     flex-wrap: nowrap;
 }
 
-[pam-flex="wrap"] {
+[pam-flex~="wrap"] {
     flex-wrap: wrap;
 }
 
-[pam-flex="wrap:reverse"] {
+[pam-flex~="wrap:reverse"] {
     flex-wrap: wrap-reverse;
 }
 
