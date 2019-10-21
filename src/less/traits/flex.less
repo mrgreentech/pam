@@ -164,6 +164,29 @@
 //  Wrap modifiers
 // ==================================================================
 
+// Wrap
+//
+// To control if flex items should be forced onto one line or can
+// wrap onto multiple lines. Flex items are fit into one line by default.
+//
+// Markup:
+// <div pam-flex="{{modifier_class}}">
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+// </div>
+//
+// nowrap - Force items into one line. This is the default behavior.
+// wrap - Items wrap into another line when they no longer fit their container.
+// wrap%3Areverse - Change direction of wraped so that they run from right to left.
+//
+// Weight: 4
+//
+// Style guide: traits.flex.wrap
+
 [pam-flex~="nowrap"] {
     flex-wrap: nowrap;
 }

@@ -28,7 +28,7 @@ let modifierHelper = (window => {
             let hasMatch = elementContent.includes(match);
 
             if (hasMatch) {
-                modifier.innerHTML = decodeURIComponent(elementContent);
+                modifier.innerHTML = elementContent.replace(/%3A/gi, ":");
             }
         });
     }
