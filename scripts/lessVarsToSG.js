@@ -47,7 +47,11 @@ module.exports = () => {
 
                 if (replaceFrom.test(contents)) {
                     const variables = lessVarsToJs(file.contents.toString(), {});
-                    const replaceTo = docTemplateVars(variables, getStyleGuideIndex(file, contents, replaceFrom));
+                    const cleanedVariables = cleanVariables(variables);
+                    const replaceTo = docTemplateVars(
+                        cleanedVariables,
+                        getStyleGuideIndex(file, contents, replaceFrom)
+                    );
 
                     contents = contents.replace(replaceFrom, replaceTo);
                 }
@@ -71,6 +75,22 @@ module.exports = () => {
             const indexOption = contents.match(replaceFrom) ? contents.match(replaceFrom)[0].split("|")[1] : "";
 
             return indexOption ? indexOption.slice(0, -1) : file.stem + ".variables";
+        }
+
+        /**
+         * Remove properties that contains @media
+         * @param  {object} variablesToClean
+         * @return {object}
+         */
+        function cleanVariables(variablesToClean) {
+            return Object.keys(variablesToClean).reduce((object, key) => {
+                const dirty = /@media/gi;
+
+                if (!dirty.test(key)) {
+                    object[key] = variablesToClean[key];
+                }
+                return object;
+            }, {});
         }
     });
 };
