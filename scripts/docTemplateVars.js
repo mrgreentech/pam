@@ -31,7 +31,7 @@ ${rows}
 //     </tbody>
 // </table>
 //
-// Weight: 20
+// Weight: 30
 //
 // Style guide: ${index}
  `;

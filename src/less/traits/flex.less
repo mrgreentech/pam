@@ -1,0 +1,329 @@
+// Flex
+//
+// The flex trait helps with building layouts by utilizing
+// the css flexbox and the [flex specs]. It's also used to
+// control component layouts such as `Grid`, `Lists` and `Menus`.
+//
+// By default the flex trait is set to `display: flex;`. To lay out
+// inline items and their children as flexboxes use the `inline` modifier.
+//
+// [flex specs]: https://developer.mozilla.org/en-US/docs/Web/CSS/flex
+//
+// Markup:
+// <div pam-flex="{{modifier_class}}">
+//     <div pam-Card pam-space="p:4 m:r:2"> Item 1</div>
+//     <div pam-Card pam-space="p:4 m:r:2"> Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2">Item 3</div>
+// </div>
+//
+// inline - Set display value to inline-flex to lay out inline items as flexboxes.
+//
+// Weight: 1
+//
+// Style guide: traits.flex
+
+// ==================================================================
+//  Flex
+// ==================================================================
+
+[pam-flex] {
+    display: flex;
+}
+
+[pam-flex~="inline"] {
+    display: inline-flex;
+}
+
+//  Main axis modifiers
+// ==================================================================
+
+// Main axis
+//
+// Control the main axis space and alignment of flex items by using
+// `{ left | right | between | around }` modifiers. Default
+// behaviour is the sames as `left`.
+//
+//
+// Markup:
+// <div pam-flex="{{modifier_class}}">
+//     <div pam-Card pam-space="p:4 m:r:2">Item 1</div>
+//     <div pam-Card pam-space="p:4 m:r:2">Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2">Item 3</div>
+// </div>
+//
+// around - Spread items evenly both by position and space.
+// between - Spread items evenly by position across the axis.
+// left - Align items at the start.
+// right - Align items at the end.
+//
+// Weight: 1
+//
+// Style guide: traits.flex.main-axis
+
+[pam-flex~="left"] {
+    justify-content: flex-start;
+}
+
+[pam-flex~="center"] {
+    justify-content: center;
+}
+
+[pam-flex~="right"] {
+    justify-content: flex-end;
+}
+
+[pam-flex~="between"] {
+    justify-content: space-between;
+}
+
+[pam-flex~="around"] {
+    justify-content: space-around;
+}
+
+//  Cross axis modifiers
+// ==================================================================
+
+// Cross axis
+//
+// Control the cross axis placement of flex items by using
+// `{ bottom | middle | stretch | top }` modifiers.
+// Default behaviour is the same as `stretch`.
+//
+// Markup:
+// <div pam-flex="{{modifier_class}}">
+//     <div pam-Card pam-space="p:4 m:r:2">
+//         <span pam-typography="body-1">Item 1</span>
+//         <span pam-typography="body-2">More height</span>
+//         <span pam-typography="body-2">than the others.</span>
+//     </div>
+//     <div pam-Card pam-space="p:4 m:r:2"> Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2">Item 3</div>
+// </div>
+//
+// bottom - Align items to the bottom.
+// middle - Center items along the cross axis.
+// stretch -Items fill the height of their parent.
+// top - Align items to the top.
+//
+// Weight: 2
+//
+// Style guide: traits.flex.cross-axis
+
+[pam-flex~="stretch"] {
+    align-items: stretch;
+}
+
+[pam-flex~="top"] {
+    align-items: flex-start;
+}
+
+[pam-flex~="middle"] {
+    align-items: center;
+}
+
+[pam-flex~="bottom"] {
+    align-items: flex-end;
+}
+
+//  Direction modifiers
+// ==================================================================
+
+// Direction
+//
+// Control the direction the main axis runs in with the
+// `{ row | column }` direction modifiers. By default it's set to `row`.
+//
+// Markup:
+// <div pam-flex="{{modifier_class}}">
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+// </div>
+//
+// column - Lay out items in a column.
+// column%3Areverse - lay out items in a column from right to left.
+// row - Lay out items in a row.
+// row%3Areverse - lay out items in a row from right to left.
+//
+// Weight: 3
+//
+// Style guide: traits.flex.direction
+
+[pam-flex~="row"] {
+    flex-direction: row;
+}
+
+[pam-flex~="row:reverse"] {
+    flex-direction: row-reverse;
+}
+
+[pam-flex~="column"] {
+    flex-direction: column;
+}
+
+[pam-flex~="column:reverse"] {
+    flex-direction: column-reverse;
+}
+
+//  Wrap modifiers
+// ==================================================================
+
+// Wrap
+//
+// To control if flex items should be forced onto one line or can
+// wrap onto multiple lines. Flex items are fit into one line by default.
+//
+// Markup:
+// <div pam-flex="{{modifier_class}}">
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+// </div>
+//
+// nowrap - Force items into one line. This is the default behavior.
+// wrap - Items wrap into another line when they no longer fit their container.
+// wrap%3Areverse - Change direction of wraped so that they run from right to left.
+//
+// Weight: 4
+//
+// Style guide: traits.flex.wrap
+
+[pam-flex~="nowrap"] {
+    flex-wrap: nowrap;
+}
+
+[pam-flex~="wrap"] {
+    flex-wrap: wrap;
+}
+
+[pam-flex~="wrap:reverse"] {
+    flex-wrap: wrap-reverse;
+}
+
+//  Align content modifiers
+// ==================================================================
+
+// Align content
+//
+// It aligns multilined flexboxes when there is extra space in the cross-axis, similar to how justify-content aligns items within the main-axis.
+//
+// <span pam-Tag="info">Note</span> This property has no effect when the flexbox has only a single line
+//
+// Markup:
+// <div pam-flex="wrap {{modifier_class}}" pam-skin="bg:gray:100" pam-space="p:2" style="height: 150px;">
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+// </div>
+//
+// wrap%3Aaround - Spread wrapped axis at the top and bottom.
+// wrap%3Abetween - Spread wrapped axis where the first row is at the top and last at the bottom.
+// wrap%3Abottom -  Align items to the bottom.
+// wrap%3Amiddle - Cross axis center items.
+// wrap%3Astretch - Stretch items to take up the remaining space of the main axis.
+// wrap%3Atop - Align items to the main axis top.
+//
+// Weight: 5
+//
+// Style guide: traits.flex.align-content
+
+[pam-flex~="wrap:stretch"] {
+    align-content: stretch;
+}
+
+[pam-flex~="wrap:top"] {
+    align-content: flex-start;
+}
+
+[pam-flex~="wrap:middle"] {
+    align-content: center;
+}
+
+[pam-flex~="wrap:bottom"] {
+    align-content: flex-end;
+}
+
+[pam-flex~="wrap:between"] {
+    align-content: space-between;
+}
+
+[pam-flex~="wrap:around"] {
+    align-content: space-around;
+}
+
+//  Order modifiers
+// ==================================================================
+
+// Order
+//
+// Sets the order to lay out an item in a flex or grid container.
+// Items are sorted by ascending order then by their source order.
+//
+// Markup:
+// <div pam-flex="">
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
+//     <div pam-flex-order="{{modifier_class}}" pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+// </div>
+//
+// first - Lay out the item as the first.
+// last - Lay out the item as last in line.
+//
+// Weight: 6
+//
+// Style guide: traits.flex.order
+
+[pam-flex-order~="first"] {
+    order: -1;
+}
+
+[pam-flex-order~="last"] {
+    order: 100;
+}
+
+//  Dimension modifiers
+// ==================================================================
+
+// Dimension
+//
+// Control how a flex item grows or shrinks to fit the space available.
+// By default flex items don't shrink below their minimum content size.
+// Set a `min-width` or `min-height` to change this behaviour.
+//
+// Markup:
+// <div pam-flex="">
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
+//     <div pam-flex-dimension="{{modifier_class}}" pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
+//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+// </div>
+//
+// 1 -  flex item will grow and shrink, ignoring initial size.
+// auto - flex item will grow and shrink realtive to initial size.
+// initial - flex item will shrink but not grow.
+// none - flex item will not grow or shrink.
+//
+// Weight: 7
+//
+// Style guide: traits.flex.grow-and-shrink
+
+[pam-flex-dimension~="1"] {
+    flex: 1;
+}
+
+[pam-flex-dimension~="auto"] {
+    flex: auto;
+}
+
+[pam-flex-dimension~="initial"] {
+    flex: initial;
+}
+
+[pam-flex-dimension~="none"] {
+    flex: none;
+}

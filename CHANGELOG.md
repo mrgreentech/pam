@@ -1,171 +1,268 @@
 # PAM Changelog
 
-## 1.0.0 (2019-XX-XX)
+All notable changes to this project will be documented in this file.
 
--   Added `pam-Alert` component.
--   Added `pam-Column` component.
--   Added `pam-Link` component.
--   Added `pam-Loader` component.
--   Added `pam-Overlay` component.
--   Added `pam-Tag` component.
--   Added `pam-Card` component.
--   Added dynamic variable documentation to the style guide.
--   Added browserlist config.
--   Added button color modifiers.
--   Added commitlint.
--   Added dynamic spacing `@space-x*`.
--   Added eslint.
--   Added favicon of the super fresh logo.
--   Added form variables to styleguide.
--   Added getting started and about documentation.
--   Added git precommit hooks.
--   Added prettier.
--   Added skin color variable names in styleguide.
--   Added skin color variables `skin-danger and skin-warn`.
--   Added skinning support.
--   Added spacing vars for the base multiplier times 25. `@space-[8...100]`
--   Added validation states for `pam-Input`.
--   Migrated from grunt to gulp 4.
--   Migrated from styledown to KSS styleguide documentation.
--   Refactored `pam-Theme` to `pam-skin` and added new colors and styleguide documentation.
--   Refactored buttons and changed the default button to not indicate a specific behaviour.
--   Refactored grid documentation and examples.
--   Refactored pam-Form and added new variables.
--   Refactored typography.
--   [!] Deprecated `pam-Button="round"`.
--   [!] Deprecated `pam-Button="text"`.
--   [!] Deprecated `pam-Input-Icon`.
--   [!] Deprecated `pam-Input="borderless"`.
--   [!] Deprecated `pam-Select-Box`.
--   [!] Deprecated pam-responsive package.
--   [!] Deprecated styledown.
--   [!] Deprecated typography subheader, form, sody, strong, small.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 0.12.0 (2016-05-26)
+## [Unreleased]
 
--   Updated grid component wit the -webkit-flex property value to support iOS 8.1-8.4.
--   Removed all star hacks and grid styling support for ie8.
--   Updated autoprefixer to support 3 latest browser versions instead of 2.
+## 1.0.0 - 2019-XX-XX
 
-## 0.11.2 (2016-05-05)
+### :metal: Added
 
--   Added `flex-flow` property to grid component to fix Firefox wrapping issues for flexbox elements.
+-   Browserlist config.
+-   Button color modifiers.
+-   Commitlint.
+-   Component `pam-Alert`.
+-   Component `pam-Card`.
+-   Component `pam-Column`.
+-   Component `pam-Link`.
+-   Component `pam-Loader`.
+-   Component `pam-Overlay`.
+-   Component `pam-Tag`.
+-   Dynamic spacing `@space-x*`.
+-   Dynamic variable documentation to the style guide.
+-   Eslint.
+-   Favicon of the super fresh logo.
+-   Getting started and about documentation.
+-   Git precommit hooks.
+-   Prettier.
+-   Material design spec skinning support.
+-   Spacing vars for the base multiplier times 25. `@space-[8...100]`
+-   Trait `pam-border`.
+-   Trait `pam-flex`.
+-   Trait `pam-position`.
+-   Trait `pam-shadow`.
+-   Trait `pam-space`.
+-   Validation states for `pam-Input`.
 
-## 0.11.1 (2016-02-24)
+### :construction: Changed
 
--   Added git repo url to bower.json.
+-   `pam-Theme` to `pam-skin` and new colors and styleguide documentation.
+-   Rewrite buttons spec to a material design spec
+-   Replaced Grunt with Gulp 4.
+-   Replaced Styledown to KSS styleguide documentation tool.
+-   Grid documentation and examples.
+-   Rewrite pam-Form and added new variables.
+-   Rewrite typography according to Material Design spec.
 
-## 0.11.0 (2015-11-09)
+### :warning: Removed
 
--   Updated pam-Select-Box with the `select::-ms-expand` which removes the select arrow for IE.
--   Added pam-Divider component.
--   Added postCSS task with autoprefix plugin.
--   global radius variable `@border-radius-base`.
--   border-radius variable for inputs `@form-border-radius`.
+-   `pam-Button="round"`.
+-   `pam-Button="text"`.
+-   `pam-Input-Icon`.
+-   `pam-Input="borderless"`.
+-   `pam-Select-Box`.
+-   pam-responsive package.
+-   styledown.
+-   typography subheader, form, body, strong, small.
+
+## [0.12.0] - 2016-05-26
+
+### :construction: Changed
+
+-   Autoprefixer to support 3 latest browser versions instead of 2.
+-   Grid component with the -webkit-flex property value to support iOS 8.1-8.4.
+
+### :warning: Removed
+
+-   All star hacks and grid styling support for ie8.
+
+## 0.11.2 - 2016-05-05
+
+### :metal: Added
+
+-   `flex-flow` property to grid component to fix Firefox wrapping issues for flexbox elements.
+
+## 0.11.1 - 2016-02-24
+
+### :metal: Added
+
+-   Git repo url to bower.json.
+
+## 0.11.0 - 2015-11-09
+
+### :metal: Added
+
+-   Attribute to control font color in buttons `pam-Button="text:[primary|secondary]"`.
 -   border-radius variable for buttons `@button-border-radius`.
--   Changed focus and hover styles for buttons.
--   Added attribute to control font color in buttons `pam-Button="text:[primary|secondary]"`.
--   Updated styleguide documentation for lists, hooks, inputs, buttons and divider.
+-   border-radius variable for inputs `@form-border-radius`.
+-   pam-Divider component.
+-   postCSS task with autoprefix plugin.
 
-## 0.10.0 (2015-10-12)
+### :construction: Changed
 
--   Implemented styleguide skin with a indexed menu.
--   Added favicon for stylguide.
+-   Focus and hover styles for buttons.
+-   global radius variable `@border-radius-base`.
+-   pam-Select-Box with the `select::-ms-expand` which removes the select arrow for IE.
+-   Stylesguide documentation for lists, hooks, inputs, buttons and divider.
 
-## 0.9.1 (2015-08-13)
+## 0.10.0 - 2015-10-12
 
--   Implemented use of font-family variable.
--   Removed uppercase text-transforms.
+### :metal: Added
+
+-   Favicon for stylguide.
+-   Style guide skin with a indexed menu.
+
+## 0.9.1 - 2015-08-13
+
+### :metal: Added
+
+-   Font-family variable.
+
+### :construction: Changed
+
 -   Updated typography trait with variables and hooks.
 
-## 0.9.0 (2015-06-11)
+### :warning: Removed
 
--   Buttons update with text selectors and new variables.
--   Theme trait selector has moved into its own core file.
--   Grid units default font-family have been set to Roboto.
--   Added borderless input type (pam-Input="borderless").
--   Fixed styleguide documentation for pam-Select-Box.
--   Added borderless input hook.
--   Updated pam-Input-Icon spacing according to material design.
--   Added hook and selectors for placeholder styling.
--   Implemented PAM variables for pam-Lists, pam-Item and pam-Tiles.
+-   Upercase text-transforms.
+
+## 0.9.0 - 2015-06-11
+
+### :metal: Added
+
+-   Borderless input hook.
+-   Borderless input type (pam-Input="borderless").
+-   Hook and selectors for placeholder styling.
+
+### :construction: Changed
+
 -   Adjusted list, item and tiles spaces.
+-   Buttons update with text selectors and new variables.
+-   Fixed styleguide documentation for pam-Select-Box.
+-   Grid units default font-family have been set to Roboto.
+-   Implemented PAM variables for pam-Lists, pam-Item and pam-Tiles.
+-   Theme trait selector has moved into its own core file.
 -   Update styleguide documentation with pam-Lists, pam-Item and pam-Tiles.
 -   Updated PAM utility with pam-util="hidden" and pam-util="group".
+-   Updated pam-Input-Icon spacing according to material design.
 
-## 0.8.0 (2015-05-06)
+## 0.8.0 - 2015-05-06
 
--   Added support for landscape orientation in grid units.
+### :metal: Added
 
-## 0.7.0 (2015-04-30)
+-   Support for landscape orientation in grid units.
 
--   Added trait for theming (pam-theme).
+## 0.7.0 - 2015-04-30
 
-## 0.6.0 (2015-04-28)
+### :metal: Added
 
--   Added trait for default typographies (pam-typography).
+-   Trait for theming (pam-theme).
 
-## 0.5.0 (2015-04-22)
+## 0.6.0 - 2015-04-28
 
--   Added menus styleguide documentation.
--   PAM has been extended with a round button.
+### :metal: Added
+
+-   Trait for default typographies (pam-typography).
+
+## 0.5.0 - 2015-04-22
+
+### :metal: Added
+
+-   Menus styleguide documentation.
+-   Round button.
+
+### :construction: Changed
+
 -   Updated styleguide documentation for hooks styling.
 -   Updated pam-Form styleguide documentation.
 
-## 0.4.3 (2015-04-16)
+## 0.4.3 - 2015-04-16
 
--   Added styleguide documentation for grids.
--   Included the responsive pam css in the styleguide build.
+### :metal: Added
 
-## 0.4.2 (2015-04-15)
+-   Included the responsive pam css in the style guide build.
+-   Style guide documentation for grids.
+
+## 0.4.2 - 2015-04-15
+
+### :metal: Added
+
+-   Grunt-cli as prerequisite in README "Build from source"
+
+### :construction: Changed
 
 -   Updated path for pam.css in styleguide config
--   Added grunt-cli as prerequisite in README "Build from source"
 
-## 0.4.1 (2015-03-31)
+## 0.4.1 - 2015-03-31
 
--   [!] Import Roboto font from https instead of http.
+### :metal: Added
+
 -   Added thin (100) and light (300) to Roboto font family.
 
-## 0.4.0 (2015-03-28)
+### :construction: Changed
 
--   [!] The less release package has been moved from `/release` to `/release/less`.
--   [!] The task `grunt manual_tests` has been renamed to `grunt tests`.
--   Added styledown and styleguide automation.
+-   Import Roboto font from https instead of http.
+
+## 0.4.0 - 2015-03-28
+
+### :metal: Added
+
+-   :metal: Added styledown and styleguide automation.
+
+### :construction: Changed
+
 -   Fixed a misnamed form hook.
+-   The less release package has been moved from `/release` to `/release/less`.
+-   The task `grunt manual_tests` has been renamed to `grunt tests`.
 
-## 0.3.0 (2015-03-19)
+## 0.3.0 - 2015-03-19
 
--   Added variables for skin, layout, topography, typography and breakpoints.
+### :metal: Added
+
+-   Variables for skin, layout, topography, typography and breakpoints.
+
+### :construction: Changed
+
 -   Updated browser-sync to 2.0.0.
 
-## 0.2.0 (2015-03-17)
+## 0.2.0 - 2015-03-17
 
--   Implemented lesshat mixin library.
--   Updated component hooks.
+### :metal: Added
+
+-   lesshat mixin library.
+
+### :construction: Changed
+
 -   Minimized complexity of file structure.
+-   Updated component hooks.
 -   Updated folder structure.
 
-## 0.1.0 (2015-03-13)
+## 0.1.0 - 2015-03-13
 
--   Added pam-Select-Box to forms component.
+### :metal: Added
+
+-   pam-Select-Box to forms component.
+
+### :construction: Changed
+
 -   Adjusted pam-Input-Icon padding.
 
-## 0.0.4 (2015-03-09)
+## 0.0.4 - 2015-03-09
 
--   [!] Replaced Pure grids with PAM grids.
--   [!] Replaced Pure tables with PAM tables.
--   [!] Replaced Pure menus with PAM menus.
--   Added PAM lists.
+### :construction: Changed
+
+-   PAM grids.
+-   PAM lists.
 -   Updated documentation.
 
-## 0.0.2 (2015-02-25)
+## 0.0.2 - 2015-02-25
 
--   [!] Replaced Pure forms with PAM forms.
--   [!] Replaced Pure buttons with PAM buttons.
+### :metal: Added
+
+-   LESS in build flow.
+
+### :construction: Changed
+
 -   New release package structure (LESS package).
--   Implemented LESS in build flow.
+-   Pure buttons with PAM buttons.
+-   Pure forms with PAM forms.
 
-## 0.0.1 (2014-12-18)
+## 0.0.1 - 2014-12-18
 
 -   Initial commit.
+
+[unreleased]: https://github.com/mrgreentech/pam/compare/v1.0.0...HEAD
+[0.12.0]: https://github.com/mrgreentech/pam/compare/v0.12.1..v0.12.0

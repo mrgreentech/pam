@@ -108,12 +108,6 @@
     .hook-table-thead;
 }
 
-[pam-Table] tbody > tr {
-    &:hover {
-        background-color: @table-hover-bg-color;
-    }
-}
-
 [pam-Table] th,
 [pam-Table] td {
     border-left: @table-border-width @table-border-style @table-border-color;
@@ -150,6 +144,56 @@
 
 [pam-Table] tbody > tr:last-child > td {
     border-bottom-width: 0;
+}
+
+//  Modifier: hover
+// ==================================================================
+
+// Hover
+//
+// Apply hover to the a table by using the `hover` modifier.
+//
+// Markup:
+// <table pam-Table="hover">
+//     <caption>Hello, I'm a hover table</caption>
+//     <thead>
+//         <tr>
+//             <th>#</th>
+//             <th>Title</th>
+//             <th>Rating</th>
+//             <th>Year</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//         <tr>
+//             <td>1</td>
+//             <td>Swordfish</td>
+//             <td>10</td>
+//             <td>2001</td>
+//         </tr>
+//         <tr>
+//             <td>2</td>
+//             <td>WarGames</td>
+//             <td>9.0</td>
+//             <td>1983</td>
+//         </tr>
+//         <tr>
+//             <td>3</td>
+//             <td>Sneakers</td>
+//             <td>8.9</td>
+//             <td>1992</td>
+//         </tr>
+//     </tbody>
+// </table>
+//
+// Weight: 1
+//
+// Style guide: tables.hover
+
+[pam-Table~="hover"] tbody > tr {
+    &:hover {
+        background-color: @table-hover-bg-color;
+    }
 }
 
 /* stylelint-disable no-descending-specificity */
@@ -260,6 +304,8 @@
 // `.hook-table-horizontal-td-th`
 // `.hook-table-striped`
 //
+// Weight: 2
+//
 // Style guide: tables.hooks
 
 /* stylelint-disable block-no-empty */
@@ -301,3 +347,5 @@
 }
 
 /* stylelint-enable */
+
+// <VARIABLES>

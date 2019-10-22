@@ -17,6 +17,8 @@
      */
     const animator = window.animator;
 
+    const modifierHelper = window.modifierHelper;
+
     /**
      * Add actions for DOMContentLoaded and load event.
      */
@@ -30,6 +32,7 @@
      */
     function onDOMContentLoaded(evt) {
         skinSwitcher.enable("main aside header");
+        modifierHelper.replaceColon();
     }
 
     /**

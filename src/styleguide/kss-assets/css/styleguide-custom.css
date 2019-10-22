@@ -32,6 +32,11 @@
     line-height: 1.5;
 }
 
+#kss-node .kss-modifier__default-name.kss-style,
+#kss-node .kss-modifier__name.kss-style {
+    font-weight: 500;
+}
+
 #kss-node {
     padding: 0;
     margin: 0;
@@ -63,22 +68,26 @@
 #kss-node .kss-nav__menu-link {
     color: #000;
     font-weight: 300;
-    transition: font-weight 0.4s;
+    padding: 4px 0;
+    transition: all 0.2s ease;
 }
 
 #kss-node .kss-nav__menu-link:hover {
     font-weight: 500;
-    transition: font-weight 0.1s;
+    transition: all 0.2s ease;
+    text-indent: 2px;
 }
 
 #kss-node .kss-nav__menu-link.is-in-viewport {
     font-weight: 500;
+    text-indent: 2px;
 }
 
 #kss-node .kss-nav__menu-link.is-in-viewport::before {
     background-color: #008ed5;
     width: 14px;
     height: 2px;
+    transition: background-color 0.4s, width 0.4s;
 }
 
 #kss-node .kss-nav__ref {
@@ -239,16 +248,10 @@ h3.kss-title {
         border-right: 1px solid #e0e0e0;
         box-shadow: none;
         height: calc(100vh - 85px);
-        padding: 0 40px;
-        text-transform: uppercase;
-    }
-
-    #kss-node .kss-nav__menu-item[active] {
-        margin-top: 8px;
+        padding: 0 10px 0 30px;
     }
 
     #kss-node .kss-nav__menu-item[active] > .kss-nav__menu-link .kss-nav__name {
-        font-size: 1rem;
         font-weight: 500;
     }
 
@@ -257,8 +260,18 @@ h3.kss-title {
         text-transform: capitalize;
     }
 
+    #kss-node .kss-nav__menu-child li:first-child {
+        margin-top: 8px;
+        padding-top: 8px;
+    }
+
+    #kss-node .kss-nav__menu-child li:last-child {
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+    }
+
     #kss-node .kss-nav__menu-link::before {
-        top: 10px;
+        top: 14px;
     }
 }
 
