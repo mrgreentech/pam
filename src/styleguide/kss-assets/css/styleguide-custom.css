@@ -68,17 +68,19 @@
 #kss-node .kss-nav__menu-link {
     color: #000;
     font-weight: 300;
-    transition: font-weight 0s;
     padding: 4px 0;
+    transition: all 0.2s ease;
 }
 
 #kss-node .kss-nav__menu-link:hover {
     font-weight: 500;
-    transition: font-weight 0s;
+    transition: all 0.2s ease;
+    text-indent: 2px;
 }
 
 #kss-node .kss-nav__menu-link.is-in-viewport {
     font-weight: 500;
+    text-indent: 2px;
 }
 
 #kss-node .kss-nav__menu-link.is-in-viewport::before {
