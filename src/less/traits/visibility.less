@@ -14,12 +14,40 @@
 //
 // Style guide: traits.visibility
 
+// ==================================================================
+//  Visibility
+// ==================================================================
+
 [hidden],
-[pam-visibility="hidden"] {
+[pam-hidden] {
     display: none !important;
 }
 
 [invisible],
-[pam-visibility="invisible"] {
+[pam-visibility~="invisible"] {
     visibility: hidden !important;
+}
+
+[visible],
+[pam-visibility~="visible"] {
+    visibility: visible !important;
+}
+
+// [hidden],.uk-hidden {
+//     display: none !important
+// }
+
+//  Responsive
+// ==================================================================
+
+@media screen and (max-width: @for-small-only) {
+    [pam-hidden-on~="small"] {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: @for-medium-down) {
+    [pam-hidden-on~="medium:down"] {
+        display: none !important;
+    }
 }

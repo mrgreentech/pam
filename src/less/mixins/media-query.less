@@ -20,8 +20,8 @@
 //
 // Style guide: mixins.media-query
 
-.media-query(@minWidth; @rules) {
-    @media screen and (min-width: @minWidth) {
+.media-query-min(@breakpoint; @rules) {
+    @media screen and (min-width: @breakpoint) {
         @rules();
     }
 }
