@@ -11,39 +11,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### :metal: Added
 
--   `pam-Alert` component.
--   `pam-Column` component.
--   `pam-Link` component.
--   `pam-Loader` component.
--   `pam-Overlay` component.
--   `pam-Tag` component.
--   `pam-Card` component.
--   dynamic variable documentation to the style guide.
--   browserlist config.
--   button color modifiers.
--   commitlint.
--   dynamic spacing `@space-x*`.
--   eslint.
--   favicon of the super fresh logo.
--   form variables to styleguide.
--   getting started and about documentation.
--   git precommit hooks.
--   prettier.
--   skin color variable names in styleguide.
--   skin color variables `skin-danger and skin-warn`.
--   skinning support.
--   spacing vars for the base multiplier times 25. `@space-[8...100]`
--   validation states for `pam-Input`.
+-   Browserlist config.
+-   Button color modifiers.
+-   Commitlint.
+-   Component `pam-Alert`.
+-   Component `pam-Card`.
+-   Component `pam-Column`.
+-   Component `pam-Link`.
+-   Component `pam-Loader`.
+-   Component `pam-Overlay`.
+-   Component `pam-Tag`.
+-   Dynamic spacing `@space-x*`.
+-   Dynamic variable documentation to the style guide.
+-   Eslint.
+-   Favicon of the super fresh logo.
+-   Getting started and about documentation.
+-   Git precommit hooks.
+-   Prettier.
+-   Material design spec skinning support.
+-   Spacing vars for the base multiplier times 25. `@space-[8...100]`
+-   Trait `pam-border`.
+-   Trait `pam-flex`.
+-   Trait `pam-position`.
+-   Trait `pam-shadow`.
+-   Trait `pam-space`.
+-   Validation states for `pam-Input`.
 
 ### :construction: Changed
 
--   from grunt to gulp 4.
--   from styledown to KSS styleguide documentation.
 -   `pam-Theme` to `pam-skin` and new colors and styleguide documentation.
--   buttons and changed the default button to not indicate a specific behaviour.
--   grid documentation and examples.
--   pam-Form and added new variables.
--   typography.
+-   Rewrite buttons spec to a material design spec
+-   Replaced Grunt with Gulp 4.
+-   Replaced Styledown to KSS styleguide documentation tool.
+-   Grid documentation and examples.
+-   Rewrite pam-Form and added new variables.
+-   Rewrite typography according to Material Design spec.
 
 ### :warning: Removed
 
@@ -60,8 +62,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### :construction: Changed
 
--   Grid component with the -webkit-flex property value to support iOS 8.1-8.4.
 -   Autoprefixer to support 3 latest browser versions instead of 2.
+-   Grid component with the -webkit-flex property value to support iOS 8.1-8.4.
 
 ### :warning: Removed
 
@@ -84,10 +86,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### :metal: Added
 
 -   Attribute to control font color in buttons `pam-Button="text:[primary|secondary]"`.
--   pam-Divider component.
--   postCSS task with autoprefix plugin.
 -   border-radius variable for buttons `@button-border-radius`.
 -   border-radius variable for inputs `@form-border-radius`.
+-   pam-Divider component.
+-   postCSS task with autoprefix plugin.
 
 ### :construction: Changed
 
@@ -100,8 +102,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### :metal: Added
 
--   Style guide skin with a indexed menu.
 -   Favicon for stylguide.
+-   Style guide skin with a indexed menu.
 
 ## 0.9.1 - 2015-08-13
 
@@ -171,8 +173,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### :metal: Added
 
--   Style guide documentation for grids.
 -   Included the responsive pam css in the style guide build.
+-   Style guide documentation for grids.
 
 ## 0.4.2 - 2015-04-15
 
@@ -202,9 +204,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### :construction: Changed
 
+-   Fixed a misnamed form hook.
 -   The less release package has been moved from `/release` to `/release/less`.
 -   The task `grunt manual_tests` has been renamed to `grunt tests`.
--   Fixed a misnamed form hook.
 
 ## 0.3.0 - 2015-03-19
 
@@ -224,8 +226,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### :construction: Changed
 
--   Updated component hooks.
 -   Minimized complexity of file structure.
+-   Updated component hooks.
 -   Updated folder structure.
 
 ## 0.1.0 - 2015-03-13
@@ -254,9 +256,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### :construction: Changed
 
--   Pure forms with PAM forms.
--   Pure buttons with PAM buttons.
 -   New release package structure (LESS package).
+-   Pure buttons with PAM buttons.
+-   Pure forms with PAM forms.
 
 ## 0.0.1 - 2014-12-18
 
