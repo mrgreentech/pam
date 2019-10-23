@@ -1,16 +1,20 @@
 // Visibility
 //
-// Hide or make an element invisible with `pam-visibility="hidden" / hidden`
-// or `pam-visibility="invisible" / invisible`. These attributes is a exception for
-// the use of **!important** to make sure they do not get overriden.
+// To control the visibility of an element. Use `pam-visibility` for
+// visibility and `pam-hidden` to hide an element that takes up no space.
+// You can also use the shorthand for these properties which are
+// `{ invisible | visible }` for visibility and `hidden` to set a element
+// to `display:none;`
 //
 // Markup:
-// <div pam-visibility="{{modifier_class}}">Now u see me!</div>
+// <div pam-flex="">
+//     <div pam-visibility="visible" pam-border="" pam-space="p:4 m:r:2">Visible item</div>
+//     <div pam-visibility="invisible" pam-border="" pam-space="p:4 m:r:2">Invisible</div>
+//     <div pam-hidden pam-border="" pam-space="p:4 m:r:2">Hidden</div>
+//     <div pam-border="" pam-space="p:4 m:r:2">Item</div>
+// </div>
 //
-// hidden - Element is hidden and does not take up any space.
-// invisible - Element is hidden and still takes up it's space.
-//
-// Weight: 4
+// Weight: 0
 //
 // Style guide: traits.visibility
 
@@ -33,21 +37,134 @@
     visibility: visible !important;
 }
 
-// [hidden],.uk-hidden {
-//     display: none !important
-// }
-
-//  Responsive
+//  Hide
 // ==================================================================
 
-@media screen and (max-width: @for-small-only) {
-    [pam-hidden-on~="small"] {
+// Hide
+//
+// To hide a element at a specific breakpoint use
+// the `hide` trait. It uses the format `{size}:{direction}`.
+//
+//
+// * size - `{ small | medium | large | xlarge }`
+// * direction -`{ "" | up | down }`
+//
+// ```html
+// <div pam-hide="{size}">Affects device widths that's in the size range</div>
+// <div pam-hide="{size}:{direction}">Affects device widths below or over the declared size</div>
+// ```
+//
+// ### Example
+//
+// Markup:
+// <div pam-Grid pam-Grid-Control="space">
+//     <div pam-hide="{{modifier_class}}" pam-Unit="1-5">
+//         <div pam-skin="bg:gray:100" pam-space="p:4">
+//             <span>Small</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-5">
+//         <div pam-skin="bg:gray:400" pam-space="p:4">
+//             <span>Medium</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-5">
+//         <div pam-skin="bg:gray:800" pam-space="p:4">
+//             <span pam-skin="text:primary:on:dark">Large</span>
+//         </div>
+//     </div>
+// </div>
+//
+// small%3Adown - Hides elements for device widths under the small breakpoint.
+// small - Hides elements for device widths that're in the small range.
+// small%3Aup - Hides elements for device widths from the small breakpoint and up.
+//
+// Weight: 0
+//
+// Style guide: traits.visibility.hide
+
+@media screen and (max-width: @breakpoint-small - 1) {
+    [pam-hide~="small:down"] {
         display: none !important;
     }
 }
 
-@media screen and (max-width: @for-medium-down) {
-    [pam-hidden-on~="medium:down"] {
+@media screen and (min-width: @breakpoint-small) and (max-width: @breakpoint-medium - 1) {
+    [pam-hide~="small"] {
         display: none !important;
+    }
+}
+
+@media screen and (min-width: @breakpoint-small) {
+    [pam-hide~="small:up"] {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: @breakpoint-medium - 1) {
+    [pam-hide~="medium:down"] {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: @breakpoint-medium) and (max-width: @breakpoint-large - 1) {
+    [pam-hide~="medium"] {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: @breakpoint-medium) {
+    [pam-hide~="medium:up"] {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: @breakpoint-large - 1) {
+    [pam-hide~="large:down"] {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: @breakpoint-large) and (max-width: @breakpoint-xlarge - 1) {
+    [pam-hide~="large"] {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: @breakpoint-large) {
+    [pam-hide~="large:up"] {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: @breakpoint-xlarge - 1) {
+    [pam-hide~="xlarge:down"] {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: @breakpoint-xlarge) {
+    [pam-hide~="xlarge"],
+    [pam-hide~="xlarge:up"] {
+        display: none !important;
+    }
+}
+
+//  Touch
+// ==================================================================
+
+@media (pointer: coarse) {
+    [pam-hide~="touch"] {
+        display: none !important;
+    }
+}
+
+[pam-hide~="notouch"] {
+    display: none !important;
+}
+
+@media (pointer: coarse) {
+    [pam-hide~="notouch"] {
+        display: block !important;
     }
 }
