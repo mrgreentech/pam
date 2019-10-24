@@ -1,27 +1,107 @@
-// .media-query(@minWidth; @rules)
+// Media queries
 //
-// Handles z-index contextual by retrieving the elements position from a
-// element list and returns the positon as a z-index value.
-//
-// Wrap a media query around a selector context with provided
-// rules.
+// Wrap a `min-width`, `max-width` or a `min- to max-width` media query
+// around a selector context with provided rules. You can even use
+// declared detached rulesets for properties and selectors.
 //
 //```less
 //  // Example
 //  body {
-//      .media-query(640px, {
+//      .media-min-width(600px, {
 //          display: none;
 //      });
 //  }
+//
+//  // Output
+//  body {
+//      @media screen and (min-width: 600px) {
+//          display: none;
+//      }
+//  }
+//
+//  // Example with declared detached ruleset
+//  @property-ruleset: { display: none; };
+//
+//  body {
+//      .media-min-width(600px, @property-ruleset);
+//  }
+//
+//  // Output
+//  body {
+//      @media screen and (min-width: 600px) {
+//          display: none;
+//      }
+//  }
+//
+//  // Example with declared detached ruleset selector
+//  @selector-ruleset: {
+//      [detached-ruleset] {
+//          display: none;
+//      };
+//  };
+//
+//  body {
+//      .media-min-width(600px, @selector-ruleset);
+//  }
+//
+//  // Output
+//  body {
+//      @media screen and (min-width: 600px) {
+//          [detached-ruleset] {
+//              display: none;
+//          }
+//      }
+//  }
 //```
 //
-// @minWidth - Breakpoint min-width.
+// Style guide: mixins.media
+
+// ==================================================================
+//  Media query mixins
+// ==================================================================
+
+// .media-min-width(@breakpoint; @rules)
+//
+// Wrap a `min-width` media query around a selector context with provided rules.
+//
+// @breakpoint - Breakpoint for min-width.
 // @rules - What rules to apply to the media query.
 //
-// Style guide: mixins.media-query
+// Style guide: mixins.media.min-width
 
-.media-query-min(@breakpoint; @rules) {
+.media-min-width(@breakpoint; @rules) {
     @media screen and (min-width: @breakpoint) {
+        @rules();
+    }
+}
+
+// .media-max-width(@breakpoint; @rules)
+//
+// Wrap a `max-width` media query around a selector context with provided rules.
+//
+// @breakpoint - Breakpoint for max-width.
+// @rules - What rules to apply to the media query.
+//
+// Style guide: mixins.media.max-width
+
+.media-max-width(@breakpoint; @rules) {
+    @media screen and (max-width: @breakpoint) {
+        @rules();
+    }
+}
+
+// .media-min-max-width(@breakpoint; @rules)
+//
+// Wrap a `min- to max-width` media query around a selector context with provided rules.
+//
+// @breakpoint-min - Breakpoint for max-width.
+// @breakpoint-max - Breakpoint for max-width.
+// @rules - What rules to apply to the media query.
+//
+// Style guide: mixins.media.min-max-width
+
+.media-min-max-width(@breakpoint-min; @breakpoint-max; @rules) {
+    @media screen and (max-width: @breakpoint) and (max-width: @breakpoint-max) {
         @rules();
     }
 }
