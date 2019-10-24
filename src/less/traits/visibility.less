@@ -53,22 +53,21 @@
 // <div pam-hide="{size}">Affects device widths that's in the size range</div>
 // <div pam-hide="{size}:{direction}">Affects device widths below or over the declared size</div>
 // ```
-//
-// ### Example
+// <span pam-Tag="info">Tip</span> Adjust the window width to see the hiding in action.
 //
 // Markup:
 // <div pam-Grid pam-Grid-Control="space">
-//     <div pam-hide="{{modifier_class}}" pam-Unit="1-5">
+//     <div pam-hide="{{modifier_class}}" pam-Unit="1-1 medium:1-5">
 //         <div pam-skin="bg:gray:100" pam-space="p:4">
 //             <span>Small</span>
 //         </div>
 //     </div>
-//     <div pam-Unit="1-5">
+//     <div pam-Unit="1-1 medium:1-5">
 //         <div pam-skin="bg:gray:400" pam-space="p:4">
 //             <span>Medium</span>
 //         </div>
 //     </div>
-//     <div pam-Unit="1-5">
+//     <div pam-Unit="1-1 medium:1-5">
 //         <div pam-skin="bg:gray:800" pam-space="p:4">
 //             <span pam-skin="text:primary:on:dark">Large</span>
 //         </div>
@@ -153,18 +152,39 @@
 //  Touch
 // ==================================================================
 
+// Touch
+//
+// Use the `pam-hide="touch"` and `pam-hide="no:touch"` to hide a element
+// on a touch device or a none touch device.
+//
+// Markup:
+// <div pam-Grid pam-Grid-Control="space-x">
+//     <div pam-cover pam-Unit="1-2 medium:1-3">
+//         <div pam-Alert="simple success">Hidden Touch</div>
+//         <div pam-hide="touch" pam-Alert="simple" pam-position="absolute cover" pam-space="m:none">Hidden Touch</div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-Alert="simple success">Hidden No Touch</div>
+//         <div pam-hide="no:touch" pam-Alert="simple" pam-position="absolute cover" pam-space="m:none">Hidden No Touch</div>
+//     </div>
+// </div>
+//
+// Weight: 0
+//
+// Style guide: traits.visibility.touch
+
 @media (pointer: coarse) {
     [pam-hide~="touch"] {
         display: none !important;
     }
 }
 
-[pam-hide~="notouch"] {
+[pam-hide~="no:touch"] {
     display: none !important;
 }
 
 @media (pointer: coarse) {
-    [pam-hide~="notouch"] {
+    [pam-hide~="no:touch"] {
         display: block !important;
     }
 }
