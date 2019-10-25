@@ -24,7 +24,7 @@
 
 .kss-style pre,
 .kss-style code {
-    font-family: monospace, serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .kss-style code.hljs {
