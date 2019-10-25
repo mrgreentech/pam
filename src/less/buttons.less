@@ -100,8 +100,8 @@
 @button-circle-size: @space-36;
 @button-circle-small-size: @space-32;
 
-@button-raised-box-shadow: @shadow-z2;
-@button-raised-active-box-shadow: @shadow-z8;
+@button-raised-shadow: @shadow-z2;
+@button-raised-active-shadow: @shadow-z8;
 
 @button-icon-size: @space-20 - 2;
 @button-icon-size-large: @space-20;
@@ -494,10 +494,10 @@ a[pam-Button~="small"] {
 [pam-Button~="raised"],
 a[pam-Button~="raised"] {
     border-color: transparent;
-    box-shadow: @button-raised-box-shadow;
+    box-shadow: @button-raised-shadow;
 
     &:active {
-        box-shadow: @button-raised-active-box-shadow;
+        box-shadow: @button-raised-active-shadow;
     }
 
     .hook-button-raised;

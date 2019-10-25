@@ -1,17 +1,29 @@
 // Visibility
 //
-// To control the visibility of an element. Use `pam-visibility` for
+// To control the visibility of an element. Use `pam-{visible | invisible}` for
 // visibility and `pam-hidden` to hide an element that takes up no space.
 // You can also use the shorthand for these properties which are
-// `{ invisible | visible }` for visibility and `hidden` to set a element
-// to `display:none;`
+// `visible`| `invisible`and `hidden`.
 //
 // Markup:
-// <div pam-flex="">
-//     <div pam-visibility="visible" pam-border="" pam-space="p:4 m:r:2">Visible item</div>
-//     <div pam-visibility="invisible" pam-border="" pam-space="p:4 m:r:2">Invisible</div>
-//     <div pam-hidden pam-border="" pam-space="p:4 m:r:2">Hidden</div>
-//     <div pam-border="" pam-space="p:4 m:r:2">Item</div>
+// <div pam-Grid pam-Grid-Control="space-x">
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-visibile pam-Alert="simple">
+//             Visible
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-Alert="simple success">Invisible</div>
+//         <div pam-invisible pam-Alert="simple" pam-position="absolute cover" pam-space="m:none">
+//             Not Invisible
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-Alert="simple success">Hidden</div>
+//         <div pam-hidden pam-Alert="simple" pam-position="absolute cover" pam-space="m:none">
+//             Not Hidden
+//         </div>
+//     </div>
 // </div>
 //
 // Weight: 0
@@ -28,12 +40,12 @@
 }
 
 [invisible],
-[pam-visibility~="invisible"] {
+[pam-invisible] {
     visibility: hidden !important;
 }
 
 [visible],
-[pam-visibility~="visible"] {
+[pam-visible] {
     visibility: visible !important;
 }
 
@@ -159,7 +171,7 @@
 //
 // Markup:
 // <div pam-Grid pam-Grid-Control="space-x">
-//     <div pam-cover pam-Unit="1-2 medium:1-3">
+//     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-Alert="simple success">Hidden Touch</div>
 //         <div pam-hide="touch" pam-Alert="simple" pam-position="absolute cover" pam-space="m:none">Hidden Touch</div>
 //     </div>
