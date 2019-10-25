@@ -6,34 +6,7 @@
 //
 //```less
 //  // Example
-//  body {
-//      .media-min-width(600px, {
-//          display: none;
-//      });
-//  }
-//
-//  // Output
-//  body {
-//      @media screen and (min-width: 600px) {
-//          display: none;
-//      }
-//  }
-//
-//  // Example with declared detached ruleset
 //  @property-ruleset: { display: none; };
-//
-//  body {
-//      .media-min-width(600px, @property-ruleset);
-//  }
-//
-//  // Output
-//  body {
-//      @media screen and (min-width: 600px) {
-//          display: none;
-//      }
-//  }
-//
-//  // Example with declared detached ruleset selector
 //  @selector-ruleset: {
 //      [detached-ruleset] {
 //          display: none;
@@ -41,12 +14,15 @@
 //  };
 //
 //  body {
+//      .media-min-width(600px, @property-ruleset);
 //      .media-min-width(600px, @selector-ruleset);
 //  }
 //
 //  // Output
 //  body {
 //      @media screen and (min-width: 600px) {
+//          display: none;
+//
 //          [detached-ruleset] {
 //              display: none;
 //          }
@@ -67,6 +43,8 @@
 // @breakpoint - Breakpoint for min-width.
 // @rules - What rules to apply to the media query.
 //
+// Weight: 1
+//
 // Style guide: mixins.media.min-width
 
 .media-min-width(@breakpoint; @rules) {
@@ -81,6 +59,8 @@
 //
 // @breakpoint - Breakpoint for max-width.
 // @rules - What rules to apply to the media query.
+//
+// Weight: 2
 //
 // Style guide: mixins.media.max-width
 
@@ -97,6 +77,8 @@
 // @breakpoint-min - Breakpoint for max-width.
 // @breakpoint-max - Breakpoint for max-width.
 // @rules - What rules to apply to the media query.
+//
+// Weight: 3
 //
 // Style guide: mixins.media.min-max-width
 
