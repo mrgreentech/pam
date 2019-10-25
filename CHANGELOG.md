@@ -35,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Trait `pam-position`.
 -   Trait `pam-shadow`.
 -   Trait `pam-space`.
+-   Trait `pam-hide` to show / hide elements depending on device width.
 -   Validation states for `pam-Input`.
 
 ### :construction: Changed
@@ -46,6 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Grid documentation and examples.
 -   Rewrite pam-Form and added new variables.
 -   Rewrite typography according to Material Design spec.
+-   Rewrite of `pam-visibility` trait
 
 ### :warning: Removed
 
