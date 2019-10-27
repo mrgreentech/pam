@@ -1,0 +1,84 @@
+// Size
+//
+// Trait for controlling element Size. For width use `w:{fraction}`
+// or `w:full` to set an element to a percentage width.
+//
+// Markup:
+// <div pam-space="p:4">
+//     <div pam-flex pam-space="m:b:4">
+//         <div pam-size="w:full" pam-space="p:4" pam-skin="primary on:primary">
+//             Full
+//         </div>
+//     </div>
+//     <div pam-flex pam-space="m:b:4">
+//         <div pam-size="w:1-2" pam-space="p:4" pam-skin="primary on:primary">
+//             Size 1/2
+//         </div>
+//         <div pam-size="w:1-2" pam-space="p:4" pam-skin="primary:light on:primary:light">
+//             Size 1/2
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 0
+//
+// Style guide: traits.size
+
+// ==================================================================
+//  Size
+// ==================================================================
+
+[pam-size~="w:full"] {
+    width: 100% !important;
+}
+
+[pam-size~="w:screen"] {
+    width: 100vw !important;
+}
+
+[pam-size~="w:auto"] {
+    width: auto !important;
+}
+
+.fractions(pam-size, "w:");
+.responsive-fractions(pam-size, "w");
+
+.fractions(@selector, @prefix: "", @fractions-to-make: @fractions) {
+    each(@fractions-to-make, {
+        .fraction-units(@value, @selector, 1, @prefix) !important;
+    });
+}
+
+.fraction-units(@fractions, @selector, @startIndex: 1, @prefix: "") when (@startIndex =< @fractions - 1) {
+
+    [@{selector}~="@{prefix}@{startIndex}-@{fractions}"] {
+        width: (@startIndex * 100% / @fractions);
+    }
+
+    .fraction-units(@fractions, @selector, (@startIndex + 1), @prefix);
+}
+
+.responsive-fractions(@selector, @modifier: "", @screens: @screen-sizes) {
+    each(@screens, {
+        @breakpoint: "screen-@{value}";
+
+        @media screen and (min-width: @@breakpoint) {
+            .fractions(@selector, "@{value}:@{modifier}:");
+        }
+    });
+}
+
+// .responsive-selector(pam-orvar, "center", { text-align:center; });
+
+.responsive-selector(@selector; @modifier; @rules; @screens: @screen-sizes) {
+    each(@screens, {
+        @breakpoint: "screen-@{value}";
+
+        @media screen and (min-width: @@breakpoint) {
+            [@{selector}~="@{value}:@{modifier}"] {
+                @rules();
+            }
+        }
+    });
+}
+
