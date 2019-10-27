@@ -64,7 +64,12 @@ function variablesDocs() {
 // Styles
 function css() {
     return src([paths.build.lessFile, paths.skin.lessFileGlob])
-        .pipe(plumber())
+        .pipe(
+            plumber(function(error) {
+                console.log(error); // eslint-disable-line no-console
+                this.emit("end");
+            })
+        )
         .pipe(
             less({
                 plugins: [new lessPluginAutoprefix()]
