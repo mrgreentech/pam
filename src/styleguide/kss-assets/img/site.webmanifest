@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "PAM",
+    "short_name": "PAM",
     "icons": [
         {
             "src": "/kss-assets/img/android-chrome-192x192.png",
@@ -13,6 +13,7 @@
             "type": "image/png"
         }
     ],
+    "start_url": "/",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "display": "standalone"
