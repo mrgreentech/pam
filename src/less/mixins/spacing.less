@@ -3,7 +3,7 @@
 // Generate a given number of spaces of a specific space type.
 //
 // @property - Use margin or padding.
-// @prefix = '' - Space attribute value prefix.
+// @prefix = '' - Space attribute value prefix. Format `{type}{side}:{size}`
 // @spaces - Number of spaces sizes to generate.
 // @startIndex = 1 - What size to start on.
 //
@@ -13,10 +13,8 @@
 // ==================================================================
 
 .spacing(@property, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
-    @selectorValue: if((@startIndex <= 1), "@{prefix}", "@{prefix}:@{startIndex}");
-
-    [pam-space~="@{selectorValue}"] {
-        @propertyValue: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
+    [pam-space~="@{prefix}:@{startIndex}"] {
+        @propertyValue: "space-x@{startIndex}";
 
         @{property}: @@propertyValue;
     }
@@ -33,20 +31,18 @@
 // x axis (left and right).
 //
 // @property - Use margin or padding.
-// @prefix = '' - Space attribute value prefix. Format `{p|m}:{x}`
+// @prefix = '' - Space attribute value prefix. Format `{type}{side}:{size}`
 // @spaces - Number of spaces sizes to generate.
 // @startIndex = 1 - What size to start on.
 //
 // Style guide: mixins.spacing.spacing-x
 
 .spacing-x(@property, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
-    @selectorValue: if((@startIndex <= 1), "@{prefix}", "@{prefix}:@{startIndex}");
-
     @propertyLeft: if((@property = margin), margin-left, padding-left);
     @propertyRight: if((@property = margin), margin-right, padding-right);
 
-    [pam-space~="@{selectorValue}"] {
-        @propertyValue: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
+    [pam-space~="@{prefix}:@{startIndex}"] {
+        @propertyValue: "space-x@{startIndex}";
 
         @{propertyLeft}: @@propertyValue;
         @{propertyRight}: @@propertyValue;
@@ -64,20 +60,18 @@
 // y axis (top and bottom).
 //
 // @property - Use margin or padding.
-// @prefix = '' - Space attribute value prefix. Format `{p|m}:{x}`
+// @prefix = '' - Space attribute value prefix. Format `{type}{side}:{size}`
 // @spaces - Number of spaces sizes to generate.
 // @startIndex = 1 - What size to start on.
 //
 // Style guide: mixins.spacing.spacing-y
 
 .spacing-y(@property, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
-    @selectorValue: if((@startIndex <= 1), "@{prefix}", "@{prefix}:@{startIndex}");
-
     @propertyTop: if((@property = margin), margin-top, padding-top);
     @propertyBottom: if((@property = margin), margin-bottom, padding-bottom);
 
-    [pam-space~="@{selectorValue}"] {
-        @propertyValue: if((@startIndex <= 1), "space-x", "space-x@{startIndex}");
+    [pam-space~="@{prefix}:@{startIndex}"] {
+        @propertyValue: "space-x@{startIndex}";
 
         @{propertyTop}: @@propertyValue;
         @{propertyBottom}: @@propertyValue;
