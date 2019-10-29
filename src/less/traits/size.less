@@ -1,38 +1,38 @@
 // Size
 //
-// Trait for controlling element Size. For width use `w:{fraction}`
+// Trait for controlling element Width. For width use `w:{fraction}`
 // or `w:full` to set an element to a percentage width.
 //
 // Markup:
 // <div pam-space="p:4" pam-skin="bg:gray:100">
 //     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
-//         <div pam-size="w:1-6" pam-space="p:4" pam-skin="primary on:primary">
-//             Size 1/6
+//         <div pam-size="w:1-6" pam-text="center" pam-space="p:4" pam-skin="primary on:primary">
+//             Width 1/6
 //         </div>
 //     </div>
 //     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
-//         <div pam-size="w:1-5" pam-space="p:4" pam-skin="primary on:primary">
-//             Size 1/5
+//         <div pam-size="w:1-5" pam-text="center" pam-space="p:4" pam-skin="primary on:primary">
+//             Width 1/5
 //         </div>
 //     </div>
 //     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
-//         <div pam-size="w:1-4" pam-space="p:4" pam-skin="primary on:primary">
-//             Size 1/4
+//         <div pam-size="w:1-4" pam-text="center" pam-space="p:4" pam-skin="primary on:primary">
+//             Width 1/4
 //         </div>
 //     </div>
 //     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
-//         <div pam-size="w:1-3" pam-space="p:4" pam-skin="primary on:primary">
-//             Size 1/3
+//         <div pam-size="w:1-3" pam-text="center" pam-space="p:4" pam-skin="primary on:primary">
+//             Width 1/3
 //         </div>
 //     </div>
 //     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
-//         <div pam-size="w:1-2" pam-space="p:4" pam-skin="primary on:primary">
-//             Size 1/2
+//         <div pam-size="w:1-2" pam-text="center" pam-space="p:4" pam-skin="primary on:primary">
+//             Width 1/2
 //         </div>
 //     </div>
 //     <div pam-flex pam-skin="primary:light">
-//         <div pam-size="w:full" pam-space="p:4" pam-skin="primary on:primary">
-//             Size full
+//         <div pam-size="w:full" pam-text="center" pam-space="p:4" pam-skin="primary on:primary">
+//             Width full
 //         </div>
 //     </div>
 // </div>
@@ -43,6 +43,9 @@
 
 // ==================================================================
 //  Size
+// ==================================================================
+
+//  Width
 // ==================================================================
 
 [pam-size~="w:full"] {
@@ -57,45 +60,62 @@
     width: auto !important;
 }
 
+// Fixed width
+.widths(pam-size, width, 20, "w");
+
+// Fraction width
 .fractions(pam-size, "w:");
-.responsive-fractions(pam-size, "w");
+.fractions-responsive(pam-size, "w:");
 
-.fractions(@selector, @prefix: "", @fractions-to-make: @fractions) {
-    each(@fractions-to-make, {
-        .fraction-units(@value, @selector, 1, @prefix) !important;
-    });
+//  Min-width
+// ==================================================================
+
+[pam-size~="min-w:0"] {
+    min-width: 0 !important;
 }
 
-.fraction-units(@fractions, @selector, @startIndex: 1, @prefix: "") when (@startIndex =< @fractions - 1) {
-
-    [@{selector}~="@{prefix}@{startIndex}-@{fractions}"] {
-        width: (@startIndex * 100% / @fractions);
-    }
-
-    .fraction-units(@fractions, @selector, (@startIndex + 1), @prefix);
+[pam-size~="min-w:full"] {
+    min-width: 100% !important;
 }
 
-.responsive-fractions(@selector, @modifier: "", @screens: @screen-sizes) {
-    each(@screens, {
-        @breakpoint: "screen-@{value}";
+//  Max-width
+// ==================================================================
 
-        @media screen and (min-width: @@breakpoint) {
-            .fractions(@selector, "@{value}:@{modifier}:");
-        }
-    });
+[pam-size~="max-w:sm"] {
+    max-width: @screen-sm !important;
 }
 
-// .responsive-selector(pam-orvar, "center", { text-align:center; });
-
-.responsive-selector(@selector; @modifier; @rules; @screens: @screen-sizes) {
-    each(@screens, {
-        @breakpoint: "screen-@{value}";
-
-        @media screen and (min-width: @@breakpoint) {
-            [@{selector}~="@{value}:@{modifier}"] {
-                @rules();
-            }
-        }
-    });
+[pam-size~="max-w:md"] {
+    max-width: @screen-md !important;
 }
 
+[pam-size~="max-w:lg"] {
+    max-width: @screen-lg !important;
+}
+
+[pam-size~="max-w:xl"] {
+    max-width: @screen-xl !important;
+}
+
+[pam-size~="max-w:full"] {
+    max-width: 100% !important;
+}
+
+//  Height
+// ==================================================================
+
+[pam-size~="h:auto"] {
+    height: auto !important;
+}
+
+[pam-size~="h:px"] {
+    height: 1px !important;
+}
+
+[pam-size~="h:full"] {
+    height: 100% !important;
+}
+
+[pam-size~="h:screen"] {
+    height: 100vh !important;
+}

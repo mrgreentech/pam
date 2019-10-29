@@ -1,0 +1,78 @@
+// widths(@selector, @property, @quantity, @prefix, @index)
+//
+// Generate a given number of fixed widths for a specified selector.
+//
+// @selector - Selector name.
+// @property - Selector property.
+// @prefix = '' - Attribute value prefix.
+// @quantity - Number of widths to generate.
+// @index = 0 - What size to start on.
+//
+// Style guide: mixins.widths
+
+.widths(@selector, @property, @quantity, @prefix: "", @index: 0) when (@index =< @quantity) {
+    @propertyValue: "space-x@{index}";
+
+    [@{selector}~="@{prefix}:@{index}"] {
+        @{property}: @@propertyValue * 10;
+    }
+
+    .widths(@selector, @property, @quantity, @prefix, (@index + 1));
+}
+
+// .fractions(@selector, @prefix, @fraction-list)
+//
+// Generate a given number of fraction widths for a specified selector.
+//
+// @selector - Selector name.
+// @prefix = '' - Attribute value prefix.
+// @fraction-list = @fractions - Fractions to iterate.
+//
+// Style guide: mixins.fractions
+
+.fractions(@selector, @prefix: "", @fraction-list: @fractions) {
+    each(@fraction-list, {
+        .fraction-units(@value, @selector, @prefix) !important;
+    });
+}
+
+// .fraction-units(@selector, @prefix, @fraction-list)
+//
+// Generate a given number of fraction units for a specified selector.
+//
+// @fractions - Fractions to generate.
+// @selector - Selector name.
+// @prefix = '' - Attribute value prefix.
+// @index = 1 - What size to start on.
+//
+// Style guide: mixins.fractions.units
+
+.fraction-units(@fractions, @selector, @prefix: "", @index: 1) when (@index =< @fractions - 1) {
+
+    [@{selector}~="@{prefix}@{index}-@{fractions}"] {
+        width: (@index * 100% / @fractions);
+    }
+
+    .fraction-units(@fractions, @selector, @prefix, (@index + 1));
+}
+
+// .fractions-responsive(@selector, @prefix, @fraction-list)
+//
+// Generates responsive fractions for supported screen sizes.
+// Uses `.fractions` to generate the fractions.
+//
+// @selector - Selector name.
+// @modifier = "" - Modifier name.
+// @screens = @screen-sizes - List of screen sizes to generate fractions for.
+//
+// Style guide: mixins.fractions.responsive
+
+.fractions-responsive(@selector, @modifier: "", @screens: @screen-sizes) {
+    each(@screens, {
+        @screen: "screen-@{value}";
+
+        @media screen and (min-width: @@screen) {
+            .fractions(@selector, "@{value}:@{modifier}");
+        }
+    });
+}
