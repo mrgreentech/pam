@@ -33,7 +33,7 @@
 // Style guide: mixins.media
 
 // ==================================================================
-//  Media query mixins
+//  Responsive mixins
 // ==================================================================
 
 // .media-min-width(@breakpoint; @rules)
@@ -86,4 +86,29 @@
     @media screen and (max-width: @breakpoint) and (max-width: @breakpoint-max) {
         @rules();
     }
+}
+
+// .responsive-selector(@selector, @prefix, @fraction-list)
+//
+// Generates responsive fractions for supported screen sizes.
+// Uses `.fractions` to generate the fractions.
+//
+// @selector - Selector name.
+// @modifier = "" - Modifier name.
+// @screens = @screen-sizes - List of screen sizes to generate selectors for.
+//
+// Weight: 4
+//
+// Style guide: mixins.media.responsive-selector
+
+.responsive-selector(@selector; @modifier; @rules; @screens: @screen-sizes) {
+    each(@screens, {
+        @screen: "screen-@{value}";
+
+        @media screen and (min-width: @@screen) {
+            [@{selector}~="@{value}:@{modifier}"] {
+                @rules();
+            }
+        }
+    });
 }

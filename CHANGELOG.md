@@ -37,8 +37,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Trait `pam-opacity`.
 -   Trait `pam-position`.
 -   Trait `pam-shadow`.
--   Trait `pam-space`.
 -   Trait `pam-size`.
+-   Trait `pam-space`.
+-   Trait `pam-text`.
 
 ### :construction: Changed
 
