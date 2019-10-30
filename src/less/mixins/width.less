@@ -1,23 +1,23 @@
-// widths(@selector, @property, @quantity, @prefix, @index)
+// sizes(@selector, @property, @quantity, @prefix, @index)
 //
-// Generate a given number of fixed widths for a specified selector.
+// Generate a given number of fixed sizes for a specified selector.
 //
 // @selector - Selector name.
 // @property - Selector property.
 // @prefix = '' - Attribute value prefix.
-// @quantity - Number of widths to generate.
+// @quantity - Number of size to generate.
+// @multiplier = @space-16 - Mmultiplier for size.
 // @index = 0 - What size to start on.
 //
-// Style guide: mixins.widths
+// Style guide: mixins.sizes
 
-.widths(@selector, @property, @quantity, @prefix: "", @index: 0) when (@index =< @quantity) {
-    @propertyValue: "space-x@{index}";
+.sizes(@selector, @property, @quantity, @prefix: "", @multiplier: @space-16, @index: 0) when (@index =< @quantity) {
 
     [@{selector}~="@{prefix}:@{index}"] {
-        @{property}: @@propertyValue * 10;
+        @{property}: @multiplier * @index;
     }
 
-    .widths(@selector, @property, @quantity, @prefix, (@index + 1));
+    .sizes(@selector, @property, @quantity, @prefix, @multiplier, (@index + 1));
 }
 
 // .fractions(@selector, @prefix, @fraction-list)
@@ -73,6 +73,9 @@
 
         @media screen and (min-width: @@screen) {
             .fractions(@selector, "@{value}:@{modifier}");
+            [pam-size~="@{value}:full"] {
+                width: 100% !important;
+            }
         }
     });
 }

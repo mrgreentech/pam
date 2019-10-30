@@ -1,41 +1,12 @@
 // Size
 //
-// Trait for controlling element Width. For width use `w:{fraction}`
-// or `w:full` to set an element to a percentage width.
+// Control element dimensions `width`, `min-width`, `max-width`, `height`, `min-height`, `max-height` which follows the format pam-size="`{type}`:`{size | fractions}`".
 //
-// Markup:
-// <div pam-space="p:4" pam-skin="bg:gray:100">
-//     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
-//         <div pam-size="w:1-6" pam-text="center" pam-space="p:4" pam-skin="primary on:primary">
-//             Width 1/6
-//         </div>
-//     </div>
-//     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
-//         <div pam-size="w:1-5" pam-text="center" pam-space="p:4" pam-skin="primary on:primary">
-//             Width 1/5
-//         </div>
-//     </div>
-//     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
-//         <div pam-size="w:1-4" pam-text="center" pam-space="p:4" pam-skin="primary on:primary">
-//             Width 1/4
-//         </div>
-//     </div>
-//     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
-//         <div pam-size="w:1-3" pam-text="center" pam-space="p:4" pam-skin="primary on:primary">
-//             Width 1/3
-//         </div>
-//     </div>
-//     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
-//         <div pam-size="w:1-2" pam-text="center" pam-space="p:4" pam-skin="primary on:primary">
-//             Width 1/2
-//         </div>
-//     </div>
-//     <div pam-flex pam-skin="primary:light">
-//         <div pam-size="w:full" pam-text="center" pam-space="p:4" pam-skin="primary on:primary">
-//             Width full
-//         </div>
-//     </div>
-// </div>
+//
+// * selector: `pam-size`,
+// * type: `w = width` | `h = height`
+// * size: `0-20` | `full` | `auto`
+// * fractions: `@fractions = 1, 2, 3, 4, 5, 6`
 //
 // Weight: 0
 //
@@ -48,10 +19,6 @@
 //  Width
 // ==================================================================
 
-[pam-size~="w:full"] {
-    width: 100% !important;
-}
-
 [pam-size~="w:screen"] {
     width: 100vw !important;
 }
@@ -60,10 +27,93 @@
     width: auto !important;
 }
 
-// Fixed width
-.widths(pam-size, width, 20, "w");
+// Fixed Width
+//
+// For controlling element fixed width use `w:{ number | px }`.
+// Multiplier for `number` is 16.
+//
+// Markup:
+// <div pam-flex="middle" pam-space="mb:2" pam-size="h:1">
+//     <p pam-typography="body-2" pam-size="w:3" pam-space="mr:2">w:1</p>
+//     <div pam-size="h:1 w:1" pam-skin="bg:gray:200"></div>
+// </div>
+// <div pam-flex="middle" pam-space="mb:2" pam-size="h:1">
+//     <p pam-typography="body-2" pam-size="w:3" pam-space="mr:2">w:5</p>
+//     <div pam-size="h:1 w:5" pam-skin="bg:gray:200"></div>
+// </div>
+// <div pam-flex="middle" pam-space="mb:2" pam-size="h:1">
+//     <p pam-typography="body-2" pam-size="w:3" pam-space="mr:2">w:10</p>
+//     <div pam-size="h:1 w:10" pam-skin="bg:gray:200"></div>
+// </div>
+// <div pam-flex="middle" pam-space="mb:2" pam-size="h:1">
+//     <p pam-typography="body-2" pam-size="w:3" pam-space="mr:2">w:15</p>
+//     <div pam-size="h:1 w:15" pam-skin="bg:gray:200"></div>
+// </div>
+// <div pam-flex="middle" pam-space="mb:2" pam-size="h:1">
+//     <p pam-typography="body-2" pam-size="w:3" pam-space="mr:2">w:20</p>
+//     <div pam-size="h:1 w:20" pam-skin="bg:gray:200"></div>
+// </div>
+//
+// Weight: 0
+//
+// Style guide: traits.size.width-fixed
 
-// Fraction width
+[pam-size~="w:px"] {
+    width: 1px !important;
+}
+
+.sizes(pam-size, width, 20, "w") !important;
+
+//  Fractions
+// ==================================================================
+
+// Fraction Width
+//
+// Trait for controlling element Width. For width use `w:{ fraction }`
+// or `w:full` to set an element to a percentage width.
+//
+// Markup:
+// <div pam-space="p:4" pam-skin="bg:gray:100">
+//     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
+//         <div pam-size="w:1-6" pam-text="center" pam-space="py:3" pam-skin="primary on:primary">
+//             Width 1/6
+//         </div>
+//     </div>
+//     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
+//         <div pam-size="w:1-5" pam-text="center" pam-space="py:3" pam-skin="primary on:primary">
+//             Width 1/5
+//         </div>
+//     </div>
+//     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
+//         <div pam-size="w:1-4" pam-text="center" pam-space="py:3" pam-skin="primary on:primary">
+//             Width 1/4
+//         </div>
+//     </div>
+//     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
+//         <div pam-size="w:1-3" pam-text="center" pam-space="py:3" pam-skin="primary on:primary">
+//             Width 1/3
+//         </div>
+//     </div>
+//     <div pam-flex pam-skin="primary:light" pam-space="mb:2">
+//         <div pam-size="w:1-2" pam-text="center" pam-space="py:3" pam-skin="primary on:primary">
+//             Width 1/2
+//         </div>
+//     </div>
+//     <div pam-flex pam-skin="primary:light">
+//         <div pam-size="w:full" pam-text="center" pam-space="p:3" pam-skin="primary on:primary">
+//             Width full
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 0
+//
+// Style guide: traits.size.width-fractions
+
+[pam-size~="w:full"] {
+    width: 100% !important;
+}
+
 .fractions(pam-size, "w:");
 .fractions-responsive(pam-size, "w:");
 
@@ -108,10 +158,6 @@
     height: auto !important;
 }
 
-[pam-size~="h:px"] {
-    height: 1px !important;
-}
-
 [pam-size~="h:full"] {
     height: 100% !important;
 }
@@ -119,3 +165,10 @@
 [pam-size~="h:screen"] {
     height: 100vh !important;
 }
+
+[pam-size~="h:px"] {
+    height: 1px !important;
+}
+
+// Fixed height
+.sizes(pam-size, height, 20, "h") !important;
