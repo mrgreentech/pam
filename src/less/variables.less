@@ -3,6 +3,8 @@
 // Global variables to use with components and configuration.
 // ==================================================================
 
+@fractions: 1, 2, 3, 4, 5, 6; // Number of fractions to creat for grid, size etc
+
 // Skin colors
 // ==================================================================
 
@@ -91,6 +93,11 @@
 // ==================================================================
 
 @space-base: 4px; // Do not change this value
+
+@space-0: 0;
+@space-1: @space-base / @space-base;
+@space-2: @space-base / 2;
+@space-4: @space-base;
 @space-8: @space-base * 2;
 @space-12: @space-base * 3;
 @space-16: @space-base * 4;
@@ -117,8 +124,10 @@
 @space-100: @space-base * 25;
 @space-104: @space-base * 26;
 
-@space-x: @space-base;
-@space-x1: @space-base;
+@space-x: @space-4;
+
+@space-x0: 0;
+@space-x1: @space-x;
 @space-x2: @space-x * 2;
 @space-x3: @space-x * 3;
 @space-x4: @space-x * 4;
@@ -128,6 +137,16 @@
 @space-x8: @space-x * 8;
 @space-x9: @space-x * 9;
 @space-x10: @space-x * 10;
+@space-x11: @space-x * 11;
+@space-x12: @space-x * 12;
+@space-x13: @space-x * 13;
+@space-x14: @space-x * 14;
+@space-x15: @space-x * 15;
+@space-x16: @space-x * 16;
+@space-x17: @space-x * 17;
+@space-x18: @space-x * 18;
+@space-x19: @space-x * 19;
+@space-x20: @space-x * 20;
 
 // Z-index topography
 // ==================================================================
@@ -180,14 +199,31 @@
 // ==================================================================
 
 @breakpoint-small: 600px;
+@breakpoint-small-down: @breakpoint-small - 1;
 @breakpoint-medium: 768px;
+@breakpoint-medium-down: @breakpoint-medium - 1;
 @breakpoint-large: 1024px;
+@breakpoint-large-down: @breakpoint-large - 1;
 @breakpoint-xlarge: 1280px;
+@breakpoint-xlarge-down: @breakpoint-xlarge - 1;
+
+@breakpoints: small, medium, large, xlarge;
+
+@screen-sm: 600px;
+@screen-sm-down: @screen-sm - 1;
+@screen-md: 768px;
+@screen-md-down: @screen-md - 1;
+@screen-lg: 1024px;
+@screen-lg-down: @screen-lg - 1;
+@screen-xl: 1280px;
+@screen-xl-down: @screen-xl - 1;
+
+@screen-sizes: sm, md, lg, xl;
 
 // Border
 // ==================================================================
 
-@border-radius-base: @space-base;
+@border-radius-base: @space-4;
 @border-radius-large: @space-8;
 @border-radius-rounded: 50px;
 @border-radius-small: 2px;
@@ -196,7 +232,7 @@
 
 @border-width-base: 1px;
 @border-width-small: 2px;
-@border-width-large: @space-base;
+@border-width-large: @space-4;
 
 // Opacity
 // ==================================================================

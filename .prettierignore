@@ -1,3 +1,5 @@
 package.json
 bower.json
 .travis.yml
+src/less/mixins/media-query.less
+src/less/mixins/sizes.less

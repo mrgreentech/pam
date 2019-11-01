@@ -27,27 +27,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Favicon of the super fresh logo.
 -   Getting started and about documentation.
 -   Git precommit hooks.
--   Prettier.
 -   Material design spec skinning support.
+-   No fonts dist file (pam-no-font)
+-   Prettier.
 -   Spacing vars for the base multiplier times 25. `@space-[8...100]`
 -   Trait `pam-border`.
 -   Trait `pam-flex`.
+-   Trait `pam-hide` to show / hide elements depending on device width.
+-   Trait `pam-opacity`.
 -   Trait `pam-position`.
 -   Trait `pam-shadow`.
+-   Trait `pam-size`.
 -   Trait `pam-space`.
--   Trait `pam-hide` to show / hide elements depending on device width.
--   Validation states for `pam-Input`.
+-   Trait `pam-text`.
 
 ### :construction: Changed
 
 -   `pam-Theme` to `pam-skin` and new colors and styleguide documentation.
--   Rewrite buttons spec to a material design spec
+-   Grid documentation and examples.
 -   Replaced Grunt with Gulp 4.
 -   Replaced Styledown to KSS styleguide documentation tool.
--   Grid documentation and examples.
+-   Rewrite buttons spec to a material design spec
+-   Rewrite of `pam-visibility` trait
 -   Rewrite pam-Form and added new variables.
 -   Rewrite typography according to Material Design spec.
--   Rewrite of `pam-visibility` trait
+-   Validation states for `pam-Input`.
 
 ### :warning: Removed
 

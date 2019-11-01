@@ -14,19 +14,19 @@
 //     </div>
 //     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-Alert="simple success">Invisible</div>
-//         <div pam-invisible pam-Alert="simple" pam-position="absolute cover" pam-space="m:none">
+//         <div pam-invisible pam-Alert="simple" pam-position="absolute cover" pam-space="m:0">
 //             Not Invisible
 //         </div>
 //     </div>
 //     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-Alert="simple success">Hidden</div>
-//         <div pam-hidden pam-Alert="simple" pam-position="absolute cover" pam-space="m:none">
+//         <div pam-hidden pam-Alert="simple" pam-position="absolute cover" pam-space="m:0">
 //             Not Hidden
 //         </div>
 //     </div>
 // </div>
 //
-// Weight: 0
+// Weight: 20
 //
 // Style guide: traits.visibility
 
@@ -54,11 +54,11 @@
 
 // Hide
 //
-// To hide a element at a specific breakpoint use
+// To hide a element at a specific screen size use
 // the `hide` trait. It uses the format `{size}:{direction}`.
 //
 //
-// * size - `{ small | medium | large | xlarge }`
+// * size - `{ sm | md | lg | xl }`
 // * direction -`{ "" | up | down }`
 //
 // ```html
@@ -68,95 +68,85 @@
 // <span pam-Tag="info">Tip</span> Adjust the window width to see the hiding in action.
 //
 // Markup:
-// <div pam-Grid pam-Grid-Control="space">
-//     <div pam-hide="{{modifier_class}}" pam-Unit="1-1 medium:1-5">
-//         <div pam-skin="bg:gray:100" pam-space="p:4">
+// <div pam-flex="wrap">
+//     <div pam-hide="{{modifier_class}}" pam-size="w:full md:w:1-5">
+//         <div pam-skin="bg:gray:200" pam-space="p:4">
 //             <span>Small</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-1 medium:1-5">
-//         <div pam-skin="bg:gray:400" pam-space="p:4">
-//             <span>Medium</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-1 medium:1-5">
-//         <div pam-skin="bg:gray:800" pam-space="p:4">
-//             <span pam-skin="text:primary:on:dark">Large</span>
 //         </div>
 //     </div>
 // </div>
 //
-// small%3Adown - Hides elements for device widths under the small breakpoint.
-// small - Hides elements for device widths that're in the small range.
-// small%3Aup - Hides elements for device widths from the small breakpoint and up.
+// sm%3Adown - Hides elements for device widths under the small breakpoint.
+// sm - Hides elements for device widths that're in the small range.
+// sm%3Aup - Hides elements for device widths from the small breakpoint and up.
 //
 // Weight: 0
 //
 // Style guide: traits.visibility.hide
 
-@media screen and (max-width: @breakpoint-small - 1) {
-    [pam-hide~="small:down"] {
+@media screen and (max-width: @screen-sm-down) {
+    [pam-hide~="sm:down"] {
         display: none !important;
     }
 }
 
-@media screen and (min-width: @breakpoint-small) and (max-width: @breakpoint-medium - 1) {
-    [pam-hide~="small"] {
+@media screen and (min-width: @screen-sm) and (max-width: @screen-md-down) {
+    [pam-hide~="sm"] {
         display: none !important;
     }
 }
 
-@media screen and (min-width: @breakpoint-small) {
-    [pam-hide~="small:up"] {
+@media screen and (min-width: @screen-sm) {
+    [pam-hide~="sm:up"] {
         display: none !important;
     }
 }
 
-@media screen and (max-width: @breakpoint-medium - 1) {
-    [pam-hide~="medium:down"] {
+@media screen and (max-width: @screen-md-down) {
+    [pam-hide~="md:down"] {
         display: none !important;
     }
 }
 
-@media screen and (min-width: @breakpoint-medium) and (max-width: @breakpoint-large - 1) {
-    [pam-hide~="medium"] {
+@media screen and (min-width: @screen-md) and (max-width: @screen-lg-down) {
+    [pam-hide~="md"] {
         display: none !important;
     }
 }
 
-@media screen and (min-width: @breakpoint-medium) {
-    [pam-hide~="medium:up"] {
+@media screen and (min-width: @screen-md) {
+    [pam-hide~="md:up"] {
         display: none !important;
     }
 }
 
-@media screen and (max-width: @breakpoint-large - 1) {
-    [pam-hide~="large:down"] {
+@media screen and (max-width: @screen-lg-down) {
+    [pam-hide~="lg:down"] {
         display: none !important;
     }
 }
 
-@media screen and (min-width: @breakpoint-large) and (max-width: @breakpoint-xlarge - 1) {
-    [pam-hide~="large"] {
+@media screen and (min-width: @screen-lg) and (max-width: @screen-xl-down) {
+    [pam-hide~="lg"] {
         display: none !important;
     }
 }
 
-@media screen and (min-width: @breakpoint-large) {
-    [pam-hide~="large:up"] {
+@media screen and (min-width: @screen-lg) {
+    [pam-hide~="lg:up"] {
         display: none !important;
     }
 }
 
-@media screen and (max-width: @breakpoint-xlarge - 1) {
-    [pam-hide~="xlarge:down"] {
+@media screen and (max-width: @screen-xl-down) {
+    [pam-hide~="xl:down"] {
         display: none !important;
     }
 }
 
-@media screen and (min-width: @breakpoint-xlarge) {
-    [pam-hide~="xlarge"],
-    [pam-hide~="xlarge:up"] {
+@media screen and (min-width: @screen-xl) {
+    [pam-hide~="xl"],
+    [pam-hide~="xl:up"] {
         display: none !important;
     }
 }
@@ -173,11 +163,11 @@
 // <div pam-Grid pam-Grid-Control="space-x">
 //     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-Alert="simple success">Hidden Touch</div>
-//         <div pam-hide="touch" pam-Alert="simple" pam-position="absolute cover" pam-space="m:none">Hidden Touch</div>
+//         <div pam-hide="touch" pam-Alert="simple" pam-position="absolute cover" pam-space="m:0">Hidden Touch</div>
 //     </div>
 //     <div pam-Unit="1-2 medium:1-3">
 //         <div pam-Alert="simple success">Hidden No Touch</div>
-//         <div pam-hide="no:touch" pam-Alert="simple" pam-position="absolute cover" pam-space="m:none">Hidden No Touch</div>
+//         <div pam-hide="no:touch" pam-Alert="simple" pam-position="absolute cover" pam-space="m:0">Hidden No Touch</div>
 //     </div>
 // </div>
 //

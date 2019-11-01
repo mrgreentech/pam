@@ -1,0 +1,107 @@
+// Text
+//
+// Trait for controlling element text properties. such as `alignment`,
+// `decoration` and `transform`.
+//
+// Weight: 17
+//
+// Style guide: traits.text
+
+// ==================================================================
+//  Text
+// ==================================================================
+
+// Alignment
+//
+// Trait for controlling element text alignment.
+//
+// Markup:
+// <p pam-text="left">Text left</p>
+// <p pam-text="center">Text center</p>
+// <p pam-text="right">Text right</p>
+// <p pam-text="justify">Text justify</p>
+//
+// Weight: 1
+//
+// Style guide: traits.text.alignment
+
+[pam-text~="left"] {
+    text-align: left !important;
+}
+
+[pam-text~="center"] {
+    text-align: center !important;
+}
+
+[pam-text~="right"] {
+    text-align: right !important;
+}
+
+[pam-text~="justify"] {
+    text-align: justify !important;
+}
+
+//  Decoration
+// ==================================================================
+
+// Decoration
+//
+// Controls for text decoration.
+//
+// Markup:
+// <p pam-text="{{modifier_class}}">Some interesting text.</p>
+//
+// underline - Set element text to underline.
+// line-through - Set element text to line-through.
+// decoration%3Anone - Remove decoration.
+//
+// Weight: 2
+//
+// Style guide: traits.text.decoration
+
+[pam-text~="underline"] {
+    text-decoration: underline !important;
+}
+
+[pam-text~="line-through"] {
+    text-decoration: line-through !important;
+}
+
+[pam-text~="decoration:none"] {
+    text-decoration: none !important;
+}
+
+//  Transform
+// ==================================================================
+
+// Transform
+//
+// Controls for element text transform.
+//
+// Markup:
+// <p pam-text="{{modifier_class}}">some cool text.</p>
+//
+// uppercase - Transform element text to uppercase.
+// lowercase - Transform element text to lowercase.
+// capitalize - Transform element text to capitalization.
+// transform%3Anone - Remove transform.
+//
+// Weight: 3
+//
+// Style guide: traits.text.transform
+
+[pam-text~="uppercase"] {
+    text-transform: uppercase !important;
+}
+
+[pam-text~="lowercase"] {
+    text-transform: lowercase !important;
+}
+
+[pam-text~="capitalize"] {
+    text-transform: capitalize !important;
+}
+
+[pam-text~="transform:none"] {
+    text-transform: none !important;
+}

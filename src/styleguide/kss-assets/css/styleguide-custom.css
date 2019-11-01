@@ -30,6 +30,7 @@
 .kss-style code.hljs {
     font-size: 90%;
     line-height: 1.5;
+    font-family: monospace, serif;
 }
 
 #kss-node .kss-modifier__default-name.kss-style,

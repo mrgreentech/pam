@@ -10,15 +10,15 @@
 // [flex specs]: https://developer.mozilla.org/en-US/docs/Web/CSS/flex
 //
 // Markup:
-// <div pam-flex="{{modifier_class}}">
-//     <div pam-Card pam-space="p:4 m:r:2"> Item 1</div>
-//     <div pam-Card pam-space="p:4 m:r:2"> Item 2</div>
-//     <div pam-Card pam-space="p:4 m:r:2">Item 3</div>
+// <div pam-flex="{{modifier_class}}" pam-space="p:2" pam-skin="bg:gray:100">
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 1</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 2</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4">Item 3</div>
 // </div>
 //
 // inline - Set display value to inline-flex to lay out inline items as flexboxes.
 //
-// Weight: 1
+// Weight: 4
 //
 // Style guide: traits.flex
 
@@ -45,14 +45,15 @@
 //
 //
 // Markup:
-// <div pam-flex="{{modifier_class}}">
-//     <div pam-Card pam-space="p:4 m:r:2">Item 1</div>
-//     <div pam-Card pam-space="p:4 m:r:2">Item 2</div>
-//     <div pam-Card pam-space="p:4 m:r:2">Item 3</div>
+// <div pam-flex="{{modifier_class}}" pam-space="p:2" pam-skin="bg:gray:100">
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 1</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 2</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4">Item 3</div>
 // </div>
 //
 // around - Spread items evenly both by position and space.
 // between - Spread items evenly by position across the axis.
+// center - Align items at the center.
 // left - Align items at the start.
 // right - Align items at the end.
 //
@@ -90,14 +91,14 @@
 // Default behaviour is the same as `stretch`.
 //
 // Markup:
-// <div pam-flex="{{modifier_class}}">
-//     <div pam-Card pam-space="p:4 m:r:2">
-//         <span pam-typography="body-1">Item 1</span>
-//         <span pam-typography="body-2">More height</span>
-//         <span pam-typography="body-2">than the others.</span>
+// <div pam-flex="{{modifier_class}}" pam-space="p:2" pam-skin="bg:gray:100">
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">
+//         <div pam-typography="body-1">Item 1</div>
+//         <div pam-typography="body-2">More height</div>
+//         <div pam-typography="body-2">than the others.</div>
 //     </div>
-//     <div pam-Card pam-space="p:4 m:r:2"> Item 2</div>
-//     <div pam-Card pam-space="p:4 m:r:2">Item 3</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2"> Item 2</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 3</div>
 // </div>
 //
 // bottom - Align items to the bottom.
@@ -134,10 +135,10 @@
 // `{ row | column }` direction modifiers. By default it's set to `row`.
 //
 // Markup:
-// <div pam-flex="{{modifier_class}}">
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+// <div pam-flex="{{modifier_class}}" pam-space="p:2" pam-skin="bg:gray:100">
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2 mb:2">Item 1</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2 mb:2">Item 2</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2 mb:2">Item 3</div>
 // </div>
 //
 // column - Lay out items in a column.
@@ -174,13 +175,13 @@
 // wrap onto multiple lines. Flex items are fit into one line by default.
 //
 // Markup:
-// <div pam-flex="{{modifier_class}}">
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+// <div pam-flex="{{modifier_class}}" pam-space="p:2" pam-skin="bg:gray:100">
+//     <div pam-size="w:1-3" pam-skin="bg:gray:300" pam-space="p:4 mr:2 mb:2">Item 1</div>
+//     <div pam-size="w:1-3" pam-skin="bg:gray:300" pam-space="p:4 mr:2 mb:2">Item 2</div>
+//     <div pam-size="w:1-3" pam-skin="bg:gray:300" pam-space="p:4 mr:2 mb:2">Item 3</div>
+//     <div pam-size="w:1-3" pam-skin="bg:gray:300" pam-space="p:4 mr:2 mb:2">Item 4</div>
+//     <div pam-size="w:1-3" pam-skin="bg:gray:300" pam-space="p:4 mr:2 mb:2">Item 5</div>
+//     <div pam-size="w:1-3" pam-skin="bg:gray:300" pam-space="p:4 mr:2 mb:2">Item 6</div>
 // </div>
 //
 // nowrap - Force items into one line. This is the default behavior.
@@ -213,13 +214,13 @@
 // <span pam-Tag="info">Note</span> This property has no effect when the flexbox has only a single line
 //
 // Markup:
-// <div pam-flex="wrap {{modifier_class}}" pam-skin="bg:gray:100" pam-space="p:2" style="height: 150px;">
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+// <div pam-flex="wrap {{modifier_class}}" pam-space="p:2" pam-skin="bg:gray:100" pam-size="h:10">
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 1</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 2</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 3</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 1</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 2</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 3</div>
 // </div>
 //
 // wrap%3Aaround - Spread wrapped axis at the top and bottom.
@@ -266,10 +267,10 @@
 // Items are sorted by ascending order then by their source order.
 //
 // Markup:
-// <div pam-flex="">
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
-//     <div pam-flex-order="{{modifier_class}}" pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+// <div pam-flex="" pam-space="p:2" pam-skin="bg:gray:100">
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 1</div>
+//     <div pam-flex-order="{{modifier_class}}" pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 2</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 3</div>
 // </div>
 //
 // first - Lay out the item as the first.
@@ -297,10 +298,10 @@
 // Set a `min-width` or `min-height` to change this behaviour.
 //
 // Markup:
-// <div pam-flex="">
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 1</div>
-//     <div pam-flex-dimension="{{modifier_class}}" pam-Card pam-space="p:4 m:r:2 m:b:2">Item 2</div>
-//     <div pam-Card pam-space="p:4 m:r:2 m:b:2">Item 3</div>
+// <div pam-flex="" pam-space="p:2" pam-skin="bg:gray:100">
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 1</div>
+//     <div pam-flex-dimension="{{modifier_class}}" pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 2</div>
+//     <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Item 3</div>
 // </div>
 //
 // 1 -  flex item will grow and shrink, ignoring initial size.
