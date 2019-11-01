@@ -8,13 +8,22 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="icon" type="image/png" href="kss-assets/img/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
+  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/kss-assets/img/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
   <link rel="stylesheet" href="kss-assets/kss.css">
   <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-  <link rel="stylesheet" href="kss-assets/css/pam.css">
-<link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+<link rel="stylesheet" href="kss-assets/css/pam.css">
 
 
   <script type="text/javascript">
@@ -35,7 +44,7 @@
             <img
               src="kss-assets/img/logo.svg"
               alt="PAM"
-              title="© 2016 Mr Green Tech All Rights Reserved"
+              title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
               height="48"
               width="48"
               sg-Logo>
@@ -77,18 +86,18 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-about.html">
-            <span class="kss-nav__ref">3</span><span class="kss-nav__name">About</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-base.html">
-            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Base</span>
+          <a class="kss-nav__menu-link" href="section-general.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">General</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-grids.html">
-            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Grids</span>
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Grids</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-skin.html">
+            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Skin</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -144,15 +153,15 @@
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-deprecated">
+                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-hooks">
                     <span class="kss-nav__ref ">7.8</span
-                    ><span class="kss-nav__name">Deprecated</span>
+                    ><span class="kss-nav__name">Hooks</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-hooks">
+                  <a class="kss-nav__menu-link" href="section-forms.html#kssref-forms-variables">
                     <span class="kss-nav__ref ">7.9</span
-                    ><span class="kss-nav__name">Hooks</span>
+                    ><span class="kss-nav__name">Variables</span>
                   </a>
                 </li>
               </ul>
@@ -257,7 +266,7 @@
             <fieldset pam-Fieldset="column">
                 <legend>Text and select</legend>
                 <label for="input-name">Name</label>
-                <input id="input-name" type="text" placeholder="What is it?" pam-Form-Control="fluid">
+                <input id="input-name" type="text" placeholder="What is it?" pam-Form-Control="fluid" pam-skin="on:primary">
                 <label for="input-email">Email</label>
                 <input id="input-email" type="email" placeholder="Spam time" pam-Form-Control="fluid">
                 <label for="input-password">Password</label>
@@ -340,7 +349,7 @@
             &lt;fieldset pam-Fieldset&#x3D;&quot;column&quot;&gt;
                 &lt;legend&gt;Text and select&lt;/legend&gt;
                 &lt;label for&#x3D;&quot;input-name&quot;&gt;Name&lt;/label&gt;
-                &lt;input id&#x3D;&quot;input-name&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;What is it?&quot; pam-Form-Control&#x3D;&quot;fluid&quot;&gt;
+                &lt;input id&#x3D;&quot;input-name&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;What is it?&quot; pam-Form-Control&#x3D;&quot;fluid&quot; pam-skin&#x3D;&quot;on:primary&quot;&gt;
                 &lt;label for&#x3D;&quot;input-email&quot;&gt;Email&lt;/label&gt;
                 &lt;input id&#x3D;&quot;input-email&quot; type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Spam time&quot; pam-Form-Control&#x3D;&quot;fluid&quot;&gt;
                 &lt;label for&#x3D;&quot;input-password&quot;&gt;Password&lt;/label&gt;
@@ -413,6 +422,7 @@
   });
 </script>
 <script src="kss-assets/js/animator.js"></script>
+<script src="kss-assets/js/modifier-helper.js"></script>
 <script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 

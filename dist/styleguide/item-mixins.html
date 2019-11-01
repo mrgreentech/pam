@@ -8,13 +8,22 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="icon" type="image/png" href="kss-assets/img/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
+  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/kss-assets/img/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
   <link rel="stylesheet" href="kss-assets/kss.css">
   <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-  <link rel="stylesheet" href="kss-assets/css/pam.css">
-<link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+<link rel="stylesheet" href="kss-assets/css/pam.css">
 
 
   <script type="text/javascript">
@@ -35,7 +44,7 @@
             <img
               src="kss-assets/img/logo.svg"
               alt="PAM"
-              title="© 2016 Mr Green Tech All Rights Reserved"
+              title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
               height="48"
               width="48"
               sg-Logo>
@@ -77,18 +86,18 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-about.html">
-            <span class="kss-nav__ref">3</span><span class="kss-nav__name">About</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-base.html">
-            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Base</span>
+          <a class="kss-nav__menu-link" href="section-general.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">General</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-grids.html">
-            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Grids</span>
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Grids</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-skin.html">
+            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Skin</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -172,32 +181,62 @@
           </a>
               <ul class="kss-nav__menu-child">
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-button-outlined">
+                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-button-states">
                     <span class="kss-nav__ref ">21.1</span
-                    ><span class="kss-nav__name">.button-outlined(@color-1, @color-2, @darken)</span>
+                    ><span class="kss-nav__name">.button-states(@bg-color, @text-color)</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-fractions">
+                    <span class="kss-nav__ref ">21.2</span
+                    ><span class="kss-nav__name">.fractions(@selector, @prefix, @fraction-list)</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-grid-control-space">
-                    <span class="kss-nav__ref ">21.2</span
+                    <span class="kss-nav__ref ">21.3</span
                     ><span class="kss-nav__name">.grid-control-space(@suffix, @size)</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-grid-units">
-                    <span class="kss-nav__ref ">21.3</span
+                    <span class="kss-nav__ref ">21.4</span
                     ><span class="kss-nav__name">.grid-units(@columns, @startIndex, @prefix)</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-media">
+                    <span class="kss-nav__ref ">21.5</span
+                    ><span class="kss-nav__name">Media queries</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-placeholder-color">
-                    <span class="kss-nav__ref ">21.4</span
+                    <span class="kss-nav__ref ">21.6</span
                     ><span class="kss-nav__name">.placeholder-color(@color)</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-shadows">
+                    <span class="kss-nav__ref ">21.7</span
+                    ><span class="kss-nav__name">.shadows(@quantity, @prefix, @startIndex)</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-sizes">
+                    <span class="kss-nav__ref ">21.8</span
+                    ><span class="kss-nav__name">sizes(@selector, @property, @quantity, @prefix, @index)</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-spacing">
+                    <span class="kss-nav__ref ">21.9</span
+                    ><span class="kss-nav__name">spacing(@property, @prefix, @spaces, @startIndex)</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-zindex">
-                    <span class="kss-nav__ref ">21.5</span
+                    <span class="kss-nav__ref ">21.10</span
                     ><span class="kss-nav__name">.zindex(@elementName, @elementList)</span>
                   </a>
                 </li>
@@ -218,7 +257,7 @@
           </h1>
 
             <div class="kss-description">
-              <p>Collection of PAM LESS mixins.</p>
+              <p>Library of PAM LESS mixins.</p>
 
             </div>
 
@@ -258,6 +297,7 @@
   });
 </script>
 <script src="kss-assets/js/animator.js"></script>
+<script src="kss-assets/js/modifier-helper.js"></script>
 <script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 

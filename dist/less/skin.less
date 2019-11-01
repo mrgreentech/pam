@@ -1,0 +1,737 @@
+// Skin
+//
+// PAMs skin system helps in the implementation of a color theme for your brand or style.
+// The primary and secondary colors and variations creates a skin which has accessible
+// text and straight forward UI surfaces. The skin system follows [material designs
+// color system](https://material.io/design/color/the-color-system.html). For more
+// info head over to material design and learn how more about the color system.
+//
+// <div pam-Grid pam-Grid-Control="space-x">
+//     <div pam-Unit="1-1 medium:1-2">
+//         <div pam-Grid>
+//             <div pam-Unit="1-1">
+//                 <p>Primary</p>
+//                 <div pam-skin="primary" grid-block="fixed large">
+//                     <span pam-skin="on:primary">Text on primary</span>
+//                 </div>
+//             </div>
+//             <div pam-Unit="1-2">
+//                 <div pam-skin="primary:light" grid-block="fixed">
+//                    <span pam-skin="on:primary:light">Text on primary light</span>
+//                 </div>
+//             </div>
+//             <div pam-Unit="1-2">
+//                 <div pam-skin="primary:dark" grid-block="fixed">
+//                    <span pam-skin="on:primary:dark">Text on primary dark</span>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-1 medium:1-2">
+//         <div pam-Grid>
+//             <div pam-Unit="1-1">
+//                 <p>Secondary</p>
+//                 <div pam-skin="secondary" grid-block="fixed large">
+//                     <span pam-skin="on:secondary">Text on secondary</span>
+//                 </div>
+//             </div>
+//             <div pam-Unit="1-2">
+//                 <div pam-skin="secondary:light" grid-block="fixed">
+//                    <span pam-skin="on:secondary:light">Text on secondary light</span>
+//                 </div>
+//             </div>
+//             <div pam-Unit="1-2">
+//                 <div pam-skin="secondary:dark" grid-block="fixed">
+//                    <span pam-skin="on:secondary:dark">Text on secondary light</span>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// <div grid-space></div>
+//
+// <div pam-Grid>
+//     <div pam-Unit="1-3">
+//         <p>Background</p>
+//         <div pam-skin="background" grid-block="fixed">
+//             <span pam-skin="on:background">Text on background</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-3">
+//         <p>Surface</p>
+//         <div pam-skin="surface" grid-block="fixed">
+//             <span pam-skin="on:surface">Text on surface</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-3">
+//         <p>Error</p>
+//         <div pam-skin="error" grid-block="fixed">
+//             <span pam-skin="on:error">Text on error</span>
+//         </div>
+//     </div>
+// </div>
+//
+// <div grid-space></div>
+//
+// <div pam-Grid>
+//     <div pam-Unit="1-3">
+//         <p>Info</p>
+//         <div pam-skin="info" grid-block="fixed">
+//             <span pam-skin="on:info">Text on info</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-3">
+//         <p>Success</p>
+//         <div pam-skin="success" grid-block="fixed">
+//             <span pam-skin="on:success">Text on success</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-3">
+//         <p>Warning</p>
+//         <div pam-skin="warning" grid-block="fixed">
+//             <span pam-skin="on:warning">Text on warning</span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Style guide: skin
+
+// ==================================================================
+//  Skin
+// ==================================================================
+
+// Background
+//
+// Skin colors as background.
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="primary" grid-block="fixed small">
+//             <span pam-skin="on:primary">Primary</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="primary:light" grid-block="fixed small">
+//             <span pam-skin="on:primary:light">Primary light</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="primary:dark" grid-block="fixed small">
+//             <span pam-skin="on:primary:dark">Primary dark</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="secondary" grid-block="fixed small">
+//             <span pam-skin="on:secondary">Secondary</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="secondary:light" grid-block="fixed small">
+//             <span pam-skin="on:secondary:light">Secondary light</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="secondary:dark" grid-block="fixed small">
+//             <span pam-skin="on:secondary:dark">Secondary dark</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="background" grid-block="fixed small">
+//             <span pam-skin="on:background">Background</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="surface" grid-block="fixed small">
+//             <span pam-skin="on:surface">Surface</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="error" grid-block="fixed small">
+//             <span pam-skin="on:error">Error</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="info" grid-block="fixed small">
+//             <span pam-skin="on:info">Info</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="success" grid-block="fixed small">
+//             <span pam-skin="on:success">Success</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="warning" grid-block="fixed small">
+//             <span pam-skin="on:warning">Warning</span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: skin.background
+
+[pam-Skin~="primary"] {
+    background-color: @skin-primary !important;
+}
+
+[pam-Skin~="primary:light"] {
+    background-color: @skin-primary-light !important;
+}
+
+[pam-Skin~="primary:dark"] {
+    background-color: @skin-primary-dark !important;
+}
+
+[pam-Skin~="secondary"] {
+    background-color: @skin-secondary !important;
+}
+
+[pam-Skin~="secondary:light"] {
+    background-color: @skin-secondary-light !important;
+}
+
+[pam-Skin~="secondary:dark"] {
+    background-color: @skin-secondary-dark !important;
+}
+
+[pam-Skin~="background"] {
+    background-color: @skin-background !important;
+}
+
+[pam-Skin~="surface"] {
+    background-color: @skin-surface !important;
+}
+
+[pam-Skin~="error"] {
+    background-color: @skin-error !important;
+}
+
+[pam-Skin~="info"] {
+    background-color: @skin-info !important;
+}
+
+[pam-Skin~="success"] {
+    background-color: @skin-success !important;
+}
+
+[pam-Skin~="warning"] {
+    background-color: @skin-warn !important;
+}
+
+// Gray
+//
+// Skin gray color palette as background.
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:50" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:light">Gray 50</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:100" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:light">Gray 100</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:200" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:light">Gray 200</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:300" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:light">Gray 300</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:400" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:light">Gray 400</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:500" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:dark">Gray 500</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:600" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:dark">Gray 600</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:700" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:dark">Gray 700</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-3">
+//         <div pam-skin="bg:gray:800" grid-block="fixed small">
+//             <span pam-skin="text:primary:on:dark">Gray 800</span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: skin.background.gray
+
+[pam-Skin~="bg:white"] {
+    background-color: @skin-white !important;
+}
+
+[pam-Skin~="bg:black"] {
+    background-color: @skin-black !important;
+}
+
+[pam-Skin~="bg:gray:50"] {
+    background-color: @skin-gray-50 !important;
+}
+
+[pam-Skin~="bg:gray:100"] {
+    background-color: @skin-gray-100 !important;
+}
+
+[pam-Skin~="bg:gray:200"] {
+    background-color: @skin-gray-200 !important;
+}
+
+[pam-Skin~="bg:gray:300"] {
+    background-color: @skin-gray-300 !important;
+}
+
+[pam-Skin~="bg:gray:400"] {
+    background-color: @skin-gray-400 !important;
+}
+
+[pam-Skin~="bg:gray:500"] {
+    background-color: @skin-gray-500 !important;
+}
+
+[pam-Skin~="bg:gray:600"] {
+    background-color: @skin-gray-600 !important;
+}
+
+[pam-Skin~="bg:gray:700"] {
+    background-color: @skin-gray-700 !important;
+}
+
+[pam-Skin~="bg:gray:800"] {
+    background-color: @skin-gray-800 !important;
+}
+
+[pam-Skin~="bg:gray:900"] {
+    background-color: @skin-gray-900 !important;
+}
+
+//  On colors
+// ==================================================================
+
+// On colors
+//
+// The on colors refers to color elements that are placed on top of
+// surfaces that for example use primary, secondary and surface color.
+// On colors are applied to text, icons and borders.
+// The default colors are #FFFFFF and #000000.
+//
+// <table pam-Table="bordered">
+//     <thead>
+//         <tr>
+//             <th>CSS Attribute</th>
+//             <th>Description</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//         <tr>
+//             <td><code>Skin="on:primary"</code></td>
+//             <td>Set text color to the on:primary color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:primary:light"</code></td>
+//             <td>Set text color to the on:primary:light color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:primary:dark"</code></td>
+//             <td>Set text color to the on:primary:dark color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:secondary"</code></td>
+//             <td>Set text color to the on:secondary color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:secondary:light"</code></td>
+//             <td>Set text color to the on:secondary:light color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:secondary:dark"</code></td>
+//             <td>Set text color to the on:secondary:dark color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:background"</code></td>
+//             <td>Set text color to the on:background color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:surface"</code></td>
+//             <td>Set text color to the on:surface color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:error"</code></td>
+//             <td>Set text color to the on:error color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:info"</code></td>
+//             <td>Set text color to the on:info color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:success"</code></td>
+//             <td>Set text color to the on:success color</td>
+//         </tr>
+//         <tr>
+//             <td><code>Skin="on:warning"</code></td>
+//             <td>Set text color to the on:warning color</td>
+//         </tr>
+//     </tbody>
+// </table>
+//
+// Weight: 4
+//
+// Style guide: skin.on-colors
+
+[pam-Skin~="on:primary"] {
+    color: @skin-on-primary !important;
+}
+
+[pam-Skin~="on:primary:light"] {
+    color: @skin-on-primary-light !important;
+}
+
+[pam-Skin~="on:primary:dark"] {
+    color: @skin-on-primary-dark !important;
+}
+
+[pam-Skin~="on:secondary"] {
+    color: @skin-on-secondary !important;
+}
+
+[pam-Skin~="on:secondary:light"] {
+    color: @skin-on-secondary-light !important;
+}
+
+[pam-Skin~="on:secondary:dark"] {
+    color: @skin-on-secondary-dark !important;
+}
+
+[pam-Skin~="on:background"] {
+    color: @skin-on-background !important;
+}
+
+[pam-Skin~="on:surface"] {
+    color: @skin-on-surface !important;
+}
+
+[pam-Skin~="on:error"] {
+    color: @skin-on-error !important;
+}
+
+[pam-Skin~="on:info"] {
+    color: @skin-on-info !important;
+}
+
+[pam-Skin~="on:success"] {
+    color: @skin-on-success !important;
+}
+
+[pam-Skin~="on:warning"] {
+    color: @skin-on-warning !important;
+}
+
+//  Text
+// ==================================================================
+
+// Text
+//
+// Skin colors as text
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block>
+//             <span pam-skin="primary:text">Primary</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block>
+//             <span pam-skin="primary:light:text">Primary light</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block>
+//             <span pam-skin="primary:dark:text">Primary dark</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block>
+//             <span pam-skin="secondary:text">Secondary</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block>
+//             <span pam-skin="secondary:light:text">Secondary light</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block>
+//             <span pam-skin="secondary:dark:text">Secondary dark</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block>
+//             <span pam-skin="info:text">Info</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block>
+//             <span pam-skin="success:text">Success</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block>
+//             <span pam-skin="warning:text">Warning</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block>
+//             <span pam-skin="error:text">error</span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 5
+//
+// Style guide: skin.text
+
+[pam-Skin~="primary:text"] {
+    color: @skin-primary !important;
+}
+
+[pam-Skin~="primary:light:text"] {
+    color: @skin-primary-light !important;
+}
+
+[pam-Skin~="primary:dark:text"] {
+    color: @skin-primary-dark !important;
+}
+
+[pam-Skin~="secondary:text"] {
+    color: @skin-secondary !important;
+}
+
+[pam-Skin~="secondary:light:text"] {
+    color: @skin-secondary-light !important;
+}
+
+[pam-Skin~="secondary:dark:text"] {
+    color: @skin-secondary-dark !important;
+}
+
+[pam-Skin~="background:text"] {
+    color: @skin-background !important;
+}
+
+[pam-Skin~="surface:text"] {
+    color: @skin-surface !important;
+}
+
+[pam-Skin~="error:text"] {
+    color: @skin-error !important;
+}
+
+[pam-Skin~="info:text"] {
+    color: @skin-info !important;
+}
+
+[pam-Skin~="success:text"] {
+    color: @skin-success !important;
+}
+
+[pam-Skin~="warning:text"] {
+    color: @skin-warn !important;
+}
+
+// ------------------------------------------------------------------
+
+// Background
+//
+// Text on element background
+//
+// Markup:
+// <div pam-Grid pam-Skin="background">
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:primary:on:background">Primary</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:secondary:on:background">Secondary</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:hint:on:background">Hint</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:disabled:on:background">Disabled</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:icon:on:background" class="material-icons">android</span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Style guide: skin.text.background
+
+[pam-Skin~="text:primary:on:background"] {
+    color: @skin-text-primary-on-background !important;
+}
+
+[pam-Skin~="text:secondary:on:background"] {
+    color: @skin-text-secondary-on-background !important;
+}
+
+[pam-Skin~="text:hint:on:background"] {
+    color: @skin-text-hint-on-background !important;
+}
+
+[pam-Skin~="text:disabled:on:background"] {
+    color: @skin-text-disabled-on-background !important;
+}
+[pam-Skin~="text:icon:on:background"] {
+    color: @skin-text-icon-on-background !important;
+}
+
+// ------------------------------------------------------------------
+
+// Light background
+//
+// Text on light background
+//
+// Markup:
+// <div pam-Grid pam-Skin="bg:gray:200">
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:primary:on:light">Primary</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:secondary:on:light">Secondary</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:hint:on:light">Hint</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:disabled:on:light">Disabled</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:icon:on:light" class="material-icons">android</span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Style guide: skin.text.light-background
+
+[pam-Skin~="text:primary:on:light"] {
+    color: @skin-text-primary-on-light !important;
+}
+
+[pam-Skin~="text:secondary:on:light"] {
+    color: @skin-text-secondary-on-light !important;
+}
+
+[pam-Skin~="text:hint:on:light"] {
+    color: @skin-text-hint-on-light !important;
+}
+
+[pam-Skin~="text:disabled:on:light"] {
+    color: @skin-text-disabled-on-light !important;
+}
+[pam-Skin~="text:icon:on:light"] {
+    color: @skin-text-icon-on-light !important;
+}
+
+// ------------------------------------------------------------------
+
+// Dark background
+//
+// Text on dark background
+//
+// Markup:
+// <div pam-Grid pam-Skin="bg:black">
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:primary:on:dark">Primary</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:secondary:on:dark">Secondary</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:hint:on:dark">Hint</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:disabled:on:dark">Disabled</span>
+//         </div>
+//     </div>
+//     <div pam-Unit="1-2 medium:1-5">
+//         <div grid-block="small">
+//             <span pam-skin="text:icon:on:dark" class="material-icons">android</span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 4
+//
+// Style guide: skin.text.dark-background
+
+[pam-Skin~="text:primary:on:dark"] {
+    color: @skin-text-primary-on-dark !important;
+}
+
+[pam-Skin~="text:secondary:on:dark"] {
+    color: @skin-text-secondary-on-dark !important;
+}
+
+[pam-Skin~="text:hint:on:dark"] {
+    color: @skin-text-hint-on-dark !important;
+}
+
+[pam-Skin~="text:disabled:on:dark"] {
+    color: @skin-text-disabled-on-dark !important;
+}
+[pam-Skin~="text:icon:on:dark"] {
+    color: @skin-text-icon-on-dark !important;
+}

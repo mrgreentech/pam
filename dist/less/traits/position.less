@@ -1,0 +1,199 @@
+// Position
+//
+// The position trait sets how an element is positioned in a document.
+// Combine position type and location properties to position the element. The `space` trait
+// follows the format `{type} {location }`.
+//
+//
+// * type - `{static | relative | absolute | fixed | sticky}`
+// * location - `{top | right | bottom | left | center | cover}`
+//
+// <span pam-Tag="info">Note</span> To use absolute positioning correctly you need to apply
+// a relative position to the parent element.
+//
+// Weight: 8
+//
+// Style guide: traits.position
+
+// ==================================================================
+//  Position
+// ==================================================================
+
+[pam-position] {
+    position: static;
+}
+
+//  Location modifier
+// ==================================================================
+
+// Location
+//
+// The `top`, `right`, `bottom` and `left` placement properties sets
+// the location of positioned elements.
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="2-3">
+//         <img pam-image src="kss-assets/img/photo-position.jpg" alt="Joanna Kosinska">
+//         <div pam-position="absolute top" pam-overlay="light" pam-flex="center">Top</div>
+//         <div pam-position="absolute right" pam-overlay="light" pam-flex="middle">Right</div>
+//         <div pam-position="absolute bottom" pam-overlay="light" pam-flex="center">Bottom</div>
+//         <div pam-position="absolute left" pam-overlay="light" pam-flex="middle">Left</div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: traits.position.location
+
+[pam-position~="relative"] {
+    position: relative !important;
+}
+
+[pam-position~="absolute"] {
+    position: absolute !important;
+}
+
+[pam-position~="fixed"] {
+    position: fixed !important;
+}
+
+[pam-position~="sticky"] {
+    position: sticky !important;
+}
+
+[pam-position~="top"] {
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+[pam-position~="right"] {
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+[pam-position~="bottom"] {
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+[pam-position~="left"] {
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+//  Explicit location modifier
+// ==================================================================
+
+// Explicit locations
+//
+// Control location of a element in more detail by using combination
+// of the format `{x}:{y}` that won't spread across the element.
+//
+//
+// * x - `{left | center | right}`
+// * y - `{top | center | bottom}`
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="2-3">
+//         <img pam-image src="kss-assets/img/photo-position.jpg" alt="Joanna Kosinska">
+//         <div pam-position="absolute top:left" pam-overlay="light" pam-flex="center">Top left</div>
+//         <div pam-position="absolute top:center" pam-overlay="light" pam-flex="middle">Top center</div>
+//         <div pam-position="absolute top:right" pam-overlay="light" pam-flex="middle">Top right</div>
+//         <div pam-position="absolute center:left" pam-overlay="light" pam-flex="middle">Center left</div>
+//         <div pam-position="absolute center" pam-overlay="light" pam-flex="middle">Center</div>
+//         <div pam-position="absolute center:right" pam-overlay="light" pam-flex="center">Center right</div>
+//         <div pam-position="absolute bottom:left" pam-overlay="light" pam-flex="middle">Bottom left</div>
+//         <div pam-position="absolute bottom:center" pam-overlay="light" pam-flex="middle">Bottom center</div>
+//         <div pam-position="absolute bottom:right" pam-overlay="light" pam-flex="middle">Bottom right</div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Style guide: traits.position.explicit
+
+[pam-position~="top:left"] {
+    top: 0;
+    left: 0;
+}
+
+[pam-position~="top:right"] {
+    top: 0;
+    right: 0;
+}
+
+[pam-position~="bottom:left"] {
+    bottom: 0;
+    left: 0;
+}
+
+[pam-position~="bottom:right"] {
+    bottom: 0;
+    right: 0;
+}
+
+[pam-position~="center"] {
+    left: 50%;
+    max-width: 100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+[pam-position~="center:left"],
+[pam-position~="center:right"] {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+[pam-position~="center:left"] {
+    left: 0;
+}
+
+[pam-position~="center:right"] {
+    right: 0;
+}
+
+[pam-position~="top:center"],
+[pam-position~="bottom:center"] {
+    left: 50%;
+    max-width: 100%;
+    transform: translateX(-50%);
+}
+
+[pam-position~="top:center"] {
+    top: 0;
+}
+
+[pam-position~="bottom:center"] {
+    bottom: 0;
+}
+
+// Cover
+//
+// To make a position element cover its parent element use the `cover`
+// location poperty.
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="2-3">
+//         <img pam-image src="kss-assets/img/photo-position.jpg" alt="Joanna Kosinska">
+//         <div pam-position="absolute cover" pam-overlay="light" pam-flex="center middle">Cover</div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: traits.position.location.cover
+
+[pam-position~="cover"] {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}

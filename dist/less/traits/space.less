@@ -1,23 +1,87 @@
 // Space
 //
-// For control of margin and padding spacing use the `pam-space` trait.
+// Control margin and padding with the `space` trait which
+// follows the format `{type}{side}:{size}`
 //
-// Markup:
-// <div pam-Button pam-space="margin:none">Button</div>
+// * type - `{p = padding | m = margin}`,
+// * side - `{t = top | r = right | b = bottom | l = left}`
+// * size - `{0-6 = 0-6 x base space}`
 //
-// Weight: 4
+// Special cases:
+//
+// * side - `{x = left and right | y = top and bottom}`
+// * size - `{ auto = set margin to auto }`
+//
+//
+// ```html
+// <!-- SPACING ON ALL SIDES (p = padding, m = margin) -->
+// <div pam-space="p">Padding on all sides</div>
+//
+// <!-- SPACING ON TWO SIDES (x = lef and right, y = top and bottom) -->
+// <div pam-space="px">Padding on left and right side</div>
+//
+// <!-- SPACING ON ONE SIDE (t = top, r = right, b = bottom, l = left) -->
+// <div pam-space="pt">Padding on the top side</div>
+//
+// <!-- SPACING SIZE ({0-5} = 2 x @space-4) -->
+// <div pam-space="p:0">Padding 0 on all sides</div>
+// <div pam-space="p:2">Size 2 padding on all sides</div>
+// <div pam-space="pl:2">Size 2 padding on left side</div>
+//
+// <!-- AUTO -->
+// <div pam-space="m:auto">Margin auto on left and right side</div>
+//
+// <!-- NONE -->
+// <div pam-space="none">Margin 0 and Padding 0 on all sides</div>
+// <div pam-space="m:0">Margin 0 on left and right side</div>
+// ```
+//
+// Weight: 15
 //
 // Style guide: traits.space
 
+//  Space
+// ==================================================================
+
 [pam-space~="none"] {
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-[pam-space~="margin:none"] {
-    margin: 0;
+//  Margin
+// ==================================================================
+
+[pam-space~="m:auto"] {
+    margin: auto !important;
 }
 
-[pam-space~="padding:none"] {
-    margin: 0;
+.spacing(margin, "m", 6, 0);
+.spacing(margin-top, "mt", 6, 0);
+.spacing(margin-right, "mr", 6, 0);
+.spacing(margin-bottom, "mb", 6, 0);
+.spacing(margin-left, "ml", 6, 0);
+
+[pam-space~="mx:auto"] {
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
+
+.spacing-x(margin, "mx", 6, 0);
+
+[pam-space~="my:auto"] {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+
+.spacing-y(margin, "my", 6, 0);
+
+//  Padding
+// ==================================================================
+
+.spacing(padding, "p", 6, 0);
+.spacing(padding-top, "pt", 6, 0);
+.spacing(padding-right, "pr", 6, 0);
+.spacing(padding-bottom, "pb", 6, 0);
+.spacing(padding-left, "pl", 6, 0);
+.spacing-x(padding, "px", 6, 0);
+.spacing-y(padding, "py", 6, 0);

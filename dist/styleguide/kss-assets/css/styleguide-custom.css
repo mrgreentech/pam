@@ -10,16 +10,32 @@
 .kss-style kbd,
 .kss-style samp {
     font-family: "Roboto", sans-serif;
+    color: #000;
+}
+
+.kss-style h1,
+.kss-style h2,
+.kss-style h3,
+.kss-style h4,
+.kss-style h5,
+.kss-style h6 {
+    font-weight: 500;
 }
 
 .kss-style pre,
 .kss-style code {
-    font-family: monospace, serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .kss-style code.hljs {
     font-size: 90%;
     line-height: 1.5;
+    font-family: monospace, serif;
+}
+
+#kss-node .kss-modifier__default-name.kss-style,
+#kss-node .kss-modifier__name.kss-style {
+    font-weight: 500;
 }
 
 #kss-node {
@@ -51,24 +67,28 @@
 }
 
 #kss-node .kss-nav__menu-link {
-    color: #444;
+    color: #000;
     font-weight: 300;
-    transition: font-weight 0.4s;
+    padding: 4px 0;
+    transition: all 0.2s ease;
 }
 
 #kss-node .kss-nav__menu-link:hover {
     font-weight: 500;
-    transition: font-weight 0.1s;
+    transition: all 0.2s ease;
+    text-indent: 2px;
 }
 
 #kss-node .kss-nav__menu-link.is-in-viewport {
-    font-weight: 700;
+    font-weight: 500;
+    text-indent: 2px;
 }
 
 #kss-node .kss-nav__menu-link.is-in-viewport::before {
     background-color: #008ed5;
     width: 14px;
     height: 2px;
+    transition: background-color 0.4s, width 0.4s;
 }
 
 #kss-node .kss-nav__ref {
@@ -229,24 +249,30 @@ h3.kss-title {
         border-right: 1px solid #e0e0e0;
         box-shadow: none;
         height: calc(100vh - 85px);
-        padding: 0 40px;
-    }
-
-    #kss-node .kss-nav__menu-item[active] {
-        margin-top: 8px;
+        padding: 0 10px 0 30px;
     }
 
     #kss-node .kss-nav__menu-item[active] > .kss-nav__menu-link .kss-nav__name {
-        font-size: 1rem;
         font-weight: 500;
     }
 
     #kss-node .kss-nav__menu-child {
         font-size: 0.875rem;
+        text-transform: capitalize;
+    }
+
+    #kss-node .kss-nav__menu-child li:first-child {
+        margin-top: 8px;
+        padding-top: 8px;
+    }
+
+    #kss-node .kss-nav__menu-child li:last-child {
+        margin-bottom: 8px;
+        padding-bottom: 8px;
     }
 
     #kss-node .kss-nav__menu-link::before {
-        top: 10px;
+        top: 14px;
     }
 }
 
@@ -334,7 +360,6 @@ h3.kss-title {
 }
 
 [sg-Nav] ul li a {
-    padding: 12px 16px !important;
     margin-left: 8px;
 }
 
@@ -365,7 +390,7 @@ h3.kss-title {
 [sg-Hero] header,
 [sg-Hero] > div,
 [sg-Hero] footer {
-    max-width: 768px;
+    max-width: 480px;
     margin: 2em auto;
 }
 
@@ -458,6 +483,31 @@ section.sg-block.sg-section-hooks code {
     border: 1px solid #666;
 }
 
+[grid-space] {
+    margin-bottom: 48px;
+}
+
+[grid-block] {
+    align-items: center;
+    display: flex;
+    padding: 16px;
+}
+
+[grid-block~="fixed"] {
+    align-items: center;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+}
+
+[grid-block~="large"] {
+    height: 180px;
+}
+
+[grid-block~="small"] {
+    height: 56px;
+}
+
 [pam-Skin-Test] {
     padding: 16px;
     margin: 1px;
@@ -500,7 +550,7 @@ section.sg-block.sg-section-hooks code {
     display: inline;
     font-family: monospace, serif;
     font-size: 75%;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1;
     text-align: center;
     vertical-align: baseline;

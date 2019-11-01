@@ -17,7 +17,7 @@
 //  Variables
 // ==================================================================
 
-@divider-color: @skin-divider;
+@divider-color: @skin-gray-400;
 @divider-opacity: 10;
 @divider-size: 1px;
 @divider-transparent-border-color: fade(@skin-black, @divider-opacity);
@@ -108,3 +108,39 @@ hr[pam-Divider~="transparent"] {
 .hook-divider-transparent() {
 }
 /* stylelint-enable */
+
+// Variables
+//
+// These are all the component specific variables that can be
+// used for customization.
+//
+// <table pam-Table="horizontal">
+//     <thead>
+//         <tr>
+//             <th>Name</th>
+//             <th>Value</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//          <tr>
+//            <td>@divider-color</td>
+//            <td><code>@skin-gray-400</code></td>
+//        </tr>
+//          <tr>
+//            <td>@divider-opacity</td>
+//            <td><code>10</code></td>
+//        </tr>
+//          <tr>
+//            <td>@divider-size</td>
+//            <td><code>1px</code></td>
+//        </tr>
+//          <tr>
+//            <td>@divider-transparent-border-color</td>
+//            <td><code>fade(@skin-black, @divider-opacity)</code></td>
+//        </tr>
+//     </tbody>
+// </table>
+//
+// Weight: 30
+//
+// Style guide: divider.variables

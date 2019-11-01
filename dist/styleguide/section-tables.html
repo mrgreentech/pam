@@ -8,13 +8,22 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="icon" type="image/png" href="kss-assets/img/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
+  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/kss-assets/img/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
   <link rel="stylesheet" href="kss-assets/kss.css">
   <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-  <link rel="stylesheet" href="kss-assets/css/pam.css">
-<link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+<link rel="stylesheet" href="kss-assets/css/pam.css">
 
 
   <script type="text/javascript">
@@ -35,7 +44,7 @@
             <img
               src="kss-assets/img/logo.svg"
               alt="PAM"
-              title="© 2016 Mr Green Tech All Rights Reserved"
+              title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
               height="48"
               width="48"
               sg-Logo>
@@ -77,18 +86,18 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-about.html">
-            <span class="kss-nav__ref">3</span><span class="kss-nav__name">About</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-base.html">
-            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Base</span>
+          <a class="kss-nav__menu-link" href="section-general.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">General</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-grids.html">
-            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Grids</span>
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Grids</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-skin.html">
+            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Skin</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -117,9 +126,21 @@
           </a>
               <ul class="kss-nav__menu-child">
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-tables.html#kssref-tables-hooks">
+                  <a class="kss-nav__menu-link" href="section-tables.html#kssref-tables-hover">
                     <span class="kss-nav__ref ">10.1</span
+                    ><span class="kss-nav__name">Hover</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-tables.html#kssref-tables-hooks">
+                    <span class="kss-nav__ref ">10.2</span
                     ><span class="kss-nav__name">Hooks</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-tables.html#kssref-tables-variables">
+                    <span class="kss-nav__ref ">10.3</span
+                    ><span class="kss-nav__name">Variables</span>
                   </a>
                 </li>
               </ul>
@@ -537,7 +558,7 @@ There are a number of basic modifiers that can be used such as <code>striped</co
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;table pam-Table&#x3D;&quot;[modifier attribute]&quot;&gt;
+              <pre><code class="html">&lt;table pam-Table&#x3D;&quot;[modifier]&quot;&gt;
     &lt;caption&gt;Hello, I&#x27;m caption&lt;/caption&gt;
     &lt;thead&gt;
         &lt;tr&gt;
@@ -571,6 +592,149 @@ There are a number of basic modifiers that can be used such as <code>striped</co
             </details>
       </div>
       <hr >
+      <section id="kssref-tables-hover" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-tables-hover">
+              Hover
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Apply hover to the a table by using the <code>hover</code> modifier.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <table pam-Table="hover">
+    <caption>Hello, I'm a hover table</caption>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Rating</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Swordfish</td>
+            <td>10</td>
+            <td>2001</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>WarGames</td>
+            <td>9.0</td>
+            <td>1983</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Sneakers</td>
+            <td>8.9</td>
+            <td>1992</td>
+        </tr>
+    </tbody>
+</table>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-tables-hover" data-kss-fullscreen="kssref-tables-hover">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-tables-hover.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-tables-hover" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-tables-hover" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;table pam-Table&#x3D;&quot;hover&quot;&gt;
+    &lt;caption&gt;Hello, I&#x27;m a hover table&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;#&lt;/th&gt;
+            &lt;th&gt;Title&lt;/th&gt;
+            &lt;th&gt;Rating&lt;/th&gt;
+            &lt;th&gt;Year&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;Swordfish&lt;/td&gt;
+            &lt;td&gt;10&lt;/td&gt;
+            &lt;td&gt;2001&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;WarGames&lt;/td&gt;
+            &lt;td&gt;9.0&lt;/td&gt;
+            &lt;td&gt;1983&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;3&lt;/td&gt;
+            &lt;td&gt;Sneakers&lt;/td&gt;
+            &lt;td&gt;8.9&lt;/td&gt;
+            &lt;td&gt;1992&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
       <section id="kssref-tables-hooks" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
@@ -586,6 +750,7 @@ There are a number of basic modifiers that can be used such as <code>striped</co
 <code>.hook-table-caption-bp-medium</code>
 <code>.hook-table-odd-td</code>
 <code>.hook-table-td</code>
+<code>.hook-table-th</code>
 <code>.hook-table-td-th</code>
 <code>.hook-table-td-th-bp-medium</code>
 <code>.hook-table-td-th-first-child</code>
@@ -599,6 +764,118 @@ There are a number of basic modifiers that can be used such as <code>striped</co
 <code>.hook-table-horizontal-td-th</code>
 <code>.hook-table-striped</code></p>
 
+            </div>
+
+        </div>
+
+      </section>
+      <hr >
+      <section id="kssref-tables-variables" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-tables-variables">
+              Variables
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>These are all the component specific variables that can be
+used for customization.</p>
+<table pam-Table="horizontal">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr>
+           <td>@table-border-color</td>
+           <td><code>rgba(0, 0, 0, 0.12)</code></td>
+       </tr>
+         <tr>
+           <td>@table-border-style</td>
+           <td><code>solid</code></td>
+       </tr>
+         <tr>
+           <td>@table-border-width</td>
+           <td><code>1px</code></td>
+       </tr>
+         <tr>
+           <td>@table-color</td>
+           <td><code>@skin-text-primary-on-light</code></td>
+       </tr>
+         <tr>
+           <td>@table-font-size</td>
+           <td><code>0.875rem</code></td>
+       </tr>
+         <tr>
+           <td>@table-font-weight</td>
+           <td><code>@font-weight-normal</code></td>
+       </tr>
+         <tr>
+           <td>@table-hover-bg-color</td>
+           <td><code>rgba(0, 0, 0, 0.04)</code></td>
+       </tr>
+         <tr>
+           <td>@table-letter-spacing</td>
+           <td><code>0.018em</code></td>
+       </tr>
+         <tr>
+           <td>@table-line-height</td>
+           <td><code>1.25rem</code></td>
+       </tr>
+         <tr>
+           <td>@table-padding-bp-medium</td>
+           <td><code>@space-16</code></td>
+       </tr>
+         <tr>
+           <td>@table-padding</td>
+           <td><code>@space-8</code></td>
+       </tr>
+         <tr>
+           <td>@table-head-bg-color</td>
+           <td><code>@skin-background</code></td>
+       </tr>
+         <tr>
+           <td>@table-head-border-bottom</td>
+           <td><code>@table-border-width @table-border-style @table-border-color</code></td>
+       </tr>
+         <tr>
+           <td>@table-th-font-weight</td>
+           <td><code>@font-weight-medium</code></td>
+       </tr>
+         <tr>
+           <td>@table-striped-odd-bg-color</td>
+           <td><code>@skin-gray-200</code></td>
+       </tr>
+         <tr>
+           <td>@table-border-bordered-color</td>
+           <td><code>@table-border-color</code></td>
+       </tr>
+         <tr>
+           <td>@table-border-bordered-style</td>
+           <td><code>solid</code></td>
+       </tr>
+         <tr>
+           <td>@table-border-bordered-width</td>
+           <td><code>1px</code></td>
+       </tr>
+         <tr>
+           <td>@table-border-horizontal-color</td>
+           <td><code>@table-border-color</code></td>
+       </tr>
+         <tr>
+           <td>@table-border-horizontal-style</td>
+           <td><code>solid</code></td>
+       </tr>
+         <tr>
+           <td>@table-border-horizontal-width</td>
+           <td><code>1px</code></td>
+       </tr>
+    </tbody>
+</table>
             </div>
 
         </div>
@@ -637,6 +914,7 @@ There are a number of basic modifiers that can be used such as <code>striped</co
   });
 </script>
 <script src="kss-assets/js/animator.js"></script>
+<script src="kss-assets/js/modifier-helper.js"></script>
 <script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 

@@ -15,9 +15,9 @@
 //  Variables
 // ==================================================================
 
-@tag-background: @skin-dark;
+@tag-background: @skin-gray-600;
 @tag-border-radius: @border-radius-base;
-@tag-color: @skin-text;
+@tag-color: contrast(@tag-background);
 @tag-font-size: 65%;
 @tag-font-weight: @font-weight-medium;
 @tag-line-height: @line-height-normal;
@@ -33,7 +33,7 @@
 @tag-primary-background: @skin-primary;
 @tag-success-background: @skin-success;
 @tag-info-background: @skin-info;
-@tag-danger-background: @skin-danger;
+@tag-error-background: @skin-error;
 @tag-warn-background: @skin-warn;
 
 // ==================================================================
@@ -51,7 +51,7 @@
     padding: @tag-padding-vertical @tag-padding-horizontal;
     text-align: center;
     text-transform: @tag-text-transform;
-    vertical-align: middle;
+    vertical-align: text-bottom;
 
     .hook-tag;
 }
@@ -96,7 +96,7 @@
 // <span pam-Tag="success">Success</span>
 // <span pam-Tag="info">Info</span>
 // <span pam-Tag="warn">warn</span>
-// <span pam-Tag="danger">danger</span>
+// <span pam-Tag="error">error</span>
 //
 //  Weight: 2
 //
@@ -118,8 +118,8 @@
     background-color: @tag-warn-background;
 }
 
-[pam-Tag~="danger"] {
-    background-color: @tag-danger-background;
+[pam-Tag~="error"] {
+    background-color: @tag-error-background;
 }
 
 //  Hooks
@@ -140,3 +140,95 @@
 .hook-tag-rounded() {
 }
 /* stylelint-enable */
+
+// Variables
+//
+// These are all the component specific variables that can be
+// used for customization.
+//
+// <table pam-Table="horizontal">
+//     <thead>
+//         <tr>
+//             <th>Name</th>
+//             <th>Value</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//          <tr>
+//            <td>@tag-background</td>
+//            <td><code>@skin-gray-600</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-border-radius</td>
+//            <td><code>@border-radius-base</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-color</td>
+//            <td><code>contrast(@tag-background)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-font-size</td>
+//            <td><code>65%</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-font-weight</td>
+//            <td><code>@font-weight-medium</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-line-height</td>
+//            <td><code>@line-height-normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-padding-horizontal</td>
+//            <td><code>6px</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-padding-vertical</td>
+//            <td><code>3px</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-text-transform</td>
+//            <td><code>uppercase</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-rounded-border-radius</td>
+//            <td><code>500px</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-rounded-font-size</td>
+//            <td><code>65%</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-rounded-line-height</td>
+//            <td><code>@line-height-normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-rounded-min-width</td>
+//            <td><code>@space-16</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-primary-background</td>
+//            <td><code>@skin-primary</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-success-background</td>
+//            <td><code>@skin-success</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-info-background</td>
+//            <td><code>@skin-info</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-error-background</td>
+//            <td><code>@skin-error</code></td>
+//        </tr>
+//          <tr>
+//            <td>@tag-warn-background</td>
+//            <td><code>@skin-warn</code></td>
+//        </tr>
+//     </tbody>
+// </table>
+//
+// Weight: 30
+//
+// Style guide: tags.variables

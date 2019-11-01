@@ -1,0 +1,27 @@
+.button-outlined (@bg-color) {
+    &[pam-Button~="outlined"] {
+        background-color: transparent;
+        color: @bg-color;
+        transition-property: color, border-color, background-color;
+
+        &:hover {
+            background-color: tint(@bg-color, 80%);
+        }
+
+        &:focus {
+            background-color: tint(@bg-color, 70%);
+        }
+
+        &:active {
+            background-color: tint(@bg-color, 60%);
+        }
+
+        &:visited {
+            color: @bg-color;
+        }
+
+        &:visited:hover {
+            color: @bg-color;
+        }
+    }
+}

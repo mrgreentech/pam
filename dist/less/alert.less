@@ -15,7 +15,7 @@
 // info - This is not important but may need your attention.
 // success - Congratulations! You have successfully done something.
 // warning - Wow! You better take a look this needs your attention!
-// danger - Oh no! That did no go so well get another pair of glasses and try again.
+// error - Oh no! That did no go so well get another pair of glasses and try again.
 //
 // Weight: 9
 //
@@ -24,24 +24,24 @@
 // Variables
 // ==================================================================
 
-@alert-background: @skin-lighter;
+@alert-background: @skin-background;
 @alert-border-color: darken(@alert-background, 5%);
 @alert-border-left-width: @space-base;
 @alert-border-radius: @border-radius-base;
 @alert-border-width: 1px;
 @alert-border: 0 solid @alert-border-color;
-@alert-color: @skin-text-primary;
-@alert-line-height: @line-height-base;
+@alert-color: @skin-on-background;
+@alert-line-height: @line-height-normal;
 @alert-margin-vertical: @space-16;
 @alert-padding: @space-16;
-@alert-text-font-size: @font-size-medium;
+@alert-text-font-size: @font-size-large;
 @alert-title-font-size: @font-size-larger;
 
 @alert-primary-background: lighten(@skin-primary, 30%);
 @alert-primary-border: darken(@alert-primary-background, 5%);
 @alert-primary-color: darken(@alert-primary-background, 50%);
 
-@alert-secondary-background: lighten(@skin-darker, 30%);
+@alert-secondary-background: lighten(@skin-secondary, 30%);
 @alert-secondary-border: darken(@alert-secondary-background, 5%);
 @alert-secondary-color: darken(@alert-secondary-background, 50%);
 
@@ -57,13 +57,13 @@
 @alert-warning-border: darken(@alert-warning-background, 5%);
 @alert-warning-color: darken(@alert-warning-background, 50%);
 
-@alert-danger-background: lighten(@skin-danger, 30%);
-@alert-danger-border: darken(@alert-danger-background, 5%);
-@alert-danger-color: darken(@alert-danger-background, 50%);
+@alert-error-background: lighten(@skin-error, 30%);
+@alert-error-border: darken(@alert-error-background, 5%);
+@alert-error-color: darken(@alert-error-background, 50%);
 
-@alert-outlined-background: @skin-text;
+@alert-outlined-background: @skin-primary-bg;
 
-@alert-link-font-weight: @font-weight-bold;
+@alert-link-font-weight: @font-weight-medium;
 
 @alert-large-padding: @space-20;
 
@@ -158,15 +158,15 @@
     .hook-alert-warning;
 }
 
-//  Modifier: danger
+//  Modifier: error
 // ==================================================================
 
-[pam-Alert~="danger"] {
-    background-color: @alert-danger-background;
-    border-color: @alert-danger-border;
-    color: @alert-danger-color;
+[pam-Alert~="error"] {
+    background-color: @alert-error-background;
+    border-color: @alert-error-border;
+    color: @alert-error-color;
 
-    .hook-alert-danger;
+    .hook-alert-error;
 }
 
 //  Modifier: outlined
@@ -317,7 +317,7 @@
 // Hooks
 //
 // `.hook-alert`
-// `.hook-alert-danger`
+// `.hook-alert-error`
 // `.hook-alert-info`
 // `.hook-alert-link`
 // `.hook-alert-outlined`
@@ -334,7 +334,7 @@
 /* stylelint-disable block-no-empty */
 .hook-alert() {
 }
-.hook-alert-danger() {
+.hook-alert-error() {
 }
 .hook-alert-info() {
 }
@@ -353,3 +353,155 @@
 .hook-alert-warning() {
 }
 /* stylelint-enable */
+
+// Variables
+//
+// These are all the component specific variables that can be
+// used for customization.
+//
+// <table pam-Table="horizontal">
+//     <thead>
+//         <tr>
+//             <th>Name</th>
+//             <th>Value</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//          <tr>
+//            <td>@alert-background</td>
+//            <td><code>@skin-background</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-border-color</td>
+//            <td><code>darken(@alert-background, 5%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-border-left-width</td>
+//            <td><code>@space-base</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-border-radius</td>
+//            <td><code>@border-radius-base</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-border-width</td>
+//            <td><code>1px</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-border</td>
+//            <td><code>0 solid @alert-border-color</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-color</td>
+//            <td><code>@skin-on-background</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-line-height</td>
+//            <td><code>@line-height-normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-margin-vertical</td>
+//            <td><code>@space-16</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-padding</td>
+//            <td><code>@space-16</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-text-font-size</td>
+//            <td><code>@font-size-large</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-title-font-size</td>
+//            <td><code>@font-size-larger</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-primary-background</td>
+//            <td><code>lighten(@skin-primary, 30%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-primary-border</td>
+//            <td><code>darken(@alert-primary-background, 5%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-primary-color</td>
+//            <td><code>darken(@alert-primary-background, 50%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-secondary-background</td>
+//            <td><code>lighten(@skin-secondary, 30%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-secondary-border</td>
+//            <td><code>darken(@alert-secondary-background, 5%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-secondary-color</td>
+//            <td><code>darken(@alert-secondary-background, 50%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-info-background</td>
+//            <td><code>lighten(@skin-info, 30%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-info-border</td>
+//            <td><code>darken(@alert-info-background, 5%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-info-color</td>
+//            <td><code>darken(@alert-info-background, 50%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-success-background</td>
+//            <td><code>lighten(@skin-success, 30%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-success-border</td>
+//            <td><code>darken(@alert-success-background, 5%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-success-color</td>
+//            <td><code>darken(@alert-success-background, 50%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-warning-background</td>
+//            <td><code>lighten(@skin-warn, 30%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-warning-border</td>
+//            <td><code>darken(@alert-warning-background, 5%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-warning-color</td>
+//            <td><code>darken(@alert-warning-background, 50%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-error-background</td>
+//            <td><code>lighten(@skin-error, 30%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-error-border</td>
+//            <td><code>darken(@alert-error-background, 5%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-error-color</td>
+//            <td><code>darken(@alert-error-background, 50%)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-outlined-background</td>
+//            <td><code>@skin-primary-bg</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-link-font-weight</td>
+//            <td><code>@font-weight-medium</code></td>
+//        </tr>
+//          <tr>
+//            <td>@alert-large-padding</td>
+//            <td><code>@space-20</code></td>
+//        </tr>
+//     </tbody>
+// </table>
+//
+// Weight: 30
+//
+// Style guide: alert.variables

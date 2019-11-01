@@ -8,13 +8,22 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="icon" type="image/png" href="kss-assets/img/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
+  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/kss-assets/img/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
   <link rel="stylesheet" href="kss-assets/kss.css">
   <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-  <link rel="stylesheet" href="kss-assets/css/pam.css">
-<link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+<link rel="stylesheet" href="kss-assets/css/pam.css">
 
 
   <script type="text/javascript">
@@ -35,7 +44,7 @@
             <img
               src="kss-assets/img/logo.svg"
               alt="PAM"
-              title="© 2016 Mr Green Tech All Rights Reserved"
+              title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
               height="48"
               width="48"
               sg-Logo>
@@ -77,18 +86,18 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-about.html">
-            <span class="kss-nav__ref">3</span><span class="kss-nav__name">About</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-base.html">
-            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Base</span>
+          <a class="kss-nav__menu-link" href="section-general.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">General</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-grids.html">
-            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Grids</span>
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Grids</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-skin.html">
+            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Skin</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -133,6 +142,12 @@
                   <a class="kss-nav__menu-link" href="section-cards.html#kssref-cards-hooks">
                     <span class="kss-nav__ref ">9.4</span
                     ><span class="kss-nav__name">Hooks</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-cards.html#kssref-cards-variables">
+                    <span class="kss-nav__ref ">9.5</span
+                    ><span class="kss-nav__name">Variables</span>
                   </a>
                 </li>
               </ul>
@@ -334,7 +349,7 @@ states.</p>
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;div pam-Card&#x3D;&quot;[modifier attribute]&quot;&gt;
+              <pre><code class="html">&lt;div pam-Card&#x3D;&quot;[modifier]&quot;&gt;
     &lt;section pam-Card-Primary-Action&gt;
         &lt;div pam-Card-Primary&gt;
             &lt;h1 pam-Typography&#x3D;&quot;title&quot;&gt; Card&lt;/h1&gt;
@@ -368,10 +383,10 @@ states.</p>
             <div class="kss-modifier__example">
               <div pam-Card>
     <section pam-Card-Primary-Action>
-        <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/200");'>
+        <div pam-Card-Media style='background-image: url("https://placekeanu.com/350/200");'>
         </div>
         <div pam-Card-Primary>
-            <h1 pam-Typography="title">Bill Murray</h1>
+            <h1 pam-Typography="title">Keanu Reeves</h1>
             <p pam-Typography="body-1">By Chuck Norris</p>
         </div>
         <div pam-Card-Secondary pam-Typography="body-1">
@@ -380,8 +395,8 @@ states.</p>
     </section>
     <section pam-Card-Actions>
         <div pam-Card-Action-Buttons>
-            <button pam-Button="primary flat">Action 1</button>
-            <button pam-Button="primary flat">Action 2</button>
+            <button pam-Button="flat">Action 1</button>
+            <button pam-Button="flat">Action 2</button>
         </div>
         <div pam-Card-Action-Icons>
             <button pam-Button="circle flat">
@@ -453,10 +468,10 @@ states.</p>
               </summary>
               <pre><code class="html">&lt;div pam-Card&gt;
     &lt;section pam-Card-Primary-Action&gt;
-        &lt;div pam-Card-Media style&#x3D;&#x27;background-image: url(&quot;https://www.fillmurray.com/350/200&quot;);&#x27;&gt;
+        &lt;div pam-Card-Media style&#x3D;&#x27;background-image: url(&quot;https://placekeanu.com/350/200&quot;);&#x27;&gt;
         &lt;/div&gt;
         &lt;div pam-Card-Primary&gt;
-            &lt;h1 pam-Typography&#x3D;&quot;title&quot;&gt;Bill Murray&lt;/h1&gt;
+            &lt;h1 pam-Typography&#x3D;&quot;title&quot;&gt;Keanu Reeves&lt;/h1&gt;
             &lt;p pam-Typography&#x3D;&quot;body-1&quot;&gt;By Chuck Norris&lt;/p&gt;
         &lt;/div&gt;
         &lt;div pam-Card-Secondary pam-Typography&#x3D;&quot;body-1&quot;&gt;
@@ -465,8 +480,8 @@ states.</p>
     &lt;/section&gt;
     &lt;section pam-Card-Actions&gt;
         &lt;div pam-Card-Action-Buttons&gt;
-            &lt;button pam-Button&#x3D;&quot;primary flat&quot;&gt;Action 1&lt;/button&gt;
-            &lt;button pam-Button&#x3D;&quot;primary flat&quot;&gt;Action 2&lt;/button&gt;
+            &lt;button pam-Button&#x3D;&quot;flat&quot;&gt;Action 1&lt;/button&gt;
+            &lt;button pam-Button&#x3D;&quot;flat&quot;&gt;Action 2&lt;/button&gt;
         &lt;/div&gt;
         &lt;div pam-Card-Action-Icons&gt;
             &lt;button pam-Button&#x3D;&quot;circle flat&quot;&gt;
@@ -502,10 +517,10 @@ states.</p>
               <div pam-Card>
     <section pam-Card-Primary-Action>
         <div pam-Card-Primary>
-            <h1 pam-Typography="title">Bill Murray</h1>
+            <h1 pam-Typography="title">Keanu Reeves</h1>
             <p pam-Typography="body-1">By Chuck Norris</p>
         </div>
-        <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/200");'>
+        <div pam-Card-Media style='background-image: url("https://placekeanu.com/350/200");'>
         </div>
         <div pam-Card-Secondary pam-Typography="body-1">
             Put some text here to summarize and describe what the card is all about.
@@ -513,8 +528,8 @@ states.</p>
     </section>
     <section pam-Card-Actions>
         <div pam-Card-Action-Buttons>
-            <button pam-Button="primary flat">Action 1</button>
-            <button pam-Button="primary flat">Action 2</button>
+            <button pam-Button="flat">Action 1</button>
+            <button pam-Button="flat">Action 2</button>
         </div>
         <div pam-Card-Action-Icons>
             <button pam-Button="circle flat">
@@ -587,10 +602,10 @@ states.</p>
               <pre><code class="html">&lt;div pam-Card&gt;
     &lt;section pam-Card-Primary-Action&gt;
         &lt;div pam-Card-Primary&gt;
-            &lt;h1 pam-Typography&#x3D;&quot;title&quot;&gt;Bill Murray&lt;/h1&gt;
+            &lt;h1 pam-Typography&#x3D;&quot;title&quot;&gt;Keanu Reeves&lt;/h1&gt;
             &lt;p pam-Typography&#x3D;&quot;body-1&quot;&gt;By Chuck Norris&lt;/p&gt;
         &lt;/div&gt;
-        &lt;div pam-Card-Media style&#x3D;&#x27;background-image: url(&quot;https://www.fillmurray.com/350/200&quot;);&#x27;&gt;
+        &lt;div pam-Card-Media style&#x3D;&#x27;background-image: url(&quot;https://placekeanu.com/350/200&quot;);&#x27;&gt;
         &lt;/div&gt;
         &lt;div pam-Card-Secondary pam-Typography&#x3D;&quot;body-1&quot;&gt;
             Put some text here to summarize and describe what the card is all about.
@@ -598,8 +613,8 @@ states.</p>
     &lt;/section&gt;
     &lt;section pam-Card-Actions&gt;
         &lt;div pam-Card-Action-Buttons&gt;
-            &lt;button pam-Button&#x3D;&quot;primary flat&quot;&gt;Action 1&lt;/button&gt;
-            &lt;button pam-Button&#x3D;&quot;primary flat&quot;&gt;Action 2&lt;/button&gt;
+            &lt;button pam-Button&#x3D;&quot;flat&quot;&gt;Action 1&lt;/button&gt;
+            &lt;button pam-Button&#x3D;&quot;flat&quot;&gt;Action 2&lt;/button&gt;
         &lt;/div&gt;
         &lt;div pam-Card-Action-Icons&gt;
             &lt;button pam-Button&#x3D;&quot;circle flat&quot;&gt;
@@ -634,10 +649,10 @@ states.</p>
             <div class="kss-modifier__example">
               <div pam-Card>
     <section pam-Card-Primary-Action>
-        <div pam-Card-Media style='background-image: url("https://www.fillmurray.com/350/200");'>
+        <div pam-Card-Media style='background-image: url("https://placekeanu.com/350/200");'>
             <div pam-Card-Media-Content>
         <div pam-Card-Primary>
-            <h1 pam-Typography="title">Bill Murray</h1>
+            <h1 pam-Typography="title">Keanu Reeves</h1>
             <p pam-Typography="body-1">By Chuck Norris</p>
         </div>
             </div>
@@ -648,8 +663,8 @@ states.</p>
     </section>
     <section pam-Card-Actions>
         <div pam-Card-Action-Buttons>
-            <button pam-Button="primary flat">Action 1</button>
-            <button pam-Button="primary flat">Action 2</button>
+            <button pam-Button="flat">Action 1</button>
+            <button pam-Button="flat">Action 2</button>
         </div>
         <div pam-Card-Action-Icons>
             <button pam-Button="circle flat">
@@ -721,10 +736,10 @@ states.</p>
               </summary>
               <pre><code class="html">&lt;div pam-Card&gt;
     &lt;section pam-Card-Primary-Action&gt;
-        &lt;div pam-Card-Media style&#x3D;&#x27;background-image: url(&quot;https://www.fillmurray.com/350/200&quot;);&#x27;&gt;
+        &lt;div pam-Card-Media style&#x3D;&#x27;background-image: url(&quot;https://placekeanu.com/350/200&quot;);&#x27;&gt;
             &lt;div pam-Card-Media-Content&gt;
         &lt;div pam-Card-Primary&gt;
-            &lt;h1 pam-Typography&#x3D;&quot;title&quot;&gt;Bill Murray&lt;/h1&gt;
+            &lt;h1 pam-Typography&#x3D;&quot;title&quot;&gt;Keanu Reeves&lt;/h1&gt;
             &lt;p pam-Typography&#x3D;&quot;body-1&quot;&gt;By Chuck Norris&lt;/p&gt;
         &lt;/div&gt;
             &lt;/div&gt;
@@ -735,8 +750,8 @@ states.</p>
     &lt;/section&gt;
     &lt;section pam-Card-Actions&gt;
         &lt;div pam-Card-Action-Buttons&gt;
-            &lt;button pam-Button&#x3D;&quot;primary flat&quot;&gt;Action 1&lt;/button&gt;
-            &lt;button pam-Button&#x3D;&quot;primary flat&quot;&gt;Action 2&lt;/button&gt;
+            &lt;button pam-Button&#x3D;&quot;flat&quot;&gt;Action 1&lt;/button&gt;
+            &lt;button pam-Button&#x3D;&quot;flat&quot;&gt;Action 2&lt;/button&gt;
         &lt;/div&gt;
         &lt;div pam-Card-Action-Icons&gt;
             &lt;button pam-Button&#x3D;&quot;circle flat&quot;&gt;
@@ -778,6 +793,98 @@ states.</p>
 
       </section>
       <hr >
+      <section id="kssref-cards-variables" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-cards-variables">
+              Variables
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>These are all the component specific variables that can be
+used for customization.</p>
+<table pam-Table="horizontal">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr>
+           <td>@card-background-color</td>
+           <td><code>@skin-surface</code></td>
+       </tr>
+         <tr>
+           <td>@card-border-radius</td>
+           <td><code>@border-radius-base</code></td>
+       </tr>
+         <tr>
+           <td>@card-max-width</td>
+           <td><code>350px</code></td>
+       </tr>
+         <tr>
+           <td>@card-padding</td>
+           <td><code>@space-16</code></td>
+       </tr>
+         <tr>
+           <td>@card-shadow-raised</td>
+           <td><code>@shadow-z8</code></td>
+       </tr>
+         <tr>
+           <td>@card-shadow</td>
+           <td><code>@shadow-z1</code></td>
+       </tr>
+         <tr>
+           <td>@card-secondary-font</td>
+           <td><code>@font-size-medium</code></td>
+       </tr>
+         <tr>
+           <td>@card-secondary-padding</td>
+           <td><code>0 @card-padding @card-padding / 2 @card-padding</code></td>
+       </tr>
+         <tr>
+           <td>@card-primary-action-opacity</td>
+           <td><code>0.08</code></td>
+       </tr>
+         <tr>
+           <td>@card-media-border-radius</td>
+           <td><code>@card-border-radius @card-border-radius 0 0</code></td>
+       </tr>
+         <tr>
+           <td>@card-media-16-9</td>
+           <td><code>56.25%</code></td>
+       </tr>
+         <tr>
+           <td>@card-media-content-color</td>
+           <td><code>@skin-white</code></td>
+       </tr>
+         <tr>
+           <td>@card-media-content-alignment</td>
+           <td><code>flex-end</code></td>
+       </tr>
+         <tr>
+           <td>@card-transition-duration</td>
+           <td><code>@transition-duration-default</code></td>
+       </tr>
+         <tr>
+           <td>@card-transition-property</td>
+           <td><code>all</code></td>
+       </tr>
+         <tr>
+           <td>@card-transition-timing</td>
+           <td><code>ease</code></td>
+       </tr>
+    </tbody>
+</table>
+            </div>
+
+        </div>
+
+      </section>
+      <hr >
   </main>
 </main>
 <footer sg-footer></footer>
@@ -810,6 +917,7 @@ states.</p>
   });
 </script>
 <script src="kss-assets/js/animator.js"></script>
+<script src="kss-assets/js/modifier-helper.js"></script>
 <script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 

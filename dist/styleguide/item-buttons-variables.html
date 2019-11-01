@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PAM</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
+  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/kss-assets/img/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+<link rel="stylesheet" href="kss-assets/css/pam.css">
+
+
+  <script type="text/javascript">
+  var skinsData = [
+      {
+        path: "pam.css",
+        name: "default skin"
+      },
+  ];
+  </script>
+</head>
+<body id="kss-node" class="kss-fullscreen-mode" >
+
+<header sg-header>
+  <div pam-Grid pam-Grid-Control="align:center">
+      <div pam-Unit="1-5">
+          <a href="./" sg-Link>
+            <img
+              src="kss-assets/img/logo.svg"
+              alt="PAM"
+              title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
+              height="48"
+              width="48"
+              sg-Logo>
+          </a>
+      </div>
+      <div pam-Unit="4-5">
+          <div pam-Menu sg-Nav>
+              <ul pam-Menu-List>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/blob/legendary-grasshopper/CHANGELOG.md"  pam-Button="flat">Changelog</a>
+                  </li>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/issues" pam-Button="flat">Issues</a>
+                  </li>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="raised">Download</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</header>
+
+<main sg-main>
+  <aside class="kss-sidebar kss-style">
+    <header class="kss-header">
+      <h1 class="kss-doc-title">Documentation</h1>
+    </header>
+    <nav class="kss-nav">
+      <ul class="kss-nav__menu">
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-getting-started.html">
+            <span class="kss-nav__ref">1</span><span class="kss-nav__name">Getting started</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-setup.html">
+            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Setup</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-general.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">General</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-grids.html">
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Grids</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-skin.html">
+            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Skin</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-typography.html">
+            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Typography</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-forms.html">
+            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Forms</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-buttons.html">
+            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Buttons</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-cards.html">
+            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Cards</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-tables.html">
+            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Tables</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-menus.html">
+            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Menus</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-alert.html">
+            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Alert</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-divider.html">
+            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Divider</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-links.html">
+            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Link</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-lists.html">
+            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Lists</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-tags.html">
+            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Tags</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-column.html">
+            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Column</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-loaders.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Loaders</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-overlay.html">
+            <span class="kss-nav__ref">19</span><span class="kss-nav__name">Overlay</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-traits.html">
+            <span class="kss-nav__ref">20</span><span class="kss-nav__name">Traits</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-mixins.html">
+            <span class="kss-nav__ref">21</span><span class="kss-nav__name">Mixins</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <main role="main" class="kss-main">
+
+      <div id="kssref-buttons-variables" class="kss-section kss-section--depth-2 is-fullscreen">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-buttons-variables">
+              Variables
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>These are all the component specific variables that can be
+used for customization.</p>
+<table pam-Table="horizontal">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr>
+           <td>@button-background</td>
+           <td><code>@skin-primary</code></td>
+       </tr>
+         <tr>
+           <td>@button-border-color</td>
+           <td><code>@skin-primary</code></td>
+       </tr>
+         <tr>
+           <td>@button-border-radius</td>
+           <td><code>@border-radius-base</code></td>
+       </tr>
+         <tr>
+           <td>@button-border-style</td>
+           <td><code>solid</code></td>
+       </tr>
+         <tr>
+           <td>@button-border-width</td>
+           <td><code>1px</code></td>
+       </tr>
+         <tr>
+           <td>@button-border</td>
+           <td><code>@button-border-width @button-border-style @button-border-color</code></td>
+       </tr>
+         <tr>
+           <td>@button-color</td>
+           <td><code>@skin-on-primary</code></td>
+       </tr>
+         <tr>
+           <td>@button-darken</td>
+           <td><code>10%</code></td>
+       </tr>
+         <tr>
+           <td>@button-decoration</td>
+           <td><code>none</code></td>
+       </tr>
+         <tr>
+           <td>@button-disabled-opacity</td>
+           <td><code>0.4</code></td>
+       </tr>
+         <tr>
+           <td>@button-font-family</td>
+           <td><code>inherit</code></td>
+       </tr>
+         <tr>
+           <td>@button-font-size</td>
+           <td><code>@font-size-medium</code></td>
+       </tr>
+         <tr>
+           <td>@button-font-weight</td>
+           <td><code>@font-weight-medium</code></td>
+       </tr>
+         <tr>
+           <td>@button-lighten</td>
+           <td><code>10%</code></td>
+       </tr>
+         <tr>
+           <td>@button-line-height</td>
+           <td><code>2.25rem</code></td>
+       </tr>
+         <tr>
+           <td>@button-margin</td>
+           <td><code>0 0 0 @space-base</code></td>
+       </tr>
+         <tr>
+           <td>@button-min-width</td>
+           <td><code>@space-64</code></td>
+       </tr>
+         <tr>
+           <td>@button-height</td>
+           <td><code>@space-36</code></td>
+       </tr>
+         <tr>
+           <td>@button-padding-horizontal</td>
+           <td><code>@space-16</code></td>
+       </tr>
+         <tr>
+           <td>@button-padding-vertical</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@button-padding</td>
+           <td><code>@button-padding-vertical @button-padding-horizontal</code></td>
+       </tr>
+         <tr>
+           <td>@button-text-transform</td>
+           <td><code>uppercase</code></td>
+       </tr>
+         <tr>
+           <td>@button-transition-duration</td>
+           <td><code>@transition-duration-default</code></td>
+       </tr>
+         <tr>
+           <td>@button-transition-property</td>
+           <td><code>background-color, border-color, box-shadow</code></td>
+       </tr>
+         <tr>
+           <td>@button-transition-timing</td>
+           <td><code>ease</code></td>
+       </tr>
+         <tr>
+           <td>@button-white-space</td>
+           <td><code>normal</code></td>
+       </tr>
+         <tr>
+           <td>@button-secondary-background</td>
+           <td><code>@skin-secondary</code></td>
+       </tr>
+         <tr>
+           <td>@button-secondary-border-color</td>
+           <td><code>@skin-secondary</code></td>
+       </tr>
+         <tr>
+           <td>@button-secondary-color</td>
+           <td><code>@skin-on-secondary</code></td>
+       </tr>
+         <tr>
+           <td>@button-info-background</td>
+           <td><code>@skin-info</code></td>
+       </tr>
+         <tr>
+           <td>@button-info-border-color</td>
+           <td><code>@skin-info</code></td>
+       </tr>
+         <tr>
+           <td>@button-info-color</td>
+           <td><code>@skin-on-info</code></td>
+       </tr>
+         <tr>
+           <td>@button-success-background</td>
+           <td><code>@skin-success</code></td>
+       </tr>
+         <tr>
+           <td>@button-success-border-color</td>
+           <td><code>@skin-success</code></td>
+       </tr>
+         <tr>
+           <td>@button-success-color</td>
+           <td><code>@skin-on-success</code></td>
+       </tr>
+         <tr>
+           <td>@button-warning-background</td>
+           <td><code>@skin-warn</code></td>
+       </tr>
+         <tr>
+           <td>@button-warning-border-color</td>
+           <td><code>@skin-warning</code></td>
+       </tr>
+         <tr>
+           <td>@button-warning-color</td>
+           <td><code>@skin-on-warning</code></td>
+       </tr>
+         <tr>
+           <td>@button-error-background</td>
+           <td><code>@skin-error</code></td>
+       </tr>
+         <tr>
+           <td>@button-error-border-color</td>
+           <td><code>@skin-error</code></td>
+       </tr>
+         <tr>
+           <td>@button-error-color</td>
+           <td><code>@skin-on-error</code></td>
+       </tr>
+         <tr>
+           <td>@button-flat-color</td>
+           <td><code>@skin-primary</code></td>
+       </tr>
+         <tr>
+           <td>@button-large-font-size</td>
+           <td><code>@font-size-large</code></td>
+       </tr>
+         <tr>
+           <td>@button-large-line-height</td>
+           <td><code>3rem</code></td>
+       </tr>
+         <tr>
+           <td>@button-large-height</td>
+           <td><code>@space-48</code></td>
+       </tr>
+         <tr>
+           <td>@button-large-padding</td>
+           <td><code>0 @space-16</code></td>
+       </tr>
+         <tr>
+           <td>@button-small-font-size</td>
+           <td><code>0.75rem</code></td>
+       </tr>
+         <tr>
+           <td>@button-small-line-height</td>
+           <td><code>2rem</code></td>
+       </tr>
+         <tr>
+           <td>@button-small-height</td>
+           <td><code>@space-32</code></td>
+       </tr>
+         <tr>
+           <td>@button-small-padding</td>
+           <td><code>0 @space-16</code></td>
+       </tr>
+         <tr>
+           <td>@button-link-background</td>
+           <td><code>transparent</code></td>
+       </tr>
+         <tr>
+           <td>@button-link-border</td>
+           <td><code>none</code></td>
+       </tr>
+         <tr>
+           <td>@button-link-color</td>
+           <td><code>@skin-info</code></td>
+       </tr>
+         <tr>
+           <td>@button-link-decoration</td>
+           <td><code>@button-decoration</code></td>
+       </tr>
+         <tr>
+           <td>@button-link-hover-color</td>
+           <td><code>darken(@button-link-color, @button-darken)</code></td>
+       </tr>
+         <tr>
+           <td>@button-link-hover-decoration</td>
+           <td><code>underline</code></td>
+       </tr>
+         <tr>
+           <td>@button-link-line-height</td>
+           <td><code>@line-height-normal</code></td>
+       </tr>
+         <tr>
+           <td>@button-link-transition</td>
+           <td><code>color</code></td>
+       </tr>
+         <tr>
+           <td>@button-fluid-margin-bottom</td>
+           <td><code>@space-base</code></td>
+       </tr>
+         <tr>
+           <td>@button-fluid-width</td>
+           <td><code>100%</code></td>
+       </tr>
+         <tr>
+           <td>@button-rounded-border-radius</td>
+           <td><code>@border-radius-rounded</code></td>
+       </tr>
+         <tr>
+           <td>@button-circle-border-radius</td>
+           <td><code>50%</code></td>
+       </tr>
+         <tr>
+           <td>@button-circle-line-height</td>
+           <td><code>@line-height-secondary</code></td>
+       </tr>
+         <tr>
+           <td>@button-circle-padding</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@button-circle-large-size</td>
+           <td><code>@space-48</code></td>
+       </tr>
+         <tr>
+           <td>@button-circle-size</td>
+           <td><code>@space-36</code></td>
+       </tr>
+         <tr>
+           <td>@button-circle-small-size</td>
+           <td><code>@space-32</code></td>
+       </tr>
+         <tr>
+           <td>@button-raised-shadow</td>
+           <td><code>@shadow-z2</code></td>
+       </tr>
+         <tr>
+           <td>@button-raised-active-shadow</td>
+           <td><code>@shadow-z8</code></td>
+       </tr>
+         <tr>
+           <td>@button-icon-size</td>
+           <td><code>@space-20 - 2</code></td>
+       </tr>
+         <tr>
+           <td>@button-icon-size-large</td>
+           <td><code>@space-20</code></td>
+       </tr>
+         <tr>
+           <td>@button-icon-margin</td>
+           <td><code>0 @space-8 0 0</code></td>
+       </tr>
+    </tbody>
+</table>
+            </div>
+
+        </div>
+
+      </div>
+      <hr >
+  </main>
+</main>
+<footer sg-footer></footer>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/kss-fullscreen.js"></script>
+<script src="kss-assets/kss-guides.js"></script>
+<script src="kss-assets/kss-markup.js"></script>
+<script src="kss-assets/js/highlight/highlight.pack.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+  var kssFullScreen = new KssFullScreen({
+    idPrefix: 'kss-fullscreen-',
+    bodyClass: 'kss-fullscreen-mode',
+    elementClass: 'is-fullscreen'
+  });
+  var kssGuides = new KssGuides({
+    bodyClass: 'kss-guides-mode'
+  });
+  var kssMarkup = new KssMarkup({
+    bodyClass: 'kss-markup-mode',
+    detailsClass: 'kss-markup'
+  });
+</script>
+<script src="kss-assets/js/animator.js"></script>
+<script src="kss-assets/js/modifier-helper.js"></script>
+<script src="kss-assets/js/skinSwitcher.js"></script>
+<script src="kss-assets/js/styleguide.js"></script>
+
+
+
+</body>
+</html>

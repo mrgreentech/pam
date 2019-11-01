@@ -8,13 +8,22 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="icon" type="image/png" href="kss-assets/img/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
+  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/kss-assets/img/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
   <link rel="stylesheet" href="kss-assets/kss.css">
   <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-  <link rel="stylesheet" href="kss-assets/css/pam.css">
-<link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+<link rel="stylesheet" href="kss-assets/css/pam.css">
 
 
   <script type="text/javascript">
@@ -35,7 +44,7 @@
             <img
               src="kss-assets/img/logo.svg"
               alt="PAM"
-              title="© 2016 Mr Green Tech All Rights Reserved"
+              title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
               height="48"
               width="48"
               sg-Logo>
@@ -77,18 +86,18 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-about.html">
-            <span class="kss-nav__ref">3</span><span class="kss-nav__name">About</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-base.html">
-            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Base</span>
+          <a class="kss-nav__menu-link" href="section-general.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">General</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
           <a class="kss-nav__menu-link" href="section-grids.html">
-            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Grids</span>
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Grids</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-skin.html">
+            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Skin</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -198,17 +207,17 @@ shrink to 25% on large-sized screens and above.</p>
 
             <div class="kss-modifier__example">
               <div pam-Grid>
-    <div pam-Unit="1-1 small:1-2 large:1-4">
-        <div pam-Unit-Test>1 &#10141; 2 &#10141; 4</div>
+    <div pam-Unit="1-1 small:1-2 medium:1-3 large:1-4" pam-hide="small">
+        <div pam-Unit-Test>1 &#10141; 2 &#10141; 3 &#10141; 4</div>
     </div>
-    <div pam-Unit="1-1 small:1-2 large:1-4">
-        <div pam-Unit-Test>1 &#10141; 2 &#10141; 4</div>
+    <div pam-Unit="1-1 small:1-2 medium:1-3 large:1-4">
+        <div pam-Unit-Test>1 &#10141; 2 &#10141; 3 &#10141; 4</div>
     </div>
-    <div pam-Unit="1-1 small:1-2 large:1-4">
-        <div pam-Unit-Test>1 &#10141; 2 &#10141; 4</div>
+    <div pam-Unit="1-1 small:1-2 medium:1-3 large:1-4">
+        <div pam-Unit-Test>1 &#10141; 2 &#10141; 3 &#10141; 4</div>
     </div>
-    <div pam-Unit="1-1 small:1-2 large:1-4">
-        <div pam-Unit-Test>1 &#10141; 2 &#10141; 4</div>
+    <div pam-Unit="1-1 small:1-2 medium:1-3 large:1-4">
+        <div pam-Unit-Test>1 &#10141; 2 &#10141; 3 &#10141; 4</div>
     </div>
 </div>
               <div class="kss-modifier__example-footer"></div>
@@ -251,17 +260,17 @@ shrink to 25% on large-sized screens and above.</p>
                   </p>
               </summary>
               <pre><code class="html">&lt;div pam-Grid&gt;
-    &lt;div pam-Unit&#x3D;&quot;1-1 small:1-2 large:1-4&quot;&gt;
-        &lt;div pam-Unit-Test&gt;1 &amp;#10141; 2 &amp;#10141; 4&lt;/div&gt;
+    &lt;div pam-Unit&#x3D;&quot;1-1 small:1-2 medium:1-3 large:1-4&quot; pam-hide&#x3D;&quot;small&quot;&gt;
+        &lt;div pam-Unit-Test&gt;1 &amp;#10141; 2 &amp;#10141; 3 &amp;#10141; 4&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div pam-Unit&#x3D;&quot;1-1 small:1-2 large:1-4&quot;&gt;
-        &lt;div pam-Unit-Test&gt;1 &amp;#10141; 2 &amp;#10141; 4&lt;/div&gt;
+    &lt;div pam-Unit&#x3D;&quot;1-1 small:1-2 medium:1-3 large:1-4&quot;&gt;
+        &lt;div pam-Unit-Test&gt;1 &amp;#10141; 2 &amp;#10141; 3 &amp;#10141; 4&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div pam-Unit&#x3D;&quot;1-1 small:1-2 large:1-4&quot;&gt;
-        &lt;div pam-Unit-Test&gt;1 &amp;#10141; 2 &amp;#10141; 4&lt;/div&gt;
+    &lt;div pam-Unit&#x3D;&quot;1-1 small:1-2 medium:1-3 large:1-4&quot;&gt;
+        &lt;div pam-Unit-Test&gt;1 &amp;#10141; 2 &amp;#10141; 3 &amp;#10141; 4&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div pam-Unit&#x3D;&quot;1-1 small:1-2 large:1-4&quot;&gt;
-        &lt;div pam-Unit-Test&gt;1 &amp;#10141; 2 &amp;#10141; 4&lt;/div&gt;
+    &lt;div pam-Unit&#x3D;&quot;1-1 small:1-2 medium:1-3 large:1-4&quot;&gt;
+        &lt;div pam-Unit-Test&gt;1 &amp;#10141; 2 &amp;#10141; 3 &amp;#10141; 4&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </details>
@@ -299,6 +308,7 @@ shrink to 25% on large-sized screens and above.</p>
   });
 </script>
 <script src="kss-assets/js/animator.js"></script>
+<script src="kss-assets/js/modifier-helper.js"></script>
 <script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 
