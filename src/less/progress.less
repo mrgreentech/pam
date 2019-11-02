@@ -1,0 +1,216 @@
+// Progress
+//
+// Communicate that somethings is happening with a progress.
+// They can be used on almost all elements `div`, `span` etc.
+// Use type or size modifiers to adopt the progress to your context.
+// Out of the box there are three sizes `small`, `default` and `large`.
+// To control the visibility of the progress use the trait
+// `pam-visibility="{hide | hidden | invisible}"`.
+//
+// Weight: 15
+//
+// Style guide: progress
+
+//  Variables
+// ==================================================================
+
+@circle-height: @space-24;
+@circle-width: @space-24;
+@circle-border-width: 0.2rem;
+@circle-border-color: lighten(@skin-primary, 40%);
+@circle-border-indicator-color: @skin-primary;
+
+@circle-small-height: @space-16;
+@circle-small-width: @space-16;
+
+@circle-large-height: @space-48;
+@circle-large-width: @space-48;
+
+@progress-bar-timing-function: ease;
+@progress-bar-transition-duration: 0.6s;
+@progress-bar-transition-property: width;
+
+@progress-linear-bg: lighten(@skin-primary, 40%);
+@progress-linear-duration: 1.2s;
+@progress-linear-height: @space-4;
+@progress-linear-indicator-bg: @skin-primary;
+@progress-linear-iteration-count: infinite;
+@progress-linear-margin: 0;
+@progress-linear-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+@progress-linear-width: 100%;
+@progress-linear-width: 100%;
+
+// ==================================================================
+//  Progress
+// ==================================================================
+
+[pam-Progress] {
+    display: inline-block;
+    line-height: 0;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    text-transform: none;
+    vertical-align: middle;
+}
+
+//  Modifier: Circle
+// ==================================================================
+
+// Circle
+//
+// The classic spinning progress, can for example be used in buttons.
+//
+// Markup:
+// <div pam-Progress="circle small"></div>
+// <div pam-Progress="circle"></div>
+// <div pam-Progress="circle large"></div>
+//
+// Weight: 1
+//
+// Style guide: progress.circle
+
+[pam-Progress~="circle"] {
+    animation: spin 0.75s infinite cubic-bezier(0.42, 0, 1, 1);
+    border-radius: 50%;
+    border: @circle-border-width solid @circle-border-color;
+    border-top-color: @circle-border-indicator-color;
+    height: @circle-height;
+    width: @circle-width;
+}
+
+//  Size modifier: Circle
+// ==================================================================
+
+[pam-Progress~="circle"][pam-Progress~="small"] {
+    border-width: @circle-border-width / 2;
+    height: @circle-small-height;
+    width: @circle-small-width;
+}
+
+[pam-Progress~="circle"][pam-Progress~="large"] {
+    border-width: @circle-border-width * 1.25;
+    height: @circle-large-height;
+    width: @circle-large-width;
+}
+
+//  Animation: Spin
+// ==================================================================
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+//  Modifier: linear
+// ==================================================================
+
+// Linear
+//
+// Linear progress indicators display progress of a process that has a
+// fixed or unknown timeline.
+//
+// Weight: 2
+//
+// Style guide: progress.linear
+
+// Determinate
+//
+// Display the length of a determinate process with lineary progress.
+// Change the progress by using the `size` trait or inline styles. For example
+// `pam-size="w:1-5"` or `style="width: 57%;"`.
+//
+// Markup:
+// <div pam-progress="linear" pam-space="mb:4">
+//     <div pam-progress-bar pam-size="w:1-4"></div>
+// </div>
+// <div pam-progress="linear">
+//     <div pam-progress-bar style="width: 57%;"></div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: progress.linear.determinate
+
+// Indeterminate
+//
+// Display the length of a process with an unspecified time line.
+//
+// Markup:
+// <div pam-progress="linear loading"></div>
+//
+// Weight: 2
+//
+// Style guide: progress.linear.Indeterminate
+
+[pam-progress~="linear"],
+[pam-progress~="linear"]::before {
+    height: @progress-linear-height;
+    margin: @progress-linear-margin;
+    width: @progress-linear-width;
+}
+
+[pam-progress~="linear"] {
+    background-color: @progress-linear-bg;
+    display: flex;
+
+    [pam-progress-bar] {
+        background-color: @progress-linear-indicator-bg;
+        transition: @progress-bar-transition-property @progress-bar-transition-duration @progress-bar-timing-function;
+        width: 0;
+    }
+
+    &[pam-progress~="loading"]::before {
+        animation: linear-progress @progress-linear-duration @progress-linear-timing-function @progress-linear-iteration-count;
+        background-color: @progress-linear-indicator-bg;
+        content: "";
+    }
+}
+
+@keyframes linear-progress {
+    0% {
+        margin-left: 0;
+        margin-right: 100%;
+    }
+    50% {
+        margin-left: 25%;
+        margin-right: 0%;
+    }
+    100% {
+        margin-left: 100%;
+        margin-right: 0;
+    }
+}
+
+//  Examples
+// ==================================================================
+
+// Examples
+//
+// Some examples of circle progress in button and input context.
+//
+// Markup:
+// <form pam-Form>
+//     <div pam-Form-Inline="reverse">
+//         <label for="group-input-progress" pam-Form-Icon>
+//             <div pam-Progress="circle small"></div>
+//         </label>
+//         <input id="group-input-progress" type="text" placeholder="Input group progress" pam-Form-Control disabled>
+//     </div>
+// <form>
+//
+// <button pam-Button>
+//     Button
+//     <div pam-Progress="circle small"></div>
+// </button>
+//
+// Weight: 3
+//
+// Style guide: progress.examples
+
+// <VARIABLES>
