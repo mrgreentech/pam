@@ -138,6 +138,23 @@
 //
 // Style guide: traits.position.explicit
 
+// Outside
+//
+// Position elements outside of the parent element element by using the `out` modifier.
+//
+// Markup:
+// <div pam-Flex="center">
+//     <div pam-size="w:1-2" pam-position="relative">
+//         <img pam-image src="kss-assets/img/photo-position.jpg" alt="Joanna Kosinska">
+//         <div pam-position="absolute center:left out" pam-overlay="dark" pam-flex="middle">Center left</div>
+//         <div pam-position="absolute center:right out" pam-overlay="dark" pam-flex="center">Center right</div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Style guide: traits.position.out
+
 [pam-position~="top:left"] {
     top: 0 !important;
     left: 0 !important;
@@ -250,9 +267,9 @@
 //     </div>
 // </div>
 //
-// Weight: 1
+// Weight: 3
 //
-// Style guide: traits.position.location.cover
+// Style guide: traits.position.cover
 
 [pam-position~="cover"] {
     bottom: 0 !important;
