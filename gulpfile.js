@@ -51,7 +51,7 @@ function concatBase() {
         .pipe(plumber())
         .pipe(concat(files.src.lessBase))
         .pipe(banners(banner, { pkg: pkg }))
-        .pipe(dest(paths.build.less));
+        .pipe(dest(paths.build.lessComponents));
 }
 
 // Add variables documentation
