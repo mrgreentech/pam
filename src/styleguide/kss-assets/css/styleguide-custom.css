@@ -534,16 +534,7 @@ section.sg-block.sg-section-hooks code {
     margin: 12px 0;
 }
 
-#kssref-alert-hooks .kss-style code,
-#kssref-buttons-hooks .kss-style code,
-#kssref-divider-hooks .kss-style code,
-#kssref-forms-hooks .kss-style code,
-#kssref-grids-hooks .kss-style code,
-#kssref-lists-hooks .kss-style code,
-#kssref-menus-hooks .kss-style code,
-#kssref-tables-hooks .kss-style code,
-#kssref-tags-hooks .kss-style code,
-#kssref-typography-hooks .kss-style code {
+[id*="hooks"] .kss-style code {
     background-color: #e0e0e0;
     border-radius: 0.25em;
     color: #555;
