@@ -16,6 +16,10 @@
 //  Size
 // ==================================================================
 
+[pam-size] {
+    .hook-size;
+}
+
 //  Width modifiers
 // ==================================================================
 
@@ -56,24 +60,59 @@
 
 // Fixed Width
 //
-// Set a  fixed width with `w:{ number | px }`. Multiplier for `number` is 16.
+// Set a fixed width with `w:{ number }px`. These are exact pixel widths
+// which covers multiples of four up to 12px.
 //
 // Markup:
 // <div pam-size="{{modifier_class}} h:1" pam-skin="bg:gray:200"></div>
 //
 // w%3Apx - Set width to 1px.
+// w%3A2px - Set width to 2px.
+// w%3A4px - Set width to 4px.
+// w%3A8px - Set width to 8px.
+// w%3A12px - Set width to 12px.
+//
+// Weight: 2
+//
+// Style guide: traits.size.width-fixed
+
+// Fixed multiplier width
+//
+// Set a  fixed width with `w:{ number }`. With the range `0-20`
+// and the multiplier for `number` is 16.
+//
+// Markup:
+// <div pam-size="{{modifier_class}} h:1" pam-skin="bg:gray:200"></div>
+//
+// w%3A0 - Set width to 0.
 // w%3A1 - Set width to 1 * multiplier.
 // w%3A5 - Set width to 5.* multiplier
 // w%3A10 - Set width to 10 * multiplier.
 // w%3A15 - Set width to 15 * multiplier.
 // w%3A20 - Set width to 20 * multiplier.
 //
-// Weight: 2
+// Weight: 3
 //
-// Style guide: traits.size.width-fixed
+// Style guide: traits.size.width-fixed-multiplier
 
 [pam-size~="w:px"] {
     width: 1px !important;
+}
+
+[pam-size~="w:2px"] {
+    width: @space-2 !important;
+}
+
+[pam-size~="w:4px"] {
+    width: @space-4 !important;
+}
+
+[pam-size~="w:8px"] {
+    width: @space-8 !important;
+}
+
+[pam-size~="w:12px"] {
+    width: @space-12 !important;
 }
 
 .sizes(pam-size, width, 20, "w") !important;
@@ -238,26 +277,60 @@
 //  Fixed
 // ------------------------------------------------------------------
 
-// Fixed Height
+// Fixed height
+//
+// Set a fixed height with `h:{ number }px`. These are exact pixel heights
+// which covers multiples of four up to 12px.
+//
+// Markup:
+// <div pam-size="{{modifier_class}} w:2" pam-skin="bg:gray:200"></div>
+//
+// h%3Apx - Set height to 1px.
+// h%3A2px - Set height to 2px.
+// h%3A4px - Set height to 4px.
+// h%3A8px - Set height to 8px.
+// h%3A12px - Set height to 12px.
+//
+// Weight: 9
+//
+// Style guide: traits.size.height-fixed
+
+// Fixed multiplier height
 //
 // Set a fixed height with `h:{ number | px }`. Multiplier for `number` is 16.
 //
 // Markup:
 // <div pam-size="{{modifier_class}} w:2" pam-skin="bg:gray:200"></div>
 //
-// h%3Apx - Set height to 1px.
+// h%3A0 - Set height to 0.
 // h%3A1 - Set height to 1 * multiplier.
 // h%3A2 - Set height to 2.* multiplier
 // h%3A3 - Set height to 3 * multiplier.
 // h%3A4 - Set height to 4 * multiplier.
 // h%3A5 - Set height to 5 * multiplier.
 //
-// Weight: 9
+// Weight: 10
 //
-// Style guide: traits.size.height-fixed
+// Style guide: traits.size.height-fixed-multiplier
 
 [pam-size~="h:px"] {
-    height: 1px !important;
+    height: @space-1 !important;
+}
+
+[pam-size~="h:2px"] {
+    height: @space-2 !important;
+}
+
+[pam-size~="h:4px"] {
+    height: @space-4 !important;
+}
+
+[pam-size~="h:8px"] {
+    height: @space-8 !important;
+}
+
+[pam-size~="h:12px"] {
+    height: @space-12 !important;
 }
 
 .sizes(pam-size, height, 20, "h") !important;
@@ -274,7 +347,7 @@
 //     <div pam-size="h:full w:5" pam-skin="bg:gray:200"></div>
 // </div>
 //
-// Weight: 10
+// Weight: 11
 //
 // Style guide: traits.size.height-full
 
@@ -296,7 +369,7 @@
 //     </div>
 // </div>
 //
-// Weight: 11
+// Weight: 12
 //
 // Style guide: traits.size.min-height
 
@@ -326,7 +399,7 @@
 //     </div>
 // </div>
 //
-// Weight: 12
+// Weight: 13
 //
 // Style guide: traits.size.max-height
 
@@ -337,3 +410,19 @@
 [pam-size~="max-h:viewport"] {
     max-height: 100vh !important;
 }
+
+// Hooks
+// ==================================================================
+
+// Hooks
+//
+// `.hook-size`
+//
+// Weight: 20
+//
+// Style guide: traits.size.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-size() {
+}
+/* stylelint-enable */
