@@ -34,10 +34,10 @@
 @button-font-size: @font-size-medium;
 @button-font-weight: @font-weight-medium;
 @button-lighten: 10%;
-@button-line-height: 2.25rem;
+@button-line-height: @space-36 - (@button-border-width * 2);
 @button-margin: 0 0 0 @space-base;
 @button-min-width: @space-64;
-@button-height: @space-36;
+@button-height: auto;
 @button-padding-horizontal: @space-16;
 @button-padding-vertical: 0;
 @button-padding: @button-padding-vertical @button-padding-horizontal;
@@ -70,13 +70,13 @@
 @button-flat-color: @skin-primary;
 
 @button-large-font-size: @font-size-large;
-@button-large-line-height: 3rem;
-@button-large-height: @space-48;
+@button-large-line-height: @space-48 - (@button-border-width * 2);
+@button-large-height: auto;
 @button-large-padding: 0 @space-16;
 
 @button-small-font-size: 0.75rem;
-@button-small-line-height: 2rem;
-@button-small-height: @space-32;
+@button-small-line-height: @space-32 - (@button-border-width * 2);
+@button-small-height: auto;
 @button-small-padding: 0 @space-16;
 
 @button-link-background: transparent;
