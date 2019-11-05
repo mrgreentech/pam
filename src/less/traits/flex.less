@@ -28,6 +28,8 @@
 
 [pam-flex] {
     display: flex !important;
+
+    .hook-flex;
 }
 
 [pam-flex~="inline"] {
@@ -328,3 +330,19 @@
 [pam-flex-dimension~="none"] {
     flex: none !important;
 }
+
+// Hooks
+// ========================================================================
+
+// Hooks
+//
+// `.hook-flex`
+//
+// Weight: 10
+//
+// Style guide: traits.flex.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-flex() {
+}
+/* stylelint-enable */

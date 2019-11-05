@@ -40,8 +40,13 @@
 //
 // Style guide: traits.space
 
+// ==================================================================
 //  Space
 // ==================================================================
+
+[pam-space] {
+    .hook-space;
+}
 
 [pam-space~="none"] {
     margin: 0 !important;
@@ -85,3 +90,19 @@
 .spacing(padding-left, "pl", 6, 0);
 .spacing-x(padding, "px", 6, 0);
 .spacing-y(padding, "py", 6, 0);
+
+// Hooks
+// ========================================================================
+
+// Hooks
+//
+// `.hook-space`
+//
+// Weight: 10
+//
+// Style guide: traits.space.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-space() {
+}
+/* stylelint-enable */

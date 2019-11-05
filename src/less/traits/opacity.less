@@ -22,6 +22,10 @@
 //  Opacity
 // ==================================================================
 
+[pam-opacity] {
+    .hook-opacity;
+}
+
 [pam-opacity~="100"] {
     opacity: @opacity-100;
 }
@@ -45,3 +49,19 @@
 [pam-opacity~="0"] {
     opacity: @opacity-0;
 }
+
+// Hooks
+// ========================================================================
+
+// Hooks
+//
+// `.hook-opacity`
+//
+// Weight: 10
+//
+// Style guide: traits.opacity.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-opacity() {
+}
+/* stylelint-enable */
