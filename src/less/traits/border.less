@@ -1,6 +1,7 @@
 // Border
 //
-// Control border color and radius by using the `pam-border` trait.
+// Trait to control border properties `width`, `style`, `color` and `radius`
+// with the `pam-border` attribute.
 //
 // Weight: 3
 //
@@ -11,71 +12,199 @@
 // ==================================================================
 
 [pam-border] {
-    border: @border-width-base @border-style @skin-border-primary;
+    .hook-border;
 }
 
-// Modifier: color
+[pam-border~="none"] {
+    border: none !important;
+}
+
+// Width modifiers
 // ==================================================================
 
-// Color
+// Width
 //
-// Control the border color with `pam-border`.
+// Control border width. Format `pam-border="w:{size}"`.
 //
 // Markup:
-// <div pam-Grid pam-Grid-Control="space">
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="primary" grid-block>
-//             <span>Primary</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="primary:light" grid-block>
-//             <span>Primary light</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="primary:dark" grid-block>
-//             <span>Primary dark</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="secondary" grid-block>
-//             <span>Secondary</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="secondary:light" grid-block>
-//             <span>Secondary light</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="secondary:dark" grid-block>
-//             <span>Secondary dark</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="info" grid-block>
-//             <span>Info</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="success" grid-block>
-//             <span>Success</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="warning" grid-block>
-//             <span>Warning</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="error" grid-block>
-//             <span>error</span>
-//         </div>
-//     </div>
+// <div pam-border="{{modifier_class}}" pam-skin="bg:gray:100" pam-size="w:10 h:3">
 // </div>
 //
+// w - Set border to default width
+// w%3A0 - Set border width to 0.
+// w%3A2 - Set border width to 2px.
+// w%3A4 - Set border width to 4px.
+//
 // Weight: 1
+//
+// Style guide: traits.border.width
+
+// Width sides
+//
+// Control border width for individual sides. Format `pam-border="{side}w:{size}"`.
+//
+// Markup:
+// <div pam-border="{{modifier_class}}" pam-skin="bg:gray:100" pam-size="w:10 h:3">
+// </div>
+//
+// tw - Set border to default width
+// rw - Set border to second width
+// bw - Set border to second width
+// lw - Set border to second width
+//
+// Weight: 2
+//
+// Style guide: traits.border.width-sides
+
+[pam-border~="w:0"] {
+    border-width: @border-width-0 !important;
+}
+
+[pam-border~="tw:0"] {
+    border-top-width: @border-width-0 !important;
+}
+
+[pam-border~="rw:0"] {
+    border-right-width: @border-width-0 !important;
+}
+
+[pam-border~="bw:0"] {
+    border-bottom-width: @border-width-0 !important;
+}
+
+[pam-border~="lw:0"] {
+    border-left-width: @border-width-0 !important;
+}
+
+[pam-border~="w"] {
+    border-width: @border-width !important;
+}
+
+[pam-border~="tw"] {
+    border-top-width: @border-width !important;
+}
+
+[pam-border~="rw"] {
+    border-right-width: @border-width !important;
+}
+
+[pam-border~="bw"] {
+    border-bottom-width: @border-width !important;
+}
+
+[pam-border~="lw"] {
+    border-left-width: @border-width !important;
+}
+
+[pam-border~="w:2"] {
+    border-width: @border-width-2 !important;
+}
+
+[pam-border~="tw:2"] {
+    border-top-width: @border-width-2 !important;
+}
+
+[pam-border~="rw:2"] {
+    border-right-width: @border-width-2 !important;
+}
+
+[pam-border~="bw:2"] {
+    border-bottom-width: @border-width-2 !important;
+}
+
+[pam-border~="lw:2"] {
+    border-left-width: @border-width-2 !important;
+}
+
+[pam-border~="w:4"] {
+    border-width: @border-width-4 !important;
+}
+
+[pam-border~="tw:4"] {
+    border-top-width: @border-width-4 !important;
+}
+
+[pam-border~="rw:4"] {
+    border-right-width: @border-width-4 !important;
+}
+
+[pam-border~="bw:4"] {
+    border-bottom-width: @border-width-4 !important;
+}
+
+[pam-border~="lw:4"] {
+    border-left-width: @border-width-4 !important;
+}
+
+// Style modifiers
+// ==================================================================
+
+// Border style
+//
+// Control border style. Format `pam-border="{style}"`.
+//
+// Markup:
+// <div pam-border="w:4 {{modifier_class}}" pam-skin="bg:gray:100" pam-size="w:10 h:3">
+// </div>
+//
+// no%3Astyle - Set border style to none.
+// dashed - Set border style to dashed.
+// dotted - Set border style to dotted.
+// double - Set border style to double.
+// solid - Set border style to solid.
+//
+// Weight: 3
+//
+// Style guide: traits.border.style
+
+[pam-border~="no:style"] {
+    border-style: none;
+}
+
+[pam-border~="solid"] {
+    border-style: solid;
+}
+
+[pam-border~="dashed"] {
+    border-style: dashed;
+}
+
+[pam-border~="dotted"] {
+    border-style: dotted;
+}
+
+[pam-border~="double"] {
+    border-style: double;
+}
+
+// Color modifiers
+// ==================================================================
+
+// Border color
+//
+// Control the border color with `pam-border={skin-colors}`.
+//
+// <span pam-Tag="info">Note</span> You always need to declare a border width.
+//
+// Markup:
+// Markup:
+// <div pam-border="w:2 {{modifier_class}}" pam-size="w:10 h:3">
+// </div>
+//
+// primary - Set border color to primary.
+// primary%3Alight - Set border color to primary light.
+// primary%3Adark - Set border color to primary dark.
+// secondary - Set border color to secondary.
+// secondary%3Alight - Set border color to secondary light.
+// secondary%3Adark - Set border color to secondary dark.
+// background - Set border color to backround.
+// surface - Set border color to surface.
+// error - Set border color to error.
+// info - Set border color to info.
+// success - Set border color to success.
+// warning - Set border color to warning.
+//
+// Weight: 4
 //
 // Style guide: traits.border.color
 
@@ -131,91 +260,58 @@
     border-color: @skin-warning !important;
 }
 
-// Modifier: radius
+// Radius modifiers
 // ==================================================================
 
-// Radius
+// Border radius
 //
-// Control border radius with `pam-border="radius"` trait.
+// Control border radius with `pam-border="radius:{type}"` trait.
 //
 // Markup:
-// <div pam-Grid pam-Grid-Control="space">
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="radius:small" grid-block>
-//             <span>Small</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="radius" grid-block>
-//             <span>Default</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="radius:large" grid-block>
-//             <span>Large</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="radius:rounded" grid-block>
-//             <span>Rounded</span>
-//         </div>
-//     </div>
+// <div pam-border="w:2 {{modifier_class}}" pam-size="w:10 h:3">
 // </div>
 //
-// Weight: 1
+// radius%3Asm - Set border style to none.
+// radius - Set border style to dashed.
+// radius%3Alg - Set border style to dotted.
+// radius%3Arounded - Set border style to double.
+//
+// Weight: 5
 //
 // Style guide: traits.border.radius
 
 [pam-border~="radius"] {
-    border-radius: @border-radius-base;
+    border-radius: @border-radius !important;
 }
 
-[pam-border~="radius:small"] {
-    border-radius: @border-radius-small;
+[pam-border~="radius:none"] {
+    border-radius: @border-radius-none !important;
 }
 
-[pam-border~="radius:large"] {
-    border-radius: @border-radius-large;
+[pam-border~="radius:sm"] {
+    border-radius: @border-radius-sm !important;
+}
+
+[pam-border~="radius:lg"] {
+    border-radius: @border-radius-lg !important;
 }
 
 [pam-border~="radius:rounded"] {
-    border-radius: @border-radius-rounded;
+    border-radius: @border-radius-rounded !important;
 }
 
-// Modifier: width
-// ==================================================================
+// Hooks
+// ========================================================================
 
-// Width
+// Hooks
 //
-// Control border width with `pam-border="width"`.
+// `.hook-border`
 //
-// Markup:
-// <div pam-Grid pam-Grid-Control="space">
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="" grid-block>
-//             <span>Default</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="width:small" grid-block>
-//             <span>Small</span>
-//         </div>
-//     </div>
-//     <div pam-Unit="1-2 medium:1-5">
-//         <div pam-border="width:large" grid-block>
-//             <span>Large</span>
-//         </div>
-//     </div>
-// </div>
+// Weight: 10
 //
-// Weight: 1
-//
-// Style guide: traits.border.width
+// Style guide: traits.border.hooks
 
-[pam-border~="width:small"] {
-    border-width: @border-width-small;
+/* stylelint-disable block-no-empty */
+.hook-border() {
 }
-
-[pam-border~="width:large"] {
-    border-width: @border-width-large;
-}
+/* stylelint-enable */

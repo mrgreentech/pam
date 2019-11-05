@@ -51,7 +51,7 @@ function concatBase() {
         .pipe(plumber())
         .pipe(concat(files.src.lessBase))
         .pipe(banners(banner, { pkg: pkg }))
-        .pipe(dest(paths.build.less));
+        .pipe(dest(paths.build.lessComponents));
 }
 
 // Add variables documentation
@@ -63,32 +63,34 @@ function variablesDocs() {
 
 // Styles
 function css() {
-    return src([paths.build.lessFile, paths.skin.lessFileGlob])
-        .pipe(
-            plumber(function(error) {
-                console.log(error); // eslint-disable-line no-console
-                this.emit("end");
-            })
-        )
-        .pipe(
-            less({
-                plugins: [new lessPluginAutoprefix()]
-            })
-        )
-        .pipe(dest(paths.build.base))
-        .pipe(
-            cleanCss({
-                compatibility: "*",
-                format: "keep-breaks",
-                level: 2
-            })
-        )
-        .pipe(
-            rename({
-                suffix: ".min"
-            })
-        )
-        .pipe(dest(paths.build.base));
+    return (
+        src([paths.build.lessFile, paths.skin.lessFileGlob])
+            // .pipe(
+            //     plumber(function(error) {
+            //         console.log(error); // eslint-disable-line no-console
+            //         this.emit("end");
+            //     })
+            // )
+            .pipe(
+                less({
+                    plugins: [new lessPluginAutoprefix()]
+                })
+            )
+            .pipe(dest(paths.build.base))
+            .pipe(
+                cleanCss({
+                    compatibility: "*",
+                    format: "keep-breaks",
+                    level: 2
+                })
+            )
+            .pipe(
+                rename({
+                    suffix: ".min"
+                })
+            )
+            .pipe(dest(paths.build.base))
+    );
 }
 
 function cssLint() {

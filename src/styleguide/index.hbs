@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
   <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -24,17 +24,6 @@
       rel="stylesheet">
   {{!-- TODO: Add stylesheets dynamically, default or latest selected custom skin. --}}
   {{{styles}}}
-
-  <script type="text/javascript">
-  var skinsData = [
-    {{#each options.skins}}
-      {
-        path: "{{this.path}}",
-        name: "{{this.name}}"
-      },
-    {{/each}}
-  ];
-  </script>
 </head>
 <body id="kss-node" {{#if template.isItem}}class="kss-fullscreen-mode"{{/if}} {{#if template.isHomepage}}sg-node="homepage"{{/if}}>
 

@@ -22,7 +22,7 @@
 
 @button-background: @skin-primary;
 @button-border-color: @skin-primary;
-@button-border-radius: @border-radius-base;
+@button-border-radius: @border-radius;
 @button-border-style: solid;
 @button-border-width: 1px;
 @button-border: @button-border-width @button-border-style @button-border-color;
@@ -34,10 +34,10 @@
 @button-font-size: @font-size-medium;
 @button-font-weight: @font-weight-medium;
 @button-lighten: 10%;
-@button-line-height: 2.25rem;
+@button-line-height: @space-36 - 1;
 @button-margin: 0 0 0 @space-base;
 @button-min-width: @space-64;
-@button-height: @space-36;
+@button-height: auto;
 @button-padding-horizontal: @space-16;
 @button-padding-vertical: 0;
 @button-padding: @button-padding-vertical @button-padding-horizontal;
@@ -69,15 +69,15 @@
 
 @button-flat-color: @skin-primary;
 
-@button-large-font-size: @font-size-large;
-@button-large-line-height: 3rem;
-@button-large-height: @space-48;
-@button-large-padding: 0 @space-16;
+@button-lg-font-size: @font-size-large;
+@button-lg-line-height: @space-48 - 1;
+@button-lg-height: auto;
+@button-lg-padding: 0 @space-16;
 
-@button-small-font-size: 0.75rem;
-@button-small-line-height: 2rem;
-@button-small-height: @space-32;
-@button-small-padding: 0 @space-16;
+@button-sm-font-size: 0.75rem;
+@button-sm-line-height: @space-32 - 2;
+@button-sm-height: auto;
+@button-sm-padding: 0 @space-16;
 
 @button-link-background: transparent;
 @button-link-border: none;
@@ -96,16 +96,17 @@
 @button-circle-border-radius: 50%;
 @button-circle-line-height: @line-height-secondary;
 @button-circle-padding: 0;
-@button-circle-large-size: @space-48;
-@button-circle-size: @space-36;
-@button-circle-small-size: @space-32;
+@button-circle-lg-size: @space-48 - 1;
+@button-circle-size: @space-36 - 1;
+@button-circle-sm-size: @space-32 - 2;
 
 @button-raised-shadow: @shadow-z2;
 @button-raised-active-shadow: @shadow-z8;
 
 @button-icon-size: @space-20 - 2;
-@button-icon-size-large: @space-20;
-@button-icon-margin: 0 @space-8 0 0;
+@button-icon-size-lg: @space-20;
+@button-icon-margin-right: 0 @space-8 0 0;
+@button-icon-margin-left: 0 0 0 @space-8;
 
 // ==================================================================
 //  Button
@@ -120,7 +121,7 @@
 // <div pam-Button="{{modifier_class}}">Button</div>
 // <button pam-Button="{{modifier_class}} icon">
 //     <i class="material-icons" pam-Button-Icon>android</i>
-//     <span>Icon</span>
+//     <span pam-Button-Label>Icon</span>
 // </button>
 //
 // flat - These buttons are used for low-emphasis actions. For example on cards and dialogs.
@@ -389,15 +390,19 @@ a[pam-Button~="link"] {
 // Sub-object: icon
 // ==================================================================
 
-i[pam-Button-Icon] {
+[pam-Button-Icon] {
     display: inline-block;
     font-size: @button-icon-size;
     height: @button-icon-size;
-    margin: @button-icon-margin;
+    margin: @button-icon-margin-right;
     vertical-align: sub;
     width: @button-icon-size;
 
     .hook-button-icon;
+}
+
+[pam-Button-Label] + [pam-Button-Icon] {
+    margin: @button-icon-margin-left;
 }
 
 // Modifiers: size
@@ -405,42 +410,21 @@ i[pam-Button-Icon] {
 
 // Size
 //
-// Sometimes size matters. Use the `small` or `large`
+// Sometimes size matters. Use the `sm` or `lg`
 // modifier to make the button smaller or larger.
 //
 // Markup:
-// <div sg-Stack>
-//     <div>
-//         <button pam-Button="large">Large</button>
-//         <button pam-Button="large">
-//             <i class="material-icons" pam-Button-Icon>android</i>
-//             <span>Icon</span>
-//         </button>
-//         <button pam-Button="circle large">
-//             <i class="material-icons">add</i>
-//         </button>
-//     </div>
-//     <div>
-//         <button pam-Button="">Default</button>
-//         <button pam-Button="">
-//             <i class="material-icons" pam-Button-Icon>android</i>
-//             <span>Icon</span>
-//         </button>
-//         <button pam-Button="circle ">
-//             <i class="material-icons">add</i>
-//         </button>
-//     </div>
-//     <div>
-//         <button pam-Button="small">small</button>
-//         <button pam-Button="small">
-//             <i class="material-icons" pam-Button-Icon>android</i>
-//             <span>Icon</span>
-//         </button>
-//         <button pam-Button="circle small">
-//             <i class="material-icons">add</i>
-//         </button>
-//     </div>
-// </div>
+// <button pam-Button="{{modifier_class}}">Button</button>
+// <button pam-Button="{{modifier_class}}">
+//     <i class="material-icons" pam-Button-Icon>android</i>
+//     <span pam-Button-Label>Icon</span>
+// </button>
+// <button pam-Button="circle {{modifier_class}}">
+//     <i class="material-icons">add</i>
+// </button>
+//
+// sm - Small button size.
+// lg - Large button size.
 //
 // Weight: 5
 //
@@ -448,44 +432,36 @@ i[pam-Button-Icon] {
 
 // large
 
-[pam-Button~="large"],
-a[pam-Button~="large"] {
-    font-size: @button-large-font-size;
-    line-height: @button-large-line-height;
-    height: @button-large-height;
-    padding: @button-large-padding;
+[pam-Button~="lg"],
+a[pam-Button~="lg"],
+[pam-Button-Group~="lg"] > [pam-Button],
+[pam-Button-Group~="lg"] > a[pam-Button] {
+    font-size: @button-lg-font-size;
+    line-height: @button-lg-line-height;
+    height: @button-lg-height;
+    padding: @button-lg-padding;
 
-    i[pam-Button-Icon] {
-        font-size: @button-icon-size-large;
-        height: @button-icon-size-large;
-        width: @button-icon-size-large;
+    [pam-Button-Icon] {
+        font-size: @button-icon-size-lg;
+        height: @button-icon-size-lg;
+        width: @button-icon-size-lg;
     }
 
-    .hook-button-large;
-}
-
-[pam-Button-Group~="large"] > [pam-Button],
-[pam-Button-Group~="large"] > a[pam-Button] {
-    font-size: @button-large-font-size;
-    line-height: @button-large-line-height;
-    height: @button-large-height;
-    padding: @button-large-padding;
-
-    .hook-button-group-large;
+    .hook-button-lg;
 }
 
 // small
 
-[pam-Button-Group~="small"] > [pam-Button],
-[pam-Button-Group~="small"] > a[pam-Button],
-[pam-Button~="small"],
-a[pam-Button~="small"] {
-    font-size: @button-small-font-size;
-    line-height: @button-small-line-height;
-    height: @button-small-height;
-    padding: @button-small-padding;
+[pam-Button-Group~="sm"] > [pam-Button],
+[pam-Button-Group~="sm"] > a[pam-Button],
+[pam-Button~="sm"],
+a[pam-Button~="sm"] {
+    font-size: @button-sm-font-size;
+    line-height: @button-sm-line-height;
+    height: @button-sm-height;
+    padding: @button-sm-padding;
 
-    .hook-button-small;
+    .hook-button-sm;
 }
 
 //  Modifier: raised
@@ -572,10 +548,10 @@ a[pam-Button~="rounded"] {
 // A floating action button is used for the primary action
 // in an application floating above other elements.
 // A basic `fab` is created by combining the `fab`,
-// `circle`, `raised` and `large` modifiers.
+// `circle`, `raised` and `lg` modifiers.
 //
 // Markup:
-// <button pam-Button="fab circle raised large">
+// <button pam-Button="fab circle raised lg">
 //     <i class="material-icons">add</i>
 // </button>
 //
@@ -605,44 +581,22 @@ a[pam-Button~="circle"] {
 
 // large
 
-[pam-Button~="circle"][pam-Button~="large"],
-a[pam-Button~="circle"][pam-Button~="large"] {
-    height: @button-circle-large-size;
-    min-width: @button-circle-large-size;
+[pam-Button~="circle"][pam-Button~="lg"],
+a[pam-Button~="circle"][pam-Button~="lg"] {
+    height: @button-circle-lg-size;
+    min-width: @button-circle-lg-size;
     padding: @button-circle-padding;
-    width: @button-circle-large-size;
+    width: @button-circle-lg-size;
 }
 
 // small
 
-[pam-Button~="circle"][pam-Button~="small"],
-a[pam-Button~="circle"][pam-Button~="small"] {
-    height: @button-circle-small-size;
-    min-width: @button-circle-small-size;
+[pam-Button~="circle"][pam-Button~="sm"],
+a[pam-Button~="circle"][pam-Button~="sm"] {
+    height: @button-circle-sm-size;
+    min-width: @button-circle-sm-size;
     padding: @button-circle-padding;
-    width: @button-circle-small-size;
-}
-
-// button-group modifier: borderless
-// ==================================================================
-
-// Borderless
-//
-// Remove the borders from button groups with the `borderless` modifier.
-//
-// Markup:
-// <div pam-Button-Group="borderless">
-//     <button pam-Button="">Button</button>
-//     <button pam-Button="">Button</button>
-//     <button pam-Button="">Button</button>
-// </div>
-//
-// Style guide: buttons.group.borderless
-
-[pam-Button-Group~="borderless"] {
-    & > [pam-Button] {
-        border-color: transparent;
-    }
+    width: @button-circle-sm-size;
 }
 
 // Object: button-group
@@ -663,6 +617,25 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 // Weight: 8
 //
 // Style guide: buttons.group
+
+// button-group size modifiers
+// ==================================================================
+
+// Size
+//
+// Button groups support same sizes as buttons  `lg`, `default` or `small`.
+//
+// Markup:
+// <div pam-Button-Group="{{modifier_class}}">
+//     <button pam-Button>Button</button>
+//     <button pam-Button>Button</button>
+//     <button pam-Button>Button</button>
+// </div>
+//
+// sm - Small button group
+// lg - Large button group
+//
+// Style guide: buttons.group.size
 
 [pam-Button-Group] {
     display: inline-flex;
@@ -687,32 +660,6 @@ a[pam-Button~="circle"][pam-Button~="small"] {
     .hook-button-group;
 }
 
-// button-group size modifiers
-// ==================================================================
-
-// Size
-//
-// Button groups support same sizes as buttons  `large`, `default` or `small`.
-//
-// Markup:
-// <div pam-Button-Group="large">
-//     <button pam-Button>Large</button>
-//     <button pam-Button>Large</button>
-//     <button pam-Button>Large</button>
-// </div>
-// <div pam-Button-Group>
-//     <button pam-Button>Default</button>
-//     <button pam-Button>Default</button>
-//     <button pam-Button>Default</button>
-// </div>
-// <div pam-Button-Group="small">
-//     <button pam-Button>Small</button>
-//     <button pam-Button>Small</button>
-//     <button pam-Button>Small</button>
-// </div>
-//
-// Style guide: buttons.group.size
-
 // Hooks
 // ==================================================================
 
@@ -725,17 +672,17 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 // `.hook-button-flat`
 // `.hook-button-fluid`
 // `.hook-button-group`
-// `.hook-button-group-large`
+// `.hook-button-group-lg`
 // `.hook-button-hidden`
 // `.hook-button-icon`
 // `.hook-button-info`
-// `.hook-button-large`
+// `.hook-button-lg`
 // `.hook-button-link`
 // `.hook-button-raised`
 // `.hook-button-round`
 // `.hook-button-rounded`
 // `.hook-button-secondary`
-// `.hook-button-small`
+// `.hook-button-sm`
 // `.hook-button-success`
 // `.hook-button-warning`
 //
@@ -758,7 +705,7 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 }
 .hook-button-group() {
 }
-.hook-button-group-large() {
+.hook-button-group-lg() {
 }
 .hook-button-hidden() {
 }
@@ -766,7 +713,7 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 }
 .hook-button-info() {
 }
-.hook-button-large() {
+.hook-button-lg() {
 }
 .hook-button-link() {
 }
@@ -778,7 +725,7 @@ a[pam-Button~="circle"][pam-Button~="small"] {
 }
 .hook-button-secondary() {
 }
-.hook-button-small() {
+.hook-button-sm() {
 }
 .hook-button-success() {
 }

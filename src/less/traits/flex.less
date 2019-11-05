@@ -27,11 +27,13 @@
 // ==================================================================
 
 [pam-flex] {
-    display: flex;
+    display: flex !important;
+
+    .hook-flex;
 }
 
 [pam-flex~="inline"] {
-    display: inline-flex;
+    display: inline-flex !important;
 }
 
 //  Main axis modifiers
@@ -62,23 +64,23 @@
 // Style guide: traits.flex.main-axis
 
 [pam-flex~="left"] {
-    justify-content: flex-start;
+    justify-content: flex-start !important;
 }
 
 [pam-flex~="center"] {
-    justify-content: center;
+    justify-content: center !important;
 }
 
 [pam-flex~="right"] {
-    justify-content: flex-end;
+    justify-content: flex-end !important;
 }
 
 [pam-flex~="between"] {
-    justify-content: space-between;
+    justify-content: space-between !important;
 }
 
 [pam-flex~="around"] {
-    justify-content: space-around;
+    justify-content: space-around !important;
 }
 
 //  Cross axis modifiers
@@ -111,19 +113,19 @@
 // Style guide: traits.flex.cross-axis
 
 [pam-flex~="stretch"] {
-    align-items: stretch;
+    align-items: stretch !important;
 }
 
 [pam-flex~="top"] {
-    align-items: flex-start;
+    align-items: flex-start !important;
 }
 
 [pam-flex~="middle"] {
-    align-items: center;
+    align-items: center !important;
 }
 
 [pam-flex~="bottom"] {
-    align-items: flex-end;
+    align-items: flex-end !important;
 }
 
 //  Direction modifiers
@@ -151,19 +153,19 @@
 // Style guide: traits.flex.direction
 
 [pam-flex~="row"] {
-    flex-direction: row;
+    flex-direction: row !important;
 }
 
 [pam-flex~="row:reverse"] {
-    flex-direction: row-reverse;
+    flex-direction: row-reverse !important;
 }
 
 [pam-flex~="column"] {
-    flex-direction: column;
+    flex-direction: column !important;
 }
 
 [pam-flex~="column:reverse"] {
-    flex-direction: column-reverse;
+    flex-direction: column-reverse !important;
 }
 
 //  Wrap modifiers
@@ -193,15 +195,15 @@
 // Style guide: traits.flex.wrap
 
 [pam-flex~="nowrap"] {
-    flex-wrap: nowrap;
+    flex-wrap: nowrap !important;
 }
 
 [pam-flex~="wrap"] {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
 }
 
 [pam-flex~="wrap:reverse"] {
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse !important;
 }
 
 //  Align content modifiers
@@ -235,27 +237,27 @@
 // Style guide: traits.flex.align-content
 
 [pam-flex~="wrap:stretch"] {
-    align-content: stretch;
+    align-content: stretch !important;
 }
 
 [pam-flex~="wrap:top"] {
-    align-content: flex-start;
+    align-content: flex-start !important;
 }
 
 [pam-flex~="wrap:middle"] {
-    align-content: center;
+    align-content: center !important;
 }
 
 [pam-flex~="wrap:bottom"] {
-    align-content: flex-end;
+    align-content: flex-end !important;
 }
 
 [pam-flex~="wrap:between"] {
-    align-content: space-between;
+    align-content: space-between !important;
 }
 
 [pam-flex~="wrap:around"] {
-    align-content: space-around;
+    align-content: space-around !important;
 }
 
 //  Order modifiers
@@ -281,11 +283,11 @@
 // Style guide: traits.flex.order
 
 [pam-flex-order~="first"] {
-    order: -1;
+    order: -1 !important;
 }
 
 [pam-flex-order~="last"] {
-    order: 100;
+    order: 100 !important;
 }
 
 //  Dimension modifiers
@@ -314,17 +316,33 @@
 // Style guide: traits.flex.grow-and-shrink
 
 [pam-flex-dimension~="1"] {
-    flex: 1;
+    flex: 1 !important;
 }
 
 [pam-flex-dimension~="auto"] {
-    flex: auto;
+    flex: auto !important;
 }
 
 [pam-flex-dimension~="initial"] {
-    flex: initial;
+    flex: initial !important;
 }
 
 [pam-flex-dimension~="none"] {
-    flex: none;
+    flex: none !important;
 }
+
+// Hooks
+// ========================================================================
+
+// Hooks
+//
+// `.hook-flex`
+//
+// Weight: 10
+//
+// Style guide: traits.flex.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-flex() {
+}
+/* stylelint-enable */

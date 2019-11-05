@@ -195,19 +195,8 @@
 @font-weight-normal: 400;
 @font-weight-medium: 500;
 
-// Breakpoints
+// Screen sizes
 // ==================================================================
-
-@breakpoint-small: 600px;
-@breakpoint-small-down: @breakpoint-small - 1;
-@breakpoint-medium: 768px;
-@breakpoint-medium-down: @breakpoint-medium - 1;
-@breakpoint-large: 1024px;
-@breakpoint-large-down: @breakpoint-large - 1;
-@breakpoint-xlarge: 1280px;
-@breakpoint-xlarge-down: @breakpoint-xlarge - 1;
-
-@breakpoints: small, medium, large, xlarge;
 
 @screen-sm: 600px;
 @screen-sm-down: @screen-sm - 1;
@@ -223,16 +212,20 @@
 // Border
 // ==================================================================
 
-@border-radius-base: @space-4;
-@border-radius-large: @space-8;
-@border-radius-rounded: 50px;
-@border-radius-small: 2px;
+@border-width: @space-1;
+@border-width-0: @space-0;
+@border-width-2: @space-2;
+@border-width-4: @space-4;
 
 @border-style: solid;
 
-@border-width-base: 1px;
-@border-width-small: 2px;
-@border-width-large: @space-4;
+@border-color: @skin-gray-400;
+
+@border-radius-none: @space-0;
+@border-radius-sm: @space-2;
+@border-radius: @space-4;
+@border-radius-lg: @space-8;
+@border-radius-rounded: 50px;
 
 // Opacity
 // ==================================================================

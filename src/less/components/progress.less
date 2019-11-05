@@ -1,0 +1,289 @@
+// Progress
+//
+// Communicate that somethings is happening with a progress.
+// They can be used on almost all elements `div`, `span` etc.
+// Use type or size modifiers to adopt the progress to your context.
+// Out of the box there are three sizes `small`, `default` and `large`.
+// To control the visibility of the progress use the trait
+// `pam-visibility="{hide | hidden | invisible}"`.
+//
+// Weight: 15
+//
+// Style guide: progress
+
+//  Variables
+// ==================================================================
+
+@circle-border-color-error: @skin-error;
+@circle-border-color-info: @skin-info;
+@circle-border-color-success: @skin-success;
+@circle-border-color-warning: @skin-warning;
+@circle-border-color: @skin-gray-300;
+@circle-border-indicator-color: @skin-primary;
+@circle-border-width: 0.2rem;
+@circle-height: @space-24;
+@circle-width: @space-24;
+
+@circle-small-height: @space-16;
+@circle-small-width: @space-16;
+
+@circle-large-height: @space-48;
+@circle-large-width: @space-48;
+
+@progress-bar-timing-function: ease;
+@progress-bar-transition-duration: 0.6s;
+@progress-bar-transition-property: width;
+
+@progress-linear-bg: @skin-gray-300;
+@progress-linear-duration: 1.2s;
+@progress-linear-height: @space-4;
+@progress-linear-indicator-bg: @skin-primary;
+@progress-linear-iteration-count: infinite;
+@progress-linear-margin: 0;
+@progress-linear-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+@progress-linear-width: 100%;
+@progress-linear-width: 100%;
+
+@progress-linear-infinite-bg-error: @skin-error;
+@progress-linear-infinite-bg-info: @skin-info;
+@progress-linear-infinite-bg-success: @skin-success;
+@progress-linear-infinite-bg-warning: @skin-warning;
+
+// ==================================================================
+//  Progress
+// ==================================================================
+
+[pam-Progress] {
+    .hook-progress;
+}
+
+//  Modifier: Circle
+// ==================================================================
+
+// Circle
+//
+// The classic circular progress indicator, can for example be used to
+// indicate a page refresh. It supports state color modifiers and
+// three size modifiers. Sizes are `small`, `default` and `large`.
+//
+// Markup:
+// <div pam-Progress="circle small info"></div>
+// <div pam-Progress="circle"></div>
+// <div pam-Progress="circle large success"></div>
+//
+// Weight: 1
+//
+// Style guide: progress.circle
+
+[pam-Progress~="circle"] {
+    display: inline-block;
+    line-height: 0;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    text-transform: none;
+    vertical-align: sub;
+    animation: spin 0.75s infinite cubic-bezier(0.42, 0, 1, 1);
+    border-radius: 50%;
+    border: @circle-border-width solid @circle-border-color;
+    border-top-color: @circle-border-indicator-color;
+    height: @circle-height;
+    width: @circle-width;
+
+    &[pam-Progress~="info"] {
+        border-top-color: @circle-border-color-info;
+    }
+
+    &[pam-Progress~="success"] {
+        border-top-color: @circle-border-color-success;
+    }
+
+    &[pam-Progress~="warning"] {
+        border-top-color: @circle-border-color-warning;
+    }
+
+    &[pam-Progress~="error"] {
+        border-top-color: @circle-border-color-error;
+    }
+}
+
+//  Size modifier: Circle
+// ==================================================================
+
+[pam-Progress~="circle"][pam-Progress~="small"] {
+    border-width: @circle-border-width / 2;
+    height: @circle-small-height;
+    width: @circle-small-width;
+}
+
+[pam-Progress~="circle"][pam-Progress~="large"] {
+    border-width: @circle-border-width * 1.25;
+    height: @circle-large-height;
+    width: @circle-large-width;
+}
+
+//  Animation: Spin
+// ==================================================================
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+//  Modifier: linear
+// ==================================================================
+
+// Linear
+//
+// Linear progress indicators display progress of a process that has a
+// fixed or unknown timeline.
+//
+// Weight: 2
+//
+// Style guide: progress.linear
+
+// Determinate
+//
+// Display the length of a determinate process with lineary progress.
+// Change the progress by using the `size width` trait or inline styles. For example
+// `pam-size="w:1-4"` or `style="width: 57%;"`. It supports size modifiers
+// via the `size height` trait and colors modifiers on `pam-progress-bar` via
+// the `skin` component.
+//
+// Markup:
+// <div pam-progress="linear" pam-space="mb:4" pam-size="h:2px">
+//     <div pam-progress-bar pam-skin="info" pam-size="w:1-4"></div>
+// </div>
+// <div pam-progress="linear" pam-space="mb:4">
+//     <div pam-progress-bar pam-size="w:2-4"></div>
+// </div>
+// <div pam-progress="linear" pam-size="h:8px">
+//     <div pam-progress-bar pam-skin="success" pam-size="w:3-4" style="width: 75%;"></div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: progress.linear.determinate
+
+// Indeterminate
+//
+// Display the length of a process with an unspecified time line. It supports size modifiers
+// via the `size height` trait and state color modifiers.
+//
+// Markup:
+// <div pam-progress="linear infinite info" pam-space="mb:4"  pam-size="h:2px"></div>
+// <div pam-progress="linear infinite" pam-space="mb:4"></div>
+// <div pam-progress="linear infinite success" pam-size="h:8px"></div>
+//
+// Weight: 2
+//
+// Style guide: progress.linear.Indeterminate
+
+[pam-Progress~="linear"],
+[pam-Progress~="linear"]::before {
+    margin: @progress-linear-margin;
+    width: @progress-linear-width;
+}
+
+[pam-Progress~="linear"] {
+    height: @progress-linear-height;
+    background-color: @progress-linear-bg;
+    display: flex;
+
+    [pam-Progress-bar] {
+        background-color: @progress-linear-indicator-bg;
+        transition: @progress-bar-transition-property @progress-bar-transition-duration @progress-bar-timing-function;
+        width: 0;
+    }
+
+    &::before {
+        height: auto;
+    }
+
+    &[pam-Progress~="infinite"] {
+        &::before {
+            animation: linear-progress @progress-linear-duration @progress-linear-timing-function @progress-linear-iteration-count;
+            background-color: @progress-linear-indicator-bg;
+            content: "";
+        }
+
+        &[pam-Progress~="info"]::before {
+            background-color: @progress-linear-infinite-bg-info;
+        }
+
+        &[pam-Progress~="success"]::before {
+            background-color: @progress-linear-infinite-bg-success;
+        }
+
+        &[pam-Progress~="warning"]::before {
+            background-color: @progress-linear-infinite-bg-warning;
+        }
+
+        &[pam-Progress~="error"]::before {
+            background-color: @progress-linear-infinite-bg-error;
+        }
+    }
+}
+
+@keyframes linear-progress {
+    0% {
+        margin-left: 0;
+        margin-right: 100%;
+    }
+    50% {
+        margin-left: 25%;
+        margin-right: 0%;
+    }
+    100% {
+        margin-left: 100%;
+        margin-right: 0;
+    }
+}
+
+//  Examples
+// ==================================================================
+
+// Examples
+//
+// Some examples of circle progress in button and input context.
+//
+// Markup:
+// <button pam-Button pam-space="mb:4">
+//     Button <span pam-Progress="circle small" pam-space="ml:2"></span>
+// </button>
+//  <form pam-Form>
+//     <div pam-Form-Inline="reverse">
+//         <label for="group-input-progress" pam-Form-Icon>
+//             <div pam-Progress="circle small"></div>
+//         </label>
+//         <input id="group-input-progress" type="text" placeholder="Input group progress" pam-Form-Control disabled>
+//     </div>
+// <form>
+//
+//
+// Weight: 3
+//
+// Style guide: progress.examples
+
+// Hooks
+// ==================================================================
+
+// Hooks
+//
+// `.hook-progress`
+//
+// Weight: 10
+//
+// Style guide: progress.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-progress() {
+}
+/* stylelint-enable */
+
+// <VARIABLES>

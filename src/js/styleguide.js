@@ -6,12 +6,6 @@
     "use strict";
 
     /**
-     * skinSwitcher
-     * @type {Object}
-     */
-    const skinSwitcher = window.skinSwitcher;
-
-    /**
      * animator
      * @type {Object}
      */
@@ -31,7 +25,6 @@
      * @return {undefined}
      */
     function onDOMContentLoaded(evt) {
-        skinSwitcher.enable("main aside header");
         modifierHelper.replaceColon();
     }
 
@@ -40,7 +33,6 @@
      * @return {undefined}
      */
     function init() {
-        skinSwitcher.listenOnSelectChange();
         animator.startAnimation("[sg-hero-img]");
     }
 })(window);

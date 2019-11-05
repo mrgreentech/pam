@@ -1,15 +1,34 @@
 // Overflow
 //
-// Controlling how an element handles overflow content.
+// Control how an element handles overflow content with the `overflow` trait.
+// Format `{axis}:{type}`.
+//
+// * axis: `{"" | x | y}`
+// * type: `{auto | hidden | scroll | visible}`
 //
 // Markup:
-// <div pam-overflow="y:auto" pam-size="h:5" pam-space="4">
-//     <div pam-size="h:10" pam-space="p:2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem ante, elementum eget tortor id, pellentesque lacinia dolor. Nunc in metus facilisis, scelerisque ante eget, lacinia purus. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi. Nam a metus dictum, sollicitudin ligula a, mollis est. Phasellus consectetur est nec velit interdum dignissim. Nunc enim felis, porta at nisl ultricies, porta molestie nibh.</div>
+// <div pam-overflow="{{modifier_class}}" pam-size="h:5" pam-space="p:2" pam-shadow="z2">
+//     <div pam-size="h:10" pam-space="p:2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem ante, elementum eget tortor id, pellentesque lacinia dolor. Nunc in metus facilisis, scelerisque ante eget, lacinia purus. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi. Nam a metus dictum, sollicitudin ligula a, mollis est. Phasellus consectetur est nec velit interdum dignissim. Nunc enim felis, porta at nisl ultricies, porta molestie nibh. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi.</div>
 // </div>
+//
+// auto - Auto scroll for x and y axis.
+// hidden - Hidden scrolls for x and y axis.
+// scroll - Always show scrolls for x and y axis.
 //
 // Weight: 8
 //
 // Style guide: traits.overflow
+
+// ==================================================================
+//  Opacity
+// ==================================================================
+
+[pam-overflow] {
+    .hook-overflow;
+}
+
+//  Axis modifiers
+// ==================================================================
 
 [pam-overflow~="auto"] {
     overflow: auto !important;
@@ -27,6 +46,9 @@
     overflow: scroll !important;
 }
 
+//  X-axis modifiers
+// ==================================================================
+
 [pam-overflow~="x:auto"] {
     overflow-x: auto !important;
 }
@@ -43,6 +65,9 @@
     overflow-x: scroll !important;
 }
 
+//  Y-axis modifiers
+// ==================================================================
+
 [pam-overflow~="y:auto"] {
     overflow-y: auto !important;
 }
@@ -58,3 +83,19 @@
 [pam-overflow~="y:scroll"] {
     overflow-y: scroll !important;
 }
+
+// Hooks
+// ========================================================================
+
+// Hooks
+//
+// `.hook-overflow`
+//
+// Weight: 10
+//
+// Style guide: traits.overflow.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-overflow() {
+}
+/* stylelint-enable */

@@ -12,8 +12,8 @@
         </h5>
     </header>
     <div sg-Hero-Cta>
-        <a href="./section-getting-started.html" pam-Button="primary large">Get started</a>
-        <a href="https://github.com/mrgreentech/pam" pam-Button="primary outlined large">GitHub</a>
+        <a href="./section-getting-started.html" pam-Button="primary lg">Get started</a>
+        <a href="https://github.com/mrgreentech/pam" pam-Button="primary outlined lg">GitHub</a>
     </div>
     <footer>
         <span pam-Tag="error">Version {{version}}</span>

@@ -23,7 +23,7 @@
     position: static;
 }
 
-//  Location modifier
+//  Location modifiers
 // ==================================================================
 
 // Location
@@ -58,35 +58,57 @@
     position: fixed !important;
 }
 
-[pam-position~="sticky"] {
-    position: sticky !important;
+@supports ((position: sticky)) {
+    [pam-position~="sticky"] {
+        position: sticky !important;
+    }
 }
 
 [pam-position~="top"] {
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    &[pam-position~="out"] {
+        top: auto !important;
+        bottom: 100% !important;
+    }
 }
 
 [pam-position~="right"] {
-    top: 0;
-    bottom: 0;
-    right: 0;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+
+    &[pam-position~="out"] {
+        right: auto !important;
+        left: 100% !important;
+    }
 }
 
 [pam-position~="bottom"] {
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    &[pam-position~="out"] {
+        bottom: auto !important;
+        top: 100% !important;
+    }
 }
 
 [pam-position~="left"] {
-    top: 0;
-    bottom: 0;
-    left: 0;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    &[pam-position~="out"] {
+        left: auto !important;
+        right: 100% !important;
+    }
 }
 
-//  Explicit location modifier
+//  Explicit location modifiers
 // ==================================================================
 
 // Explicit locations
@@ -118,61 +140,121 @@
 //
 // Style guide: traits.position.explicit
 
+// Outside
+//
+// Position elements outside of the parent element element by using the `out` modifier.
+//
+// Markup:
+// <div pam-Flex="center">
+//     <div pam-size="w:1-2" pam-position="relative">
+//         <img pam-image src="kss-assets/img/photo-position.jpg" alt="Joanna Kosinska">
+//         <div pam-position="absolute center:left out" pam-overlay="dark" pam-flex="middle">Center left</div>
+//         <div pam-position="absolute center:right out" pam-overlay="dark" pam-flex="center">Center right</div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Style guide: traits.position.out
+
 [pam-position~="top:left"] {
-    top: 0;
-    left: 0;
+    top: 0 !important;
+    left: 0 !important;
+
+    &[pam-position~="out"] {
+        top: auto !important;
+        bottom: 100% !important;
+    }
 }
 
 [pam-position~="top:right"] {
-    top: 0;
-    right: 0;
+    top: 0 !important;
+    right: 0 !important;
+
+    &[pam-position~="out"] {
+        top: auto !important;
+        bottom: 100% !important;
+    }
 }
 
 [pam-position~="bottom:left"] {
-    bottom: 0;
-    left: 0;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    &[pam-position~="out"] {
+        bottom: auto !important;
+        top: 100% !important;
+    }
 }
 
 [pam-position~="bottom:right"] {
-    bottom: 0;
-    right: 0;
+    bottom: 0 !important;
+    right: 0 !important;
+
+    &[pam-position~="out"] {
+        bottom: auto !important;
+        top: 100% !important;
+    }
 }
 
 [pam-position~="center"] {
-    left: 50%;
-    max-width: 100%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: 50% !important;
+    max-width: 100% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
 }
 
 [pam-position~="center:left"],
 [pam-position~="center:right"] {
-    top: 50%;
-    transform: translateY(-50%);
+    top: 50% !important;
+    transform: translateY(-50%) !important;
 }
 
 [pam-position~="center:left"] {
-    left: 0;
+    left: 0 !important;
+
+    &[pam-position~="out"] {
+        left: auto !important;
+        right: 100% !important;
+    }
 }
 
 [pam-position~="center:right"] {
-    right: 0;
+    right: 0 !important;
+
+    &[pam-position~="out"] {
+        right: auto !important;
+        left: 100% !important;
+    }
 }
 
 [pam-position~="top:center"],
 [pam-position~="bottom:center"] {
-    left: 50%;
-    max-width: 100%;
-    transform: translateX(-50%);
+    left: 50% !important;
+    max-width: 100% !important;
+    transform: translateX(-50%) !important;
 }
 
 [pam-position~="top:center"] {
-    top: 0;
+    top: 0 !important;
+
+    &[pam-position~="out"] {
+        top: auto !important;
+        bottom: 100% !important;
+    }
 }
 
 [pam-position~="bottom:center"] {
-    bottom: 0;
+    bottom: 0 !important;
+
+    &[pam-position~="out"] {
+        bottom: auto !important;
+        top: 100% !important;
+    }
 }
+
+//  Modifier: Cover
+// ==================================================================
 
 // Cover
 //
@@ -187,13 +269,13 @@
 //     </div>
 // </div>
 //
-// Weight: 1
+// Weight: 3
 //
-// Style guide: traits.position.location.cover
+// Style guide: traits.position.cover
 
 [pam-position~="cover"] {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
 }

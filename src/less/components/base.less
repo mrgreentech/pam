@@ -34,8 +34,12 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+// 1. Set border-box as default box-sizing.
+// 2. Set border style solid and border width 0 as defualt.
+
 *,
 *::before,
 *::after {
     box-sizing: inherit;
+    border: 0 @border-style @border-color;
 }

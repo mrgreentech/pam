@@ -11,19 +11,28 @@
 //  Text
 // ==================================================================
 
-// Alignment
+[pam-text] {
+    .hook-text;
+}
+
+//  Align modifiers
+// ==================================================================
+
+// Align
 //
 // Trait for controlling element text alignment.
 //
 // Markup:
-// <p pam-text="left">Text left</p>
-// <p pam-text="center">Text center</p>
-// <p pam-text="right">Text right</p>
-// <p pam-text="justify">Text justify</p>
+// <p pam-text="{{modifier_class}}">Text</p>
+//
+// left - Align text to the left.
+// center - Center align.
+// right - Align text to the right.
+// justify - Justify text.
 //
 // Weight: 1
 //
-// Style guide: traits.text.alignment
+// Style guide: traits.text.align
 
 [pam-text~="left"] {
     text-align: left !important;
@@ -41,7 +50,7 @@
     text-align: justify !important;
 }
 
-//  Decoration
+//  Decoration modifiers
 // ==================================================================
 
 // Decoration
@@ -105,3 +114,19 @@
 [pam-text~="transform:none"] {
     text-transform: none !important;
 }
+
+// Hooks
+// ========================================================================
+
+// Hooks
+//
+// `.hook-text`
+//
+// Weight: 10
+//
+// Style guide: traits.text.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-text() {
+}
+/* stylelint-enable */
