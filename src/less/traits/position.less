@@ -58,8 +58,10 @@
     position: fixed !important;
 }
 
-[pam-position~="sticky"] {
-    position: sticky !important;
+@supports ((position: sticky)) {
+    [pam-position~="sticky"] {
+        position: sticky !important;
+    }
 }
 
 [pam-position~="top"] {
