@@ -24,17 +24,6 @@
       rel="stylesheet">
   {{!-- TODO: Add stylesheets dynamically, default or latest selected custom skin. --}}
   {{{styles}}}
-
-  <script type="text/javascript">
-  var skinsData = [
-    {{#each options.skins}}
-      {
-        path: "{{this.path}}",
-        name: "{{this.name}}"
-      },
-    {{/each}}
-  ];
-  </script>
 </head>
 <body id="kss-node" {{#if template.isItem}}class="kss-fullscreen-mode"{{/if}} {{#if template.isHomepage}}sg-node="homepage"{{/if}}>
 

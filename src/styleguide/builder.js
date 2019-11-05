@@ -63,35 +63,6 @@ class KssBuilderHandlebars extends KssBuilderBaseHandlebars {
         });
     }
 
-    addSkins() {
-        let options = this.options;
-        let globOptions = {
-            cwd: path.join(process.cwd(), "build")
-        };
-        let defaultSkin = {
-            name: "default skin",
-            path: "pam.css"
-        };
-
-        options.skins = [];
-        options.skins.push(defaultSkin);
-
-        // Check if there are any custom skins and add them to options.
-        glob("*-skin.css", globOptions, (err, files) => {
-            if (err) {
-                console.error(err);
-            } else {
-                files.map(file => {
-                    let skinName = file.split("-");
-                    options.skins.push({
-                        name: `${skinName[0]} ${skinName[1].replace(".css", "")}`,
-                        path: file
-                    });
-                });
-            }
-        });
-    }
-
     /**
      * Allow the builder to preform pre-build tasks or modify the KssStyleGuide
      * object.
@@ -115,9 +86,6 @@ class KssBuilderHandlebars extends KssBuilderBaseHandlebars {
         // First call the prepare() of the parent KssBuilderBaseHandlebars class.
         // Since it returns a Promise, we do our prep work in a then().
         return super.prepare(styleGuide).then(styleGuide => {
-            // Add custom skins if there are any.
-            this.addSkins();
-
             // Load this builder's extra Handlebars helpers.
 
             // Allow a builder user to override the {{section [reference]}} helper
