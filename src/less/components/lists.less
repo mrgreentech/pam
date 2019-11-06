@@ -1,212 +1,217 @@
-// Lists
+// List
 //
-// `pam-List` wraps a `pam-Item` which in turn can contain up to three type of tiles
-// `pam-Tile="[left | content | right]"`.
+// Lists are groups of text or image elements. Composed of primary
+// and optional actions represented by icons and text.
 //
 // Weight: 12
 //
-// Style guide: lists
+// Style guide: list
+
+// ==================================================================
+//  List
+// ==================================================================
 
 // One line
 //
-// Use `pam-Item` to wrap one or more `pam-Tiles` and apply one row of content.
+// Single-line list items contain a maximum of one line of text.
 //
 // Markup:
-// <div pam-List>
-//     <div pam-Item>
-//         <div pam-Tile="left">
-//             <div sg-mock-icon></div>
-//         </div>
-//         <div pam-Tile="content">
-//             <h1 pam-typography="body-2">Item content</h1>
-//         </div>
-//     </div>
-// </div>
+// <ul pam-List pam-border="w:px">
+//     <li pam-List-Item>List Item</li>
+//     <li pam-List-Item>List Item</li>
+//     <li pam-List-Item>List Item</li>
+// </ul>
 //
 // Weight: 1
 //
-// Style guide: lists.one-line
+// Style guide: list.one-line
 
 // Two line
 //
-// Use `pam-Item` to wrap one or more `pam-Tiles` and apply two rows of content.
+// Two-line list items contain a maximum of two lines of text.
 //
 // Markup:
-// <div pam-List>
-//     <div pam-Item>
-//         <div pam-Tile="left">
-//             <div sg-mock-icon></div>
-//         </div>
-//         <div pam-Tile="content">
-//             <h1 pam-typography="body-2">Item content</h1>
-//             <p>Item content</p>
-//         </div>
-//     </div>
-// </div>
+// <ul pam-List="two-lines" pam-border="w:px">
+//     <li pam-List-Item>
+//         <span  pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>List Item</span>
+//             <span pam-List-Item-Text-Secondary>List Item</span>
+//         </span>
+//     </li>
+//     <li pam-List-Item>
+//         <span  pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>List Item</span>
+//             <span pam-List-Item-Text-Secondary>List Item</span>
+//         </span>
+//     </li>
+//     <li pam-List-Item>
+//         <span  pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>List Item</span>
+//             <span pam-List-Item-Text-Secondary>List Item</span>
+//         </span>
+//     </li>
+// </ul>
 //
 // Weight: 2
 //
-// Style guide: lists.two-line
+// Style guide: list.two-line
 
-// Three line
+// Leading Icon
 //
-// Use `pam-Item` to wrap one or more `pam-Tiles`. Add `pam-Tile="top"` to align the left
-// tile and apply three rows of content.
+// Use pam-List-Item-Primary to add a leading icon.
 //
 // Markup:
-// <div pam-List>
-//     <div pam-Item>
-//         <div pam-Tile="left top">
-//             <div sg-mock-icon></div>
-//         </div>
-//         <div pam-Tile="content">
-//             <h1 pam-typography="body-2">Item content</h1>
-//             <p>Item content</p>
-//             <p>Item content</p>
-//         </div>
-//     </div>
-// </div>
+// <ul pam-List pam-border="w:px">
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">cast</span>
+//         List Item
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">wifi</span>
+//         List Item
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">sync</span>
+//         List Item
+//     </li>
+// </ul>
 //
 // Weight: 3
 //
-// Style guide: lists.three-line
+// Style guide: list.leading-icon
 
-// Three parts
+// Trailing Icon
 //
-// List item with right icon area: `pam-Tile="right"` adds a right icon area for a list item.
+// Use pam-List-Item-Secondary to add a trailing icon.
 //
 // Markup:
-// <div pam-List>
-//     <div pam-Item>
-//         <div pam-Tile="left">
-//             <div sg-mock-icon></div>
-//         </div>
-//         <div pam-Tile="content">
-//             <h1 pam-typography="body-2">Item content</h1>
-//         </div>
-//             <div pam-Tile="right">
-//             <div sg-mock-icon></div>
-//         </div>
-//     </div>
-// </div>
+// <ul pam-List pam-border="w:px">
+//     <li pam-List-Item>
+//         List Item
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+//     <li pam-List-Item>
+//         List Item
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+//     <li pam-List-Item>
+//         List Item
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+// </ul>
 //
 // Weight: 4
 //
-// Style guide: lists.three-part
+// Style guide: list.trailing-icon
 
-// Divider
+// Two Line with Icons
 //
-// List items with dividers: Use `pam-Item` to wrap one or
-// more `pam-Tiles` and apply a `pam-Divider` after each item.
+// Use pam-List-Item-Primary and pam-List-Item-Secondary to add leading
+// and trailing icons.
 //
 // Markup:
-// <div pam-List>
-//     <div pam-Item>
-//         <div pam-Tile="left top">
-//             <div sg-mock-icon></div>
-//         </div>
-//         <div pam-Tile="content">
-//             <h1 pam-typography="body-2">Item content</h1>
-//             <p>Item content</p>
-//             <p>Item content</p>
-//         </div>
-//     </div>
-//     <div pam-Divider="inset"></div>
-//     <div pam-Item>
-//         <div pam-Tile="left top">
-//             <div sg-mock-icon></div>
-//         </div>
-//         <div pam-Tile="content">
-//             <h1 pam-typography="body-2">Item content</h1>
-//             <p>Item content</p>
-//             <p>Item content</p>
-//         </div>
-//     </div>
-//     <div pam-Divider="inset"></div>
-//     <div pam-Item>
-//         <div pam-Tile="left top">
-//             <div sg-mock-icon></div>
-//         </div>
-//         <div pam-Tile="content">
-//             <h1 pam-typography="body-2">Item content</h1>
-//             <p>Item content</p>
-//             <p>Item content</p>
-//         </div>
-//     </div>
-// </div>
+// <ul pam-List="two-lines" pam-border="w:px">
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">event</span>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>List Item</span>
+//             <span pam-List-Item-Text-Secondary>List Item</span>
+//         </span>
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">event</span>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>List Item</span>
+//             <span pam-List-Item-Text-Secondary>List Item</span>
+//         </span>
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">event</span>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>List Item</span>
+//             <span pam-List-Item-Text-Secondary>List Item</span>
+//         </span>
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+// </ul>
 //
 // Weight: 5
 //
-// Style guide: lists.divider
+// Style guide: list.two-line-leading-trailing
 
 [pam-List] {
     padding: @space-8 0;
+    font-weight: 400;
+    letter-spacing: 0.009375em;
+    line-height: 1.5rem;
+    margin: 0;
+    list-style-type: none;
+    color: @skin-text-primary-on-background;
 
     .hook-list;
 }
 
-[pam-Item] {
+[pam-List-Item] {
     align-items: center;
+    cursor: pointer;
     display: flex;
-    line-height: @space-16;
-    padding: 0;
+    height: 48px;
+    justify-content: flex-start;
+    padding: 0 16px;
     position: relative;
+    outline: 0;
 
-    .hook-item;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    &:active,
+    &:focus {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
 }
 
-* + [pam-Item] {
-    padding-top: @space-8;
+[pam-List~="two-lines"] [pam-List-Item] {
+    height: 72px;
 }
 
-[pam-Tile] {
-    .hook-tile;
-}
-
-[pam-Tile~="left"] {
-    align-items: center;
-    align-self: stretch;
-    display: flex;
-    justify-content: center;
-    width: @space-72;
-
-    .hook-tile-left;
-}
-
-[pam-Tile~="content"] {
-    flex: 1;
-    padding: @space-16 @space-16 @space-16 0;
+[pam-List-Item-Text] {
+    overflow: hidden;
     text-overflow: ellipsis;
-    width: 100%;
-
-    [pam-typography="body-1"],
-    [pam-typography="body-2"],
-    p {
-        margin: 0;
-    }
-
-    p {
-        font-size: @font-size-medium;
-        color: @skin-text-primary-on-light;
-    }
-
-    .hook-tile-content;
+    white-space: nowrap;
 }
 
-[pam-Tile~="right"] {
+[pam-List-Item-Primary] {
     align-items: center;
-    align-self: stretch;
-    display: flex;
-    padding-right: @space-16;
-
-    .hook-tile-right;
+    color: @skin-text-secondary-on-background;
+    display: inline-flex;
+    fill: currentColor;
+    flex-shrink: 0;
+    height: 24px;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 32px;
+    width: 24px;
 }
 
-[pam-Tile~="top"] {
-    align-self: flex-start;
-    padding-top: @space-20;
+[pam-List-Item-Secondary] {
+    color: @skin-text-secondary-on-background;
+    margin-left: auto;
+    margin-right: 0;
+}
 
-    .hook-tile-top;
+[pam-List-Item-Text-Primary] {
+    display: block;
+    line-height: normal;
+}
+
+[pam-List-Item-Text-Secondary] {
+    color: @skin-text-secondary-on-background;
+    display: block;
+    font-size: 0.875rem;
+    line-height: inherit;
 }
 
 // Hooks
@@ -214,31 +219,25 @@
 
 // Hooks
 //
-// `.hook-item`
 // `.hook-list`
-// `.hook-tile`
-// `.hook-tile-content`
-// `.hook-tile-left`
-// `.hook-tile-right`
-// `.hook-tile-top`
 //
 //  Weight: 10
 //
-// Style guide: lists.hooks
+// Style guide: list.hooks
 
 /* stylelint-disable block-no-empty */
-.hook-item() {
-}
 .hook-list() {
 }
-.hook-tile() {
-}
-.hook-tile-content() {
-}
-.hook-tile-left() {
-}
-.hook-tile-right() {
-}
-.hook-tile-top() {
-}
+// .hook-list() {
+// }
+// .hook-tile() {
+// }
+// .hook-tile-content() {
+// }
+// .hook-tile-left() {
+// }
+// .hook-tile-right() {
+// }
+// .hook-tile-top() {
+// }
 /* stylelint-enable */
