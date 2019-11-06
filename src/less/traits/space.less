@@ -5,7 +5,7 @@
 //
 // * type - `{p = padding | m = margin}`,
 // * side - `{t = top | r = right | b = bottom | l = left}`
-// * size - `{0-6 = 0-6 x base space}`
+// * size - `{0-8, multiplier is 4}`
 //
 // Special cases:
 //
@@ -23,7 +23,7 @@
 // <!-- SPACING ON ONE SIDE (t = top, r = right, b = bottom, l = left) -->
 // <div pam-space="pt">Padding on the top side</div>
 //
-// <!-- SPACING SIZE ({0-5} = 2 x @space-4) -->
+// <!-- SPACING SIZE ({0-8}, multiplier of 4) -->
 // <div pam-space="p:0">Padding 0 on all sides</div>
 // <div pam-space="p:2">Size 2 padding on all sides</div>
 // <div pam-space="pl:2">Size 2 padding on left side</div>
@@ -60,36 +60,36 @@
     margin: auto !important;
 }
 
-.spacing(margin, "m", 6, 0);
-.spacing(margin-top, "mt", 6, 0);
-.spacing(margin-right, "mr", 6, 0);
-.spacing(margin-bottom, "mb", 6, 0);
-.spacing(margin-left, "ml", 6, 0);
+.spacing(margin, "m", 8, 0);
+.spacing(margin-top, "mt", 8, 0);
+.spacing(margin-right, "mr", 8, 0);
+.spacing(margin-bottom, "mb", 8, 0);
+.spacing(margin-left, "ml", 8, 0);
 
 [pam-space~="mx:auto"] {
     margin-left: auto !important;
     margin-right: auto !important;
 }
 
-.spacing-x(margin, "mx", 6, 0);
+.spacing-x(margin, "mx", 8, 0);
 
 [pam-space~="my:auto"] {
     margin-top: auto !important;
     margin-bottom: auto !important;
 }
 
-.spacing-y(margin, "my", 6, 0);
+.spacing-y(margin, "my", 8, 0);
 
 //  Padding
 // ==================================================================
 
-.spacing(padding, "p", 6, 0);
-.spacing(padding-top, "pt", 6, 0);
-.spacing(padding-right, "pr", 6, 0);
-.spacing(padding-bottom, "pb", 6, 0);
-.spacing(padding-left, "pl", 6, 0);
-.spacing-x(padding, "px", 6, 0);
-.spacing-y(padding, "py", 6, 0);
+.spacing(padding, "p", 8, 0);
+.spacing(padding-top, "pt", 8, 0);
+.spacing(padding-right, "pr", 8, 0);
+.spacing(padding-bottom, "pb", 8, 0);
+.spacing(padding-left, "pl", 8, 0);
+.spacing-x(padding, "px", 8, 0);
+.spacing-y(padding, "py", 8, 0);
 
 // Hooks
 // ========================================================================
