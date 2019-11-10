@@ -48,7 +48,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Replaced Grunt with Gulp 4.
 -   Replaced Styledown to KSS styleguide documentation tool.
 -   Rewrite buttons spec to a material design spec
--   Rewrite of `pam-visibility` trait
+-   Rewrite of component `pam-List` inspiried by Material Design spec.
+-   Rewrite of trait `pam-visibility`.
 -   Rewrite pam-Form and added new variables.
 -   Rewrite typography according to Material Design spec.
 -   Validation states for `pam-Input`.
