@@ -42,7 +42,7 @@ function copyDist() {
 }
 
 function copyCssToSG() {
-    return src([paths.build.cssFile, paths.build.cssSkinsGlob]).pipe(dest(paths.build.styleguideCss));
+    return src([paths.build.cssFile]).pipe(dest(paths.build.styleguideCss));
 }
 
 // Concat

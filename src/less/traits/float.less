@@ -1,0 +1,37 @@
+// float
+//
+// Control floats by using the `float` trait attribute.
+//
+// Markup:
+// <div pam-border="w:px" pam-space="p:2" pam-float="group">
+//     <div pam-float="{{modifier_class}}">Floating element</div>
+// </div>
+//
+// left - Float left.
+// right - Float right.
+// none - Clear float.
+// group - Clear float for group.
+//
+// Weight: 5
+//
+// Style guide: traits.float
+
+[pam-float~="none"] {
+    float: none !important;
+}
+
+[pam-float~="left"] {
+    float: left !important;
+}
+
+[pam-float~="right"] {
+    float: right !important;
+}
+
+[pam-float~="group"] {
+    &::after {
+        content: "" !important;
+        display: table !important;
+        clear: both !important;
+    }
+}
