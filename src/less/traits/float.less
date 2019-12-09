@@ -1,4 +1,4 @@
-// float
+// Float
 //
 // Control floats by using the `float` trait attribute.
 //
@@ -15,6 +15,10 @@
 // Weight: 5
 //
 // Style guide: traits.float
+
+[pam-float] {
+    .hook-float;
+}
 
 [pam-float~="none"] {
     float: none !important;
@@ -35,3 +39,16 @@
         clear: both !important;
     }
 }
+
+// Hooks
+//
+// `.hook-float`
+//
+// Weight: 10
+//
+// Style guide: traits.float.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-float() {
+}
+/* stylelint-enable */
