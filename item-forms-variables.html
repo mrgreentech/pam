@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PAM</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
+  <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/kss-assets/img/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+<link rel="stylesheet" href="kss-assets/css/pam.css">
+
+</head>
+<body id="kss-node" class="kss-fullscreen-mode" >
+
+<header sg-header>
+  <div pam-Grid pam-Grid-Control="align:center">
+      <div pam-Unit="1-5">
+          <a href="./" sg-Link>
+            <img
+              src="kss-assets/img/logo.svg"
+              alt="PAM"
+              title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
+              height="48"
+              width="48"
+              sg-Logo>
+          </a>
+      </div>
+      <div pam-Unit="4-5">
+          <div pam-Menu sg-Nav>
+              <ul pam-Menu-List>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/blob/legendary-grasshopper/CHANGELOG.md"  pam-Button="flat">Changelog</a>
+                  </li>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/issues" pam-Button="flat">Issues</a>
+                  </li>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="raised">Download</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</header>
+
+<main sg-main>
+  <aside class="kss-sidebar kss-style">
+    <header class="kss-header">
+      <h1 class="kss-doc-title">Documentation</h1>
+    </header>
+    <nav class="kss-nav">
+      <ul class="kss-nav__menu">
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-getting-started.html">
+            <span class="kss-nav__ref">1</span><span class="kss-nav__name">Getting started</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-setup.html">
+            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Setup</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-general.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">General</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-grids.html">
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Grids</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-skin.html">
+            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Skin</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-typography.html">
+            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Typography</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-forms.html">
+            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Forms</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-buttons.html">
+            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Buttons</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-cards.html">
+            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Cards</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-tables.html">
+            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Tables</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-menus.html">
+            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Menus</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-alert.html">
+            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Alert</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-divider.html">
+            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Divider</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-links.html">
+            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Link</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-lists.html">
+            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Lists</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-tags.html">
+            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Tags</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-column.html">
+            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Column</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-overlay.html">
+            <span class="kss-nav__ref">19</span><span class="kss-nav__name">Overlay</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-traits.html">
+            <span class="kss-nav__ref">20</span><span class="kss-nav__name">Traits</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-mixins.html">
+            <span class="kss-nav__ref">21</span><span class="kss-nav__name">Mixins</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <main role="main" class="kss-main">
+
+      <div id="kssref-forms-variables" class="kss-section kss-section--depth-2 is-fullscreen">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-forms-variables">
+              Variables
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>These are all the component specific variables that can be
+used for customization.</p>
+<table pam-Table="horizontal">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr>
+           <td>@form-background</td>
+           <td><code>@skin-white</code></td>
+       </tr>
+         <tr>
+           <td>@form-border-radius</td>
+           <td><code>@border-radius</code></td>
+       </tr>
+         <tr>
+           <td>@form-border-style</td>
+           <td><code>solid</code></td>
+       </tr>
+         <tr>
+           <td>@form-border-width</td>
+           <td><code>1px</code></td>
+       </tr>
+         <tr>
+           <td>@form-border-color</td>
+           <td><code>@skin-border-primary</code></td>
+       </tr>
+         <tr>
+           <td>@form-color</td>
+           <td><code>@skin-text-primary-on-light</code></td>
+       </tr>
+         <tr>
+           <td>@form-font-size</td>
+           <td><code>@font-size-large</code></td>
+       </tr>
+         <tr>
+           <td>@form-line-height</td>
+           <td><code>@line-height-base</code></td>
+       </tr>
+         <tr>
+           <td>@form-margin</td>
+           <td><code>0 0 @space-8</code></td>
+       </tr>
+         <tr>
+           <td>@form-padding-horizontal</td>
+           <td><code>@space-8</code></td>
+       </tr>
+         <tr>
+           <td>@form-padding-vertical</td>
+           <td><code>@space-8</code></td>
+       </tr>
+         <tr>
+           <td>@form-padding</td>
+           <td><code>@space-8</code></td>
+       </tr>
+         <tr>
+           <td>@form-placeholder-color</td>
+           <td><code>@skin-text-secondary-on-light</code></td>
+       </tr>
+         <tr>
+           <td>@form-tap-highlight-color</td>
+           <td><code>rgba(0, 0, 0, 0)</code></td>
+       </tr>
+         <tr>
+           <td>@form-transition-duration</td>
+           <td><code>@transition-duration-default</code></td>
+       </tr>
+         <tr>
+           <td>@form-transition-property</td>
+           <td><code>border</code></td>
+       </tr>
+         <tr>
+           <td>@form-transition-timing</td>
+           <td><code>ease</code></td>
+       </tr>
+         <tr>
+           <td>@form-focus-border-color</td>
+           <td><code>@skin-primary</code></td>
+       </tr>
+         <tr>
+           <td>@form-focus-border-width</td>
+           <td><code>1px</code></td>
+       </tr>
+         <tr>
+           <td>@form-hover-border-color</td>
+           <td><code>darken(@form-border-color, 30%)</code></td>
+       </tr>
+         <tr>
+           <td>@form-hover-border-width</td>
+           <td><code>1px</code></td>
+       </tr>
+         <tr>
+           <td>@form-legend-width</td>
+           <td><code>100%</code></td>
+       </tr>
+         <tr>
+           <td>@form-legend-padding</td>
+           <td><code>@space-8 0</code></td>
+       </tr>
+         <tr>
+           <td>@form-fieldset-border</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-fieldset-margin</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-fieldset-padding</td>
+           <td><code>@space-8 0 @space-16</code></td>
+       </tr>
+         <tr>
+           <td>@form-fieldset-column-padding</td>
+           <td><code>@space-16</code></td>
+       </tr>
+         <tr>
+           <td>@form-label-margin</td>
+           <td><code>@space-8 0</code></td>
+       </tr>
+         <tr>
+           <td>@form-success-background</td>
+           <td><code>lighten(@skin-success, 45%)</code></td>
+       </tr>
+         <tr>
+           <td>@form-success-border</td>
+           <td><code>@skin-success</code></td>
+       </tr>
+         <tr>
+           <td>@form-success-color</td>
+           <td><code>@skin-success</code></td>
+       </tr>
+         <tr>
+           <td>@form-error-background</td>
+           <td><code>lighten(@skin-error, 40%)</code></td>
+       </tr>
+         <tr>
+           <td>@form-error-border</td>
+           <td><code>@skin-error</code></td>
+       </tr>
+         <tr>
+           <td>@form-error-color</td>
+           <td><code>@skin-error</code></td>
+       </tr>
+         <tr>
+           <td>@form-stacked-display</td>
+           <td><code>block</code></td>
+       </tr>
+         <tr>
+           <td>@form-stacked-margin</td>
+           <td><code>@space-8 0</code></td>
+       </tr>
+         <tr>
+           <td>@form-fieldset-grouped-padding-bottom</td>
+           <td><code>@space-16</code></td>
+       </tr>
+         <tr>
+           <td>@form-fieldset-grouped-last-padding-bottom</td>
+           <td><code>@space-24</code></td>
+       </tr>
+         <tr>
+           <td>@form-fieldset-grouped-input-display</td>
+           <td><code>block</code></td>
+       </tr>
+         <tr>
+           <td>@form-fieldset-grouped-input-last-margin-bottom</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-fieldset-grouped-input-position</td>
+           <td><code>relative</code></td>
+       </tr>
+         <tr>
+           <td>@form-message-color</td>
+           <td><code>@skin-text-primary-on-light</code></td>
+       </tr>
+         <tr>
+           <td>@form-message-display</td>
+           <td><code>block</code></td>
+       </tr>
+         <tr>
+           <td>@form-message-font-size</td>
+           <td><code>@font-size-xsmall</code></td>
+       </tr>
+         <tr>
+           <td>@form-message-inline-display</td>
+           <td><code>inline-block</code></td>
+       </tr>
+         <tr>
+           <td>@form-message-inline-padding</td>
+           <td><code>0 0 0 @space-8</code></td>
+       </tr>
+         <tr>
+           <td>@form-message-inline-vertical-align</td>
+           <td><code>middle</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-margin</td>
+           <td><code>0 0 @space-8</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-position</td>
+           <td><code>relative</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-control-display</td>
+           <td><code>block</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-control-padding-left</td>
+           <td><code>@space-48</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-control-width</td>
+           <td><code>100%</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-icon-align-items</td>
+           <td><code>center</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-icon-background</td>
+           <td><code>transparent</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-icon-bottom</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-icon-display</td>
+           <td><code>inline-flex</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-icon-justify-content</td>
+           <td><code>center</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-icon-left</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-icon-margin</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-icon-position</td>
+           <td><code>absolute</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-icon-right</td>
+           <td><code>auto</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-icon-top</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-icon-width</td>
+           <td><code>@space-48</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-reverse-control-padding-left</td>
+           <td><code>@space-8</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-reverse-control-padding-right</td>
+           <td><code>@space-48</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-reverse-control-padding-width</td>
+           <td><code>100%</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-reverse-icon-left</td>
+           <td><code>auto</code></td>
+       </tr>
+         <tr>
+           <td>@form-field-inline-reverse-icon-right</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-display</td>
+           <td><code>inline-flex</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-margin-bottom</td>
+           <td><code>@space-16</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-child-all-margin-bottom</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-child-all-min-width</td>
+           <td><code>@space-60</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-child-display</td>
+           <td><code>flex</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-child-last-border-bottom-left-radius</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-child-last-border-top-left-radius</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-child-first-all-border-bottom-right-radius</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-child-first-all-border-top-right-radius</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-child-first-border-bottom-right-radius</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-child-first-border-top-right-radius</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-child-last-all-border-bottom-left-radius</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-child-last-all-border-top-left-radius</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-child-not-first-last-radius</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-addon-border-radius</td>
+           <td><code>@form-border-radius</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-addon-color</td>
+           <td><code>@form-color</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-addon-font-size</td>
+           <td><code>@font-size-base</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-addon-margin</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-addon-min-width</td>
+           <td><code>@space-60</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-addon-position</td>
+           <td><code>relative</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-addon-text-align</td>
+           <td><code>center</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-addon-white-space</td>
+           <td><code>nowrap</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-addon-first-all-border-right-color</td>
+           <td><code>transparent</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-addon-first-all-focus-border-right-color</td>
+           <td><code>@form-focus-border-color</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-addon-last-all-border-left-color</td>
+           <td><code>transparent</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-addon-last-all-focus-border-left-color</td>
+           <td><code>@form-focus-border-color</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-control-focus-zindex</td>
+           <td><code>3</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-control-margin-bottom</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-control-position</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-control-zindex</td>
+           <td><code>2</code></td>
+       </tr>
+         <tr>
+           <td>@form-group-lego-block-display</td>
+           <td><code>flex</code></td>
+       </tr>
+         <tr>
+           <td>@form-select-custom-appearance</td>
+           <td><code>none</code></td>
+       </tr>
+         <tr>
+           <td>@form-select-custom-background-color</td>
+           <td><code>@form-background</code></td>
+       </tr>
+         <tr>
+           <td>@form-select-custom-background-image</td>
+           <td><code>"data:image/svg+xml</code></td>
+       </tr>
+         <tr>
+           <td>@form-select-custom-background-offset</td>
+           <td><code>@space-8</code></td>
+       </tr>
+         <tr>
+           <td>@form-select-custom-background-repeat</td>
+           <td><code>no-repeat</code></td>
+       </tr>
+         <tr>
+           <td>@form-select-custom-background-size</td>
+           <td><code>@space-12</code></td>
+       </tr>
+         <tr>
+           <td>@form-select-custom-display</td>
+           <td><code>inline-block</code></td>
+       </tr>
+         <tr>
+           <td>@form-select-custom-max-width</td>
+           <td><code>100%</code></td>
+       </tr>
+         <tr>
+           <td>@form-select-custom-padding-right</td>
+           <td><code>@space-28</code></td>
+       </tr>
+         <tr>
+           <td>@form-select-custom-vertical-align</td>
+           <td><code>middle</code></td>
+       </tr>
+         <tr>
+           <td>@form-control-borderless-border-color-focus</td>
+           <td><code>transparent</code></td>
+       </tr>
+         <tr>
+           <td>@form-control-borderless-border-color</td>
+           <td><code>transparent</code></td>
+       </tr>
+         <tr>
+           <td>@form-control-borderless-focus-box-shadow</td>
+           <td><code>0 1px 3px @skin-gray-600</code></td>
+       </tr>
+         <tr>
+           <td>@form-control-borderless-transition</td>
+           <td><code>box-shadow 0.3s ease</code></td>
+       </tr>
+         <tr>
+           <td>@form-control-fluid-width</td>
+           <td><code>100%</code></td>
+       </tr>
+         <tr>
+           <td>@form-control-padded-medium-screen-size-padding</td>
+           <td><code>@space-16</code></td>
+       </tr>
+         <tr>
+           <td>@form-control-padded-padding</td>
+           <td><code>@space-8 0 @space-16</code></td>
+       </tr>
+    </tbody>
+</table>
+            </div>
+
+        </div>
+
+      </div>
+      <hr >
+  </main>
+</main>
+<footer sg-footer></footer>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/kss-fullscreen.js"></script>
+<script src="kss-assets/kss-guides.js"></script>
+<script src="kss-assets/kss-markup.js"></script>
+<script src="kss-assets/js/highlight/highlight.pack.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+  var kssFullScreen = new KssFullScreen({
+    idPrefix: 'kss-fullscreen-',
+    bodyClass: 'kss-fullscreen-mode',
+    elementClass: 'is-fullscreen'
+  });
+  var kssGuides = new KssGuides({
+    bodyClass: 'kss-guides-mode'
+  });
+  var kssMarkup = new KssMarkup({
+    bodyClass: 'kss-markup-mode',
+    detailsClass: 'kss-markup'
+  });
+</script>
+<script src="kss-assets/js/animator.js"></script>
+<script src="kss-assets/js/modifier-helper.js"></script>
+<script src="kss-assets/js/styleguide.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PAM</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
+  <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/kss-assets/img/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+<link rel="stylesheet" href="kss-assets/css/pam.css">
+
+</head>
+<body id="kss-node"  >
+
+<header sg-header>
+  <div pam-Grid pam-Grid-Control="align:center">
+      <div pam-Unit="1-5">
+          <a href="./" sg-Link>
+            <img
+              src="kss-assets/img/logo.svg"
+              alt="PAM"
+              title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
+              height="48"
+              width="48"
+              sg-Logo>
+          </a>
+      </div>
+      <div pam-Unit="4-5">
+          <div pam-Menu sg-Nav>
+              <ul pam-Menu-List>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/blob/legendary-grasshopper/CHANGELOG.md"  pam-Button="flat">Changelog</a>
+                  </li>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/issues" pam-Button="flat">Issues</a>
+                  </li>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="raised">Download</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</header>
+
+<main sg-main>
+  <aside class="kss-sidebar kss-style">
+    <header class="kss-header">
+      <h1 class="kss-doc-title">Documentation</h1>
+    </header>
+    <nav class="kss-nav">
+      <ul class="kss-nav__menu">
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-getting-started.html">
+            <span class="kss-nav__ref">1</span><span class="kss-nav__name">Getting started</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" active>
+          <a class="kss-nav__menu-link" href="section-setup.html">
+            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Setup</span>
+          </a>
+              <ul class="kss-nav__menu-child">
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-setup.html#kssref-setup-your-project">
+                    <span class="kss-nav__ref ">2.1</span
+                    ><span class="kss-nav__name">Build with your project</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-setup.html#kssref-setup-with-pam">
+                    <span class="kss-nav__ref ">2.2</span
+                    ><span class="kss-nav__name">Build with PAM</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-setup.html#kssref-setup-create-skin">
+                    <span class="kss-nav__ref ">2.3</span
+                    ><span class="kss-nav__name">Create a skin</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-setup.html#kssref-setup-skin-folder-structure">
+                    <span class="kss-nav__ref ">2.4</span
+                    ><span class="kss-nav__name">Skin folder structure</span>
+                  </a>
+                </li>
+              </ul>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-general.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">General</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-grids.html">
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Grids</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-skin.html">
+            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Skin</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-typography.html">
+            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Typography</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-forms.html">
+            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Forms</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-buttons.html">
+            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Buttons</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-cards.html">
+            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Cards</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-tables.html">
+            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Tables</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-menus.html">
+            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Menus</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-alert.html">
+            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Alert</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-divider.html">
+            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Divider</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-links.html">
+            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Link</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-lists.html">
+            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Lists</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-tags.html">
+            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Tags</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-column.html">
+            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Column</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-overlay.html">
+            <span class="kss-nav__ref">19</span><span class="kss-nav__name">Overlay</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-traits.html">
+            <span class="kss-nav__ref">20</span><span class="kss-nav__name">Traits</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-mixins.html">
+            <span class="kss-nav__ref">21</span><span class="kss-nav__name">Mixins</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <main role="main" class="kss-main">
+
+      <div id="kssref-setup" class="kss-section kss-section--depth-1 ">
+
+        <div class="kss-style">
+          <h1 class="kss-title kss-title--level-1">
+            <a class="kss-title__permalink" href="#kssref-setup">
+              Setup
+            </a>
+          </h1>
+
+            <div class="kss-description">
+              <p>PAM is written in Less and has support for cutomization. So instead of manually overriding CSS rules in your project use the build process to create and include a custom skin. To use the custom skin in your project the sources files and custom skin needs to be compiled. There are two choices, use your own build process or use PAMs native build process.</p>
+
+            </div>
+
+        </div>
+
+      </div>
+      <hr >
+      <section id="kssref-setup-your-project" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-setup-your-project">
+              Build with your project
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>To include PAM in your project build, import (<code>pam.less</code>) or only the componens you want to use into your project's main less file. Remember to think about the import order in your main file so that css rules come in the right order. If you want to customize or create your own skin of PAM you need to create a skin folder. See <a href="section-setup.html#kssref-setup-create-skin">how to create a skin</a>.</p>
+<pre class="hljs"><code class="language-less"><span class="hljs-comment">// Import PAM</span>
+<span class="hljs-keyword">@import</span> <span class="hljs-string">"node_modules/pam/dist/less/pam.less"</span>;
+
+<span class="hljs-comment">// Custom styles, variables, hooks and mixins...</span>
+</code></pre>
+
+            </div>
+
+        </div>
+
+      </section>
+      <hr >
+      <section id="kssref-setup-with-pam" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-setup-with-pam">
+              Build with PAM
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Somtimes it's better to keep things separated. So if you want to create a custom skin of PAM and don't want to keep it in your project you can use the provided build process to create a custom skin. By using this approach PAM is not needed to be included in your own build process.</p>
+<p>Create a <code>/skins</code> folder to to include custom skins in the build. The <code>/skins</code> folder is listed in <code>.gitignore</code> to prevent custom skins from being pushed to the PAM repository.</p>
+<p><span pam-Tag="info">Tip</span> Create a git repository for the <code>/skins</code> folder so that you have the skins under version control.</p>
+<p>Create a file <code>/skins/my-skin.less</code> and import PAM.</p>
+<pre class="hljs"><code class="language-less"><span class="hljs-comment">// Import PAM</span>
+<span class="hljs-keyword">@import</span> <span class="hljs-string">"../src/less/pam.less"</span>;
+
+<span class="hljs-comment">// Custom styles, variables, hooks and mixins...</span>
+</code></pre>
+<p>To build PAM and your custom skin use the shell commands below. <code>node</code>, <code>npm</code> and <code>git</code> are needed.</p>
+<p><span pam-Tag="info">Prerequisites</span> <code>node</code>, <code>npm</code> and <code>git</code></p>
+<pre class="hljs"><code class="language-sh"><span class="hljs-comment"># Install dependencies</span>
+$ npm i
+
+<span class="hljs-comment"># Build, watch files and create a local style guide automagically on file changes</span>
+$ npm run dev
+</code></pre>
+
+            </div>
+
+        </div>
+
+      </section>
+      <hr >
+      <section id="kssref-setup-create-skin" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-setup-create-skin">
+              Create a skin
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>When you have created and setup a skins file it's time to skin PAM the way you want. First of make sure you are familiar with <a href="http://lesscss.org/">Less</a>. To customize and extend PAM in a efficent way there is a <strong>best practice</strong> to follow.</p>
+<h3>Variables</h3>
+<p>First resort of customization is by overwriting default variables. Global variables can be found in the <code>/src/less/variables.less</code> file. For components the variables resides in respective Less file which also can be overriden.</p>
+<p>Find a Less variable you want to change. For example, the primary skin color which is defined in <code>/src/less/variables.less</code>.</p>
+<pre class="hljs"><code class="language-less"><span class="hljs-comment">// default value</span>
+<span class="hljs-variable">@skin-primary:</span> <span class="hljs-number">#008ed5</span>;
+</code></pre>
+<p>Now, override the default value by setting a new value inside <code>/skins/my-skin.less</code>.</p>
+<pre class="hljs"><code class="language-less"><span class="hljs-comment">// new value</span>
+<span class="hljs-variable">@skin-primary:</span> <span class="hljs-number">#666</span>;
+</code></pre>
+<p>Compile the build and the CSS will have the new value. Since a global variable have been changed many components and other global varibales use this variable and will be updated accordingly. So changing some global variables will result in a totally diffrent skin. This also gives the control to change the skin on a global or component level depending on what type of variable have been modified.</p>
+<h3>Hooks</h3>
+<p>To prevent creation of overhead selectors, Less mixins hooks are declared in all components which hook into predefined selectors. Available hooks are documented in the style guide for every component. This way it's easy to change or apply additional properties.</p>
+<p>Look trough the style guide and find a rule to extend. Lets take the divider component as an example <code>/src/less/divider.less</code>.</p>
+<pre class="hljs"><code class="language-less"><span class="hljs-selector-attr">[pam-Divider]</span> {
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">border-top</span>: <span class="hljs-variable">@divider-size</span> solid <span class="hljs-variable">@divider-color</span>;
+    <span class="hljs-attribute">box-sizing</span>: content-box;
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+
+    <span class="hljs-comment">// Mixin hook</span>
+    <span class="hljs-selector-class">.hook-divider</span>;
+}
+</code></pre>
+<p>Now inject an additional CSS property by using the hook inside the new and shiny skin file (<code>/skins/my-skin.less</code>). Lets be bold and reuse a global and local variable to set the value for the new declaration.</p>
+<pre class="hljs"><code class="language-less"><span class="hljs-comment">// Divider</span>
+<span class="hljs-selector-class">.hook-divider</span>() { <span class="hljs-attribute">border-bottom</span>: <span class="hljs-variable">@divider-size</span> solid <span class="hljs-variable">@skin-dark</span>; }
+</code></pre>
+
+            </div>
+
+        </div>
+
+      </section>
+      <hr >
+      <section id="kssref-setup-skin-folder-structure" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-setup-skin-folder-structure">
+              Skin folder structure
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>In the examples so far all custom changes have been made in one file <code>/skins/my-skin.less</code>. This is fine as long as there only a few variables and hooks calls. But if your skin requires larger modification it's recommended to use a complete folder structure for the skin and use <code>/skins/my-skin.less</code> as an entry point. All variables and hooks should be put into single files per component.</p>
+<p>Following example shows how to stucture the skins folder if it's used in the PAM build and is placed in the root directory. If you have the skins folder in your own project adapt the paths to that.</p>
+<pre class="hljs"><code class="language-html">skins/
+    <span class="hljs-comment">&lt;!-- entry file --&gt;</span>
+    my-skin.less
+
+    <span class="hljs-comment">&lt;!-- skin source folder --&gt;</span>
+    my-skin/
+        <span class="hljs-comment">&lt;!-- imports all custom stuff --&gt;</span>
+        _custom.less
+
+        <span class="hljs-comment">&lt;!-- one file -&gt; one component --&gt;</span>
+        accordion.less
+        alert.less
+        ...
+</code></pre>
+<p>Skin entry point, <code>/skins/my-skin.less</code>:</p>
+<pre class="hljs"><code class="language-less"><span class="hljs-comment">// PAM</span>
+<span class="hljs-keyword">@import</span> <span class="hljs-string">"../src/less/pam.less"</span>;
+
+<span class="hljs-comment">// Skin</span>
+<span class="hljs-keyword">@import</span> <span class="hljs-string">"my-skin/_custom.less"</span>;
+</code></pre>
+<p>The <code>skins/my-skin/_custom.less</code> file imports all customized components.</p>
+<pre class="hljs"><code class="language-less"><span class="hljs-keyword">@import</span> <span class="hljs-string">"alert.less"</span>;
+<span class="hljs-keyword">@import</span> <span class="hljs-string">"buttons.less"</span>;
+<span class="hljs-keyword">@import</span> ...
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<p><span pam-Tag="success">success</span> That's it, your own scalable skin is all setup. Good luck and godspeed!</p>
+
+            </div>
+
+        </div>
+
+      </section>
+      <hr >
+  </main>
+</main>
+<footer sg-footer></footer>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/kss-fullscreen.js"></script>
+<script src="kss-assets/kss-guides.js"></script>
+<script src="kss-assets/kss-markup.js"></script>
+<script src="kss-assets/js/highlight/highlight.pack.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+  var kssFullScreen = new KssFullScreen({
+    idPrefix: 'kss-fullscreen-',
+    bodyClass: 'kss-fullscreen-mode',
+    elementClass: 'is-fullscreen'
+  });
+  var kssGuides = new KssGuides({
+    bodyClass: 'kss-guides-mode'
+  });
+  var kssMarkup = new KssMarkup({
+    bodyClass: 'kss-markup-mode',
+    detailsClass: 'kss-markup'
+  });
+</script>
+<script src="kss-assets/js/animator.js"></script>
+<script src="kss-assets/js/modifier-helper.js"></script>
+<script src="kss-assets/js/styleguide.js"></script>
+
+
+
+</body>
+</html>

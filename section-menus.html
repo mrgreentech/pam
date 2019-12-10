@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PAM</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
+  <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/kss-assets/img/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
+<link rel="stylesheet" href="kss-assets/css/pam.css">
+
+</head>
+<body id="kss-node"  >
+
+<header sg-header>
+  <div pam-Grid pam-Grid-Control="align:center">
+      <div pam-Unit="1-5">
+          <a href="./" sg-Link>
+            <img
+              src="kss-assets/img/logo.svg"
+              alt="PAM"
+              title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
+              height="48"
+              width="48"
+              sg-Logo>
+          </a>
+      </div>
+      <div pam-Unit="4-5">
+          <div pam-Menu sg-Nav>
+              <ul pam-Menu-List>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/blob/legendary-grasshopper/CHANGELOG.md"  pam-Button="flat">Changelog</a>
+                  </li>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/issues" pam-Button="flat">Issues</a>
+                  </li>
+                  <li pam-Menu-Item>
+                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="raised">Download</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</header>
+
+<main sg-main>
+  <aside class="kss-sidebar kss-style">
+    <header class="kss-header">
+      <h1 class="kss-doc-title">Documentation</h1>
+    </header>
+    <nav class="kss-nav">
+      <ul class="kss-nav__menu">
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-getting-started.html">
+            <span class="kss-nav__ref">1</span><span class="kss-nav__name">Getting started</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-setup.html">
+            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Setup</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-general.html">
+            <span class="kss-nav__ref">3</span><span class="kss-nav__name">General</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-grids.html">
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Grids</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-skin.html">
+            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Skin</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-typography.html">
+            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Typography</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-forms.html">
+            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Forms</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-buttons.html">
+            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Buttons</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-cards.html">
+            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Cards</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-tables.html">
+            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Tables</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" active>
+          <a class="kss-nav__menu-link" href="section-menus.html">
+            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Menus</span>
+          </a>
+              <ul class="kss-nav__menu-child">
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-menus.html#kssref-menus-vertical">
+                    <span class="kss-nav__ref ">11.1</span
+                    ><span class="kss-nav__name">Vertical</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-menus.html#kssref-menus-fluid">
+                    <span class="kss-nav__ref ">11.2</span
+                    ><span class="kss-nav__name">Fluid</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-menus.html#kssref-menus-fill">
+                    <span class="kss-nav__ref ">11.3</span
+                    ><span class="kss-nav__name">Fill</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-menus.html#kssref-menus-justified">
+                    <span class="kss-nav__ref ">11.4</span
+                    ><span class="kss-nav__name">Justified</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-menus.html#kssref-menus-scrollable">
+                    <span class="kss-nav__ref ">11.5</span
+                    ><span class="kss-nav__name">Scrollable</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-menus.html#kssref-menus-sub">
+                    <span class="kss-nav__ref ">11.6</span
+                    ><span class="kss-nav__name">Submenu</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-menus.html#kssref-menus-states">
+                    <span class="kss-nav__ref ">11.7</span
+                    ><span class="kss-nav__name">States</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-menus.html#kssref-menus-heading">
+                    <span class="kss-nav__ref ">11.8</span
+                    ><span class="kss-nav__name">Heading</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-menus.html#kssref-menus-divider">
+                    <span class="kss-nav__ref ">11.9</span
+                    ><span class="kss-nav__name">Divider</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-menus.html#kssref-menus-hooks">
+                    <span class="kss-nav__ref ">11.10</span
+                    ><span class="kss-nav__name">Hooks</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-menus.html#kssref-menus-variables">
+                    <span class="kss-nav__ref ">11.11</span
+                    ><span class="kss-nav__name">Variables</span>
+                  </a>
+                </li>
+              </ul>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-alert.html">
+            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Alert</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-divider.html">
+            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Divider</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-links.html">
+            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Link</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-lists.html">
+            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Lists</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-tags.html">
+            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Tags</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-column.html">
+            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Column</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-overlay.html">
+            <span class="kss-nav__ref">19</span><span class="kss-nav__name">Overlay</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-traits.html">
+            <span class="kss-nav__ref">20</span><span class="kss-nav__name">Traits</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item" >
+          <a class="kss-nav__menu-link" href="section-mixins.html">
+            <span class="kss-nav__ref">21</span><span class="kss-nav__name">Mixins</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <main role="main" class="kss-main">
+
+      <div id="kssref-menus" class="kss-section kss-section--depth-1 ">
+
+        <div class="kss-style">
+          <h1 class="kss-title kss-title--level-1">
+            <a class="kss-title__permalink" href="#kssref-menus">
+              Menus
+            </a>
+          </h1>
+
+            <div class="kss-description">
+              <p>Menus are horizontal as default and take up 100% width. Use custom or preset modifiers
+to change the apperance and style of the menu.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <div pam-Menu>
+    <ul pam-Menu-List>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+    </ul>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-menus" data-kss-fullscreen="kssref-menus">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-menus.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-menus" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-menus" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;div pam-Menu&gt;
+    &lt;ul pam-Menu-List&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Home sweet home&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Stuff&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+      </div>
+      <hr >
+      <section id="kssref-menus-vertical" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-menus-vertical">
+              Vertical
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Well, the name explains it.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <div pam-Menu="vertical">
+    <ul pam-Menu-List>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+    </ul>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-menus-vertical" data-kss-fullscreen="kssref-menus-vertical">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-menus-vertical.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-menus-vertical" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-menus-vertical" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;div pam-Menu&#x3D;&quot;vertical&quot;&gt;
+    &lt;ul pam-Menu-List&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Home sweet home&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Stuff&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
+      <section id="kssref-menus-fluid" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-menus-fluid">
+              Fluid
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>This makes the menu follow the parent element width.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <div pam-Menu="vertical fluid">
+    <ul pam-Menu-List>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+    </ul>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-menus-fluid" data-kss-fullscreen="kssref-menus-fluid">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-menus-fluid.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-menus-fluid" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-menus-fluid" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;div pam-Menu&#x3D;&quot;vertical fluid&quot;&gt;
+    &lt;ul pam-Menu-List&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Home sweet home&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Stuff&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
+      <section id="kssref-menus-fill" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-menus-fill">
+              Fill
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Extends the menu over the available width.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <div pam-Menu="fill">
+    <ul pam-Menu-List>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+    </ul>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-menus-fill" data-kss-fullscreen="kssref-menus-fill">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-menus-fill.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-menus-fill" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-menus-fill" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;div pam-Menu&#x3D;&quot;fill&quot;&gt;
+    &lt;ul pam-Menu-List&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Home sweet home&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Stuff&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
+      <section id="kssref-menus-justified" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-menus-justified">
+              Justified
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Extends the menu items of equal-width over the available width.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <div pam-Menu="justified">
+    <ul pam-Menu-List>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+    </ul>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-menus-justified" data-kss-fullscreen="kssref-menus-justified">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-menus-justified.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-menus-justified" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-menus-justified" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;div pam-Menu&#x3D;&quot;justified&quot;&gt;
+    &lt;ul pam-Menu-List&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Home sweet home&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Stuff&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
+      <section id="kssref-menus-scrollable" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-menus-scrollable">
+              Scrollable
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Limit the height of the menu and use the <code>scrollable</code> menu attribute.
+This creates a scrollable menu.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <div pam-Menu="scrollable" pam-Menu-Scrollable-Test>
+    <ul pam-Menu-List>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>JavaScript</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>C++</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Dart</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Smalltalk</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Cobol</a></li>
+    </ul>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-menus-scrollable" data-kss-fullscreen="kssref-menus-scrollable">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-menus-scrollable.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-menus-scrollable" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-menus-scrollable" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;div pam-Menu&#x3D;&quot;scrollable&quot; pam-Menu-Scrollable-Test&gt;
+    &lt;ul pam-Menu-List&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;C++&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Dart&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Smalltalk&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Cobol&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
+      <section id="kssref-menus-scrollable-horizontal" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-menus-scrollable-horizontal">
+              Horizontal
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p>To enable a scrollable horizontal menu, use the <code>horizontal</code> menu type
+with the <code>scrollable</code> attribute. When there isn't enough room,
+the menu items can be scrolled.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <div pam-Menu="horizontal scrollable">
+    <ul pam-Menu-List>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>JavaScript</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>C++</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Dart</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Smalltalk</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Cobol</a></li>
+    </ul>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-menus-scrollable-horizontal" data-kss-fullscreen="kssref-menus-scrollable-horizontal">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-menus-scrollable-horizontal.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-menus-scrollable-horizontal" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-menus-scrollable-horizontal" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;div pam-Menu&#x3D;&quot;horizontal scrollable&quot;&gt;
+    &lt;ul pam-Menu-List&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;C++&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Dart&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Smalltalk&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Cobol&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
+      <section id="kssref-menus-sub" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-menus-sub">
+              Submenu
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>To enable a dropdowns use <code>pam-Menu-Item</code> and <code>pam-Menu-Has-Children</code> this can be used with <code>vertical</code>and <code>horizontal</code>menu types.</p>
+
+            </div>
+
+        </div>
+
+      </section>
+      <hr >
+      <section id="kssref-menus-sub-dropdown" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-menus-sub-dropdown">
+              Dropdown
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p>By using the horizontal menu type, a dropdown sub menu can be created.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <div pam-Menu="horizontal">
+    <ul pam-Menu-List>
+        <li pam-Menu-Item>
+            <a href="#" pam-Menu-Link>Home</a>
+        </li>
+        <li pam-Menu-Item pam-Menu-Has-Children pam-Menu-Allow-Hover>
+            <a href="#" pam-Menu-Link>Stuff</a>
+            <ul pam-Menu-Children>
+                <li pam-Menu-Item><a pam-Menu-Link href="#">Node</a></li>
+                <li pam-Menu-Item><a pam-Menu-Link href="#">JavaScript</a></li>
+                <li pam-Menu-Item><a pam-Menu-Link href="#">Angular</a></li>
+                <li pam-Menu-Item><a pam-Menu-Link href="#">React</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-menus-sub-dropdown" data-kss-fullscreen="kssref-menus-sub-dropdown">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-menus-sub-dropdown.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-menus-sub-dropdown" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-menus-sub-dropdown" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;div pam-Menu&#x3D;&quot;horizontal&quot;&gt;
+    &lt;ul pam-Menu-List&gt;
+        &lt;li pam-Menu-Item&gt;
+            &lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li pam-Menu-Item pam-Menu-Has-Children pam-Menu-Allow-Hover&gt;
+            &lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Stuff&lt;/a&gt;
+            &lt;ul pam-Menu-Children&gt;
+                &lt;li pam-Menu-Item&gt;&lt;a pam-Menu-Link href&#x3D;&quot;#&quot;&gt;Node&lt;/a&gt;&lt;/li&gt;
+                &lt;li pam-Menu-Item&gt;&lt;a pam-Menu-Link href&#x3D;&quot;#&quot;&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+                &lt;li pam-Menu-Item&gt;&lt;a pam-Menu-Link href&#x3D;&quot;#&quot;&gt;Angular&lt;/a&gt;&lt;/li&gt;
+                &lt;li pam-Menu-Item&gt;&lt;a pam-Menu-Link href&#x3D;&quot;#&quot;&gt;React&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
+      <section id="kssref-menus-sub-vertical" class="kss-section kss-section--depth-3 ">
+
+        <div class="kss-style">
+          <h3 class="kss-title kss-title--level-3">
+            <a class="kss-title__permalink" href="#kssref-menus-sub-vertical">
+              Vertical
+            </a>
+          </h3>
+
+            <div class="kss-description">
+              <p>For a vertical submenu use the vertical menu with <code>pam-Menu-Has-Children</code>.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <div pam-Menu="vertical inline">
+    <ul pam-Menu-List>
+        <li pam-Menu-Item>
+            <a href="#" pam-Menu-Link>Home</a>
+        </li>
+        <li pam-Menu-Item pam-Menu-Has-Children pam-Menu-Allow-Hover>
+            <a href="#" pam-Menu-Link>Stuff</a>
+            <ul pam-Menu-Children>
+                <li pam-Menu-Item><a pam-Menu-Link href="#">Node</a></li>
+                <li pam-Menu-Item><a pam-Menu-Link href="#">JavaScript</a></li>
+                <li pam-Menu-Item><a pam-Menu-Link href="#">Angular</a></li>
+                <li pam-Menu-Item><a pam-Menu-Link href="#">React</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-menus-sub-vertical" data-kss-fullscreen="kssref-menus-sub-vertical">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-menus-sub-vertical.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-menus-sub-vertical" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-menus-sub-vertical" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;div pam-Menu&#x3D;&quot;vertical inline&quot;&gt;
+    &lt;ul pam-Menu-List&gt;
+        &lt;li pam-Menu-Item&gt;
+            &lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li pam-Menu-Item pam-Menu-Has-Children pam-Menu-Allow-Hover&gt;
+            &lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Stuff&lt;/a&gt;
+            &lt;ul pam-Menu-Children&gt;
+                &lt;li pam-Menu-Item&gt;&lt;a pam-Menu-Link href&#x3D;&quot;#&quot;&gt;Node&lt;/a&gt;&lt;/li&gt;
+                &lt;li pam-Menu-Item&gt;&lt;a pam-Menu-Link href&#x3D;&quot;#&quot;&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+                &lt;li pam-Menu-Item&gt;&lt;a pam-Menu-Link href&#x3D;&quot;#&quot;&gt;Angular&lt;/a&gt;&lt;/li&gt;
+                &lt;li pam-Menu-Item&gt;&lt;a pam-Menu-Link href&#x3D;&quot;#&quot;&gt;React&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
+      <section id="kssref-menus-states" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-menus-states">
+              States
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p><code>pam-Menu-Item</code> has two states <code>active</code> and <code>disabled</code>.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <div pam-Menu="horizontal">
+    <ul pam-Menu-List>
+        <li pam-Menu-Item="active">
+            <a href="#" pam-Menu-Link>Home</a>
+        </li>
+        <li pam-Menu-Item>
+            <a href="#" pam-Menu-Link>About</a>
+        </li>
+        <li pam-Menu-Item="disabled">
+            <a href="#" pam-Menu-Link>Stuff</a>
+        </li>
+    </ul>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-menus-states" data-kss-fullscreen="kssref-menus-states">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-menus-states.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-menus-states" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-menus-states" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;div pam-Menu&#x3D;&quot;horizontal&quot;&gt;
+    &lt;ul pam-Menu-List&gt;
+        &lt;li pam-Menu-Item&#x3D;&quot;active&quot;&gt;
+            &lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;
+            &lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;About&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li pam-Menu-Item&#x3D;&quot;disabled&quot;&gt;
+            &lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Stuff&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
+      <section id="kssref-menus-heading" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-menus-heading">
+              Heading
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p><code>pam-Menu-Heading</code> is used to add a heading to menus.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <div pam-Menu="">
+    <a href="#" pam-Menu-Heading>Menu title</a>
+    <ul pam-Menu-List>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+    </ul>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-menus-heading" data-kss-fullscreen="kssref-menus-heading">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-menus-heading.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-menus-heading" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-menus-heading" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;div pam-Menu&#x3D;&quot;&quot;&gt;
+    &lt;a href&#x3D;&quot;#&quot; pam-Menu-Heading&gt;Menu title&lt;/a&gt;
+    &lt;ul pam-Menu-List&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
+      <section id="kssref-menus-divider" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-menus-divider">
+              Divider
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>To add a menu divider use the <code>pam-Menu-Divider</code> attribute in a li element. It works the same for vertical menus.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <div pam-Menu="">
+    <ul pam-Menu-List>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+        <li pam-Menu-Divider></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>JavaScript</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>C++</a></li>
+        <li pam-Menu-Divider></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Smalltalk</a></li>
+        <li pam-Menu-Item><a href="#" pam-Menu-Link>Cobol</a></li>
+    </ul>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-menus-divider" data-kss-fullscreen="kssref-menus-divider">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-menus-divider.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-menus-divider" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-menus-divider" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;div pam-Menu&#x3D;&quot;&quot;&gt;
+    &lt;ul pam-Menu-List&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Divider&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;C++&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Divider&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Smalltalk&lt;/a&gt;&lt;/li&gt;
+        &lt;li pam-Menu-Item&gt;&lt;a href&#x3D;&quot;#&quot; pam-Menu-Link&gt;Cobol&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
+      <section id="kssref-menus-hooks" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-menus-hooks">
+              Hooks
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p><code>.hook-menu</code>
+<code>.hook-menu-active-children</code>
+<code>.hook-menu-children</code>
+<code>.hook-menu-fill</code>
+<code>.hook-menu-fill-item</code>
+<code>.hook-menu-fill-list</code>
+<code>.hook-menu-fixed</code>
+<code>.hook-menu-fluid</code>
+<code>.hook-menu-has-children-link-after</code>
+<code>.hook-menu-heading</code>
+<code>.hook-menu-horizontal-scrollable</code>
+<code>.hook-menu-horizontal-scrollable-list</code>
+<code>.hook-menu-item</code>
+<code>.hook-menu-item-active-link</code>
+<code>.hook-menu-item-disabled</code>
+<code>.hook-menu-item-disabled-link</code>
+<code>.hook-menu-item-active-link</code>
+<code>.hook-menu-justified</code>
+<code>.hook-menu-justified-item</code>
+<code>.hook-menu-justified-list</code>
+<code>.hook-menu-link</code>
+<code>.hook-menu-list</code>
+<code>.hook-menu-scrollable</code>
+<code>.hook-menu-scrollable-list</code>
+<code>.hook-menu-divider</code>
+<code>.hook-menu-vertical</code>
+<code>.hook-menu-vertical-children</code>
+<code>.hook-menu-vertical-has-children-link-after</code>
+<code>.hook-menu-vertical-item</code>
+<code>.hook-menu-vertical-list</code>
+<code>.hook-menu-vertical-divider</code></p>
+
+            </div>
+
+        </div>
+
+      </section>
+      <hr >
+      <section id="kssref-menus-variables" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-menus-variables">
+              Variables
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>These are all the component specific variables that can be
+used for customization.</p>
+<table pam-Table="horizontal">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr>
+           <td>@menu-arrow-horizontal</td>
+           <td><code>\25BE</code></td>
+       </tr>
+         <tr>
+           <td>@menu-arrow-vertical</td>
+           <td><code>\25B8</code></td>
+       </tr>
+         <tr>
+           <td>@menu-bg</td>
+           <td><code>transparent</code></td>
+       </tr>
+         <tr>
+           <td>@menu-color</td>
+           <td><code>@skin-gray-600</code></td>
+       </tr>
+         <tr>
+           <td>@menu-disabled-opacity</td>
+           <td><code>@opacity-60</code></td>
+       </tr>
+         <tr>
+           <td>@menu-font-letter-spacing</td>
+           <td><code>0.09em</code></td>
+       </tr>
+         <tr>
+           <td>@menu-font-size</td>
+           <td><code>@font-size-medium</code></td>
+       </tr>
+         <tr>
+           <td>@menu-font-weight</td>
+           <td><code>@font-weight-medium</code></td>
+       </tr>
+         <tr>
+           <td>@menu-height</td>
+           <td><code>@space-48</code></td>
+       </tr>
+         <tr>
+           <td>@menu-line-height</td>
+           <td><code>3rem</code></td>
+       </tr>
+         <tr>
+           <td>@menu-heading-color</td>
+           <td><code>@skin-black</code></td>
+       </tr>
+         <tr>
+           <td>@menu-heading-font-weight</td>
+           <td><code>@font-weight-medium</code></td>
+       </tr>
+         <tr>
+           <td>@menu-heading-height</td>
+           <td><code>@menu-height</code></td>
+       </tr>
+         <tr>
+           <td>@menu-heading-padding</td>
+           <td><code>@menu-link-padding</code></td>
+       </tr>
+         <tr>
+           <td>@menu-divider-bg-color</td>
+           <td><code>@skin-border-primary</code></td>
+       </tr>
+         <tr>
+           <td>@menu-divider-margin</td>
+           <td><code>0 @space-8</code></td>
+       </tr>
+         <tr>
+           <td>@menu-divider-thickness</td>
+           <td><code>1px</code></td>
+       </tr>
+         <tr>
+           <td>@menu-vertical-divider-margin</td>
+           <td><code>@space-8</code></td>
+       </tr>
+         <tr>
+           <td>@menu-link-active-color</td>
+           <td><code>@skin-black</code></td>
+       </tr>
+         <tr>
+           <td>@menu-link-color</td>
+           <td><code>@menu-color</code></td>
+       </tr>
+         <tr>
+           <td>@menu-link-focus-bg-color</td>
+           <td><code>fade(@skin-primary, 15)</code></td>
+       </tr>
+         <tr>
+           <td>@menu-link-focus-color</td>
+           <td><code>@skin-primary</code></td>
+       </tr>
+         <tr>
+           <td>@menu-link-height</td>
+           <td><code>@menu-height</code></td>
+       </tr>
+         <tr>
+           <td>@menu-link-hover-bg-color</td>
+           <td><code>fade(@skin-primary, 5)</code></td>
+       </tr>
+         <tr>
+           <td>@menu-link-justify-content</td>
+           <td><code>center</code></td>
+       </tr>
+         <tr>
+           <td>@menu-link-line-height</td>
+           <td><code>@menu-line-height</code></td>
+       </tr>
+         <tr>
+           <td>@menu-link-padding</td>
+           <td><code>0 @space-20</code></td>
+       </tr>
+         <tr>
+           <td>@menu-children-bg-color</td>
+           <td><code>@skin-background</code></td>
+       </tr>
+         <tr>
+           <td>@menu-children-link-after-padding</td>
+           <td><code>@space-8</code></td>
+       </tr>
+         <tr>
+           <td>@menu-transition-duration</td>
+           <td><code>@transition-duration-default</code></td>
+       </tr>
+         <tr>
+           <td>@menu-transition-property</td>
+           <td><code>background-color</code></td>
+       </tr>
+         <tr>
+           <td>@menu-transition-timing</td>
+           <td><code>linear</code></td>
+       </tr>
+    </tbody>
+</table>
+            </div>
+
+        </div>
+
+      </section>
+      <hr >
+  </main>
+</main>
+<footer sg-footer></footer>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/kss-fullscreen.js"></script>
+<script src="kss-assets/kss-guides.js"></script>
+<script src="kss-assets/kss-markup.js"></script>
+<script src="kss-assets/js/highlight/highlight.pack.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+  var kssFullScreen = new KssFullScreen({
+    idPrefix: 'kss-fullscreen-',
+    bodyClass: 'kss-fullscreen-mode',
+    elementClass: 'is-fullscreen'
+  });
+  var kssGuides = new KssGuides({
+    bodyClass: 'kss-guides-mode'
+  });
+  var kssMarkup = new KssMarkup({
+    bodyClass: 'kss-markup-mode',
+    detailsClass: 'kss-markup'
+  });
+</script>
+<script src="kss-assets/js/animator.js"></script>
+<script src="kss-assets/js/modifier-helper.js"></script>
+<script src="kss-assets/js/styleguide.js"></script>
+
+
+
+</body>
+</html>
