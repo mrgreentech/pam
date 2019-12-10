@@ -1,0 +1,564 @@
+// Lists
+//
+// Lists are groups of text or image elements. Composed of primary
+// and optional actions represented by icons and text.
+//
+// Weight: 12
+//
+// Style guide: lists
+
+// Variables
+// ==================================================================
+
+@list-padding: @space-8 0;
+@list-color: @skin-text-primary-on-background;
+@list-color-secondary: @skin-text-hint-on-background;
+
+@list-two-line-height: @space-72;
+@list-three-line-height: @space-96;
+
+@list-avatar-bg-color: @list-color-secondary;
+@list-avatar-border-radius: @border-radius-rounded;
+@list-avatar-color: @skin-white;
+@list-avatar-height: @space-40;
+@list-avatar-margin: 0 @space-16 0 0;
+@list-avatar-width: @space-40;
+
+@list-item-align: center;
+@list-item-cursor: pointer;
+@list-item-display: flex;
+@list-item-height: @space-48;
+@list-item-justify-content: flex-start;
+@list-item-outline: 0;
+@list-item-padding: @space-0 @space-16;
+@list-item-position: relative;
+
+@list-item-text-line-heigth: @line-height-secondary;
+
+@list-item-primary-align: center;
+@list-item-primary-color: @list-color-secondary;
+@list-item-primary-display: inline-flex;
+@list-item-primary-fill: currentColor;
+@list-item-primary-flex-shrink: 0;
+@list-item-primary-height: @space-24;
+@list-item-primary-justify-content: center;
+@list-item-primary-margin: 0 @space-32 0 0;
+@list-item-primary-width: @space-24;
+
+@list-item-text-primary-display: block;
+
+@list-item-text-secondary-color: @list-color-secondary;
+@list-item-text-secondary-display: block;
+@list-item-text-secondary-font-size: @font-size-medium;
+
+@list-item-secondary-color: @list-color-secondary;
+
+// ==================================================================
+//  List
+// ==================================================================
+
+// One line
+//
+// Single-line list items contain a maximum of one line of text.
+//
+// Markup:
+// <ul pam-List pam-border="w:px">
+//     <li pam-List-Item>List Item</li>
+//     <li pam-List-Item>List Item</li>
+//     <li pam-List-Item>List Item</li>
+// </ul>
+//
+// Weight: 1
+//
+// Style guide: lists.one-line
+
+// Two line
+//
+// Two-line list items contain a maximum of two line of text.
+//
+// Markup:
+// <ul pam-List="2-line" pam-border="w:px">
+//     <li pam-List-Item>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//         </span>
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//         </span>
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//         </span>
+//     </li>
+// </ul>
+//
+// Weight: 2
+//
+// Style guide: lists.two-line
+
+// Three line
+//
+// Three-line list items contain a maximum of three line of text.
+//
+// Markup:
+// <ul pam-List="3-line" pam-border="w:px">
+//     <li pam-List-Item>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//             <span pam-List-Item-Text-Secondary>Tertiary text</span>
+//         </span>
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//             <span pam-List-Item-Text-Secondary>Tertiary text</span>
+//         </span>
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//             <span pam-List-Item-Text-Secondary>Tertiary text</span>
+//         </span>
+//     </li>
+// </ul>
+//
+// Weight: 3
+//
+// Style guide: lists.three-line
+
+// Leading Icon
+//
+// Use pam-List-Item-Primary to add a leading icon.
+//
+// Markup:
+// <ul pam-List pam-border="w:px">
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">cast</span>
+//         List Item
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">wifi</span>
+//         List Item
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">sync</span>
+//         List Item
+//     </li>
+// </ul>
+//
+// Weight: 4
+//
+// Style guide: lists.leading-icon
+
+// Trailing Icon
+//
+// Use pam-List-Item-Secondary to add a trailing icon.
+//
+// Markup:
+// <ul pam-List pam-border="w:px">
+//     <li pam-List-Item>
+//         List Item
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+//     <li pam-List-Item>
+//         List Item
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+//     <li pam-List-Item>
+//         List Item
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+// </ul>
+//
+// Weight: 5
+//
+// Style guide: lists.trailing-icon
+
+// Two Line with Icons
+//
+// Use pam-List-Item-Primary and pam-List-Item-Secondary to add leading
+// and trailing icons.
+//
+// Markup:
+// <ul pam-List="2-line" pam-border="w:px">
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">event</span>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//         </span>
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">event</span>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//         </span>
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">event</span>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//         </span>
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+// </ul>
+//
+// Weight: 6
+//
+// Style guide: lists.two-line-leading-trailing
+
+// Two Line with Avatar
+//
+// Use pam-List="avatar" to change the apperance of the leading icon to an
+// avatar.
+//
+// Markup:
+// <ul pam-List="2-line avatar" pam-border="w:px">
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">event</span>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//         </span>
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">event</span>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//         </span>
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">event</span>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//         </span>
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+// </ul>
+//
+// Weight: 7
+//
+// Style guide: lists.two-line-avatar
+
+// Two Line with Divider
+//
+// Use pam-List-Item-Primary and pam-List-Item-Secondary to add leading
+// and trailing icons and `pam-Divider` to add a divider.
+//
+// Markup:
+// <ul pam-List="2-line" pam-border="w:px">
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">event</span>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//         </span>
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">event</span>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//         </span>
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+//     <div pam-divider></div>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">event</span>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//         </span>
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">event</span>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//         </span>
+//         <span pam-List-Item-Secondary class="material-icons">help</span>
+//     </li>
+// </ul>
+//
+// Weight: 8
+//
+// Style guide: lists.two-line-divider
+
+[pam-List] {
+    padding: @space-8 0;
+    list-style-type: none;
+    color: @list-color;
+
+    .hook-list;
+}
+
+[pam-List-Item] {
+    align-items: @list-item-align;
+    cursor: @list-item-cursor;
+    display: @list-item-display;
+    height: @list-item-height;
+    justify-content: @list-item-justify-content;
+    outline: @list-item-outline;
+    padding: @list-item-padding;
+    position: @list-item-position;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    &:active,
+    &:focus {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+[pam-List~="2-line"] [pam-List-Item] {
+    height: @list-two-line-height;
+}
+
+[pam-List~="3-line"] [pam-List-Item] {
+    height: @list-three-line-height;
+}
+
+[pam-List-Item-Text] {
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+[pam-List-Item-Primary] {
+    align-items: @list-item-primary-align;
+    color: @list-item-primary-color;
+    display: @list-item-primary-display;
+    fill: @list-item-primary-fill;
+    flex-shrink: @list-item-primary-flex-shrink;
+    height: @list-item-primary-height;
+    justify-content: @list-item-primary-justify-content;
+    margin: @list-item-primary-margin;
+    width: @list-item-primary-height;
+}
+
+[pam-List~="avatar"] [pam-List-Item] [pam-List-Item-Primary] {
+    background-color: @list-avatar-bg-color;
+    border-radius: @list-avatar-border-radius;
+    color: @list-avatar-color;
+    height: @list-avatar-height;
+    margin: @list-avatar-margin;
+    width: @list-avatar-width;
+}
+
+[pam-List-Item-Text-Primary] {
+    display: @list-item-text-primary-display;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+[pam-List-Item-Text-Secondary] {
+    color: @list-item-text-secondary-color;
+    display: @list-item-text-secondary-display;
+    font-size: @list-item-text-secondary-font-size;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+[pam-List-Item-Secondary] {
+    color: @list-item-secondary-color;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+// Hooks
+// ========================================================================
+
+// Hooks
+//
+// `.hook-list`
+//
+//  Weight: 10
+//
+// Style guide: lists.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-list() {
+}
+/* stylelint-enable */
+
+
+// Variables
+//
+// These are all the component specific variables that can be
+// used for customization.
+//
+// <table pam-Table="horizontal">
+//     <thead>
+//         <tr>
+//             <th>Name</th>
+//             <th>Value</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//          <tr>
+//            <td>@list-padding</td>
+//            <td><code>@space-8 0</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-color</td>
+//            <td><code>@skin-text-primary-on-background</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-color-secondary</td>
+//            <td><code>@skin-text-hint-on-background</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-two-line-height</td>
+//            <td><code>@space-72</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-three-line-height</td>
+//            <td><code>@space-96</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-avatar-bg-color</td>
+//            <td><code>@list-color-secondary</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-avatar-border-radius</td>
+//            <td><code>@border-radius-rounded</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-avatar-color</td>
+//            <td><code>@skin-white</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-avatar-height</td>
+//            <td><code>@space-40</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-avatar-margin</td>
+//            <td><code>0 @space-16 0 0</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-avatar-width</td>
+//            <td><code>@space-40</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-align</td>
+//            <td><code>center</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-cursor</td>
+//            <td><code>pointer</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-display</td>
+//            <td><code>flex</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-height</td>
+//            <td><code>@space-48</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-justify-content</td>
+//            <td><code>flex-start</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-outline</td>
+//            <td><code>0</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-padding</td>
+//            <td><code>@space-0 @space-16</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-position</td>
+//            <td><code>relative</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-text-line-heigth</td>
+//            <td><code>@line-height-secondary</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-primary-align</td>
+//            <td><code>center</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-primary-color</td>
+//            <td><code>@list-color-secondary</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-primary-display</td>
+//            <td><code>inline-flex</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-primary-fill</td>
+//            <td><code>currentColor</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-primary-flex-shrink</td>
+//            <td><code>0</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-primary-height</td>
+//            <td><code>@space-24</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-primary-justify-content</td>
+//            <td><code>center</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-primary-margin</td>
+//            <td><code>0 @space-32 0 0</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-primary-width</td>
+//            <td><code>@space-24</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-text-primary-display</td>
+//            <td><code>block</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-text-secondary-color</td>
+//            <td><code>@list-color-secondary</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-text-secondary-display</td>
+//            <td><code>block</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-text-secondary-font-size</td>
+//            <td><code>@font-size-medium</code></td>
+//        </tr>
+//          <tr>
+//            <td>@list-item-secondary-color</td>
+//            <td><code>@list-color-secondary</code></td>
+//        </tr>
+//     </tbody>
+// </table>
+//
+// Weight: 30
+//
+// Style guide: lists.variables
+ 

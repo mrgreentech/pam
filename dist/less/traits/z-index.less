@@ -1,0 +1,43 @@
+// Z-Index
+//
+// Trait for controlling element z-index.
+//
+// Format: `pam-z="{number}`", supported `numbers` are 0-24.
+//
+// Markup:
+// <div pam-position="relative">
+//     <div pam-z="0" pam-size="w:7 h:7" pam-space="mb:6"  pam-skin="bg:gray:200"></div>
+//     <div pam-z="1" pam-position="absolute top" pam-size="w:7 h:7" pam-space="ml:2 mt:2" pam-skin="bg:gray:400"></div>
+//     <div pam-z="2" pam-position="absolute top" pam-size="w:7 h:7" pam-space="ml:4 mt:4" pam-skin="bg:gray:600"></div>
+//     <div pam-z="3" pam-position="absolute top" pam-size="w:7 h:7" pam-space="ml:6 mt:6" pam-skin="bg:gray:800"></div>
+// </div>
+//
+// Weight: 22
+//
+// Style guide: traits.z
+
+// ==================================================================
+//  Z-Index
+// ==================================================================
+
+[pam-z] {
+    .hook-z;
+}
+
+.sizes(pam-z, z-index, 24, "", 1) !important;
+
+// Hooks
+// ========================================================================
+
+// Hooks
+//
+// `.hook-z`
+//
+// Weight: 10
+//
+// Style guide: traits.z.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-z() {
+}
+/* stylelint-enable */

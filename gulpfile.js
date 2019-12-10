@@ -11,7 +11,6 @@ const cleanCss = require("gulp-clean-css");
 const concat = require("gulp-concat");
 const del = require("del");
 const eslint = require("gulp-eslint");
-const gzip = require("gulp-gzip");
 const kss = require("kss");
 const less = require("gulp-less");
 const lessPluginAutoprefix = require("less-plugin-autoprefix");
@@ -102,13 +101,6 @@ function cssLint() {
     );
 }
 
-function compress() {
-    return src(paths.build.cssMinFile)
-        .pipe(plumber())
-        .pipe(gzip())
-        .pipe(dest(paths.build.base));
-}
-
 // Scripts
 function js() {
     return src([paths.src.jsGlob])
@@ -173,7 +165,6 @@ const dist = series(parallel(cleanDist, build), copyDist);
 
 // Export tasks
 exports.build = build;
-exports.compress = compress;
 exports.cssLint = cssLint;
 exports.dev = dev;
 exports.dist = dist;

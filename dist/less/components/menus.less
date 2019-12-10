@@ -1,0 +1,864 @@
+// Menus
+//
+// Menus are horizontal as default and take up 100% width. Use custom or preset modifiers
+// to change the apperance and style of the menu.
+//
+// Markup:
+// <div pam-Menu>
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 8
+//
+// Style guide: menus
+
+//  Variables
+// ==================================================================
+
+@menu-arrow-horizontal: "\25BE";
+@menu-arrow-vertical: "\25B8";
+@menu-bg: transparent;
+@menu-color: @skin-gray-600;
+@menu-disabled-opacity: @opacity-60;
+@menu-font-letter-spacing: 0.09em;
+@menu-font-size: @font-size-medium;
+@menu-font-weight: @font-weight-medium;
+@menu-height: @space-48;
+@menu-line-height: 3rem;
+
+@menu-heading-color: @skin-black;
+@menu-heading-font-weight: @font-weight-medium;
+@menu-heading-height: @menu-height;
+@menu-heading-padding: @menu-link-padding;
+
+@menu-divider-bg-color: @skin-border-primary;
+@menu-divider-margin: 0 @space-8;
+@menu-divider-thickness: 1px;
+@menu-vertical-divider-margin: @space-8;
+
+@menu-link-active-color: @skin-black;
+@menu-link-color: @menu-color;
+@menu-link-focus-bg-color: fade(@skin-primary, 15);
+@menu-link-focus-color: @skin-primary;
+@menu-link-height: @menu-height;
+@menu-link-hover-bg-color: fade(@skin-primary, 5);
+@menu-link-justify-content: center;
+@menu-link-line-height: @menu-line-height;
+@menu-link-padding: 0 @space-20;
+
+@menu-children-bg-color: @skin-background;
+@menu-children-link-after-padding: @space-8;
+
+@menu-transition-duration: @transition-duration-default;
+@menu-transition-property: background-color;
+@menu-transition-timing: linear;
+
+// ==================================================================
+// Menu
+// ==================================================================
+
+[pam-Menu] {
+    background-color: @menu-bg;
+
+    .hook-menu;
+}
+
+//  Sub-object: List
+// ==================================================================
+
+[pam-Menu] [pam-Menu-List] {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    .hook-menu-list;
+}
+
+//  Sub-object: Item
+// ==================================================================
+/* stylelint-disable no-descending-specificity */
+
+[pam-Menu] [pam-Menu-Item],
+[pam-Menu] [pam-Menu-Heading] {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    font-size: @menu-font-size;
+    font-weight: @menu-font-weight;
+    height: @menu-height;
+    justify-content: center;
+    letter-spacing: @menu-font-letter-spacing;
+    line-height: @menu-line-height;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    -webkit-appearance: none;
+
+    .hook-menu-item;
+}
+
+//  Sub-object: Link
+// ==================================================================
+
+[pam-Menu] [pam-Menu-Link] {
+    color: @menu-link-color;
+    display: inline-flex;
+    height: 100%;
+    justify-content: @menu-link-justify-content;
+    line-height: @menu-link-line-height;
+    outline: 0;
+    padding: @menu-link-padding;
+    text-decoration: none;
+    transition-duration: @menu-transition-duration;
+    transition-property: @menu-transition-property;
+    transition-timing-function: @menu-transition-timing;
+    white-space: nowrap;
+    width: 100%;
+
+    .hook-menu-link;
+}
+
+[pam-Menu] [pam-Menu-Link]:hover {
+    background-color: @menu-link-hover-bg-color;
+}
+
+[pam-Menu] [pam-Menu-Link]:active,
+[pam-Menu] [pam-Menu-Link]:focus {
+    background-color: @menu-link-focus-bg-color;
+    color: @menu-link-focus-color;
+}
+
+//  Sub-object: Item states
+// ==================================================================
+
+// States
+//
+// `pam-Menu-Item` has two states `active` and `disabled`.
+//
+// Markup:
+// <div pam-Menu="horizontal">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item="active">
+//             <a href="#" pam-Menu-Link>Home</a>
+//         </li>
+//         <li pam-Menu-Item>
+//             <a href="#" pam-Menu-Link>About</a>
+//         </li>
+//         <li pam-Menu-Item="disabled">
+//             <a href="#" pam-Menu-Link>Stuff</a>
+//         </li>
+//     </ul>
+// </div>
+//
+// Weight: 6
+//
+// Style guide: menus.states
+
+[pam-Menu] [pam-Menu-Item~="disabled"] {
+    opacity: @menu-disabled-opacity;
+    background-color: transparent;
+
+    .hook-menu-item-disabled;
+}
+
+[pam-Menu] [pam-Menu-Item~="disabled"] [pam-Menu-Link] {
+    cursor: not-allowed;
+
+    &:active,
+    &:focus,
+    &:hover,
+    &:visited {
+        background-color: transparent;
+    }
+
+    .hook-menu-item-disabled-link;
+}
+
+[pam-Menu] [pam-Menu-Item~="active"] [pam-Menu-Link],
+[pam-Menu] [pam-Menu-Item~="active"] [pam-Menu-Link]:visited {
+    color: @menu-link-active-color;
+
+    .hook-menu-item-active-link;
+}
+
+[pam-Menu] [pam-Menu-Item~="active"] [pam-Menu-Link] {
+    background-color: @menu-link-focus-bg-color;
+    color: @menu-link-focus-color;
+}
+
+//  Sub-object: Heading
+// ==================================================================
+
+// Heading
+//
+// `pam-Menu-Heading` is used to add a heading to menus.
+//
+// Markup:
+// <div pam-Menu="">
+//     <a href="#" pam-Menu-Heading>Menu title</a>
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 7
+//
+// Style guide: menus.heading
+
+[pam-Menu] [pam-Menu-Heading] {
+    color: @menu-heading-color;
+    display: inline-flex;
+    font-weight: @menu-heading-font-weight;
+    padding: @menu-heading-padding;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: @menu-heading-height;
+
+    .hook-menu-heading;
+}
+
+//  Modifier: fixed
+// ==================================================================
+
+// TODO: Should be replaced by postion trait;
+
+[pam-Menu~="fixed"] {
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+
+    .hook-menu-fixed;
+}
+
+//  Modifier: vertical
+// ==================================================================
+
+// Vertical
+//
+// Well, the name explains it.
+//
+// Markup:
+// <div pam-Menu="vertical">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: menus.vertical
+
+[pam-Menu~="vertical"] {
+    .hook-menu-vertical;
+}
+
+[pam-Menu~="vertical"] [pam-Menu-List] {
+    display: inline-flex;
+    flex-direction: column;
+
+    .hook-menu-vertical-list;
+}
+
+[pam-Menu~="vertical"] [pam-Menu-Item] {
+    width: 100%;
+}
+
+[pam-Menu~="vertical"] [pam-Menu-Heading],
+[pam-Menu~="vertical"] [pam-Menu-Divider] {
+    display: flex;
+    justify-content: flex-start;
+    vertical-align: middle;
+
+    .hook-menu-vertical-item;
+}
+
+//  Modifier: fluid
+// ==================================================================
+
+// Fluid
+//
+// This makes the menu follow the parent element width.
+//
+// Markup:
+// <div pam-Menu="vertical fluid">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 2
+//
+// Style guide: menus.fluid
+
+[pam-Menu~="fluid"] [pam-Menu-List],
+[pam-Menu~="fill"] [pam-Menu-List],
+[pam-Menu~="justified"] [pam-Menu-List] {
+    display: flex;
+
+    .hook-menu-fluid;
+}
+
+// Modifier: fill
+// ========================================================================
+
+// Fill
+//
+// Extends the menu over the available width.
+//
+// Markup:
+// <div pam-Menu="fill">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 3
+//
+// Style guide: menus.fill
+
+[pam-Menu~="fill"] {
+    .hook-menu-fill;
+}
+
+[pam-Menu~="fill"] [pam-Menu-List] {
+    .hook-menu-fill-list;
+}
+
+[pam-Menu~="fill"] [pam-Menu-Item],
+[pam-Menu~="fill"] [pam-Menu-Heading],
+[pam-Menu~="fill"] [pam-Menu-Divider] {
+    flex: 1 1 auto;
+    text-align: center;
+
+    .hook-menu-fill-item;
+}
+
+// Modifier: justified
+// ========================================================================
+
+// Justified
+//
+// Extends the menu items of equal-width over the available width.
+//
+// Markup:
+// <div pam-Menu="justified">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 3
+//
+// Style guide: menus.justified
+
+[pam-Menu~="justified"] {
+    .hook-menu-justified;
+}
+
+[pam-Menu~="justified"] [pam-Menu-List] {
+    .hook-menu-justified-list;
+}
+
+[pam-Menu~="justified"] [pam-Menu-Item],
+[pam-Menu~="justified"] [pam-Menu-Heading],
+[pam-Menu~="justified"] [pam-Menu-Divider] {
+    flex: 1 1 100%;
+    text-align: center;
+
+    .hook-menu-justified-item;
+}
+
+//  Submenu
+// ==================================================================
+
+// Submenu
+//
+// To enable a dropdowns use `pam-Menu-Item` and `pam-Menu-Has-Children` this can be used with `vertical`and `horizontal`menu types.
+//
+// Weight: 5
+//
+// Style guide: menus.sub
+
+// Vertical
+//
+// For a vertical submenu use the vertical menu with `pam-Menu-Has-Children`.
+//
+// Markup:
+// <div pam-Menu="vertical inline">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item>
+//             <a href="#" pam-Menu-Link>Home</a>
+//         </li>
+//         <li pam-Menu-Item pam-Menu-Has-Children pam-Menu-Allow-Hover>
+//             <a href="#" pam-Menu-Link>Stuff</a>
+//             <ul pam-Menu-Children>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">Node</a></li>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">JavaScript</a></li>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">Angular</a></li>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">React</a></li>
+//             </ul>
+//         </li>
+//     </ul>
+// </div>
+//
+// Style guide: menus.sub.vertical
+
+// Dropdown
+//
+// By using the horizontal menu type, a dropdown sub menu can be created.
+//
+// Markup:
+// <div pam-Menu="horizontal">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item>
+//             <a href="#" pam-Menu-Link>Home</a>
+//         </li>
+//         <li pam-Menu-Item pam-Menu-Has-Children pam-Menu-Allow-Hover>
+//             <a href="#" pam-Menu-Link>Stuff</a>
+//             <ul pam-Menu-Children>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">Node</a></li>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">JavaScript</a></li>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">Angular</a></li>
+//                 <li pam-Menu-Item><a pam-Menu-Link href="#">React</a></li>
+//             </ul>
+//         </li>
+//     </ul>
+// </div>
+//
+// Style guide: menus.sub.dropdown
+
+[pam-Menu] [pam-Menu-Item] [pam-Menu-Item] {
+    display: block;
+}
+
+[pam-Menu] [pam-Menu-Children] {
+    background-color: @menu-children-bg-color;
+    display: none;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 3;
+
+    .hook-menu-children;
+}
+
+[pam-Menu~="vertical"] [pam-Menu-Children] {
+    left: 100%;
+    top: 0;
+
+    .hook-menu-vertical-children;
+}
+
+[pam-Menu] [pam-Menu-Active] > [pam-Menu-Children],
+[pam-Menu] [pam-Menu-Allow-Hover]:hover > [pam-Menu-Children] {
+    display: block;
+    position: absolute;
+
+    .hook-menu-active-children;
+}
+
+[pam-Menu] [pam-Menu-Has-Children] > [pam-Menu-Link]::after {
+    content: @menu-arrow-horizontal;
+    font-size: small;
+    padding-left: @menu-children-link-after-padding;
+
+    .hook-menu-has-children-link-after;
+}
+
+[pam-Menu~="vertical"] [pam-Menu-Has-Children] > [pam-Menu-Link]::after {
+    content: @menu-arrow-vertical;
+
+    .hook-menu-vertical-has-children-link-after;
+}
+
+//  Scrollable
+// ==================================================================
+
+// Scrollable
+//
+// Limit the height of the menu and use the `scrollable` menu attribute.
+// This creates a scrollable menu.
+//
+// Markup:
+// <div pam-Menu="scrollable" pam-Menu-Scrollable-Test>
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>JavaScript</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>C++</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Dart</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Smalltalk</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Cobol</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 4
+//
+// Style guide: menus.scrollable
+
+[pam-Menu~="scrollable"] {
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    .hook-menu-scrollable;
+}
+
+[pam-Menu~="scrollable"] [pam-Menu-List] {
+    display: block;
+
+    .hook-menu-scrollable-list;
+}
+
+// Horizontal
+//
+// To enable a scrollable horizontal menu, use the `horizontal` menu type
+// with the `scrollable` attribute. When there isn't enough room,
+// the menu items can be scrolled.
+//
+// Markup:
+// <div pam-Menu="horizontal scrollable">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>JavaScript</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>C++</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Dart</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Smalltalk</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Cobol</a></li>
+//     </ul>
+// </div>
+//
+// Style guide: menus.scrollable.horizontal
+
+[pam-Menu~="horizontal"][pam-Menu~="scrollable"] {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+
+    .hook-menu-horizontal-scrollable;
+}
+
+[pam-Menu~="horizontal"][pam-Menu~="scrollable"] [pam-Menu-List] [pam-Menu-Item] {
+    display: inline-block;
+
+    .hook-menu-horizontal-scrollable-list;
+}
+
+//  Sub-object: divider
+// ==================================================================
+
+// Divider
+//
+// To add a menu divider use the `pam-Menu-Divider` attribute in a li element. It works the same for vertical menus.
+//
+// Markup:
+// <div pam-Menu="">
+//     <ul pam-Menu-List>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home</a></li>
+//         <li pam-Menu-Divider></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>JavaScript</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>C++</a></li>
+//         <li pam-Menu-Divider></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Smalltalk</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Cobol</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 8
+//
+// Style guide: menus.divider
+
+[pam-Menu] [pam-Menu-Divider] {
+    background-color: @menu-divider-bg-color;
+    height: auto;
+    margin: @menu-divider-margin;
+    width: @menu-divider-thickness;
+
+    .hook-menu-divider;
+}
+
+[pam-Menu~="vertical"] [pam-Menu-Divider] {
+    height: @menu-divider-thickness;
+    margin: @menu-vertical-divider-margin;
+    width: 100%;
+
+    .hook-menu-vertical-divider;
+}
+
+//  Hooks
+// ==================================================================
+
+// Hooks
+//
+// `.hook-menu`
+// `.hook-menu-active-children`
+// `.hook-menu-children`
+// `.hook-menu-fill`
+// `.hook-menu-fill-item`
+// `.hook-menu-fill-list`
+// `.hook-menu-fixed`
+// `.hook-menu-fluid`
+// `.hook-menu-has-children-link-after`
+// `.hook-menu-heading`
+// `.hook-menu-horizontal-scrollable`
+// `.hook-menu-horizontal-scrollable-list`
+// `.hook-menu-item`
+// `.hook-menu-item-active-link`
+// `.hook-menu-item-disabled`
+// `.hook-menu-item-disabled-link`
+// `.hook-menu-item-active-link`
+// `.hook-menu-justified`
+// `.hook-menu-justified-item`
+// `.hook-menu-justified-list`
+// `.hook-menu-link`
+// `.hook-menu-list`
+// `.hook-menu-scrollable`
+// `.hook-menu-scrollable-list`
+// `.hook-menu-divider`
+// `.hook-menu-vertical`
+// `.hook-menu-vertical-children`
+// `.hook-menu-vertical-has-children-link-after`
+// `.hook-menu-vertical-item`
+// `.hook-menu-vertical-list`
+// `.hook-menu-vertical-divider`
+//
+// Weight: 10
+//
+// Style guide: menus.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-menu() {
+}
+.hook-menu-active-children() {
+}
+.hook-menu-children() {
+}
+.hook-menu-fill() {
+}
+.hook-menu-fill-item() {
+}
+.hook-menu-fill-list() {
+}
+.hook-menu-fixed() {
+}
+.hook-menu-fluid() {
+}
+.hook-menu-has-children-link-after() {
+}
+.hook-menu-heading() {
+}
+.hook-menu-horizontal-scrollable() {
+}
+.hook-menu-horizontal-scrollable-list() {
+}
+.hook-menu-item() {
+}
+.hook-menu-item-active-link() {
+}
+.hook-menu-item-disabled() {
+}
+.hook-menu-item-disabled-link() {
+}
+.hook-menu-justified() {
+}
+.hook-menu-justified-item() {
+}
+.hook-menu-justified-list() {
+}
+.hook-menu-link() {
+}
+.hook-menu-list() {
+}
+.hook-menu-scrollable() {
+}
+.hook-menu-scrollable-list() {
+}
+.hook-menu-divider() {
+}
+.hook-menu-vertical() {
+}
+.hook-menu-vertical-children() {
+}
+.hook-menu-vertical-has-children-link-after() {
+}
+.hook-menu-vertical-item() {
+}
+.hook-menu-vertical-list() {
+}
+.hook-menu-vertical-divider() {
+}
+/* stylelint-enable */
+
+
+// Variables
+//
+// These are all the component specific variables that can be
+// used for customization.
+//
+// <table pam-Table="horizontal">
+//     <thead>
+//         <tr>
+//             <th>Name</th>
+//             <th>Value</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//          <tr>
+//            <td>@menu-arrow-horizontal</td>
+//            <td><code>\25BE</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-arrow-vertical</td>
+//            <td><code>\25B8</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-bg</td>
+//            <td><code>transparent</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-color</td>
+//            <td><code>@skin-gray-600</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-disabled-opacity</td>
+//            <td><code>@opacity-60</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-font-letter-spacing</td>
+//            <td><code>0.09em</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-font-size</td>
+//            <td><code>@font-size-medium</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-font-weight</td>
+//            <td><code>@font-weight-medium</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-height</td>
+//            <td><code>@space-48</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-line-height</td>
+//            <td><code>3rem</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-heading-color</td>
+//            <td><code>@skin-black</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-heading-font-weight</td>
+//            <td><code>@font-weight-medium</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-heading-height</td>
+//            <td><code>@menu-height</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-heading-padding</td>
+//            <td><code>@menu-link-padding</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-divider-bg-color</td>
+//            <td><code>@skin-border-primary</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-divider-margin</td>
+//            <td><code>0 @space-8</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-divider-thickness</td>
+//            <td><code>1px</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-vertical-divider-margin</td>
+//            <td><code>@space-8</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-link-active-color</td>
+//            <td><code>@skin-black</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-link-color</td>
+//            <td><code>@menu-color</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-link-focus-bg-color</td>
+//            <td><code>fade(@skin-primary, 15)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-link-focus-color</td>
+//            <td><code>@skin-primary</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-link-height</td>
+//            <td><code>@menu-height</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-link-hover-bg-color</td>
+//            <td><code>fade(@skin-primary, 5)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-link-justify-content</td>
+//            <td><code>center</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-link-line-height</td>
+//            <td><code>@menu-line-height</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-link-padding</td>
+//            <td><code>0 @space-20</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-children-bg-color</td>
+//            <td><code>@skin-background</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-children-link-after-padding</td>
+//            <td><code>@space-8</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-transition-duration</td>
+//            <td><code>@transition-duration-default</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-transition-property</td>
+//            <td><code>background-color</code></td>
+//        </tr>
+//          <tr>
+//            <td>@menu-transition-timing</td>
+//            <td><code>linear</code></td>
+//        </tr>
+//     </tbody>
+// </table>
+//
+// Weight: 30
+//
+// Style guide: menus.variables
+ 

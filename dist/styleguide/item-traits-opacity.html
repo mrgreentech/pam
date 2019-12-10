@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
   <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -25,15 +25,6 @@
   <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 <link rel="stylesheet" href="kss-assets/css/pam.css">
 
-
-  <script type="text/javascript">
-  var skinsData = [
-      {
-        path: "pam.css",
-        name: "default skin"
-      },
-  ];
-  </script>
 </head>
 <body id="kss-node" class="kss-fullscreen-mode" >
 
@@ -161,8 +152,8 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Loaders</span>
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -207,7 +198,7 @@
               </div>
 
             <div class="kss-modifier__example">
-              <div pam-opacity="" pam-space="p:4" pam-skin="primary">
+              <div pam-opacity="" pam-skin="primary" pam-space="p:4" pam-size="w:1-2">
     <span pam-skin="on:primary">Opacity </span>
 </div>
               <div class="kss-modifier__example-footer"></div>
@@ -220,7 +211,7 @@
                 Set opacity to <code>1</code>. In other words it's solid.
               </div>
               <div class="kss-modifier__example">
-                <div pam-opacity="100" pam-space="p:4" pam-skin="primary">
+                <div pam-opacity="100" pam-skin="primary" pam-space="p:4" pam-size="w:1-2">
     <span pam-skin="on:primary">Opacity 100</span>
 </div>
                 <div class="kss-modifier__example-footer"></div>
@@ -232,7 +223,7 @@
                 Set opacity to 0.8
               </div>
               <div class="kss-modifier__example">
-                <div pam-opacity="80" pam-space="p:4" pam-skin="primary">
+                <div pam-opacity="80" pam-skin="primary" pam-space="p:4" pam-size="w:1-2">
     <span pam-skin="on:primary">Opacity 80</span>
 </div>
                 <div class="kss-modifier__example-footer"></div>
@@ -244,7 +235,7 @@
                 Set opacity to 0.6.
               </div>
               <div class="kss-modifier__example">
-                <div pam-opacity="60" pam-space="p:4" pam-skin="primary">
+                <div pam-opacity="60" pam-skin="primary" pam-space="p:4" pam-size="w:1-2">
     <span pam-skin="on:primary">Opacity 60</span>
 </div>
                 <div class="kss-modifier__example-footer"></div>
@@ -256,7 +247,7 @@
                 Set opacity to 0.4
               </div>
               <div class="kss-modifier__example">
-                <div pam-opacity="40" pam-space="p:4" pam-skin="primary">
+                <div pam-opacity="40" pam-skin="primary" pam-space="p:4" pam-size="w:1-2">
     <span pam-skin="on:primary">Opacity 40</span>
 </div>
                 <div class="kss-modifier__example-footer"></div>
@@ -268,7 +259,7 @@
                 Set opacity to 0.2
               </div>
               <div class="kss-modifier__example">
-                <div pam-opacity="20" pam-space="p:4" pam-skin="primary">
+                <div pam-opacity="20" pam-skin="primary" pam-space="p:4" pam-size="w:1-2">
     <span pam-skin="on:primary">Opacity 20</span>
 </div>
                 <div class="kss-modifier__example-footer"></div>
@@ -280,7 +271,7 @@
                 Set opacity to 0. In other words it's transparent.
               </div>
               <div class="kss-modifier__example">
-                <div pam-opacity="0" pam-space="p:4" pam-skin="primary">
+                <div pam-opacity="0" pam-skin="primary" pam-space="p:4" pam-size="w:1-2">
     <span pam-skin="on:primary">Opacity 0</span>
 </div>
                 <div class="kss-modifier__example-footer"></div>
@@ -321,7 +312,7 @@
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;div pam-opacity&#x3D;&quot;[modifier]&quot; pam-space&#x3D;&quot;p:4&quot; pam-skin&#x3D;&quot;primary&quot;&gt;
+              <pre><code class="html">&lt;div pam-opacity&#x3D;&quot;[modifier]&quot; pam-skin&#x3D;&quot;primary&quot; pam-space&#x3D;&quot;p:4&quot; pam-size&#x3D;&quot;w:1-2&quot;&gt;
     &lt;span pam-skin&#x3D;&quot;on:primary&quot;&gt;Opacity [modifier]&lt;/span&gt;
 &lt;/div&gt;</code></pre>
             </details>
@@ -360,7 +351,6 @@
 </script>
 <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
-<script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 
 

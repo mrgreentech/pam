@@ -1,0 +1,454 @@
+// Tables
+//
+// Apply simple and clean styles to tables by using the `pam-Table` attribute.
+// There are a number of basic modifiers that can be used such as `striped`, `bordered` and `fluid`.
+//
+// Weight: 7
+//
+// Markup:
+// <table pam-Table="{{modifier_class}}">
+//     <caption>Hello, I'm caption</caption>
+//     <thead>
+//         <tr>
+//             <th>#</th>
+//             <th>Title</th>
+//             <th>Rating</th>
+//             <th>Year</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//         <tr>
+//             <td>1</td>
+//             <td>Swordfish</td>
+//             <td>10</td>
+//             <td>2001</td>
+//         </tr>
+//         <tr>
+//             <td>2</td>
+//             <td>WarGames</td>
+//             <td>9.0</td>
+//             <td>1983</td>
+//         </tr>
+//         <tr>
+//             <td>3</td>
+//             <td>Sneakers</td>
+//             <td>8.9</td>
+//             <td>1992</td>
+//         </tr>
+//     </tbody>
+// </table>
+//
+// horizontal - Creates a row focused table.
+// bordered - Applies inner borders to table.
+// striped - Exactly as it sounds, a striped table.
+// borderless - Remove all borders.
+// center - Horizontally center all cells.
+// fluid - Adjusts width relative to parent element.
+//
+// Style guide: tables
+
+//  Variables
+// ==================================================================
+
+@table-border-color: rgba(0, 0, 0, 0.12);
+@table-border-style: solid;
+@table-border-width: 1px;
+@table-color: @skin-text-primary-on-light;
+@table-font-size: 0.875rem;
+@table-font-weight: @font-weight-normal;
+@table-hover-bg-color: rgba(0, 0, 0, 0.04);
+@table-letter-spacing: 0.018em;
+@table-line-height: 1.25rem;
+@table-padding-bp-medium: @space-16;
+@table-padding: @space-8;
+
+@table-head-bg-color: @skin-background;
+@table-head-border-bottom: @table-border-width @table-border-style @table-border-color;
+
+@table-th-font-weight: @font-weight-medium;
+
+@table-striped-odd-bg-color: @skin-gray-200;
+
+@table-border-bordered-color: @table-border-color;
+@table-border-bordered-style: solid;
+@table-border-bordered-width: 1px;
+
+@table-border-horizontal-color: @table-border-color;
+@table-border-horizontal-style: solid;
+@table-border-horizontal-width: 1px;
+
+// ==================================================================
+//  Table
+// ==================================================================
+
+[pam-Table] {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: @table-border-width @table-border-style @table-border-color;
+    color: @table-color;
+    empty-cells: show;
+
+    .hook-table;
+}
+
+[pam-Table] caption {
+    padding: @table-padding 0;
+    text-align: center;
+
+    .hook-table-caption;
+}
+
+[pam-Table] thead {
+    background-color: @table-head-bg-color;
+    border-bottom: @table-head-border-bottom;
+    text-align: left;
+    vertical-align: bottom;
+
+    .hook-table-thead;
+}
+
+[pam-Table] th,
+[pam-Table] td {
+    border-left: @table-border-width @table-border-style @table-border-color;
+    border-width: 0 0 0 @table-border-width;
+    font-size: @table-font-size;
+    font-weight: @table-font-weight;
+    letter-spacing: @table-letter-spacing;
+    line-height: @table-line-height;
+    margin: 0;
+    overflow: visible;
+    padding: @table-padding;
+
+    .hook-table-td-th;
+}
+
+[pam-Table] th {
+    font-weight: @table-th-font-weight;
+
+    .hook-table-th;
+}
+
+[pam-Table] td {
+    background-color: transparent;
+
+    .hook-table-td;
+}
+
+[pam-Table] td:first-child,
+[pam-Table] th:first-child {
+    border-left-width: 0;
+
+    .hook-table-td-th-first-child;
+}
+
+[pam-Table] tbody > tr:last-child > td {
+    border-bottom-width: 0;
+}
+
+//  Modifier: hover
+// ==================================================================
+
+// Hover
+//
+// Apply hover to the a table by using the `hover` modifier.
+//
+// Markup:
+// <table pam-Table="hover">
+//     <caption>Hello, I'm a hover table</caption>
+//     <thead>
+//         <tr>
+//             <th>#</th>
+//             <th>Title</th>
+//             <th>Rating</th>
+//             <th>Year</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//         <tr>
+//             <td>1</td>
+//             <td>Swordfish</td>
+//             <td>10</td>
+//             <td>2001</td>
+//         </tr>
+//         <tr>
+//             <td>2</td>
+//             <td>WarGames</td>
+//             <td>9.0</td>
+//             <td>1983</td>
+//         </tr>
+//         <tr>
+//             <td>3</td>
+//             <td>Sneakers</td>
+//             <td>8.9</td>
+//             <td>1992</td>
+//         </tr>
+//     </tbody>
+// </table>
+//
+// Weight: 1
+//
+// Style guide: tables.hover
+
+[pam-Table~="hover"] tbody > tr {
+    &:hover {
+        background-color: @table-hover-bg-color;
+    }
+}
+
+/* stylelint-disable no-descending-specificity */
+
+//  Modifier: Center
+// ==================================================================
+
+[pam-Table~="center"] td,
+[pam-Table~="center"] th {
+    text-align: center;
+
+    .hook-table-center;
+}
+
+//  Modifier: Horizontal
+// ==================================================================
+
+[pam-Table~="horizontal"] td,
+[pam-Table~="horizontal"] th {
+    border-bottom: @table-border-horizontal-width @table-border-horizontal-style @table-border-horizontal-color;
+    border-width: 0 0 @table-border-horizontal-width;
+
+    .hook-table-horizontal-td-th;
+}
+
+//  Modifier: Borderless
+// ==================================================================
+
+[pam-Table~="borderless"] {
+    border: none;
+
+    .hook-table-borderless;
+}
+
+[pam-Table~="borderless"] td,
+[pam-Table~="borderless"] th {
+    border-left: none;
+}
+
+//  Modifier: Bordered
+// ==================================================================
+
+[pam-Table~="bordered"] td {
+    border-bottom: @table-border-bordered-width @table-border-bordered-style @table-border-bordered-color;
+
+    .hook-table-bordered;
+}
+
+//  Modifier: Striped
+// ==================================================================
+
+[pam-Table~="striped"] tr:nth-child(2n) td {
+    background-color: @table-striped-odd-bg-color;
+
+    .hook-table-striped;
+}
+
+//  Modifier: Fluid
+// ==================================================================
+
+[pam-Table~="fluid"] {
+    width: 100%;
+
+    .hook-table-fluid;
+}
+
+// Device breakpoints
+// ==================================================================
+
+@media screen and (min-width: @screen-md) {
+    [pam-Table] caption {
+        padding: @table-padding-bp-medium 0;
+
+        .hook-table-caption-bp-medium;
+    }
+
+    [pam-Table] td,
+    [pam-Table] th {
+        padding: @table-padding-bp-medium;
+
+        .hook-table-td-th-bp-medium;
+    }
+}
+
+/* stylelint-enable no-descending-specificity */
+
+//  Hooks
+// ==================================================================
+
+// Hooks
+//
+// `.hook-table`
+// `.hook-table-caption`
+// `.hook-table-caption-bp-medium`
+// `.hook-table-odd-td`
+// `.hook-table-td`
+// `.hook-table-th`
+// `.hook-table-td-th`
+// `.hook-table-td-th-bp-medium`
+// `.hook-table-td-th-first-child`
+// `.hook-table-thead`
+// `.hook-table-bordered`
+// `.hook-table-bordered-tbody-tr-last-child`
+// `.hook-table-borderless`
+// `.hook-table-center`
+// `.hook-table-fluid`
+// `.hook-table-horizontal-tbody-tr-last-child`
+// `.hook-table-horizontal-td-th`
+// `.hook-table-striped`
+//
+// Weight: 2
+//
+// Style guide: tables.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-table() {
+}
+.hook-table-caption() {
+}
+.hook-table-caption-bp-medium() {
+}
+.hook-table-odd-td() {
+}
+.hook-table-td() {
+}
+.hook-table-th() {
+}
+.hook-table-td-th() {
+}
+.hook-table-td-th-bp-medium() {
+}
+.hook-table-td-th-first-child() {
+}
+.hook-table-thead() {
+}
+.hook-table-bordered() {
+}
+.hook-table-bordered-tbody-tr-last-child() {
+}
+.hook-table-borderless() {
+}
+.hook-table-center() {
+}
+.hook-table-fluid() {
+}
+.hook-table-horizontal-tbody-tr-last-child() {
+}
+.hook-table-horizontal-td-th() {
+}
+.hook-table-striped() {
+}
+
+/* stylelint-enable */
+
+
+// Variables
+//
+// These are all the component specific variables that can be
+// used for customization.
+//
+// <table pam-Table="horizontal">
+//     <thead>
+//         <tr>
+//             <th>Name</th>
+//             <th>Value</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//          <tr>
+//            <td>@table-border-color</td>
+//            <td><code>rgba(0, 0, 0, 0.12)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-border-style</td>
+//            <td><code>solid</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-border-width</td>
+//            <td><code>1px</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-color</td>
+//            <td><code>@skin-text-primary-on-light</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-font-size</td>
+//            <td><code>0.875rem</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-font-weight</td>
+//            <td><code>@font-weight-normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-hover-bg-color</td>
+//            <td><code>rgba(0, 0, 0, 0.04)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-letter-spacing</td>
+//            <td><code>0.018em</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-line-height</td>
+//            <td><code>1.25rem</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-padding-bp-medium</td>
+//            <td><code>@space-16</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-padding</td>
+//            <td><code>@space-8</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-head-bg-color</td>
+//            <td><code>@skin-background</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-head-border-bottom</td>
+//            <td><code>@table-border-width @table-border-style @table-border-color</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-th-font-weight</td>
+//            <td><code>@font-weight-medium</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-striped-odd-bg-color</td>
+//            <td><code>@skin-gray-200</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-border-bordered-color</td>
+//            <td><code>@table-border-color</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-border-bordered-style</td>
+//            <td><code>solid</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-border-bordered-width</td>
+//            <td><code>1px</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-border-horizontal-color</td>
+//            <td><code>@table-border-color</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-border-horizontal-style</td>
+//            <td><code>solid</code></td>
+//        </tr>
+//          <tr>
+//            <td>@table-border-horizontal-width</td>
+//            <td><code>1px</code></td>
+//        </tr>
+//     </tbody>
+// </table>
+//
+// Weight: 30
+//
+// Style guide: tables.variables
+ 

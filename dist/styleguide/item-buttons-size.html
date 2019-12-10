@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
   <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -25,15 +25,6 @@
   <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 <link rel="stylesheet" href="kss-assets/css/pam.css">
 
-
-  <script type="text/javascript">
-  var skinsData = [
-      {
-        path: "pam.css",
-        name: "default skin"
-      },
-  ];
-  </script>
 </head>
 <body id="kss-node" class="kss-fullscreen-mode" >
 
@@ -161,8 +152,8 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Loaders</span>
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -195,7 +186,7 @@
           </h2>
 
             <div class="kss-description">
-              <p>Sometimes size matters. Use the <code>small</code> or <code>large</code>
+              <p>Sometimes size matters. Use the <code>sm</code> or <code>lg</code>
 modifier to make the button smaller or larger.</p>
 
             </div>
@@ -203,43 +194,56 @@ modifier to make the button smaller or larger.</p>
         </div>
 
           <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__default-name kss-style">
+                Default styling
+              </div>
 
             <div class="kss-modifier__example">
-              <div sg-Stack>
-    <div>
-        <button pam-Button="large">Large</button>
-        <button pam-Button="large">
-            <i class="material-icons" pam-Button-Icon>android</i>
-            <span>Icon</span>
-        </button>
-        <button pam-Button="circle large">
-            <i class="material-icons">add</i>
-        </button>
-    </div>
-    <div>
-        <button pam-Button="">Default</button>
-        <button pam-Button="">
-            <i class="material-icons" pam-Button-Icon>android</i>
-            <span>Icon</span>
-        </button>
-        <button pam-Button="circle ">
-            <i class="material-icons">add</i>
-        </button>
-    </div>
-    <div>
-        <button pam-Button="small">small</button>
-        <button pam-Button="small">
-            <i class="material-icons" pam-Button-Icon>android</i>
-            <span>Icon</span>
-        </button>
-        <button pam-Button="circle small">
-            <i class="material-icons">add</i>
-        </button>
-    </div>
-</div>
+              <button pam-Button="">Button</button>
+<button pam-Button="">
+    <i class="material-icons" pam-Button-Icon>android</i>
+    <span pam-Button-Label>Icon</span>
+</button>
+<button pam-Button="circle ">
+    <i class="material-icons">add</i>
+</button>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
+              <div class="kss-modifier__name kss-style">
+                sm
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Small button size.
+              </div>
+              <div class="kss-modifier__example">
+                <button pam-Button="sm">Button</button>
+<button pam-Button="sm">
+    <i class="material-icons" pam-Button-Icon>android</i>
+    <span pam-Button-Label>Icon</span>
+</button>
+<button pam-Button="circle sm">
+    <i class="material-icons">add</i>
+</button>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                lg
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Large button size.
+              </div>
+              <div class="kss-modifier__example">
+                <button pam-Button="lg">Button</button>
+<button pam-Button="lg">
+    <i class="material-icons" pam-Button-Icon>android</i>
+    <span pam-Button-Label>Icon</span>
+</button>
+<button pam-Button="circle lg">
+    <i class="material-icons">add</i>
+</button>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
           </div>
 
             <details class="kss-markup kss-style">
@@ -276,38 +280,14 @@ modifier to make the button smaller or larger.</p>
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;div sg-Stack&gt;
-    &lt;div&gt;
-        &lt;button pam-Button&#x3D;&quot;large&quot;&gt;Large&lt;/button&gt;
-        &lt;button pam-Button&#x3D;&quot;large&quot;&gt;
-            &lt;i class&#x3D;&quot;material-icons&quot; pam-Button-Icon&gt;android&lt;/i&gt;
-            &lt;span&gt;Icon&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;button pam-Button&#x3D;&quot;circle large&quot;&gt;
-            &lt;i class&#x3D;&quot;material-icons&quot;&gt;add&lt;/i&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;button pam-Button&#x3D;&quot;&quot;&gt;Default&lt;/button&gt;
-        &lt;button pam-Button&#x3D;&quot;&quot;&gt;
-            &lt;i class&#x3D;&quot;material-icons&quot; pam-Button-Icon&gt;android&lt;/i&gt;
-            &lt;span&gt;Icon&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;button pam-Button&#x3D;&quot;circle &quot;&gt;
-            &lt;i class&#x3D;&quot;material-icons&quot;&gt;add&lt;/i&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;button pam-Button&#x3D;&quot;small&quot;&gt;small&lt;/button&gt;
-        &lt;button pam-Button&#x3D;&quot;small&quot;&gt;
-            &lt;i class&#x3D;&quot;material-icons&quot; pam-Button-Icon&gt;android&lt;/i&gt;
-            &lt;span&gt;Icon&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;button pam-Button&#x3D;&quot;circle small&quot;&gt;
-            &lt;i class&#x3D;&quot;material-icons&quot;&gt;add&lt;/i&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code class="html">&lt;button pam-Button&#x3D;&quot;[modifier]&quot;&gt;Button&lt;/button&gt;
+&lt;button pam-Button&#x3D;&quot;[modifier]&quot;&gt;
+    &lt;i class&#x3D;&quot;material-icons&quot; pam-Button-Icon&gt;android&lt;/i&gt;
+    &lt;span pam-Button-Label&gt;Icon&lt;/span&gt;
+&lt;/button&gt;
+&lt;button pam-Button&#x3D;&quot;circle [modifier]&quot;&gt;
+    &lt;i class&#x3D;&quot;material-icons&quot;&gt;add&lt;/i&gt;
+&lt;/button&gt;</code></pre>
             </details>
       </div>
       <hr >
@@ -344,7 +324,6 @@ modifier to make the button smaller or larger.</p>
 </script>
 <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
-<script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 
 

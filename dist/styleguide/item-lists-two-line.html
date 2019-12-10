@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
   <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -25,15 +25,6 @@
   <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 <link rel="stylesheet" href="kss-assets/css/pam.css">
 
-
-  <script type="text/javascript">
-  var skinsData = [
-      {
-        path: "pam.css",
-        name: "default skin"
-      },
-  ];
-  </script>
 </head>
 <body id="kss-node" class="kss-fullscreen-mode" >
 
@@ -161,8 +152,8 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Loaders</span>
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -195,7 +186,7 @@
           </h2>
 
             <div class="kss-description">
-              <p>Use <code>pam-Item</code> to wrap one or more <code>pam-Tiles</code> and apply two rows of content.</p>
+              <p>Two-line list items contain a maximum of two line of text.</p>
 
             </div>
 
@@ -204,17 +195,26 @@
           <div class="kss-modifier__wrapper">
 
             <div class="kss-modifier__example">
-              <div pam-List>
-    <div pam-Item>
-        <div pam-Tile="left">
-            <div sg-mock-icon></div>
-        </div>
-        <div pam-Tile="content">
-            <h1 pam-typography="body-2">Item content</h1>
-            <p>Item content</p>
-        </div>
-    </div>
-</div>
+              <ul pam-List="2-line" pam-border="w:px">
+    <li pam-List-Item>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+    </li>
+    <li pam-List-Item>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+    </li>
+    <li pam-List-Item>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+    </li>
+</ul>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
@@ -254,17 +254,26 @@
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;div pam-List&gt;
-    &lt;div pam-Item&gt;
-        &lt;div pam-Tile&#x3D;&quot;left&quot;&gt;
-            &lt;div sg-mock-icon&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div pam-Tile&#x3D;&quot;content&quot;&gt;
-            &lt;h1 pam-typography&#x3D;&quot;body-2&quot;&gt;Item content&lt;/h1&gt;
-            &lt;p&gt;Item content&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code class="html">&lt;ul pam-List&#x3D;&quot;2-line&quot; pam-border&#x3D;&quot;w:px&quot;&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             </details>
       </div>
       <hr >
@@ -301,7 +310,6 @@
 </script>
 <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
-<script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 
 

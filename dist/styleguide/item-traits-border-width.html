@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
   <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -25,15 +25,6 @@
   <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 <link rel="stylesheet" href="kss-assets/css/pam.css">
 
-
-  <script type="text/javascript">
-  var skinsData = [
-      {
-        path: "pam.css",
-        name: "default skin"
-      },
-  ];
-  </script>
 </head>
 <body id="kss-node" class="kss-fullscreen-mode" >
 
@@ -161,8 +152,8 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Loaders</span>
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -195,35 +186,78 @@
           </h3>
 
             <div class="kss-description">
-              <p>Control border width with <code>pam-border=&quot;width&quot;</code>.</p>
+              <p>Control border width. Format <code>pam-border=&quot;w:{size}&quot;</code>.</p>
 
             </div>
 
         </div>
 
           <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__default-name kss-style">
+                Default styling
+              </div>
 
             <div class="kss-modifier__example">
-              <div pam-Grid pam-Grid-Control="space">
-    <div pam-Unit="1-2 medium:1-5">
-        <div pam-border="" grid-block>
-            <span>Default</span>
-        </div>
-    </div>
-    <div pam-Unit="1-2 medium:1-5">
-        <div pam-border="width:small" grid-block>
-            <span>Small</span>
-        </div>
-    </div>
-    <div pam-Unit="1-2 medium:1-5">
-        <div pam-border="width:large" grid-block>
-            <span>Large</span>
-        </div>
-    </div>
+              <div pam-border="" pam-skin="bg:gray:100" pam-size="w:10 h:3">
 </div>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
+              <div class="kss-modifier__name kss-style">
+                w
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Set border to default width
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-border="w" pam-skin="bg:gray:100" pam-size="w:10 h:3">
+</div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                w%3A0
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Set border width to 0.
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-border="w%3A0" pam-skin="bg:gray:100" pam-size="w:10 h:3">
+</div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                w%3Apx
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Set border width to 1px.
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-border="w%3Apx" pam-skin="bg:gray:100" pam-size="w:10 h:3">
+</div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                w%3A2
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Set border width to 2px.
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-border="w%3A2" pam-skin="bg:gray:100" pam-size="w:10 h:3">
+</div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                w%3A4
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Set border width to 4px.
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-border="w%3A4" pam-skin="bg:gray:100" pam-size="w:10 h:3">
+</div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
           </div>
 
             <details class="kss-markup kss-style">
@@ -260,22 +294,7 @@
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;div pam-Grid pam-Grid-Control&#x3D;&quot;space&quot;&gt;
-    &lt;div pam-Unit&#x3D;&quot;1-2 medium:1-5&quot;&gt;
-        &lt;div pam-border&#x3D;&quot;&quot; grid-block&gt;
-            &lt;span&gt;Default&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div pam-Unit&#x3D;&quot;1-2 medium:1-5&quot;&gt;
-        &lt;div pam-border&#x3D;&quot;width:small&quot; grid-block&gt;
-            &lt;span&gt;Small&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div pam-Unit&#x3D;&quot;1-2 medium:1-5&quot;&gt;
-        &lt;div pam-border&#x3D;&quot;width:large&quot; grid-block&gt;
-            &lt;span&gt;Large&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
+              <pre><code class="html">&lt;div pam-border&#x3D;&quot;[modifier]&quot; pam-skin&#x3D;&quot;bg:gray:100&quot; pam-size&#x3D;&quot;w:10 h:3&quot;&gt;
 &lt;/div&gt;</code></pre>
             </details>
       </div>
@@ -313,7 +332,6 @@
 </script>
 <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
-<script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 
 

@@ -3,7 +3,7 @@
 // Trait for controlling element opacity.
 //
 // Markup:
-// <div pam-opacity="{{modifier_class}}" pam-space="p:4" pam-skin="primary">
+// <div pam-opacity="{{modifier_class}}" pam-skin="primary" pam-space="p:4" pam-size="w:1-2">
 //     <span pam-skin="on:primary">Opacity {{modifier_class}}</span>
 // </div>
 //
@@ -21,6 +21,10 @@
 // ==================================================================
 //  Opacity
 // ==================================================================
+
+[pam-opacity] {
+    .hook-opacity;
+}
 
 [pam-opacity~="100"] {
     opacity: @opacity-100;
@@ -45,3 +49,19 @@
 [pam-opacity~="0"] {
     opacity: @opacity-0;
 }
+
+// Hooks
+// ========================================================================
+
+// Hooks
+//
+// `.hook-opacity`
+//
+// Weight: 10
+//
+// Style guide: traits.opacity.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-opacity() {
+}
+/* stylelint-enable */

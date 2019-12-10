@@ -1,0 +1,548 @@
+// Typography
+//
+// There are 13 contextual typography styles to choose from which can be mixed to suit a large number of layouts. These styles mimic the [material design typography styles](https://material.google.com/style/typography.html). This means that the default typeface is **Roboto** and the script type is English and English-like (Latin, Greek, and Cyrillic).
+//
+// Markup:
+// <h1 pam-typography="h1">Headline 1</h1>
+// <h2 pam-typography="h2">Headline 2</h2>
+// <h3 pam-typography="h3">Headline 3</h3>
+// <h4 pam-typography="h4">Headline 4</h4>
+// <h5 pam-typography="h5">Headline 5</h5>
+// <h6 pam-typography="h6">Headline 6</h6>
+// <h6 pam-typography="subtitle-1">Subtitle 1</h6>
+// <h6 pam-typography="subtitle-2">Subtitle 2</h6>
+// <p pam-typography="body-1">Body 1. Lorem Ipsum
+// is the single greatest threat. We are not - we are not keeping
+// up with other websites. Lorem Ipsum best not make any
+// more threats to your website.</p>
+// <p pam-typography="body-2">Body 2.When other
+// websites give you text, they’re not sending the best. They’re
+// not sending you, they’re sending words that have lots of
+// problems and they’re bringing those problems to us.</p>
+// <div><span pam-typography="button">Button</span></div>
+// <div><span pam-typography="caption">Caption</span></div>
+// <div><span pam-typography="overline">Overline</span></div>
+//
+// Weight: 3
+//
+// Style guide: typography
+
+//  Variables
+// ==================================================================
+
+@typography-font-family: @font-family;
+
+@typography-h1-font-size: @font-size-colossal;
+@typography-h1-font-weight: @font-weight-light;
+@typography-h1-letter-spacing: -0.016em;
+@typography-h1-line-height: @font-size-colossal;
+
+@typography-h2-font-size: @font-size-enormous;
+@typography-h2-font-weight: @font-weight-light;
+@typography-h2-letter-spacing: -0.008em;
+@typography-h2-line-height: @font-size-enormous;
+
+@typography-h3-font-size: @font-size-xxxlarge;
+@typography-h3-font-weight: @font-weight-normal;
+@typography-h3-letter-spacing: normal;
+@typography-h3-line-height: 3.125rem;
+
+@typography-h4-font-size: @font-size-xxlarge;
+@typography-h4-font-weight: @font-weight-normal;
+@typography-h4-letter-spacing: normal;
+@typography-h4-line-height: 2.5rem;
+
+@typography-h5-font-size: @font-size-xlarge;
+@typography-h5-font-weight: @font-weight-normal;
+@typography-h5-letter-spacing: normal;
+@typography-h5-line-height: 2rem;
+
+@typography-h6-font-size: @font-size-larger;
+@typography-h6-font-weight: @font-weight-medium;
+@typography-h6-letter-spacing: 0.0125em;
+@typography-h6-letter-spacing: normal;
+@typography-h6-line-height: @line-height-base;
+
+@typography-subtitle-1-font-size: @font-size-large;
+@typography-subtitle-1-font-weight: @font-weight-normal;
+@typography-subtitle-1-letter-spacing: 0.009em;
+@typography-subtitle-1-line-height: 1.75rem;
+
+@typography-subtitle-2-font-size: @font-size-medium;
+@typography-subtitle-2-font-weight: @font-weight-medium;
+@typography-subtitle-2-letter-spacing: 0.007em;
+@typography-subtitle-2-line-height: 1.375rem;
+
+@typography-body-1-font-size: @font-size-large;
+@typography-body-1-font-weight: @font-weight-normal;
+@typography-body-1-letter-spacing: 0.03125em;
+@typography-body-1-line-height: 1.5rem;
+
+@typography-body-2-font-size: @font-size-medium;
+@typography-body-2-font-weight: @font-weight-normal;
+@typography-body-2-letter-spacing: 0.0178em;
+@typography-body-2-line-height: 1.25rem;
+
+@typography-button-font-size: @font-size-medium;
+@typography-button-font-weight: @font-weight-medium;
+@typography-button-letter-spacing: 0.0892em;
+@typography-button-line-height: 2.25rem;
+@typography-button-text-transform: uppercase;
+
+@typography-caption-font-size: @font-size-xsmall;
+@typography-caption-font-weight: @font-weight-normal;
+@typography-caption-letter-spacing: 0.0333em;
+@typography-caption-line-height: 1.25rem;
+
+@typography-overline-font-size: @font-size-xxsmall;
+@typography-overline-font-weight: @font-weight-normal;
+@typography-overline-letter-spacing: 0.1667em;
+@typography-overline-line-height: 2rem;
+@typography-overline-text-transform: uppercase;
+
+// ==================================================================
+//  Typography
+// ==================================================================
+
+[pam-typography] {
+    font-family: @typography-font-family;
+
+    .hook-typography;
+}
+
+//  Headlines
+// ==================================================================
+
+[pam-typography~="h1"] {
+    font-size: @typography-h1-font-size;
+    font-weight: @typography-h1-font-weight;
+    letter-spacing: @typography-h1-letter-spacing;
+    line-height: @typography-h1-line-height;
+
+    .hook-typography-h1;
+}
+
+[pam-typography~="h2"] {
+    font-size: @typography-h2-font-size;
+    font-weight: @typography-h2-font-weight;
+    letter-spacing: @typography-h2-letter-spacing;
+    line-height: @typography-h2-line-height;
+
+    .hook-typography-h2;
+}
+
+[pam-typography~="h3"] {
+    font-size: @typography-h3-font-size;
+    font-weight: @typography-h3-font-weight;
+    letter-spacing: @typography-h3-letter-spacing;
+    line-height: @typography-h3-line-height;
+
+    .hook-typography-h3;
+}
+
+[pam-typography~="h4"] {
+    font-size: @typography-h4-font-size;
+    font-weight: @typography-h4-font-weight;
+    letter-spacing: @typography-h4-letter-spacing;
+    line-height: @typography-h4-line-height;
+
+    .hook-typography-h4;
+}
+
+[pam-typography~="h5"] {
+    font-size: @typography-h5-font-size;
+    font-weight: @typography-h5-font-weight;
+    letter-spacing: @typography-h5-letter-spacing;
+    line-height: @typography-h5-line-height;
+
+    .hook-typography-h5;
+}
+
+[pam-typography~="h6"] {
+    font-size: @typography-h6-font-size;
+    font-weight: @typography-h6-font-weight;
+    letter-spacing: @typography-h6-letter-spacing;
+    line-height: @typography-h6-line-height;
+
+    .hook-typography-h6;
+}
+
+//  Subtitle 1
+// ==================================================================
+
+[pam-typography~="subtitle-1"] {
+    font-size: @typography-subtitle-1-font-size;
+    font-weight: @typography-subtitle-1-font-weight;
+    letter-spacing: @typography-subtitle-1-letter-spacing;
+    line-height: @typography-subtitle-1-line-height;
+
+    .hook-typography-subtitle-1;
+}
+
+//  Subtitle 2
+// ==================================================================
+
+[pam-typography~="subtitle-2"] {
+    font-size: @typography-subtitle-2-font-size;
+    font-weight: @typography-subtitle-2-font-weight;
+    letter-spacing: @typography-subtitle-2-letter-spacing;
+    line-height: @typography-subtitle-2-line-height;
+
+    .hook-typography-subtitle-2;
+}
+
+//  Body
+// ==================================================================
+
+[pam-typography~="body-1"] {
+    font-size: @typography-body-1-font-size;
+    font-weight: @typography-body-1-font-weight;
+    letter-spacing: @typography-body-1-letter-spacing;
+    line-height: @typography-body-1-line-height;
+
+    .hook-typography-body-1;
+}
+
+[pam-typography~="body-2"] {
+    font-size: @typography-body-2-font-size;
+    font-weight: @typography-body-2-font-weight;
+    letter-spacing: @typography-body-2-letter-spacing;
+    line-height: @typography-body-2-line-height;
+
+    .hook-typography-body-2;
+}
+
+//  Button
+// ==================================================================
+
+[pam-typography~="button"] {
+    font-size: @typography-button-font-size;
+    font-weight: @typography-button-font-weight;
+    letter-spacing: @typography-button-letter-spacing;
+    line-height: @typography-button-line-height;
+    text-transform: @typography-button-text-transform;
+
+    .hook-typography-button;
+}
+
+//  Caption
+// ==================================================================
+
+[pam-typography~="caption"] {
+    font-size: @typography-caption-font-size;
+    font-weight: @typography-caption-font-weight;
+    letter-spacing: @typography-caption-letter-spacing;
+    line-height: @typography-caption-line-height;
+
+    .hook-typography-caption;
+}
+
+//  Overline
+// ==================================================================
+
+[pam-typography~="overline"] {
+    font-size: @typography-overline-font-size;
+    font-weight: @typography-overline-font-weight;
+    letter-spacing: @typography-overline-letter-spacing;
+    line-height: @typography-overline-line-height;
+    text-transform: @typography-overline-text-transform;
+
+    .hook-typography-overline;
+}
+
+//  Hooks
+// ==================================================================
+
+// Hooks
+//
+// `.hook-typography`
+// `.hook-typography-body-1`
+// `.hook-typography-body-2`
+// `.hook-typography-button`
+// `.hook-typography-caption`
+// `.hook-typography-overline`
+// `.hook-typography-h1`
+// `.hook-typography-h2`
+// `.hook-typography-h3`
+// `.hook-typography-h4`
+// `.hook-typography-h5`
+// `.hook-typography-h6`
+// `.hook-typography-subtitle-1`
+// `.hook-typography-subtitle-2`
+//
+// Weight: 5
+//
+// Style guide: typography.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-typography() {
+}
+.hook-typography-body-1() {
+}
+.hook-typography-body-2() {
+}
+.hook-typography-button() {
+}
+.hook-typography-caption() {
+}
+.hook-typography-overline() {
+}
+.hook-typography-h1() {
+}
+.hook-typography-h2() {
+}
+.hook-typography-h3() {
+}
+.hook-typography-h4() {
+}
+.hook-typography-h5() {
+}
+.hook-typography-h6() {
+}
+.hook-typography-subtitle-1() {
+}
+.hook-typography-subtitle-2() {
+}
+/* stylelint-enable */
+
+
+// Variables
+//
+// These are all the component specific variables that can be
+// used for customization.
+//
+// <table pam-Table="horizontal">
+//     <thead>
+//         <tr>
+//             <th>Name</th>
+//             <th>Value</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//          <tr>
+//            <td>@typography-font-family</td>
+//            <td><code>@font-family</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h1-font-size</td>
+//            <td><code>@font-size-colossal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h1-font-weight</td>
+//            <td><code>@font-weight-light</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h1-letter-spacing</td>
+//            <td><code>-0.016em</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h1-line-height</td>
+//            <td><code>@font-size-colossal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h2-font-size</td>
+//            <td><code>@font-size-enormous</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h2-font-weight</td>
+//            <td><code>@font-weight-light</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h2-letter-spacing</td>
+//            <td><code>-0.008em</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h2-line-height</td>
+//            <td><code>@font-size-enormous</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h3-font-size</td>
+//            <td><code>@font-size-xxxlarge</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h3-font-weight</td>
+//            <td><code>@font-weight-normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h3-letter-spacing</td>
+//            <td><code>normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h3-line-height</td>
+//            <td><code>3.125rem</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h4-font-size</td>
+//            <td><code>@font-size-xxlarge</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h4-font-weight</td>
+//            <td><code>@font-weight-normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h4-letter-spacing</td>
+//            <td><code>normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h4-line-height</td>
+//            <td><code>2.5rem</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h5-font-size</td>
+//            <td><code>@font-size-xlarge</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h5-font-weight</td>
+//            <td><code>@font-weight-normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h5-letter-spacing</td>
+//            <td><code>normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h5-line-height</td>
+//            <td><code>2rem</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h6-font-size</td>
+//            <td><code>@font-size-larger</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h6-font-weight</td>
+//            <td><code>@font-weight-medium</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h6-letter-spacing</td>
+//            <td><code>normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-h6-line-height</td>
+//            <td><code>@line-height-base</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-subtitle-1-font-size</td>
+//            <td><code>@font-size-large</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-subtitle-1-font-weight</td>
+//            <td><code>@font-weight-normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-subtitle-1-letter-spacing</td>
+//            <td><code>0.009em</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-subtitle-1-line-height</td>
+//            <td><code>1.75rem</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-subtitle-2-font-size</td>
+//            <td><code>@font-size-medium</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-subtitle-2-font-weight</td>
+//            <td><code>@font-weight-medium</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-subtitle-2-letter-spacing</td>
+//            <td><code>0.007em</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-subtitle-2-line-height</td>
+//            <td><code>1.375rem</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-body-1-font-size</td>
+//            <td><code>@font-size-large</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-body-1-font-weight</td>
+//            <td><code>@font-weight-normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-body-1-letter-spacing</td>
+//            <td><code>0.03125em</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-body-1-line-height</td>
+//            <td><code>1.5rem</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-body-2-font-size</td>
+//            <td><code>@font-size-medium</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-body-2-font-weight</td>
+//            <td><code>@font-weight-normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-body-2-letter-spacing</td>
+//            <td><code>0.0178em</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-body-2-line-height</td>
+//            <td><code>1.25rem</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-button-font-size</td>
+//            <td><code>@font-size-medium</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-button-font-weight</td>
+//            <td><code>@font-weight-medium</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-button-letter-spacing</td>
+//            <td><code>0.0892em</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-button-line-height</td>
+//            <td><code>2.25rem</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-button-text-transform</td>
+//            <td><code>uppercase</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-caption-font-size</td>
+//            <td><code>@font-size-xsmall</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-caption-font-weight</td>
+//            <td><code>@font-weight-normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-caption-letter-spacing</td>
+//            <td><code>0.0333em</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-caption-line-height</td>
+//            <td><code>1.25rem</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-overline-font-size</td>
+//            <td><code>@font-size-xxsmall</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-overline-font-weight</td>
+//            <td><code>@font-weight-normal</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-overline-letter-spacing</td>
+//            <td><code>0.1667em</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-overline-line-height</td>
+//            <td><code>2rem</code></td>
+//        </tr>
+//          <tr>
+//            <td>@typography-overline-text-transform</td>
+//            <td><code>uppercase</code></td>
+//        </tr>
+//     </tbody>
+// </table>
+//
+// Weight: 30
+//
+// Style guide: typography.variables
+ 

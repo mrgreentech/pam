@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
   <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -25,15 +25,6 @@
   <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 <link rel="stylesheet" href="kss-assets/css/pam.css">
 
-
-  <script type="text/javascript">
-  var skinsData = [
-      {
-        path: "pam.css",
-        name: "default skin"
-      },
-  ];
-  </script>
 </head>
 <body id="kss-node" class="kss-fullscreen-mode" >
 
@@ -161,8 +152,8 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Loaders</span>
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -195,55 +186,83 @@
           </h2>
 
             <div class="kss-description">
-              <p>Add shadow and elevation to an element with the <code>shadow</code> trait.</p>
+              <p>Add shadow elevation to an element with the <code>shadow</code> trait. Format <code>z{number}</code>,
+where numbers is <code>0-24</code>.</p>
 
             </div>
 
         </div>
 
           <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__default-name kss-style">
+                Default styling
+              </div>
 
             <div class="kss-modifier__example">
-              <div pam-Grid pam-Grid-Control="space:large">
-    <div pam-Unit="1-2 medium:1-5">
-        <div pam-shadow="z1" grid-block>
-            <span>Shadow 1</span>
-        </div>
-    </div>
-    <div pam-Unit="1-2 medium:1-5">
-        <div pam-shadow="z4" grid-block>
-            <span>Shadow 4</span>
-        </div>
-    </div>
-    <div pam-Unit="1-2 medium:1-5">
-        <div pam-shadow="z8" grid-block>
-            <span>Shadow 8</span>
-        </div>
-    </div>
-    <div pam-Unit="1-2 medium:1-5">
-        <div pam-shadow="z12" grid-block>
-            <span>Shadow 12</span>
-        </div>
-    </div>
-    <div pam-Unit="1-2 medium:1-5">
-        <div pam-shadow="z16" grid-block>
-            <span>Shadow 16</span>
-        </div>
-    </div>
-    <div pam-Unit="1-2 medium:1-5">
-        <div pam-shadow="z20" grid-block>
-            <span>Shadow 20</span>
-        </div>
-    </div>
-    <div pam-Unit="1-2 medium:1-5">
-        <div pam-shadow="z24" grid-block>
-            <span>Shadow 24</span>
-        </div>
-    </div>
-</div>
+              <div pam-shadow="" pam-space="p:4" pam-size="w:1-3 h:3"></div>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
+              <div class="kss-modifier__name kss-style">
+                z1
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Shadow elevation 1.
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-shadow="z1" pam-space="p:4" pam-size="w:1-3 h:3"></div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                z5
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Shadow elevation 5.
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-shadow="z5" pam-space="p:4" pam-size="w:1-3 h:3"></div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                z10
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Shadow elevation 10.
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-shadow="z10" pam-space="p:4" pam-size="w:1-3 h:3"></div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                z15
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Shadow elevation 15.
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-shadow="z15" pam-space="p:4" pam-size="w:1-3 h:3"></div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                z20
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Shadow elevation 20.
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-shadow="z20" pam-space="p:4" pam-size="w:1-3 h:3"></div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                z24
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Shadow elevation 24.
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-shadow="z24" pam-space="p:4" pam-size="w:1-3 h:3"></div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
           </div>
 
             <details class="kss-markup kss-style">
@@ -280,43 +299,7 @@
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;div pam-Grid pam-Grid-Control&#x3D;&quot;space:large&quot;&gt;
-    &lt;div pam-Unit&#x3D;&quot;1-2 medium:1-5&quot;&gt;
-        &lt;div pam-shadow&#x3D;&quot;z1&quot; grid-block&gt;
-            &lt;span&gt;Shadow 1&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div pam-Unit&#x3D;&quot;1-2 medium:1-5&quot;&gt;
-        &lt;div pam-shadow&#x3D;&quot;z4&quot; grid-block&gt;
-            &lt;span&gt;Shadow 4&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div pam-Unit&#x3D;&quot;1-2 medium:1-5&quot;&gt;
-        &lt;div pam-shadow&#x3D;&quot;z8&quot; grid-block&gt;
-            &lt;span&gt;Shadow 8&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div pam-Unit&#x3D;&quot;1-2 medium:1-5&quot;&gt;
-        &lt;div pam-shadow&#x3D;&quot;z12&quot; grid-block&gt;
-            &lt;span&gt;Shadow 12&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div pam-Unit&#x3D;&quot;1-2 medium:1-5&quot;&gt;
-        &lt;div pam-shadow&#x3D;&quot;z16&quot; grid-block&gt;
-            &lt;span&gt;Shadow 16&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div pam-Unit&#x3D;&quot;1-2 medium:1-5&quot;&gt;
-        &lt;div pam-shadow&#x3D;&quot;z20&quot; grid-block&gt;
-            &lt;span&gt;Shadow 20&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div pam-Unit&#x3D;&quot;1-2 medium:1-5&quot;&gt;
-        &lt;div pam-shadow&#x3D;&quot;z24&quot; grid-block&gt;
-            &lt;span&gt;Shadow 24&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code class="html">&lt;div pam-shadow&#x3D;&quot;[modifier]&quot; pam-space&#x3D;&quot;p:4&quot; pam-size&#x3D;&quot;w:1-3 h:3&quot;&gt;&lt;/div&gt;</code></pre>
             </details>
       </div>
       <hr >
@@ -353,7 +336,6 @@
 </script>
 <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
-<script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 
 

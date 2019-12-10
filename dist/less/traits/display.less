@@ -1,0 +1,84 @@
+// Display
+//
+// Control display by using the `display` trait attribute.
+//
+// Markup:
+// <div pam-space="p:2" pam-skin="bg:gray:100" pam-size="w:1-2">
+//    <div pam-display="{{modifier_class}}" pam-skin="bg:gray:300" pam-space="p:4 mb:px">Display 1</div>
+//    <div pam-display="{{modifier_class}}" pam-skin="bg:gray:300" pam-space="p:4 mb:px">Display 2</div>
+//    <div pam-display="{{modifier_class}}" pam-skin="bg:gray:300" pam-space="p:4 mb:px">Display 3</div>
+// </div>
+//
+// block - display block.
+// inline-block - display inline-block.
+// inline - display inline.
+// flex - display flex.
+// inline-flex - display inline-flex.
+//
+// Weight: 0
+//
+// Style guide: traits.display
+
+[pam-display~="block"] {
+    display: block !important;
+}
+
+[pam-display~="inline-block"] {
+    display: inline-block !important;
+}
+
+[pam-display~="inline"] {
+    display: inline !important;
+}
+
+[pam-display~="flex"] {
+    display: flex !important;
+}
+
+[pam-display~="inline-flex"] {
+    display: inline-flex !important;
+}
+
+[pam-display~="table"] {
+    display: table !important;
+}
+
+[pam-display~="table-row"] {
+    display: table-row !important;
+}
+
+[pam-display~="table-cell"] {
+    display: table-cell !important;
+}
+
+// Display Hidden
+//
+// To set an element to `display: none` use the `pam-display="hidden"` which removes the lement from the page layout.
+//
+// Markup:
+// <div pam-flex pam-space="p:2" pam-skin="bg:gray:100" pam-size="w:1-2">
+//    <div pam-display="hidden" pam-skin="bg:gray:300" pam-space="p:4 mb:px">Display 1</div>
+//    <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Display 2</div>
+//    <div pam-skin="bg:gray:300" pam-space="p:4 mr:2">Display 3</div>
+// </div>
+//
+// Weight: 1
+//
+// Style guide: traits.display.hidden
+
+[pam-display~="hidden"] {
+    display: none !important;
+}
+
+// Hooks
+//
+// `.hook-display`
+//
+// Weight: 10
+//
+// Style guide: traits.display.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-display() {
+}
+/* stylelint-enable */

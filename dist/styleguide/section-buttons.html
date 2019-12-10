@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
   <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -25,15 +25,6 @@
   <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 <link rel="stylesheet" href="kss-assets/css/pam.css">
 
-
-  <script type="text/javascript">
-  var skinsData = [
-      {
-        path: "pam.css",
-        name: "default skin"
-      },
-  ];
-  </script>
 </head>
 <body id="kss-node"  >
 
@@ -217,8 +208,8 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Loaders</span>
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -364,7 +355,7 @@ vary the emphasis on the button action.</p>
               <div pam-Button="">Button</div>
 <button pam-Button=" icon">
     <i class="material-icons" pam-Button-Icon>android</i>
-    <span>Icon</span>
+    <span pam-Button-Label>Icon</span>
 </button>
               <div class="kss-modifier__example-footer"></div>
             </div>
@@ -379,7 +370,7 @@ vary the emphasis on the button action.</p>
                 <div pam-Button="flat">Button</div>
 <button pam-Button="flat icon">
     <i class="material-icons" pam-Button-Icon>android</i>
-    <span>Icon</span>
+    <span pam-Button-Label>Icon</span>
 </button>
                 <div class="kss-modifier__example-footer"></div>
               </div>
@@ -393,7 +384,7 @@ vary the emphasis on the button action.</p>
                 <div pam-Button="raised">Button</div>
 <button pam-Button="raised icon">
     <i class="material-icons" pam-Button-Icon>android</i>
-    <span>Icon</span>
+    <span pam-Button-Label>Icon</span>
 </button>
                 <div class="kss-modifier__example-footer"></div>
               </div>
@@ -407,7 +398,7 @@ vary the emphasis on the button action.</p>
                 <div pam-Button="outlined">Button</div>
 <button pam-Button="outlined icon">
     <i class="material-icons" pam-Button-Icon>android</i>
-    <span>Icon</span>
+    <span pam-Button-Label>Icon</span>
 </button>
                 <div class="kss-modifier__example-footer"></div>
               </div>
@@ -421,7 +412,7 @@ vary the emphasis on the button action.</p>
                 <div pam-Button="rounded">Button</div>
 <button pam-Button="rounded icon">
     <i class="material-icons" pam-Button-Icon>android</i>
-    <span>Icon</span>
+    <span pam-Button-Label>Icon</span>
 </button>
                 <div class="kss-modifier__example-footer"></div>
               </div>
@@ -484,7 +475,7 @@ vary the emphasis on the button action.</p>
               <pre><code class="html">&lt;div pam-Button&#x3D;&quot;[modifier]&quot;&gt;Button&lt;/div&gt;
 &lt;button pam-Button&#x3D;&quot;[modifier] icon&quot;&gt;
     &lt;i class&#x3D;&quot;material-icons&quot; pam-Button-Icon&gt;android&lt;/i&gt;
-    &lt;span&gt;Icon&lt;/span&gt;
+    &lt;span pam-Button-Label&gt;Icon&lt;/span&gt;
 &lt;/button&gt;</code></pre>
             </details>
       </section>
@@ -702,7 +693,7 @@ made to only contain icons.</p>
               <p>A floating action button is used for the primary action
 in an application floating above other elements.
 A basic <code>fab</code> is created by combining the <code>fab</code>,
-<code>circle</code>, <code>raised</code> and <code>large</code> modifiers.</p>
+<code>circle</code>, <code>raised</code> and <code>lg</code> modifiers.</p>
 
             </div>
 
@@ -711,7 +702,7 @@ A basic <code>fab</code> is created by combining the <code>fab</code>,
           <div class="kss-modifier__wrapper">
 
             <div class="kss-modifier__example">
-              <button pam-Button="fab circle raised large">
+              <button pam-Button="fab circle raised lg">
     <i class="material-icons">add</i>
 </button>
               <div class="kss-modifier__example-footer"></div>
@@ -773,7 +764,7 @@ A basic <code>fab</code> is created by combining the <code>fab</code>,
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;button pam-Button&#x3D;&quot;fab circle raised large&quot;&gt;
+              <pre><code class="html">&lt;button pam-Button&#x3D;&quot;fab circle raised lg&quot;&gt;
     &lt;i class&#x3D;&quot;material-icons&quot;&gt;add&lt;/i&gt;
 &lt;/button&gt;</code></pre>
             </details>
@@ -789,7 +780,7 @@ A basic <code>fab</code> is created by combining the <code>fab</code>,
           </h2>
 
             <div class="kss-description">
-              <p>Sometimes size matters. Use the <code>small</code> or <code>large</code>
+              <p>Sometimes size matters. Use the <code>sm</code> or <code>lg</code>
 modifier to make the button smaller or larger.</p>
 
             </div>
@@ -797,43 +788,56 @@ modifier to make the button smaller or larger.</p>
         </div>
 
           <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__default-name kss-style">
+                Default styling
+              </div>
 
             <div class="kss-modifier__example">
-              <div sg-Stack>
-    <div>
-        <button pam-Button="large">Large</button>
-        <button pam-Button="large">
-            <i class="material-icons" pam-Button-Icon>android</i>
-            <span>Icon</span>
-        </button>
-        <button pam-Button="circle large">
-            <i class="material-icons">add</i>
-        </button>
-    </div>
-    <div>
-        <button pam-Button="">Default</button>
-        <button pam-Button="">
-            <i class="material-icons" pam-Button-Icon>android</i>
-            <span>Icon</span>
-        </button>
-        <button pam-Button="circle ">
-            <i class="material-icons">add</i>
-        </button>
-    </div>
-    <div>
-        <button pam-Button="small">small</button>
-        <button pam-Button="small">
-            <i class="material-icons" pam-Button-Icon>android</i>
-            <span>Icon</span>
-        </button>
-        <button pam-Button="circle small">
-            <i class="material-icons">add</i>
-        </button>
-    </div>
-</div>
+              <button pam-Button="">Button</button>
+<button pam-Button="">
+    <i class="material-icons" pam-Button-Icon>android</i>
+    <span pam-Button-Label>Icon</span>
+</button>
+<button pam-Button="circle ">
+    <i class="material-icons">add</i>
+</button>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
+              <div class="kss-modifier__name kss-style">
+                sm
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Small button size.
+              </div>
+              <div class="kss-modifier__example">
+                <button pam-Button="sm">Button</button>
+<button pam-Button="sm">
+    <i class="material-icons" pam-Button-Icon>android</i>
+    <span pam-Button-Label>Icon</span>
+</button>
+<button pam-Button="circle sm">
+    <i class="material-icons">add</i>
+</button>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                lg
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Large button size.
+              </div>
+              <div class="kss-modifier__example">
+                <button pam-Button="lg">Button</button>
+<button pam-Button="lg">
+    <i class="material-icons" pam-Button-Icon>android</i>
+    <span pam-Button-Label>Icon</span>
+</button>
+<button pam-Button="circle lg">
+    <i class="material-icons">add</i>
+</button>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
           </div>
 
             <details class="kss-markup kss-style">
@@ -890,38 +894,14 @@ modifier to make the button smaller or larger.</p>
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;div sg-Stack&gt;
-    &lt;div&gt;
-        &lt;button pam-Button&#x3D;&quot;large&quot;&gt;Large&lt;/button&gt;
-        &lt;button pam-Button&#x3D;&quot;large&quot;&gt;
-            &lt;i class&#x3D;&quot;material-icons&quot; pam-Button-Icon&gt;android&lt;/i&gt;
-            &lt;span&gt;Icon&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;button pam-Button&#x3D;&quot;circle large&quot;&gt;
-            &lt;i class&#x3D;&quot;material-icons&quot;&gt;add&lt;/i&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;button pam-Button&#x3D;&quot;&quot;&gt;Default&lt;/button&gt;
-        &lt;button pam-Button&#x3D;&quot;&quot;&gt;
-            &lt;i class&#x3D;&quot;material-icons&quot; pam-Button-Icon&gt;android&lt;/i&gt;
-            &lt;span&gt;Icon&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;button pam-Button&#x3D;&quot;circle &quot;&gt;
-            &lt;i class&#x3D;&quot;material-icons&quot;&gt;add&lt;/i&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;button pam-Button&#x3D;&quot;small&quot;&gt;small&lt;/button&gt;
-        &lt;button pam-Button&#x3D;&quot;small&quot;&gt;
-            &lt;i class&#x3D;&quot;material-icons&quot; pam-Button-Icon&gt;android&lt;/i&gt;
-            &lt;span&gt;Icon&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;button pam-Button&#x3D;&quot;circle small&quot;&gt;
-            &lt;i class&#x3D;&quot;material-icons&quot;&gt;add&lt;/i&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code class="html">&lt;button pam-Button&#x3D;&quot;[modifier]&quot;&gt;Button&lt;/button&gt;
+&lt;button pam-Button&#x3D;&quot;[modifier]&quot;&gt;
+    &lt;i class&#x3D;&quot;material-icons&quot; pam-Button-Icon&gt;android&lt;/i&gt;
+    &lt;span pam-Button-Label&gt;Icon&lt;/span&gt;
+&lt;/button&gt;
+&lt;button pam-Button&#x3D;&quot;circle [modifier]&quot;&gt;
+    &lt;i class&#x3D;&quot;material-icons&quot;&gt;add&lt;/i&gt;
+&lt;/button&gt;</code></pre>
             </details>
       </section>
       <hr >
@@ -1186,97 +1166,6 @@ modifier to make the button smaller or larger.</p>
             </details>
       </section>
       <hr >
-      <section id="kssref-buttons-group-borderless" class="kss-section kss-section--depth-3 ">
-
-        <div class="kss-style">
-          <h3 class="kss-title kss-title--level-3">
-            <a class="kss-title__permalink" href="#kssref-buttons-group-borderless">
-              Borderless
-            </a>
-          </h3>
-
-            <div class="kss-description">
-              <p>Remove the borders from button groups with the <code>borderless</code> modifier.</p>
-
-            </div>
-
-        </div>
-
-          <div class="kss-modifier__wrapper">
-
-            <div class="kss-modifier__example">
-              <div pam-Button-Group="borderless">
-    <button pam-Button="">Button</button>
-    <button pam-Button="">Button</button>
-    <button pam-Button="">Button</button>
-</div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
-
-          </div>
-
-            <details class="kss-markup kss-style">
-              <summary>
-                  Markup
-                  <p class="kss-toolbar">
-                      <a href="#kssref-buttons-group-borderless" data-kss-fullscreen="kssref-buttons-group-borderless">
-                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
-                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                      </a>
-                      <a href="item-buttons-group-borderless.html" target="_blank">
-                        <span class="kss-toolbar__tooltip">Open in new window</span>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
-                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
-                        </svg>
-                      </a>
-                    <a href="#kssref-buttons-group-borderless" data-kss-guides="true">
-                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
-                      </svg>
-                    </a>
-                    <a href="#kssref-buttons-group-borderless" data-kss-markup="true">
-                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
-                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
-                      </svg>
-                    </a>
-                  </p>
-              </summary>
-              <pre><code class="html">&lt;div pam-Button-Group&#x3D;&quot;borderless&quot;&gt;
-    &lt;button pam-Button&#x3D;&quot;&quot;&gt;Button&lt;/button&gt;
-    &lt;button pam-Button&#x3D;&quot;&quot;&gt;Button&lt;/button&gt;
-    &lt;button pam-Button&#x3D;&quot;&quot;&gt;Button&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-            </details>
-      </section>
-      <hr >
       <section id="kssref-buttons-group-size" class="kss-section kss-section--depth-3 ">
 
         <div class="kss-style">
@@ -1287,33 +1176,54 @@ modifier to make the button smaller or larger.</p>
           </h3>
 
             <div class="kss-description">
-              <p>Button groups support same sizes as buttons  <code>large</code>, <code>default</code> or <code>small</code>.</p>
+              <p>Button groups support same sizes as buttons  <code>lg</code>, <code>default</code> or <code>small</code>.</p>
 
             </div>
 
         </div>
 
           <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__default-name kss-style">
+                Default styling
+              </div>
 
             <div class="kss-modifier__example">
-              <div pam-Button-Group="large">
-    <button pam-Button>Large</button>
-    <button pam-Button>Large</button>
-    <button pam-Button>Large</button>
-</div>
-<div pam-Button-Group>
-    <button pam-Button>Default</button>
-    <button pam-Button>Default</button>
-    <button pam-Button>Default</button>
-</div>
-<div pam-Button-Group="small">
-    <button pam-Button>Small</button>
-    <button pam-Button>Small</button>
-    <button pam-Button>Small</button>
+              <div pam-Button-Group="">
+    <button pam-Button>Button</button>
+    <button pam-Button>Button</button>
+    <button pam-Button>Button</button>
 </div>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
+              <div class="kss-modifier__name kss-style">
+                sm
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Small button group
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-Button-Group="sm">
+    <button pam-Button>Button</button>
+    <button pam-Button>Button</button>
+    <button pam-Button>Button</button>
+</div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                lg
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Large button group
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-Button-Group="lg">
+    <button pam-Button>Button</button>
+    <button pam-Button>Button</button>
+    <button pam-Button>Button</button>
+</div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
           </div>
 
             <details class="kss-markup kss-style">
@@ -1370,20 +1280,10 @@ modifier to make the button smaller or larger.</p>
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;div pam-Button-Group&#x3D;&quot;large&quot;&gt;
-    &lt;button pam-Button&gt;Large&lt;/button&gt;
-    &lt;button pam-Button&gt;Large&lt;/button&gt;
-    &lt;button pam-Button&gt;Large&lt;/button&gt;
-&lt;/div&gt;
-&lt;div pam-Button-Group&gt;
-    &lt;button pam-Button&gt;Default&lt;/button&gt;
-    &lt;button pam-Button&gt;Default&lt;/button&gt;
-    &lt;button pam-Button&gt;Default&lt;/button&gt;
-&lt;/div&gt;
-&lt;div pam-Button-Group&#x3D;&quot;small&quot;&gt;
-    &lt;button pam-Button&gt;Small&lt;/button&gt;
-    &lt;button pam-Button&gt;Small&lt;/button&gt;
-    &lt;button pam-Button&gt;Small&lt;/button&gt;
+              <pre><code class="html">&lt;div pam-Button-Group&#x3D;&quot;[modifier]&quot;&gt;
+    &lt;button pam-Button&gt;Button&lt;/button&gt;
+    &lt;button pam-Button&gt;Button&lt;/button&gt;
+    &lt;button pam-Button&gt;Button&lt;/button&gt;
 &lt;/div&gt;</code></pre>
             </details>
       </section>
@@ -1405,17 +1305,17 @@ modifier to make the button smaller or larger.</p>
 <code>.hook-button-flat</code>
 <code>.hook-button-fluid</code>
 <code>.hook-button-group</code>
-<code>.hook-button-group-large</code>
+<code>.hook-button-group-lg</code>
 <code>.hook-button-hidden</code>
 <code>.hook-button-icon</code>
 <code>.hook-button-info</code>
-<code>.hook-button-large</code>
+<code>.hook-button-lg</code>
 <code>.hook-button-link</code>
 <code>.hook-button-raised</code>
 <code>.hook-button-round</code>
 <code>.hook-button-rounded</code>
 <code>.hook-button-secondary</code>
-<code>.hook-button-small</code>
+<code>.hook-button-sm</code>
 <code>.hook-button-success</code>
 <code>.hook-button-warning</code></p>
 
@@ -1455,7 +1355,7 @@ used for customization.</p>
        </tr>
          <tr>
            <td>@button-border-radius</td>
-           <td><code>@border-radius-base</code></td>
+           <td><code>@border-radius</code></td>
        </tr>
          <tr>
            <td>@button-border-style</td>
@@ -1503,7 +1403,7 @@ used for customization.</p>
        </tr>
          <tr>
            <td>@button-line-height</td>
-           <td><code>2.25rem</code></td>
+           <td><code>@space-36 - 1</code></td>
        </tr>
          <tr>
            <td>@button-margin</td>
@@ -1515,7 +1415,7 @@ used for customization.</p>
        </tr>
          <tr>
            <td>@button-height</td>
-           <td><code>@space-36</code></td>
+           <td><code>auto</code></td>
        </tr>
          <tr>
            <td>@button-padding-horizontal</td>
@@ -1614,35 +1514,35 @@ used for customization.</p>
            <td><code>@skin-primary</code></td>
        </tr>
          <tr>
-           <td>@button-large-font-size</td>
+           <td>@button-lg-font-size</td>
            <td><code>@font-size-large</code></td>
        </tr>
          <tr>
-           <td>@button-large-line-height</td>
-           <td><code>3rem</code></td>
+           <td>@button-lg-line-height</td>
+           <td><code>@space-48 - 1</code></td>
        </tr>
          <tr>
-           <td>@button-large-height</td>
-           <td><code>@space-48</code></td>
+           <td>@button-lg-height</td>
+           <td><code>auto</code></td>
        </tr>
          <tr>
-           <td>@button-large-padding</td>
+           <td>@button-lg-padding</td>
            <td><code>0 @space-16</code></td>
        </tr>
          <tr>
-           <td>@button-small-font-size</td>
+           <td>@button-sm-font-size</td>
            <td><code>0.75rem</code></td>
        </tr>
          <tr>
-           <td>@button-small-line-height</td>
-           <td><code>2rem</code></td>
+           <td>@button-sm-line-height</td>
+           <td><code>@space-32 - 2</code></td>
        </tr>
          <tr>
-           <td>@button-small-height</td>
-           <td><code>@space-32</code></td>
+           <td>@button-sm-height</td>
+           <td><code>auto</code></td>
        </tr>
          <tr>
-           <td>@button-small-padding</td>
+           <td>@button-sm-padding</td>
            <td><code>0 @space-16</code></td>
        </tr>
          <tr>
@@ -1702,16 +1602,16 @@ used for customization.</p>
            <td><code>0</code></td>
        </tr>
          <tr>
-           <td>@button-circle-large-size</td>
-           <td><code>@space-48</code></td>
+           <td>@button-circle-lg-size</td>
+           <td><code>@space-48 - 1</code></td>
        </tr>
          <tr>
            <td>@button-circle-size</td>
-           <td><code>@space-36</code></td>
+           <td><code>@space-36 - 1</code></td>
        </tr>
          <tr>
-           <td>@button-circle-small-size</td>
-           <td><code>@space-32</code></td>
+           <td>@button-circle-sm-size</td>
+           <td><code>@space-32 - 2</code></td>
        </tr>
          <tr>
            <td>@button-raised-shadow</td>
@@ -1726,12 +1626,16 @@ used for customization.</p>
            <td><code>@space-20 - 2</code></td>
        </tr>
          <tr>
-           <td>@button-icon-size-large</td>
+           <td>@button-icon-size-lg</td>
            <td><code>@space-20</code></td>
        </tr>
          <tr>
-           <td>@button-icon-margin</td>
+           <td>@button-icon-margin-right</td>
            <td><code>0 @space-8 0 0</code></td>
+       </tr>
+         <tr>
+           <td>@button-icon-margin-left</td>
+           <td><code>0 0 0 @space-8</code></td>
        </tr>
     </tbody>
 </table>
@@ -1774,7 +1678,6 @@ used for customization.</p>
 </script>
 <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
-<script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 
 
