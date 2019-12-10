@@ -1,0 +1,88 @@
+// Overlay
+//
+// Create an element overlay, which can be used as a partial or full cover. The [position trait][position-link] is used to set the location of the overlay.
+//
+// Markup:
+// <div pam-Grid>
+//     <div pam-Unit="2-3">
+//         <img pam-image src="kss-assets/img/photo-position.jpg" alt="Joanna Kosinska">
+//         <div pam-position="absolute center" pam-overlay="" pam-skin="text:primary:on:dark">
+//             Deserunt dolore. Explicabo exercitation. In explicabo consequat. Autem fugit, numquam so rem. Proident. Ad magnam, or quia nor inventore nostrud.
+//         </div>
+//     </div>
+// </div>
+//
+// [position-link]: ./section-traits.html#kssref-traits-position
+//
+// Weight: 16
+//
+// Style guide: overlay
+
+//  Variables
+// ==================================================================
+
+@overlay-dark: fade(@skin-black, 60);
+@overlay-light: fade(@skin-white, 80);
+@overlay-on-dark: contrast(@overlay-dark);
+@overlay-on-light: contrast(@overlay-light);
+@overlay-padding: @space-20;
+
+// ==================================================================
+//  Overlay
+// ==================================================================
+
+[pam-Overlay] {
+    padding: @overlay-padding;
+}
+
+[pam-Overlay~="light"] {
+    background: @overlay-light;
+    color: @overlay-on-light;
+}
+
+[pam-Overlay~="dark"] {
+    background: @overlay-dark;
+    color: @overlay-on-dark;
+}
+
+
+// Variables
+//
+// These are all the component specific variables that can be
+// used for customization.
+//
+// <table pam-Table="horizontal">
+//     <thead>
+//         <tr>
+//             <th>Name</th>
+//             <th>Value</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//          <tr>
+//            <td>@overlay-dark</td>
+//            <td><code>fade(@skin-black, 60)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@overlay-light</td>
+//            <td><code>fade(@skin-white, 80)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@overlay-on-dark</td>
+//            <td><code>contrast(@overlay-dark)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@overlay-on-light</td>
+//            <td><code>contrast(@overlay-light)</code></td>
+//        </tr>
+//          <tr>
+//            <td>@overlay-padding</td>
+//            <td><code>@space-20</code></td>
+//        </tr>
+//     </tbody>
+// </table>
+//
+// Weight: 30
+//
+// Style guide: overlay.variables
+ 

@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
   <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -25,15 +25,6 @@
   <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 <link rel="stylesheet" href="kss-assets/css/pam.css">
 
-
-  <script type="text/javascript">
-  var skinsData = [
-      {
-        path: "pam.css",
-        name: "default skin"
-      },
-  ];
-  </script>
 </head>
 <body id="kss-node" class="kss-fullscreen-mode" >
 
@@ -161,8 +152,8 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Loaders</span>
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -190,12 +181,13 @@
         <div class="kss-style">
           <h3 class="kss-title kss-title--level-3">
             <a class="kss-title__permalink" href="#kssref-traits-size-height-fixed">
-              Fixed Height
+              Fixed height
             </a>
           </h3>
 
             <div class="kss-description">
-              <p>Set a fixed height with <code>h:{ number | px }</code>. Multiplier for <code>number</code> is 16.</p>
+              <p>Set a fixed height with <code>h:{ number }px</code>. These are exact pixel heights
+which covers multiples of four up to 12px.</p>
 
             </div>
 
@@ -222,53 +214,43 @@
                 <div class="kss-modifier__example-footer"></div>
               </div>
               <div class="kss-modifier__name kss-style">
-                h%3A1
+                h%3A2px
               </div>
               <div class="kss-modifier__description kss-style">
-                Set height to 1 * multiplier.
+                Set height to 2px.
               </div>
               <div class="kss-modifier__example">
-                <div pam-size="h%3A1 w:2" pam-skin="bg:gray:200"></div>
+                <div pam-size="h%3A2px w:2" pam-skin="bg:gray:200"></div>
                 <div class="kss-modifier__example-footer"></div>
               </div>
               <div class="kss-modifier__name kss-style">
-                h%3A2
+                h%3A4px
               </div>
               <div class="kss-modifier__description kss-style">
-                Set height to 2.* multiplier
+                Set height to 4px.
               </div>
               <div class="kss-modifier__example">
-                <div pam-size="h%3A2 w:2" pam-skin="bg:gray:200"></div>
+                <div pam-size="h%3A4px w:2" pam-skin="bg:gray:200"></div>
                 <div class="kss-modifier__example-footer"></div>
               </div>
               <div class="kss-modifier__name kss-style">
-                h%3A3
+                h%3A8px
               </div>
               <div class="kss-modifier__description kss-style">
-                Set height to 3 * multiplier.
+                Set height to 8px.
               </div>
               <div class="kss-modifier__example">
-                <div pam-size="h%3A3 w:2" pam-skin="bg:gray:200"></div>
+                <div pam-size="h%3A8px w:2" pam-skin="bg:gray:200"></div>
                 <div class="kss-modifier__example-footer"></div>
               </div>
               <div class="kss-modifier__name kss-style">
-                h%3A4
+                h%3A12px
               </div>
               <div class="kss-modifier__description kss-style">
-                Set height to 4 * multiplier.
+                Set height to 12px.
               </div>
               <div class="kss-modifier__example">
-                <div pam-size="h%3A4 w:2" pam-skin="bg:gray:200"></div>
-                <div class="kss-modifier__example-footer"></div>
-              </div>
-              <div class="kss-modifier__name kss-style">
-                h%3A5
-              </div>
-              <div class="kss-modifier__description kss-style">
-                Set height to 5 * multiplier.
-              </div>
-              <div class="kss-modifier__example">
-                <div pam-size="h%3A5 w:2" pam-skin="bg:gray:200"></div>
+                <div pam-size="h%3A12px w:2" pam-skin="bg:gray:200"></div>
                 <div class="kss-modifier__example-footer"></div>
               </div>
           </div>
@@ -344,7 +326,6 @@
 </script>
 <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
-<script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 
 

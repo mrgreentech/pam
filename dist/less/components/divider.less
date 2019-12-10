@@ -1,0 +1,148 @@
+// Divider
+//
+// A component to divide / separate between elements
+// like sections, menu items etc.
+//
+// Markup:
+// <h1 pam-typography="headline">Title</h1>
+//     <div pam-Divider></div>
+// <h2 pam-typography="subheader">Subtitle</h2>
+//
+// Weight: 10
+//
+// Style guide: divider
+
+// TODO: Add vertical divider.
+
+//  Variables
+// ==================================================================
+
+@divider-color: @skin-gray-400;
+@divider-opacity: 10;
+@divider-size: 1px;
+@divider-transparent-border-color: fade(@skin-black, @divider-opacity);
+
+// ==================================================================
+//  Divider
+// ==================================================================
+
+[pam-Divider],
+hr[pam-Divider] {
+    border: 0;
+    border-top: @divider-size solid @divider-color;
+    box-sizing: content-box;
+    display: block;
+    height: 0;
+    margin: 0;
+
+    .hook-divider;
+}
+
+//  Modifier: inset
+// ==================================================================
+
+// Inset
+//
+// `pam-Divider="inset"` Creates a horizontal divider with a inset value to be
+//  used with list items etc.
+//
+// Markup:
+// <div pam-List>
+//     <div pam-Item>
+//         <div pam-tile="left">
+//             <div sg-mock-icon></div>
+//         </div>
+//         <div pam-tile="content">
+//             <h3 pam-typography="subheader">Item content</h3>
+//         </div>
+//     </div>
+//     <div pam-Divider="inset">
+// </div>
+//
+// Style guide: divider.inset
+
+[pam-Divider~="inset"],
+hr[pam-Divider~="inset"] {
+    margin-left: @space-72;
+
+    .hook-divider-inset;
+}
+
+//  Modifier: transparent
+// ==================================================================
+
+// Transparent
+//
+// `pam-Divider="transparent"` Creates a horizontal divider with a transparent color.
+//
+// Markup:
+// <div pam-Divider="transparent"></div>
+//
+// Style guide: divider.transparent
+
+[pam-Divider~="transparent"],
+hr[pam-Divider~="transparent"] {
+    border-top-color: @divider-transparent-border-color;
+
+    .hook-divider-transparent;
+}
+
+//  Hooks
+// ==================================================================
+
+// Hooks
+//
+// `.hook-divider`
+// `.hook-divider-inset`
+// `.hook-divider-transparent`
+//
+// Weight: 10
+//
+// Style guide: divider.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-divider() {
+}
+.hook-divider-inset() {
+}
+.hook-divider-transparent() {
+}
+/* stylelint-enable */
+
+
+// Variables
+//
+// These are all the component specific variables that can be
+// used for customization.
+//
+// <table pam-Table="horizontal">
+//     <thead>
+//         <tr>
+//             <th>Name</th>
+//             <th>Value</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//          <tr>
+//            <td>@divider-color</td>
+//            <td><code>@skin-gray-400</code></td>
+//        </tr>
+//          <tr>
+//            <td>@divider-opacity</td>
+//            <td><code>10</code></td>
+//        </tr>
+//          <tr>
+//            <td>@divider-size</td>
+//            <td><code>1px</code></td>
+//        </tr>
+//          <tr>
+//            <td>@divider-transparent-border-color</td>
+//            <td><code>fade(@skin-black, @divider-opacity)</code></td>
+//        </tr>
+//     </tbody>
+// </table>
+//
+// Weight: 30
+//
+// Style guide: divider.variables
+ 

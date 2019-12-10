@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
   <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -25,15 +25,6 @@
   <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 <link rel="stylesheet" href="kss-assets/css/pam.css">
 
-
-  <script type="text/javascript">
-  var skinsData = [
-      {
-        path: "pam.css",
-        name: "default skin"
-      },
-  ];
-  </script>
 </head>
 <body id="kss-node" class="kss-fullscreen-mode" >
 
@@ -169,21 +160,45 @@
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-three-part">
+                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-leading-icon">
                     <span class="kss-nav__ref ">15.4</span
-                    ><span class="kss-nav__name">Three parts</span>
+                    ><span class="kss-nav__name">Leading Icon</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-divider">
+                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-trailing-icon">
                     <span class="kss-nav__ref ">15.5</span
-                    ><span class="kss-nav__name">Divider</span>
+                    ><span class="kss-nav__name">Trailing Icon</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-two-line-leading-trailing">
+                    <span class="kss-nav__ref ">15.6</span
+                    ><span class="kss-nav__name">Two Line with Icons</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-two-line-avatar">
+                    <span class="kss-nav__ref ">15.7</span
+                    ><span class="kss-nav__name">Two Line with Avatar</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-two-line-divider">
+                    <span class="kss-nav__ref ">15.8</span
+                    ><span class="kss-nav__name">Two Line with Divider</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-hooks">
-                    <span class="kss-nav__ref ">15.6</span
+                    <span class="kss-nav__ref ">15.9</span
                     ><span class="kss-nav__name">Hooks</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-variables">
+                    <span class="kss-nav__ref ">15.10</span
+                    ><span class="kss-nav__name">Variables</span>
                   </a>
                 </li>
               </ul>
@@ -199,8 +214,8 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Loaders</span>
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -233,8 +248,8 @@
           </h1>
 
             <div class="kss-description">
-              <p><code>pam-List</code> wraps a <code>pam-Item</code> which in turn can contain up to three type of tiles
-<code>pam-Tile=&quot;[left | content | right]&quot;</code>.</p>
+              <p>Lists are groups of text or image elements. Composed of primary
+and optional actions represented by icons and text.</p>
 
             </div>
 
@@ -275,7 +290,6 @@
 </script>
 <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
-<script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 
 

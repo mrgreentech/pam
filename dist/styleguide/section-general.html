@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
   <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -25,15 +25,6 @@
   <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 <link rel="stylesheet" href="kss-assets/css/pam.css">
 
-
-  <script type="text/javascript">
-  var skinsData = [
-      {
-        path: "pam.css",
-        name: "default skin"
-      },
-  ];
-  </script>
 </head>
 <body id="kss-node"  >
 
@@ -169,8 +160,8 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Loaders</span>
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -374,7 +365,7 @@ used for customization.</p>
        </tr>
          <tr>
            <td>@skin-text-icon-on-background</td>
-           <td><code>@skin-gray-700</code></td>
+           <td><code>@skin-gray-500</code></td>
        </tr>
          <tr>
            <td>@skin-text-primary-on-light</td>
@@ -394,7 +385,7 @@ used for customization.</p>
        </tr>
          <tr>
            <td>@skin-text-icon-on-light</td>
-           <td><code>@skin-gray-700</code></td>
+           <td><code>@skin-gray-500</code></td>
        </tr>
          <tr>
            <td>@skin-text-primary-on-dark</td>
@@ -785,42 +776,6 @@ used for customization.</p>
            <td><code>500</code></td>
        </tr>
          <tr>
-           <td>@breakpoint-small</td>
-           <td><code>600px</code></td>
-       </tr>
-         <tr>
-           <td>@breakpoint-small-down</td>
-           <td><code>@breakpoint-small - 1</code></td>
-       </tr>
-         <tr>
-           <td>@breakpoint-medium</td>
-           <td><code>768px</code></td>
-       </tr>
-         <tr>
-           <td>@breakpoint-medium-down</td>
-           <td><code>@breakpoint-medium - 1</code></td>
-       </tr>
-         <tr>
-           <td>@breakpoint-large</td>
-           <td><code>1024px</code></td>
-       </tr>
-         <tr>
-           <td>@breakpoint-large-down</td>
-           <td><code>@breakpoint-large - 1</code></td>
-       </tr>
-         <tr>
-           <td>@breakpoint-xlarge</td>
-           <td><code>1280px</code></td>
-       </tr>
-         <tr>
-           <td>@breakpoint-xlarge-down</td>
-           <td><code>@breakpoint-xlarge - 1</code></td>
-       </tr>
-         <tr>
-           <td>@breakpoints</td>
-           <td><code>small, medium, large, xlarge</code></td>
-       </tr>
-         <tr>
            <td>@screen-sm</td>
            <td><code>600px</code></td>
        </tr>
@@ -857,36 +812,48 @@ used for customization.</p>
            <td><code>sm, md, lg, xl</code></td>
        </tr>
          <tr>
-           <td>@border-radius-base</td>
+           <td>@border-width</td>
+           <td><code>@space-1</code></td>
+       </tr>
+         <tr>
+           <td>@border-width-0</td>
+           <td><code>@space-0</code></td>
+       </tr>
+         <tr>
+           <td>@border-width-2</td>
+           <td><code>@space-2</code></td>
+       </tr>
+         <tr>
+           <td>@border-width-4</td>
            <td><code>@space-4</code></td>
-       </tr>
-         <tr>
-           <td>@border-radius-large</td>
-           <td><code>@space-8</code></td>
-       </tr>
-         <tr>
-           <td>@border-radius-rounded</td>
-           <td><code>50px</code></td>
-       </tr>
-         <tr>
-           <td>@border-radius-small</td>
-           <td><code>2px</code></td>
        </tr>
          <tr>
            <td>@border-style</td>
            <td><code>solid</code></td>
        </tr>
          <tr>
-           <td>@border-width-base</td>
-           <td><code>1px</code></td>
+           <td>@border-color</td>
+           <td><code>@skin-gray-400</code></td>
        </tr>
          <tr>
-           <td>@border-width-small</td>
-           <td><code>2px</code></td>
+           <td>@border-radius-none</td>
+           <td><code>@space-0</code></td>
        </tr>
          <tr>
-           <td>@border-width-large</td>
+           <td>@border-radius-sm</td>
+           <td><code>@space-2</code></td>
+       </tr>
+         <tr>
+           <td>@border-radius</td>
            <td><code>@space-4</code></td>
+       </tr>
+         <tr>
+           <td>@border-radius-lg</td>
+           <td><code>@space-8</code></td>
+       </tr>
+         <tr>
+           <td>@border-radius-rounded</td>
+           <td><code>50px</code></td>
        </tr>
          <tr>
            <td>@opacity-100</td>
@@ -1077,7 +1044,6 @@ used for customization.</p>
 </script>
 <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
-<script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 
 

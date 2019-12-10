@@ -1,0 +1,179 @@
+// Column
+//
+// `pam-Column="[2-5]"` use the native CSS multi-column layout
+//  to allow easy definition of multiple columns in a text. Onte to five columns are supported.
+//
+// Markup:
+// <p pam-Column="3">Sed consequat vulputate ornare. Etiam non orci quis ligula posuere pretium. Duis a mollis turpis. Curabitur tincidunt, orci ac pulvinar auctor, libero eros luctus dui, non posuere dolor neque ultrices dolor. Suspendisse vehicula, erat vel malesuada bibendum, purus magna rhoncus sem, in faucibus lacus leo a massa. Aliquam metus massa, mattis eu lorem ac, vestibulum rutrum nunc. Donec sagittis quam nec libero semper lobortis.</p>
+//
+// Weight: 14
+//
+// Style guide: column
+
+// Variables
+// ==================================================================
+
+@column-count: 1;
+@column-width: auto;
+
+@column-width-small: 100px;
+@column-width-medium: 200px;
+@column-width-large: 400px;
+
+@column-gap-small: @space-8;
+@column-gap-medium: @space-16;
+@column-gap-large: @space-24;
+
+// ==================================================================
+//  Column
+// ==================================================================
+
+[pam-Column] {
+    columns: @column-count @column-width;
+    column-gap: @space-16;
+
+    .hook-column;
+}
+
+// Modifier: Column count
+// ==================================================================
+
+[pam-Column~="2"] {
+    column-count: 2;
+}
+
+[pam-Column~="3"] {
+    column-count: 3;
+}
+
+[pam-Column~="4"] {
+    column-count: 4;
+}
+
+[pam-Column~="5"] {
+    column-count: 5;
+}
+
+// Modifier: Column width
+// ==================================================================
+
+// Width
+//
+// Use `pam-Column="width:[small|medium|large]"` to declare the min-width of the columns.
+// `Small` is 100px, `medium` is 200px and `large` is 400px.
+//
+// Markup:
+// <p pam-Column="3 width:large">Sed consequat vulputate ornare. Etiam non orci quis ligula posuere pretium. Duis a mollis turpis. Curabitur tincidunt, orci ac pulvinar auctor, libero eros luctus dui, non posuere dolor neque ultrices dolor. Suspendisse vehicula, erat vel malesuada bibendum, purus magna rhoncus sem, in faucibus lacus leo a massa. Aliquam metus massa, mattis eu lorem ac, vestibulum rutrum nunc. Donec sagittis quam nec libero semper lobortis.</p>
+//
+// Weight: 2
+//
+// Style guide: column.width
+
+[pam-Column~="width:small"] {
+    column-width: @column-width-small;
+}
+
+[pam-Column~="width:medium"] {
+    column-width: @column-width-medium;
+}
+
+[pam-Column~="width:large"] {
+    column-width: @column-width-large;
+}
+
+// Modifier: Column gap
+// ==================================================================
+
+// Gap
+//
+// Use `pam-Column="gap:[small|medium|large]"` to adjust the gutter, or the space
+// between columns. `Small` is 8px, `medium` is 16px (default) and `large` is 24px.
+//
+// Markup:
+// <p pam-Column="3 gap:large">Sed consequat vulputate ornare. Etiam non orci quis ligula posuere pretium. Duis a mollis turpis. Curabitur tincidunt, orci ac pulvinar auctor, libero eros luctus dui, non posuere dolor neque ultrices dolor. Suspendisse vehicula, erat vel malesuada bibendum, purus magna rhoncus sem, in faucibus lacus leo a massa. Aliquam metus massa, mattis eu lorem ac, vestibulum rutrum nunc. Donec sagittis quam nec libero semper lobortis.</p>
+//
+// Weight: 3
+//
+// Style guide: column.gap
+
+[pam-Column~="gap:small"] {
+    column-gap: @column-gap-small;
+}
+
+[pam-Column~="gap:medium"] {
+    column-gap: @column-gap-medium;
+}
+
+[pam-Column~="gap:large"] {
+    column-gap: @column-gap-large;
+}
+
+// Hooks
+// ==================================================================
+
+// Hooks
+//
+// `.hook-column`
+//
+// Weight: 10
+//
+// Style guide: column.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-column() {
+}
+/* stylelint-enable */
+
+
+// Variables
+//
+// These are all the component specific variables that can be
+// used for customization.
+//
+// <table pam-Table="horizontal">
+//     <thead>
+//         <tr>
+//             <th>Name</th>
+//             <th>Value</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//          <tr>
+//            <td>@column-count</td>
+//            <td><code>1</code></td>
+//        </tr>
+//          <tr>
+//            <td>@column-width</td>
+//            <td><code>auto</code></td>
+//        </tr>
+//          <tr>
+//            <td>@column-width-small</td>
+//            <td><code>100px</code></td>
+//        </tr>
+//          <tr>
+//            <td>@column-width-medium</td>
+//            <td><code>200px</code></td>
+//        </tr>
+//          <tr>
+//            <td>@column-width-large</td>
+//            <td><code>400px</code></td>
+//        </tr>
+//          <tr>
+//            <td>@column-gap-small</td>
+//            <td><code>@space-8</code></td>
+//        </tr>
+//          <tr>
+//            <td>@column-gap-medium</td>
+//            <td><code>@space-16</code></td>
+//        </tr>
+//          <tr>
+//            <td>@column-gap-large</td>
+//            <td><code>@space-24</code></td>
+//        </tr>
+//     </tbody>
+// </table>
+//
+// Weight: 30
+//
+// Style guide: column.variables
+ 

@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
   <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -25,15 +25,6 @@
   <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 <link rel="stylesheet" href="kss-assets/css/pam.css">
 
-
-  <script type="text/javascript">
-  var skinsData = [
-      {
-        path: "pam.css",
-        name: "default skin"
-      },
-  ];
-  </script>
 </head>
 <body id="kss-node" class="kss-fullscreen-mode" >
 
@@ -161,8 +152,8 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Loaders</span>
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -195,21 +186,65 @@
           </h2>
 
             <div class="kss-description">
-              <p>Controlling how an element handles overflow content.</p>
+              <p>Control how an element handles overflow content with the <code>overflow</code> trait.
+Format <code>{axis}:{type}</code>.</p>
+<ul>
+<li>axis: <code>{&quot;&quot; | x | y}</code></li>
+<li>type: <code>{auto | hidden | scroll | visible}</code></li>
+</ul>
 
             </div>
 
         </div>
 
           <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__default-name kss-style">
+                Default styling
+              </div>
 
             <div class="kss-modifier__example">
-              <div pam-overflow="y:auto" pam-size="h:5" pam-space="4">
-    <div pam-size="h:10" pam-space="p:2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem ante, elementum eget tortor id, pellentesque lacinia dolor. Nunc in metus facilisis, scelerisque ante eget, lacinia purus. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi. Nam a metus dictum, sollicitudin ligula a, mollis est. Phasellus consectetur est nec velit interdum dignissim. Nunc enim felis, porta at nisl ultricies, porta molestie nibh.</div>
+              <div pam-overflow="" pam-size="h:5" pam-space="p:2" pam-shadow="z2">
+    <div pam-size="h:10" pam-space="p:2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem ante, elementum eget tortor id, pellentesque lacinia dolor. Nunc in metus facilisis, scelerisque ante eget, lacinia purus. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi. Nam a metus dictum, sollicitudin ligula a, mollis est. Phasellus consectetur est nec velit interdum dignissim. Nunc enim felis, porta at nisl ultricies, porta molestie nibh. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi.</div>
 </div>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
+              <div class="kss-modifier__name kss-style">
+                auto
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Auto scroll for x and y axis.
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-overflow="auto" pam-size="h:5" pam-space="p:2" pam-shadow="z2">
+    <div pam-size="h:10" pam-space="p:2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem ante, elementum eget tortor id, pellentesque lacinia dolor. Nunc in metus facilisis, scelerisque ante eget, lacinia purus. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi. Nam a metus dictum, sollicitudin ligula a, mollis est. Phasellus consectetur est nec velit interdum dignissim. Nunc enim felis, porta at nisl ultricies, porta molestie nibh. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi.</div>
+</div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                hidden
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Hidden scrolls for x and y axis.
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-overflow="hidden" pam-size="h:5" pam-space="p:2" pam-shadow="z2">
+    <div pam-size="h:10" pam-space="p:2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem ante, elementum eget tortor id, pellentesque lacinia dolor. Nunc in metus facilisis, scelerisque ante eget, lacinia purus. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi. Nam a metus dictum, sollicitudin ligula a, mollis est. Phasellus consectetur est nec velit interdum dignissim. Nunc enim felis, porta at nisl ultricies, porta molestie nibh. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi.</div>
+</div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
+              <div class="kss-modifier__name kss-style">
+                scroll
+              </div>
+              <div class="kss-modifier__description kss-style">
+                Always show scrolls for x and y axis.
+              </div>
+              <div class="kss-modifier__example">
+                <div pam-overflow="scroll" pam-size="h:5" pam-space="p:2" pam-shadow="z2">
+    <div pam-size="h:10" pam-space="p:2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem ante, elementum eget tortor id, pellentesque lacinia dolor. Nunc in metus facilisis, scelerisque ante eget, lacinia purus. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi. Nam a metus dictum, sollicitudin ligula a, mollis est. Phasellus consectetur est nec velit interdum dignissim. Nunc enim felis, porta at nisl ultricies, porta molestie nibh. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi.</div>
+</div>
+                <div class="kss-modifier__example-footer"></div>
+              </div>
           </div>
 
             <details class="kss-markup kss-style">
@@ -246,8 +281,8 @@
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;div pam-overflow&#x3D;&quot;y:auto&quot; pam-size&#x3D;&quot;h:5&quot; pam-space&#x3D;&quot;4&quot;&gt;
-    &lt;div pam-size&#x3D;&quot;h:10&quot; pam-space&#x3D;&quot;p:2&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem ante, elementum eget tortor id, pellentesque lacinia dolor. Nunc in metus facilisis, scelerisque ante eget, lacinia purus. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi. Nam a metus dictum, sollicitudin ligula a, mollis est. Phasellus consectetur est nec velit interdum dignissim. Nunc enim felis, porta at nisl ultricies, porta molestie nibh.&lt;/div&gt;
+              <pre><code class="html">&lt;div pam-overflow&#x3D;&quot;[modifier]&quot; pam-size&#x3D;&quot;h:5&quot; pam-space&#x3D;&quot;p:2&quot; pam-shadow&#x3D;&quot;z2&quot;&gt;
+    &lt;div pam-size&#x3D;&quot;h:10&quot; pam-space&#x3D;&quot;p:2&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem ante, elementum eget tortor id, pellentesque lacinia dolor. Nunc in metus facilisis, scelerisque ante eget, lacinia purus. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi. Nam a metus dictum, sollicitudin ligula a, mollis est. Phasellus consectetur est nec velit interdum dignissim. Nunc enim felis, porta at nisl ultricies, porta molestie nibh. Nam tincidunt arcu sed libero egestas, sit amet pretium felis laoreet. Aenean quis purus suscipit, venenatis nunc vel, fermentum nisi.&lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </details>
       </div>
@@ -285,7 +320,6 @@
 </script>
 <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
-<script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 
 

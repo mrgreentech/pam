@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
   <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -25,15 +25,6 @@
   <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 <link rel="stylesheet" href="kss-assets/css/pam.css">
 
-
-  <script type="text/javascript">
-  var skinsData = [
-      {
-        path: "pam.css",
-        name: "default skin"
-      },
-  ];
-  </script>
 </head>
 <body id="kss-node" class="kss-fullscreen-mode" >
 
@@ -161,8 +152,8 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Loaders</span>
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -215,7 +206,7 @@ used for customization.</p>
        </tr>
          <tr>
            <td>@button-border-radius</td>
-           <td><code>@border-radius-base</code></td>
+           <td><code>@border-radius</code></td>
        </tr>
          <tr>
            <td>@button-border-style</td>
@@ -263,7 +254,7 @@ used for customization.</p>
        </tr>
          <tr>
            <td>@button-line-height</td>
-           <td><code>2.25rem</code></td>
+           <td><code>@space-36 - 1</code></td>
        </tr>
          <tr>
            <td>@button-margin</td>
@@ -275,7 +266,7 @@ used for customization.</p>
        </tr>
          <tr>
            <td>@button-height</td>
-           <td><code>@space-36</code></td>
+           <td><code>auto</code></td>
        </tr>
          <tr>
            <td>@button-padding-horizontal</td>
@@ -374,35 +365,35 @@ used for customization.</p>
            <td><code>@skin-primary</code></td>
        </tr>
          <tr>
-           <td>@button-large-font-size</td>
+           <td>@button-lg-font-size</td>
            <td><code>@font-size-large</code></td>
        </tr>
          <tr>
-           <td>@button-large-line-height</td>
-           <td><code>3rem</code></td>
+           <td>@button-lg-line-height</td>
+           <td><code>@space-48 - 1</code></td>
        </tr>
          <tr>
-           <td>@button-large-height</td>
-           <td><code>@space-48</code></td>
+           <td>@button-lg-height</td>
+           <td><code>auto</code></td>
        </tr>
          <tr>
-           <td>@button-large-padding</td>
+           <td>@button-lg-padding</td>
            <td><code>0 @space-16</code></td>
        </tr>
          <tr>
-           <td>@button-small-font-size</td>
+           <td>@button-sm-font-size</td>
            <td><code>0.75rem</code></td>
        </tr>
          <tr>
-           <td>@button-small-line-height</td>
-           <td><code>2rem</code></td>
+           <td>@button-sm-line-height</td>
+           <td><code>@space-32 - 2</code></td>
        </tr>
          <tr>
-           <td>@button-small-height</td>
-           <td><code>@space-32</code></td>
+           <td>@button-sm-height</td>
+           <td><code>auto</code></td>
        </tr>
          <tr>
-           <td>@button-small-padding</td>
+           <td>@button-sm-padding</td>
            <td><code>0 @space-16</code></td>
        </tr>
          <tr>
@@ -462,16 +453,16 @@ used for customization.</p>
            <td><code>0</code></td>
        </tr>
          <tr>
-           <td>@button-circle-large-size</td>
-           <td><code>@space-48</code></td>
+           <td>@button-circle-lg-size</td>
+           <td><code>@space-48 - 1</code></td>
        </tr>
          <tr>
            <td>@button-circle-size</td>
-           <td><code>@space-36</code></td>
+           <td><code>@space-36 - 1</code></td>
        </tr>
          <tr>
-           <td>@button-circle-small-size</td>
-           <td><code>@space-32</code></td>
+           <td>@button-circle-sm-size</td>
+           <td><code>@space-32 - 2</code></td>
        </tr>
          <tr>
            <td>@button-raised-shadow</td>
@@ -486,12 +477,16 @@ used for customization.</p>
            <td><code>@space-20 - 2</code></td>
        </tr>
          <tr>
-           <td>@button-icon-size-large</td>
+           <td>@button-icon-size-lg</td>
            <td><code>@space-20</code></td>
        </tr>
          <tr>
-           <td>@button-icon-margin</td>
+           <td>@button-icon-margin-right</td>
            <td><code>0 @space-8 0 0</code></td>
+       </tr>
+         <tr>
+           <td>@button-icon-margin-left</td>
+           <td><code>0 0 0 @space-8</code></td>
        </tr>
     </tbody>
 </table>
@@ -534,7 +529,6 @@ used for customization.</p>
 </script>
 <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
-<script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 
 

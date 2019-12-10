@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/site.webmanifest">
+  <link rel="manifest" href="/kss-assets/img/manifest.json">
   <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -25,15 +25,6 @@
   <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
 <link rel="stylesheet" href="kss-assets/css/pam.css">
 
-
-  <script type="text/javascript">
-  var skinsData = [
-      {
-        path: "pam.css",
-        name: "default skin"
-      },
-  ];
-  </script>
 </head>
 <body id="kss-node"  >
 
@@ -169,21 +160,45 @@
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-three-part">
+                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-leading-icon">
                     <span class="kss-nav__ref ">15.4</span
-                    ><span class="kss-nav__name">Three parts</span>
+                    ><span class="kss-nav__name">Leading Icon</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-divider">
+                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-trailing-icon">
                     <span class="kss-nav__ref ">15.5</span
-                    ><span class="kss-nav__name">Divider</span>
+                    ><span class="kss-nav__name">Trailing Icon</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-two-line-leading-trailing">
+                    <span class="kss-nav__ref ">15.6</span
+                    ><span class="kss-nav__name">Two Line with Icons</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-two-line-avatar">
+                    <span class="kss-nav__ref ">15.7</span
+                    ><span class="kss-nav__name">Two Line with Avatar</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-two-line-divider">
+                    <span class="kss-nav__ref ">15.8</span
+                    ><span class="kss-nav__name">Two Line with Divider</span>
                   </a>
                 </li>
                 <li class="kss-nav__menu-item">
                   <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-hooks">
-                    <span class="kss-nav__ref ">15.6</span
+                    <span class="kss-nav__ref ">15.9</span
                     ><span class="kss-nav__name">Hooks</span>
+                  </a>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <a class="kss-nav__menu-link" href="section-lists.html#kssref-lists-variables">
+                    <span class="kss-nav__ref ">15.10</span
+                    ><span class="kss-nav__name">Variables</span>
                   </a>
                 </li>
               </ul>
@@ -199,8 +214,8 @@
           </a>
         </li>
         <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-loaders.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Loaders</span>
+          <a class="kss-nav__menu-link" href="section-progress.html">
+            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
           </a>
         </li>
         <li class="kss-nav__menu-item" >
@@ -233,8 +248,8 @@
           </h1>
 
             <div class="kss-description">
-              <p><code>pam-List</code> wraps a <code>pam-Item</code> which in turn can contain up to three type of tiles
-<code>pam-Tile=&quot;[left | content | right]&quot;</code>.</p>
+              <p>Lists are groups of text or image elements. Composed of primary
+and optional actions represented by icons and text.</p>
 
             </div>
 
@@ -252,7 +267,7 @@
           </h2>
 
             <div class="kss-description">
-              <p>Use <code>pam-Item</code> to wrap one or more <code>pam-Tiles</code> and apply one row of content.</p>
+              <p>Single-line list items contain a maximum of one line of text.</p>
 
             </div>
 
@@ -261,16 +276,11 @@
           <div class="kss-modifier__wrapper">
 
             <div class="kss-modifier__example">
-              <div pam-List>
-    <div pam-Item>
-        <div pam-Tile="left">
-            <div sg-mock-icon></div>
-        </div>
-        <div pam-Tile="content">
-            <h1 pam-typography="body-2">Item content</h1>
-        </div>
-    </div>
-</div>
+              <ul pam-List pam-border="w:px">
+    <li pam-List-Item>List Item</li>
+    <li pam-List-Item>List Item</li>
+    <li pam-List-Item>List Item</li>
+</ul>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
@@ -330,16 +340,11 @@
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;div pam-List&gt;
-    &lt;div pam-Item&gt;
-        &lt;div pam-Tile&#x3D;&quot;left&quot;&gt;
-            &lt;div sg-mock-icon&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div pam-Tile&#x3D;&quot;content&quot;&gt;
-            &lt;h1 pam-typography&#x3D;&quot;body-2&quot;&gt;Item content&lt;/h1&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code class="html">&lt;ul pam-List pam-border&#x3D;&quot;w:px&quot;&gt;
+    &lt;li pam-List-Item&gt;List Item&lt;/li&gt;
+    &lt;li pam-List-Item&gt;List Item&lt;/li&gt;
+    &lt;li pam-List-Item&gt;List Item&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             </details>
       </section>
       <hr >
@@ -353,7 +358,7 @@
           </h2>
 
             <div class="kss-description">
-              <p>Use <code>pam-Item</code> to wrap one or more <code>pam-Tiles</code> and apply two rows of content.</p>
+              <p>Two-line list items contain a maximum of two line of text.</p>
 
             </div>
 
@@ -362,17 +367,26 @@
           <div class="kss-modifier__wrapper">
 
             <div class="kss-modifier__example">
-              <div pam-List>
-    <div pam-Item>
-        <div pam-Tile="left">
-            <div sg-mock-icon></div>
-        </div>
-        <div pam-Tile="content">
-            <h1 pam-typography="body-2">Item content</h1>
-            <p>Item content</p>
-        </div>
-    </div>
-</div>
+              <ul pam-List="2-line" pam-border="w:px">
+    <li pam-List-Item>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+    </li>
+    <li pam-List-Item>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+    </li>
+    <li pam-List-Item>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+    </li>
+</ul>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
@@ -432,17 +446,26 @@
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;div pam-List&gt;
-    &lt;div pam-Item&gt;
-        &lt;div pam-Tile&#x3D;&quot;left&quot;&gt;
-            &lt;div sg-mock-icon&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div pam-Tile&#x3D;&quot;content&quot;&gt;
-            &lt;h1 pam-typography&#x3D;&quot;body-2&quot;&gt;Item content&lt;/h1&gt;
-            &lt;p&gt;Item content&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code class="html">&lt;ul pam-List&#x3D;&quot;2-line&quot; pam-border&#x3D;&quot;w:px&quot;&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             </details>
       </section>
       <hr >
@@ -456,8 +479,7 @@
           </h2>
 
             <div class="kss-description">
-              <p>Use <code>pam-Item</code> to wrap one or more <code>pam-Tiles</code>. Add <code>pam-Tile=&quot;top&quot;</code> to align the left
-tile and apply three rows of content.</p>
+              <p>Three-line list items contain a maximum of three line of text.</p>
 
             </div>
 
@@ -466,18 +488,29 @@ tile and apply three rows of content.</p>
           <div class="kss-modifier__wrapper">
 
             <div class="kss-modifier__example">
-              <div pam-List>
-    <div pam-Item>
-        <div pam-Tile="left top">
-            <div sg-mock-icon></div>
-        </div>
-        <div pam-Tile="content">
-            <h1 pam-typography="body-2">Item content</h1>
-            <p>Item content</p>
-            <p>Item content</p>
-        </div>
-    </div>
-</div>
+              <ul pam-List="3-line" pam-border="w:px">
+    <li pam-List-Item>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+            <span pam-List-Item-Text-Secondary>Tertiary text</span>
+        </span>
+    </li>
+    <li pam-List-Item>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+            <span pam-List-Item-Text-Secondary>Tertiary text</span>
+        </span>
+    </li>
+    <li pam-List-Item>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+            <span pam-List-Item-Text-Secondary>Tertiary text</span>
+        </span>
+    </li>
+</ul>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
@@ -537,32 +570,43 @@ tile and apply three rows of content.</p>
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;div pam-List&gt;
-    &lt;div pam-Item&gt;
-        &lt;div pam-Tile&#x3D;&quot;left top&quot;&gt;
-            &lt;div sg-mock-icon&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div pam-Tile&#x3D;&quot;content&quot;&gt;
-            &lt;h1 pam-typography&#x3D;&quot;body-2&quot;&gt;Item content&lt;/h1&gt;
-            &lt;p&gt;Item content&lt;/p&gt;
-            &lt;p&gt;Item content&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code class="html">&lt;ul pam-List&#x3D;&quot;3-line&quot; pam-border&#x3D;&quot;w:px&quot;&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Tertiary text&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Tertiary text&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Tertiary text&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             </details>
       </section>
       <hr >
-      <section id="kssref-lists-three-part" class="kss-section kss-section--depth-2 ">
+      <section id="kssref-lists-leading-icon" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
           <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-lists-three-part">
-              Three parts
+            <a class="kss-title__permalink" href="#kssref-lists-leading-icon">
+              Leading Icon
             </a>
           </h2>
 
             <div class="kss-description">
-              <p>List item with right icon area: <code>pam-Tile=&quot;right&quot;</code> adds a right icon area for a list item.</p>
+              <p>Use pam-List-Item-Primary to add a leading icon.</p>
 
             </div>
 
@@ -571,19 +615,20 @@ tile and apply three rows of content.</p>
           <div class="kss-modifier__wrapper">
 
             <div class="kss-modifier__example">
-              <div pam-List>
-    <div pam-Item>
-        <div pam-Tile="left">
-            <div sg-mock-icon></div>
-        </div>
-        <div pam-Tile="content">
-            <h1 pam-typography="body-2">Item content</h1>
-        </div>
-            <div pam-Tile="right">
-            <div sg-mock-icon></div>
-        </div>
-    </div>
-</div>
+              <ul pam-List pam-border="w:px">
+    <li pam-List-Item>
+        <span pam-List-Item-Primary class="material-icons">cast</span>
+        List Item
+    </li>
+    <li pam-List-Item>
+        <span pam-List-Item-Primary class="material-icons">wifi</span>
+        List Item
+    </li>
+    <li pam-List-Item>
+        <span pam-List-Item-Primary class="material-icons">sync</span>
+        List Item
+    </li>
+</ul>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
@@ -593,7 +638,7 @@ tile and apply three rows of content.</p>
               <summary>
                   Markup
                   <p class="kss-toolbar">
-                      <a href="#kssref-lists-three-part" data-kss-fullscreen="kssref-lists-three-part">
+                      <a href="#kssref-lists-leading-icon" data-kss-fullscreen="kssref-lists-leading-icon">
                         <span class="kss-toolbar__tooltip">Toggle full screen</span>
                         <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                           <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
@@ -602,7 +647,7 @@ tile and apply three rows of content.</p>
                           <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
                         </svg>
                       </a>
-                      <a href="item-lists-three-part.html" target="_blank">
+                      <a href="item-lists-leading-icon.html" target="_blank">
                         <span class="kss-toolbar__tooltip">Open in new window</span>
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                           <rect x="0" y="20" width="40" height="44" fill="#fff"/>
@@ -613,7 +658,7 @@ tile and apply three rows of content.</p>
                           <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
                         </svg>
                       </a>
-                    <a href="#kssref-lists-three-part" data-kss-guides="true">
+                    <a href="#kssref-lists-leading-icon" data-kss-guides="true">
                       <span class="kss-toolbar__tooltip">Toggle example guides</span>
                       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                         <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
@@ -634,7 +679,7 @@ tile and apply three rows of content.</p>
                         <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
                       </svg>
                     </a>
-                    <a href="#kssref-lists-three-part" data-kss-markup="true">
+                    <a href="#kssref-lists-leading-icon" data-kss-markup="true">
                       <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
                       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                         <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
@@ -643,34 +688,34 @@ tile and apply three rows of content.</p>
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;div pam-List&gt;
-    &lt;div pam-Item&gt;
-        &lt;div pam-Tile&#x3D;&quot;left&quot;&gt;
-            &lt;div sg-mock-icon&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div pam-Tile&#x3D;&quot;content&quot;&gt;
-            &lt;h1 pam-typography&#x3D;&quot;body-2&quot;&gt;Item content&lt;/h1&gt;
-        &lt;/div&gt;
-            &lt;div pam-Tile&#x3D;&quot;right&quot;&gt;
-            &lt;div sg-mock-icon&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code class="html">&lt;ul pam-List pam-border&#x3D;&quot;w:px&quot;&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Primary class&#x3D;&quot;material-icons&quot;&gt;cast&lt;/span&gt;
+        List Item
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Primary class&#x3D;&quot;material-icons&quot;&gt;wifi&lt;/span&gt;
+        List Item
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Primary class&#x3D;&quot;material-icons&quot;&gt;sync&lt;/span&gt;
+        List Item
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             </details>
       </section>
       <hr >
-      <section id="kssref-lists-divider" class="kss-section kss-section--depth-2 ">
+      <section id="kssref-lists-trailing-icon" class="kss-section kss-section--depth-2 ">
 
         <div class="kss-style">
           <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-lists-divider">
-              Divider
+            <a class="kss-title__permalink" href="#kssref-lists-trailing-icon">
+              Trailing Icon
             </a>
           </h2>
 
             <div class="kss-description">
-              <p>List items with dividers: Use <code>pam-Item</code> to wrap one or
-more <code>pam-Tiles</code> and apply a <code>pam-Divider</code> after each item.</p>
+              <p>Use pam-List-Item-Secondary to add a trailing icon.</p>
 
             </div>
 
@@ -679,40 +724,20 @@ more <code>pam-Tiles</code> and apply a <code>pam-Divider</code> after each item
           <div class="kss-modifier__wrapper">
 
             <div class="kss-modifier__example">
-              <div pam-List>
-    <div pam-Item>
-        <div pam-Tile="left top">
-            <div sg-mock-icon></div>
-        </div>
-        <div pam-Tile="content">
-            <h1 pam-typography="body-2">Item content</h1>
-            <p>Item content</p>
-            <p>Item content</p>
-        </div>
-    </div>
-    <div pam-Divider="inset"></div>
-    <div pam-Item>
-        <div pam-Tile="left top">
-            <div sg-mock-icon></div>
-        </div>
-        <div pam-Tile="content">
-            <h1 pam-typography="body-2">Item content</h1>
-            <p>Item content</p>
-            <p>Item content</p>
-        </div>
-    </div>
-    <div pam-Divider="inset"></div>
-    <div pam-Item>
-        <div pam-Tile="left top">
-            <div sg-mock-icon></div>
-        </div>
-        <div pam-Tile="content">
-            <h1 pam-typography="body-2">Item content</h1>
-            <p>Item content</p>
-            <p>Item content</p>
-        </div>
-    </div>
-</div>
+              <ul pam-List pam-border="w:px">
+    <li pam-List-Item>
+        List Item
+        <span pam-List-Item-Secondary class="material-icons">help</span>
+    </li>
+    <li pam-List-Item>
+        List Item
+        <span pam-List-Item-Secondary class="material-icons">help</span>
+    </li>
+    <li pam-List-Item>
+        List Item
+        <span pam-List-Item-Secondary class="material-icons">help</span>
+    </li>
+</ul>
               <div class="kss-modifier__example-footer"></div>
             </div>
 
@@ -722,7 +747,7 @@ more <code>pam-Tiles</code> and apply a <code>pam-Divider</code> after each item
               <summary>
                   Markup
                   <p class="kss-toolbar">
-                      <a href="#kssref-lists-divider" data-kss-fullscreen="kssref-lists-divider">
+                      <a href="#kssref-lists-trailing-icon" data-kss-fullscreen="kssref-lists-trailing-icon">
                         <span class="kss-toolbar__tooltip">Toggle full screen</span>
                         <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                           <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
@@ -731,7 +756,7 @@ more <code>pam-Tiles</code> and apply a <code>pam-Divider</code> after each item
                           <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
                         </svg>
                       </a>
-                      <a href="item-lists-divider.html" target="_blank">
+                      <a href="item-lists-trailing-icon.html" target="_blank">
                         <span class="kss-toolbar__tooltip">Open in new window</span>
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                           <rect x="0" y="20" width="40" height="44" fill="#fff"/>
@@ -742,7 +767,7 @@ more <code>pam-Tiles</code> and apply a <code>pam-Divider</code> after each item
                           <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
                         </svg>
                       </a>
-                    <a href="#kssref-lists-divider" data-kss-guides="true">
+                    <a href="#kssref-lists-trailing-icon" data-kss-guides="true">
                       <span class="kss-toolbar__tooltip">Toggle example guides</span>
                       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                         <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
@@ -763,7 +788,7 @@ more <code>pam-Tiles</code> and apply a <code>pam-Divider</code> after each item
                         <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
                       </svg>
                     </a>
-                    <a href="#kssref-lists-divider" data-kss-markup="true">
+                    <a href="#kssref-lists-trailing-icon" data-kss-markup="true">
                       <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
                       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                         <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
@@ -772,40 +797,440 @@ more <code>pam-Tiles</code> and apply a <code>pam-Divider</code> after each item
                     </a>
                   </p>
               </summary>
-              <pre><code class="html">&lt;div pam-List&gt;
-    &lt;div pam-Item&gt;
-        &lt;div pam-Tile&#x3D;&quot;left top&quot;&gt;
-            &lt;div sg-mock-icon&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div pam-Tile&#x3D;&quot;content&quot;&gt;
-            &lt;h1 pam-typography&#x3D;&quot;body-2&quot;&gt;Item content&lt;/h1&gt;
-            &lt;p&gt;Item content&lt;/p&gt;
-            &lt;p&gt;Item content&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div pam-Divider&#x3D;&quot;inset&quot;&gt;&lt;/div&gt;
-    &lt;div pam-Item&gt;
-        &lt;div pam-Tile&#x3D;&quot;left top&quot;&gt;
-            &lt;div sg-mock-icon&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div pam-Tile&#x3D;&quot;content&quot;&gt;
-            &lt;h1 pam-typography&#x3D;&quot;body-2&quot;&gt;Item content&lt;/h1&gt;
-            &lt;p&gt;Item content&lt;/p&gt;
-            &lt;p&gt;Item content&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div pam-Divider&#x3D;&quot;inset&quot;&gt;&lt;/div&gt;
-    &lt;div pam-Item&gt;
-        &lt;div pam-Tile&#x3D;&quot;left top&quot;&gt;
-            &lt;div sg-mock-icon&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div pam-Tile&#x3D;&quot;content&quot;&gt;
-            &lt;h1 pam-typography&#x3D;&quot;body-2&quot;&gt;Item content&lt;/h1&gt;
-            &lt;p&gt;Item content&lt;/p&gt;
-            &lt;p&gt;Item content&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code class="html">&lt;ul pam-List pam-border&#x3D;&quot;w:px&quot;&gt;
+    &lt;li pam-List-Item&gt;
+        List Item
+        &lt;span pam-List-Item-Secondary class&#x3D;&quot;material-icons&quot;&gt;help&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        List Item
+        &lt;span pam-List-Item-Secondary class&#x3D;&quot;material-icons&quot;&gt;help&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        List Item
+        &lt;span pam-List-Item-Secondary class&#x3D;&quot;material-icons&quot;&gt;help&lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
+      <section id="kssref-lists-two-line-leading-trailing" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-lists-two-line-leading-trailing">
+              Two Line with Icons
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Use pam-List-Item-Primary and pam-List-Item-Secondary to add leading
+and trailing icons.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <ul pam-List="2-line" pam-border="w:px">
+    <li pam-List-Item>
+        <span pam-List-Item-Primary class="material-icons">event</span>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+        <span pam-List-Item-Secondary class="material-icons">help</span>
+    </li>
+    <li pam-List-Item>
+        <span pam-List-Item-Primary class="material-icons">event</span>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+        <span pam-List-Item-Secondary class="material-icons">help</span>
+    </li>
+    <li pam-List-Item>
+        <span pam-List-Item-Primary class="material-icons">event</span>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+        <span pam-List-Item-Secondary class="material-icons">help</span>
+    </li>
+</ul>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-lists-two-line-leading-trailing" data-kss-fullscreen="kssref-lists-two-line-leading-trailing">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-lists-two-line-leading-trailing.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-lists-two-line-leading-trailing" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-lists-two-line-leading-trailing" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;ul pam-List&#x3D;&quot;2-line&quot; pam-border&#x3D;&quot;w:px&quot;&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Primary class&#x3D;&quot;material-icons&quot;&gt;event&lt;/span&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span pam-List-Item-Secondary class&#x3D;&quot;material-icons&quot;&gt;help&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Primary class&#x3D;&quot;material-icons&quot;&gt;event&lt;/span&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span pam-List-Item-Secondary class&#x3D;&quot;material-icons&quot;&gt;help&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Primary class&#x3D;&quot;material-icons&quot;&gt;event&lt;/span&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span pam-List-Item-Secondary class&#x3D;&quot;material-icons&quot;&gt;help&lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
+      <section id="kssref-lists-two-line-avatar" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-lists-two-line-avatar">
+              Two Line with Avatar
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Use pam-List=&quot;avatar&quot; to change the apperance of the leading icon to an
+avatar.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <ul pam-List="2-line avatar" pam-border="w:px">
+    <li pam-List-Item>
+        <span pam-List-Item-Primary class="material-icons">event</span>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+        <span pam-List-Item-Secondary class="material-icons">help</span>
+    </li>
+    <li pam-List-Item>
+        <span pam-List-Item-Primary class="material-icons">event</span>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+        <span pam-List-Item-Secondary class="material-icons">help</span>
+    </li>
+    <li pam-List-Item>
+        <span pam-List-Item-Primary class="material-icons">event</span>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+        <span pam-List-Item-Secondary class="material-icons">help</span>
+    </li>
+</ul>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-lists-two-line-avatar" data-kss-fullscreen="kssref-lists-two-line-avatar">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-lists-two-line-avatar.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-lists-two-line-avatar" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-lists-two-line-avatar" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;ul pam-List&#x3D;&quot;2-line avatar&quot; pam-border&#x3D;&quot;w:px&quot;&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Primary class&#x3D;&quot;material-icons&quot;&gt;event&lt;/span&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span pam-List-Item-Secondary class&#x3D;&quot;material-icons&quot;&gt;help&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Primary class&#x3D;&quot;material-icons&quot;&gt;event&lt;/span&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span pam-List-Item-Secondary class&#x3D;&quot;material-icons&quot;&gt;help&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Primary class&#x3D;&quot;material-icons&quot;&gt;event&lt;/span&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span pam-List-Item-Secondary class&#x3D;&quot;material-icons&quot;&gt;help&lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </details>
+      </section>
+      <hr >
+      <section id="kssref-lists-two-line-divider" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-lists-two-line-divider">
+              Two Line with Divider
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>Use pam-List-Item-Primary and pam-List-Item-Secondary to add leading
+and trailing icons and <code>pam-Divider</code> to add a divider.</p>
+
+            </div>
+
+        </div>
+
+          <div class="kss-modifier__wrapper">
+
+            <div class="kss-modifier__example">
+              <ul pam-List="2-line" pam-border="w:px">
+    <li pam-List-Item>
+        <span pam-List-Item-Primary class="material-icons">event</span>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+        <span pam-List-Item-Secondary class="material-icons">help</span>
+    </li>
+    <li pam-List-Item>
+        <span pam-List-Item-Primary class="material-icons">event</span>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+        <span pam-List-Item-Secondary class="material-icons">help</span>
+    </li>
+    <div pam-divider></div>
+    <li pam-List-Item>
+        <span pam-List-Item-Primary class="material-icons">event</span>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+        <span pam-List-Item-Secondary class="material-icons">help</span>
+    </li>
+    <li pam-List-Item>
+        <span pam-List-Item-Primary class="material-icons">event</span>
+        <span pam-List-Item-Text>
+            <span pam-List-Item-Text-Primary>Line Item</span>
+            <span pam-List-Item-Text-Secondary>Secondary text</span>
+        </span>
+        <span pam-List-Item-Secondary class="material-icons">help</span>
+    </li>
+</ul>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+
+          </div>
+
+            <details class="kss-markup kss-style">
+              <summary>
+                  Markup
+                  <p class="kss-toolbar">
+                      <a href="#kssref-lists-two-line-divider" data-kss-fullscreen="kssref-lists-two-line-divider">
+                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                        </svg>
+                      </a>
+                      <a href="item-lists-two-line-divider.html" target="_blank">
+                        <span class="kss-toolbar__tooltip">Open in new window</span>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                        </svg>
+                      </a>
+                    <a href="#kssref-lists-two-line-divider" data-kss-guides="true">
+                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+                      </svg>
+                    </a>
+                    <a href="#kssref-lists-two-line-divider" data-kss-markup="true">
+                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+                      </svg>
+                    </a>
+                  </p>
+              </summary>
+              <pre><code class="html">&lt;ul pam-List&#x3D;&quot;2-line&quot; pam-border&#x3D;&quot;w:px&quot;&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Primary class&#x3D;&quot;material-icons&quot;&gt;event&lt;/span&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span pam-List-Item-Secondary class&#x3D;&quot;material-icons&quot;&gt;help&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Primary class&#x3D;&quot;material-icons&quot;&gt;event&lt;/span&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span pam-List-Item-Secondary class&#x3D;&quot;material-icons&quot;&gt;help&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;div pam-divider&gt;&lt;/div&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Primary class&#x3D;&quot;material-icons&quot;&gt;event&lt;/span&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span pam-List-Item-Secondary class&#x3D;&quot;material-icons&quot;&gt;help&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li pam-List-Item&gt;
+        &lt;span pam-List-Item-Primary class&#x3D;&quot;material-icons&quot;&gt;event&lt;/span&gt;
+        &lt;span pam-List-Item-Text&gt;
+            &lt;span pam-List-Item-Text-Primary&gt;Line Item&lt;/span&gt;
+            &lt;span pam-List-Item-Text-Secondary&gt;Secondary text&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span pam-List-Item-Secondary class&#x3D;&quot;material-icons&quot;&gt;help&lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             </details>
       </section>
       <hr >
@@ -819,14 +1244,172 @@ more <code>pam-Tiles</code> and apply a <code>pam-Divider</code> after each item
           </h2>
 
             <div class="kss-description">
-              <p><code>.hook-item</code>
-<code>.hook-list</code>
-<code>.hook-tile</code>
-<code>.hook-tile-content</code>
-<code>.hook-tile-left</code>
-<code>.hook-tile-right</code>
-<code>.hook-tile-top</code></p>
+              <p><code>.hook-list</code></p>
 
+            </div>
+
+        </div>
+
+      </section>
+      <hr >
+      <section id="kssref-lists-variables" class="kss-section kss-section--depth-2 ">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink" href="#kssref-lists-variables">
+              Variables
+            </a>
+          </h2>
+
+            <div class="kss-description">
+              <p>These are all the component specific variables that can be
+used for customization.</p>
+<table pam-Table="horizontal">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr>
+           <td>@list-padding</td>
+           <td><code>@space-8 0</code></td>
+       </tr>
+         <tr>
+           <td>@list-color</td>
+           <td><code>@skin-text-primary-on-background</code></td>
+       </tr>
+         <tr>
+           <td>@list-color-secondary</td>
+           <td><code>@skin-text-hint-on-background</code></td>
+       </tr>
+         <tr>
+           <td>@list-two-line-height</td>
+           <td><code>@space-72</code></td>
+       </tr>
+         <tr>
+           <td>@list-three-line-height</td>
+           <td><code>@space-96</code></td>
+       </tr>
+         <tr>
+           <td>@list-avatar-bg-color</td>
+           <td><code>@list-color-secondary</code></td>
+       </tr>
+         <tr>
+           <td>@list-avatar-border-radius</td>
+           <td><code>@border-radius-rounded</code></td>
+       </tr>
+         <tr>
+           <td>@list-avatar-color</td>
+           <td><code>@skin-white</code></td>
+       </tr>
+         <tr>
+           <td>@list-avatar-height</td>
+           <td><code>@space-40</code></td>
+       </tr>
+         <tr>
+           <td>@list-avatar-margin</td>
+           <td><code>0 @space-16 0 0</code></td>
+       </tr>
+         <tr>
+           <td>@list-avatar-width</td>
+           <td><code>@space-40</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-align</td>
+           <td><code>center</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-cursor</td>
+           <td><code>pointer</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-display</td>
+           <td><code>flex</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-height</td>
+           <td><code>@space-48</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-justify-content</td>
+           <td><code>flex-start</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-outline</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-padding</td>
+           <td><code>@space-0 @space-16</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-position</td>
+           <td><code>relative</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-text-line-heigth</td>
+           <td><code>@line-height-secondary</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-primary-align</td>
+           <td><code>center</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-primary-color</td>
+           <td><code>@list-color-secondary</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-primary-display</td>
+           <td><code>inline-flex</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-primary-fill</td>
+           <td><code>currentColor</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-primary-flex-shrink</td>
+           <td><code>0</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-primary-height</td>
+           <td><code>@space-24</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-primary-justify-content</td>
+           <td><code>center</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-primary-margin</td>
+           <td><code>0 @space-32 0 0</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-primary-width</td>
+           <td><code>@space-24</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-text-primary-display</td>
+           <td><code>block</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-text-secondary-color</td>
+           <td><code>@list-color-secondary</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-text-secondary-display</td>
+           <td><code>block</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-text-secondary-font-size</td>
+           <td><code>@font-size-medium</code></td>
+       </tr>
+         <tr>
+           <td>@list-item-secondary-color</td>
+           <td><code>@list-color-secondary</code></td>
+       </tr>
+    </tbody>
+</table>
             </div>
 
         </div>
@@ -866,7 +1449,6 @@ more <code>pam-Tiles</code> and apply a <code>pam-Divider</code> after each item
 </script>
 <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
-<script src="kss-assets/js/skinSwitcher.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
 
 

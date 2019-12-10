@@ -1,7 +1,7 @@
 {
   "name": "pam-css",
   "description": "PAM is a light, modular and flexible AMCSS library.",
-  "version": "1.0.0-beta.4",
+  "version": "1.0.0-beta.5",
   "main": "dist/pam.min.css",
   "style": "dist/pam.min.css",
   "keywords": [
@@ -33,7 +33,6 @@
     "lint:css": "gulp cssLint",
     "lint:js": "gulp jsLint",
     "lint": "npm run lint:css && npm run lint:js",
-    "styleguide": "kss --config kss-config.json",
     "test": "npm run build",
     "stylelint:check": "stylelint-config-prettier-check",
     "eslint:check": "eslint --print-config . | eslint-config-prettier-check"
@@ -54,7 +53,6 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-eslint": "^6.0.0",
-    "gulp-gzip": "^1.4.2",
     "gulp-less": "^4.0.1",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
