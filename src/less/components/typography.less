@@ -250,6 +250,47 @@
     .hook-typography-overline;
 }
 
+//  Media queries
+// ==================================================================
+
+@typography-ratio: 1;
+@typography-ratio-sm: 1;
+@typography-ratio-md: 1.2;
+@typography-ratio-lg: 1.2;
+@typography-ratio-xl: 1.2;
+
+@media screen and (min-width: @screen-sm) {
+    [pam-font-scale~="sm"] {
+        [pam-typography~="h1"] {
+            font-size: @typography-h1-font-size * @typography-ratio-sm !important;
+        }
+    }
+}
+
+@media screen and (min-width: @screen-md) {
+    [pam-font-scale~="md"] {
+        [pam-typography~="h1"] {
+            font-size: @typography-h1-font-size * @typography-ratio-md !important;
+        }
+    }
+}
+
+@media screen and (min-width: @screen-lg) {
+    [pam-font-scale~="lg"] {
+        [pam-typography~="h1"] {
+            font-size: @typography-h1-font-size * @typography-ratio-lg !important;
+        }
+    }
+}
+
+@media screen and (min-width: @screen-xl) {
+    [pam-font-scale~="xl"] {
+        [pam-typography~="h1"] {
+            font-size: @typography-h1-font-size * @typography-ratio-xl !important;
+        }
+    }
+}
+
 //  Hooks
 // ==================================================================
 
