@@ -27,6 +27,8 @@
   "license": "BSD-3-Clause-Attribution",
   "scripts": {
     "build": "gulp build",
+    "cz": "git-cz",
+    "commit": "git add . && npm run cz",
     "deploy:styleguide": "git subtree push --prefix build/styleguide origin gh-pages",
     "dev": "gulp dev",
     "dist": "gulp dist",
@@ -43,6 +45,8 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "browser-sync": "^2.26.7",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.1.0",
     "del": "^5.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
@@ -96,5 +100,10 @@
     "last 2 ChromeAndroid major versions",
     "last 3 iOS major versions",
     "not op_mini all"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
