@@ -124,7 +124,7 @@ h4,
 h5,
 [pam-typography~="h6"],
 h6 {
-    margin-bottom: 0.375rem !important;
+    margin-bottom: 0.375em !important;
 }
 
 [pam-typography~="h1"],
@@ -272,14 +272,13 @@ button {
     .hook-typography-overline;
 }
 
+b,
+strong {
+    font-weight: @font-weight-heavy;
+}
+
 //  Responsive font size (rfs)
 // ==================================================================
-
-@rfs-ratio: 1;
-@rfs-ratio-sm: 1;
-@rfs-ratio-md: 1.2;
-@rfs-ratio-lg: 1.2;
-@rfs-ratio-xl: 1.2;
 
 @media screen and (min-width: @screen-sm) {
     .rfs(sm, @rfs-ratio-sm) !important;
@@ -295,35 +294,6 @@ button {
 
 @media screen and (min-width: @screen-xl) {
     .rfs(xl, @rfs-ratio-xl) !important;
-}
-
-.rfs (@size: ""; @ratio) {
-    [pam-rfs~="@{size}"] {
-        [pam-typography~="h1"] {
-            font-size: @typography-h1-font-size * @ratio !important;
-        }
-        [pam-typography~="h2"] {
-            font-size: @typography-h2-font-size * @ratio !important;
-        }
-        [pam-typography~="h3"] {
-            font-size: @typography-h3-font-size * @ratio !important;
-        }
-        [pam-typography~="h4"] {
-            font-size: @typography-h4-font-size * @ratio !important;
-        }
-        [pam-typography~="h5"] {
-            font-size: @typography-h5-font-size * @ratio !important;
-        }
-        [pam-typography~="h6"] {
-            font-size: @typography-h6-font-size * @ratio !important;
-        }
-        [pam-typography~="subtitle-1"] {
-            font-size: @typography-subtitle-1-font-size * @ratio !important;
-        }
-        [pam-typography~="subtitle-2"] {
-            font-size: @typography-subtitle-2-font-size * @ratio !important;
-        }
-    }
 }
 
 //  Hooks

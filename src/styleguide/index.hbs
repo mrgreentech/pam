@@ -70,7 +70,7 @@
   {{else}}
   <aside class="kss-sidebar kss-style">
     <header class="kss-header">
-      <h1 class="kss-doc-title">Documentation</h1>
+      <h1 pam-typography="subtitle-1">Documentation</h1>
     </header>
     <nav class="kss-nav">
       <ul class="kss-nav__menu">
@@ -117,7 +117,7 @@
       <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
 
         <div class="kss-style">
-          <h{{depth}} class="kss-title kss-title--level-{{depth}}">
+          <h{{depth}} class="kss-title kss-title--level-{{depth}}" pam-typography="h{{depth}}">
             <a class="kss-title__permalink" href="#kssref-{{referenceURI}}">
               {{header}}
             </a>
