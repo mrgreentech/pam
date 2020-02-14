@@ -280,6 +280,27 @@ strong {
 //  Responsive font size (rfs)
 // ==================================================================
 
+// Responsive font size
+//
+// Automatically adopt font size based on the browser viewport or screen size.
+// RFS has a scale value for every screen size `@rfs-ratio-[sm|md|lg|xl]` and _defaults to: 1_.
+// Purpose of this feature is to always have maintained readability whatever screen size.
+//
+// Respronsive font size is enabled by adding `pam-rfs="[sm|md|lg|xl]"`
+// to a parent element. The screen size value is used to configure for which
+// screen size(s) the ratio of the font should increase. For consistency when using
+// this feature add it to the `body` element. This style guide has the rfs
+// enabled in the body element and changes it ratio from a meduim screen size.
+//
+// ```html
+// <!-- PAM RFS -->
+// <body pam-rfs="md">
+// ```
+//
+// Weight: 2
+//
+// Style guide: typography.rfs
+
 @media screen and (min-width: @screen-sm) {
     .rfs(sm, @rfs-ratio-sm) !important;
 }
