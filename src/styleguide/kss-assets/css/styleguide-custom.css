@@ -13,15 +13,6 @@
     color: #000;
 }
 
-.kss-style h1,
-.kss-style h2,
-.kss-style h3,
-.kss-style h4,
-.kss-style h5,
-.kss-style h6 {
-    font-weight: 500;
-}
-
 .kss-style pre,
 .kss-style code {
     font-family: "Roboto", sans-serif;
