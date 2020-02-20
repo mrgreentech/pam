@@ -5,6 +5,7 @@
     "builder": "src/styleguide/",
     "placeholder": "[modifier]",
     "homepage": "src/styleguide/homepage.md",
+    "extend": "src/styleguide/helpers/",
 
     "//": "The css and js paths are URLs relative to the generated style guide.",
     "css": ["kss-assets/css/styleguide-custom.css", "kss-assets/css/pam.css"],

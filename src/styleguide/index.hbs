@@ -117,11 +117,11 @@
       <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
 
         <div class="kss-style">
-          <h{{depth}} class="kss-title kss-title--level-{{depth}}" pam-typography="h{{depth}}">
+          <h{{inc depth}} class="kss-title kss-title--level-{{depth}}" pam-typography="h{{inc depth}}">
             <a class="kss-title__permalink" href="#kssref-{{referenceURI}}">
               {{header}}
             </a>
-          </h{{depth}}>
+          </h{{inc depth}}>
 
           {{#if description}}
             <div class="kss-description">
