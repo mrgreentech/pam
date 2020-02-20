@@ -1,3 +1,9 @@
+/**
+ * Registers the "inc" Handlebars helper.
+ *
+ * @param {object} Handlebars The global Handlebars object used by kss-node's kssHandlebarsGenerator.
+ */
+
 "use strict";
 
 module.exports = function(Handlebars) {
