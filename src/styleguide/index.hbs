@@ -27,32 +27,23 @@
 </head>
 <body id="kss-node" {{#if template.isItem}}class="kss-fullscreen-mode"{{/if}} {{#if template.isHomepage}}sg-node="homepage"{{/if}} pam-rfs="md">
 
-<header sg-header>
-  <div pam-Grid pam-Grid-Control="align:center">
-      <div pam-Unit="1-5">
-          <a href="./" sg-Link>
+<header sg-header pam-space="px:8 py:4">
+  <div pam-flex="middle">
+      <div pam-size="w:1-5">
+          <a href="./" pam-display="inline-block">
             <img
               src="kss-assets/img/logo.svg"
               alt="PAM"
               title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
               height="48"
-              width="48"
-              sg-Logo>
+              width="48">
           </a>
       </div>
-      <div pam-Unit="4-5">
-          <div pam-Menu sg-Nav>
-              <ul pam-Menu-List>
-                  <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/blob/legendary-grasshopper/CHANGELOG.md"  pam-Button="flat">Changelog</a>
-                  </li>
-                  <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/issues" pam-Button="flat">Issues</a>
-                  </li>
-                  <li pam-Menu-Item>
-                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="raised">Download</a>
-                  </li>
-              </ul>
+      <div pam-size="w:4-5" pam-hide="sm:down">
+          <div pam-flex="right">
+            <a href="https://github.com/mrgreentech/pam/blob/legendary-grasshopper/CHANGELOG.md"  pam-Button="flat">Changelog</a>
+            <a href="https://github.com/mrgreentech/pam/issues" pam-Button="flat">Issues</a>
+            <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="raised">Download</a>
           </div>
       </div>
   </div>
@@ -60,45 +51,45 @@
 
 <main sg-main>
   {{#if template.isHomepage}}
-    <article role="main" class="kss-main kss-homepage">
+    <section role="main" class="kss-main kss-homepage">
     {{#if homepage}}
       <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
         {{{homepage}}}
       </div>
     {{/if}}
-    </article>
+    </section>
   {{else}}
-  <aside class="kss-sidebar kss-style">
-    <header class="kss-header">
-      <h1 pam-typography="subtitle-1">Documentation</h1>
-    </header>
-    <nav class="kss-nav">
-      <ul class="kss-nav__menu">
-      {{#each menu}}
-        <li class="kss-nav__menu-item" {{#if isActive}}active{{/if}}>
-          <a class="kss-nav__menu-link" href="section-{{referenceURI}}.html">
-            <span class="kss-nav__ref">{{referenceNumber}}</span><span class="kss-nav__name">{{header}}</span>
-          </a>
-          {{#if isActive}}
-            {{#if children}}
-              <ul class="kss-nav__menu-child">
-              {{#each children}}
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
-                    <span class="kss-nav__ref {{#if isGrandChild}}kss-nav__ref-child{{/if}}">{{referenceNumber}}</span
-                    ><span class="kss-nav__name">{{header}}</span>
-                  </a>
-                </li>
-              {{/each}}
-              </ul>
+    <aside class="kss-sidebar kss-style">
+      <header class="kss-header">
+        <h1 pam-typography="subtitle-1">Documentation</h1>
+      </header>
+      <nav class="kss-nav">
+        <ul class="kss-nav__menu">
+        {{#each menu}}
+          <li class="kss-nav__menu-item" {{#if isActive}}active{{/if}}>
+            <a class="kss-nav__menu-link" href="section-{{referenceURI}}.html">
+              <span class="kss-nav__ref">{{referenceNumber}}</span><span class="kss-nav__name">{{header}}</span>
+            </a>
+            {{#if isActive}}
+              {{#if children}}
+                <ul class="kss-nav__menu-child">
+                {{#each children}}
+                  <li class="kss-nav__menu-item">
+                    <a class="kss-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
+                      <span class="kss-nav__ref {{#if isGrandChild}}kss-nav__ref-child{{/if}}">{{referenceNumber}}</span
+                      ><span class="kss-nav__name">{{header}}</span>
+                    </a>
+                  </li>
+                {{/each}}
+                </ul>
+              {{/if}}
             {{/if}}
-          {{/if}}
-        </li>
-      {{/each}}
-      </ul>
-    </nav>
-  </aside>
-  <main role="main" class="kss-main">
+          </li>
+        {{/each}}
+        </ul>
+      </nav>
+    </aside>
+    <section role="main" class="kss-main">
   {{#if template.isHomepage}}
     {{#if homepage}}
       <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
@@ -247,10 +238,11 @@
       <hr >
     {{/each}}
   {{/if}}
-  </main>
+  </section>
   {{/if}}
 </main>
 <footer sg-footer></footer>
+
 
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
