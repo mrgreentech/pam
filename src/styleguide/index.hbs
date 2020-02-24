@@ -22,7 +22,6 @@
   <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-  {{!-- TODO: Add stylesheets dynamically, default or latest selected custom skin. --}}
   {{{styles}}}
 </head>
 <body id="kss-node" {{#if template.isItem}}class="kss-fullscreen-mode"{{/if}} {{#if template.isHomepage}}sg-node="homepage"{{/if}} pam-rfs="md">
@@ -51,7 +50,7 @@
 
 <main sg-main>
   {{#if template.isHomepage}}
-    <section role="main" class="kss-main kss-homepage">
+    <section role="main" class="kss-main kss-homepage" pam-space="m:0">
     {{#if homepage}}
       <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
         {{{homepage}}}
@@ -90,13 +89,6 @@
       </nav>
     </aside>
     <section role="main" class="kss-main">
-  {{#if template.isHomepage}}
-    {{#if homepage}}
-      <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-        {{{homepage}}}
-      </div>
-    {{/if}}
-  {{else}}
 
     {{!
       Display each section, in order.
@@ -237,7 +229,6 @@
       </{{#if @first}}div{{else}}section{{/if}}>
       <hr >
     {{/each}}
-  {{/if}}
   </section>
   {{/if}}
 </main>
