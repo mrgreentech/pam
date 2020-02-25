@@ -28,7 +28,7 @@
 
 <header sg-header pam-space="px:8 py:4">
   <div pam-flex="middle">
-      <div pam-size="w:1-5">
+      <div pam-size="w:1-2">
           <a href="./" pam-display="inline-block">
             <img
               src="kss-assets/img/logo.svg"
@@ -37,8 +37,9 @@
               height="48"
               width="48">
           </a>
+          <button pam-button onclick="drawer.toggle()">Toggle</button>
       </div>
-      <div pam-size="w:4-5" pam-hide="sm:down">
+      <div pam-size="w:1-2" pam-hide="sm:down">
           <div pam-flex="right">
             <a href="https://github.com/mrgreentech/pam/blob/legendary-grasshopper/CHANGELOG.md"  pam-Button="flat">Changelog</a>
             <a href="https://github.com/mrgreentech/pam/issues" pam-Button="flat">Issues</a>
@@ -58,7 +59,7 @@
     {{/if}}
     </section>
   {{else}}
-    <aside class="kss-sidebar kss-style">
+    <aside id="drawer" class="kss-sidebar kss-style">
       <header class="kss-header">
         <h1 pam-typography="subtitle-1">Documentation</h1>
       </header>
@@ -74,7 +75,7 @@
                 <ul class="kss-nav__menu-child">
                 {{#each children}}
                   <li class="kss-nav__menu-item">
-                    <a class="kss-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
+                    <a class="kss-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}" onclick="drawer.toggle()">
                       <span class="kss-nav__ref {{#if isGrandChild}}kss-nav__ref-child{{/if}}">{{referenceNumber}}</span
                       ><span class="kss-nav__name">{{header}}</span>
                     </a>

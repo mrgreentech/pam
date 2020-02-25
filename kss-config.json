@@ -9,7 +9,7 @@
 
     "//": "The css and js paths are URLs relative to the generated style guide.",
     "css": ["kss-assets/css/styleguide-custom.css", "kss-assets/css/pam.css"],
-    "js": ["kss-assets/js/animator.js", "kss-assets/js/modifier-helper.js", "kss-assets/js/styleguide.js"],
+    "js": ["kss-assets/js/animator.js", "kss-assets/js/modifier-helper.js", "kss-assets/js/drawer.js", "kss-assets/js/styleguide.js"],
     "title": "PAM",
     "nav-depth": 2
 }

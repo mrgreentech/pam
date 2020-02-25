@@ -35,6 +35,9 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    overflow-y: hidden;
+    position: relative;
+    overscroll-behavior: none;
 }
 
 #kss-node .kss-main.kss-homepage {
@@ -209,23 +212,38 @@ h3.kss-title {
 }
 
 #kss-node .kss-main {
-    /* overflow-y: auto; */
     /* height: 100%; */
+}
+
+#drawer {
+    display: none;
+}
+
+#drawer[open] {
+    display: flex;
+}
+
+@media screen and (min-width: 769px) {
+    #drawer {
+        display: flex !important;
+    }
 }
 
 #kss-node .kss-sidebar {
     background: #fff;
-    margin-right: 0;
     border-right: 1px solid #e0e0e0;
     box-shadow: none;
-    height: calc(100vh - 85px);
-    padding: 0 10px 0 30px;
-    width: 256px;
-    display: flex;
     flex-direction: column;
-    z-index: 1;
-    position: fixed;
     flex: none;
+    height: calc(100vh - 85px);
+    margin-right: 0;
+    padding: 0 10px 0 30px;
+    position: fixed;
+    width: 256px;
+    z-index: 1;
+    overflow-y: auto;
+    top: 85px;
+    left: 0;
 }
 
 #kss-node .kss-nav__menu-item {
@@ -283,17 +301,17 @@ h3.kss-title {
 
     #kss-node .kss-sidebar {
         background: none;
-        margin-right: 0;
         border-right: 1px solid #e0e0e0;
         box-shadow: none;
-        height: calc(100vh - 85px);
-        padding: 0 10px 0 30px;
-        width: 256px;
         display: flex;
         flex-direction: column;
-        z-index: 1;
-        position: fixed;
         flex: none;
+        height: calc(100vh - 85px);
+        margin-right: 0;
+        padding: 0 10px 0 30px;
+        position: fixed;
+        width: 256px;
+        z-index: 1;
     }
 
     #kss-node .kss-nav__menu-item[active] > .kss-nav__menu-link .kss-nav__name {
@@ -386,6 +404,8 @@ h3.kss-title {
     padding: 8px 16px;
     border-bottom: 1px solid #e0e0e0;
     background-color: #f5f5f5;
+    position: sticky;
+    top: 0;
 }
 
 @media screen and (min-width: 768px) {
