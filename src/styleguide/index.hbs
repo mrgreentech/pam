@@ -27,19 +27,19 @@
 <body id="kss-node" {{#if template.isItem}}class="kss-fullscreen-mode"{{/if}} {{#if template.isHomepage}}sg-node="homepage"{{/if}} pam-rfs="md">
 
 <header sg-header pam-space="px:8 py:4">
-  <div pam-flex="middle">
-      <div pam-size="w:1-2">
-          <a href="./" pam-display="inline-block">
-            <img
-              src="kss-assets/img/logo.svg"
-              alt="PAM"
-              title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
-              height="48"
-              width="48">
-          </a>
-          <button pam-button onclick="drawer.toggle()">Toggle</button>
-      </div>
-      <div pam-size="w:1-2" pam-hide="sm:down">
+  <div pam-flex="middle between">
+    <button sg-drawer-button pam-button="circle flat lg" pam-hide="md:up">
+        <i class="material-icons" onclick="drawer.toggle()">menu</i>
+    </button>
+      <a href="./" pam-display="inline-block">
+        <img
+          src="kss-assets/img/logo.svg"
+          alt="PAM"
+          title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
+          height="48"
+          width="48">
+      </a>
+      <div pam-hide="sm:down">
           <div pam-flex="right">
             <a href="https://github.com/mrgreentech/pam/blob/legendary-grasshopper/CHANGELOG.md"  pam-Button="flat">Changelog</a>
             <a href="https://github.com/mrgreentech/pam/issues" pam-Button="flat">Issues</a>
@@ -49,7 +49,7 @@
   </div>
 </header>
 
-<main sg-main>
+<main sg-main pam-position="relative">
   {{#if template.isHomepage}}
     <section role="main" class="kss-main kss-homepage" pam-space="m:0">
     {{#if homepage}}
@@ -59,8 +59,8 @@
     {{/if}}
     </section>
   {{else}}
-    <aside id="drawer" class="kss-sidebar kss-style">
-      <header class="kss-header">
+    <aside sg-drawer class="kss-sidebar kss-style">
+      <header>
         <h1 pam-typography="subtitle-1">Documentation</h1>
       </header>
       <nav class="kss-nav">
@@ -89,6 +89,7 @@
         </ul>
       </nav>
     </aside>
+    <div sg-drawer-overlay pam-hidden="" pam-hide="md:up" pam-z="1" pam-position="fixed cover" pam-overlay="dark" onclick="drawer.toggle()"></div>
     <section role="main" class="kss-main">
 
     {{!
