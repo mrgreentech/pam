@@ -67,6 +67,9 @@
     width: 14px;
     height: 2px;
     transition: background-color 0.4s, width 0.4s;
+    content: " ";
+    position: absolute;
+    left: -20px;
 }
 
 #kss-node .kss-nav__ref {
@@ -130,13 +133,6 @@ h3.kss-title {
     padding: 8px 0;
     background-color: transparent;
     border-bottom-color: #e0e0e0;
-}
-
-#kss-node .kss-style {
-    font-size: 15px;
-}
-
-#kss-node .kss-style p {
 }
 
 #kss-node .kss-style.kss-markup {
@@ -241,6 +237,10 @@ h3.kss-title {
 
 #kss-node .kss-nav__menu-item {
     display: list-item;
+}
+
+[pam-Menu-Item][active] {
+    display: block !important;
 }
 
 #kss-node .kss-nav__menu-item[active] > .kss-nav__menu-link .kss-nav__name {
