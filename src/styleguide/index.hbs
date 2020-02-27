@@ -59,28 +59,39 @@
     {{/if}}
     </section>
   {{else}}
-    <aside sg-drawer class="kss-sidebar kss-style">
+    <aside sg-drawer class="kss-sidebar">
       <header>
         <h1 pam-typography="subtitle-1">Documentation</h1>
       </header>
-      <nav class="kss-nav">
-        <ul class="kss-nav__menu">
+      <nav pam-Menu="vertical">
+        <ul pam-Menu-List pam-size="w:full">
         {{#each menu}}
-          <li class="kss-nav__menu-item" {{#if isActive}}active{{/if}}>
-            <a class="kss-nav__menu-link" href="section-{{referenceURI}}.html">
-              <span class="kss-nav__ref">{{referenceNumber}}</span><span class="kss-nav__name">{{header}}</span>
+          <li pam-Menu-Item {{#if isActive}}active{{/if}}>
+            {{#if isActive}}
+            <a pam-Menu-Heading href="section-{{referenceURI}}.html">
+              <span class="kss-nav__ref">{{referenceNumber}}</span>
+              <span class="kss-nav__name">{{header}}</span>
             </a>
+            {{else}}
+            <a pam-Menu-Link href="section-{{referenceURI}}.html">
+              <span class="kss-nav__ref">{{referenceNumber}}</span>
+              <span class="kss-nav__name">{{header}}</span>
+            </a>
+            {{/if}}
+
             {{#if isActive}}
               {{#if children}}
-                <ul class="kss-nav__menu-child">
+                <ul pam-Menu-List="child sm" class="kss-nav__menu-child" pam-display="block">
+                <div pam-Divider pam-space="mb:2"></div>
                 {{#each children}}
-                  <li class="kss-nav__menu-item">
-                    <a class="kss-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}" onclick="drawer.toggle()">
+                  <li pam-Menu-Item>
+                    <a pam-Menu-Link href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}" onclick="drawer.toggle()">
                       <span class="kss-nav__ref {{#if isGrandChild}}kss-nav__ref-child{{/if}}">{{referenceNumber}}</span
                       ><span class="kss-nav__name">{{header}}</span>
                     </a>
                   </li>
                 {{/each}}
+                <div pam-Divider pam-space="my:2"></div>
                 </ul>
               {{/if}}
             {{/if}}
@@ -248,7 +259,7 @@
   hljs.initHighlightingOnLoad();
 
   var spy = new ScrollSpy('#kss-node', {
-    nav: '.kss-nav__menu-child > li > a',
+    nav: '[pam-menu-list~="child"] > li > a',
     className: 'is-in-viewport'
   });
   var kssFullScreen = new KssFullScreen({

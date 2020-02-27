@@ -47,7 +47,7 @@
 @menu-link-height: @menu-height;
 @menu-link-hover-bg-color: fade(@skin-primary, 5);
 @menu-link-justify-content: center;
-@menu-link-line-height: @menu-line-height;
+@menu-link-line-height: inherit;
 @menu-link-padding: 0 @space-20;
 
 @menu-children-bg-color: @skin-background;
@@ -227,6 +227,39 @@
     line-height: @menu-heading-height;
 
     .hook-menu-heading;
+}
+
+//  Modifier: size
+// ==================================================================
+
+// Size
+//
+// Well, size does matter.
+//
+// Markup:
+// <div pam-Menu>
+//     <ul pam-Menu-List="sm">
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Home sweet home</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>Stuff</a></li>
+//         <li pam-Menu-Item><a href="#" pam-Menu-Link>About</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 8
+//
+// Style guide: menus.size
+
+[pam-Menu-List~="sm"] {
+    [pam-Menu-Item] {
+        height: @space-32;
+        line-height: @line-height-normal;
+        font-size: 12px;
+    }
+
+    [pam-Menu-Link] {
+        align-items: center;
+        line-height: 1.5;
+    }
 }
 
 //  Modifier: fixed
