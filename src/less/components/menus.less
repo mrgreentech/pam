@@ -22,11 +22,11 @@
 @menu-arrow-horizontal: "\25BE";
 @menu-arrow-vertical: "\25B8";
 @menu-bg: transparent;
-@menu-color: @skin-gray-600;
+@menu-color: @skin-gray-800;
 @menu-disabled-opacity: @opacity-60;
 @menu-font-letter-spacing: 0.09em;
 @menu-font-size: @font-size-medium;
-@menu-font-weight: @font-weight-bold;
+@menu-font-weight: @font-weight-normal;
 @menu-height: @space-48;
 @menu-line-height: 3rem;
 
@@ -42,10 +42,10 @@
 
 @menu-link-active-color: @skin-black;
 @menu-link-color: @menu-color;
-@menu-link-focus-bg-color: fade(@skin-primary, 15);
+@menu-link-focus-bg-color: fade(@skin-primary, 20);
 @menu-link-focus-color: @skin-primary;
 @menu-link-height: @menu-height;
-@menu-link-hover-bg-color: fade(@skin-primary, 5);
+@menu-link-hover-bg-color: fade(@skin-primary, 10);
 @menu-link-justify-content: center;
 @menu-link-line-height: inherit;
 @menu-link-padding: 0 @space-20;
@@ -104,6 +104,8 @@
     text-transform: uppercase;
     white-space: nowrap;
     -webkit-appearance: none;
+    user-select: none !important;
+    -webkit-tap-highlight-color: transparent !important;
 
     .hook-menu-item;
 }
