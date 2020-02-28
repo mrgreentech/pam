@@ -147,7 +147,7 @@ h3.kss-title {
     height: 100vh;
     margin-right: 0;
     padding: 0 12px;
-    position: fixed;
+    position: absolute;
     width: 256px;
     z-index: 2;
     overflow-y: auto;
