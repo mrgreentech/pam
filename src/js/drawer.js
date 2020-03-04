@@ -34,7 +34,7 @@ let drawer = (window => {
         return open() ? disable() : enable();
 
         function enable() {
-            nodeEl.setAttribute("open", "");
+            nodeEl.setAttribute("pam-flex", "");
             nodeEl.setAttribute("animated", "slideInLeft");
             nodeElOverlay.setAttribute("animated", "fadeIn");
             nodeElOverlay.removeAttribute("pam-hidden");
@@ -44,7 +44,7 @@ let drawer = (window => {
             nodeEl.setAttribute("animated", "slideOutLeft");
             nodeElOverlay.setAttribute("animated", "fadeOut");
             setTimeout(() => {
-                nodeEl.removeAttribute("open");
+                nodeEl.removeAttribute("pam-flex");
                 nodeElOverlay.setAttribute("pam-hidden", "");
                 nodeEl.removeAttribute("animated");
                 nodeElOverlay.removeAttribute("animated");
@@ -53,6 +53,6 @@ let drawer = (window => {
     }
 
     function open() {
-        return nodeEl.hasAttribute("open");
+        return nodeEl.hasAttribute("pam-flex");
     }
 })(window);

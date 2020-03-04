@@ -141,23 +141,12 @@ h3.kss-title {
 
 [sg-drawer] {
     display: none;
-    background: #fff;
     flex-direction: column;
     flex: none;
-    height: 100vh;
-    margin-right: 0;
-    padding: 0 12px;
     position: absolute;
-    width: 256px;
-    z-index: 2;
-    overflow-y: auto;
     top: 0;
     left: 0;
     box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
-}
-
-[sg-drawer][open] {
-    display: flex;
 }
 
 [pam-select~="none"] {
@@ -209,13 +198,8 @@ h3.kss-title {
         float: none;
         padding: 40px 56px 0 56px;
         width: 100%;
+        max-width: calc(100% - 256px);
         margin-left: 256px;
-    }
-
-    #kss-node .kss-main.kss-homepage {
-        margin-left: 0;
-        padding: 0;
-        width: 100%;
     }
 
     [sg-drawer] {
@@ -224,7 +208,6 @@ h3.kss-title {
         display: flex;
         height: calc(100vh - 85px);
         top: 85px;
-        z-index: 1;
     }
 }
 

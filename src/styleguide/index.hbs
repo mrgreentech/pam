@@ -23,14 +23,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   {{{styles}}}
 </head>
-<body id="kss-node" {{#if template.isHomepage}}sg-node="homepage" pam-skin="bg:gray:100"{{/if}} pam-rfs="md" pam-size="max-w:xl" pam-space="mx:auto" pam-shadow="z2">
+<body id="kss-node" {{#if template.isHomepage}}sg-node="homepage" pam-skin="bg:gray:100"{{/if}} pam-rfs="md" pam-size="max-w:xl" pam-space="mx:auto" pam-border="lw:px rw:px">
 
-<header sg-header pam-space="px:8 py:4" pam-skin="bg:gray:100" pam-position="sticky top" pam-border="bw:px">
+<header sg-header pam-space="px:8 py:4" pam-skin="bg:gray:100" pam-position="sticky top"  {{#if template.isHomepage}} pam-border="bw:0" {{else}} pam-border="bw:px" {{/if}}>
   <div pam-flex="middle between">
     <button sg-drawer-button pam-button="circle flat lg" pam-hide="md:up">
         <i class="material-icons" onclick="drawer.toggle()">menu</i>
     </button>
-      <a href="./" pam-display="inline-block">
+      <a href="./" pam-display="inline-block" pam-hide="sm:down">
         <img
           src="kss-assets/img/logo.svg"
           alt="PAM"
@@ -58,7 +58,13 @@
     {{/if}}
     </section>
   {{else}}
-    <aside sg-drawer>
+    <aside sg-drawer
+        pam-border="rw:px gray:400"
+        pam-skin="bg:white"
+        pam-overflow="y:auto"
+        pam-size="h:viewport w:16"
+        pam-z="2"
+        pam-space="px:3">
       <header pam-space="mb:6">
         <h6 pam-typography="h6" pam-space="px:5">Documentation</h6>
       </header>
@@ -109,7 +115,7 @@
       the "#if @first" block as seen below.
     }}
     {{#each sections}}
-      <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
+      <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}}">
 
         <div class="kss-style">
           <h{{inc depth}} class="kss-title kss-title--level-{{depth}}" pam-typography="h{{inc depth}}">
