@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   {{{styles}}}
 </head>
-<body id="kss-node" {{#if template.isHomepage}}sg-node="homepage" pam-skin="bg:gray:100"{{/if}} pam-rfs="md" pam-size="max-w:xl" pam-space="mx:auto" pam-border="lw:px rw:px">
+<body id="sg-node" {{#if template.isHomepage}} pam-skin="bg:gray:100"{{/if}} pam-rfs="md" pam-size="max-w:xl" pam-space="mx:auto" pam-border="lw:px rw:px">
 
 <header sg-header pam-space="px:8 py:4" pam-skin="bg:gray:100" pam-position="sticky top"  {{#if template.isHomepage}} pam-border="bw:0" {{else}} pam-border="bw:px" {{/if}}>
   <div pam-flex="middle between">
@@ -74,13 +74,12 @@
           <li pam-Menu-Item {{#if isActive}}active{{/if}}>
             {{#if isActive}}
             <a pam-Menu-Heading href="section-{{referenceURI}}.html">
-              <span class="kss-nav__ref">{{referenceNumber}}</span>
-              <span class="kss-nav__name">{{header}}</span>
+              <span>{{header}}</span>
             </a>
             {{else}}
             <a pam-Menu-Link href="section-{{referenceURI}}.html">
-              <span class="kss-nav__ref">{{referenceNumber}}</span>
-              <span class="kss-nav__name">{{header}}</span>
+              <span pam-hidden="">{{referenceNumber}}</span>
+              <span>{{header}}</span>
             </a>
             {{/if}}
 
@@ -91,8 +90,7 @@
                 {{#each children}}
                   <li pam-Menu-Item>
                     <a pam-Menu-Link href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}" onclick="drawer.toggle()">
-                      <span class="kss-nav__ref {{#if isGrandChild}}kss-nav__ref-child{{/if}}">{{referenceNumber}}</span
-                      ><span class="kss-nav__name">{{header}}</span>
+                        <span>{{header}}</span>
                     </a>
                   </li>
                 {{/each}}
@@ -119,13 +117,13 @@
 
         <div class="kss-style">
           <h{{inc depth}} class="kss-title kss-title--level-{{depth}}" pam-typography="h{{inc depth}}">
-            <a class="kss-title__permalink" href="#kssref-{{referenceURI}}">
+            <a class="sg-permalink" pam-link="" href="#kssref-{{referenceURI}}">
               {{header}}
             </a>
           </h{{inc depth}}>
 
           {{#if description}}
-            <div class="kss-description">
+            <div>
               {{{description}}}
             </div>
           {{/if}}
@@ -202,19 +200,14 @@
 
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
-<script src="kss-assets/kss-markup.js"></script>
 <script src="kss-assets/js/highlight/highlight.pack.js"></script>
 <script src="kss-assets/scrollspy.js"></script>
 <script>
   hljs.initHighlightingOnLoad();
 
-  var spy = new ScrollSpy('#kss-node', {
+  var spy = new ScrollSpy('#sg-node', {
     nav: '[pam-menu-list~="child"] > li > a',
     className: 'is-in-viewport'
-  });
-  var kssMarkup = new KssMarkup({
-    bodyClass: 'kss-markup-mode',
-    detailsClass: 'kss-markup'
   });
 </script>
 {{{scripts}}}

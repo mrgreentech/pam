@@ -1,30 +1,36 @@
 /* Styleguide kss overrides */
 
-.kss-style,
-.kss-style h1,
-.kss-style h2,
-.kss-style h3,
-.kss-style h4,
-.kss-style h5,
-.kss-style h6,
-.kss-style kbd,
-.kss-style samp {
-    font-family: "Roboto", sans-serif;
-    color: #000;
+/* pre,
+code,
+kbd,
+samp {
 }
+ */
 
-.kss-style pre,
-.kss-style code {
-    font-family: "Roboto", sans-serif;
-}
-
-.kss-style code.hljs {
+/* .kss-style code.hljs {
     font-size: 90%;
     line-height: 1.5;
     font-family: monospace, serif;
+} */
+
+.sg-permalink {
+    color: #000;
 }
 
-#kss-node {
+.sg-permalink,
+.sg-permalink:visited {
+    position: relative;
+}
+
+/* .sg-permalink:hover::before {
+    content: "#";
+    position: absolute;
+    left: -0.7em;
+    font-size: 90%;
+    vertical-align: middle;
+} */
+
+#sg-node {
     padding: 0;
     margin: 0;
     display: flex;
@@ -35,89 +41,50 @@
     overscroll-behavior: none;
 }
 
-#kss-node .kss-main.kss-homepage {
+#sg-node .kss-parameters {
+    display: table;
+    list-style-type: none;
+    margin-top: 0;
     margin-left: 0;
+    padding-left: 0;
 }
 
-#kss-node .kss-nav__ref {
-    display: none;
+#sg-node .kss-parameters__title {
+    font-weight: bold;
 }
 
-#kss-node .kss-title,
-#kss-node .kss-doc-title {
-    font-weight: 500;
+#sg-node .kss-parameters__item {
+    display: table-row;
 }
 
-.kss-style h1,
-h1.kss-title {
-    font-size: 45px;
+#sg-node .kss-parameters__name {
+    display: table-cell;
+    padding-right: 20px;
+    white-space: nowrap;
 }
 
-.kss-style h2,
-h2.kss-title {
-    font-size: 34px;
+#sg-node .kss-parameters__description {
+    display: table-cell;
 }
 
-.kss-style h3,
-h3.kss-title {
-    font-size: 24px;
+#sg-node .kss-parameters__default-value code {
+    white-space: nowrap;
 }
 
-.kss-overview img {
-    max-width: 400px;
+pre {
+    overflow: auto !important;
 }
 
-.kss-description {
-    margin-bottom: 8px;
-}
-
-.kss-description pre {
-    background-color: #f9f9f9;
-    padding: 16px;
-    overflow: auto;
-}
-
-.kss-description pre code {
-    display: inline-block;
-}
-
-.kss-description code {
-    background-color: #f9f9f9;
-    border-radius: 0.25rem;
-    color: #bd4147;
-    font-size: 90%;
-    padding: 0.2rem 0.4rem;
-}
-
-#kss-node .kss-style.kss-markup {
-    background-color: #f9f9f9;
-    border: none;
-    margin: 0 0 16px;
-}
-
-@media screen and (min-width: 768px) {
-    #kss-node .kss-style.kss-markup {
-        margin: 0 0 24px;
-    }
-}
-
-#kss-node .kss-style.kss-markup summary {
-    padding: 8px 10px;
-    margin: 0;
-}
-
-#kss-node .kss-style.kss-markup summary:focus {
-    outline: none;
+code {
+    background-color: #f9f9f9 !important;
+    border-radius: 0.25rem !important;
+    color: #bd4147 !important;
+    font-size: 90% !important;
+    padding: 0.2rem 0.4rem !important;
 }
 
 [sg-markup][open] summary {
     background-color: #f3f3f3;
-}
-
-.kss-style.kss-markup pre {
-    background-color: #f9f9f9;
-    overflow: auto;
-    padding: 8px;
 }
 
 [sg-drawer] {
@@ -147,13 +114,8 @@ h3.kss-title {
     line-height: 2 !important;
 }
 
-[pam-Menu-Item][active] .kss-nav__name,
-#kss-node .kss-nav__menu-item[active] > .kss-nav__menu-link .kss-nav__name {
-    /* font-weight: 500; */
-}
-
 [pam-Menu-Link]::before,
-#kss-node .kss-nav__menu-link::before {
+#sg-node .kss-nav__menu-link::before {
     content: " ";
     position: absolute;
     left: -12px;
@@ -165,7 +127,7 @@ h3.kss-title {
 }
 
 [pam-Menu-Link].is-in-viewport,
-#kss-node .kss-nav__menu-link.is-in-viewport {
+#sg-node .kss-nav__menu-link.is-in-viewport {
     background-color: rgba(84, 110, 122, 0.2);
 }
 
@@ -173,14 +135,14 @@ h3.kss-title {
     font-weight: 500 !important;
 }
 [pam-Menu-Link].is-in-viewport::before,
-#kss-node .kss-nav__menu-link.is-in-viewport::before {
+#sg-node .kss-nav__menu-link.is-in-viewport::before {
     background-color: #616161;
     transition: background-color 0.2s, width 0.3s;
     width: 6px;
 }
 
 @media screen and (min-width: 769px) {
-    #kss-node .kss-main {
+    #sg-node .kss-main {
         float: none;
         padding: 40px 56px 0 56px;
         width: 100%;
@@ -280,7 +242,7 @@ h3.kss-title {
     height: 56px;
 }
 
-[id*="hooks"] .kss-style code {
+[id*="hooks"] code {
     background-color: #e0e0e0;
     border-radius: 0.25em;
     color: #555;
