@@ -9,7 +9,7 @@
 let modifierHelper = (window => {
     "use strict";
 
-    const modifierWrappers = window.document.querySelectorAll(".kss-modifier__wrapper");
+    const modifierWrappers = window.document.querySelectorAll("[sg-modifier-wrapper]");
     const match = "%3A";
 
     /**

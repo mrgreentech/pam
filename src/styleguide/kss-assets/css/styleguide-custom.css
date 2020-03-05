@@ -24,11 +24,6 @@
     font-family: monospace, serif;
 }
 
-#kss-node .kss-modifier__default-name.kss-style,
-#kss-node .kss-modifier__name.kss-style {
-    font-weight: 500;
-}
-
 #kss-node {
     padding: 0;
     margin: 0;
@@ -94,19 +89,6 @@ h3.kss-title {
     padding: 0.2rem 0.4rem;
 }
 
-#kss-node .kss-modifier__wrapper {
-    border-color: #e0e0e0;
-    border: none;
-    padding: 16px 0;
-}
-
-#kss-node .kss-modifier__heading {
-    margin: 0 0 16px;
-    padding: 8px 0;
-    background-color: transparent;
-    border-bottom-color: #e0e0e0;
-}
-
 #kss-node .kss-style.kss-markup {
     background-color: #f9f9f9;
     border: none;
@@ -128,9 +110,8 @@ h3.kss-title {
     outline: none;
 }
 
-#kss-node .kss-markup[open] summary {
+[sg-markup][open] summary {
     background-color: #f3f3f3;
-    border: none;
 }
 
 .kss-style.kss-markup pre {
@@ -150,7 +131,11 @@ h3.kss-title {
     top: 0;
 }
 
-[pam-select~="none"] {
+[pam-outline~="none"] {
+    outline: 0;
+}
+
+[pam-user-select~="none"] {
     user-select: none !important;
     -webkit-tap-highlight-color: transparent !important;
 }
