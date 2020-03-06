@@ -18,204 +18,221 @@
   <meta name="msapplication-config" content="kss-assets/img/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="kss-assets/kss.css">
   <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   {{{styles}}}
 </head>
-<body id="sg-node" {{#if template.isHomepage}} pam-skin="bg:gray:100"{{/if}} pam-rfs="md" pam-size="max-w:xl" pam-space="mx:auto" pam-border="lw:px rw:px">
+<body>
 
-<header sg-header pam-space="px:8 py:4" pam-skin="bg:gray:100" pam-position="sticky top"  {{#if template.isHomepage}} pam-border="bw:0" {{else}} pam-border="bw:px" {{/if}}>
-  <div pam-flex="middle between">
-    <button sg-drawer-button pam-button="circle flat lg" pam-hide="md:up">
-        <i class="material-icons" onclick="drawer.toggle()">menu</i>
-    </button>
-      <a href="./" pam-display="inline-block" pam-hide="sm:down">
-        <img
-          src="kss-assets/img/logo.svg"
-          alt="PAM"
-          title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
-          height="48"
-          width="48">
-      </a>
-      <div pam-hide="sm:down">
-          <div pam-flex="right">
-            <a href="https://github.com/mrgreentech/pam/blob/legendary-grasshopper/CHANGELOG.md"  pam-Button="flat">Changelog</a>
-            <a href="https://github.com/mrgreentech/pam/issues" pam-Button="flat">Issues</a>
-            <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="raised">Download</a>
+<div id="sg-node" {{#if template.isHomepage}} pam-skin="bg:gray:100"{{/if}}
+    pam-rfs="md"
+    pam-size="max-w:xl"
+    pam-space="mx:auto"
+    pam-border="lw:px rw:px">
+    <header sg-header=""
+        pam-space="px:8 py:4"
+        pam-skin="bg:gray:100"
+        pam-position="sticky top"
+        {{#if template.isHomepage}} pam-border="bw:0" {{else}} pam-border="bw:px" {{/if}}>
+        <div pam-flex="middle between">
+            <button sg-drawer-button pam-button="circle flat lg" pam-hide="md:up">
+                <i class="material-icons" onclick="drawer.toggle()">menu</i>
+            </button>
+                <a href="./" pam-display="flex" pam-hide="sm:down">
+                    <img
+                    src="kss-assets/img/logo.svg"
+                    alt="PAM"
+                    title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
+                    height="48"
+                    width="48">
+                </a>
+              <div pam-hide="sm:down">
+                  <div pam-flex="right">
+                    <a href="https://github.com/mrgreentech/pam/blob/legendary-grasshopper/CHANGELOG.md"  pam-Button="flat">Changelog</a>
+                    <a href="https://github.com/mrgreentech/pam/issues" pam-Button="flat">Issues</a>
+                    <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="raised">Download</a>
+                  </div>
+              </div>
+        </div>
+    </header>
+
+    <main sg-main pam-size="h:full" pam-overflow="y:auto" {{#if template.isHomepage}}pam-flex="middle center"{{/if}}>
+      {{#if template.isHomepage}}
+        <section role="main" pam-space="m:0">
+        {{#if homepage}}
+          <div id="kssref-0">
+            {{{homepage}}}
           </div>
-      </div>
-  </div>
-</header>
+        {{/if}}
+        </section>
+      {{else}}
+        <aside sg-drawer
+            pam-border="rw:px gray:400"
+            pam-skin="bg:white"
+            pam-overflow="y:auto"
+            pam-size="w:16"
+            pam-z="2"
+            pam-space="px:3">
+          <header pam-space="mb:6">
+            <h6 pam-typography="h6" pam-space="px:5">Documentation</h6>
+          </header>
+          <nav pam-Menu="vertical">
+            <ul pam-Menu-List pam-size="w:full">
+            {{#each menu}}
+              <li pam-Menu-Item {{#if isActive}}active{{/if}}>
+                {{#if isActive}}
+                <a pam-Menu-Heading href="section-{{referenceURI}}.html">
+                  <span>{{header}}</span>
+                </a>
+                {{else}}
+                <a pam-Menu-Link href="section-{{referenceURI}}.html">
+                  <span pam-hidden="">{{referenceNumber}}</span>
+                  <span>{{header}}</span>
+                </a>
+                {{/if}}
 
-<main sg-main {{#if template.isHomepage}}pam-flex="middle center"{{/if}}>
-  {{#if template.isHomepage}}
-    <section role="main" pam-space="m:0">
-    {{#if homepage}}
-      <div id="kssref-0">
-        {{{homepage}}}
-      </div>
-    {{/if}}
-    </section>
-  {{else}}
-    <aside sg-drawer
-        pam-border="rw:px gray:400"
-        pam-skin="bg:white"
-        pam-overflow="y:auto"
-        pam-size="w:16"
-        pam-z="2"
-        pam-space="px:3">
-      <header pam-space="mb:6">
-        <h6 pam-typography="h6" pam-space="px:5">Documentation</h6>
-      </header>
-      <nav pam-Menu="vertical">
-        <ul pam-Menu-List pam-size="w:full">
-        {{#each menu}}
-          <li pam-Menu-Item {{#if isActive}}active{{/if}}>
-            {{#if isActive}}
-            <a pam-Menu-Heading href="section-{{referenceURI}}.html">
-              <span>{{header}}</span>
-            </a>
-            {{else}}
-            <a pam-Menu-Link href="section-{{referenceURI}}.html">
-              <span pam-hidden="">{{referenceNumber}}</span>
-              <span>{{header}}</span>
-            </a>
-            {{/if}}
-
-            {{#if isActive}}
-              {{#if children}}
-                <ul pam-Menu-List="child sm" class="kss-nav__menu-child" pam-display="block">
-                <div pam-Divider pam-space="mb:2"></div>
-                {{#each children}}
-                  <li pam-Menu-Item>
-                    <a pam-Menu-Link href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}" onclick="drawer.toggle()">
-                        <span>{{header}}</span>
-                    </a>
-                  </li>
-                {{/each}}
-                <div pam-Divider pam-space="my:2"></div>
-                </ul>
-              {{/if}}
-            {{/if}}
-          </li>
-        {{/each}}
-        </ul>
-      </nav>
-    </aside>
-    <div sg-drawer-overlay pam-hidden="" pam-hide="md:up" pam-z="1" pam-position="fixed cover" pam-overlay="dark" onclick="drawer.toggle()"></div>
-    <section role="main" class="kss-main">
-
-    {{!
-      Display each section, in order.
-
-      The "root" element comes first in this loop, and can be detected using
-      the "#if @first" block as seen below.
-    }}
-    {{#each sections}}
-      <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}}">
-
-        <div class="kss-style">
-          <h{{inc depth}} class="kss-title kss-title--level-{{depth}}" pam-typography="h{{inc depth}}">
-            <a class="sg-permalink" pam-link="" href="#kssref-{{referenceURI}}">
-              {{header}}
-            </a>
-          </h{{inc depth}}>
-
-          {{#if description}}
-            <div>
-              {{{description}}}
-            </div>
-          {{/if}}
-
-          {{#if parameters}}
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-            {{#each parameters}}
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>{{name}}</code></div>
-                <div class="kss-parameters__description">
-                  {{{description}}}
-                  {{#if defaultValue}}
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>{{defaultValue}}</code>
-                    </div>
+                {{#if isActive}}
+                  {{#if children}}
+                    <ul pam-Menu-List="child sm" pam-display="block">
+                    <div pam-Divider pam-space="mb:2"></div>
+                    {{#each children}}
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}" onclick="drawer.toggle()">
+                            <span>{{header}}</span>
+                        </a>
+                      </li>
+                    {{/each}}
+                    <div pam-Divider pam-space="my:2"></div>
+                    </ul>
                   {{/if}}
-                </div>
+                {{/if}}
               </li>
             {{/each}}
             </ul>
-          {{/if}}
-        </div>
+          </nav>
+        </aside>
+        <div sg-drawer-overlay
+            pam-hidden=""
+            pam-hide="md:up"
+            pam-z="1"
+            pam-position="fixed cover"
+            pam-overlay="dark"
+            onclick="drawer.toggle()"></div>
 
-        {{#if example}}
-          <div pam-space="px:0 py:4" pam-group="">
-            {{#if modifiers}}
-                <p>
-                    <b>Default styling</b>
-                </p>
-            {{/if}}
+        <section sg-content="">
 
-            <div pam-space="mb:5" pam-clear="left">
-              {{{example}}}
+        {{!
+          Display each section, in order.
+
+          The "root" element comes first in this loop, and can be detected using
+          the "#if @first" block as seen below.
+        }}
+        {{#each sections}}
+          <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section--depth-{{depth}}">
+
+            <div>
+              <h{{inc depth}} class="kss-title--level-{{depth}}" pam-typography="h{{inc depth}}">
+                <a pam-link="" sg-link="perma" href="#kssref-{{referenceURI}}">
+                  {{header}}
+                </a>
+              </h{{inc depth}}>
+
+              {{#if description}}
+                <div>
+                  {{{description}}}
+                </div>
+              {{/if}}
+
+              {{#if parameters}}
+                <b>Parameters:</b>
+                <ul class="kss-parameters">
+                {{#each parameters}}
+                  <li class="kss-parameters__item">
+                    <div class="kss-parameters__name"><code>{{name}}</code></div>
+                    <div class="kss-parameters__description">
+                      {{{description}}}
+                      {{#if defaultValue}}
+                        <div class="kss-parameters__default-value">
+                          Defaults to: <code>{{defaultValue}}</code>
+                        </div>
+                      {{/if}}
+                    </div>
+                  </li>
+                {{/each}}
+                </ul>
+              {{/if}}
             </div>
 
-            {{#each modifiers}}
-              <div sg-modifier-wrapper="" pam-space="mb:4">
-                  <div pam-space="pr:3" pam-float="left">
-                    <b>{{name}}</b>
-                  </div>
-                  <div>
-                    {{{description}}}
-                  </div>
-              </div>
-              <div pam-space="mb:5" pam-clear="left">
-                {{{markup}}}
-              </div>
-            {{/each}}
-          </div>
-
-          {{#if markup}}
-            <details pam-skin="bg:gray:200" pam-space="mb:5" pam-border="w:2 gray:200 dotted">
-              <summary pam-space="p:3" pam-outline="none" pam-user-select="none">
-                {{#if markupFile }}
-                  Markup: <code>{{ markupFile }}</code>
-                {{else}}
-                  Markup
+            {{#if example}}
+              <div pam-space="px:0 py:4" pam-group="">
+                {{#if modifiers}}
+                    <p>
+                        <b>Default styling</b>
+                    </p>
                 {{/if}}
-                {{#if example}}
-                {{/if}}
-              </summary>
-              <pre pam-space="m:0"><code pam-skin="bg:gray:50" class="html">{{markup}}</code></pre>
-            </details>
-          {{/if}}
-        {{/if}}
-      </{{#if @first}}div{{else}}section{{/if}}>
-      <hr pam-Divider>
-    {{/each}}
-  </section>
-  {{/if}}
-</main>
-<footer sg-footer></footer>
 
-<!-- SCRIPTS -->
-<script src="kss-assets/kss.js"></script>
-<script src="kss-assets/js/highlight/highlight.pack.js"></script>
-<script src="kss-assets/scrollspy.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
+                <div pam-space="mb:5" pam-clear="left">
+                  {{{example}}}
+                </div>
 
-  var spy = new ScrollSpy('#sg-node', {
-    nav: '[pam-menu-list~="child"] > li > a',
-    className: 'is-in-viewport'
-  });
-</script>
-{{{scripts}}}
+                {{#each modifiers}}
+                  <div sg-modifier-wrapper="" pam-space="mb:4">
+                      <div pam-space="pr:3" pam-float="left">
+                        <b>{{name}}</b>
+                      </div>
+                      <div>
+                        {{{description}}}
+                      </div>
+                  </div>
+                  <div pam-space="mb:5" pam-clear="left">
+                    {{{markup}}}
+                  </div>
+                {{/each}}
+              </div>
 
-{{! This will only be included in the demo page. }}
-{{#if options.demo}}
-  <footer></footer>
-{{/if}}
+              {{#if markup}}
+                <details pam-skin="bg:gray:200" pam-space="mb:5" pam-border="w:2 gray:200 dotted">
+                  <summary pam-space="p:3" pam-outline="none" pam-user-select="none">
+                    {{#if markupFile }}
+                      Markup: <code>{{ markupFile }}</code>
+                    {{else}}
+                      Markup
+                    {{/if}}
+                    {{#if example}}
+                    {{/if}}
+                  </summary>
+                  <pre pam-space="m:0"><code pam-skin="bg:gray:50" class="html">{{markup}}</code></pre>
+                </details>
+              {{/if}}
+            {{/if}}
+          </{{#if @first}}div{{else}}section{{/if}}>
+          <hr pam-Divider>
+        {{/each}}
+      </section>
+      {{/if}}
+    </main>
+
+    <footer sg-footer></footer>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="kss-assets/kss.js"></script>
+    <script src="kss-assets/js/highlight/highlight.pack.js"></script>
+    <script src="kss-assets/scrollspy.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+
+      var spy = new ScrollSpy('#sg-node', {
+        nav: '[pam-menu-list~="child"] > li > a',
+        className: 'is-in-viewport'
+      });
+    </script>
+    {{{scripts}}}
+
+    {{! This will only be included in the demo page. }}
+    {{#if options.demo}}
+      <footer></footer>
+    {{/if}}
 
 </body>
 </html>
