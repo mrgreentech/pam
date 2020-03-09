@@ -79,13 +79,13 @@
           <nav pam-Menu="vertical">
             <ul pam-Menu-List pam-size="w:full">
             {{#each menu}}
-              <li pam-Menu-Item {{#if isActive}}active{{/if}}>
+              <li pam-Menu-Item pam-size="h:40px" {{#if isActive}}active{{/if}}>
                 {{#if isActive}}
                 <a pam-Menu-Heading href="section-{{referenceURI}}.html">
                   <span>{{header}}</span>
                 </a>
                 {{else}}
-                <a pam-Menu-Link href="section-{{referenceURI}}.html">
+                <a pam-Menu-Link pam-flex="middle" href="section-{{referenceURI}}.html">
                   <span pam-hidden="">{{referenceNumber}}</span>
                   <span>{{header}}</span>
                 </a>
@@ -164,7 +164,7 @@
             </div>
 
             {{#if example}}
-              <div pam-space="px:0 py:4" pam-group="">
+              <div sg-modifier-wrapper="" pam-space="px:0 py:4" pam-group="">
                 {{#if modifiers}}
                     <p>
                         <b>Default styling</b>
@@ -176,7 +176,7 @@
                 </div>
 
                 {{#each modifiers}}
-                  <div sg-modifier-wrapper="" pam-space="mb:4">
+                  <div pam-space="mb:4">
                       <div pam-space="pr:3" pam-float="left">
                         <b>{{name}}</b>
                       </div>
@@ -228,11 +228,6 @@
       });
     </script>
     {{{scripts}}}
-
-    {{! This will only be included in the demo page. }}
-    {{#if options.demo}}
-      <footer></footer>
-    {{/if}}
 
 </body>
 </html>

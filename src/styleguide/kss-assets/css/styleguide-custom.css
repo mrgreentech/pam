@@ -156,85 +156,12 @@ code {
     width: 6px;
 }
 
-/* PAM styleguide helpers */
-
-[sg-Stack] > div {
-    margin-bottom: 4px;
-}
-
-[sg-Stack] > div:last-child {
-    margin: 0;
-}
-
-[sg-Height~="150"] {
-    height: 150px;
-}
-
-[sg-Link] {
-    display: inline-block;
-}
-
-[pam-Unit-Test] {
-    background-color: #008ed5;
-    box-sizing: border-box;
-    color: #fff;
-    margin: 1px;
-    padding: 16px;
-    position: relative;
-    text-align: center;
-}
-
-[pam-Unit-Test] [pam-Unit-Test] {
-    background-color: #22b5ff;
-}
-
-[pam-Unit-Test~="stretch"] {
-    margin: 0 1px;
-    height: 100%;
-}
-
-[pam-Menu-Scrollable-Test] {
-    width: 200px;
-    height: 150px;
-    border: 1px solid #666;
-}
-
-[grid-space] {
-    margin-bottom: 48px;
-}
-
-[grid-block] {
-    align-items: center;
-    display: flex;
-    padding: 16px;
-}
-
-[grid-block~="fixed"] {
-    align-items: center;
-    display: flex;
-    height: 100px;
-    justify-content: center;
-}
-
-[grid-block~="large"] {
-    height: 180px;
-}
-
-[grid-block~="small"] {
-    height: 56px;
-}
-
 [id*="hooks"] code {
     background-color: #e0e0e0;
     border-radius: 0.25em;
-    color: #555;
-    display: inline;
-    font-family: monospace, serif;
-    font-size: 75%;
-    font-weight: 500;
-    line-height: 1;
-    text-align: center;
-    vertical-align: baseline;
+    color: #222 !important;
+    font-size: 75% !important;
+    font-weight: bold;
     white-space: nowrap;
 }
 

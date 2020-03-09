@@ -61,7 +61,7 @@
 // Fixed Width
 //
 // Set a fixed width with `w:{ number }px`. These are exact pixel widths
-// which covers multiples of four up to 12px.
+// which covers multiples of four up to 56px.
 //
 // Markup:
 // <div pam-size="{{modifier_class}} h:1" pam-skin="bg:gray:200"></div>
@@ -71,6 +71,9 @@
 // w%3A4px - Set width to 4px.
 // w%3A8px - Set width to 8px.
 // w%3A12px - Set width to 12px.
+// w%3A24px - Set width to 24px.
+// w%3A40px - Set width to 40px.
+// w%3A56px - Set width to 56px.
 //
 // Weight: 2
 //
@@ -113,6 +116,18 @@
 
 [pam-size~="w:12px"] {
     width: @space-12 !important;
+}
+
+[pam-size~="w:24px"] {
+    width: @space-24 !important;
+}
+
+[pam-size~="w:40px"] {
+    width: @space-40 !important;
+}
+
+[pam-size~="w:56px"] {
+    width: @space-56 !important;
 }
 
 .sizes(pam-size, width, 20, "w:") !important;
@@ -291,6 +306,9 @@
 // h%3A4px - Set height to 4px.
 // h%3A8px - Set height to 8px.
 // h%3A12px - Set height to 12px.
+// w%3A24px - Set height to 24px.
+// w%3A40px - Set height to 40px.
+// w%3A56px - Set height to 56px.
 //
 // Weight: 9
 //
@@ -332,6 +350,18 @@
 
 [pam-size~="h:12px"] {
     height: @space-12 !important;
+}
+
+[pam-size~="h:24px"] {
+    height: @space-24 !important;
+}
+
+[pam-size~="h:40px"] {
+    height: @space-40 !important;
+}
+
+[pam-size~="h:56px"] {
+    height: @space-56 !important;
 }
 
 .sizes(pam-size, height, 20, "h:") !important;
