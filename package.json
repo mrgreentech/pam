@@ -1,109 +1,120 @@
 {
-  "name": "pam-css",
-  "description": "PAM is a light, modular and flexible AMCSS library.",
-  "version": "1.0.0-beta.5",
-  "main": "dist/pam.min.css",
-  "style": "dist/pam.min.css",
-  "keywords": [
-    "css",
-    "less",
-    "amcss",
-    "styling",
-    "ui",
-    "web"
-  ],
-  "homepage": "https://mrgreentech.github.io/pam/",
-  "author": "The PAM Authors (https://github.com/mrgreentech/pam/graphs/contributors)",
-  "contributors": [
-    "WH Gametek AB"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mrgreentech/pam.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mrgreentech/pam/issues"
-  },
-  "license": "BSD-3-Clause-Attribution",
-  "scripts": {
-    "build": "gulp build",
-    "cz": "git-cz",
-    "commit": "git add . && npm run cz",
-    "deploy:styleguide": "git subtree push --prefix build/styleguide origin gh-pages",
-    "dev": "gulp dev",
-    "dist": "gulp dist",
-    "lint:css": "gulp cssLint",
-    "lint:js": "gulp jsLint",
-    "lint": "npm run lint:css && npm run lint:js",
-    "test": "npm run build",
-    "stylelint:check": "stylelint-config-prettier-check",
-    "eslint:check": "eslint --print-config . | eslint-config-prettier-check"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.8.7",
-    "@babel/preset-env": "^7.8.7",
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "browser-sync": "^2.26.7",
-    "commitizen": "^4.0.3",
-    "cz-conventional-changelog": "^3.1.0",
-    "del": "^5.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-compat": "^3.5.1",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-banner": "^0.1.3",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-eslint": "^6.0.0",
-    "gulp-less": "^4.0.1",
-    "gulp-plumber": "^1.2.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-replace": "^1.0.0",
-    "gulp-sizereport": "^1.2.1",
-    "gulp-stylelint": "^13.0.0",
-    "husky": "^4.2.3",
-    "kss": "^3.0.0",
-    "less-plugin-autoprefix": "^2.0.0",
-    "less-vars-to-js": "^1.3.0",
-    "lint-staged": "^10.0.8",
-    "normalize.css": "^8.0.1",
-    "prettier": "^1.19.0",
-    "stylelint": "^13.2.0",
-    "stylelint-config-prettier": "^8.0.1",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-no-unsupported-browser-features": "^4.0.0",
-    "through2": "^3.0.1"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run lint"
-    }
-  },
-  "lint-staged": {
-    "*.{js,less}": [
-      "prettier --write",
-      "git add"
+    "name": "pam-css",
+    "description": "PAM is a light, modular and flexible AMCSS library.",
+    "version": "1.0.0-beta.5",
+    "main": "dist/pam.min.css",
+    "style": "dist/pam.min.css",
+    "keywords": [
+        "css",
+        "less",
+        "amcss",
+        "styling",
+        "ui",
+        "web"
+    ],
+    "homepage": "https://mrgreentech.github.io/pam/",
+    "author": "The PAM Authors (https://github.com/mrgreentech/pam/graphs/contributors)",
+    "contributors": [
+        "WH Gametek AB"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mrgreentech/pam.git"
+    },
+    "bugs": {
+        "url": "https://github.com/mrgreentech/pam/issues"
+    },
+    "license": "BSD-3-Clause-Attribution",
+    "scripts": {
+        "build": "gulp build",
+        "cz": "git-cz",
+        "commit": "git add . && npm run cz",
+        "deploy:styleguide": "git subtree push --prefix build/styleguide origin gh-pages",
+        "dev": "gulp dev",
+        "dist": "gulp dist",
+        "lint:css": "gulp cssLint",
+        "lint:js": "gulp jsLint",
+        "lint": "npm run lint:css && npm run lint:js",
+        "test": "npm run build && size-limit",
+        "stylelint:check": "stylelint-config-prettier-check",
+        "eslint:check": "eslint --print-config . | eslint-config-prettier-check",
+        "postinstall": "npm audit fix"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.8.7",
+        "@babel/preset-env": "^7.8.7",
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
+        "@size-limit/preset-app": "^4.3.1",
+        "browser-sync": "^2.26.7",
+        "commitizen": "^4.0.3",
+        "cz-conventional-changelog": "^3.1.0",
+        "del": "^5.1.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-plugin-compat": "^3.5.1",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-banner": "^0.1.3",
+        "gulp-clean-css": "^4.2.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-eslint": "^6.0.0",
+        "gulp-less": "^4.0.1",
+        "gulp-plumber": "^1.2.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-sizereport": "^1.2.1",
+        "gulp-stylelint": "^13.0.0",
+        "husky": "^4.2.3",
+        "kss": "^3.0.0",
+        "less-plugin-autoprefix": "^2.0.0",
+        "less-vars-to-js": "^1.3.0",
+        "lint-staged": "^10.0.8",
+        "normalize.css": "^8.0.1",
+        "prettier": "^1.19.0",
+        "size-limit": "^4.3.1",
+        "stylelint": "^13.2.1",
+        "stylelint-config-prettier": "^8.0.1",
+        "stylelint-config-standard": "^20.0.0",
+        "stylelint-no-unsupported-browser-features": "^4.0.0",
+        "through2": "^3.0.1"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "pre-commit": "lint-staged",
+            "pre-push": "npm run lint"
+        }
+    },
+    "lint-staged": {
+        "*.{js,less}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 Chrome major versions",
+        "last 2 Firefox major versions",
+        "last 2 Edge major versions",
+        "last 2 Safari major versions",
+        "ie >= 11",
+        "last 2 Android major versions",
+        "last 2 ChromeAndroid major versions",
+        "last 3 iOS major versions",
+        "not op_mini all"
+    ],
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "size-limit": [
+        {
+            "path": [
+                "build/pam.min.css"
+            ],
+            "limit": "20 KB"
+        }
     ]
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 Chrome major versions",
-    "last 2 Firefox major versions",
-    "last 2 Edge major versions",
-    "last 2 Safari major versions",
-    "ie >= 11",
-    "last 2 Android major versions",
-    "last 2 ChromeAndroid major versions",
-    "last 3 iOS major versions",
-    "not op_mini all"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
 }

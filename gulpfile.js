@@ -158,9 +158,9 @@ const styles = series(cssLint, css);
 const scripts = series(jsLint, js);
 const stylesAndScripts = parallel(styles, scripts);
 const buildStyleguide = series(copyCssToSG, styleguide, replaceVersion);
-const build = series(cleanBuild, copyBuild, variablesDocs, concatBase, stylesAndScripts, buildStyleguide, sizeReport);
+const build = series(cleanBuild, copyBuild, variablesDocs, concatBase, stylesAndScripts, buildStyleguide);
 const buildDev = series(copyBuild, variablesDocs, concatBase, stylesAndScripts, buildStyleguide);
-const dev = series(build, parallel(watchFiles, serve));
+const dev = series(build, sizeReport, parallel(watchFiles, serve));
 const dist = series(parallel(cleanDist, build), copyDist);
 
 // Export tasks
