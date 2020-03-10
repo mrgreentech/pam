@@ -69,7 +69,7 @@
         <aside sg-drawer
             pam-border="rw:px gray:400"
             pam-skin="bg:white"
-            pam-overflow="y:auto"
+            pam-overflow="y:auto x:hidden"
             pam-size="w:16"
             pam-z="2"
             pam-space="px:3">
@@ -119,8 +119,7 @@
             pam-overlay="dark"
             onclick="drawer.toggle()"></div>
 
-        <section sg-content="">
-
+        <section sg-content="" pam-overflow="x:hidden">
         {{!
           Display each section, in order.
 
@@ -128,8 +127,7 @@
           the "#if @first" block as seen below.
         }}
         {{#each sections}}
-          <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section--depth-{{depth}}">
-
+          <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section--depth-{{depth}}" pam-space="mb:6">
             <div>
               <h{{inc depth}} class="kss-title--level-{{depth}}" pam-typography="h{{inc depth}}">
                 <a pam-link="" sg-link="perma" href="#kssref-{{referenceURI}}">
@@ -145,15 +143,17 @@
 
               {{#if parameters}}
                 <b>Parameters:</b>
-                <ul class="kss-parameters">
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
                 {{#each parameters}}
-                  <li class="kss-parameters__item">
-                    <div class="kss-parameters__name"><code>{{name}}</code></div>
-                    <div class="kss-parameters__description">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>{{name}}</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
                       {{{description}}}
                       {{#if defaultValue}}
-                        <div class="kss-parameters__default-value">
-                          Defaults to: <code>{{defaultValue}}</code>
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">{{defaultValue}}</code>
                         </div>
                       {{/if}}
                     </div>

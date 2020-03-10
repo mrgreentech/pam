@@ -42,36 +42,6 @@ samp {
     overscroll-behavior: none;
 }
 
-#sg-node .kss-parameters {
-    display: table;
-    list-style-type: none;
-    margin-top: 0;
-    margin-left: 0;
-    padding-left: 0;
-}
-
-#sg-node .kss-parameters__title {
-    font-weight: bold;
-}
-
-#sg-node .kss-parameters__item {
-    display: table-row;
-}
-
-#sg-node .kss-parameters__name {
-    display: table-cell;
-    padding-right: 20px;
-    white-space: nowrap;
-}
-
-#sg-node .kss-parameters__description {
-    display: table-cell;
-}
-
-#sg-node .kss-parameters__default-value code {
-    white-space: nowrap;
-}
-
 pre {
     overflow: auto !important;
 }

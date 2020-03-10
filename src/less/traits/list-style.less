@@ -1,0 +1,52 @@
+// list-style
+//
+// Trait for controlling list elements style type.
+//
+// Markup:
+// <ul>
+//     <li pam-list-style="{{modifier_class}}">style {{modifier_class}}</li>
+// </ul>
+//
+// none - Set list-style to none.
+// disc - Set list-style to disc.
+// decimal - Set list-style to decimal.
+//
+// Weight: 7
+//
+// Style guide: traits.list-style
+
+// ==================================================================
+//  List style type
+// ==================================================================
+
+[pam-list-style] {
+    .hook-list-style;
+}
+
+[pam-list-style~="none"] {
+    list-style-type: none !important;
+}
+
+[pam-list-style~="disc"] {
+    list-style-type: disc !important;
+}
+
+[pam-list-style~="decimal"] {
+    list-style-type: decimal !important;
+}
+
+// Hooks
+// ========================================================================
+
+// Hooks
+//
+// `.hook-list-style`
+//
+// Weight: 10
+//
+// Style guide: traits.list-style.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-list-style() {
+}
+/* stylelint-enable */
