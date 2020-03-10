@@ -37,8 +37,7 @@
         "lint": "npm run lint:css && npm run lint:js",
         "test": "npm run build && size-limit",
         "stylelint:check": "stylelint-config-prettier-check",
-        "eslint:check": "eslint --print-config . | eslint-config-prettier-check",
-        "postinstall": "npm audit fix"
+        "eslint:check": "eslint --print-config . | eslint-config-prettier-check"
     },
     "devDependencies": {
         "@babel/core": "^7.8.7",
