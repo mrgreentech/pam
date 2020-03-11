@@ -191,8 +191,8 @@
               </div>
 
               {{#if markup}}
-                <details pam-skin="bg:gray:200" pam-space="mb:5" pam-border="w:2 gray:200 dotted">
-                  <summary pam-space="p:3" pam-outline="none" pam-user-select="none">
+                <details pam-skin="bg:gray:200" pam-space="mb:5" pam-border="w:2 gray:200 radius" pam-shadow="z1" pam-position="relative">
+                  <summary pam-space="p:2" pam-outline="none" pam-user-select="none">
                     {{#if markupFile }}
                       Markup: <code>{{ markupFile }}</code>
                     {{else}}
@@ -201,7 +201,12 @@
                     {{#if example}}
                     {{/if}}
                   </summary>
-                  <pre pam-space="m:0"><code pam-skin="bg:gray:50" class="html">{{markup}}</code></pre>
+                    <div pam-position="absolute top:right" pam-space="m:2px mr:1">
+                        <button pam-Button="circle flat">
+                            <i class="material-icons">content_copy</i>
+                        </button>
+                    </div>
+                  <pre pam-space="m:0"><code pam-skin="bg:gray:50" pam-space="m:1 p:2" pam-border="radius:t:none" class="html">{{markup}}</code></pre>
                 </details>
               {{/if}}
             {{/if}}
