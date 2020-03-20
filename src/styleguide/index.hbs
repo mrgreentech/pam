@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   {{{styles}}}
+  <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
 </head>
 <body>
 
@@ -164,19 +165,22 @@
             </div>
 
             {{#if example}}
-              <div sg-modifier-wrapper="" pam-space="px:0 py:4" pam-group="">
+              <div sg-modifier-wrapper=""
+                pam-border="lw:2 tw:2 rw:2 gray:100"
+                pam-space="p:4"
+                pam-group="">
                 {{#if modifiers}}
-                    <p>
+                    <div pam-space="mb:4">
                         <b>Default styling</b>
-                    </p>
+                    </div >
                 {{/if}}
 
-                <div pam-space="mb:5" pam-clear="left">
+                <div pam-space="" pam-clear="left">
                   {{{example}}}
                 </div>
 
                 {{#each modifiers}}
-                  <div pam-space="mb:4">
+                  <div pam-space="mt:4 mb:4">
                       <div pam-space="pr:3" pam-float="left">
                         <b>{{name}}</b>
                       </div>
@@ -191,27 +195,35 @@
               </div>
 
               {{#if markup}}
-                <details pam-skin="bg:gray:200" pam-space="mb:5" pam-border="w:2 gray:200 radius" pam-shadow="z1" pam-position="relative">
-                  <summary pam-space="p:2" pam-outline="none" pam-user-select="none">
-                    {{#if markupFile }}
-                      Markup: <code>{{ markupFile }}</code>
-                    {{else}}
-                      Markup
-                    {{/if}}
-                    {{#if example}}
-                    {{/if}}
+                <details
+                    pam-skin="bg:gray:100"
+                    pam-space="mb:5"
+                    pam-border="w:2 gray:100"
+                    pam-position="relative">
+                    <summary
+                        pam-space="py:3 px:4"
+                        pam-outline="none"
+                        pam-user-select="none"
+                        pam-typography="body-2">
+                        {{#if markupFile }}
+                          Markup: <code>{{ markupFile }}</code>
+                        {{else}}
+                          Markup
+                        {{/if}}
+                        {{#if example}}
+                        {{/if}}
                   </summary>
-                    <div pam-position="absolute top:right" pam-space="m:2px mr:1">
-                        <button pam-Button="circle flat">
-                            <i class="material-icons">content_copy</i>
+                    <div pam-position="absolute top:right" pam-space="m:2">
+                        <button pam-Button="flat sm" pam-size="min-w:0" data-clipboard-target="#markup-{{referenceURI}}">
+                            Copy
                         </button>
                     </div>
-                  <pre pam-space="m:0"><code pam-skin="bg:gray:50" pam-space="m:1 p:2" pam-border="radius:t:none" class="html">{{markup}}</code></pre>
+                  <pre pam-space="m:0"><code id="markup-{{referenceURI}}" pam-skin="bg:gray:100" pam-space="px:4 py:2" pam-border="radius:t:none" class="html">{{markup}}</code></pre>
                 </details>
               {{/if}}
             {{/if}}
           </{{#if @first}}div{{else}}section{{/if}}>
-          <hr pam-Divider>
+         {{!--  <hr pam-Divider> --}}
         {{/each}}
       </section>
       {{/if}}
@@ -231,6 +243,8 @@
         nav: '[pam-menu-list~="child"] > li > a',
         className: 'is-in-viewport'
       });
+
+      new ClipboardJS("[pam-Button]");
     </script>
     {{{scripts}}}
 
