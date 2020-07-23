@@ -12,14 +12,20 @@
 //  Spacing
 // ==================================================================
 
-.spacing(@property, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
+.spacing(@property, @prefix: "", @spaces, @startIndex: 1, @negate: false) when (@startIndex =< @spaces) {
     [pam-space~="@{prefix}:@{startIndex}"] {
         @propertyValue: "space-x@{startIndex}";
 
         @{property}: @@propertyValue;
     }
 
-    .spacing(@property, @prefix, @spaces, (@startIndex + 1));
+    [pam-space~="-@{prefix}:@{startIndex}"] when (@negate = true) {
+        @propertyValue: "space-x@{startIndex}";
+
+        @{property}: -@@propertyValue;
+    }
+
+    .spacing(@property, @prefix, @spaces, (@startIndex + 1), @negate);
 }
 
 //  Spacing-x
@@ -37,7 +43,7 @@
 //
 // Style guide: mixins.spacing.spacing-x
 
-.spacing-x(@property, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
+.spacing-x(@property, @prefix: "", @spaces, @startIndex: 1, @negate: false) when (@startIndex =< @spaces) {
     @propertyLeft: if((@property = margin), margin-left, padding-left);
     @propertyRight: if((@property = margin), margin-right, padding-right);
 
@@ -48,7 +54,14 @@
         @{propertyRight}: @@propertyValue;
     }
 
-    .spacing-x(@property, @prefix, @spaces, (@startIndex + 1));
+    [pam-space~="-@{prefix}:@{startIndex}"] when (@negate = true) {
+        @propertyValue: "space-x@{startIndex}";
+
+        @{propertyLeft}: -@@propertyValue;
+        @{propertyRight}: -@@propertyValue;
+    }
+
+    .spacing-x(@property, @prefix, @spaces, (@startIndex + 1),  @negate);
 }
 
 //  Spacing-y
@@ -66,7 +79,7 @@
 //
 // Style guide: mixins.spacing.spacing-y
 
-.spacing-y(@property, @prefix: "", @spaces, @startIndex: 1) when (@startIndex =< @spaces) {
+.spacing-y(@property, @prefix: "", @spaces, @startIndex: 1, @negate: false) when (@startIndex =< @spaces) {
     @propertyTop: if((@property = margin), margin-top, padding-top);
     @propertyBottom: if((@property = margin), margin-bottom, padding-bottom);
 
@@ -77,5 +90,12 @@
         @{propertyBottom}: @@propertyValue;
     }
 
-    .spacing-y(@property, @prefix, @spaces, (@startIndex + 1));
+    [pam-space~="-@{prefix}:@{startIndex}"] when (@negate = true) {
+        @propertyValue: "space-x@{startIndex}";
+
+        @{propertyTop}: -@@propertyValue;
+        @{propertyBottom}: -@@propertyValue;
+    }
+
+    .spacing-y(@property, @prefix, @spaces, (@startIndex + 1), @negate);
 }

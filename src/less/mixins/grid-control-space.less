@@ -8,21 +8,21 @@
 // Style guide: mixins.grid-control-space
 
 .grid-control-space(@suffix: "", @size: @grid-spacing) {
-    [pam-Grid][pam-Grid-Control~="space@{suffix}"],
-    [pam-Grid][pam-Grid-Control~="space-x@{suffix}"] {
-        margin: 0 -@size / 2;
+    [pam-Grid-Control~="space@{suffix}"],
+    [pam-Grid-Control~="space-x@{suffix}"] {
+        margin: 0 -@size / 2 !important;
 
-        & > [pam-Unit] {
-            padding: 0 @size / 2;
+        & > * {
+            padding: 0 @size / 2 !important;
         }
     }
 
-    [pam-Grid][pam-Grid-Control~="space@{suffix}"],
-    [pam-Grid][pam-Grid-Control~="space-y@{suffix}"] {
-        margin-bottom: -@size;
+    [pam-Grid-Control~="space@{suffix}"],
+    [pam-Grid-Control~="space-y@{suffix}"] {
+        margin-bottom: -@size !important;
 
-        & > [pam-Unit] {
-            padding-bottom: @size;
+        & > * {
+            padding-bottom: @size !important;
         }
     }
 }
