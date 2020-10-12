@@ -6,7 +6,7 @@
  * @param  {Object} window
  * @return {Object}
  */
-let drawer = (window => {
+var drawer = ((window) => {
     "use strict";
 
     const { document } = window;

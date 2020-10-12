@@ -24,3 +24,7 @@ yarn.lock
 
 # Yarn
 .yarnclean
+
+# Cache
+.eslintcache
+.stylelintcache
