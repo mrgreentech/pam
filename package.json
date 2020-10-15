@@ -1,7 +1,7 @@
 {
     "name": "pam-css",
     "description": "PAM is a light, modular and flexible AMCSS library.",
-    "version": "1.0.0-beta.5",
+    "version": "1.0.0-beta.6",
     "main": "dist/pam.min.css",
     "style": "dist/pam.min.css",
     "keywords": [
@@ -32,7 +32,7 @@
         "deploy:styleguide": "git subtree push --prefix dist/styleguide origin gh-pages",
         "dev": "gulp dev",
         "dist": "gulp dist",
-        "lint:css": "stylelint --cache --fix src/less/**",
+        "lint:css": "stylelint --cache src/less/**",
         "lint:js": "eslint --cache --fix src/js/**",
         "lint": "npm run lint:css && npm run lint:js",
         "test": "npm run build && size-limit",

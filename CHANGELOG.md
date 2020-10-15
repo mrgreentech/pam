@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.0] - 2019-XX-XX
+## [1.0.0] - 2020-XX-XX
 
 ### :metal: Added
 
@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Component `pam-Loader`.
 -   Component `pam-Overlay`.
 -   Component `pam-Tag`.
+-   Copy to clipboard in style guide.
 -   Dynamic spacing `@space-x*`.
 -   Dynamic variable documentation to the style guide.
 -   Eslint.
@@ -46,7 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### :construction: Changed
 
 -   `pam-Theme` to `pam-skin` and new colors and styleguide documentation.
--   Grid documentation and examples.
+-   Grid documentation and examples. Grid component replaced with (size and flex) traits.
 -   Replaced Grunt with Gulp 4.
 -   Replaced Styledown to KSS styleguide documentation tool.
 -   Rewrite buttons spec to a material design spec
@@ -54,6 +55,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Rewrite of trait `pam-visibility`.
 -   Rewrite pam-Form and added new variables.
 -   Rewrite typography according to Material Design spec.
+-   Style guide style removed and PAM styles the style guide.
 -   Validation states for `pam-Input`.
 
 ### :warning: Removed
@@ -63,6 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   `pam-Input-Icon`.
 -   `pam-Input="borderless"`.
 -   `pam-Select-Box`.
+-   `pam-Grid`.
 -   pam-responsive package.
 -   styledown.
 -   typography subheader, form, body, strong, small.
