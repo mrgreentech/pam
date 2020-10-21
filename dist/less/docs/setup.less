@@ -67,7 +67,7 @@ Create a skin
 
 When you have created and setup a skins file it's time to skin PAM the way you want. First of make sure you are familiar with [Less](http://lesscss.org/). To customize and extend PAM in a efficent way there is a **best practice** to follow.
 
-### Variables
+#### Variables
 
 First resort of customization is by overwriting default variables. Global variables can be found in the `/src/less/variables.less` file. For components the variables resides in respective Less file which also can be overriden.
 
@@ -87,7 +87,7 @@ Now, override the default value by setting a new value inside `/skins/my-skin.le
 
 Compile the build and the CSS will have the new value. Since a global variable have been changed many components and other global varibales use this variable and will be updated accordingly. So changing some global variables will result in a totally diffrent skin. This also gives the control to change the skin on a global or component level depending on what type of variable have been modified.
 
-### Hooks
+#### Hooks
 
 To prevent creation of overhead selectors, Less mixins hooks are declared in all components which hook into predefined selectors. Available hooks are documented in the style guide for every component. This way it's easy to change or apply additional properties.
 

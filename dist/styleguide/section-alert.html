@@ -8,854 +8,686 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/manifest.json">
-  <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="kss-assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="kss-assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="kss-assets/img/favicon-16x16.png">
+  <link rel="manifest" href="kss-assets/img/manifest.json">
+  <link rel="mask-icon" href="kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="/kss-assets/img/browserconfig.xml">
+  <meta name="msapplication-config" content="kss-assets/img/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="kss-assets/kss.css">
   <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
-<link rel="stylesheet" href="kss-assets/css/pam.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css"/>
+<link rel="stylesheet" href="kss-assets/css/pam.css"/>
 
+  <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
 </head>
-<body id="kss-node"  >
+<body>
 
-<header sg-header>
-  <div pam-Grid pam-Grid-Control="align:center">
-      <div pam-Unit="1-5">
-          <a href="./" sg-Link>
-            <img
-              src="kss-assets/img/logo.svg"
-              alt="PAM"
-              title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
-              height="48"
-              width="48"
-              sg-Logo>
-          </a>
-      </div>
-      <div pam-Unit="4-5">
-          <div pam-Menu sg-Nav>
-              <ul pam-Menu-List>
-                  <li pam-Menu-Item>
+<div id="sg-node" 
+    pam-rfs="md"
+    pam-size="max-w:xl"
+    pam-space="mx:auto"
+    pam-border="lw:px rw:px">
+    <header sg-header=""
+        pam-space="px:8 py:4"
+        pam-skin="bg:gray:100"
+        pam-position="sticky top"
+         pam-border="bw:px" >
+        <div pam-flex="middle between">
+            <button sg-drawer-button pam-button="circle flat lg" pam-hide="md:up">
+                <i class="material-icons" onclick="drawer.toggle()">menu</i>
+            </button>
+                <a href="./" pam-display="flex" pam-hide="sm:down">
+                    <img
+                    src="kss-assets/img/logo.svg"
+                    alt="PAM"
+                    title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
+                    height="48"
+                    width="48">
+                </a>
+              <div pam-hide="sm:down">
+                  <div pam-flex="right">
                     <a href="https://github.com/mrgreentech/pam/blob/legendary-grasshopper/CHANGELOG.md"  pam-Button="flat">Changelog</a>
-                  </li>
-                  <li pam-Menu-Item>
                     <a href="https://github.com/mrgreentech/pam/issues" pam-Button="flat">Issues</a>
-                  </li>
-                  <li pam-Menu-Item>
                     <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="raised">Download</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </div>
-</header>
-
-<main sg-main>
-  <aside class="kss-sidebar kss-style">
-    <header class="kss-header">
-      <h1 class="kss-doc-title">Documentation</h1>
+                  </div>
+              </div>
+        </div>
     </header>
-    <nav class="kss-nav">
-      <ul class="kss-nav__menu">
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-getting-started.html">
-            <span class="kss-nav__ref">1</span><span class="kss-nav__name">Getting started</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-setup.html">
-            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Setup</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-general.html">
-            <span class="kss-nav__ref">3</span><span class="kss-nav__name">General</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-grids.html">
-            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Grids</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-skin.html">
-            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Skin</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-typography.html">
-            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Typography</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-forms.html">
-            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Forms</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-buttons.html">
-            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Buttons</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-cards.html">
-            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Cards</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-tables.html">
-            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Tables</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-menus.html">
-            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Menus</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" active>
-          <a class="kss-nav__menu-link" href="section-alert.html">
-            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Alert</span>
-          </a>
-              <ul class="kss-nav__menu-child">
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-alert.html#kssref-alert-outlined">
-                    <span class="kss-nav__ref ">12.1</span
-                    ><span class="kss-nav__name">Outlined</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-alert.html#kssref-alert-simple">
-                    <span class="kss-nav__ref ">12.2</span
-                    ><span class="kss-nav__name">Simple</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-alert.html#kssref-alert-link">
-                    <span class="kss-nav__ref ">12.3</span
-                    ><span class="kss-nav__name">Link</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-alert.html#kssref-alert-close">
-                    <span class="kss-nav__ref ">12.4</span
-                    ><span class="kss-nav__name">Close</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-alert.html#kssref-alert-fully-loaded">
-                    <span class="kss-nav__ref ">12.5</span
-                    ><span class="kss-nav__name">Fully loaded</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-alert.html#kssref-alert-hooks">
-                    <span class="kss-nav__ref ">12.6</span
-                    ><span class="kss-nav__name">Hooks</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-alert.html#kssref-alert-variables">
-                    <span class="kss-nav__ref ">12.7</span
-                    ><span class="kss-nav__name">Variables</span>
-                  </a>
-                </li>
-              </ul>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-divider.html">
-            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Divider</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-links.html">
-            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Link</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-lists.html">
-            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Lists</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-tags.html">
-            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Tags</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-column.html">
-            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Column</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-progress.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-overlay.html">
-            <span class="kss-nav__ref">19</span><span class="kss-nav__name">Overlay</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-traits.html">
-            <span class="kss-nav__ref">20</span><span class="kss-nav__name">Traits</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-mixins.html">
-            <span class="kss-nav__ref">21</span><span class="kss-nav__name">Mixins</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </aside>
-  <main role="main" class="kss-main">
 
-      <div id="kssref-alert" class="kss-section kss-section--depth-1 ">
+    <main sg-main pam-size="h:full" pam-overflow="y:auto" >
+        <aside sg-drawer
+            pam-border="rw:px gray:400"
+            pam-skin="bg:white"
+            pam-overflow="y:auto x:hidden"
+            pam-size="w:16"
+            pam-z="2"
+            pam-space="px:3">
+          <header pam-space="mb:6">
+            <h6 pam-typography="h6" pam-space="px:5">Documentation</h6>
+          </header>
+          <nav pam-Menu="vertical">
+            <ul pam-Menu-List pam-size="w:full">
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-getting-started.html">
+                  <span pam-hidden="">1</span>
+                  <span>Getting started</span>
+                </a>
 
-        <div class="kss-style">
-          <h1 class="kss-title kss-title--level-1">
-            <a class="kss-title__permalink" href="#kssref-alert">
-              Alert
-            </a>
-          </h1>
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-setup.html">
+                  <span pam-hidden="">2</span>
+                  <span>Setup</span>
+                </a>
 
-            <div class="kss-description">
-              <p>Contextual feedback messages with a set of variations to suite messages
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-general.html">
+                  <span pam-hidden="">3</span>
+                  <span>General</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-grids.html">
+                  <span pam-hidden="">4</span>
+                  <span>Grids</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-skin.html">
+                  <span pam-hidden="">5</span>
+                  <span>Skin</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-typography.html">
+                  <span pam-hidden="">6</span>
+                  <span>Typography</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-forms.html">
+                  <span pam-hidden="">7</span>
+                  <span>Forms</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-buttons.html">
+                  <span pam-hidden="">8</span>
+                  <span>Buttons</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-cards.html">
+                  <span pam-hidden="">9</span>
+                  <span>Cards</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-tables.html">
+                  <span pam-hidden="">10</span>
+                  <span>Tables</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-menus.html">
+                  <span pam-hidden="">11</span>
+                  <span>Menus</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" active>
+                <a pam-Menu-Heading href="section-alert.html">
+                  <span>Alert</span>
+                </a>
+
+                    <ul pam-Menu-List="child sm" pam-display="block">
+                    <div pam-Divider pam-space="mb:2"></div>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-alert.html#kssref-alert-outlined" onclick="drawer.toggle()">
+                            <span>Outlined</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-alert.html#kssref-alert-simple" onclick="drawer.toggle()">
+                            <span>Simple</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-alert.html#kssref-alert-link" onclick="drawer.toggle()">
+                            <span>Link</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-alert.html#kssref-alert-close" onclick="drawer.toggle()">
+                            <span>Close</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-alert.html#kssref-alert-fully-loaded" onclick="drawer.toggle()">
+                            <span>Fully loaded</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-alert.html#kssref-alert-hooks" onclick="drawer.toggle()">
+                            <span>Hooks</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-alert.html#kssref-alert-variables" onclick="drawer.toggle()">
+                            <span>Variables</span>
+                        </a>
+                      </li>
+                    <div pam-Divider pam-space="my:2"></div>
+                    </ul>
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-divider.html">
+                  <span pam-hidden="">13</span>
+                  <span>Divider</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-links.html">
+                  <span pam-hidden="">14</span>
+                  <span>Link</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-lists.html">
+                  <span pam-hidden="">15</span>
+                  <span>Lists</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-tags.html">
+                  <span pam-hidden="">16</span>
+                  <span>Tags</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-column.html">
+                  <span pam-hidden="">17</span>
+                  <span>Column</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-progress.html">
+                  <span pam-hidden="">18</span>
+                  <span>Progress</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-overlay.html">
+                  <span pam-hidden="">19</span>
+                  <span>Overlay</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-traits.html">
+                  <span pam-hidden="">20</span>
+                  <span>Traits</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-mixins.html">
+                  <span pam-hidden="">21</span>
+                  <span>Mixins</span>
+                </a>
+
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <div sg-drawer-overlay
+            pam-hidden=""
+            pam-hide="md:up"
+            pam-z="1"
+            pam-position="fixed cover"
+            pam-overlay="dark"
+            onclick="drawer.toggle()"></div>
+
+        <section sg-content="" pam-overflow="x:hidden">
+          <div id="kssref-alert" class="kss-section--depth-1" pam-space="mb:6">
+            <div>
+              <h2 class="kss-title--level-1" pam-typography="h2">
+                <a pam-link="" sg-link="perma" href="#kssref-alert">
+                  Alert
+                </a>
+              </h2>
+
+                <div>
+                  <p>Contextual feedback messages with a set of variations to suite messages
 with some type of intention. For the most basic alert use
 the <code>pam-Alert</code> attribute with a <code>&lt;h1&gt;</code> as title and <code>&lt;p&gt;</code> as message element.</p>
 
+                </div>
+
             </div>
 
-        </div>
+              <div sg-modifier-wrapper=""
+                pam-border="lw:2 tw:2 rw:2 gray:100"
+                pam-space="p:4"
+                pam-group="">
+                    <div pam-space="mb:4">
+                        <b>Default styling</b>
+                    </div >
 
-          <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__default-name kss-style">
-                Default styling
+                <div pam-space="" pam-clear="left">
+                  <div pam-Alert="">
+    <h1>Title</h1>
+    <p>Alert message</p>
+</div>
+                </div>
+
+                  <div pam-space="mt:4 mb:4">
+                      <div pam-space="pr:3" pam-float="left">
+                        <b>primary</b>
+                      </div>
+                      <div>
+                        This is a primary alert.
+                      </div>
+                  </div>
+                  <div pam-space="mb:5" pam-clear="left">
+                    <div pam-Alert="primary">
+    <h1>Title</h1>
+    <p>Alert message</p>
+</div>
+                  </div>
+                  <div pam-space="mt:4 mb:4">
+                      <div pam-space="pr:3" pam-float="left">
+                        <b>secondary</b>
+                      </div>
+                      <div>
+                        This is a secondary alert.
+                      </div>
+                  </div>
+                  <div pam-space="mb:5" pam-clear="left">
+                    <div pam-Alert="secondary">
+    <h1>Title</h1>
+    <p>Alert message</p>
+</div>
+                  </div>
+                  <div pam-space="mt:4 mb:4">
+                      <div pam-space="pr:3" pam-float="left">
+                        <b>info</b>
+                      </div>
+                      <div>
+                        This is not important but may need your attention.
+                      </div>
+                  </div>
+                  <div pam-space="mb:5" pam-clear="left">
+                    <div pam-Alert="info">
+    <h1>Title</h1>
+    <p>Alert message</p>
+</div>
+                  </div>
+                  <div pam-space="mt:4 mb:4">
+                      <div pam-space="pr:3" pam-float="left">
+                        <b>success</b>
+                      </div>
+                      <div>
+                        Congratulations! You have successfully done something.
+                      </div>
+                  </div>
+                  <div pam-space="mb:5" pam-clear="left">
+                    <div pam-Alert="success">
+    <h1>Title</h1>
+    <p>Alert message</p>
+</div>
+                  </div>
+                  <div pam-space="mt:4 mb:4">
+                      <div pam-space="pr:3" pam-float="left">
+                        <b>warning</b>
+                      </div>
+                      <div>
+                        Wow! You better take a look this needs your attention!
+                      </div>
+                  </div>
+                  <div pam-space="mb:5" pam-clear="left">
+                    <div pam-Alert="warning">
+    <h1>Title</h1>
+    <p>Alert message</p>
+</div>
+                  </div>
+                  <div pam-space="mt:4 mb:4">
+                      <div pam-space="pr:3" pam-float="left">
+                        <b>error</b>
+                      </div>
+                      <div>
+                        Oh no! That did no go so well get another pair of glasses and try again.
+                      </div>
+                  </div>
+                  <div pam-space="mb:5" pam-clear="left">
+                    <div pam-Alert="error">
+    <h1>Title</h1>
+    <p>Alert message</p>
+</div>
+                  </div>
               </div>
 
-            <div class="kss-modifier__example">
-              <div pam-Alert="">
-    <h1>Title</h1>
-    <p>Alert message</p>
-</div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
-
-              <div class="kss-modifier__name kss-style">
-                primary
-              </div>
-              <div class="kss-modifier__description kss-style">
-                This is a primary alert.
-              </div>
-              <div class="kss-modifier__example">
-                <div pam-Alert="primary">
-    <h1>Title</h1>
-    <p>Alert message</p>
-</div>
-                <div class="kss-modifier__example-footer"></div>
-              </div>
-              <div class="kss-modifier__name kss-style">
-                secondary
-              </div>
-              <div class="kss-modifier__description kss-style">
-                This is a secondary alert.
-              </div>
-              <div class="kss-modifier__example">
-                <div pam-Alert="secondary">
-    <h1>Title</h1>
-    <p>Alert message</p>
-</div>
-                <div class="kss-modifier__example-footer"></div>
-              </div>
-              <div class="kss-modifier__name kss-style">
-                info
-              </div>
-              <div class="kss-modifier__description kss-style">
-                This is not important but may need your attention.
-              </div>
-              <div class="kss-modifier__example">
-                <div pam-Alert="info">
-    <h1>Title</h1>
-    <p>Alert message</p>
-</div>
-                <div class="kss-modifier__example-footer"></div>
-              </div>
-              <div class="kss-modifier__name kss-style">
-                success
-              </div>
-              <div class="kss-modifier__description kss-style">
-                Congratulations! You have successfully done something.
-              </div>
-              <div class="kss-modifier__example">
-                <div pam-Alert="success">
-    <h1>Title</h1>
-    <p>Alert message</p>
-</div>
-                <div class="kss-modifier__example-footer"></div>
-              </div>
-              <div class="kss-modifier__name kss-style">
-                warning
-              </div>
-              <div class="kss-modifier__description kss-style">
-                Wow! You better take a look this needs your attention!
-              </div>
-              <div class="kss-modifier__example">
-                <div pam-Alert="warning">
-    <h1>Title</h1>
-    <p>Alert message</p>
-</div>
-                <div class="kss-modifier__example-footer"></div>
-              </div>
-              <div class="kss-modifier__name kss-style">
-                error
-              </div>
-              <div class="kss-modifier__description kss-style">
-                Oh no! That did no go so well get another pair of glasses and try again.
-              </div>
-              <div class="kss-modifier__example">
-                <div pam-Alert="error">
-    <h1>Title</h1>
-    <p>Alert message</p>
-</div>
-                <div class="kss-modifier__example-footer"></div>
-              </div>
-          </div>
-
-            <details class="kss-markup kss-style">
-              <summary>
-                  Markup
-                  <p class="kss-toolbar">
-                      <a href="#kssref-alert" data-kss-fullscreen="kssref-alert">
-                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
-                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                      </a>
-                      <a href="item-alert.html" target="_blank">
-                        <span class="kss-toolbar__tooltip">Open in new window</span>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
-                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
-                        </svg>
-                      </a>
-                    <a href="#kssref-alert" data-kss-guides="true">
-                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
-                      </svg>
-                    </a>
-                    <a href="#kssref-alert" data-kss-markup="true">
-                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
-                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
-                      </svg>
-                    </a>
-                  </p>
-              </summary>
-              <pre><code class="html">&lt;div pam-Alert&#x3D;&quot;[modifier]&quot;&gt;
+                <details
+                    pam-skin="bg:gray:100"
+                    pam-space="mb:5"
+                    pam-border="w:2 gray:100"
+                    pam-position="relative">
+                    <summary
+                        pam-space="py:3 px:4"
+                        pam-outline="none"
+                        pam-user-select="none"
+                        pam-typography="body-2">
+                          Markup
+                  </summary>
+                    <div pam-position="absolute top:right" pam-space="m:2">
+                        <button pam-Button="flat sm" pam-size="min-w:0" data-clipboard-target="#markup-alert">
+                            Copy
+                        </button>
+                    </div>
+                  <pre pam-space="m:0"><code id="markup-alert" pam-skin="bg:gray:100" pam-space="px:4 py:2" pam-border="radius:t:none" class="html">&lt;div pam-Alert&#x3D;&quot;[modifier]&quot;&gt;
     &lt;h1&gt;Title&lt;/h1&gt;
     &lt;p&gt;Alert message&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-            </details>
-      </div>
-      <hr >
-      <section id="kssref-alert-outlined" class="kss-section kss-section--depth-2 ">
+                </details>
+          </div>
+          <section id="kssref-alert-outlined" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-alert-outlined">
+                  Outlined
+                </a>
+              </h3>
 
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-alert-outlined">
-              Outlined
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>This variation of alerts has a more emphasized styling and is a alternative way
+                <div>
+                  <p>This variation of alerts has a more emphasized styling and is a alternative way
 to draw attention to information.</p>
 
+                </div>
+
             </div>
 
-        </div>
+              <div sg-modifier-wrapper=""
+                pam-border="lw:2 tw:2 rw:2 gray:100"
+                pam-space="p:4"
+                pam-group="">
 
-          <div class="kss-modifier__wrapper">
-
-            <div class="kss-modifier__example">
-              <div pam-Alert="outlined">
+                <div pam-space="" pam-clear="left">
+                  <div pam-Alert="outlined">
     <h1>Title</h1>
     <p>outlined message</p>
 </div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
+                </div>
 
-          </div>
+              </div>
 
-            <details class="kss-markup kss-style">
-              <summary>
-                  Markup
-                  <p class="kss-toolbar">
-                      <a href="#kssref-alert-outlined" data-kss-fullscreen="kssref-alert-outlined">
-                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
-                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                      </a>
-                      <a href="item-alert-outlined.html" target="_blank">
-                        <span class="kss-toolbar__tooltip">Open in new window</span>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
-                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
-                        </svg>
-                      </a>
-                    <a href="#kssref-alert-outlined" data-kss-guides="true">
-                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
-                      </svg>
-                    </a>
-                    <a href="#kssref-alert-outlined" data-kss-markup="true">
-                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
-                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
-                      </svg>
-                    </a>
-                  </p>
-              </summary>
-              <pre><code class="html">&lt;div pam-Alert&#x3D;&quot;outlined&quot;&gt;
+                <details
+                    pam-skin="bg:gray:100"
+                    pam-space="mb:5"
+                    pam-border="w:2 gray:100"
+                    pam-position="relative">
+                    <summary
+                        pam-space="py:3 px:4"
+                        pam-outline="none"
+                        pam-user-select="none"
+                        pam-typography="body-2">
+                          Markup
+                  </summary>
+                    <div pam-position="absolute top:right" pam-space="m:2">
+                        <button pam-Button="flat sm" pam-size="min-w:0" data-clipboard-target="#markup-alert-outlined">
+                            Copy
+                        </button>
+                    </div>
+                  <pre pam-space="m:0"><code id="markup-alert-outlined" pam-skin="bg:gray:100" pam-space="px:4 py:2" pam-border="radius:t:none" class="html">&lt;div pam-Alert&#x3D;&quot;outlined&quot;&gt;
     &lt;h1&gt;Title&lt;/h1&gt;
     &lt;p&gt;outlined message&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-            </details>
-      </section>
-      <hr >
-      <section id="kssref-alert-simple" class="kss-section kss-section--depth-2 ">
+                </details>
+          </section>
+          <section id="kssref-alert-simple" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-alert-simple">
+                  Simple
+                </a>
+              </h3>
 
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-alert-simple">
-              Simple
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>A simple alert has most of it properties normalized, such as border-radius and border.
+                <div>
+                  <p>A simple alert has most of it properties normalized, such as border-radius and border.
 Can be used as a alert in designs for small screen and devices.</p>
 
+                </div>
+
             </div>
 
-        </div>
+              <div sg-modifier-wrapper=""
+                pam-border="lw:2 tw:2 rw:2 gray:100"
+                pam-space="p:4"
+                pam-group="">
 
-          <div class="kss-modifier__wrapper">
-
-            <div class="kss-modifier__example">
-              <div pam-Alert="simple">
+                <div pam-space="" pam-clear="left">
+                  <div pam-Alert="simple">
     <h1>Title</h1>
     <p>outlined message</p>
 </div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
+                </div>
 
-          </div>
+              </div>
 
-            <details class="kss-markup kss-style">
-              <summary>
-                  Markup
-                  <p class="kss-toolbar">
-                      <a href="#kssref-alert-simple" data-kss-fullscreen="kssref-alert-simple">
-                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
-                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                      </a>
-                      <a href="item-alert-simple.html" target="_blank">
-                        <span class="kss-toolbar__tooltip">Open in new window</span>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
-                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
-                        </svg>
-                      </a>
-                    <a href="#kssref-alert-simple" data-kss-guides="true">
-                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
-                      </svg>
-                    </a>
-                    <a href="#kssref-alert-simple" data-kss-markup="true">
-                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
-                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
-                      </svg>
-                    </a>
-                  </p>
-              </summary>
-              <pre><code class="html">&lt;div pam-Alert&#x3D;&quot;simple&quot;&gt;
+                <details
+                    pam-skin="bg:gray:100"
+                    pam-space="mb:5"
+                    pam-border="w:2 gray:100"
+                    pam-position="relative">
+                    <summary
+                        pam-space="py:3 px:4"
+                        pam-outline="none"
+                        pam-user-select="none"
+                        pam-typography="body-2">
+                          Markup
+                  </summary>
+                    <div pam-position="absolute top:right" pam-space="m:2">
+                        <button pam-Button="flat sm" pam-size="min-w:0" data-clipboard-target="#markup-alert-simple">
+                            Copy
+                        </button>
+                    </div>
+                  <pre pam-space="m:0"><code id="markup-alert-simple" pam-skin="bg:gray:100" pam-space="px:4 py:2" pam-border="radius:t:none" class="html">&lt;div pam-Alert&#x3D;&quot;simple&quot;&gt;
     &lt;h1&gt;Title&lt;/h1&gt;
     &lt;p&gt;outlined message&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-            </details>
-      </section>
-      <hr >
-      <section id="kssref-alert-link" class="kss-section kss-section--depth-2 ">
+                </details>
+          </section>
+          <section id="kssref-alert-link" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-alert-link">
+                  Link
+                </a>
+              </h3>
 
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-alert-link">
-              Link
-            </a>
-          </h2>
+                <div>
+                  <p><code>pam-Alert-Link</code> is a sub-object that adds contextual colors for links.</p>
 
-            <div class="kss-description">
-              <p><code>pam-Alert-Link</code> is a sub-object that adds contextual colors for links.</p>
+                </div>
 
             </div>
 
-        </div>
+              <div sg-modifier-wrapper=""
+                pam-border="lw:2 tw:2 rw:2 gray:100"
+                pam-space="p:4"
+                pam-group="">
 
-          <div class="kss-modifier__wrapper">
-
-            <div class="kss-modifier__example">
-              <div pam-Alert>
+                <div pam-space="" pam-clear="left">
+                  <div pam-Alert>
     <p>This alert has a <a pam-Alert-Link href="#">awesome link!</a></p>
 </div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
+                </div>
 
-          </div>
+              </div>
 
-            <details class="kss-markup kss-style">
-              <summary>
-                  Markup
-                  <p class="kss-toolbar">
-                      <a href="#kssref-alert-link" data-kss-fullscreen="kssref-alert-link">
-                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
-                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                      </a>
-                      <a href="item-alert-link.html" target="_blank">
-                        <span class="kss-toolbar__tooltip">Open in new window</span>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
-                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
-                        </svg>
-                      </a>
-                    <a href="#kssref-alert-link" data-kss-guides="true">
-                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
-                      </svg>
-                    </a>
-                    <a href="#kssref-alert-link" data-kss-markup="true">
-                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
-                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
-                      </svg>
-                    </a>
-                  </p>
-              </summary>
-              <pre><code class="html">&lt;div pam-Alert&gt;
+                <details
+                    pam-skin="bg:gray:100"
+                    pam-space="mb:5"
+                    pam-border="w:2 gray:100"
+                    pam-position="relative">
+                    <summary
+                        pam-space="py:3 px:4"
+                        pam-outline="none"
+                        pam-user-select="none"
+                        pam-typography="body-2">
+                          Markup
+                  </summary>
+                    <div pam-position="absolute top:right" pam-space="m:2">
+                        <button pam-Button="flat sm" pam-size="min-w:0" data-clipboard-target="#markup-alert-link">
+                            Copy
+                        </button>
+                    </div>
+                  <pre pam-space="m:0"><code id="markup-alert-link" pam-skin="bg:gray:100" pam-space="px:4 py:2" pam-border="radius:t:none" class="html">&lt;div pam-Alert&gt;
     &lt;p&gt;This alert has a &lt;a pam-Alert-Link href&#x3D;&quot;#&quot;&gt;awesome link!&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-            </details>
-      </section>
-      <hr >
-      <section id="kssref-alert-close" class="kss-section kss-section--depth-2 ">
+                </details>
+          </section>
+          <section id="kssref-alert-close" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-alert-close">
+                  Close
+                </a>
+              </h3>
 
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-alert-close">
-              Close
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p><code>pam-Alert=&quot;closeable&quot;</code> Adds styling for closeable alert by expanding
+                <div>
+                  <p><code>pam-Alert=&quot;closeable&quot;</code> Adds styling for closeable alert by expanding
 the right padding and make place for the close icon position.</p>
+
+                </div>
 
             </div>
 
-        </div>
+              <div sg-modifier-wrapper=""
+                pam-border="lw:2 tw:2 rw:2 gray:100"
+                pam-space="p:4"
+                pam-group="">
 
-          <div class="kss-modifier__wrapper">
-
-            <div class="kss-modifier__example">
-              <div pam-Alert="closeable">
+                <div pam-space="" pam-clear="left">
+                  <div pam-Alert="closeable">
     <p><strong>Eyy!</strong> This alert can be terminated, awesome!</p>
     <div pam-Close="right">×</div>
 </div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
+                </div>
 
-          </div>
+              </div>
 
-            <details class="kss-markup kss-style">
-              <summary>
-                  Markup
-                  <p class="kss-toolbar">
-                      <a href="#kssref-alert-close" data-kss-fullscreen="kssref-alert-close">
-                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
-                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                      </a>
-                      <a href="item-alert-close.html" target="_blank">
-                        <span class="kss-toolbar__tooltip">Open in new window</span>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
-                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
-                        </svg>
-                      </a>
-                    <a href="#kssref-alert-close" data-kss-guides="true">
-                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
-                      </svg>
-                    </a>
-                    <a href="#kssref-alert-close" data-kss-markup="true">
-                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
-                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
-                      </svg>
-                    </a>
-                  </p>
-              </summary>
-              <pre><code class="html">&lt;div pam-Alert&#x3D;&quot;closeable&quot;&gt;
+                <details
+                    pam-skin="bg:gray:100"
+                    pam-space="mb:5"
+                    pam-border="w:2 gray:100"
+                    pam-position="relative">
+                    <summary
+                        pam-space="py:3 px:4"
+                        pam-outline="none"
+                        pam-user-select="none"
+                        pam-typography="body-2">
+                          Markup
+                  </summary>
+                    <div pam-position="absolute top:right" pam-space="m:2">
+                        <button pam-Button="flat sm" pam-size="min-w:0" data-clipboard-target="#markup-alert-close">
+                            Copy
+                        </button>
+                    </div>
+                  <pre pam-space="m:0"><code id="markup-alert-close" pam-skin="bg:gray:100" pam-space="px:4 py:2" pam-border="radius:t:none" class="html">&lt;div pam-Alert&#x3D;&quot;closeable&quot;&gt;
     &lt;p&gt;&lt;strong&gt;Eyy!&lt;/strong&gt; This alert can be terminated, awesome!&lt;/p&gt;
     &lt;div pam-Close&#x3D;&quot;right&quot;&gt;×&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-            </details>
-      </section>
-      <hr >
-      <section id="kssref-alert-fully-loaded" class="kss-section kss-section--depth-2 ">
+                </details>
+          </section>
+          <section id="kssref-alert-fully-loaded" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-alert-fully-loaded">
+                  Fully loaded
+                </a>
+              </h3>
 
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-alert-fully-loaded">
-              Fully loaded
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>Combine alert sub-objects, throw in a color modifier and add a transaprent divider
+                <div>
+                  <p>Combine alert sub-objects, throw in a color modifier and add a transaprent divider
 to create a <strong>fully loaded</strong> alert!</p>
+
+                </div>
 
             </div>
 
-        </div>
+              <div sg-modifier-wrapper=""
+                pam-border="lw:2 tw:2 rw:2 gray:100"
+                pam-space="p:4"
+                pam-group="">
 
-          <div class="kss-modifier__wrapper">
-
-            <div class="kss-modifier__example">
-              <div pam-Alert="info closeable">
+                <div pam-space="" pam-clear="left">
+                  <div pam-Alert="info closeable">
     <h1>Title</h1>
     <div pam-Close>×</div>
     <p><strong>Oh yeah</strong>, all alert features closeable, header and link.</p>
     <div pam-Divider="transparent"></div>
     <p>Well, <a pam-Alert-Link href="#">that´s just crazy!</a></p>
 </div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
+                </div>
 
-          </div>
+              </div>
 
-            <details class="kss-markup kss-style">
-              <summary>
-                  Markup
-                  <p class="kss-toolbar">
-                      <a href="#kssref-alert-fully-loaded" data-kss-fullscreen="kssref-alert-fully-loaded">
-                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
-                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                      </a>
-                      <a href="item-alert-fully-loaded.html" target="_blank">
-                        <span class="kss-toolbar__tooltip">Open in new window</span>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
-                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
-                        </svg>
-                      </a>
-                    <a href="#kssref-alert-fully-loaded" data-kss-guides="true">
-                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
-                      </svg>
-                    </a>
-                    <a href="#kssref-alert-fully-loaded" data-kss-markup="true">
-                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
-                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
-                      </svg>
-                    </a>
-                  </p>
-              </summary>
-              <pre><code class="html">&lt;div pam-Alert&#x3D;&quot;info closeable&quot;&gt;
+                <details
+                    pam-skin="bg:gray:100"
+                    pam-space="mb:5"
+                    pam-border="w:2 gray:100"
+                    pam-position="relative">
+                    <summary
+                        pam-space="py:3 px:4"
+                        pam-outline="none"
+                        pam-user-select="none"
+                        pam-typography="body-2">
+                          Markup
+                  </summary>
+                    <div pam-position="absolute top:right" pam-space="m:2">
+                        <button pam-Button="flat sm" pam-size="min-w:0" data-clipboard-target="#markup-alert-fully-loaded">
+                            Copy
+                        </button>
+                    </div>
+                  <pre pam-space="m:0"><code id="markup-alert-fully-loaded" pam-skin="bg:gray:100" pam-space="px:4 py:2" pam-border="radius:t:none" class="html">&lt;div pam-Alert&#x3D;&quot;info closeable&quot;&gt;
     &lt;h1&gt;Title&lt;/h1&gt;
     &lt;div pam-Close&gt;×&lt;/div&gt;
     &lt;p&gt;&lt;strong&gt;Oh yeah&lt;/strong&gt;, all alert features closeable, header and link.&lt;/p&gt;
     &lt;div pam-Divider&#x3D;&quot;transparent&quot;&gt;&lt;/div&gt;
     &lt;p&gt;Well, &lt;a pam-Alert-Link href&#x3D;&quot;#&quot;&gt;that´s just crazy!&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-            </details>
-      </section>
-      <hr >
-      <section id="kssref-alert-hooks" class="kss-section kss-section--depth-2 ">
+                </details>
+          </section>
+          <section id="kssref-alert-hooks" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-alert-hooks">
+                  Hooks
+                </a>
+              </h3>
 
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-alert-hooks">
-              Hooks
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p><code>.hook-alert</code>
+                <div>
+                  <p><code>.hook-alert</code>
 <code>.hook-alert-error</code>
 <code>.hook-alert-info</code>
 <code>.hook-alert-link</code>
@@ -866,23 +698,21 @@ to create a <strong>fully loaded</strong> alert!</p>
 <code>.hook-alert-success</code>
 <code>.hook-alert-warning</code></p>
 
+                </div>
+
             </div>
 
-        </div>
+          </section>
+          <section id="kssref-alert-variables" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-alert-variables">
+                  Variables
+                </a>
+              </h3>
 
-      </section>
-      <hr >
-      <section id="kssref-alert-variables" class="kss-section kss-section--depth-2 ">
-
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-alert-variables">
-              Variables
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>These are all the component specific variables that can be
+                <div>
+                  <p>These are all the component specific variables that can be
 used for customization.</p>
 <table pam-Table="horizontal">
     <thead>
@@ -1018,7 +848,7 @@ used for customization.</p>
        </tr>
          <tr>
            <td>@alert-link-font-weight</td>
-           <td><code>@font-weight-medium</code></td>
+           <td><code>@font-weight-bold</code></td>
        </tr>
          <tr>
            <td>@alert-large-padding</td>
@@ -1026,47 +856,35 @@ used for customization.</p>
        </tr>
     </tbody>
 </table>
+                </div>
+
             </div>
 
-        </div>
-
+          </section>
       </section>
-      <hr >
-  </main>
-</main>
-<footer sg-footer></footer>
+    </main>
 
-<!-- SCRIPTS -->
-<script src="kss-assets/kss.js"></script>
-<script src="kss-assets/kss-fullscreen.js"></script>
-<script src="kss-assets/kss-guides.js"></script>
-<script src="kss-assets/kss-markup.js"></script>
-<script src="kss-assets/js/highlight/highlight.pack.js"></script>
-<script src="kss-assets/scrollspy.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
+    <footer sg-footer></footer>
+    </div>
 
-  var spy = new ScrollSpy('#kss-node', {
-    nav: '.kss-nav__menu-child > li > a',
-    className: 'is-in-viewport'
-  });
-  var kssFullScreen = new KssFullScreen({
-    idPrefix: 'kss-fullscreen-',
-    bodyClass: 'kss-fullscreen-mode',
-    elementClass: 'is-fullscreen'
-  });
-  var kssGuides = new KssGuides({
-    bodyClass: 'kss-guides-mode'
-  });
-  var kssMarkup = new KssMarkup({
-    bodyClass: 'kss-markup-mode',
-    detailsClass: 'kss-markup'
-  });
-</script>
-<script src="kss-assets/js/animator.js"></script>
+    <!-- SCRIPTS -->
+    <script src="kss-assets/kss.js"></script>
+    <script src="kss-assets/js/highlight/highlight.pack.js"></script>
+    <script src="kss-assets/scrollspy.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+
+      var spy = new ScrollSpy('#sg-node', {
+        nav: '[pam-menu-list~="child"] > li > a',
+        className: 'is-in-viewport'
+      });
+
+      new ClipboardJS("[pam-Button]");
+    </script>
+    <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
+<script src="kss-assets/js/drawer.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
-
 
 
 </body>
