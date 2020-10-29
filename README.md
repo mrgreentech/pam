@@ -1,7 +1,5 @@
 # PAM
 
-[![Build Status](https://travis-ci.org/mrgreentech/pam.svg?branch=master)][travis-ci-link]
-
 ![](https://img.shields.io/npm/v/pam-css.svg) ![](https://img.shields.io/npm/v/pam-css/beta.svg) ![](https://img.shields.io/bower/v/pam.svg?colorB=%23008ed5) ![](https://img.shields.io/bower/vpre/pam.svg?colorB=008ed5)
 
 ![](https://img.shields.io/npm/l/pam-css.svg) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
@@ -9,7 +7,6 @@
 > PAM is a light and modular CSS library. Based and inspired by the Attribute Modules for CSS methodology (AMCSS).
 
 [style-guide-link]: https://mrgreentech.github.io/pam/
-[travis-ci-link]: https://travis-ci.org/mrgreentech/pam/
 
 ## Installation
 
