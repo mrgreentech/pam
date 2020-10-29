@@ -1,0 +1,42 @@
+// rfs(@size, @ratio)
+//
+// Generate responsive fonts for headings at a specific screen size.
+//
+// @size - Screen size to trigger from.
+// @ratio - Ratio to adjust.
+//
+// Style guide: mixins.rfs
+.rfs (@size, @ratio) {
+    [pam-rfs~="@{size}"] {
+        [pam-typography~="h1"],
+        h1 {
+            font-size: @typography-h1-font-size * @ratio !important;
+        }
+        [pam-typography~="h2"],
+        h2 {
+            font-size: @typography-h2-font-size * @ratio !important;
+        }
+        [pam-typography~="h3"],
+        h3 {
+            font-size: @typography-h3-font-size * @ratio !important;
+        }
+        [pam-typography~="h4"],
+        h4 {
+            font-size: @typography-h4-font-size * @ratio !important;
+        }
+        [pam-typography~="h5"],
+        h5 {
+            font-size: @typography-h5-font-size * @ratio !important;
+        }
+        [pam-typography~="h6"],
+        h6 {
+            font-size: @typography-h6-font-size * @ratio !important;
+        }
+        [pam-typography~="subtitle-1"] {
+            font-size: @typography-subtitle-1-font-size * @ratio !important;
+        }
+        [pam-typography~="subtitle-2"] {
+            font-size: @typography-subtitle-2-font-size * @ratio !important;
+        }
+    }
+}

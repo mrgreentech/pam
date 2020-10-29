@@ -8,283 +8,245 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/manifest.json">
-  <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="kss-assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="kss-assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="kss-assets/img/favicon-16x16.png">
+  <link rel="manifest" href="kss-assets/img/manifest.json">
+  <link rel="mask-icon" href="kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="/kss-assets/img/browserconfig.xml">
+  <meta name="msapplication-config" content="kss-assets/img/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="kss-assets/kss.css">
   <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-  {{!-- TODO: Add stylesheets dynamically, default or latest selected custom skin. --}}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   {{{styles}}}
+  <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
 </head>
-<body id="kss-node" {{#if template.isItem}}class="kss-fullscreen-mode"{{/if}} {{#if template.isHomepage}}sg-node="homepage"{{/if}}>
+<body>
 
-<header sg-header>
-  <div pam-Grid pam-Grid-Control="align:center">
-      <div pam-Unit="1-5">
-          <a href="./" sg-Link>
-            <img
-              src="kss-assets/img/logo.svg"
-              alt="PAM"
-              title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
-              height="48"
-              width="48"
-              sg-Logo>
-          </a>
-      </div>
-      <div pam-Unit="4-5">
-          <div pam-Menu sg-Nav>
-              <ul pam-Menu-List>
-                  <li pam-Menu-Item>
+<div id="sg-node" {{#if template.isHomepage}} pam-skin="bg:gray:100"{{/if}}
+    pam-rfs="md"
+    pam-size="max-w:xl"
+    pam-space="mx:auto"
+    pam-border="lw:px rw:px">
+    <header sg-header=""
+        pam-space="px:8 py:4"
+        pam-skin="bg:gray:100"
+        pam-position="sticky top"
+        {{#if template.isHomepage}} pam-border="bw:0" {{else}} pam-border="bw:px" {{/if}}>
+        <div pam-flex="middle between">
+            <button sg-drawer-button pam-button="circle flat lg" pam-hide="md:up">
+                <i class="material-icons" onclick="drawer.toggle()">menu</i>
+            </button>
+                <a href="./" pam-display="flex" pam-hide="sm:down">
+                    <img
+                    src="kss-assets/img/logo.svg"
+                    alt="PAM"
+                    title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
+                    height="48"
+                    width="48">
+                </a>
+              <div pam-hide="sm:down">
+                  <div pam-flex="right">
                     <a href="https://github.com/mrgreentech/pam/blob/legendary-grasshopper/CHANGELOG.md"  pam-Button="flat">Changelog</a>
-                  </li>
-                  <li pam-Menu-Item>
                     <a href="https://github.com/mrgreentech/pam/issues" pam-Button="flat">Issues</a>
-                  </li>
-                  <li pam-Menu-Item>
                     <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="raised">Download</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </div>
-</header>
-
-<main sg-main>
-  {{#if template.isHomepage}}
-    <article role="main" class="kss-main kss-homepage">
-    {{#if homepage}}
-      <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-        {{{homepage}}}
-      </div>
-    {{/if}}
-    </article>
-  {{else}}
-  <aside class="kss-sidebar kss-style">
-    <header class="kss-header">
-      <h1 class="kss-doc-title">Documentation</h1>
+                  </div>
+              </div>
+        </div>
     </header>
-    <nav class="kss-nav">
-      <ul class="kss-nav__menu">
-      {{#each menu}}
-        <li class="kss-nav__menu-item" {{#if isActive}}active{{/if}}>
-          <a class="kss-nav__menu-link" href="section-{{referenceURI}}.html">
-            <span class="kss-nav__ref">{{referenceNumber}}</span><span class="kss-nav__name">{{header}}</span>
-          </a>
-          {{#if isActive}}
-            {{#if children}}
-              <ul class="kss-nav__menu-child">
-              {{#each children}}
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
-                    <span class="kss-nav__ref {{#if isGrandChild}}kss-nav__ref-child{{/if}}">{{referenceNumber}}</span
-                    ><span class="kss-nav__name">{{header}}</span>
-                  </a>
-                </li>
-              {{/each}}
-              </ul>
-            {{/if}}
-          {{/if}}
-        </li>
-      {{/each}}
-      </ul>
-    </nav>
-  </aside>
-  <main role="main" class="kss-main">
-  {{#if template.isHomepage}}
-    {{#if homepage}}
-      <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-        {{{homepage}}}
-      </div>
-    {{/if}}
-  {{else}}
 
-    {{!
-      Display each section, in order.
+    <main sg-main pam-size="h:full" pam-overflow="y:auto" {{#if template.isHomepage}}pam-flex="middle center"{{/if}}>
+      {{#if template.isHomepage}}
+        <section role="main" pam-space="m:0">
+        {{#if homepage}}
+          <div id="kssref-0">
+            {{{homepage}}}
+          </div>
+        {{/if}}
+        </section>
+      {{else}}
+        <aside sg-drawer
+            pam-border="rw:px gray:400"
+            pam-skin="bg:white"
+            pam-overflow="y:auto x:hidden"
+            pam-size="w:16"
+            pam-z="2"
+            pam-space="px:3">
+          <header pam-space="mb:6">
+            <h6 pam-typography="h6" pam-space="px:5">Documentation</h6>
+          </header>
+          <nav pam-Menu="vertical">
+            <ul pam-Menu-List pam-size="w:full">
+            {{#each menu}}
+              <li pam-Menu-Item pam-size="h:40px" {{#if isActive}}active{{/if}}>
+                {{#if isActive}}
+                <a pam-Menu-Heading href="section-{{referenceURI}}.html">
+                  <span>{{header}}</span>
+                </a>
+                {{else}}
+                <a pam-Menu-Link pam-flex="middle" href="section-{{referenceURI}}.html">
+                  <span pam-hidden="">{{referenceNumber}}</span>
+                  <span>{{header}}</span>
+                </a>
+                {{/if}}
 
-      The "root" element comes first in this loop, and can be detected using
-      the "#if @first" block as seen below.
-    }}
-    {{#each sections}}
-      <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
-
-        <div class="kss-style">
-          <h{{depth}} class="kss-title kss-title--level-{{depth}}">
-            <a class="kss-title__permalink" href="#kssref-{{referenceURI}}">
-              {{header}}
-            </a>
-          </h{{depth}}>
-
-          {{#if description}}
-            <div class="kss-description">
-              {{{description}}}
-            </div>
-          {{/if}}
-
-          {{#if parameters}}
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-            {{#each parameters}}
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>{{name}}</code></div>
-                <div class="kss-parameters__description">
-                  {{{description}}}
-                  {{#if defaultValue}}
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>{{defaultValue}}</code>
-                    </div>
+                {{#if isActive}}
+                  {{#if children}}
+                    <ul pam-Menu-List="child sm" pam-display="block">
+                    <div pam-Divider pam-space="mb:2"></div>
+                    {{#each children}}
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}" onclick="drawer.toggle()">
+                            <span>{{header}}</span>
+                        </a>
+                      </li>
+                    {{/each}}
+                    <div pam-Divider pam-space="my:2"></div>
+                    </ul>
                   {{/if}}
-                </div>
+                {{/if}}
               </li>
             {{/each}}
             </ul>
-          {{/if}}
-        </div>
+          </nav>
+        </aside>
+        <div sg-drawer-overlay
+            pam-hidden=""
+            pam-hide="md:up"
+            pam-z="1"
+            pam-position="fixed cover"
+            pam-overlay="dark"
+            onclick="drawer.toggle()"></div>
 
-        {{#if example}}
-          <div class="kss-modifier__wrapper">
-            {{#if modifiers}}
-              <div class="kss-modifier__default-name kss-style">
-                Default styling
-              </div>
-            {{/if}}
+        <section sg-content="" pam-overflow="x:hidden">
+        {{!
+          Display each section, in order.
 
-            <div class="kss-modifier__example">
-              {{{example}}}
-              <div class="kss-modifier__example-footer"></div>
+          The "root" element comes first in this loop, and can be detected using
+          the "#if @first" block as seen below.
+        }}
+        {{#each sections}}
+          <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section--depth-{{depth}}" pam-space="mb:6">
+            <div>
+              <h{{inc depth}} class="kss-title--level-{{depth}}" pam-typography="h{{inc depth}}">
+                <a pam-link="" sg-link="perma" href="#kssref-{{referenceURI}}">
+                  {{header}}
+                </a>
+              </h{{inc depth}}>
+
+              {{#if description}}
+                <div>
+                  {{{description}}}
+                </div>
+              {{/if}}
+
+              {{#if parameters}}
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                {{#each parameters}}
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>{{name}}</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      {{{description}}}
+                      {{#if defaultValue}}
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">{{defaultValue}}</code>
+                        </div>
+                      {{/if}}
+                    </div>
+                  </li>
+                {{/each}}
+                </ul>
+              {{/if}}
             </div>
 
-            {{#each modifiers}}
-              <div class="kss-modifier__name kss-style">
-                {{name}}
-              </div>
-              <div class="kss-modifier__description kss-style">
-                {{{description}}}
-              </div>
-              <div class="kss-modifier__example">
-                {{{markup}}}
-                <div class="kss-modifier__example-footer"></div>
-              </div>
-            {{/each}}
-          </div>
-
-          {{#if markup}}
-            <details class="kss-markup kss-style">
-              <summary>
-                {{#if markupFile }}
-                  Markup: <code>{{ markupFile }}</code>
-                {{else}}
-                  Markup
+            {{#if example}}
+              <div sg-modifier-wrapper=""
+                pam-border="lw:2 tw:2 rw:2 gray:100"
+                pam-space="p:4"
+                pam-group="">
+                {{#if modifiers}}
+                    <div pam-space="mb:4">
+                        <b>Default styling</b>
+                    </div >
                 {{/if}}
-                {{#if example}}
-                  <p class="kss-toolbar">
-                    {{#unless @root.template.isItem}}
-                      <a href="#kssref-{{referenceURI}}" data-kss-fullscreen="kssref-{{referenceURI}}">
-                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
-                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                      </a>
-                      <a href="item-{{referenceURI}}.html" target="_blank">
-                        <span class="kss-toolbar__tooltip">Open in new window</span>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
-                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
-                        </svg>
-                      </a>
-                    {{/unless}}
-                    <a href="#kssref-{{referenceURI}}" data-kss-guides="true">
-                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
-                      </svg>
-                    </a>
-                    <a href="#kssref-{{referenceURI}}" data-kss-markup="true">
-                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
-                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
-                      </svg>
-                    </a>
-                  </p>
-                {{/if}}
-              </summary>
-              <pre><code class="html">{{markup}}</code></pre>
-            </details>
-          {{/if}}
-        {{/if}}
-      </{{#if @first}}div{{else}}section{{/if}}>
-      <hr >
-    {{/each}}
-  {{/if}}
-  </main>
-  {{/if}}
-</main>
-<footer sg-footer></footer>
 
-<!-- SCRIPTS -->
-<script src="kss-assets/kss.js"></script>
-<script src="kss-assets/kss-fullscreen.js"></script>
-<script src="kss-assets/kss-guides.js"></script>
-<script src="kss-assets/kss-markup.js"></script>
-<script src="kss-assets/js/highlight/highlight.pack.js"></script>
-<script src="kss-assets/scrollspy.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
+                <div pam-space="" pam-clear="left">
+                  {{{example}}}
+                </div>
 
-  var spy = new ScrollSpy('#kss-node', {
-    nav: '.kss-nav__menu-child > li > a',
-    className: 'is-in-viewport'
-  });
-  var kssFullScreen = new KssFullScreen({
-    idPrefix: 'kss-fullscreen-',
-    bodyClass: 'kss-fullscreen-mode',
-    elementClass: 'is-fullscreen'
-  });
-  var kssGuides = new KssGuides({
-    bodyClass: 'kss-guides-mode'
-  });
-  var kssMarkup = new KssMarkup({
-    bodyClass: 'kss-markup-mode',
-    detailsClass: 'kss-markup'
-  });
-</script>
-{{{scripts}}}
+                {{#each modifiers}}
+                  <div pam-space="mt:4 mb:4">
+                      <div pam-space="pr:3" pam-float="left">
+                        <b>{{name}}</b>
+                      </div>
+                      <div>
+                        {{{description}}}
+                      </div>
+                  </div>
+                  <div pam-space="mb:5" pam-clear="left">
+                    {{{markup}}}
+                  </div>
+                {{/each}}
+              </div>
 
-{{! This will only be included in the demo page. }}
-{{#if options.demo}}
-  <footer></footer>
-{{/if}}
+              {{#if markup}}
+                <details
+                    pam-skin="bg:gray:100"
+                    pam-space="mb:5"
+                    pam-border="w:2 gray:100"
+                    pam-position="relative">
+                    <summary
+                        pam-space="py:3 px:4"
+                        pam-outline="none"
+                        pam-user-select="none"
+                        pam-typography="body-2">
+                        {{#if markupFile }}
+                          Markup: <code>{{ markupFile }}</code>
+                        {{else}}
+                          Markup
+                        {{/if}}
+                        {{#if example}}
+                        {{/if}}
+                  </summary>
+                    <div pam-position="absolute top:right" pam-space="m:2">
+                        <button pam-Button="flat sm" pam-size="min-w:0" data-clipboard-target="#markup-{{referenceURI}}">
+                            Copy
+                        </button>
+                    </div>
+                  <pre pam-space="m:0"><code id="markup-{{referenceURI}}" pam-skin="bg:gray:100" pam-space="px:4 py:2" pam-border="radius:t:none" class="html">{{markup}}</code></pre>
+                </details>
+              {{/if}}
+            {{/if}}
+          </{{#if @first}}div{{else}}section{{/if}}>
+         {{!--  <hr pam-Divider> --}}
+        {{/each}}
+      </section>
+      {{/if}}
+    </main>
+
+    <footer sg-footer></footer>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="kss-assets/kss.js"></script>
+    <script src="kss-assets/js/highlight/highlight.pack.js"></script>
+    <script src="kss-assets/scrollspy.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+
+      var spy = new ScrollSpy('#sg-node', {
+        nav: '[pam-menu-list~="child"] > li > a',
+        className: 'is-in-viewport'
+      });
+
+      new ClipboardJS("[pam-Button]");
+    </script>
+    {{{scripts}}}
 
 </body>
 </html>

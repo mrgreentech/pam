@@ -5,7 +5,7 @@ const { pkg, paths, files, banner, browserSyncConfig, kssConfig } = require("./b
 
 // Modules
 const { src, dest, series, parallel, watch } = require("gulp");
-const babel = require("gulp-babel");
+// const babel = require("gulp-babel");
 const banners = require("gulp-banner");
 const cleanCss = require("gulp-clean-css");
 const concat = require("gulp-concat");
@@ -55,9 +55,7 @@ function concatBase() {
 
 // Add variables documentation
 function variablesDocs() {
-    return src(paths.src.lessGlob)
-        .pipe(lessVarsToSG())
-        .pipe(dest(paths.build.less));
+    return src(paths.src.lessGlob).pipe(lessVarsToSG()).pipe(dest(paths.build.less));
 }
 
 // Styles
@@ -96,6 +94,7 @@ function cssLint() {
     return src(paths.src.lessGlob).pipe(
         stylelint({
             failAfterError: true,
+            fix: true,
             reporters: [{ formatter: "string", console: true }]
         })
     );
@@ -103,17 +102,16 @@ function cssLint() {
 
 // Scripts
 function js() {
-    return src([paths.src.jsGlob])
-        .pipe(plumber())
-        .pipe(babel())
-        .pipe(dest(paths.build.styleguideJs));
+    return (
+        src([paths.src.jsGlob])
+            .pipe(plumber())
+            // .pipe(babel())
+            .pipe(dest(paths.build.styleguideJs))
+    );
 }
 
 function jsLint() {
-    return src([paths.src.jsGlob, "gulpfile.js"])
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError());
+    return src([paths.src.jsGlob, "gulpfile.js"]).pipe(eslint()).pipe(eslint.format()).pipe(eslint.failAfterError());
 }
 
 // Style guide
@@ -158,9 +156,9 @@ const styles = series(cssLint, css);
 const scripts = series(jsLint, js);
 const stylesAndScripts = parallel(styles, scripts);
 const buildStyleguide = series(copyCssToSG, styleguide, replaceVersion);
-const build = series(cleanBuild, copyBuild, variablesDocs, concatBase, stylesAndScripts, buildStyleguide, sizeReport);
+const build = series(cleanBuild, copyBuild, variablesDocs, concatBase, stylesAndScripts, buildStyleguide);
 const buildDev = series(copyBuild, variablesDocs, concatBase, stylesAndScripts, buildStyleguide);
-const dev = series(build, parallel(watchFiles, serve));
+const dev = series(build, sizeReport, parallel(watchFiles, serve));
 const dist = series(parallel(cleanDist, build), copyDist);
 
 // Export tasks

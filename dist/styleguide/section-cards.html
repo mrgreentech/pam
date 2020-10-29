@@ -8,379 +8,397 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/manifest.json">
-  <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="kss-assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="kss-assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="kss-assets/img/favicon-16x16.png">
+  <link rel="manifest" href="kss-assets/img/manifest.json">
+  <link rel="mask-icon" href="kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="/kss-assets/img/browserconfig.xml">
+  <meta name="msapplication-config" content="kss-assets/img/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="kss-assets/kss.css">
   <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
-<link rel="stylesheet" href="kss-assets/css/pam.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css"/>
+<link rel="stylesheet" href="kss-assets/css/pam.css"/>
 
+  <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
 </head>
-<body id="kss-node"  >
+<body>
 
-<header sg-header>
-  <div pam-Grid pam-Grid-Control="align:center">
-      <div pam-Unit="1-5">
-          <a href="./" sg-Link>
-            <img
-              src="kss-assets/img/logo.svg"
-              alt="PAM"
-              title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
-              height="48"
-              width="48"
-              sg-Logo>
-          </a>
-      </div>
-      <div pam-Unit="4-5">
-          <div pam-Menu sg-Nav>
-              <ul pam-Menu-List>
-                  <li pam-Menu-Item>
+<div id="sg-node" 
+    pam-rfs="md"
+    pam-size="max-w:xl"
+    pam-space="mx:auto"
+    pam-border="lw:px rw:px">
+    <header sg-header=""
+        pam-space="px:8 py:4"
+        pam-skin="bg:gray:100"
+        pam-position="sticky top"
+         pam-border="bw:px" >
+        <div pam-flex="middle between">
+            <button sg-drawer-button pam-button="circle flat lg" pam-hide="md:up">
+                <i class="material-icons" onclick="drawer.toggle()">menu</i>
+            </button>
+                <a href="./" pam-display="flex" pam-hide="sm:down">
+                    <img
+                    src="kss-assets/img/logo.svg"
+                    alt="PAM"
+                    title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
+                    height="48"
+                    width="48">
+                </a>
+              <div pam-hide="sm:down">
+                  <div pam-flex="right">
                     <a href="https://github.com/mrgreentech/pam/blob/legendary-grasshopper/CHANGELOG.md"  pam-Button="flat">Changelog</a>
-                  </li>
-                  <li pam-Menu-Item>
                     <a href="https://github.com/mrgreentech/pam/issues" pam-Button="flat">Issues</a>
-                  </li>
-                  <li pam-Menu-Item>
                     <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="raised">Download</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </div>
-</header>
-
-<main sg-main>
-  <aside class="kss-sidebar kss-style">
-    <header class="kss-header">
-      <h1 class="kss-doc-title">Documentation</h1>
+                  </div>
+              </div>
+        </div>
     </header>
-    <nav class="kss-nav">
-      <ul class="kss-nav__menu">
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-getting-started.html">
-            <span class="kss-nav__ref">1</span><span class="kss-nav__name">Getting started</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-setup.html">
-            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Setup</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-general.html">
-            <span class="kss-nav__ref">3</span><span class="kss-nav__name">General</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-grids.html">
-            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Grids</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-skin.html">
-            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Skin</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-typography.html">
-            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Typography</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-forms.html">
-            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Forms</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-buttons.html">
-            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Buttons</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" active>
-          <a class="kss-nav__menu-link" href="section-cards.html">
-            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Cards</span>
-          </a>
-              <ul class="kss-nav__menu-child">
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-cards.html#kssref-cards-basic">
-                    <span class="kss-nav__ref ">9.1</span
-                    ><span class="kss-nav__name">Basic</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-cards.html#kssref-cards-header">
-                    <span class="kss-nav__ref ">9.2</span
-                    ><span class="kss-nav__name">Header</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-cards.html#kssref-cards-media">
-                    <span class="kss-nav__ref ">9.3</span
-                    ><span class="kss-nav__name">Media</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-cards.html#kssref-cards-hooks">
-                    <span class="kss-nav__ref ">9.4</span
-                    ><span class="kss-nav__name">Hooks</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-cards.html#kssref-cards-variables">
-                    <span class="kss-nav__ref ">9.5</span
-                    ><span class="kss-nav__name">Variables</span>
-                  </a>
-                </li>
-              </ul>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-tables.html">
-            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Tables</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-menus.html">
-            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Menus</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-alert.html">
-            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Alert</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-divider.html">
-            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Divider</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-links.html">
-            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Link</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-lists.html">
-            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Lists</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-tags.html">
-            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Tags</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-column.html">
-            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Column</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-progress.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-overlay.html">
-            <span class="kss-nav__ref">19</span><span class="kss-nav__name">Overlay</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-traits.html">
-            <span class="kss-nav__ref">20</span><span class="kss-nav__name">Traits</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-mixins.html">
-            <span class="kss-nav__ref">21</span><span class="kss-nav__name">Mixins</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </aside>
-  <main role="main" class="kss-main">
 
-      <div id="kssref-cards" class="kss-section kss-section--depth-1 ">
+    <main sg-main pam-size="h:full" pam-overflow="y:auto" >
+        <aside sg-drawer
+            pam-border="rw:px gray:400"
+            pam-skin="bg:white"
+            pam-overflow="y:auto x:hidden"
+            pam-size="w:16"
+            pam-z="2"
+            pam-space="px:3">
+          <header pam-space="mb:6">
+            <h6 pam-typography="h6" pam-space="px:5">Documentation</h6>
+          </header>
+          <nav pam-Menu="vertical">
+            <ul pam-Menu-List pam-size="w:full">
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-getting-started.html">
+                  <span pam-hidden="">1</span>
+                  <span>Getting started</span>
+                </a>
 
-        <div class="kss-style">
-          <h1 class="kss-title kss-title--level-1">
-            <a class="kss-title__permalink" href="#kssref-cards">
-              Cards
-            </a>
-          </h1>
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-setup.html">
+                  <span pam-hidden="">2</span>
+                  <span>Setup</span>
+                </a>
 
-            <div class="kss-description">
-              <p>Elements that display content and actions on a single context can be called cards.
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-general.html">
+                  <span pam-hidden="">3</span>
+                  <span>General</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-grids.html">
+                  <span pam-hidden="">4</span>
+                  <span>Grids</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-skin.html">
+                  <span pam-hidden="">5</span>
+                  <span>Skin</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-typography.html">
+                  <span pam-hidden="">6</span>
+                  <span>Typography</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-forms.html">
+                  <span pam-hidden="">7</span>
+                  <span>Forms</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-buttons.html">
+                  <span pam-hidden="">8</span>
+                  <span>Buttons</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" active>
+                <a pam-Menu-Heading href="section-cards.html">
+                  <span>Cards</span>
+                </a>
+
+                    <ul pam-Menu-List="child sm" pam-display="block">
+                    <div pam-Divider pam-space="mb:2"></div>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-cards.html#kssref-cards-basic" onclick="drawer.toggle()">
+                            <span>Basic</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-cards.html#kssref-cards-header" onclick="drawer.toggle()">
+                            <span>Header</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-cards.html#kssref-cards-media" onclick="drawer.toggle()">
+                            <span>Media</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-cards.html#kssref-cards-hooks" onclick="drawer.toggle()">
+                            <span>Hooks</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-cards.html#kssref-cards-variables" onclick="drawer.toggle()">
+                            <span>Variables</span>
+                        </a>
+                      </li>
+                    <div pam-Divider pam-space="my:2"></div>
+                    </ul>
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-tables.html">
+                  <span pam-hidden="">10</span>
+                  <span>Tables</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-menus.html">
+                  <span pam-hidden="">11</span>
+                  <span>Menus</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-alert.html">
+                  <span pam-hidden="">12</span>
+                  <span>Alert</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-divider.html">
+                  <span pam-hidden="">13</span>
+                  <span>Divider</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-links.html">
+                  <span pam-hidden="">14</span>
+                  <span>Link</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-lists.html">
+                  <span pam-hidden="">15</span>
+                  <span>Lists</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-tags.html">
+                  <span pam-hidden="">16</span>
+                  <span>Tags</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-column.html">
+                  <span pam-hidden="">17</span>
+                  <span>Column</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-progress.html">
+                  <span pam-hidden="">18</span>
+                  <span>Progress</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-overlay.html">
+                  <span pam-hidden="">19</span>
+                  <span>Overlay</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-traits.html">
+                  <span pam-hidden="">20</span>
+                  <span>Traits</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-mixins.html">
+                  <span pam-hidden="">21</span>
+                  <span>Mixins</span>
+                </a>
+
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <div sg-drawer-overlay
+            pam-hidden=""
+            pam-hide="md:up"
+            pam-z="1"
+            pam-position="fixed cover"
+            pam-overlay="dark"
+            onclick="drawer.toggle()"></div>
+
+        <section sg-content="" pam-overflow="x:hidden">
+          <div id="kssref-cards" class="kss-section--depth-1" pam-space="mb:6">
+            <div>
+              <h2 class="kss-title--level-1" pam-typography="h2">
+                <a pam-link="" sg-link="perma" href="#kssref-cards">
+                  Cards
+                </a>
+              </h2>
+
+                <div>
+                  <p>Elements that display content and actions on a single context can be called cards.
 Text and images, should be used in a way that clearly indicates intention.
 Content can be ordered in different ways and the card it self can have different
 states.</p>
 
+                </div>
+
             </div>
 
-        </div>
+              <div sg-modifier-wrapper=""
+                pam-border="lw:2 tw:2 rw:2 gray:100"
+                pam-space="p:4"
+                pam-group="">
+                    <div pam-space="mb:4">
+                        <b>Default styling</b>
+                    </div >
 
-          <div class="kss-modifier__wrapper">
-              <div class="kss-modifier__default-name kss-style">
-                Default styling
-              </div>
-
-            <div class="kss-modifier__example">
-              <div pam-Card="">
+                <div pam-space="" pam-clear="left">
+                  <div pam-Card="">
     <section pam-Card-Primary-Action>
         <div pam-Card-Primary>
-            <h1 pam-Typography="title"> Card</h1>
-            <p pam-Typography="body-1">
+            <h6 pam-Typography="h6"> Card</h6>
+            <p pam-Typography="body-2">
              Text to summarize and describe what the card is all about.
             </p>
         </div>
     </section>
 </div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
+                </div>
 
-              <div class="kss-modifier__name kss-style">
-                raised
-              </div>
-              <div class="kss-modifier__description kss-style">
-                Raises the card by applying a larger shadow.
-              </div>
-              <div class="kss-modifier__example">
-                <div pam-Card="raised">
+                  <div pam-space="mt:4 mb:4">
+                      <div pam-space="pr:3" pam-float="left">
+                        <b>raised</b>
+                      </div>
+                      <div>
+                        Raises the card by applying a larger shadow.
+                      </div>
+                  </div>
+                  <div pam-space="mb:5" pam-clear="left">
+                    <div pam-Card="raised">
     <section pam-Card-Primary-Action>
         <div pam-Card-Primary>
-            <h1 pam-Typography="title"> Card</h1>
-            <p pam-Typography="body-1">
+            <h6 pam-Typography="h6"> Card</h6>
+            <p pam-Typography="body-2">
              Text to summarize and describe what the card is all about.
             </p>
         </div>
     </section>
 </div>
-                <div class="kss-modifier__example-footer"></div>
-              </div>
-              <div class="kss-modifier__name kss-style">
-                flat
-              </div>
-              <div class="kss-modifier__description kss-style">
-                No shadow.
-              </div>
-              <div class="kss-modifier__example">
-                <div pam-Card="flat">
+                  </div>
+                  <div pam-space="mt:4 mb:4">
+                      <div pam-space="pr:3" pam-float="left">
+                        <b>flat</b>
+                      </div>
+                      <div>
+                        No shadow.
+                      </div>
+                  </div>
+                  <div pam-space="mb:5" pam-clear="left">
+                    <div pam-Card="flat">
     <section pam-Card-Primary-Action>
         <div pam-Card-Primary>
-            <h1 pam-Typography="title"> Card</h1>
-            <p pam-Typography="body-1">
+            <h6 pam-Typography="h6"> Card</h6>
+            <p pam-Typography="body-2">
              Text to summarize and describe what the card is all about.
             </p>
         </div>
     </section>
 </div>
-                <div class="kss-modifier__example-footer"></div>
+                  </div>
               </div>
-          </div>
 
-            <details class="kss-markup kss-style">
-              <summary>
-                  Markup
-                  <p class="kss-toolbar">
-                      <a href="#kssref-cards" data-kss-fullscreen="kssref-cards">
-                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
-                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                      </a>
-                      <a href="item-cards.html" target="_blank">
-                        <span class="kss-toolbar__tooltip">Open in new window</span>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
-                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
-                        </svg>
-                      </a>
-                    <a href="#kssref-cards" data-kss-guides="true">
-                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
-                      </svg>
-                    </a>
-                    <a href="#kssref-cards" data-kss-markup="true">
-                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
-                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
-                      </svg>
-                    </a>
-                  </p>
-              </summary>
-              <pre><code class="html">&lt;div pam-Card&#x3D;&quot;[modifier]&quot;&gt;
+                <details
+                    pam-skin="bg:gray:100"
+                    pam-space="mb:5"
+                    pam-border="w:2 gray:100"
+                    pam-position="relative">
+                    <summary
+                        pam-space="py:3 px:4"
+                        pam-outline="none"
+                        pam-user-select="none"
+                        pam-typography="body-2">
+                          Markup
+                  </summary>
+                    <div pam-position="absolute top:right" pam-space="m:2">
+                        <button pam-Button="flat sm" pam-size="min-w:0" data-clipboard-target="#markup-cards">
+                            Copy
+                        </button>
+                    </div>
+                  <pre pam-space="m:0"><code id="markup-cards" pam-skin="bg:gray:100" pam-space="px:4 py:2" pam-border="radius:t:none" class="html">&lt;div pam-Card&#x3D;&quot;[modifier]&quot;&gt;
     &lt;section pam-Card-Primary-Action&gt;
         &lt;div pam-Card-Primary&gt;
-            &lt;h1 pam-Typography&#x3D;&quot;title&quot;&gt; Card&lt;/h1&gt;
-            &lt;p pam-Typography&#x3D;&quot;body-1&quot;&gt;
+            &lt;h6 pam-Typography&#x3D;&quot;h6&quot;&gt; Card&lt;/h6&gt;
+            &lt;p pam-Typography&#x3D;&quot;body-2&quot;&gt;
              Text to summarize and describe what the card is all about.
             &lt;/p&gt;
         &lt;/div&gt;
     &lt;/section&gt;
 &lt;/div&gt;</code></pre>
-            </details>
-      </div>
-      <hr >
-      <section id="kssref-cards-basic" class="kss-section kss-section--depth-2 ">
+                </details>
+          </div>
+          <section id="kssref-cards-basic" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-cards-basic">
+                  Basic
+                </a>
+              </h3>
 
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-cards-basic">
-              Basic
-            </a>
-          </h2>
+                <div>
+                  <p>A basic card</p>
 
-            <div class="kss-description">
-              <p>A basic card</p>
+                </div>
 
             </div>
 
-        </div>
+              <div sg-modifier-wrapper=""
+                pam-border="lw:2 tw:2 rw:2 gray:100"
+                pam-space="p:4"
+                pam-group="">
 
-          <div class="kss-modifier__wrapper">
-
-            <div class="kss-modifier__example">
-              <div pam-Card>
+                <div pam-space="" pam-clear="left">
+                  <div pam-Card>
     <section pam-Card-Primary-Action>
         <div pam-Card-Media style='background-image: url("https://placekeanu.com/350/200");'>
         </div>
         <div pam-Card-Primary>
-            <h1 pam-Typography="title">Keanu Reeves</h1>
-            <p pam-Typography="body-1">By Chuck Norris</p>
+            <h6 pam-Typography="h6" pam-space="mb:1">Keanu Reeves</h6>
+            <p pam-Typography="body-2">By Chuck Norris</p>
         </div>
-        <div pam-Card-Secondary pam-Typography="body-1">
+        <div pam-Card-Secondary pam-Typography="body-2">
         Put some text here to summarize and describe what the card is all about.
         </div>
     </section>
@@ -398,74 +416,36 @@ states.</p>
             </button>
     </section>
 </div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
+                </div>
 
-          </div>
+              </div>
 
-            <details class="kss-markup kss-style">
-              <summary>
-                  Markup
-                  <p class="kss-toolbar">
-                      <a href="#kssref-cards-basic" data-kss-fullscreen="kssref-cards-basic">
-                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
-                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                      </a>
-                      <a href="item-cards-basic.html" target="_blank">
-                        <span class="kss-toolbar__tooltip">Open in new window</span>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
-                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
-                        </svg>
-                      </a>
-                    <a href="#kssref-cards-basic" data-kss-guides="true">
-                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
-                      </svg>
-                    </a>
-                    <a href="#kssref-cards-basic" data-kss-markup="true">
-                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
-                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
-                      </svg>
-                    </a>
-                  </p>
-              </summary>
-              <pre><code class="html">&lt;div pam-Card&gt;
+                <details
+                    pam-skin="bg:gray:100"
+                    pam-space="mb:5"
+                    pam-border="w:2 gray:100"
+                    pam-position="relative">
+                    <summary
+                        pam-space="py:3 px:4"
+                        pam-outline="none"
+                        pam-user-select="none"
+                        pam-typography="body-2">
+                          Markup
+                  </summary>
+                    <div pam-position="absolute top:right" pam-space="m:2">
+                        <button pam-Button="flat sm" pam-size="min-w:0" data-clipboard-target="#markup-cards-basic">
+                            Copy
+                        </button>
+                    </div>
+                  <pre pam-space="m:0"><code id="markup-cards-basic" pam-skin="bg:gray:100" pam-space="px:4 py:2" pam-border="radius:t:none" class="html">&lt;div pam-Card&gt;
     &lt;section pam-Card-Primary-Action&gt;
         &lt;div pam-Card-Media style&#x3D;&#x27;background-image: url(&quot;https://placekeanu.com/350/200&quot;);&#x27;&gt;
         &lt;/div&gt;
         &lt;div pam-Card-Primary&gt;
-            &lt;h1 pam-Typography&#x3D;&quot;title&quot;&gt;Keanu Reeves&lt;/h1&gt;
-            &lt;p pam-Typography&#x3D;&quot;body-1&quot;&gt;By Chuck Norris&lt;/p&gt;
+            &lt;h6 pam-Typography&#x3D;&quot;h6&quot; pam-space&#x3D;&quot;mb:1&quot;&gt;Keanu Reeves&lt;/h6&gt;
+            &lt;p pam-Typography&#x3D;&quot;body-2&quot;&gt;By Chuck Norris&lt;/p&gt;
         &lt;/div&gt;
-        &lt;div pam-Card-Secondary pam-Typography&#x3D;&quot;body-1&quot;&gt;
+        &lt;div pam-Card-Secondary pam-Typography&#x3D;&quot;body-2&quot;&gt;
         Put some text here to summarize and describe what the card is all about.
         &lt;/div&gt;
     &lt;/section&gt;
@@ -483,37 +463,38 @@ states.</p>
             &lt;/button&gt;
     &lt;/section&gt;
 &lt;/div&gt;</code></pre>
-            </details>
-      </section>
-      <hr >
-      <section id="kssref-cards-header" class="kss-section kss-section--depth-2 ">
+                </details>
+          </section>
+          <section id="kssref-cards-header" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-cards-header">
+                  Header
+                </a>
+              </h3>
 
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-cards-header">
-              Header
-            </a>
-          </h2>
+                <div>
+                  <p>Card with header.</p>
 
-            <div class="kss-description">
-              <p>Card with header.</p>
+                </div>
 
             </div>
 
-        </div>
+              <div sg-modifier-wrapper=""
+                pam-border="lw:2 tw:2 rw:2 gray:100"
+                pam-space="p:4"
+                pam-group="">
 
-          <div class="kss-modifier__wrapper">
-
-            <div class="kss-modifier__example">
-              <div pam-Card>
+                <div pam-space="" pam-clear="left">
+                  <div pam-Card>
     <section pam-Card-Primary-Action>
         <div pam-Card-Primary>
-            <h1 pam-Typography="title">Keanu Reeves</h1>
-            <p pam-Typography="body-1">By Chuck Norris</p>
+            <h6 pam-Typography="h6" pam-space="mb:1">Keanu Reeves</h6>
+            <p pam-Typography="body-2">By Chuck Norris</p>
         </div>
         <div pam-Card-Media style='background-image: url("https://placekeanu.com/350/200");'>
         </div>
-        <div pam-Card-Secondary pam-Typography="body-1">
+        <div pam-Card-Secondary pam-Typography="body-2">
             Put some text here to summarize and describe what the card is all about.
         </div>
     </section>
@@ -531,74 +512,36 @@ states.</p>
             </button>
     </section>
 </div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
+                </div>
 
-          </div>
+              </div>
 
-            <details class="kss-markup kss-style">
-              <summary>
-                  Markup
-                  <p class="kss-toolbar">
-                      <a href="#kssref-cards-header" data-kss-fullscreen="kssref-cards-header">
-                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
-                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                      </a>
-                      <a href="item-cards-header.html" target="_blank">
-                        <span class="kss-toolbar__tooltip">Open in new window</span>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
-                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
-                        </svg>
-                      </a>
-                    <a href="#kssref-cards-header" data-kss-guides="true">
-                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
-                      </svg>
-                    </a>
-                    <a href="#kssref-cards-header" data-kss-markup="true">
-                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
-                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
-                      </svg>
-                    </a>
-                  </p>
-              </summary>
-              <pre><code class="html">&lt;div pam-Card&gt;
+                <details
+                    pam-skin="bg:gray:100"
+                    pam-space="mb:5"
+                    pam-border="w:2 gray:100"
+                    pam-position="relative">
+                    <summary
+                        pam-space="py:3 px:4"
+                        pam-outline="none"
+                        pam-user-select="none"
+                        pam-typography="body-2">
+                          Markup
+                  </summary>
+                    <div pam-position="absolute top:right" pam-space="m:2">
+                        <button pam-Button="flat sm" pam-size="min-w:0" data-clipboard-target="#markup-cards-header">
+                            Copy
+                        </button>
+                    </div>
+                  <pre pam-space="m:0"><code id="markup-cards-header" pam-skin="bg:gray:100" pam-space="px:4 py:2" pam-border="radius:t:none" class="html">&lt;div pam-Card&gt;
     &lt;section pam-Card-Primary-Action&gt;
         &lt;div pam-Card-Primary&gt;
-            &lt;h1 pam-Typography&#x3D;&quot;title&quot;&gt;Keanu Reeves&lt;/h1&gt;
-            &lt;p pam-Typography&#x3D;&quot;body-1&quot;&gt;By Chuck Norris&lt;/p&gt;
+            &lt;h6 pam-Typography&#x3D;&quot;h6&quot; pam-space&#x3D;&quot;mb:1&quot;&gt;Keanu Reeves&lt;/h6&gt;
+            &lt;p pam-Typography&#x3D;&quot;body-2&quot;&gt;By Chuck Norris&lt;/p&gt;
         &lt;/div&gt;
         &lt;div pam-Card-Media style&#x3D;&#x27;background-image: url(&quot;https://placekeanu.com/350/200&quot;);&#x27;&gt;
         &lt;/div&gt;
-        &lt;div pam-Card-Secondary pam-Typography&#x3D;&quot;body-1&quot;&gt;
+        &lt;div pam-Card-Secondary pam-Typography&#x3D;&quot;body-2&quot;&gt;
             Put some text here to summarize and describe what the card is all about.
         &lt;/div&gt;
     &lt;/section&gt;
@@ -616,39 +559,40 @@ states.</p>
             &lt;/button&gt;
     &lt;/section&gt;
 &lt;/div&gt;</code></pre>
-            </details>
-      </section>
-      <hr >
-      <section id="kssref-cards-media" class="kss-section kss-section--depth-2 ">
+                </details>
+          </section>
+          <section id="kssref-cards-media" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-cards-media">
+                  Media
+                </a>
+              </h3>
 
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-cards-media">
-              Media
-            </a>
-          </h2>
+                <div>
+                  <p>Card with text over media.</p>
 
-            <div class="kss-description">
-              <p>Card with text over media.</p>
+                </div>
 
             </div>
 
-        </div>
+              <div sg-modifier-wrapper=""
+                pam-border="lw:2 tw:2 rw:2 gray:100"
+                pam-space="p:4"
+                pam-group="">
 
-          <div class="kss-modifier__wrapper">
-
-            <div class="kss-modifier__example">
-              <div pam-Card>
+                <div pam-space="" pam-clear="left">
+                  <div pam-Card>
     <section pam-Card-Primary-Action>
         <div pam-Card-Media style='background-image: url("https://placekeanu.com/350/200");'>
             <div pam-Card-Media-Content>
         <div pam-Card-Primary>
-            <h1 pam-Typography="title">Keanu Reeves</h1>
-            <p pam-Typography="body-1">By Chuck Norris</p>
+            <h6 pam-Typography="h6" pam-space="mb:1">Keanu Reeves</h6>
+            <p pam-Typography="body-2">By Chuck Norris</p>
         </div>
             </div>
         </div>
-        <div pam-Card-Secondary pam-Typography="body-1">
+        <div pam-Card-Secondary pam-Typography="body-2">
             Put some text here to summarize and describe what the card is all about.
         </div>
     </section>
@@ -666,76 +610,38 @@ states.</p>
             </button>
     </section>
 </div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
+                </div>
 
-          </div>
+              </div>
 
-            <details class="kss-markup kss-style">
-              <summary>
-                  Markup
-                  <p class="kss-toolbar">
-                      <a href="#kssref-cards-media" data-kss-fullscreen="kssref-cards-media">
-                        <span class="kss-toolbar__tooltip">Toggle full screen</span>
-                        <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                        <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
-                        </svg>
-                      </a>
-                      <a href="item-cards-media.html" target="_blank">
-                        <span class="kss-toolbar__tooltip">Open in new window</span>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                          <rect x="0" y="20" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
-                          <rect x="24" y="0" width="40" height="44" fill="#fff"/>
-                          <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
-                          <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
-                        </svg>
-                      </a>
-                    <a href="#kssref-cards-media" data-kss-guides="true">
-                      <span class="kss-toolbar__tooltip">Toggle example guides</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
-                        <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
-                        <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
-                      </svg>
-                    </a>
-                    <a href="#kssref-cards-media" data-kss-markup="true">
-                      <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
-                        <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
-                        <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
-                      </svg>
-                    </a>
-                  </p>
-              </summary>
-              <pre><code class="html">&lt;div pam-Card&gt;
+                <details
+                    pam-skin="bg:gray:100"
+                    pam-space="mb:5"
+                    pam-border="w:2 gray:100"
+                    pam-position="relative">
+                    <summary
+                        pam-space="py:3 px:4"
+                        pam-outline="none"
+                        pam-user-select="none"
+                        pam-typography="body-2">
+                          Markup
+                  </summary>
+                    <div pam-position="absolute top:right" pam-space="m:2">
+                        <button pam-Button="flat sm" pam-size="min-w:0" data-clipboard-target="#markup-cards-media">
+                            Copy
+                        </button>
+                    </div>
+                  <pre pam-space="m:0"><code id="markup-cards-media" pam-skin="bg:gray:100" pam-space="px:4 py:2" pam-border="radius:t:none" class="html">&lt;div pam-Card&gt;
     &lt;section pam-Card-Primary-Action&gt;
         &lt;div pam-Card-Media style&#x3D;&#x27;background-image: url(&quot;https://placekeanu.com/350/200&quot;);&#x27;&gt;
             &lt;div pam-Card-Media-Content&gt;
         &lt;div pam-Card-Primary&gt;
-            &lt;h1 pam-Typography&#x3D;&quot;title&quot;&gt;Keanu Reeves&lt;/h1&gt;
-            &lt;p pam-Typography&#x3D;&quot;body-1&quot;&gt;By Chuck Norris&lt;/p&gt;
+            &lt;h6 pam-Typography&#x3D;&quot;h6&quot; pam-space&#x3D;&quot;mb:1&quot;&gt;Keanu Reeves&lt;/h6&gt;
+            &lt;p pam-Typography&#x3D;&quot;body-2&quot;&gt;By Chuck Norris&lt;/p&gt;
         &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div pam-Card-Secondary pam-Typography&#x3D;&quot;body-1&quot;&gt;
+        &lt;div pam-Card-Secondary pam-Typography&#x3D;&quot;body-2&quot;&gt;
             Put some text here to summarize and describe what the card is all about.
         &lt;/div&gt;
     &lt;/section&gt;
@@ -753,20 +659,18 @@ states.</p>
             &lt;/button&gt;
     &lt;/section&gt;
 &lt;/div&gt;</code></pre>
-            </details>
-      </section>
-      <hr >
-      <section id="kssref-cards-hooks" class="kss-section kss-section--depth-2 ">
+                </details>
+          </section>
+          <section id="kssref-cards-hooks" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-cards-hooks">
+                  Hooks
+                </a>
+              </h3>
 
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-cards-hooks">
-              Hooks
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p><code>.hook-card</code>
+                <div>
+                  <p><code>.hook-card</code>
 <code>.hook-card-action-buttons</code>
 <code>.hook-card-action-icons</code>
 <code>.hook-card-actions</code>
@@ -778,23 +682,21 @@ states.</p>
 <code>.hook-card-raised</code>
 <code>.hook-card-secondary</code></p>
 
+                </div>
+
             </div>
 
-        </div>
+          </section>
+          <section id="kssref-cards-variables" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-cards-variables">
+                  Variables
+                </a>
+              </h3>
 
-      </section>
-      <hr >
-      <section id="kssref-cards-variables" class="kss-section kss-section--depth-2 ">
-
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-cards-variables">
-              Variables
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>These are all the component specific variables that can be
+                <div>
+                  <p>These are all the component specific variables that can be
 used for customization.</p>
 <table pam-Table="horizontal">
     <thead>
@@ -870,47 +772,35 @@ used for customization.</p>
        </tr>
     </tbody>
 </table>
+                </div>
+
             </div>
 
-        </div>
-
+          </section>
       </section>
-      <hr >
-  </main>
-</main>
-<footer sg-footer></footer>
+    </main>
 
-<!-- SCRIPTS -->
-<script src="kss-assets/kss.js"></script>
-<script src="kss-assets/kss-fullscreen.js"></script>
-<script src="kss-assets/kss-guides.js"></script>
-<script src="kss-assets/kss-markup.js"></script>
-<script src="kss-assets/js/highlight/highlight.pack.js"></script>
-<script src="kss-assets/scrollspy.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
+    <footer sg-footer></footer>
+    </div>
 
-  var spy = new ScrollSpy('#kss-node', {
-    nav: '.kss-nav__menu-child > li > a',
-    className: 'is-in-viewport'
-  });
-  var kssFullScreen = new KssFullScreen({
-    idPrefix: 'kss-fullscreen-',
-    bodyClass: 'kss-fullscreen-mode',
-    elementClass: 'is-fullscreen'
-  });
-  var kssGuides = new KssGuides({
-    bodyClass: 'kss-guides-mode'
-  });
-  var kssMarkup = new KssMarkup({
-    bodyClass: 'kss-markup-mode',
-    detailsClass: 'kss-markup'
-  });
-</script>
-<script src="kss-assets/js/animator.js"></script>
+    <!-- SCRIPTS -->
+    <script src="kss-assets/kss.js"></script>
+    <script src="kss-assets/js/highlight/highlight.pack.js"></script>
+    <script src="kss-assets/scrollspy.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+
+      var spy = new ScrollSpy('#sg-node', {
+        nav: '[pam-menu-list~="child"] > li > a',
+        className: 'is-in-viewport'
+      });
+
+      new ClipboardJS("[pam-Button]");
+    </script>
+    <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
+<script src="kss-assets/js/drawer.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
-
 
 
 </body>

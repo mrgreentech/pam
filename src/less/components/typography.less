@@ -34,70 +34,69 @@
 
 @typography-h1-font-size: @font-size-colossal;
 @typography-h1-font-weight: @font-weight-light;
-@typography-h1-letter-spacing: -0.016em;
-@typography-h1-line-height: @font-size-colossal;
+@typography-h1-letter-spacing: normal;
+@typography-h1-line-height: 1.2;
 
 @typography-h2-font-size: @font-size-enormous;
 @typography-h2-font-weight: @font-weight-light;
-@typography-h2-letter-spacing: -0.008em;
-@typography-h2-line-height: @font-size-enormous;
+@typography-h2-letter-spacing: normal;
+@typography-h2-line-height: 1.2;
 
 @typography-h3-font-size: @font-size-xxxlarge;
 @typography-h3-font-weight: @font-weight-normal;
 @typography-h3-letter-spacing: normal;
-@typography-h3-line-height: 3.125rem;
+@typography-h3-line-height: 1.2;
 
 @typography-h4-font-size: @font-size-xxlarge;
 @typography-h4-font-weight: @font-weight-normal;
 @typography-h4-letter-spacing: normal;
-@typography-h4-line-height: 2.5rem;
+@typography-h4-line-height: 1.2;
 
 @typography-h5-font-size: @font-size-xlarge;
 @typography-h5-font-weight: @font-weight-normal;
 @typography-h5-letter-spacing: normal;
-@typography-h5-line-height: 2rem;
+@typography-h5-line-height: 1.2;
 
 @typography-h6-font-size: @font-size-larger;
-@typography-h6-font-weight: @font-weight-medium;
-@typography-h6-letter-spacing: 0.0125em;
+@typography-h6-font-weight: @font-weight-bold;
 @typography-h6-letter-spacing: normal;
-@typography-h6-line-height: @line-height-base;
+@typography-h6-line-height: 1.2;
 
 @typography-subtitle-1-font-size: @font-size-large;
 @typography-subtitle-1-font-weight: @font-weight-normal;
-@typography-subtitle-1-letter-spacing: 0.009em;
-@typography-subtitle-1-line-height: 1.75rem;
+@typography-subtitle-1-letter-spacing: normal;
+@typography-subtitle-1-line-height: 1.2;
 
 @typography-subtitle-2-font-size: @font-size-medium;
-@typography-subtitle-2-font-weight: @font-weight-medium;
-@typography-subtitle-2-letter-spacing: 0.007em;
-@typography-subtitle-2-line-height: 1.375rem;
+@typography-subtitle-2-font-weight: @font-weight-bold;
+@typography-subtitle-2-letter-spacing: normal;
+@typography-subtitle-2-line-height: 1.2;
 
 @typography-body-1-font-size: @font-size-large;
 @typography-body-1-font-weight: @font-weight-normal;
-@typography-body-1-letter-spacing: 0.03125em;
-@typography-body-1-line-height: 1.5rem;
+@typography-body-1-letter-spacing: normal;
+@typography-body-1-line-height: 1.4;
 
 @typography-body-2-font-size: @font-size-medium;
 @typography-body-2-font-weight: @font-weight-normal;
-@typography-body-2-letter-spacing: 0.0178em;
-@typography-body-2-line-height: 1.25rem;
+@typography-body-2-letter-spacing: normal;
+@typography-body-2-line-height: 1.4;
 
 @typography-button-font-size: @font-size-medium;
-@typography-button-font-weight: @font-weight-medium;
-@typography-button-letter-spacing: 0.0892em;
+@typography-button-font-weight: @font-weight-bold;
+@typography-button-letter-spacing: normal;
 @typography-button-line-height: 2.25rem;
 @typography-button-text-transform: uppercase;
 
 @typography-caption-font-size: @font-size-xsmall;
 @typography-caption-font-weight: @font-weight-normal;
-@typography-caption-letter-spacing: 0.0333em;
-@typography-caption-line-height: 1.25rem;
+@typography-caption-letter-spacing: normal;
+@typography-caption-line-height: 2;
 
 @typography-overline-font-size: @font-size-xxsmall;
 @typography-overline-font-weight: @font-weight-normal;
-@typography-overline-letter-spacing: 0.1667em;
-@typography-overline-line-height: 2rem;
+@typography-overline-letter-spacing: normal;
+@typography-overline-line-height: 3;
 @typography-overline-text-transform: uppercase;
 
 // ==================================================================
@@ -113,56 +112,77 @@
 //  Headlines
 // ==================================================================
 
-[pam-typography~="h1"] {
-    font-size: @typography-h1-font-size;
-    font-weight: @typography-h1-font-weight;
-    letter-spacing: @typography-h1-letter-spacing;
-    line-height: @typography-h1-line-height;
+[pam-typography~="h1"],
+h1,
+[pam-typography~="h2"],
+h2,
+[pam-typography~="h3"],
+h3,
+[pam-typography~="h4"],
+h4,
+[pam-typography~="h5"],
+h5,
+[pam-typography~="h6"],
+h6 {
+    margin-bottom: 0.375em !important;
+}
+
+[pam-typography~="h1"],
+h1 {
+    font-size: @typography-h1-font-size !important;
+    font-weight: @typography-h1-font-weight !important;
+    letter-spacing: @typography-h1-letter-spacing !important;
+    line-height: @typography-h1-line-height !important;
 
     .hook-typography-h1;
 }
 
-[pam-typography~="h2"] {
-    font-size: @typography-h2-font-size;
-    font-weight: @typography-h2-font-weight;
-    letter-spacing: @typography-h2-letter-spacing;
-    line-height: @typography-h2-line-height;
+[pam-typography~="h2"],
+h2 {
+    font-size: @typography-h2-font-size !important;
+    font-weight: @typography-h2-font-weight !important;
+    letter-spacing: @typography-h2-letter-spacing !important;
+    line-height: @typography-h2-line-height !important;
 
     .hook-typography-h2;
 }
 
-[pam-typography~="h3"] {
-    font-size: @typography-h3-font-size;
-    font-weight: @typography-h3-font-weight;
-    letter-spacing: @typography-h3-letter-spacing;
-    line-height: @typography-h3-line-height;
+[pam-typography~="h3"],
+h3 {
+    font-size: @typography-h3-font-size !important;
+    font-weight: @typography-h3-font-weight !important;
+    letter-spacing: @typography-h3-letter-spacing !important;
+    line-height: @typography-h3-line-height !important;
 
     .hook-typography-h3;
 }
 
-[pam-typography~="h4"] {
-    font-size: @typography-h4-font-size;
-    font-weight: @typography-h4-font-weight;
-    letter-spacing: @typography-h4-letter-spacing;
-    line-height: @typography-h4-line-height;
+[pam-typography~="h4"],
+h4 {
+    font-size: @typography-h4-font-size !important;
+    font-weight: @typography-h4-font-weight !important;
+    letter-spacing: @typography-h4-letter-spacing !important;
+    line-height: @typography-h4-line-height !important;
 
     .hook-typography-h4;
 }
 
-[pam-typography~="h5"] {
-    font-size: @typography-h5-font-size;
-    font-weight: @typography-h5-font-weight;
-    letter-spacing: @typography-h5-letter-spacing;
-    line-height: @typography-h5-line-height;
+[pam-typography~="h5"],
+h5 {
+    font-size: @typography-h5-font-size !important;
+    font-weight: @typography-h5-font-weight !important;
+    letter-spacing: @typography-h5-letter-spacing !important;
+    line-height: @typography-h5-line-height !important;
 
     .hook-typography-h5;
 }
 
-[pam-typography~="h6"] {
-    font-size: @typography-h6-font-size;
-    font-weight: @typography-h6-font-weight;
-    letter-spacing: @typography-h6-letter-spacing;
-    line-height: @typography-h6-line-height;
+[pam-typography~="h6"],
+h6 {
+    font-size: @typography-h6-font-size !important;
+    font-weight: @typography-h6-font-weight !important;
+    letter-spacing: @typography-h6-letter-spacing !important;
+    line-height: @typography-h6-line-height !important;
 
     .hook-typography-h6;
 }
@@ -171,10 +191,10 @@
 // ==================================================================
 
 [pam-typography~="subtitle-1"] {
-    font-size: @typography-subtitle-1-font-size;
-    font-weight: @typography-subtitle-1-font-weight;
-    letter-spacing: @typography-subtitle-1-letter-spacing;
-    line-height: @typography-subtitle-1-line-height;
+    font-size: @typography-subtitle-1-font-size !important;
+    font-weight: @typography-subtitle-1-font-weight !important;
+    letter-spacing: @typography-subtitle-1-letter-spacing !important;
+    line-height: @typography-subtitle-1-line-height !important;
 
     .hook-typography-subtitle-1;
 }
@@ -183,10 +203,10 @@
 // ==================================================================
 
 [pam-typography~="subtitle-2"] {
-    font-size: @typography-subtitle-2-font-size;
-    font-weight: @typography-subtitle-2-font-weight;
-    letter-spacing: @typography-subtitle-2-letter-spacing;
-    line-height: @typography-subtitle-2-line-height;
+    font-size: @typography-subtitle-2-font-size !important;
+    font-weight: @typography-subtitle-2-font-weight !important;
+    letter-spacing: @typography-subtitle-2-letter-spacing !important;
+    line-height: @typography-subtitle-2-line-height !important;
 
     .hook-typography-subtitle-2;
 }
@@ -194,20 +214,21 @@
 //  Body
 // ==================================================================
 
-[pam-typography~="body-1"] {
-    font-size: @typography-body-1-font-size;
-    font-weight: @typography-body-1-font-weight;
-    letter-spacing: @typography-body-1-letter-spacing;
-    line-height: @typography-body-1-line-height;
+[pam-typography~="body-1"],
+p {
+    font-size: @typography-body-1-font-size !important;
+    font-weight: @typography-body-1-font-weight !important;
+    letter-spacing: @typography-body-1-letter-spacing !important;
+    line-height: @typography-body-1-line-height !important;
 
     .hook-typography-body-1;
 }
 
 [pam-typography~="body-2"] {
-    font-size: @typography-body-2-font-size;
-    font-weight: @typography-body-2-font-weight;
-    letter-spacing: @typography-body-2-letter-spacing;
-    line-height: @typography-body-2-line-height;
+    font-size: @typography-body-2-font-size !important;
+    font-weight: @typography-body-2-font-weight !important;
+    letter-spacing: @typography-body-2-letter-spacing !important;
+    line-height: @typography-body-2-line-height !important;
 
     .hook-typography-body-2;
 }
@@ -216,11 +237,11 @@
 // ==================================================================
 
 [pam-typography~="button"] {
-    font-size: @typography-button-font-size;
-    font-weight: @typography-button-font-weight;
-    letter-spacing: @typography-button-letter-spacing;
-    line-height: @typography-button-line-height;
-    text-transform: @typography-button-text-transform;
+    font-size: @typography-button-font-size !important;
+    font-weight: @typography-button-font-weight !important;
+    letter-spacing: @typography-button-letter-spacing !important;
+    line-height: @typography-button-line-height !important;
+    text-transform: @typography-button-text-transform !important;
 
     .hook-typography-button;
 }
@@ -229,10 +250,10 @@
 // ==================================================================
 
 [pam-typography~="caption"] {
-    font-size: @typography-caption-font-size;
-    font-weight: @typography-caption-font-weight;
-    letter-spacing: @typography-caption-letter-spacing;
-    line-height: @typography-caption-line-height;
+    font-size: @typography-caption-font-size !important;
+    font-weight: @typography-caption-font-weight !important;
+    letter-spacing: @typography-caption-letter-spacing !important;
+    line-height: @typography-caption-line-height !important;
 
     .hook-typography-caption;
 }
@@ -241,13 +262,58 @@
 // ==================================================================
 
 [pam-typography~="overline"] {
-    font-size: @typography-overline-font-size;
-    font-weight: @typography-overline-font-weight;
-    letter-spacing: @typography-overline-letter-spacing;
-    line-height: @typography-overline-line-height;
-    text-transform: @typography-overline-text-transform;
+    font-size: @typography-overline-font-size !important;
+    font-weight: @typography-overline-font-weight !important;
+    letter-spacing: @typography-overline-letter-spacing !important;
+    line-height: @typography-overline-line-height !important;
+    text-transform: @typography-overline-text-transform !important;
 
     .hook-typography-overline;
+}
+
+b,
+strong {
+    font-weight: @font-weight-bold;
+}
+
+//  Responsive font size (rfs)
+// ==================================================================
+
+// Responsive font size
+//
+// Automatically adopt font size based on the browser viewport or screen size.
+// RFS has a scale value for every screen size `@rfs-ratio-[sm|md|lg|xl]` and _defaults to: 1_.
+// Purpose of this feature is to always have maintained readability whatever screen size.
+//
+// Respronsive font size is enabled by adding `pam-rfs="[sm|md|lg|xl]"`
+// to a parent element. The screen size value is used to configure for which
+// screen size(s) the ratio of the font should increase. For consistency when using
+// this feature add it to the `body` element. This style guide has the rfs
+// enabled in the body element and changes it ratio from a meduim screen size.
+//
+// ```html
+// <!-- PAM RFS -->
+// <body pam-rfs="md">
+// ```
+//
+// Weight: 2
+//
+// Style guide: typography.rfs
+
+@media screen and (min-width: @screen-sm) {
+    .rfs(sm, @rfs-ratio-sm) !important;
+}
+
+@media screen and (min-width: @screen-md) {
+    .rfs(md, @rfs-ratio-md) !important;
+}
+
+@media screen and (min-width: @screen-lg) {
+    .rfs(lg, @rfs-ratio-lg) !important;
+}
+
+@media screen and (min-width: @screen-xl) {
+    .rfs(xl, @rfs-ratio-xl) !important;
 }
 
 //  Hooks

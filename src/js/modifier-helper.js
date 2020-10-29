@@ -6,10 +6,10 @@
  * @param  {Object} window
  * @return {Object}
  */
-let modifierHelper = (window => {
+var modifierHelper = ((window) => {
     "use strict";
 
-    const modifierWrappers = window.document.querySelectorAll(".kss-modifier__wrapper");
+    const modifierWrappers = window.document.querySelectorAll("[sg-modifier-wrapper]");
     const match = "%3A";
 
     /**
@@ -23,7 +23,7 @@ let modifierHelper = (window => {
     return pub;
 
     function replaceColon() {
-        [...modifierWrappers].forEach(modifier => {
+        [...modifierWrappers].forEach((modifier) => {
             let elementContent = modifier.innerHTML;
             let hasMatch = elementContent.includes(match);
 

@@ -173,12 +173,12 @@
 @font-size-small: 0.8125rem; // 13px
 @font-size-medium: 0.875rem; // 14px
 @font-size-large: 1rem; // 16px
-@font-size-larger: 1.25rem; // 20px
-@font-size-xlarge: 1.5rem; // 24px
-@font-size-xxlarge: 2.125rem; // 34px
-@font-size-xxxlarge: 3rem; // 48px
-@font-size-enormous: 3.75rem; // 60px
-@font-size-colossal: 6rem; // 96px
+@font-size-larger: 1.04rem; // 16,7px
+@font-size-xlarge: 1.25rem; // 20px
+@font-size-xxlarge: 1.77rem; // 28,3px
+@font-size-xxxlarge: 2.5rem; // 40px
+@font-size-enormous: 3.125rem; // 50px
+@font-size-colossal: 5rem; // 80px
 
 @font-size-h1: @font-size-colossal;
 @font-size-h2: @font-size-enormous;
@@ -193,7 +193,16 @@
 
 @font-weight-light: 300;
 @font-weight-normal: 400;
-@font-weight-medium: 500;
+@font-weight-bold: 500;
+
+//  Responsive font size (rfs)
+// ==================================================================
+
+@rfs-ratio: 1;
+@rfs-ratio-sm: 1;
+@rfs-ratio-md: 1.2;
+@rfs-ratio-lg: 1.2;
+@rfs-ratio-xl: 1.2;
 
 // Screen sizes
 // ==================================================================
@@ -275,7 +284,6 @@
 @shadow-z22: 0 10px 14px -6px rgba(0, 0, 0, 0.2), 0 22px 35px 3px rgba(0, 0, 0, 0.14), 0 8px 42px 7px rgba(0, 0, 0, 0.12);
 @shadow-z23: 0 11px 14px -7px rgba(0, 0, 0, 0.2), 0 23px 36px 3px rgba(0, 0, 0, 0.14), 0 9px 44px 8px rgba(0, 0, 0, 0.12);
 @shadow-z24: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
-
 
 // Variables
 //
@@ -760,27 +768,27 @@
 //        </tr>
 //          <tr>
 //            <td>@font-size-larger</td>
-//            <td><code>1.25rem</code></td>
+//            <td><code>1.04rem</code></td>
 //        </tr>
 //          <tr>
 //            <td>@font-size-xlarge</td>
-//            <td><code>1.5rem</code></td>
+//            <td><code>1.25rem</code></td>
 //        </tr>
 //          <tr>
 //            <td>@font-size-xxlarge</td>
-//            <td><code>2.125rem</code></td>
+//            <td><code>1.77rem</code></td>
 //        </tr>
 //          <tr>
 //            <td>@font-size-xxxlarge</td>
-//            <td><code>3rem</code></td>
+//            <td><code>2.5rem</code></td>
 //        </tr>
 //          <tr>
 //            <td>@font-size-enormous</td>
-//            <td><code>3.75rem</code></td>
+//            <td><code>3.125rem</code></td>
 //        </tr>
 //          <tr>
 //            <td>@font-size-colossal</td>
-//            <td><code>6rem</code></td>
+//            <td><code>5rem</code></td>
 //        </tr>
 //          <tr>
 //            <td>@font-size-h1</td>
@@ -827,8 +835,28 @@
 //            <td><code>400</code></td>
 //        </tr>
 //          <tr>
-//            <td>@font-weight-medium</td>
+//            <td>@font-weight-bold</td>
 //            <td><code>500</code></td>
+//        </tr>
+//          <tr>
+//            <td>@rfs-ratio</td>
+//            <td><code>1</code></td>
+//        </tr>
+//          <tr>
+//            <td>@rfs-ratio-sm</td>
+//            <td><code>1</code></td>
+//        </tr>
+//          <tr>
+//            <td>@rfs-ratio-md</td>
+//            <td><code>1.2</code></td>
+//        </tr>
+//          <tr>
+//            <td>@rfs-ratio-lg</td>
+//            <td><code>1.2</code></td>
+//        </tr>
+//          <tr>
+//            <td>@rfs-ratio-xl</td>
+//            <td><code>1.2</code></td>
 //        </tr>
 //          <tr>
 //            <td>@screen-sm</td>
@@ -1064,4 +1092,3 @@
 // Weight: 30
 //
 // Style guide: general.variables
- 

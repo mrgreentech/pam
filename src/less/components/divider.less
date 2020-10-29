@@ -4,9 +4,9 @@
 // like sections, menu items etc.
 //
 // Markup:
-// <h1 pam-typography="headline">Title</h1>
-//     <div pam-Divider></div>
-// <h2 pam-typography="subheader">Subtitle</h2>
+// <h3 pam-typography="h3">Title</h3>
+// <div pam-Divider></div>
+// <p pam-typography="subtitle-1">Subtitle</p>
 //
 // Weight: 10
 //
@@ -47,17 +47,16 @@ hr[pam-Divider] {
 //  used with list items etc.
 //
 // Markup:
-// <div pam-List>
-//     <div pam-Item>
-//         <div pam-tile="left">
-//             <div sg-mock-icon></div>
-//         </div>
-//         <div pam-tile="content">
-//             <h3 pam-typography="subheader">Item content</h3>
-//         </div>
-//     </div>
-//     <div pam-Divider="inset">
-// </div>
+// <ul pam-List="2-line avatar">
+//     <li pam-List-Item>
+//         <span pam-List-Item-Primary class="material-icons">event</span>
+//         <span pam-List-Item-Text>
+//             <span pam-List-Item-Text-Primary>Line Item</span>
+//             <span pam-List-Item-Text-Secondary>Secondary text</span>
+//         </span>
+//     </li>
+//     <div pam-divider="inset"></div>
+// </ul>
 //
 // Style guide: divider.inset
 

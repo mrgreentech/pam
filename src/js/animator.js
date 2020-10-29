@@ -6,7 +6,7 @@
  * @param  {Object} window
  * @return {Object}
  */
-let animator = (window => {
+var animator = ((window) => {
     "use strict";
 
     /**

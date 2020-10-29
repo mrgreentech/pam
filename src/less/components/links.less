@@ -16,8 +16,11 @@
 
 @link-color: @skin-info;
 @link-decoration: none;
+
 @link-hover-color: darken(@link-color, 10%);
 @link-hover-decoration: underline;
+
+@link-visited-color: @link-color;
 
 // ==================================================================
 //  Link
@@ -30,6 +33,13 @@ a[pam-Link] {
     cursor: pointer;
 
     .hook-link;
+}
+
+[pam-Link]:visited,
+a[pam-Link]:visited {
+    color: @link-visited-color;
+
+    .hook-link-visited;
 }
 
 [pam-Link]:focus,
@@ -49,6 +59,7 @@ a[pam-Link]:hover {
 //
 // `.hook-link`
 // `.hook-link-hover`
+// `.hook-link-visited`
 //
 // Style guide: links.hooks
 
@@ -56,6 +67,8 @@ a[pam-Link]:hover {
 .hook-link() {
 }
 .hook-link-hover() {
+}
+.hook-link-visited() {
 }
 /* stylelint-enable */
 

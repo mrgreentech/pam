@@ -8,525 +8,595 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/kss-assets/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/kss-assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/kss-assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/kss-assets/img/manifest.json">
-  <link rel="mask-icon" href="/kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="/kss-assets/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="kss-assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="kss-assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="kss-assets/img/favicon-16x16.png">
+  <link rel="manifest" href="kss-assets/img/manifest.json">
+  <link rel="mask-icon" href="kss-assets/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="kss-assets/img/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="/kss-assets/img/browserconfig.xml">
+  <meta name="msapplication-config" content="kss-assets/img/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="kss-assets/kss.css">
   <link rel="stylesheet" href="kss-assets/js/highlight/styles/github.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css">
-<link rel="stylesheet" href="kss-assets/css/pam.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="kss-assets/css/styleguide-custom.css"/>
+<link rel="stylesheet" href="kss-assets/css/pam.css"/>
 
+  <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
 </head>
-<body id="kss-node"  >
+<body>
 
-<header sg-header>
-  <div pam-Grid pam-Grid-Control="align:center">
-      <div pam-Unit="1-5">
-          <a href="./" sg-Link>
-            <img
-              src="kss-assets/img/logo.svg"
-              alt="PAM"
-              title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
-              height="48"
-              width="48"
-              sg-Logo>
-          </a>
-      </div>
-      <div pam-Unit="4-5">
-          <div pam-Menu sg-Nav>
-              <ul pam-Menu-List>
-                  <li pam-Menu-Item>
+<div id="sg-node" 
+    pam-rfs="md"
+    pam-size="max-w:xl"
+    pam-space="mx:auto"
+    pam-border="lw:px rw:px">
+    <header sg-header=""
+        pam-space="px:8 py:4"
+        pam-skin="bg:gray:100"
+        pam-position="sticky top"
+         pam-border="bw:px" >
+        <div pam-flex="middle between">
+            <button sg-drawer-button pam-button="circle flat lg" pam-hide="md:up">
+                <i class="material-icons" onclick="drawer.toggle()">menu</i>
+            </button>
+                <a href="./" pam-display="flex" pam-hide="sm:down">
+                    <img
+                    src="kss-assets/img/logo.svg"
+                    alt="PAM"
+                    title="Copyright © 2016 William Hill Gametek, All Rights Reserved"
+                    height="48"
+                    width="48">
+                </a>
+              <div pam-hide="sm:down">
+                  <div pam-flex="right">
                     <a href="https://github.com/mrgreentech/pam/blob/legendary-grasshopper/CHANGELOG.md"  pam-Button="flat">Changelog</a>
-                  </li>
-                  <li pam-Menu-Item>
                     <a href="https://github.com/mrgreentech/pam/issues" pam-Button="flat">Issues</a>
-                  </li>
-                  <li pam-Menu-Item>
                     <a href="https://github.com/mrgreentech/pam/archive/master.zip" pam-Button="raised">Download</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </div>
-</header>
-
-<main sg-main>
-  <aside class="kss-sidebar kss-style">
-    <header class="kss-header">
-      <h1 class="kss-doc-title">Documentation</h1>
+                  </div>
+              </div>
+        </div>
     </header>
-    <nav class="kss-nav">
-      <ul class="kss-nav__menu">
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-getting-started.html">
-            <span class="kss-nav__ref">1</span><span class="kss-nav__name">Getting started</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-setup.html">
-            <span class="kss-nav__ref">2</span><span class="kss-nav__name">Setup</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-general.html">
-            <span class="kss-nav__ref">3</span><span class="kss-nav__name">General</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-grids.html">
-            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Grids</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-skin.html">
-            <span class="kss-nav__ref">5</span><span class="kss-nav__name">Skin</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-typography.html">
-            <span class="kss-nav__ref">6</span><span class="kss-nav__name">Typography</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-forms.html">
-            <span class="kss-nav__ref">7</span><span class="kss-nav__name">Forms</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-buttons.html">
-            <span class="kss-nav__ref">8</span><span class="kss-nav__name">Buttons</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-cards.html">
-            <span class="kss-nav__ref">9</span><span class="kss-nav__name">Cards</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-tables.html">
-            <span class="kss-nav__ref">10</span><span class="kss-nav__name">Tables</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-menus.html">
-            <span class="kss-nav__ref">11</span><span class="kss-nav__name">Menus</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-alert.html">
-            <span class="kss-nav__ref">12</span><span class="kss-nav__name">Alert</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-divider.html">
-            <span class="kss-nav__ref">13</span><span class="kss-nav__name">Divider</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-links.html">
-            <span class="kss-nav__ref">14</span><span class="kss-nav__name">Link</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-lists.html">
-            <span class="kss-nav__ref">15</span><span class="kss-nav__name">Lists</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-tags.html">
-            <span class="kss-nav__ref">16</span><span class="kss-nav__name">Tags</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-column.html">
-            <span class="kss-nav__ref">17</span><span class="kss-nav__name">Column</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-progress.html">
-            <span class="kss-nav__ref">18</span><span class="kss-nav__name">Progress</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-overlay.html">
-            <span class="kss-nav__ref">19</span><span class="kss-nav__name">Overlay</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" >
-          <a class="kss-nav__menu-link" href="section-traits.html">
-            <span class="kss-nav__ref">20</span><span class="kss-nav__name">Traits</span>
-          </a>
-        </li>
-        <li class="kss-nav__menu-item" active>
-          <a class="kss-nav__menu-link" href="section-mixins.html">
-            <span class="kss-nav__ref">21</span><span class="kss-nav__name">Mixins</span>
-          </a>
-              <ul class="kss-nav__menu-child">
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-button-states">
-                    <span class="kss-nav__ref ">21.1</span
-                    ><span class="kss-nav__name">.button-states(@bg-color, @text-color)</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-fractions">
-                    <span class="kss-nav__ref ">21.2</span
-                    ><span class="kss-nav__name">.fractions(@selector, @prefix, @fraction-list)</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-grid-control-space">
-                    <span class="kss-nav__ref ">21.3</span
-                    ><span class="kss-nav__name">.grid-control-space(@suffix, @size)</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-grid-units">
-                    <span class="kss-nav__ref ">21.4</span
-                    ><span class="kss-nav__name">.grid-units(@columns, @startIndex, @prefix)</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-media">
-                    <span class="kss-nav__ref ">21.5</span
-                    ><span class="kss-nav__name">Media queries</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-placeholder-color">
-                    <span class="kss-nav__ref ">21.6</span
-                    ><span class="kss-nav__name">.placeholder-color(@color)</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-shadows">
-                    <span class="kss-nav__ref ">21.7</span
-                    ><span class="kss-nav__name">.shadows(@quantity, @prefix, @startIndex)</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-sizes">
-                    <span class="kss-nav__ref ">21.8</span
-                    ><span class="kss-nav__name">sizes(@selector, @property, @quantity, @prefix, @index)</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-spacing">
-                    <span class="kss-nav__ref ">21.9</span
-                    ><span class="kss-nav__name">spacing(@property, @prefix, @spaces, @startIndex)</span>
-                  </a>
-                </li>
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-zindex">
-                    <span class="kss-nav__ref ">21.10</span
-                    ><span class="kss-nav__name">.zindex(@elementName, @elementList)</span>
-                  </a>
-                </li>
-              </ul>
-        </li>
-      </ul>
-    </nav>
-  </aside>
-  <main role="main" class="kss-main">
 
-      <div id="kssref-mixins" class="kss-section kss-section--depth-1 ">
+    <main sg-main pam-size="h:full" pam-overflow="y:auto" >
+        <aside sg-drawer
+            pam-border="rw:px gray:400"
+            pam-skin="bg:white"
+            pam-overflow="y:auto x:hidden"
+            pam-size="w:16"
+            pam-z="2"
+            pam-space="px:3">
+          <header pam-space="mb:6">
+            <h6 pam-typography="h6" pam-space="px:5">Documentation</h6>
+          </header>
+          <nav pam-Menu="vertical">
+            <ul pam-Menu-List pam-size="w:full">
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-getting-started.html">
+                  <span pam-hidden="">1</span>
+                  <span>Getting started</span>
+                </a>
 
-        <div class="kss-style">
-          <h1 class="kss-title kss-title--level-1">
-            <a class="kss-title__permalink" href="#kssref-mixins">
-              Mixins
-            </a>
-          </h1>
-
-            <div class="kss-description">
-              <p>Library of PAM LESS mixins.</p>
-
-            </div>
-
-        </div>
-
-      </div>
-      <hr >
-      <section id="kssref-mixins-button-states" class="kss-section kss-section--depth-2 ">
-
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-mixins-button-states">
-              .button-states(@bg-color, @text-color)
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>Generates <code>hover</code>, focus, active and visited states for a button.</p>
-
-            </div>
-
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@bg-color</code></div>
-                <div class="kss-parameters__description">
-                  Base color for the states.
-                </div>
               </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@text color</code></div>
-                <div class="kss-parameters__description">
-                  Color for visited state.
-                </div>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-setup.html">
+                  <span pam-hidden="">2</span>
+                  <span>Setup</span>
+                </a>
+
               </li>
-            </ul>
-        </div>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-general.html">
+                  <span pam-hidden="">3</span>
+                  <span>General</span>
+                </a>
 
-      </section>
-      <hr >
-      <section id="kssref-mixins-fractions" class="kss-section kss-section--depth-2 ">
-
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-mixins-fractions">
-              .fractions(@selector, @prefix, @fraction-list)
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>Generate a given number of fraction widths for a specified selector.</p>
-
-            </div>
-
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@selector</code></div>
-                <div class="kss-parameters__description">
-                  Selector name.
-                </div>
               </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@prefix</code></div>
-                <div class="kss-parameters__description">
-                  Attribute value prefix.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>&#x27;&#x27;</code>
-                    </div>
-                </div>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-grids.html">
+                  <span pam-hidden="">4</span>
+                  <span>Grids</span>
+                </a>
+
               </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@fraction-list</code></div>
-                <div class="kss-parameters__description">
-                  Fractions to iterate.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>@fractions</code>
-                    </div>
-                </div>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-skin.html">
+                  <span pam-hidden="">5</span>
+                  <span>Skin</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-typography.html">
+                  <span pam-hidden="">6</span>
+                  <span>Typography</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-forms.html">
+                  <span pam-hidden="">7</span>
+                  <span>Forms</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-buttons.html">
+                  <span pam-hidden="">8</span>
+                  <span>Buttons</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-cards.html">
+                  <span pam-hidden="">9</span>
+                  <span>Cards</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-tables.html">
+                  <span pam-hidden="">10</span>
+                  <span>Tables</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-menus.html">
+                  <span pam-hidden="">11</span>
+                  <span>Menus</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-alert.html">
+                  <span pam-hidden="">12</span>
+                  <span>Alert</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-divider.html">
+                  <span pam-hidden="">13</span>
+                  <span>Divider</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-links.html">
+                  <span pam-hidden="">14</span>
+                  <span>Link</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-lists.html">
+                  <span pam-hidden="">15</span>
+                  <span>Lists</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-tags.html">
+                  <span pam-hidden="">16</span>
+                  <span>Tags</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-column.html">
+                  <span pam-hidden="">17</span>
+                  <span>Column</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-progress.html">
+                  <span pam-hidden="">18</span>
+                  <span>Progress</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-overlay.html">
+                  <span pam-hidden="">19</span>
+                  <span>Overlay</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" >
+                <a pam-Menu-Link pam-flex="middle" href="section-traits.html">
+                  <span pam-hidden="">20</span>
+                  <span>Traits</span>
+                </a>
+
+              </li>
+              <li pam-Menu-Item pam-size="h:40px" active>
+                <a pam-Menu-Heading href="section-mixins.html">
+                  <span>Mixins</span>
+                </a>
+
+                    <ul pam-Menu-List="child sm" pam-display="block">
+                    <div pam-Divider pam-space="mb:2"></div>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-mixins.html#kssref-mixins-button-states" onclick="drawer.toggle()">
+                            <span>.button-states(@bg-color, @text-color)</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-mixins.html#kssref-mixins-fractions" onclick="drawer.toggle()">
+                            <span>.fractions(@selector, @prefix, @fraction-list)</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-mixins.html#kssref-mixins-grid-control-space" onclick="drawer.toggle()">
+                            <span>.grid-control-space(@suffix, @size)</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-mixins.html#kssref-mixins-grid-units" onclick="drawer.toggle()">
+                            <span>.grid-units(@columns, @startIndex, @prefix)</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-mixins.html#kssref-mixins-media" onclick="drawer.toggle()">
+                            <span>Media queries</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-mixins.html#kssref-mixins-placeholder-color" onclick="drawer.toggle()">
+                            <span>.placeholder-color(@color)</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-mixins.html#kssref-mixins-rfs" onclick="drawer.toggle()">
+                            <span>rfs(@size, @ratio)</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-mixins.html#kssref-mixins-shadows" onclick="drawer.toggle()">
+                            <span>.shadows(@quantity, @prefix, @startIndex)</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-mixins.html#kssref-mixins-sizes" onclick="drawer.toggle()">
+                            <span>sizes(@selector, @property, @quantity, @prefix, @index)</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-mixins.html#kssref-mixins-spacing" onclick="drawer.toggle()">
+                            <span>spacing(@property, @prefix, @spaces, @startIndex)</span>
+                        </a>
+                      </li>
+                      <li pam-Menu-Item>
+                        <a pam-Menu-Link href="section-mixins.html#kssref-mixins-zindex" onclick="drawer.toggle()">
+                            <span>.zindex(@elementName, @elementList)</span>
+                        </a>
+                      </li>
+                    <div pam-Divider pam-space="my:2"></div>
+                    </ul>
               </li>
             </ul>
-        </div>
+          </nav>
+        </aside>
+        <div sg-drawer-overlay
+            pam-hidden=""
+            pam-hide="md:up"
+            pam-z="1"
+            pam-position="fixed cover"
+            pam-overlay="dark"
+            onclick="drawer.toggle()"></div>
 
-      </section>
-      <hr >
-      <section id="kssref-mixins-fractions-responsive" class="kss-section kss-section--depth-3 ">
+        <section sg-content="" pam-overflow="x:hidden">
+          <div id="kssref-mixins" class="kss-section--depth-1" pam-space="mb:6">
+            <div>
+              <h2 class="kss-title--level-1" pam-typography="h2">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins">
+                  Mixins
+                </a>
+              </h2>
 
-        <div class="kss-style">
-          <h3 class="kss-title kss-title--level-3">
-            <a class="kss-title__permalink" href="#kssref-mixins-fractions-responsive">
-              .fractions-responsive(@selector, @prefix, @fraction-list)
-            </a>
-          </h3>
+                <div>
+                  <p>Library of util mixins that abstract genereic and repetative style structures.</p>
 
-            <div class="kss-description">
-              <p>Generates responsive fractions for supported screen sizes.
+                </div>
+
+            </div>
+
+          </div>
+          <section id="kssref-mixins-button-states" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-button-states">
+                  .button-states(@bg-color, @text-color)
+                </a>
+              </h3>
+
+                <div>
+                  <p>Generates <code>hover</code>, focus, active and visited states for a button.</p>
+
+                </div>
+
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@bg-color</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Base color for the states.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@text color</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Color for visited state.
+                    </div>
+                  </li>
+                </ul>
+            </div>
+
+          </section>
+          <section id="kssref-mixins-fractions" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-fractions">
+                  .fractions(@selector, @prefix, @fraction-list)
+                </a>
+              </h3>
+
+                <div>
+                  <p>Generate a given number of fraction widths for a specified selector.</p>
+
+                </div>
+
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@selector</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Selector name.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@prefix</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Attribute value prefix.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">&#x27;&#x27;</code>
+                        </div>
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@fraction-list</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Fractions to iterate.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">@fractions</code>
+                        </div>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+
+          </section>
+          <section id="kssref-mixins-fractions-responsive" class="kss-section--depth-3" pam-space="mb:6">
+            <div>
+              <h4 class="kss-title--level-3" pam-typography="h4">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-fractions-responsive">
+                  .fractions-responsive(@selector, @prefix, @fraction-list)
+                </a>
+              </h4>
+
+                <div>
+                  <p>Generates responsive fractions for supported screen sizes.
 Uses <code>.fractions</code> to generate the fractions.</p>
 
+                </div>
+
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@selector</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Selector name.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@modifier</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Modifier name.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">&quot;&quot;</code>
+                        </div>
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@screens</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      List of screen sizes to generate fractions for.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">@screen-sizes</code>
+                        </div>
+                    </div>
+                  </li>
+                </ul>
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@selector</code></div>
-                <div class="kss-parameters__description">
-                  Selector name.
+          </section>
+          <section id="kssref-mixins-fractions-units" class="kss-section--depth-3" pam-space="mb:6">
+            <div>
+              <h4 class="kss-title--level-3" pam-typography="h4">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-fractions-units">
+                  .fraction-units(@selector, @prefix, @fraction-list)
+                </a>
+              </h4>
+
+                <div>
+                  <p>Generate a given number of fraction units for a specified selector.</p>
+
                 </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@modifier</code></div>
-                <div class="kss-parameters__description">
-                  Modifier name.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>&quot;&quot;</code>
+
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@fractions</code>
                     </div>
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@screens</code></div>
-                <div class="kss-parameters__description">
-                  List of screen sizes to generate fractions for.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>@screen-sizes</code>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Fractions to generate.
                     </div>
-                </div>
-              </li>
-            </ul>
-        </div>
-
-      </section>
-      <hr >
-      <section id="kssref-mixins-fractions-units" class="kss-section kss-section--depth-3 ">
-
-        <div class="kss-style">
-          <h3 class="kss-title kss-title--level-3">
-            <a class="kss-title__permalink" href="#kssref-mixins-fractions-units">
-              .fraction-units(@selector, @prefix, @fraction-list)
-            </a>
-          </h3>
-
-            <div class="kss-description">
-              <p>Generate a given number of fraction units for a specified selector.</p>
-
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@selector</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Selector name.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@prefix</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Attribute value prefix.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">&#x27;&#x27;</code>
+                        </div>
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@index</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      What size to start on.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">1</code>
+                        </div>
+                    </div>
+                  </li>
+                </ul>
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@fractions</code></div>
-                <div class="kss-parameters__description">
-                  Fractions to generate.
+          </section>
+          <section id="kssref-mixins-grid-control-space" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-grid-control-space">
+                  .grid-control-space(@suffix, @size)
+                </a>
+              </h3>
+
+                <div>
+                  <p>Applies spacing to grid.</p>
+
                 </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@selector</code></div>
-                <div class="kss-parameters__description">
-                  Selector name.
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@prefix</code></div>
-                <div class="kss-parameters__description">
-                  Attribute value prefix.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>&#x27;&#x27;</code>
+
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@suffix</code>
                     </div>
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@index</code></div>
-                <div class="kss-parameters__description">
-                  What size to start on.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>1</code>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Set suffix (optional).
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">&quot;&quot;</code>
+                        </div>
                     </div>
-                </div>
-              </li>
-            </ul>
-        </div>
-
-      </section>
-      <hr >
-      <section id="kssref-mixins-grid-control-space" class="kss-section kss-section--depth-2 ">
-
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-mixins-grid-control-space">
-              .grid-control-space(@suffix, @size)
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>Applies spacing to grid.</p>
-
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@size</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Set size (optional).
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">@grid-spacing</code>
+                        </div>
+                    </div>
+                  </li>
+                </ul>
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@suffix</code></div>
-                <div class="kss-parameters__description">
-                  Set suffix (optional).
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>&quot;&quot;</code>
-                    </div>
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@size</code></div>
-                <div class="kss-parameters__description">
-                  Set size (optional).
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>@grid-spacing</code>
-                    </div>
-                </div>
-              </li>
-            </ul>
-        </div>
+          </section>
+          <section id="kssref-mixins-grid-units" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-grid-units">
+                  .grid-units(@columns, @startIndex, @prefix)
+                </a>
+              </h3>
 
-      </section>
-      <hr >
-      <section id="kssref-mixins-grid-units" class="kss-section kss-section--depth-2 ">
-
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-mixins-grid-units">
-              .grid-units(@columns, @startIndex, @prefix)
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>Generate number of requested columns starting from given number
+                <div>
+                  <p>Generate number of requested columns starting from given number
 and optional adds a passed prefixed value.</p>
 
+                </div>
+
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@columns</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Number of columns.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@startIndex</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      What number to start on.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">1</code>
+                        </div>
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@prefix</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Attribute value prefix.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">&#x27;&#x27;</code>
+                        </div>
+                    </div>
+                  </li>
+                </ul>
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@columns</code></div>
-                <div class="kss-parameters__description">
-                  Number of columns.
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@startIndex</code></div>
-                <div class="kss-parameters__description">
-                  What number to start on.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>1</code>
-                    </div>
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@prefix</code></div>
-                <div class="kss-parameters__description">
-                  Attribute value prefix.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>&#x27;&#x27;</code>
-                    </div>
-                </div>
-              </li>
-            </ul>
-        </div>
+          </section>
+          <section id="kssref-mixins-media" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-media">
+                  Media queries
+                </a>
+              </h3>
 
-      </section>
-      <hr >
-      <section id="kssref-mixins-media" class="kss-section kss-section--depth-2 ">
-
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-mixins-media">
-              Media queries
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>Wrap a <code>min-width</code>, <code>max-width</code> or a <code>min- to max-width</code> media query
+                <div>
+                  <p>Wrap a <code>min-width</code>, <code>max-width</code> or a <code>min- to max-width</code> media query
 around a selector context with provided rules. You can even use
 declared detached rulesets for properties and selectors.</p>
 <pre class="hljs"><code class="language-less"> <span class="hljs-comment">// Example</span>
@@ -554,468 +624,545 @@ declared detached rulesets for properties and selectors.</p>
  }
 </code></pre>
 
-            </div>
-
-        </div>
-
-      </section>
-      <hr >
-      <section id="kssref-mixins-media-min-width" class="kss-section kss-section--depth-3 ">
-
-        <div class="kss-style">
-          <h3 class="kss-title kss-title--level-3">
-            <a class="kss-title__permalink" href="#kssref-mixins-media-min-width">
-              .media-min-width(@breakpoint; @rules)
-            </a>
-          </h3>
-
-            <div class="kss-description">
-              <p>Wrap a <code>min-width</code> media query around a selector context with provided rules.</p>
+                </div>
 
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@breakpoint</code></div>
-                <div class="kss-parameters__description">
-                  Breakpoint for min-width.
+          </section>
+          <section id="kssref-mixins-media-min-width" class="kss-section--depth-3" pam-space="mb:6">
+            <div>
+              <h4 class="kss-title--level-3" pam-typography="h4">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-media-min-width">
+                  .media-min-width(@breakpoint; @rules)
+                </a>
+              </h4>
+
+                <div>
+                  <p>Wrap a <code>min-width</code> media query around a selector context with provided rules.</p>
+
                 </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@rules</code></div>
-                <div class="kss-parameters__description">
-                  What rules to apply to the media query.
-                </div>
-              </li>
-            </ul>
-        </div>
 
-      </section>
-      <hr >
-      <section id="kssref-mixins-media-max-width" class="kss-section kss-section--depth-3 ">
-
-        <div class="kss-style">
-          <h3 class="kss-title kss-title--level-3">
-            <a class="kss-title__permalink" href="#kssref-mixins-media-max-width">
-              .media-max-width(@breakpoint; @rules)
-            </a>
-          </h3>
-
-            <div class="kss-description">
-              <p>Wrap a <code>max-width</code> media query around a selector context with provided rules.</p>
-
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@breakpoint</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Breakpoint for min-width.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@rules</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      What rules to apply to the media query.
+                    </div>
+                  </li>
+                </ul>
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@breakpoint</code></div>
-                <div class="kss-parameters__description">
-                  Breakpoint for max-width.
+          </section>
+          <section id="kssref-mixins-media-max-width" class="kss-section--depth-3" pam-space="mb:6">
+            <div>
+              <h4 class="kss-title--level-3" pam-typography="h4">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-media-max-width">
+                  .media-max-width(@breakpoint; @rules)
+                </a>
+              </h4>
+
+                <div>
+                  <p>Wrap a <code>max-width</code> media query around a selector context with provided rules.</p>
+
                 </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@rules</code></div>
-                <div class="kss-parameters__description">
-                  What rules to apply to the media query.
-                </div>
-              </li>
-            </ul>
-        </div>
 
-      </section>
-      <hr >
-      <section id="kssref-mixins-media-min-max-width" class="kss-section kss-section--depth-3 ">
-
-        <div class="kss-style">
-          <h3 class="kss-title kss-title--level-3">
-            <a class="kss-title__permalink" href="#kssref-mixins-media-min-max-width">
-              .media-min-max-width(@breakpoint; @rules)
-            </a>
-          </h3>
-
-            <div class="kss-description">
-              <p>Wrap a <code>min- to max-width</code> media query around a selector context with provided rules.</p>
-
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@breakpoint</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Breakpoint for max-width.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@rules</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      What rules to apply to the media query.
+                    </div>
+                  </li>
+                </ul>
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@breakpoint-min</code></div>
-                <div class="kss-parameters__description">
-                  Breakpoint for max-width.
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@breakpoint-max</code></div>
-                <div class="kss-parameters__description">
-                  Breakpoint for max-width.
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@rules</code></div>
-                <div class="kss-parameters__description">
-                  What rules to apply to the media query.
-                </div>
-              </li>
-            </ul>
-        </div>
+          </section>
+          <section id="kssref-mixins-media-min-max-width" class="kss-section--depth-3" pam-space="mb:6">
+            <div>
+              <h4 class="kss-title--level-3" pam-typography="h4">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-media-min-max-width">
+                  .media-min-max-width(@breakpoint; @rules)
+                </a>
+              </h4>
 
-      </section>
-      <hr >
-      <section id="kssref-mixins-media-responsive-selector" class="kss-section kss-section--depth-3 ">
+                <div>
+                  <p>Wrap a <code>min- to max-width</code> media query around a selector context with provided rules.</p>
 
-        <div class="kss-style">
-          <h3 class="kss-title kss-title--level-3">
-            <a class="kss-title__permalink" href="#kssref-mixins-media-responsive-selector">
-              .responsive-selector(@selector, @prefix, @fraction-list)
-            </a>
-          </h3>
+                </div>
 
-            <div class="kss-description">
-              <p>Generates responsive fractions for supported screen sizes.
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@breakpoint-min</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Breakpoint for max-width.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@breakpoint-max</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Breakpoint for max-width.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@rules</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      What rules to apply to the media query.
+                    </div>
+                  </li>
+                </ul>
+            </div>
+
+          </section>
+          <section id="kssref-mixins-media-responsive-selector" class="kss-section--depth-3" pam-space="mb:6">
+            <div>
+              <h4 class="kss-title--level-3" pam-typography="h4">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-media-responsive-selector">
+                  .responsive-selector(@selector, @prefix, @fraction-list)
+                </a>
+              </h4>
+
+                <div>
+                  <p>Generates responsive fractions for supported screen sizes.
 Uses <code>.fractions</code> to generate the fractions.</p>
 
+                </div>
+
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@selector</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Selector name.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@modifier</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Modifier name.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">&quot;&quot;</code>
+                        </div>
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@screens</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      List of screen sizes to generate selectors for.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">@screen-sizes</code>
+                        </div>
+                    </div>
+                  </li>
+                </ul>
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@selector</code></div>
-                <div class="kss-parameters__description">
-                  Selector name.
+          </section>
+          <section id="kssref-mixins-placeholder-color" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-placeholder-color">
+                  .placeholder-color(@color)
+                </a>
+              </h3>
+
+                <div>
+                  <p>Applies text color for placeholder.</p>
+
                 </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@modifier</code></div>
-                <div class="kss-parameters__description">
-                  Modifier name.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>&quot;&quot;</code>
+
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@color &#x3D;@skin-gray-600</code>
                     </div>
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@screens</code></div>
-                <div class="kss-parameters__description">
-                  List of screen sizes to generate selectors for.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>@screen-sizes</code>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Set placeholder color.
                     </div>
-                </div>
-              </li>
-            </ul>
-        </div>
-
-      </section>
-      <hr >
-      <section id="kssref-mixins-placeholder-color" class="kss-section kss-section--depth-2 ">
-
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-mixins-placeholder-color">
-              .placeholder-color(@color)
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>Applies text color for placeholder.</p>
-
+                  </li>
+                </ul>
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@color &#x3D;@skin-gray-600</code></div>
-                <div class="kss-parameters__description">
-                  Set placeholder color.
+          </section>
+          <section id="kssref-mixins-rfs" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-rfs">
+                  rfs(@size, @ratio)
+                </a>
+              </h3>
+
+                <div>
+                  <p>Generate responsive fonts for headings at a specific screen size.</p>
+
                 </div>
-              </li>
-            </ul>
-        </div>
 
-      </section>
-      <hr >
-      <section id="kssref-mixins-shadows" class="kss-section kss-section--depth-2 ">
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@size</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Screen size to trigger from.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@ratio</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Ratio to adjust.
+                    </div>
+                  </li>
+                </ul>
+            </div>
 
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-mixins-shadows">
-              .shadows(@quantity, @prefix, @startIndex)
-            </a>
-          </h2>
+          </section>
+          <section id="kssref-mixins-shadows" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-shadows">
+                  .shadows(@quantity, @prefix, @startIndex)
+                </a>
+              </h3>
 
-            <div class="kss-description">
-              <p>Generate number of requested shadows starting from
+                <div>
+                  <p>Generate number of requested shadows starting from
 a given number and adds a prefixed value.</p>
 
+                </div>
+
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@quantity</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Number of shadows.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@prefix</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Attribute value prefix.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">&#x27;z&#x27;</code>
+                        </div>
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@startIndex</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      What number to start on.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">1</code>
+                        </div>
+                    </div>
+                  </li>
+                </ul>
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@quantity</code></div>
-                <div class="kss-parameters__description">
-                  Number of shadows.
+          </section>
+          <section id="kssref-mixins-sizes" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-sizes">
+                  sizes(@selector, @property, @quantity, @prefix, @index)
+                </a>
+              </h3>
+
+                <div>
+                  <p>Generate a given number of fixed sizes for a specified selector.</p>
+
                 </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@prefix</code></div>
-                <div class="kss-parameters__description">
-                  Attribute value prefix.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>&#x27;z&#x27;</code>
+
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@selector</code>
                     </div>
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@startIndex</code></div>
-                <div class="kss-parameters__description">
-                  What number to start on.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>1</code>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Selector name.
                     </div>
-                </div>
-              </li>
-            </ul>
-        </div>
-
-      </section>
-      <hr >
-      <section id="kssref-mixins-sizes" class="kss-section kss-section--depth-2 ">
-
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-mixins-sizes">
-              sizes(@selector, @property, @quantity, @prefix, @index)
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>Generate a given number of fixed sizes for a specified selector.</p>
-
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@property</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Selector property.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@prefix</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Attribute value prefix.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">&#x27;&#x27;</code>
+                        </div>
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@quantity</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Number of size to generate.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@multiplier</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Mmultiplier for size.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">@space-16</code>
+                        </div>
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@index</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      What size to start on.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">0</code>
+                        </div>
+                    </div>
+                  </li>
+                </ul>
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@selector</code></div>
-                <div class="kss-parameters__description">
-                  Selector name.
+          </section>
+          <section id="kssref-mixins-spacing" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-spacing">
+                  spacing(@property, @prefix, @spaces, @startIndex)
+                </a>
+              </h3>
+
+                <div>
+                  <p>Generate a given number of spaces of a specific space type.</p>
+
                 </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@property</code></div>
-                <div class="kss-parameters__description">
-                  Selector property.
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@prefix</code></div>
-                <div class="kss-parameters__description">
-                  Attribute value prefix.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>&#x27;&#x27;</code>
+
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@property</code>
                     </div>
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@quantity</code></div>
-                <div class="kss-parameters__description">
-                  Number of size to generate.
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@multiplier</code></div>
-                <div class="kss-parameters__description">
-                  Mmultiplier for size.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>@space-16</code>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Use margin or padding.
                     </div>
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@index</code></div>
-                <div class="kss-parameters__description">
-                  What size to start on.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>0</code>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@prefix</code>
                     </div>
-                </div>
-              </li>
-            </ul>
-        </div>
-
-      </section>
-      <hr >
-      <section id="kssref-mixins-spacing" class="kss-section kss-section--depth-2 ">
-
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-mixins-spacing">
-              spacing(@property, @prefix, @spaces, @startIndex)
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>Generate a given number of spaces of a specific space type.</p>
-
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Space attribute value prefix. Format <code>{type}{side}:{size}</code>
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">&#x27;&#x27;</code>
+                        </div>
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@spaces</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Number of spaces sizes to generate.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@startIndex</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      What size to start on.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">1</code>
+                        </div>
+                    </div>
+                  </li>
+                </ul>
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@property</code></div>
-                <div class="kss-parameters__description">
-                  Use margin or padding.
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@prefix</code></div>
-                <div class="kss-parameters__description">
-                  Space attribute value prefix. Format <code>{type}{side}:{size}</code>
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>&#x27;&#x27;</code>
-                    </div>
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@spaces</code></div>
-                <div class="kss-parameters__description">
-                  Number of spaces sizes to generate.
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@startIndex</code></div>
-                <div class="kss-parameters__description">
-                  What size to start on.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>1</code>
-                    </div>
-                </div>
-              </li>
-            </ul>
-        </div>
+          </section>
+          <section id="kssref-mixins-spacing-spacing-x" class="kss-section--depth-3" pam-space="mb:6">
+            <div>
+              <h4 class="kss-title--level-3" pam-typography="h4">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-spacing-spacing-x">
+                  spacing-x(@property, @prefix, @spaces, @startIndex)
+                </a>
+              </h4>
 
-      </section>
-      <hr >
-      <section id="kssref-mixins-spacing-spacing-x" class="kss-section kss-section--depth-3 ">
-
-        <div class="kss-style">
-          <h3 class="kss-title kss-title--level-3">
-            <a class="kss-title__permalink" href="#kssref-mixins-spacing-spacing-x">
-              spacing-x(@property, @prefix, @spaces, @startIndex)
-            </a>
-          </h3>
-
-            <div class="kss-description">
-              <p>Generate a given number of spaces for the
+                <div>
+                  <p>Generate a given number of spaces for the
 x axis (left and right).</p>
 
+                </div>
+
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@property</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Use margin or padding.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@prefix</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Space attribute value prefix. Format <code>{type}{side}:{size}</code>
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">&#x27;&#x27;</code>
+                        </div>
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@spaces</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Number of spaces sizes to generate.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@startIndex</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      What size to start on.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">1</code>
+                        </div>
+                    </div>
+                  </li>
+                </ul>
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@property</code></div>
-                <div class="kss-parameters__description">
-                  Use margin or padding.
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@prefix</code></div>
-                <div class="kss-parameters__description">
-                  Space attribute value prefix. Format <code>{type}{side}:{size}</code>
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>&#x27;&#x27;</code>
-                    </div>
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@spaces</code></div>
-                <div class="kss-parameters__description">
-                  Number of spaces sizes to generate.
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@startIndex</code></div>
-                <div class="kss-parameters__description">
-                  What size to start on.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>1</code>
-                    </div>
-                </div>
-              </li>
-            </ul>
-        </div>
+          </section>
+          <section id="kssref-mixins-spacing-spacing-y" class="kss-section--depth-3" pam-space="mb:6">
+            <div>
+              <h4 class="kss-title--level-3" pam-typography="h4">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-spacing-spacing-y">
+                  spacing-y(@property, @prefix, @spaces, @startIndex)
+                </a>
+              </h4>
 
-      </section>
-      <hr >
-      <section id="kssref-mixins-spacing-spacing-y" class="kss-section kss-section--depth-3 ">
-
-        <div class="kss-style">
-          <h3 class="kss-title kss-title--level-3">
-            <a class="kss-title__permalink" href="#kssref-mixins-spacing-spacing-y">
-              spacing-y(@property, @prefix, @spaces, @startIndex)
-            </a>
-          </h3>
-
-            <div class="kss-description">
-              <p>Generate a given number of spaces for the
+                <div>
+                  <p>Generate a given number of spaces for the
 y axis (top and bottom).</p>
 
+                </div>
+
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@property</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Use margin or padding.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@prefix</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Space attribute value prefix. Format <code>{type}{side}:{size}</code>
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">&#x27;&#x27;</code>
+                        </div>
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@spaces</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Number of spaces sizes to generate.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@startIndex</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      What size to start on.
+                        <div pam-typography="body-2">
+                            Defaults to: <code pam-whitespace="nowrap">1</code>
+                        </div>
+                    </div>
+                  </li>
+                </ul>
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@property</code></div>
-                <div class="kss-parameters__description">
-                  Use margin or padding.
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@prefix</code></div>
-                <div class="kss-parameters__description">
-                  Space attribute value prefix. Format <code>{type}{side}:{size}</code>
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>&#x27;&#x27;</code>
-                    </div>
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@spaces</code></div>
-                <div class="kss-parameters__description">
-                  Number of spaces sizes to generate.
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@startIndex</code></div>
-                <div class="kss-parameters__description">
-                  What size to start on.
-                    <div class="kss-parameters__default-value">
-                      Defaults to: <code>1</code>
-                    </div>
-                </div>
-              </li>
-            </ul>
-        </div>
+          </section>
+          <section id="kssref-mixins-zindex" class="kss-section--depth-2" pam-space="mb:6">
+            <div>
+              <h3 class="kss-title--level-2" pam-typography="h3">
+                <a pam-link="" sg-link="perma" href="#kssref-mixins-zindex">
+                  .zindex(@elementName, @elementList)
+                </a>
+              </h3>
 
-      </section>
-      <hr >
-      <section id="kssref-mixins-zindex" class="kss-section kss-section--depth-2 ">
-
-        <div class="kss-style">
-          <h2 class="kss-title kss-title--level-2">
-            <a class="kss-title__permalink" href="#kssref-mixins-zindex">
-              .zindex(@elementName, @elementList)
-            </a>
-          </h2>
-
-            <div class="kss-description">
-              <p>Handles z-index contextual by retrieving the elements position from a
+                <div>
+                  <p>Handles z-index contextual by retrieving the elements position from a
 element list and returns the positon as a z-index value.</p>
 <p><code>@z-index-global</code> list is shipped with PAM and is empty by default. Add
 element names to appropriate z-index in the list and use the
@@ -1028,62 +1175,54 @@ add another <code>@z-index-*</code> list for that context.</p>
  <span class="hljs-selector-tag">output</span>: <span class="hljs-selector-tag">z-index</span>: <span class="hljs-selector-tag">3</span>;
 </code></pre>
 
+                </div>
+
+                <b>Parameters:</b>
+                <ul pam-display="table" pam-space="none" pam-list-type="none">
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@elementName</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Find position for given name.
+                    </div>
+                  </li>
+                  <li pam-display="table-row">
+                    <div pam-display="table-cell" pam-space="pr:5 pb:1" pam-whitespace="nowrap">
+                        <code>@elementList</code>
+                    </div>
+                    <div pam-display="table-cell" pam-typography="body-1">
+                      Contextual z-index element list.
+                    </div>
+                  </li>
+                </ul>
             </div>
 
-            <div class="kss-parameters__title">Parameters:</div>
-            <ul class="kss-parameters">
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@elementName</code></div>
-                <div class="kss-parameters__description">
-                  Find position for given name.
-                </div>
-              </li>
-              <li class="kss-parameters__item">
-                <div class="kss-parameters__name"><code>@elementList</code></div>
-                <div class="kss-parameters__description">
-                  Contextual z-index element list.
-                </div>
-              </li>
-            </ul>
-        </div>
-
+          </section>
       </section>
-      <hr >
-  </main>
-</main>
-<footer sg-footer></footer>
+    </main>
 
-<!-- SCRIPTS -->
-<script src="kss-assets/kss.js"></script>
-<script src="kss-assets/kss-fullscreen.js"></script>
-<script src="kss-assets/kss-guides.js"></script>
-<script src="kss-assets/kss-markup.js"></script>
-<script src="kss-assets/js/highlight/highlight.pack.js"></script>
-<script src="kss-assets/scrollspy.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
+    <footer sg-footer></footer>
+    </div>
 
-  var spy = new ScrollSpy('#kss-node', {
-    nav: '.kss-nav__menu-child > li > a',
-    className: 'is-in-viewport'
-  });
-  var kssFullScreen = new KssFullScreen({
-    idPrefix: 'kss-fullscreen-',
-    bodyClass: 'kss-fullscreen-mode',
-    elementClass: 'is-fullscreen'
-  });
-  var kssGuides = new KssGuides({
-    bodyClass: 'kss-guides-mode'
-  });
-  var kssMarkup = new KssMarkup({
-    bodyClass: 'kss-markup-mode',
-    detailsClass: 'kss-markup'
-  });
-</script>
-<script src="kss-assets/js/animator.js"></script>
+    <!-- SCRIPTS -->
+    <script src="kss-assets/kss.js"></script>
+    <script src="kss-assets/js/highlight/highlight.pack.js"></script>
+    <script src="kss-assets/scrollspy.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+
+      var spy = new ScrollSpy('#sg-node', {
+        nav: '[pam-menu-list~="child"] > li > a',
+        className: 'is-in-viewport'
+      });
+
+      new ClipboardJS("[pam-Button]");
+    </script>
+    <script src="kss-assets/js/animator.js"></script>
 <script src="kss-assets/js/modifier-helper.js"></script>
+<script src="kss-assets/js/drawer.js"></script>
 <script src="kss-assets/js/styleguide.js"></script>
-
 
 
 </body>

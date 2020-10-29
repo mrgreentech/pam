@@ -1,0 +1,72 @@
+// Whitespace
+//
+// Trait for controlling elements white space.
+//
+// Markup:
+// <div pam-space="p:2" pam-shadow="z2">
+//     <p pam-whitespace="{{modifier_class}}">
+//     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+//     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+//     veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+//     ea commodo consequat.
+//     </p>
+// </div>
+//
+// normal - Set white space to normal.
+// nowrap - Set white space to nowrap.
+// pre - Set white space to pre.
+// pre-line - Set white space to pre-line.
+// pre-wrap - Set white space to pre-wrap.
+// break-spaces - Set white space to break-spaces.
+//
+// Weight: 20
+//
+// Style guide: traits.whitespace
+
+// ==================================================================
+//  White space
+// ==================================================================
+
+[pam-whitespace] {
+    .hook-whitespace;
+}
+
+[pam-whitespace~="normal"] {
+    white-space: normal !important;
+}
+
+[pam-whitespace~="nowrap"] {
+    white-space: nowrap !important;
+}
+
+[pam-whitespace~="pre"] {
+    white-space: pre !important;
+}
+
+[pam-whitespace~="pre-line"] {
+    white-space: pre-line !important;
+}
+
+[pam-whitespace~="pre-wrap"] {
+    white-space: pre-wrap !important;
+}
+
+[pam-whitespace~="break-spaces"] {
+    white-space: break-spaces !important;
+}
+
+// Hooks
+// ========================================================================
+
+// Hooks
+//
+// `.hook-whitespace`
+//
+// Weight: 10
+//
+// Style guide: traits.whitespace.hooks
+
+/* stylelint-disable block-no-empty */
+.hook-whitespace() {
+}
+/* stylelint-enable */
