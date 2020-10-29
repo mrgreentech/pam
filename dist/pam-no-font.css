@@ -951,6 +951,10 @@ a[pam-Button~="circle"] {
   vertical-align: middle;
   width: 35px;
 }
+[pam-Button~="circle"] > *,
+a[pam-Button~="circle"] > * {
+  margin: auto;
+}
 [pam-Button~="circle"][pam-Button~="lg"],
 a[pam-Button~="circle"][pam-Button~="lg"] {
   height: 47px;

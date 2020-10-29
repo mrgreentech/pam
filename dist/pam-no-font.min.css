@@ -140,6 +140,7 @@ html{-webkit-text-size-adjust:100%;box-sizing:border-box;font-family:Roboto,sans
 [pam-Button~=fluid],a[pam-Button~=fluid]{display:block;width:100%}
 [pam-Button~=rounded],a[pam-Button~=rounded]{border-radius:50px}
 [pam-Button~=circle],a[pam-Button~=circle]{border-radius:50%;display:inline-flex;height:35px;justify-content:center;line-height:1.5;min-width:35px;overflow:hidden;padding:0;position:relative;vertical-align:middle;width:35px}
+[pam-Button~=circle]>*,a[pam-Button~=circle]>*{margin:auto}
 [pam-Button~=circle][pam-Button~=lg],a[pam-Button~=circle][pam-Button~=lg]{height:47px;min-width:47px;padding:0;width:47px}
 [pam-Button~=circle][pam-Button~=sm],a[pam-Button~=circle][pam-Button~=sm]{height:30px;min-width:30px;padding:0;width:30px}
 [pam-Button-Group]{display:inline-flex;margin:0 0 0 4px}
